@@ -73,4 +73,8 @@
 
 .post-full-content pre code {
     color: #e5eff5;
-}    
+}
+
+ol, ul {
+    max-width: 100%;
+}
