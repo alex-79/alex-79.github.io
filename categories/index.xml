@@ -5,35 +5,35 @@
     <link>https://alex-79.github.io/categories/</link>
     <description>Recent content in Categories on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
+    <language>uk-UA</language>
     
 	<atom:link href="https://alex-79.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Development</title>
-      <link>https://alex-79.github.io/categories/development/</link>
-      <pubDate>Mon, 02 Jun 2014 00:00:00 +0000</pubDate>
+      <title>Linux</title>
+      <link>https://alex-79.github.io/categories/linux/</link>
+      <pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/categories/development/</guid>
+      <guid>https://alex-79.github.io/categories/linux/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Food</title>
-      <link>https://alex-79.github.io/categories/food/</link>
-      <pubDate>Sat, 28 Sep 2013 00:00:00 +0000</pubDate>
+      <title>Magento</title>
+      <link>https://alex-79.github.io/categories/magento/</link>
+      <pubDate>Sat, 21 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/categories/food/</guid>
+      <guid>https://alex-79.github.io/categories/magento/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Golang</title>
-      <link>https://alex-79.github.io/categories/golang/</link>
-      <pubDate>Mon, 02 Jun 2014 00:00:00 +0000</pubDate>
+      <title>Web</title>
+      <link>https://alex-79.github.io/categories/web/</link>
+      <pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/categories/golang/</guid>
+      <guid>https://alex-79.github.io/categories/web/</guid>
       <description></description>
     </item>
     

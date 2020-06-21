@@ -78,3 +78,16 @@
 ol, ul {
     max-width: 100%;
 }
+
+.reading-time {
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    margin-left: 20px;
+    color: #738a94;
+    font-size: 1.2rem;
+    line-height: 33px;
+    font-weight: 500;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    float: right;
+

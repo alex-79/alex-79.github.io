@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Magento on </title>
+    <link>https://alex-79.github.io/categories/magento/</link>
+    <description>Recent content in Magento on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>uk-UA</language>
+    <lastBuildDate>Sat, 21 Oct 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://alex-79.github.io/categories/magento/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Рубимо електронні гроші в Magento</title>
+      <link>https://alex-79.github.io/magento-payment-plugin-for-bitpay/</link>
+      <pubDate>Sat, 21 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/magento-payment-plugin-for-bitpay/</guid>
+      <description>Як отримати bitcoin-и без того, щоб скуповувати відеокарти? Правильно, щось за них продати. Для цього трема мати магазин на Magento та виконати невеличку інструкцію:
+ Зробити гаманець на https://bitpay.com/.
+ Встановити модуль https://github.com/bitpay/magento-plugin. Тут увага, не намагайтесь ставити через modman - все одно не запрацює. Краще зробити це з архіву https://github.com/bitpay/magento-plugin/releases.
+ Далі налаштовуємо через System &amp;gt; Configuration &amp;gt; Sales &amp;gt; Payment Methods. Щоб прив&amp;rsquo;язати гаманець до Magento, треба отримати токен https://bitpay.</description>
+    </item>
+    
+    <item>
+      <title>Магічне число 248 або Чому я не можу додати значення атрибута в Magento 2?</title>
+      <link>https://alex-79.github.io/magick-248/</link>
+      <pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/magick-248/</guid>
+      <description>Не можу додати ще одне значення атрибута в Magento 2. Підрахував кількість вже існуючих значень - 248. Виявилося, що у всьому винен PHP, а саме значення за замовчуванням max_input_vars = 1000. Змінив на 100000.
+Згадав, що знаю про цю штуку ще з Magento 1, але поки не записав рецепт, змушений був в черговий раз гуглити.
+Подробиці тут</description>
+    </item>
+    
+    <item>
+      <title>Чому ми обираємо Magento, а не інші системи</title>
+      <link>https://alex-79.github.io/why-magento/</link>
+      <pubDate>Sat, 24 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/why-magento/</guid>
+      <description>Від початку стаття призначалася для інтернет-агенції Studio370, тому в тексті багато &amp;ldquo;ми&amp;rdquo; і &amp;ldquo;нас&amp;rdquo;. З появою власного блогу, прийшов час перетягти її сюди. Планую дописувати та переписувати цей допис, тому, скоріш за все, скоро ця стаття буде дуже не схожа на оригінал.
+ Отже у вас є товар, ви точно знаєте де ваш покупець, лишилося зовсім мало - запустити інтернет-магазин і ось воно щастя. Тут і починається головний біль.</description>
+    </item>
+    
+  </channel>
+</rss>

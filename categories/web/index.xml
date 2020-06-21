@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web on </title>
+    <link>https://alex-79.github.io/categories/web/</link>
+    <description>Recent content in Web on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>uk-UA</language>
+    <lastBuildDate>Wed, 18 Oct 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://alex-79.github.io/categories/web/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Магічне число 248 або Чому я не можу додати значення атрибута в Magento 2?</title>
+      <link>https://alex-79.github.io/magick-248/</link>
+      <pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/magick-248/</guid>
+      <description>Не можу додати ще одне значення атрибута в Magento 2. Підрахував кількість вже існуючих значень - 248. Виявилося, що у всьому винен PHP, а саме значення за замовчуванням max_input_vars = 1000. Змінив на 100000.
+Згадав, що знаю про цю штуку ще з Magento 1, але поки не записав рецепт, змушений був в черговий раз гуглити.
+Подробиці тут</description>
+    </item>
+    
+    <item>
+      <title>NGINX - 301-й редирект адрес з get-аргументами</title>
+      <link>https://alex-79.github.io/nginx-redirection-get-arg/</link>
+      <pubDate>Mon, 18 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/nginx-redirection-get-arg/</guid>
+      <description>Якщо необхідно зробити редирект зі сторінки с get-аргументом, то необхідно дописати в конфіг таке
+location / { if ($arg_param = value) { return 301 $uri; } }  Взяв тут - https://stackoverflow.com/questions/27078909/nginx-redirect-url-with-specific-query-parameter</description>
+    </item>
+    
+    <item>
+      <title>Як я готую NGINX з модулем PAGESPEED</title>
+      <link>https://alex-79.github.io/nginx-pagespeed-openssl/</link>
+      <pubDate>Fri, 07 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/nginx-pagespeed-openssl/</guid>
+      <description>Останнім часом майже взагалі не використовую Apache. Є кілька проектів з категорії &amp;ldquo;ой, а про вас забули&amp;rdquo; та &amp;ldquo;не чіпай поки працює&amp;rdquo;, а на нових - лише nginx.
+Готую nginx з pagespeed-ом за таким рецептом:
+#!/bin/sh apt-get install build-essential ca-certificates zlib1g-dev libpcre3 libpcre3-dev tar unzip libssl-dev checkinstall OPENSSL_VER=1.1.0g NPS_VER=1.12.34.3-stable NGINX_VER=1.13.8 cd /opt wget -c https://www.openssl.org/source/openssl-$OPENSSL_VER.tar.gz tar -xzvf openssl-$OPENSSL_VER.tar.gz rm openssl-$OPENSSL_VER.tar.gz wget https://github.com/apache/incubator-pagespeed-ngx/archive/v${NPS_VER}.zip unzip v${NPS_VER}.zip rm v${NPS_VER}.zip NPS_DIR=$(find . -name &amp;quot;*pagespeed-ngx-${NPS_VER}&amp;quot; -type d | sed -e &#39;s/\.</description>
+    </item>
+    
+  </channel>
+</rss>
