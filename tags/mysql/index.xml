@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mysql on </title>
+    <link>https://alex-79.github.io/tags/mysql/</link>
+    <description>Recent content in Mysql on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>uk-UA</language>
+    <lastBuildDate>Mon, 17 Feb 2020 02:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://alex-79.github.io/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Встановлення зв&#39;язки Django та MySQL на Debian 9</title>
+      <link>https://alex-79.github.io/howto-install-django-mysql-debian-9/</link>
+      <pubDate>Mon, 17 Feb 2020 02:00:00 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/howto-install-django-mysql-debian-9/</guid>
+      <description>Встановлення Django  Встановлюємо Python та додатковий інструментарій  apt install python3 python3-pip python3-venv  Створюємо папку для проекту та віртуальне середовище  mkdir myproject cd myproject python3 -m venv venv source venv/bin/activate  Встановлюємо Django та перевыряємо встановлену версію  python3 -m pip install Django python -m django --version  Створюємо новий проект  django-admin startproject myproject   З&amp;rsquo;єднання з MySQL  Встановлюємо Percona Server  wget https://repo.</description>
+    </item>
+    
+    <item>
+      <title>Встановлення Magento 2 з командного рядка</title>
+      <link>https://alex-79.github.io/howto-install-magento2-cli/</link>
+      <pubDate>Mon, 11 Nov 2019 02:00:00 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/howto-install-magento2-cli/</guid>
+      <description>Простий скрипт на bash для створення локальної інсталяції Magento 2.
+#!/bin/bash # install_magento.sh create_db=&amp;quot;CREATE DATABASE $1 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;&amp;quot; create_user=&amp;quot;GRANT ALL PRIVILEGES ON $1.* TO &#39;$1&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;$1&#39;;&amp;quot; flush=&amp;quot;FLUSH PRIVILEGES;&amp;quot; mysql -u root -p -e &amp;quot;${create_db}${create_user}${flush}&amp;quot; mkdir $1.local composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition $1.local cd $1.local php bin/magento setup:install --base-url=http://$1.local/ \ --db-host=localhost --db-name=$1 \ --db-user=$1 --db-password=$1 \ --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \ --admin-user=admin --admin-password=admin123 --language=en_US \ --currency=UAH --timezone=Europe/Kiev --use-rewrites=1  Застосування:</description>
+    </item>
+    
+    <item>
+      <title>Пошук в MySQL за допомогою регулярних виразів</title>
+      <link>https://alex-79.github.io/mysql-and-regexp/</link>
+      <pubDate>Mon, 07 Oct 2019 05:52:41 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/mysql-and-regexp/</guid>
+      <description> Завдання: знайти в каталозі sku із знаком &amp;ldquo;-&amp;rdquo; в кінці.
+Для знаходження відповідних sku виконуємо запит в базу
+SELECT sku FROM `catalog_product_entity` WHERE sku REGEXP &amp;quot;-$&amp;quot; = 1;  REGEXP віддає 1 якщо значення відповідає регулярному виразу, інакше - 0.
+Посилання  http://www.mysql.ru/docs/man/Regexp.html  </description>
+    </item>
+    
+    <item>
+      <title>Тимчасові таблиці MySQL в tmpfs</title>
+      <link>https://alex-79.github.io/mysql-tmp-table-in-tmpfs/</link>
+      <pubDate>Mon, 17 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/mysql-tmp-table-in-tmpfs/</guid>
+      <description>Для прискорення роботи бази даних можна винести тимчасові таблиці в оперативну пам&amp;rsquo;ять. Зробити це дуже просто.
+Створюємо папку для зберігання тимчасових таблиць
+mkdir /var/lib/mysql/tmp  Змінюємо власника папки на mysql
+chown mysql:mysql /var/lib/mysql/tmp  Знаходимо uid та gid для mysql
+id mysql  В файл fstab додаємо
+tmpfs /var/lib/mysql/tmp tmpfs rw,gid=1001,uid=1001,size=1G,nr_inodes=10k,mode=0700 0 0  та монтуємо новий tmpfs-разділ
+mount /var/lib/mysql/tmp  Змінюємо конфігурацию MySQL в /etc/mysql/my.cnf
+tmpdir=/var/lib/mysql/tmp  Перезапускаємо MySQL</description>
+    </item>
+    
+    <item>
+      <title>Заміна даних в MariaDB</title>
+      <link>https://alex-79.github.io/regexp-replace-in-mariadb/</link>
+      <pubDate>Mon, 10 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/regexp-replace-in-mariadb/</guid>
+      <description>Швидкий спосіб виправити текстові дані в БД:
+ Прибрати перехід на новий рядок (\n)
+UPDATE catalog_product_entity_varchar SET value = REPLACE(value, &amp;quot;\n&amp;quot;, &amp;quot;&amp;quot;) WHERE attribute_id = 73;  Прибрати зайві пробіли
+UPDATE catalog_product_entity_varchar SET value = REGEXP_REPLACE(value, &#39;[[:space:]]+&#39;, &#39; &#39;) WHERE attribute_id = 73;  Увага!!! [[:space:]] працює тільки в MariaDB
+  </description>
+    </item>
+    
+    <item>
+      <title>Простий моніторинг роботи сервера за допомогою Munin</title>
+      <link>https://alex-79.github.io/howto-install-munin/</link>
+      <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/howto-install-munin/</guid>
+      <description>Munin — це дуже простий в налаштуванні засіб моніторинга серверів. Для Munin існує величезна кількість плагінів для спостереження за load average, дисковими операціями, CPU, RAM, mysql тощо. Вся інформація зберігається в кільцевій базі даних RRDtool.
+Встановлюємо систему моніторингу:
+apt-get install munin munin-node service munin-node start  Налаштовуємо nginx
+	location / { root /var/cache/munin/www; autoindex on; auth_basic &amp;quot;Munin Statistics&amp;quot;; auth_basic_user_file /etc/munin/.passwd; }  Додаткові плагіни знаходяться в директорії /usr/share/munin/plugins .</description>
+    </item>
+    
+    <item>
+      <title>Створення бази даних в MySQL</title>
+      <link>https://alex-79.github.io/new-db-in-mysql/</link>
+      <pubDate>Sun, 25 Feb 2018 09:19:00 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/new-db-in-mysql/</guid>
+      <description>CREATE DATABASE new_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci; GRANT ALL PRIVILEGES ON new_db.* TO &#39;new_user&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;password&#39;; FLUSH PRIVILEGES;  </description>
+    </item>
+    
+    <item>
+      <title>Вибіркове завантаження таблиць дампа в MySQL</title>
+      <link>https://alex-79.github.io/how-to-exclude-dump-tables/</link>
+      <pubDate>Sat, 11 Nov 2017 13:12:00 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/how-to-exclude-dump-tables/</guid>
+      <description>Є в мене дамп магазину на Magento розміром 4Gb. В ньому таблиці з логами займають 3,5Gb. O_o Фігассє, нафіга воно мені на тестовому сервері. Людина, що передала мені архів, в даний момент недоступна, тобто зробить новий дамп без логів не варіант. Що робить!? Правильно, #!bash-ить:
+cat old.sql | sed -e &#39;/^LOCK TABLES .log_/,/^UNLOCK TABLES;/d&#39; &amp;gt; new.sql  </description>
+    </item>
+    
+  </channel>
+</rss>

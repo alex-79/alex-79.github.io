@@ -131,33 +131,226 @@
 
 <article class="post-card post"> 
     
-    <a class="post-card-image-link" href="https://alex-79.github.io/why-magento/">
-      <div class="post-card-image" style="background-image: url(https://alex-79.github.io/img/magento-logo-1280.png)"></div>
+    <a class="post-card-image-link" href="https://alex-79.github.io/iptables-ipset/">
+      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1546088018-16609adf2afa?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
     </a>
     
 
     <div class="post-card-content">
-      <a class="post-card-content-link" href="https://alex-79.github.io/why-magento/">
+      <a class="post-card-content-link" href="https://alex-79.github.io/iptables-ipset/">
           <header class="post-card-header">
               
                 <span class="post-card-tags">
                   
-                    #magento
+                    #linux
+                  
+                    #web
                    
                 </span>
               
-              <h2 class="post-card-title">Чому ми обираємо Magento, а не інші системи</h2>
+              <h2 class="post-card-title">Блокування трафіку за допомогою iptables та ipset</h2>
           </header>
           <section class="post-card-excerpt">
-               
-                <p>Як не загубитися у великій кількості пропозицій, розпізнати словоблуддя маркетологів та інтеграторів і, зрештою, зберегти сили, гроші та час.</p>
+              
+                <p>Для захисту від DDOS-атак або паразитного трафіку, блокування на рівні сервера, а не nginx (як наприклад тут - https://bender.kr.ua/nginx-geoip/) , є більш ефективним. Тому, якщо у вас виникла потреба блокувати IP з певних країн і не існує інших застережень, варто скористатись зв&rsquo;язкою iptables + ipset.
+Для початку встановлюємо ipset:
+apt-get install ipset  Створюємо скрипт, який буде оновлювати таблюцю адрес для блокування. Списки IP за приналежністю до країни, можна взяти на сайті ipdeny. ...  </p>
               
           </section>
       </a>
 
       <footer class="post-card-meta">
           <a href="/about"><img class="author-profile-image" src="https://alex-79.github.io/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-          <span class="reading-time">11 хв</span>
+          <span class="reading-time">2 хв</span>
+      </footer>
+    </div>
+</article>
+
+
+<article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="https://alex-79.github.io/nginx-geoip/">
+      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1566847936715-5e147ef9caec?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
+    </a>
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="https://alex-79.github.io/nginx-geoip/">
+          <header class="post-card-header">
+              
+                <span class="post-card-tags">
+                  
+                    #linux
+                  
+                    #web
+                   
+                </span>
+              
+              <h2 class="post-card-title">Блокування трафіку з окремих країн за допомогою Nginx та GeoIP</h2>
+          </header>
+          <section class="post-card-excerpt">
+              
+                <p>Блокуємо паразитний трафік до сайту з певних країн безкоштовно, без реєстрацій та sms ;)
+ Зібрати nginx з опцією &ndash;with-http_geoip_module. Як це зробити написано тут - https://bender.kr.ua/howto-lemp-install/ Встановити бази GeoIP  apt-get install geoip-database libgeoip1  Оновити бази до останньої версії  mv /usr/share/GeoIP/GeoIP.dat /usr/share/GeoIP/GeoIP.bak wget https://dl.miyuru.lk/geoip/maxmind/country/maxmind.dat.gz gunzip maxmind.dat.gz mv maxmind.dat /usr/share/GeoIP/GeoIP.dat  В /etc/nginx/nginx.conf в секції http блокуємо наприклад роісію та Пакистан  http { ... geoip_country /usr/share/GeoIP/GeoIP.dat; map $geoip_country_code $allowed_country_mysite { default yes; RU no; PK no; } . ...  </p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <a href="/about"><img class="author-profile-image" src="https://alex-79.github.io/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
+          <span class="reading-time">1 хв</span>
+      </footer>
+    </div>
+</article>
+
+
+<article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="https://alex-79.github.io/howto-asterisk-part-3/">
+      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1559619608-21ed24d8035b?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
+    </a>
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="https://alex-79.github.io/howto-asterisk-part-3/">
+          <header class="post-card-header">
+              
+                <span class="post-card-tags">
+                  
+                    #linux
+                   
+                </span>
+              
+              <h2 class="post-card-title">IP-телефонія на базі Asterisk. Частина 3: Логіка обробки дзвінків (Dialplan)</h2>
+          </header>
+          <section class="post-card-excerpt">
+              
+                <p>Цикл статей по розгортанню IP-телефонії на базі Asterisk. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Робота була захищена, сертифікат отриманий, все написане тестувалось і є повтінстю робочою реалізацією. Інформація в статті і версії програмного забезбечення актуальні на 2017 рік.
+ частина 1 - Встановлення сервера Asterisk частина 2 - Налаштування SIP
+3. Логіка обробки дзвінків (Dialplan) 3.1 План дозвона на разні напрямки Створимо кілька контекстів для обробки дзвінків: ...  </p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <a href="/about"><img class="author-profile-image" src="https://alex-79.github.io/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
+          <span class="reading-time">8 хв</span>
+      </footer>
+    </div>
+</article>
+
+
+<article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="https://alex-79.github.io/howto-install-magento2-cli/">
+      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1571505280193-4b4e29712a77?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
+    </a>
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="https://alex-79.github.io/howto-install-magento2-cli/">
+          <header class="post-card-header">
+              
+                <span class="post-card-tags">
+                  
+                    #magento
+                  
+                    #mysql
+                  
+                    #web
+                   
+                </span>
+              
+              <h2 class="post-card-title">Встановлення Magento 2 з командного рядка</h2>
+          </header>
+          <section class="post-card-excerpt">
+               
+                <p>Простий скрипт на bash для створення локальної інсталяції Magento 2</p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <a href="/about"><img class="author-profile-image" src="https://alex-79.github.io/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
+          <span class="reading-time">0 хв</span>
+      </footer>
+    </div>
+</article>
+
+
+<article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="https://alex-79.github.io/netbeans-and-fonts/">
+      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/reserve/uZYSV4nuQeyq64azfVIn_15130980706_64134efc6e_o.jpg?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
+    </a>
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="https://alex-79.github.io/netbeans-and-fonts/">
+          <header class="post-card-header">
+              
+                <span class="post-card-tags">
+                  
+                    #web
+                  
+                    #php
+                  
+                    #linux
+                   
+                </span>
+              
+              <h2 class="post-card-title">NetBeans і проблема зі шрифтами</h2>
+          </header>
+          <section class="post-card-excerpt">
+              
+                <p>Традиційно після встановлення NetBeans на Linux постає питання відображення шрифтів в IDE. В конфігурації за замовчування вони виглядають дуже погано.
+Найпопулярнішою порадою в інтернетах є додавання до файлу конфігурації etc/netbeans.conf такого рядка
+netbeans_default_options=&quot; ... -J-Dswing.aatext=true -J-Dawt.useSystemAAFontSettings=lcd&quot;  Після цього шрифти не набагато, але стають краще, особливо, якщо використати темну тему, бо на світлій все ще помітно &ldquo;мило&rdquo;.
+Ось тут на допомогу може прийти JetBrains :)))
+Є два варіанти: 1) користуватись PHPStorm, в якому зі шрифтами все добре (в силу різних причин для мене це взагалі не варіант) або 2) використати пропатчену JetBrains версію JDK. ...  </p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <a href="/about"><img class="author-profile-image" src="https://alex-79.github.io/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
+          <span class="reading-time">2 хв</span>
+      </footer>
+    </div>
+</article>
+
+
+<article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="https://alex-79.github.io/howto-asterisk-part-2/">
+      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1465515779535-63e31c612e53?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
+    </a>
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="https://alex-79.github.io/howto-asterisk-part-2/">
+          <header class="post-card-header">
+              
+                <span class="post-card-tags">
+                  
+                    #linux
+                   
+                </span>
+              
+              <h2 class="post-card-title">IP-телефонія на базі Asterisk. Частина 2: Налаштування SIP</h2>
+          </header>
+          <section class="post-card-excerpt">
+              
+                <p>Цикл статей по розгортанню IP-телефонії на базі Asterisk. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Робота була захищена, сертифікат отриманий, все написане тестувалось і є повтінстю робочою реалізацією. Інформація в статті і версії програмного забезбечення актуальні на 2017 рік.
+ частина 1 - Встановлення сервера Asterisk
+2. Налаштування SIP 2.1 Схема нумерації  За проектним завданням, наша умовна компанія складається з 5-ти підрозділів: управлінський персонал, відділ продажів, відділ закупівель, склад, відділ техпідтримки. ...  </p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <a href="/about"><img class="author-profile-image" src="https://alex-79.github.io/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
+          <span class="reading-time">4 хв</span>
       </footer>
     </div>
 </article>
@@ -169,7 +362,9 @@
       
           <a class="newer-posts" href="/">&larr; <span class="hide">Next Posts</span></a>
       
-      <span class="page-number"><span class="hide">Page 2 of 2</span>&nbsp;</span>
+      <span class="page-number"><span class="hide">Page 2 of 9</span>&nbsp;</span>
+      
+          <a class="older-posts" href="/page/3/"><span class="hide">Previous Posts</span> &rarr;</a>
       
     </nav>
   </div>

@@ -3,33 +3,268 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://alex-79.github.io/magento-2-cron-indexer-repair/</loc>
+    <lastmod>2020-03-10T08:56:19+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/howto-install-django-mysql-debian-9/</loc>
+    <lastmod>2020-02-17T02:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://alex-79.github.io/howto-install-telegram-debian-9/</loc>
-    <lastmod>2020-02-03T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-03T05:39:14+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/howto-asterisk-part-5/</loc>
+    <lastmod>2020-01-13T02:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/year-in-books-2019/</loc>
+    <lastmod>2020-01-06T02:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/howto-asterisk-part-4/</loc>
+    <lastmod>2019-12-30T02:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/iptables-ipset/</loc>
+    <lastmod>2019-12-24T09:58:19+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/nginx-geoip/</loc>
+    <lastmod>2019-12-09T02:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/howto-asterisk-part-3/</loc>
+    <lastmod>2019-12-02T02:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/howto-install-magento2-cli/</loc>
+    <lastmod>2019-11-11T02:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/netbeans-and-fonts/</loc>
+    <lastmod>2019-11-06T02:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/howto-asterisk-part-2/</loc>
+    <lastmod>2019-10-28T02:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/mint-19-and-epson-perfection-v33/</loc>
+    <lastmod>2019-10-23T06:46:44+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/howto-asterisk-part-1/</loc>
+    <lastmod>2019-10-17T15:53:49+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/mysql-and-regexp/</loc>
+    <lastmod>2019-10-07T05:52:41+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/wtf-ssl-error-leaf-certificate-is-expired/</loc>
+    <lastmod>2019-09-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/backup-with-borg/</loc>
+    <lastmod>2019-09-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/connie-willis-doomsday-book/</loc>
+    <lastmod>2019-09-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/howto-hide-default-store-code-from-url-magento-2/</loc>
+    <lastmod>2019-08-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/magento-2-modules-and-tools/</loc>
+    <lastmod>2019-08-23T08:32:18+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/quick-start-with-jenkins-in-docker/</loc>
+    <lastmod>2019-08-14T14:03:32+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/howto-remove-parent-category-from-url-magento-2/</loc>
+    <lastmod>2019-08-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/magento-2-reindex-parallel/</loc>
+    <lastmod>2019-07-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/fail2ban-unban-ip/</loc>
+    <lastmod>2019-07-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/failed-to-fetch-jessie-backports-repository/</loc>
+    <lastmod>2019-07-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/magento2-reindexer-for-large-catalog/</loc>
+    <lastmod>2019-07-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/howto-add-header-links-in-magento2/</loc>
+    <lastmod>2019-07-02T04:41:28+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/upgrade-magento-232/</loc>
+    <lastmod>2019-06-26T02:56:59+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/mysql-tmp-table-in-tmpfs/</loc>
+    <lastmod>2019-06-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/regexp-replace-in-mariadb/</loc>
+    <lastmod>2019-06-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/puppeteer-with-authorization/</loc>
+    <lastmod>2019-06-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/review-neal-stephenson-in-the-beginning-was-the-command-line/</loc>
+    <lastmod>2019-05-29T10:52:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/howto-install-munin/</loc>
+    <lastmod>2019-05-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/how-to-fix-elasticsearch-forbidden-12-index-read-only-allow-delete-api/</loc>
+    <lastmod>2019-05-20T05:21:30+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/backup-with-tartarus/</loc>
+    <lastmod>2019-05-16T07:21:38+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/howto-certbot-nginx-debian/</loc>
+    <lastmod>2019-05-16T07:13:43+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/howto-lemp-install/</loc>
+    <lastmod>2019-05-16T07:09:58+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/configurable-crontab-magento2/</loc>
+    <lastmod>2019-02-14T13:44:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/installing-python-3-6-on-debian-8/</loc>
+    <lastmod>2018-08-15T11:42:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/custom-logging-module-magento2/</loc>
+    <lastmod>2018-08-13T11:30:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/mining-karbowanec/</loc>
+    <lastmod>2018-07-31T11:38:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/fix-conflict-keyboard-shortcuts/</loc>
+    <lastmod>2018-07-27T11:36:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/letsencrypt-and-ipv6/</loc>
+    <lastmod>2018-06-14T11:33:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/df-and-du-show-different-values/</loc>
+    <lastmod>2018-04-24T11:28:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/new-db-in-mysql/</loc>
+    <lastmod>2018-02-25T09:19:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/cli-upgrade-magento2/</loc>
+    <lastmod>2018-01-03T13:23:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/5-extensions-for-default-magento2/</loc>
+    <lastmod>2018-01-02T13:18:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/how-to-exclude-dump-tables/</loc>
+    <lastmod>2017-11-11T13:12:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://alex-79.github.io/magento-payment-plugin-for-bitpay/</loc>
-    <lastmod>2017-10-21T00:00:00+00:00</lastmod>
+    <lastmod>2017-10-21T11:06:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://alex-79.github.io/git-branch/</loc>
-    <lastmod>2017-10-20T00:00:00+00:00</lastmod>
+    <lastmod>2017-10-20T11:04:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://alex-79.github.io/magick-248/</loc>
-    <lastmod>2017-10-18T00:00:00+00:00</lastmod>
+    <lastmod>2017-10-18T10:59:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://alex-79.github.io/nginx-redirection-get-arg/</loc>
-    <lastmod>2017-09-18T00:00:00+00:00</lastmod>
+    <lastmod>2017-09-18T10:56:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://alex-79.github.io/nginx-pagespeed-openssl/</loc>
-    <lastmod>2017-07-07T00:00:00+00:00</lastmod>
+    <lastmod>2017-07-07T07:08:00+00:00</lastmod>
   </url>
   
   <url>
@@ -39,65 +274,126 @@
   
   <url>
     <loc>https://alex-79.github.io/why-magento/</loc>
-    <lastmod>2017-06-24T00:00:00+00:00</lastmod>
+    <lastmod>2017-06-24T07:04:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://alex-79.github.io/</loc>
-    <lastmod>2020-02-03T00:00:00+00:00</lastmod>
+    <lastmod>2020-03-10T08:56:19+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/tags/books/</loc>
+    <lastmod>2020-01-06T02:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/categories/books/</loc>
+    <lastmod>2020-01-06T02:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://alex-79.github.io/categories/</loc>
+    <lastmod>2020-01-06T02:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/tags/js/</loc>
+    <lastmod>2019-06-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/categories/js/</loc>
+    <lastmod>2019-06-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://alex-79.github.io/tags/linux/</loc>
-    <lastmod>2020-02-03T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-03T05:39:14+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://alex-79.github.io/categories/linux/</loc>
-    <lastmod>2020-02-03T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-03T05:39:14+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://alex-79.github.io/tags/magento/</loc>
-    <lastmod>2017-10-21T00:00:00+00:00</lastmod>
+    <lastmod>2020-03-10T08:56:19+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://alex-79.github.io/categories/magento/</loc>
-    <lastmod>2017-10-21T00:00:00+00:00</lastmod>
+    <lastmod>2020-03-10T08:56:19+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/tags/mysql/</loc>
+    <lastmod>2020-02-17T02:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/categories/mysql/</loc>
+    <lastmod>2020-02-17T02:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/tags/php/</loc>
+    <lastmod>2019-11-06T02:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/categories/php/</loc>
+    <lastmod>2019-11-06T02:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://alex-79.github.io/post/</loc>
-    <lastmod>2020-02-03T00:00:00+00:00</lastmod>
+    <lastmod>2020-03-10T08:56:19+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/tags/python/</loc>
+    <lastmod>2020-02-17T02:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://alex-79.github.io/categories/python/</loc>
+    <lastmod>2020-02-17T02:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://alex-79.github.io/tags/</loc>
-    <lastmod>2020-02-03T00:00:00+00:00</lastmod>
+    <lastmod>2020-01-06T02:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://alex-79.github.io/tags/web/</loc>
-    <lastmod>2017-10-18T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-17T02:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://alex-79.github.io/categories/web/</loc>
-    <lastmod>2017-10-18T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-17T02:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

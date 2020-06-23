@@ -12,17 +12,19 @@
     <link rel="shortcut icon" href="https://alex-79.github.io/favicon.ico" />
     <link rel="canonical" href="https://alex-79.github.io/nginx-redirection-get-arg/" />
 
-     <meta name="description" content="Nginx: редирект зі сторінки с get-аргументом" /> 
+     <meta name="description" content="Якщо необхідно зробити редирект зі сторінки с get-аргументом, то необхідно дописати в конфіг таке
+location / { if ($arg_param = value) { return 301 $uri; } }  В" /> 
 
      
     
     <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:image" content="https://images.unsplash.com/photo-1504608245011-62d9758c1bb9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"/>
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1542744095-291d1f67b221?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
     
  
     <meta name="twitter:title" content="NGINX - 301-й редирект адрес з get-аргументами"/>
-    <meta name="twitter:description" content="Nginx: редирект зі сторінки с get-аргументом"/>
-    <meta name="twitter:url" content="https://alex-79.github.io/nginx-redirection-get-arg" />
+    <meta name="twitter:description" content="Якщо необхідно зробити редирект зі сторінки с get-аргументом, то необхідно дописати в конфіг таке
+location / { if ($arg_param = value) { return 301 $uri; } }  В"/>
+    <meta name="twitter:url" content="https://alex-79.github.io/nginx-redirection-get-arg/" />
     <meta name="twitter:site" content="@kr_ingulets"/>
 
     <meta property="og:site_name" content="" />
@@ -31,12 +33,13 @@
     
 
     <meta property="og:type" content="article" />
-    <meta property="og:description" content="Nginx: редирект зі сторінки с get-аргументом" />
+    <meta property="og:description" content="Якщо необхідно зробити редирект зі сторінки с get-аргументом, то необхідно дописати в конфіг таке
+location / { if ($arg_param = value) { return 301 $uri; } }  В" />
 
-    <meta property="article:published_time" content="2017-09-18T00:00:00Z" />
-    <meta property="article:tag" content="web" /><meta property="article:tag" content="linux" />
+    <meta property="article:published_time" content="2017-09-18T10:56:00Z" />
+    <meta property="article:tag" content="web" />
 
-    <meta property="og:image" content="https://images.unsplash.com/photo-1504608245011-62d9758c1bb9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"/>
+    <meta property="og:image" content="https://images.unsplash.com/photo-1542744095-291d1f67b221?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
     <meta name="generator" content="Hugo 0.40.1" />
@@ -133,12 +136,12 @@
     <header class="post-full-header">
         <section class="post-full-meta">
             <time class="post-full-meta-date" datetime="2017-09-18">18 September 2017</time>
-                <span class="date-divider">/</span> <a href="https://alex-79.github.io/tags/web/">#web</a>&nbsp;<a href="https://alex-79.github.io/tags/linux/">#linux</a>&nbsp;
+                <span class="date-divider">/</span> <a href="https://alex-79.github.io/tags/web/">#web</a>&nbsp;
         </section>
         <h1 class="post-full-title">NGINX - 301-й редирект адрес з get-аргументами</h1>
     </header>
     
-    <figure class="post-full-image" style="background-image: url(https://images.unsplash.com/photo-1504608245011-62d9758c1bb9?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=80)">
+    <figure class="post-full-image" style="background-image: url(https://images.unsplash.com/photo-1542744095-291d1f67b221?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)">
     </figure>
 
     <section class="post-full-content">
@@ -192,13 +195,13 @@
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://alex-79.github.io/howto-install-telegram-debian-9/">Встановлення Telegram на Debian 9</a></li>            
-        
-          <li><a href="https://alex-79.github.io/magento-payment-plugin-for-bitpay/">Рубимо електронні гроші в Magento</a></li>            
+          <li><a href="https://alex-79.github.io/netbeans-and-fonts/">NetBeans і проблема зі шрифтами</a></li>            
         
           <li><a href="https://alex-79.github.io/why-magento/">Чому ми обираємо Magento, а не інші системи</a></li>            
         
-          <li><a href="https://alex-79.github.io/magick-248/">Магічне число 248 або Чому я не можу додати значення атрибута в Magento 2?</a></li>            
+          <li><a href="https://alex-79.github.io/nginx-geoip/">Блокування трафіку з окремих країн за допомогою Nginx та GeoIP</a></li>            
+        
+          <li><a href="https://alex-79.github.io/howto-install-magento2-cli/">Встановлення Magento 2 з командного рядка</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -212,7 +215,7 @@
       <article class="post-card post"> 
     
     <a class="post-card-image-link" href="https://alex-79.github.io/magick-248/">
-      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1534653169071-4f036d137aca?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=80)"></div>
+      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1534653169071-4f036d137aca?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
     </a>
     
 
@@ -220,14 +223,16 @@
       <a class="post-card-content-link" href="https://alex-79.github.io/magick-248/">
           <header class="post-card-header">
               <span class="post-card-tags">
-              #web 
+              #php 
               #magento  </span>
               
               <h2 class="post-card-title">Магічне число 248 або Чому я не можу додати значення атрибута в Magento 2?</h2>
           </header>
           <section class="post-card-excerpt">
-               
-                <p>Магічне число 248 або Чому я не можу додати значення атрибута в Magento 2?</p>
+              
+                <p>Не можу додати ще одне значення атрибута в Magento 2. Підрахував кількість вже існуючих значень - 248. Виявилося, що у всьому винен PHP, а саме значення за замовчуванням _max_inputvars = 1000. Змінив на 100000.
+Згадав, що знаю про цю штуку ще з Magento 1, але поки не записав рецепт, змушений був в черговий раз гуглити.
+Подробиці тут </p>
               
           </section>
       </a>
@@ -243,7 +248,7 @@
       <article class="post-card post"> 
     
     <a class="post-card-image-link" href="https://alex-79.github.io/nginx-pagespeed-openssl/">
-      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=2004&amp;q=80)"></div>
+      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
     </a>
     
 
@@ -257,8 +262,10 @@
               <h2 class="post-card-title">Як я готую NGINX з модулем PAGESPEED</h2>
           </header>
           <section class="post-card-excerpt">
-               
-                <p>Nginx з модулем pagespeed та свіжим openssl</p>
+              
+                <p>Останнім часом майже взагалі не використовую Apache. Є кілька проектів з категорії &ldquo;ой, а про вас забули&rdquo; та &ldquo;не чіпай поки працює&rdquo;, а на нових - лише nginx.
+Готую nginx з pagespeed-ом за таким рецептом:
+#!/bin/sh apt-get install build-essential ca-certificates zlib1g-dev libpcre3 libpcre3-dev tar unzip libssl-dev checkinstall OPENSSL_VER=1.1.0g NPS_VER=1.12.34.3-stable NGINX_VER=1.13.8 cd /opt wget -c https://www.openssl.org/source/openssl-$OPENSSL_VER.tar.gz tar -xzvf openssl-$OPENSSL_VER.tar.gz rm openssl-$OPENSSL_VER.tar.gz wget https://github.com/apache/incubator-pagespeed-ngx/archive/v${NPS_VER}.zip unzip v${NPS_VER}.zip rm v${NPS_VER}.zip NPS_DIR=$(find . -name &quot;*pagespeed-ngx-${NPS_VER}&quot; -type d | sed -e 's/\. ...  </p>
               
           </section>
       </a>

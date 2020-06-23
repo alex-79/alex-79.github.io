@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="uk-UA" />
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>IP-телефонія на базі Asterisk. Частина 4: Голосове меню &middot; </title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="https://alex-79.github.io/favicon.ico" />
+    <link rel="canonical" href="https://alex-79.github.io/howto-asterisk-part-4/" />
+
+     <meta name="description" content="Цикл статей по розгортанню IP-телефонії на базі Asterisk. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Роб" /> 
+
+     
+    
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1560579499-ab30d29dfd9a?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
+    
+ 
+    <meta name="twitter:title" content="IP-телефонія на базі Asterisk. Частина 4: Голосове меню"/>
+    <meta name="twitter:description" content="Цикл статей по розгортанню IP-телефонії на базі Asterisk. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Роб"/>
+    <meta name="twitter:url" content="https://alex-79.github.io/howto-asterisk-part-4/" />
+    <meta name="twitter:site" content="@kr_ingulets"/>
+
+    <meta property="og:site_name" content="" />
+    <meta property="og:title" content="IP-телефонія на базі Asterisk. Частина 4: Голосове меню &middot; Бортовий журнал Бендера" />
+    <meta property="og:url" content="https://alex-79.github.io/howto-asterisk-part-4/" />
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="Цикл статей по розгортанню IP-телефонії на базі Asterisk. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Роб" />
+
+    <meta property="article:published_time" content="2019-12-30T02:00:00Z" />
+    <meta property="article:tag" content="linux" />
+
+    <meta property="og:image" content="https://images.unsplash.com/photo-1560579499-ab30d29dfd9a?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
+
+
+    <meta name="generator" content="Hugo 0.40.1" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="https://alex-79.github.io/built/screen.css" /> 
+    <link rel="stylesheet" type="text/css" href="https://alex-79.github.io/css/casper-two.css" /> 
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css" />
+    
+
+     
+
+</head>
+
+
+<body class="post-template">
+  <div class="site-wrapper"> 
+
+<header class="site-header outer">
+  <div class="inner">
+    <nav class="site-nav">
+      <div class="site-nav-left">
+
+        <ul class="nav" role="menu">
+        
+        
+        
+            <li class="" role="menuitem">
+              <a href="/">Home</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/tags/linux/">Linux</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/tags/web/">Web</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/tags/magento/">Magento</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/tags/php/">PHP</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/tags/js/">JS</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/tags/python/">Python</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/tags/mysql/">MYSQL</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/tags/books/">Книжки</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/about/">Про мене</a>
+            </li>
+        
+      </ul></div>
+
+      <div class="site-nav-right">
+        <div class="social-links">
+                    
+
+                    <a class="social-link social-link-tw" href="https://twitter.com/kr_ingulets" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg></a>
+
+                    <a class="social-link" href="https://github.com/alex-79" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+
+                    
+
+                    
+        </div>  
+            
+      </div>
+
+    </nav>  
+
+  </div>
+</header>
+
+<main id="site-main" class="site-main outer" role="main">
+  <div class="inner">
+    
+      <article class="post-full post"> 
+    <header class="post-full-header">
+        <section class="post-full-meta">
+            <time class="post-full-meta-date" datetime="2019-12-30">30 December 2019</time>
+                <span class="date-divider">/</span> <a href="https://alex-79.github.io/tags/linux/">#linux</a>&nbsp;
+        </section>
+        <h1 class="post-full-title">IP-телефонія на базі Asterisk. Частина 4: Голосове меню</h1>
+    </header>
+    
+    <figure class="post-full-image" style="background-image: url(https://images.unsplash.com/photo-1560579499-ab30d29dfd9a?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)">
+    </figure>
+
+    <section class="post-full-content">
+        <div class="kg-card-markdown">
+        
+
+<p>Цикл статей по розгортанню IP-телефонії на базі <strong><em>Asterisk</em></strong>. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Робота була захищена, сертифікат отриманий, все написане тестувалось і є повтінстю робочою реалізацією. Інформація в статті і версії програмного забезбечення актуальні на 2017 рік.</p>
+
+<ul>
+<li>частина 1 - <a href="https://bender.kr.ua/howto-asterisk-part-1/">Встановлення сервера Asterisk</a></li>
+<li>частина 2 - <a href="https://bender.kr.ua/howto-asterisk-part-2/">Налаштування SIP</a></li>
+<li>частина 3 - <a href="https://bender.kr.ua/howto-asterisk-part-3/">Логіка обробки дзвінків (Dialplan)</a></li>
+</ul>
+
+<h1 id="4-голосове-меню">4. Голосове меню</h1>
+
+<h2 id="4-1-створення-багаторівневого-голосового-меню">4.1 Створення багаторівневого голосового меню</h2>
+
+<p>Створюємо голосове меню з 3 рівнями:</p>
+
+<ol>
+<li><em>Головне меню</em> - вітання, пропозиція набрати додатковий номер для дозвону в конкретний відділ компанії (1 - відділ продажів, 2 - відділ закупівель, 3 - питання доставки, 4 - з&rsquo;єднання з секретарем, 5 - залишити голосове повідомлення, 0 - повторити меню).
+
+<ol>
+<li><em>Меню відділу продажів</em> - пропозиція набрати додатковий номер для з&rsquo;єднання з фахівцем з конкретної товарної групи (1 - питання і консультації по товарній групі 1, 2 - питання і консультації по товарній групі 2, 3 - з&rsquo;єднання з оператором, 0 - повторити меню, 9 - повернутися до попереднього меню).</li>
+<li><em>Меню відділу закупівель</em> - пропозиція набрати додатковий номер для з&rsquo;єднання з фахівцем із закупівель (1 - з&rsquo;єднання з персональним менеджером, 2 - пропозиції щодо співпраці, 0 - повторити меню, 9 - повернутися до попереднього меню).
+
+<ol>
+<li><em>Меню вибору додаткового номера менеджера із закупівель</em> (1 - з&rsquo;єднання з менеджером 1, 2 - з&rsquo;єднання з менеджером 2, 0 - повторити меню, 9 - повернутися до попереднього меню, 8 - перейти в головне меню).</li>
+</ol></li>
+<li><em>Меню для питань пов&rsquo;язаних з доставкою</em> - пропозиція набрати додатковий номер для уточнення питань комплектації і доставки замовлень (1 - дізнатися статус замовлення за номером, 2 - з&rsquo;єднання з оператором, 0 - повторити меню, 9 - повернутися до попереднього меню).</li>
+</ol></li>
+</ol>
+
+<p>Описуємо вищевказане меню:</p>
+
+<pre><code>; головне меню
+[ivr-mainmenu] 
+exten =&gt; s,1,Answer() 
+exten =&gt; s,2,Background(ivr/welcome) ; вітання
+exten =&gt; s,3,GotoIfTime(18:00-9:00|mon-fri|*|*?ivr-holiday,s,1)
+exten =&gt; s,4,GotoIfTime(*|sat-sun|*|*?ivr-holiday,s,1)
+exten =&gt; s,5,Background(ivr/mainmenu) ; пропозиція набрати додатковий номер для дозвону в конкретний відділ компанії (1 - відділ продажів, 2 - відділ закупівель, 3 - питання доставки, 4 - з'єднання з секретарем, 5 - залишити голосове повідомлення, 0 - повторити меню)
+exten =&gt; s,6,Background(ivr/make-a-choice) ; зробіть свій вибір 
+; чекаємо протягом 5 секунд
+exten =&gt; s,7,WaitExten(5) 
+; якщо абонент обрав 1 - переходимо в меню відділу продажів
+exten =&gt; 1,1,Goto(ivr-sales,s,1) 
+; якщо абонент обрав 2 - переходимо в меню відділу закупівель
+exten =&gt; 2,1,Goto(ivr-buying-1,s,1)  
+; якщо абонент обрав 3 - переходимо в меню відділу доставки
+exten =&gt; 3,1,Goto(ivr-warehouses,s,1)  
+; якщо абонент обрав 4 - з'єднуємо з секретарем
+exten =&gt; 4,1,Dial(SIP/601)
+; якщо абонент обрав 5 - відправляємо на голосову пошту
+exten =&gt; 5,1,Voicemail(601 @default)
+; якщо абонент обрав 0 - повторюємо меню
+exten =&gt; 0,1,Goto(s,5)  
+; якщо обрано невірний номер - повторюємо меню
+exten =&gt; i,1,Goto(s,5)  
+; по таймауту пропонуємо ще раз зробити вибір
+exten =&gt; t,1,Goto(s,6)  
+
+; сценарій для відповіді абоненту в не робочий час
+[ivr-holiday]
+exten =&gt; s,1,Playback(ivr/holiday) ; нажаль Ви подзвонили в не робочий час, залиште нам голосове повідомлення
+exten =&gt; s,2,Goto(ivr-mainmenu,5,1)
+
+; меню відділу продажів
+[ivr-sales] 
+exten =&gt; s,1,Background(ivr/salesmenu) ; пропозиція набрати додатковий номер для з'єднання з фахівцем з конкретної товарної групи (1 - питання і консультації по товарній групі 1, 2 - питання і консультації по товарній групі 2, 3 - з'єднання з оператором, 0 - повторити меню, 9 - повернутися до попереднього меню) 
+exten =&gt; s,2,Background(ivr/make-a-choice) ; зробіть свій вибір
+; чекаємо протягом 5 секунд
+exten =&gt; s,3,WaitExten(5) 
+; якщо абонент обрав 1 - з'єднуємо менеджерами, що відповідають за товарну групу 1
+exten =&gt; 1,1,Dial(SIP/201&amp;SIP/202,20)
+exten =&gt; 1,n,Hangup()
+; якщо абонент обрав 2 - з'єднуємо менеджерами, що відповідають за товарну групу 2
+exten =&gt; 2,1,Dial(SIP/203&amp;SIP/204,20)
+exten =&gt; 2,n,Hangup()
+; якщо абонент обрав 3 - з'єднуємо з оператором
+exten =&gt; 3,1,Dial(SIP/201&amp;SIP/202&amp;SIP/203&amp;SIP/204,20)
+exten =&gt; 3,n,Hangup()
+
+; якщо абонент обрав 0 - повторюємо меню
+exten =&gt; 0,1,Goto(s,1) 
+; якщо абонент обрав 9 - переходимо до батьківського меню
+exten =&gt; 9,1,Goto(ivr-mainmenu,s,5) 
+; якщо обрано невірний номер - повторюємо меню
+exten =&gt; i,1,Goto(s,1)  
+; по таймауту пропонуємо ще раз зробити вибір
+exten =&gt; t,1,Goto(s,2)  
+
+; меню відділу закупівель 
+[ivr-buying-1] 
+exten =&gt; s,1,Background(ivr/buyingmenu-1) ; пропозиція набрати додатковий номер для з'єднання з фахівцем із закупівель (1 - з'єднання з персональним менеджером, 2 - пропозиції щодо співпраці, 0 - повторити меню, 9 - повернутися до попереднього меню) 
+exten =&gt; s,2,Background(ivr/make-a-choice) ; зробіть свій вибір
+; чекаємо протягом 5 секунд
+exten =&gt; s,3,WaitExten(5) 
+; якщо абонент обрав 1 - з'єднуємо з персональним менеджером, переводимо на меню с вибором персонального менеджера
+exten =&gt; 1,1,Goto(ivr-buying-2,s,1)
+; якщо абонент обрав 2 - з'єднуємо с менеджером для обговорення умов співробітництва
+exten =&gt; 2,1,Dial(SIP/301&amp;SIP/302,20)
+exten =&gt; 2,n,Hangup()
+; якщо абонент обрав 0 - повторюємо меню
+exten =&gt; 0,1,Goto(s,1) 
+; якщо абонент обрав 9 - переходимо до батьківського меню
+exten =&gt; 9,1,Goto(ivr-mainmenu,s,5) 
+; якщо обрано невірний номер - повторюємо меню
+exten =&gt; i,1,Goto(s,1)  
+; по таймауту пропонуємо ще раз зробити вибір
+exten =&gt; t,1,Goto(s,2)
+
+; меню з вибором персонального менеджера 
+[ivr-buying-2] 
+exten =&gt; s,1,Background(ivr/buyingmenu-2) ; пропозиція ввести 3-х значний номер персонального менеджера, 0 - повторити меню, 9 - повернутися до попереднього меню, 8 - перейти в головне меню
+exten =&gt; s,2,Background(ivr/make-a-choice) ; зробіть свій вибір
+; чекаємо протягом 5 секунд
+exten =&gt; s,3,WaitExten(5) 
+exten =&gt; _3XX,1,Dial(SIP/${EXTEN},20)
+exten =&gt; _3XX,n,Hangup()
+; якщо абонент обрав 0 - повторюємо меню
+exten =&gt; 0,1,Goto(s,1) 
+; якщо абонент обрав 9 - переходимо до батьківського меню
+exten =&gt; 9,1,Goto(ivr-buying-1,s,3) 
+; якщо обрано невірний номер - повторюємо меню
+exten =&gt; i,1,Goto(s,1)  
+; по таймауту пропонуємо ще раз зробити вибір
+exten =&gt; t,1,Goto(s,2)
+
+; меню для питань пов'язаних з доставкою 
+[ivr-warehouses] 
+exten =&gt; s,1,Background(ivr/warehousemenu) ; пропозиція набрати додатковий номер для уточнення питань комплектації і доставки замовлень (1 - дізнатися статус замовлення за номером, 2 - з'єднання з оператором, 0 - повторити меню, 9 - повернутися до попереднього меню) 
+exten =&gt; s,2,Background(ivr/make-a-choice) ; зробіть свій вибір
+; чекаємо протягом 5 секунд
+exten =&gt; s,3,WaitExten(5) 
+; якщо абонент обрав 1 - пропонуємо ввести номер замовлення і повідомляємо його статус
+exten =&gt; 1,1,Background(ivr/input-order-number) ; введіть номер замовлення
+exten =&gt; 1,n,WaitExten(30)
+; виводимо інформацію про замовлення в змінну ORDERSTATUS, використовуючи номер замовлення і номер абонента, інформацію дістаємо з БД скриптом на PHP
+exten =&gt; 1,n,AGI(check_status.php, ${CALLERID(number)}, ${EXTEN})
+exten =&gt; 1,n,Festival(${ORDERSTATUS},any)
+exten =&gt; 1,n,Hangup()
+; якщо абонент обрав 2 - з'єднуємо з оператором складу
+exten =&gt; 2,1,Dial(SIP/401&amp;SIP/402,20)
+exten =&gt; 2,n,Hangup()
+; якщо абонент обрав 0 - повторюємо меню
+exten =&gt; 0,1,Goto(s,1) 
+; якщо абонент обрав 9 - переходимо до батьківського меню
+exten =&gt; 9,1,Goto(ivr-mainmenu,s,5) 
+; якщо обрано невірний номер - повторюємо меню
+exten =&gt; i,1,Goto(s,1)  
+; по таймауту пропонуємо ще раз зробити вибір
+exten =&gt; t,1,Goto(s,2)
+</code></pre>
+
+<p>Змінюємо контекст вхідних дзвінків із зовнішніх ліній (умовно на номер <em>YYYYYY</em>):</p>
+
+<pre><code>;вхідні звінки із зовнішніх ліній
+[call-in]
+exten =&gt; YYYYYY,1,Set(RECORDING=1)
+exten =&gt; YYYYYY,1,Macro(recording,${CALLERID(num)},${EXTEN})
+exten =&gt; YYYYYY,n,Goto(ivr-mainmenu,s,1) ; всі вхідні дзвінки адресуються на голосове меню
+</code></pre>
+
+<p>Файли для голосового меню зберігаємо в директорію <em>/var/lib/asterisk/sounds/en/ivr</em></p>
+
+<pre><code>[root@asterisk-centos en]# ls -l /var/lib/asterisk/sounds/en/ivr
+итого 1156
+-rw-r--r-- 1 asterisk asterisk 171404 Май  7 10:56 buyingmenu-1.wav
+-rw-r--r-- 1 asterisk asterisk 158924 Май  7 10:57 buyingmenu-2.wav
+-rw-r--r-- 1 asterisk asterisk 105164 Май  7 10:54 holiday.wav
+-rw-r--r-- 1 asterisk asterisk  42124 Май  7 11:00 input-order-number.wav
+-rw-r--r-- 1 asterisk asterisk 208524 Май  7 10:52 mainmenu.wav
+-rw-r--r-- 1 asterisk asterisk  40204 Май  7 10:53 make-a-choice.wav
+-rw-r--r-- 1 asterisk asterisk 239564 Май  7 10:55 salesmenu.wav
+-rw-r--r-- 1 asterisk asterisk 175244 Май  7 10:58 warehousemenu.wav
+-rw-r--r-- 1 asterisk asterisk  30284 Май  7 10:51 welcome.wav
+</code></pre>
+
+<p>Перевіряємо работу голосового меню:</p>
+
+<pre><code>asterisk-centos*CLI&gt; 
+  == Using SIP RTP CoS mark 5
+    -- Executing [YYYYYY@call-in:1] Set(&quot;SIP/zadarma-00000000&quot;, &quot;RECORDING=1&quot;) in new stack
+    -- Executing [YYYYYY@call-in:2] Goto(&quot;SIP/zadarma-00000000&quot;, &quot;ivr-mainmenu,s,1&quot;) in new stack
+    -- Goto (ivr-mainmenu,s,1)
+    -- Executing [s@ivr-mainmenu:1] Answer(&quot;SIP/zadarma-00000000&quot;, &quot;&quot;) in new stack
+    -- Executing [s@ivr-mainmenu:2] BackGround(&quot;SIP/zadarma-00000000&quot;, &quot;ivr/welcome&quot;) in new stack
+    -- &lt;SIP/zadarma-00000000&gt; Playing 'ivr/welcome.slin' (language 'ru')
+       &gt; 0xa2bd990 -- Probation passed - setting RTP source address to 185.45.152.162:14410
+    -- Executing [s@ivr-mainmenu:3] GotoIfTime(&quot;SIP/zadarma-00000000&quot;, &quot;18:00-9:00|mon-fri|*|*?ivr-holiday,s,1&quot;) in new stack
+    -- Executing [s@ivr-mainmenu:4] GotoIfTime(&quot;SIP/zadarma-00000000&quot;, &quot;*|sat-sun|*|*?ivr-holiday,s,1&quot;) in new stack
+    -- Executing [s@ivr-mainmenu:5] BackGround(&quot;SIP/zadarma-00000000&quot;, &quot;ivr/mainmenu&quot;) in new stack
+    -- &lt;SIP/zadarma-00000000&gt; Playing 'ivr/mainmenu.slin' (language 'ru')
+    -- Executing [1@ivr-mainmenu:1] Goto(&quot;SIP/zadarma-00000000&quot;, &quot;ivr-sales,s,1&quot;) in new stack
+    -- Goto (ivr-sales,s,1)
+    -- Executing [s@ivr-sales:1] BackGround(&quot;SIP/zadarma-00000000&quot;, &quot;ivr/salesmenu&quot;) in new stack
+    -- &lt;SIP/zadarma-00000000&gt; Playing 'ivr/salesmenu.slin' (language 'ru')
+    -- Executing [s@ivr-sales:2] BackGround(&quot;SIP/zadarma-00000000&quot;, &quot;ivr/make-a-choice&quot;) in new stack
+    -- &lt;SIP/zadarma-00000000&gt; Playing 'ivr/make-a-choice.slin' (language 'ru')
+    -- Executing [9@ivr-sales:1] Goto(&quot;SIP/zadarma-00000000&quot;, &quot;ivr-mainmenu,s,5&quot;) in new stack
+    -- Goto (ivr-mainmenu,s,5)
+    -- Executing [s@ivr-mainmenu:5] BackGround(&quot;SIP/zadarma-00000000&quot;, &quot;ivr/mainmenu&quot;) in new stack
+    -- &lt;SIP/zadarma-00000000&gt; Playing 'ivr/mainmenu.slin' (language 'ru')
+    -- Executing [s@ivr-mainmenu:6] BackGround(&quot;SIP/zadarma-00000000&quot;, &quot;ivr/make-a-choice&quot;) in new stack
+    -- &lt;SIP/zadarma-00000000&gt; Playing 'ivr/make-a-choice.slin' (language 'ru')
+    -- Executing [s@ivr-mainmenu:7] WaitExten(&quot;SIP/zadarma-00000000&quot;, &quot;5&quot;) in new stack
+    -- Timeout on SIP/zadarma-00000000, going to 't'
+    -- Executing [t@ivr-mainmenu:1] Goto(&quot;SIP/zadarma-00000000&quot;, &quot;s,6&quot;) in new stack
+    -- Goto (ivr-mainmenu,s,6)
+    -- Executing [s@ivr-mainmenu:6] BackGround(&quot;SIP/zadarma-00000000&quot;, &quot;ivr/make-a-choice&quot;) in new stack
+    -- &lt;SIP/zadarma-00000000&gt; Playing 'ivr/make-a-choice.slin' (language 'ru')
+    -- Executing [s@ivr-mainmenu:7] WaitExten(&quot;SIP/zadarma-00000000&quot;, &quot;5&quot;) in new stack
+    -- Timeout on SIP/zadarma-00000000, going to 't'
+    -- Executing [t@ivr-mainmenu:1] Goto(&quot;SIP/zadarma-00000000&quot;, &quot;s,6&quot;) in new stack
+    -- Goto (ivr-mainmenu,s,6)
+    -- Executing [s@ivr-mainmenu:6] BackGround(&quot;SIP/zadarma-00000000&quot;, &quot;ivr/make-a-choice&quot;) in new stack
+    -- &lt;SIP/zadarma-00000000&gt; Playing 'ivr/make-a-choice.slin' (language 'ru')
+  == Spawn extension (ivr-mainmenu, s, 6) exited non-zero on 'SIP/zadarma-00000000'
+</code></pre>
+
+<h2 id="4-2-налаштування-голосовї-пошти">4.2 Налаштування голосовї пошти</h2>
+
+<p>Встановимо пакет <em>ssmtp</em> для відправлення повідомлень на електронну пошту:</p>
+
+<pre><code>yum install http://dl.fedoraproject.org/pub/fedora/linux/releases/25/Everything/i386/os/Packages/s/ssmtp-2.64-16.fc24.i686.rpm
+</code></pre>
+
+<p>Налаштовуємо відправлення через обліковий запис на <em>pdd.yandex.ru</em>. (<strong>!!! Ніякої &ldquo;зради&rdquo;, на момент виконання проекту яндекс ще не був заблокований, тому пишу все як було, принципово налаштування для інших поштових сервісів будуть мало чим відрізнятись !!!</strong>) Змінюємо файл <em>/etc/ssmtp/ssmtp.conf:</em></p>
+
+<pre><code>mailhub=smtp.yandex.ru:465
+UseTLS=YES
+AuthUser=login@my-company.com.ua
+AuthPass=password 
+rewriteDomain=my-company.com.ua
+hostname=localhost
+FromLineOverride=NO
+Root=login@my-company.com.ua
+TLS_CA_File=/etc/pki/tls/certs/ca-bundle.crt
+</code></pre>
+
+<p>В файл <em>/etc/ssmtp/revaliases</em> додаємо рядок:</p>
+
+<pre><code>root:login@my-company.com.ua:smtp.yandex.ru:465
+</code></pre>
+
+<p>В файлі <em>/etc/asterisk/voicemail.conf</em> налаштовуємо голосову пошту в Asterisk:</p>
+
+<pre><code>[general] 
+format = wav 
+attach = yes 
+delete = yes 
+maxmsg = 1000 
+envelope = yes 
+skipms = 3000 
+maxsilence = 10 
+silencethreshold = 128 
+maxlogins = 3 
+emaildateformat = %A, %B %d, %Y at %r  
+mailcmd=/usr/sbin/ssmtp -t 
+fromstring=VoiceMail
+
+[default] 
+601 =&gt; 123456,office,login@my-company.com.ua,attach=yes
+</code></pre>
+
+<p>Для доступу до голосової пошти додаємо в контекст внутрішніх ліній наступний рядок:</p>
+
+<pre><code>exten =&gt; 999,1,VoiceMailMain()
+</code></pre>
+
+<h2 id="4-3-налаштування-виводу-голосових-повідомлень-festival">4.3 Налаштування виводу голосових повідомлень (Festival)</h2>
+
+<p>Для програвання тексту встановимо пакет <em>Festival</em>:</p>
+
+<pre><code>cd /usr/src 
+wget http://www.cstr.ed.ac.uk/downloads/festival/2.4/speech_tools-2.4-release.tar.gz
+wget http://www.cstr.ed.ac.uk/downloads/festival/2.4/festival-2.4-release.tar.gz
+tar zxvf festival-2.4-release.tar.gz
+tar zxvf speech_tools-2.4-release.tar.gz
+cd speech_tools 
+./configure 
+make &amp;&amp; make install 
+cd .. 
+cd festival 
+./configure  
+make &amp;&amp; make install
+</code></pre>
+
+<p>Додаємо в PATH шлях до бінарного файла festival:</p>
+
+<pre><code>export PATH=$PATH:/usr/src/festival/bin/
+</code></pre>
+
+<p>Встановлюємо мовні файли:</p>
+
+<pre><code>mkdir /usr/src/festival/lib/voices/ 
+mkdir /usr/src/festival/lib/voices/russian/
+cd /usr/src/ 
+wget http://sourceforge.net/projects/festlang.berlios/files/msu_ru_nsh_clunits-0.5.tar.bz2 
+tar xjfv msu_ru_nsh_clunits-0.5.tar.bz2 
+mv /usr/src/msu_ru_nsh_clunits/ /usr/src/festival/lib/voices/russian
+</code></pre>
+
+<p>Далі додаємо на початок файлу <em>/usr/src/festival/lib/languages.scm</em></p>
+
+<pre><code>(define (language_russian)  
+&quot;(language_russian)   
+Set up language parameters for Russian.&quot;   
+(set! male1 voice_msu_ru_nsh_clunits)   
+(male1)   
+(Parameter.set 'Language 'russian) 
+)
+</code></pre>
+
+<p>додаємо перед</p>
+
+<pre><code>((equal? language 'americanenglish)
+    (language_american_english))
+</code></pre>
+
+<p>наступний код</p>
+
+<pre><code>((equal? language 'russian)
+    (language_russian))      
+</code></pre>
+
+<p>Встановлюємо мову на замовчування в файлі <em>/usr/src/festival/lib/siteinit.scm</em></p>
+
+<pre><code>(set! voice_default 'voice_msu_ru_nsh_clunits)
+</code></pre>
+
+<p>Конфігураційний файл <em>/etc/asterisk/festival.conf</em>:</p>
+
+<pre><code>[general] 
+host=localhost 
+port=1314 
+usecache=yes 
+cachedir=/var/lib/asterisk/festivalcache/ 
+festivalcommand=(tts_textasterisk &quot;%s&quot; 'file)(quit)\n
+</code></pre>
+
+<p>Для зберігання кешу створюємо відповідну папку</p>
+
+<pre><code>mkdir /var/lib/asterisk/festivalcache/
+chown asterisk. /var/lib/asterisk/festivalcache/
+</code></pre>
+
+<p>Запускаємо сервер Festival</p>
+
+<pre><code>/usr/src/festival/bin/festival --server
+</code></pre>
+
+<p>Скрипт <em>checkstatus.php</em> для перевірки статуса заказу може виглядатити так:</p>
+
+<pre><code>&lt;?php
+$conn = mysql_connect(&quot;localhost&quot;, &quot;mysql_user&quot;, &quot;mysql_password&quot;);
+mysql_select_db(&quot;myshop&quot;);
+//пошук статуса за номером телефону клієнта і номером замовлення
+$sql = &quot;SELECT status FROM orders WHERE phone = &quot;.$argv[1].&quot; AND order_id = &quot;.$argv[2];
+$result = mysql_query($sql);
+$row = mysql_fetch_assoc($result);
+echo 'SET VARIABLE ORDERSTATUS '.$row[&quot;status&quot;];
+?&gt;
+</code></pre>
+
+<hr />
+
+<p><a href="https://bender.kr.ua/howto-asterisk-part-5/">В наступній статті навчимося <strong><em>зберігати статистику в MySQL</em></strong>.</a></p>
+
+<ul>
+<li>частина 1 - <a href="https://bender.kr.ua/howto-asterisk-part-1/">Встановлення сервера Asterisk</a></li>
+<li>частина 2 - <a href="https://bender.kr.ua/howto-asterisk-part-2/">Налаштування SIP</a></li>
+<li>частина 3 - <a href="https://bender.kr.ua/howto-asterisk-part-3/">Логіка обробки дзвінків (Dialplan)</a></li>
+</ul>
+    
+        </div>
+    </section>
+
+    <footer class="post-full-footer">
+      <section class="author-card">
+        <img class="author-profile-image" src="https://alex-79.github.io/alexander.bobylev.png" alt="Author" />
+        <section class="author-card-content">
+            <h4 class="author-card-name"><a href="https://alex-79.github.io/">Олександр Бобилєв</a></h4>
+                <p>Залишаю собі право використовувати ненормативну (але інформативну) лексику там, де звичайні слова втрачають сенс і не відображають всієї палітри почуттів, від споглядання навколишньої дійсності.</p>
+        </section>
+      </section>
+    </footer>
+</article>
+    
+    
+    
+
+  </div>
+</main>
+
+
+<aside class="read-next outer">
+  <div class="inner">
+    <div class="read-next-feed">      
+      
+<article class="read-next-card" 
+            style="background-image: url(https://alex-79.github.io/img/blog-cover.jpg);" >
+    <header class="read-next-card-header">
+        <small class="read-next-card-header-sitetitle">&mdash; Бортовий журнал Бендера &mdash;</small>
+        
+        <h3 class="read-next-card-header-title"><a href="https://alex-79.github.io/tags/linux/">#linux</a></h3>
+    </header>
+    <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
+    </div>
+
+    <div class="read-next-card-content">
+      
+        <ul>
+          <li><a href="https://alex-79.github.io/howto-asterisk-part-3/">IP-телефонія на базі Asterisk. Частина 3: Логіка обробки дзвінків (Dialplan)</a></li>            
+        
+          <li><a href="https://alex-79.github.io/magento-payment-plugin-for-bitpay/">Рубимо електронні гроші в Magento</a></li>            
+        
+          <li><a href="https://alex-79.github.io/magento2-reindexer-for-large-catalog/">Проблема переіндексації великого каталогу в Magento 2</a></li>            
+        
+          <li><a href="https://alex-79.github.io/5-extensions-for-default-magento2/">5 розширень, які ти зобов&#39;язаний поставити на Magento 2</a></li>            
+        </ul>
+    </div>
+    <footer class="read-next-card-footer">
+      
+        <a href="https://alex-79.github.io/tags/linux/">See all related posts →</a>
+    </footer>
+</article>
+
+
+      
+      <article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="https://alex-79.github.io/year-in-books-2019/">
+      <div class="post-card-image" style="background-image: url(https://alex-79.github.io/img/goodreads-2019-3.png)"></div>
+    </a>
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="https://alex-79.github.io/year-in-books-2019/">
+          <header class="post-card-header">
+              <span class="post-card-tags">
+              #books  </span>
+              
+              <h2 class="post-card-title">Мій книжковий 2019 рік</h2>
+          </header>
+          <section class="post-card-excerpt">
+              
+                <p>За минулий рік я прочитав 13 книжок. Усі вони були художніми, бо до історій &ldquo;успішного успіху&rdquo; я останніми роками відношусь з великою долею скептицизму, а по роботі за минулий рік читав статті виключно з інтернету. Якщо коротко по підсумкам, то &ldquo;передозування&rdquo; Пратчеттом у 2018, не дало насолодитись ним у 2019, не все зі Стівена Кінга виявляється золотом, а магія книжок з дитинства не розвіюється навіть коли в тебе вже з&rsquo;являються власні діти. ...  </p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+        <a href="/about"><img class="author-profile-image" src="https://alex-79.github.io/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
+        <span class="reading-time">15 хв</span>
+      </footer>
+    </div>
+</article>
+      
+      
+      <article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="https://alex-79.github.io/iptables-ipset/">
+      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1546088018-16609adf2afa?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
+    </a>
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="https://alex-79.github.io/iptables-ipset/">
+          <header class="post-card-header">
+              <span class="post-card-tags">
+              #linux 
+              #web  </span>
+              
+              <h2 class="post-card-title">Блокування трафіку за допомогою iptables та ipset</h2>
+          </header>
+          <section class="post-card-excerpt">
+              
+                <p>Для захисту від DDOS-атак або паразитного трафіку, блокування на рівні сервера, а не nginx (як наприклад тут - https://bender.kr.ua/nginx-geoip/) , є більш ефективним. Тому, якщо у вас виникла потреба блокувати IP з певних країн і не існує інших застережень, варто скористатись зв&rsquo;язкою iptables + ipset.
+Для початку встановлюємо ipset:
+apt-get install ipset  Створюємо скрипт, який буде оновлювати таблюцю адрес для блокування. Списки IP за приналежністю до країни, можна взяти на сайті ipdeny. ...  </p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+        <a href="/about"><img class="author-profile-image" src="https://alex-79.github.io/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
+        <span class="reading-time">2 хв</span>
+      </footer>
+    </div>
+</article>
+      
+    </div>
+  </div>
+</aside>
+
+<div class="floating-header">
+  <div class="floating-header-logo">
+    <a href="https://alex-79.github.io/">
+      
+      <span></span>
+    </a>
+  </div>
+  <div class="floating-header-title">IP-телефонія на базі Asterisk. Частина 4: Голосове меню</div>
+  <div class="floating-header-share">  
+    <a class="floating-header-share-tw" href="https://twitter.com/share?text=IP-%d1%82%d0%b5%d0%bb%d0%b5%d1%84%d0%be%d0%bd%d1%96%d1%8f%20%d0%bd%d0%b0%20%d0%b1%d0%b0%d0%b7%d1%96%20Asterisk.%20%d0%a7%d0%b0%d1%81%d1%82%d0%b8%d0%bd%d0%b0%204%3a%20%d0%93%d0%be%d0%bb%d0%be%d1%81%d0%be%d0%b2%d0%b5%20%d0%bc%d0%b5%d0%bd%d1%8e&amp;url=https%3a%2f%2falex-79.github.io%2fhowto-asterisk-part-4%2f"
+          onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+      </a>
+      <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2falex-79.github.io%2fhowto-asterisk-part-4%2f"
+          onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+      </a>
+  </div>
+
+  <progress class="progress" value="0">
+    <div class="progress-container">
+      <span class="progress-bar"></span>
+    </div>
+  </progress>
+</div>
+
+
+
+<footer class="site-footer outer">
+  <div class="site-footer-content inner">
+    <section class="copyright" style="line-height: 1.3em;">
+      <a href="/">Бортовий журнал Бендера</a> © 2017-2020 <br>
+      <span style="font-size: 0.8em; color: #555;">Hugo port of <a href="https://github.com/TryGhost/Casper">Casper 2.1.7</a> by <a href="https://www.telematika.org">EM</a></span>
+    </section>
+    <nav class="site-footer-nav">
+        <a href="/">Latest Posts</a>
+        
+        <a href="https://twitter.com/kr_ingulets" target="_blank" rel="noopener">Twitter</a>
+        <a href="https://github.com/alex-79" target="_blank" rel="noopener">Github</a>
+        
+        
+    </nav>  
+  </div>
+</footer>
+
+</div>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="https://alex-79.github.io/js/jquery.fitvids.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+    <script>
+
+
+
+
+
+$(document).ready(function () {
+    
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+</body></html>

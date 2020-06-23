@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Php on </title>
+    <link>https://alex-79.github.io/tags/php/</link>
+    <description>Recent content in Php on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>uk-UA</language>
+    <lastBuildDate>Wed, 06 Nov 2019 02:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://alex-79.github.io/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>NetBeans і проблема зі шрифтами</title>
+      <link>https://alex-79.github.io/netbeans-and-fonts/</link>
+      <pubDate>Wed, 06 Nov 2019 02:00:00 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/netbeans-and-fonts/</guid>
+      <description>Традиційно після встановлення NetBeans на Linux постає питання відображення шрифтів в IDE. В конфігурації за замовчування вони виглядають дуже погано.
+Найпопулярнішою порадою в інтернетах є додавання до файлу конфігурації etc/netbeans.conf такого рядка
+netbeans_default_options=&amp;quot; ... -J-Dswing.aatext=true -J-Dawt.useSystemAAFontSettings=lcd&amp;quot;  Після цього шрифти не набагато, але стають краще, особливо, якщо використати темну тему, бо на світлій все ще помітно &amp;ldquo;мило&amp;rdquo;.
+Ось тут на допомогу може прийти JetBrains :)))
+Є два варіанти: 1) користуватись PHPStorm, в якому зі шрифтами все добре (в силу різних причин для мене це взагалі не варіант) або 2) використати пропатчену JetBrains версію JDK.</description>
+    </item>
+    
+    <item>
+      <title>Магічне число 248 або Чому я не можу додати значення атрибута в Magento 2?</title>
+      <link>https://alex-79.github.io/magick-248/</link>
+      <pubDate>Wed, 18 Oct 2017 10:59:00 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/magick-248/</guid>
+      <description>Не можу додати ще одне значення атрибута в Magento 2. Підрахував кількість вже існуючих значень - 248. Виявилося, що у всьому винен PHP, а саме значення за замовчуванням _max_inputvars = 1000. Змінив на 100000.
+Згадав, що знаю про цю штуку ще з Magento 1, але поки не записав рецепт, змушений був в черговий раз гуглити.
+Подробиці тут</description>
+    </item>
+    
+  </channel>
+</rss>

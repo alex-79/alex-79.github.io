@@ -12,17 +12,19 @@
     <link rel="shortcut icon" href="https://alex-79.github.io/favicon.ico" />
     <link rel="canonical" href="https://alex-79.github.io/howto-install-telegram-debian-9/" />
 
-     <meta name="description" content="Встановлення месенджера Telegram на Debian 9 за допомогою Ubuntu PPA" /> 
+     <meta name="description" content="Для встановлення Telegram на Debian 9 можна скористатись Ubuntu PPA. Для цього виконаємо наступну послідовність:
+ Додаємо репозиторій в /etc/apt/source.list.d/t" /> 
 
      
     
     <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:image" content="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"/>
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
     
  
     <meta name="twitter:title" content="Встановлення Telegram на Debian 9"/>
-    <meta name="twitter:description" content="Встановлення месенджера Telegram на Debian 9 за допомогою Ubuntu PPA"/>
-    <meta name="twitter:url" content="https://alex-79.github.io/howto-install-telegram-debian-9" />
+    <meta name="twitter:description" content="Для встановлення Telegram на Debian 9 можна скористатись Ubuntu PPA. Для цього виконаємо наступну послідовність:
+ Додаємо репозиторій в /etc/apt/source.list.d/t"/>
+    <meta name="twitter:url" content="https://alex-79.github.io/howto-install-telegram-debian-9/" />
     <meta name="twitter:site" content="@kr_ingulets"/>
 
     <meta property="og:site_name" content="" />
@@ -31,12 +33,13 @@
     
 
     <meta property="og:type" content="article" />
-    <meta property="og:description" content="Встановлення месенджера Telegram на Debian 9 за допомогою Ubuntu PPA" />
+    <meta property="og:description" content="Для встановлення Telegram на Debian 9 можна скористатись Ubuntu PPA. Для цього виконаємо наступну послідовність:
+ Додаємо репозиторій в /etc/apt/source.list.d/t" />
 
-    <meta property="article:published_time" content="2020-02-03T00:00:00Z" />
+    <meta property="article:published_time" content="2020-02-03T05:39:14Z" />
     <meta property="article:tag" content="linux" />
 
-    <meta property="og:image" content="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"/>
+    <meta property="og:image" content="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
     <meta name="generator" content="Hugo 0.40.1" />
@@ -138,7 +141,7 @@
         <h1 class="post-full-title">Встановлення Telegram на Debian 9</h1>
     </header>
     
-    <figure class="post-full-image" style="background-image: url(https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=80)">
+    <figure class="post-full-image" style="background-image: url(https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)">
     </figure>
 
     <section class="post-full-content">
@@ -148,31 +151,27 @@
 <p>Для встановлення <strong>Telegram</strong> на Debian 9 можна скористатись <em>Ubuntu PPA</em>. Для цього виконаємо наступну послідовність:</p>
 
 <ol>
-<li><p>Додаємо репозиторій в <em>/etc/apt/source.list.d/telegram.list</em></p>
-
-<pre><code>deb http://ppa.launchpad.net/atareao/telegram/ubuntu xenial main
+<li>Додаємо репозиторій в <em>/etc/apt/source.list.d/telegram.list</em>
+<code>
+deb http://ppa.launchpad.net/atareao/telegram/ubuntu xenial main
 deb-src http://ppa.launchpad.net/atareao/telegram/ubuntu xenial main
-</code></pre></li>
-
-<li><p>Додаємо в систему відкритий ключ PGP до цього PPA</p>
-
-<pre><code>apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 36FD5529
-</code></pre>
-
-<p>За необхідності встановлюємо <em>dirmngr</em></p>
-
-<pre><code>apt install dirmngr
-</code></pre></li>
-
-<li><p>Оновлюємо список пакетів</p>
-
-<pre><code>apt update
-</code></pre></li>
-
-<li><p>Встановлюємо Telegram</p>
-
-<pre><code>apt install telegram
-</code></pre></li>
+</code></li>
+<li>Додаємо в систему відкритий ключ PGP до цього PPA
+<code>
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 36FD5529
+</code>
+За необхідності встановлюємо <em>dirmngr</em>
+<code>
+apt install dirmngr
+</code></li>
+<li>Оновлюємо список пакетів
+<code>
+apt update
+</code></li>
+<li>Встановлюємо Telegram
+<code>
+apt install telegram
+</code></li>
 </ol>
 
 <h2 id="посилання">Посилання</h2>
@@ -219,15 +218,13 @@ deb-src http://ppa.launchpad.net/atareao/telegram/ubuntu xenial main
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://alex-79.github.io/git-branch/">Як забрати гілку з git</a></li>            
+          <li><a href="https://alex-79.github.io/installing-python-3-6-on-debian-8/">Встановлення Python 3.6 на Debian 8</a></li>            
         
-          <li><a href="https://alex-79.github.io/magick-248/">Магічне число 248 або Чому я не можу додати значення атрибута в Magento 2?</a></li>            
+          <li><a href="https://alex-79.github.io/iptables-ipset/">Блокування трафіку за допомогою iptables та ipset</a></li>            
         
-                      
+          <li><a href="https://alex-79.github.io/mint-19-and-epson-perfection-v33/">Mint 19 і сканер Epson Perfection V33</a></li>            
         
-          <li><a href="https://alex-79.github.io/why-magento/">Чому ми обираємо Magento, а не інші системи</a></li>            
-        
-          <li><a href="https://alex-79.github.io/nginx-pagespeed-openssl/">Як я готую NGINX з модулем PAGESPEED</a></li>            
+          <li><a href="https://alex-79.github.io/year-in-books-2019/">Мій книжковий 2019 рік</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -238,32 +235,64 @@ deb-src http://ppa.launchpad.net/atareao/telegram/ubuntu xenial main
 
 
       
-      
       <article class="post-card post"> 
     
-    <a class="post-card-image-link" href="https://alex-79.github.io/magento-payment-plugin-for-bitpay/">
-      <div class="post-card-image" style="background-image: url(https://alex-79.github.io/img/bender-bitpay.png)"></div>
+    <a class="post-card-image-link" href="https://alex-79.github.io/howto-install-django-mysql-debian-9/">
+      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1538439907460-1596cafd4eff?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
     </a>
     
 
     <div class="post-card-content">
-      <a class="post-card-content-link" href="https://alex-79.github.io/magento-payment-plugin-for-bitpay/">
+      <a class="post-card-content-link" href="https://alex-79.github.io/howto-install-django-mysql-debian-9/">
           <header class="post-card-header">
               <span class="post-card-tags">
-              #magento  </span>
+              #python 
+              #web 
+              #mysql  </span>
               
-              <h2 class="post-card-title">Рубимо електронні гроші в Magento</h2>
+              <h2 class="post-card-title">Встановлення зв&#39;язки Django та MySQL на Debian 9</h2>
           </header>
           <section class="post-card-excerpt">
-               
-                <p>Підключення bitcoin в магазині на Magento 1.9</p>
+              
+                <p>Встановлення Django  Встановлюємо Python та додатковий інструментарій  apt install python3 python3-pip python3-venv  Створюємо папку для проекту та віртуальне середовище  mkdir myproject cd myproject python3 -m venv venv source venv/bin/activate  Встановлюємо Django та перевыряємо встановлену версію  python3 -m pip install Django python -m django --version  Створюємо новий проект  django-admin startproject myproject   З&rsquo;єднання з MySQL  Встановлюємо Percona Server  wget https://repo. ...  </p>
               
           </section>
       </a>
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://alex-79.github.io/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">1 хв</span>
+        <span class="reading-time">2 хв</span>
+      </footer>
+    </div>
+</article>
+      
+      
+      <article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="https://alex-79.github.io/howto-asterisk-part-5/">
+      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1484191914255-a429e6f819b4?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
+    </a>
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="https://alex-79.github.io/howto-asterisk-part-5/">
+          <header class="post-card-header">
+              <span class="post-card-tags">
+              #linux  </span>
+              
+              <h2 class="post-card-title">IP-телефонія на базі Asterisk. Частина 5: Деталізований звіт про виклики (Call Detail Records, CDR)</h2>
+          </header>
+          <section class="post-card-excerpt">
+              
+                <p>Цикл статей по розгортанню IP-телефонії на базі Asterisk. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Робота була захищена, сертифікат отриманий, все написане тестувалось і є повтінстю робочою реалізацією. Інформація в статті і версії програмного забезбечення актуальні на 2017 рік.
+ частина 1 - Встановлення сервера Asterisk частина 2 - Налаштування SIP частина 3 - Логіка обробки дзвінків (Dialplan) частина 4 - Голосове меню  5. ...  </p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+        <a href="/about"><img class="author-profile-image" src="https://alex-79.github.io/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
+        <span class="reading-time">4 хв</span>
       </footer>
     </div>
 </article>

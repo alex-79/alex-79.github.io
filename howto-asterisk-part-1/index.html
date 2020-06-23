@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="uk-UA" />
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>IP-телефонія на базі Asterisk. Частина 1: Встановлення сервера Asterisk &middot; </title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="https://alex-79.github.io/favicon.ico" />
+    <link rel="canonical" href="https://alex-79.github.io/howto-asterisk-part-1/" />
+
+     <meta name="description" content="Цикл статей по розгортанню IP-телефонії на базі Asterisk. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Роб" /> 
+
+     
+    
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1475691058852-37b5d9b6a878?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
+    
+ 
+    <meta name="twitter:title" content="IP-телефонія на базі Asterisk. Частина 1: Встановлення сервера Asterisk"/>
+    <meta name="twitter:description" content="Цикл статей по розгортанню IP-телефонії на базі Asterisk. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Роб"/>
+    <meta name="twitter:url" content="https://alex-79.github.io/howto-asterisk-part-1/" />
+    <meta name="twitter:site" content="@kr_ingulets"/>
+
+    <meta property="og:site_name" content="" />
+    <meta property="og:title" content="IP-телефонія на базі Asterisk. Частина 1: Встановлення сервера Asterisk &middot; Бортовий журнал Бендера" />
+    <meta property="og:url" content="https://alex-79.github.io/howto-asterisk-part-1/" />
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="Цикл статей по розгортанню IP-телефонії на базі Asterisk. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Роб" />
+
+    <meta property="article:published_time" content="2019-10-17T15:53:49Z" />
+    <meta property="article:tag" content="linux" />
+
+    <meta property="og:image" content="https://images.unsplash.com/photo-1475691058852-37b5d9b6a878?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
+
+
+    <meta name="generator" content="Hugo 0.40.1" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="https://alex-79.github.io/built/screen.css" /> 
+    <link rel="stylesheet" type="text/css" href="https://alex-79.github.io/css/casper-two.css" /> 
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css" />
+    
+
+     
+
+</head>
+
+
+<body class="post-template">
+  <div class="site-wrapper"> 
+
+<header class="site-header outer">
+  <div class="inner">
+    <nav class="site-nav">
+      <div class="site-nav-left">
+
+        <ul class="nav" role="menu">
+        
+        
+        
+            <li class="" role="menuitem">
+              <a href="/">Home</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/tags/linux/">Linux</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/tags/web/">Web</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/tags/magento/">Magento</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/tags/php/">PHP</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/tags/js/">JS</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/tags/python/">Python</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/tags/mysql/">MYSQL</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/tags/books/">Книжки</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/about/">Про мене</a>
+            </li>
+        
+      </ul></div>
+
+      <div class="site-nav-right">
+        <div class="social-links">
+                    
+
+                    <a class="social-link social-link-tw" href="https://twitter.com/kr_ingulets" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg></a>
+
+                    <a class="social-link" href="https://github.com/alex-79" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+
+                    
+
+                    
+        </div>  
+            
+      </div>
+
+    </nav>  
+
+  </div>
+</header>
+
+<main id="site-main" class="site-main outer" role="main">
+  <div class="inner">
+    
+      <article class="post-full post"> 
+    <header class="post-full-header">
+        <section class="post-full-meta">
+            <time class="post-full-meta-date" datetime="2019-10-17">17 October 2019</time>
+                <span class="date-divider">/</span> <a href="https://alex-79.github.io/tags/linux/">#linux</a>&nbsp;
+        </section>
+        <h1 class="post-full-title">IP-телефонія на базі Asterisk. Частина 1: Встановлення сервера Asterisk</h1>
+    </header>
+    
+    <figure class="post-full-image" style="background-image: url(https://images.unsplash.com/photo-1475691058852-37b5d9b6a878?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)">
+    </figure>
+
+    <section class="post-full-content">
+        <div class="kg-card-markdown">
+        
+
+<p>Цикл статей по розгортанню IP-телефонії на базі <strong><em>Asterisk</em></strong>. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Робота була захищена, сертифікат отриманий, все написане тестувалось і є повтінстю робочою реалізацією. Інформація в статті і версії програмного забезбечення актуальні на 2017 рік.</p>
+
+<h1 id="середовище">Середовище</h1>
+
+<p>Операційна система встановлена з образу <em>CentOS-7-i386-Minimal-1611.iso</em>. Им&rsquo;я сервера <em>asterisk-centos.localhost.local</em>. Адреса сервера в локальній мережі <em>192.168.1.201</em>.</p>
+
+<h1 id="встановлення-сервера-asterisk">Встановлення сервера Asterisk</h1>
+
+<h2 id="1-1-підготовка-середовища">1.1 Підготовка середовища</h2>
+
+<p>Розширюємо <em>bash</em>, встановлюємо <em>vim</em> и пакет <em>wget</em> для скачування архівів з сирцевим кодом:</p>
+
+<pre><code>yum install bash-completion vim-enhanced wget
+</code></pre>
+
+<p>Встановлюємо набір утиліт для компіляції програм з сирцевих кодов:</p>
+
+<pre><code>yum groupinstall -y Development Tools
+</code></pre>
+
+<p>Оновлюємо пакети в системі до останніх версій:</p>
+
+<pre><code>yum update
+</code></pre>
+
+<p>Відключаємо SElinux (знаю що за це хтось має бути підсмажений в *nix-овому пеклі, але що було, те було), Для цього в файлі <em>/etc/sysconfig/selinux</em> треба вказати:</p>
+
+<pre><code>SELINUX=disabled
+</code></pre>
+
+<p>Перезавантажуємо систему:</p>
+
+<pre><code>reboot
+</code></pre>
+
+<h2 id="1-2-збирання-залежностей-asterisk">1.2 Збирання залежностей Asterisk</h2>
+
+<p>Встановлюємо <strong><em>DAHDI</em></strong> для роботи з телефоними лініями загального призначення:</p>
+
+<pre><code>cd /usr/src
+wget http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-current.tar.gz
+tar xvfz dahdi-linux-complete-current.tar.gz
+rm -f dahdi-linux-complete-current.tar.gz
+cd dahdi-linux-complete-2.11.1+2.11.1/
+make all &amp;&amp; make install &amp;&amp; make config
+</code></pre>
+
+<p>Встановлюємо <strong><em>LibPRI</em></strong> для підтримки системи сигналізації <em>ISDN</em>:</p>
+
+<pre><code>cd /usr/src
+wget http://downloads.asterisk.org/pub/telephony/libpri/libpri-current.tar.gz
+tar xvfz libpri-current.tar.gz
+rm -f libpri-current.tar.gz
+cd libpri-1.6.0/
+make &amp;&amp; make install
+</code></pre>
+
+<p>Встановлюємо <strong><em>PJProject</em></strong> для підтримки канального драйвера <em>PJSIP</em>:</p>
+
+<pre><code>cd /usr/src
+wget http://www.pjsip.org/release/2.6/pjproject-2.6.tar.bz2
+tar xvfj pjproject-2.6.tar.bz2
+rm -f pjproject-2.6.tar.bz2
+cd pjproject-2.6
+./configure CFLAGS=&quot;-DNDEBUG -DPJ_HAS_IPV6=1&quot; --prefix=/usr --enable-shared --disable-video --disable-sound --disable-opencore-amr
+make dep &amp;&amp; make &amp;&amp; make install
+</code></pre>
+
+<pre><code>ldconfig -p | grep pj
+</code></pre>
+
+<pre><code>	libpjsua2.so.2 (libc6) =&gt; /lib/libpjsua2.so.2
+	libpjsua2.so (libc6) =&gt; /lib/libpjsua2.so
+	libpjsua.so.2 (libc6) =&gt; /lib/libpjsua.so.2
+	libpjsua.so (libc6) =&gt; /lib/libpjsua.so
+	libpjsip.so.2 (libc6) =&gt; /lib/libpjsip.so.2
+	libpjsip.so (libc6) =&gt; /lib/libpjsip.so
+	libpjsip-ua.so.2 (libc6) =&gt; /lib/libpjsip-ua.so.2
+	libpjsip-ua.so (libc6) =&gt; /lib/libpjsip-ua.so
+	libpjsip-simple.so.2 (libc6) =&gt; /lib/libpjsip-simple.so.2
+	libpjsip-simple.so (libc6) =&gt; /lib/libpjsip-simple.so
+	libpjnath.so.2 (libc6) =&gt; /lib/libpjnath.so.2
+	libpjnath.so (libc6) =&gt; /lib/libpjnath.so
+	libpjmedia.so.2 (libc6) =&gt; /lib/libpjmedia.so.2
+	libpjmedia.so (libc6) =&gt; /lib/libpjmedia.so
+	libpjmedia-videodev.so.2 (libc6) =&gt; /lib/libpjmedia-videodev.so.2
+	libpjmedia-videodev.so (libc6) =&gt; /lib/libpjmedia-videodev.so
+	libpjmedia-codec.so.2 (libc6) =&gt; /lib/libpjmedia-codec.so.2
+	libpjmedia-codec.so (libc6) =&gt; /lib/libpjmedia-codec.so
+	libpjmedia-audiodev.so.2 (libc6) =&gt; /lib/libpjmedia-audiodev.so.2
+	libpjmedia-audiodev.so (libc6) =&gt; /lib/libpjmedia-audiodev.so
+	libpjlib-util.so.2 (libc6) =&gt; /lib/libpjlib-util.so.2
+	libpjlib-util.so (libc6) =&gt; /lib/libpjlib-util.so
+	libpj.so.2 (libc6) =&gt; /lib/libpj.so.2
+	libpj.so (libc6) =&gt; /lib/libpj.so
+</code></pre>
+
+<p>Встановлюємо <strong><em>jansson</em></strong>, бібліотеку для роботи з даними в форматі <em>json</em>:</p>
+
+<pre><code>cd /usr/src
+wget -O jansson.tar.gz http://www.digip.org/jansson/releases/jansson-2.10.tar.gz
+tar vxfz jansson.tar.gz
+rm -f jansson.tar.gz
+cd jansson-2.10/
+autoreconf --force --install
+./configure
+make &amp;&amp; make install
+</code></pre>
+
+<h2 id="1-3-встановлення-asterisk">1.3 Встановлення Asterisk</h2>
+
+<pre><code>cd /usr/src
+wget http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-13-current.tar.gz
+tar xvfz asterisk-13-current.tar.gz
+rm -f asterisk-13-current.tar.gz
+cd asterisk-13.15.0/
+contrib/scripts/get_mp3_source.sh
+contrib/scripts/install_prereq install
+./configure
+make menuselect
+</code></pre>
+
+<p>Крім запропонованих значень обираємо підтримку <em>MySQL</em> і звукові файли російською мовою (української озвучки тоді ще не підвезли, можливо зараз ситуація інша - не перевіряв):</p>
+
+<pre><code>    • Add-ons: format_mp3, res_config_mysql, app_mysql и cdr_mysql
+    • Core Sound Packages: CORE-SOUNDS-RU-WAV
+</code></pre>
+
+<p>Після вибору налаштувань в menuselect встановлюємо <strong><em>Asterisk</em></strong>:</p>
+
+<pre><code>make
+make install
+make config
+ldconfig
+</code></pre>
+
+<p>Створюємо конфігураційні файли:</p>
+
+<pre><code>make samples
+</code></pre>
+
+<p>Для запуску Asterisk необхідно створити користувача з відповідними правами:</p>
+
+<pre><code>useradd -m asterisk
+chown asterisk. /var/run/asterisk
+chown -R asterisk. /etc/asterisk
+chown -R asterisk. /var/{lib,log,spool}/asterisk
+chown -R asterisk. /usr/lib/asterisk
+</code></pre>
+
+<p>В файлі <em>/etc/sysconfig/asterisk</em> розкоментуємо рядки:</p>
+
+<pre><code>AST_USER=&quot;asterisk&quot;
+AST_GROUP=&quot;asterisk&quot;
+</code></pre>
+
+<p>Запустимо Asterisk:</p>
+
+<pre><code>service asterisk start
+</code></pre>
+
+<p>Перевіримо роботу Asterisk:</p>
+
+<pre><code>asterisk -r
+</code></pre>
+
+<pre><code>Asterisk 13.15.0, Copyright (C) 1999 - 2014, Digium, Inc. and others.
+Created by Mark Spencer &lt;markster@digium.com&gt;
+Asterisk comes with ABSOLUTELY NO WARRANTY; type 'core show warranty' for details.
+This is free software, with components licensed under the GNU General Public
+License version 2 and other licenses; you are welcome to redistribute it under
+certain conditions. Type 'core show license' for details.
+=========================================================================
+Connected to Asterisk 13.15.0 currently running on asterisk-centos (pid = 25939)
+asterisk-centos*CLI&gt; 
+</code></pre>
+
+<h2 id="1-4-налаштування-журналу-подій">1.4 Налаштування журналу подій</h2>
+
+<p>Налаштуємо ведення логів Asterisk в форматі, який буде необхіден для програми <em>fail2ban</em>. Для цього в файлі <em>/etc/asterisk/logger.conf</em> розкоментуємо рядок:</p>
+
+<pre><code>dateformat=%F %T ; ISO 8601 date format
+</code></pre>
+
+<p>Увімкнемо <em>Asterisk Security Framework</em>. Для цього в файлі <em>logger.conf</em>  розкоментуємо рядок:</p>
+
+<pre><code>security =&gt; security
+</code></pre>
+
+<p>В цьому випадку інформація Asterisk Security Framework буде писатися у файл <em>security</em>.
+Після внесення змін необхідно перечитати конфігурацію:</p>
+
+<pre><code>asterisk-centos*CLI&gt; logger reload
+</code></pre>
+
+<p>В папці логів Asterisk (<em>/var/log/asterisk</em>) має з&rsquo;явитись файл з назвою security.</p>
+
+<pre><code>asterisk-centos*CLI&gt; logger show channels
+</code></pre>
+
+<pre><code>Channel                             Type     Status    Configuration
+-------                             ----     ------    -------------
+/var/log/asterisk/messages          File     Enabled    - NOTICE WARNING ERROR 
+                                    Console  Enabled    - NOTICE WARNING ERROR 
+/var/log/asterisk/security          File     Enabled    - SECURITY 
+</code></pre>
+
+<p>Змінимо рівень деталізації логів. В файлі <em>/etc/asterisk/asterisk.conf</em> встановимо рівень деталізації 9:</p>
+
+<pre><code>verbose = 9
+</code></pre>
+
+<p>Перезапустимо Asterisk і перевіримо рівень деталізації:</p>
+
+<pre><code>asterisk-centos*CLI&gt; core show settings
+</code></pre>
+
+<pre><code>PBX Core settings
+-----------------
+  Version:                     13.15.0
+  ...
+  Current console verbosity:   9
+  ...
+</code></pre>
+
+<h2 id="1-5-налаштування-ротації-логів">1.5 Налаштування ротації логів</h2>
+
+<p>Налаштуємо ротацію логів. Для цього в папці <em>/etc/logrotate.d</em> створюємо файл <em>asterisk</em>:</p>
+
+<pre><code>/var/log/asterisk/security
+/var/log/asterisk/messages
+{
+	daily
+        rotate 30
+        compress
+        missingok
+        notifempty
+        create 644 asterisk asterisk
+        postrotate
+                asterisk -rx 'reload'
+        endscript
+}
+</code></pre>
+
+<p>Запускаємо <em>logrotate</em> для перевірки роботи:</p>
+
+<pre><code>logrotate -f /etc/logrotate.d/asterisk
+</code></pre>
+
+<pre><code>ls -l /var/log/asterisk/
+</code></pre>
+
+<pre><code>итого 20
+drwxr-xr-x 2 asterisk asterisk   6 Апр 22 21:32 cdr-csv
+drwxr-xr-x 2 asterisk asterisk   6 Апр 22 21:32 cdr-custom
+drwxr-xr-x 2 asterisk asterisk   6 Апр 22 21:32 cel-custom
+-rw-r--r-- 1 asterisk asterisk 994 Апр 23 12:57 messages
+-rw-r--r-- 1 asterisk asterisk 542 Апр 23 12:50 messages.1.gz
+-rw-r--r-- 1 root     root     432 Апр 23 12:57 queue_log
+-rw-r--r-- 1 asterisk asterisk 244 Апр 23 12:57 security
+-rw-r--r-- 1 asterisk asterisk 131 Апр 23 12:50 security.1.gz
+</code></pre>
+
+<hr />
+
+<p><a href="https://bender.kr.ua/howto-asterisk-part-2/">В наступній статті будемо налаштовувати <strong><em>SIP</em></strong>.</a></p>
+    
+        </div>
+    </section>
+
+    <footer class="post-full-footer">
+      <section class="author-card">
+        <img class="author-profile-image" src="https://alex-79.github.io/alexander.bobylev.png" alt="Author" />
+        <section class="author-card-content">
+            <h4 class="author-card-name"><a href="https://alex-79.github.io/">Олександр Бобилєв</a></h4>
+                <p>Залишаю собі право використовувати ненормативну (але інформативну) лексику там, де звичайні слова втрачають сенс і не відображають всієї палітри почуттів, від споглядання навколишньої дійсності.</p>
+        </section>
+      </section>
+    </footer>
+</article>
+    
+    
+    
+
+  </div>
+</main>
+
+
+<aside class="read-next outer">
+  <div class="inner">
+    <div class="read-next-feed">      
+      
+<article class="read-next-card" 
+            style="background-image: url(https://alex-79.github.io/img/blog-cover.jpg);" >
+    <header class="read-next-card-header">
+        <small class="read-next-card-header-sitetitle">&mdash; Бортовий журнал Бендера &mdash;</small>
+        
+        <h3 class="read-next-card-header-title"><a href="https://alex-79.github.io/tags/linux/">#linux</a></h3>
+    </header>
+    <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
+    </div>
+
+    <div class="read-next-card-content">
+      
+        <ul>
+          <li><a href="https://alex-79.github.io/magento2-reindexer-for-large-catalog/">Проблема переіндексації великого каталогу в Magento 2</a></li>            
+        
+          <li><a href="https://alex-79.github.io/5-extensions-for-default-magento2/">5 розширень, які ти зобов&#39;язаний поставити на Magento 2</a></li>            
+        
+          <li><a href="https://alex-79.github.io/fail2ban-unban-ip/">Як розблокувати себе в fail2ban</a></li>            
+        
+          <li><a href="https://alex-79.github.io/howto-remove-parent-category-from-url-magento-2/">Вилучення ієрархії категорій з URL в Magento 2</a></li>            
+        </ul>
+    </div>
+    <footer class="read-next-card-footer">
+      
+        <a href="https://alex-79.github.io/tags/linux/">See all related posts →</a>
+    </footer>
+</article>
+
+
+      
+      <article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="https://alex-79.github.io/mint-19-and-epson-perfection-v33/">
+      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1503789146722-cf137a3c0fea?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
+    </a>
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="https://alex-79.github.io/mint-19-and-epson-perfection-v33/">
+          <header class="post-card-header">
+              <span class="post-card-tags">
+              #linux  </span>
+              
+              <h2 class="post-card-title">Mint 19 і сканер Epson Perfection V33</h2>
+          </header>
+          <section class="post-card-excerpt">
+              
+                <p> На замовчування програма iscan в Linux Mint не працює зі сканером Epson Perfection V33. Щоб вирішити цю проблему, винонуємо наступні дії:
+sudo ln -sfr /usr/lib/sane/libsane-epkowa* /usr/lib/x86_64-linux-gnu/sane  та сворюємо правило для підключення сканера /etc/udev/rules.d/79-udev-epson.rules:
+# chmod device EPSON group ATTRS{manufacturer}==&quot;EPSON&quot;, DRIVERS==&quot;usb&quot;, SUBSYSTEMS==&quot;usb&quot;, ATTRS{idVendor}==&quot;04b8&quot;, ATTRS{idProduct}==&quot;*&quot;, MODE=&quot;0777&quot;  Посилання  https://forums.linuxmint.com/viewtopic.php?t=275853   </p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+        <a href="/about"><img class="author-profile-image" src="https://alex-79.github.io/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
+        <span class="reading-time">0 хв</span>
+      </footer>
+    </div>
+</article>
+      
+      
+      <article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="https://alex-79.github.io/mysql-and-regexp/">
+      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1508873535684-277a3cbcc4e8?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
+    </a>
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="https://alex-79.github.io/mysql-and-regexp/">
+          <header class="post-card-header">
+              <span class="post-card-tags">
+              #mysql 
+              #magento  </span>
+              
+              <h2 class="post-card-title">Пошук в MySQL за допомогою регулярних виразів</h2>
+          </header>
+          <section class="post-card-excerpt">
+              
+                <p> Завдання: знайти в каталозі sku із знаком &ldquo;-&rdquo; в кінці.
+Для знаходження відповідних sku виконуємо запит в базу
+SELECT sku FROM `catalog_product_entity` WHERE sku REGEXP &quot;-$&quot; = 1;  REGEXP віддає 1 якщо значення відповідає регулярному виразу, інакше - 0.
+Посилання  http://www.mysql.ru/docs/man/Regexp.html   </p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+        <a href="/about"><img class="author-profile-image" src="https://alex-79.github.io/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
+        <span class="reading-time">0 хв</span>
+      </footer>
+    </div>
+</article>
+      
+    </div>
+  </div>
+</aside>
+
+<div class="floating-header">
+  <div class="floating-header-logo">
+    <a href="https://alex-79.github.io/">
+      
+      <span></span>
+    </a>
+  </div>
+  <div class="floating-header-title">IP-телефонія на базі Asterisk. Частина 1: Встановлення сервера Asterisk</div>
+  <div class="floating-header-share">  
+    <a class="floating-header-share-tw" href="https://twitter.com/share?text=IP-%d1%82%d0%b5%d0%bb%d0%b5%d1%84%d0%be%d0%bd%d1%96%d1%8f%20%d0%bd%d0%b0%20%d0%b1%d0%b0%d0%b7%d1%96%20Asterisk.%20%d0%a7%d0%b0%d1%81%d1%82%d0%b8%d0%bd%d0%b0%201%3a%20%d0%92%d1%81%d1%82%d0%b0%d0%bd%d0%be%d0%b2%d0%bb%d0%b5%d0%bd%d0%bd%d1%8f%20%d1%81%d0%b5%d1%80%d0%b2%d0%b5%d1%80%d0%b0%20Asterisk&amp;url=https%3a%2f%2falex-79.github.io%2fhowto-asterisk-part-1%2f"
+          onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+      </a>
+      <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2falex-79.github.io%2fhowto-asterisk-part-1%2f"
+          onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+      </a>
+  </div>
+
+  <progress class="progress" value="0">
+    <div class="progress-container">
+      <span class="progress-bar"></span>
+    </div>
+  </progress>
+</div>
+
+
+
+<footer class="site-footer outer">
+  <div class="site-footer-content inner">
+    <section class="copyright" style="line-height: 1.3em;">
+      <a href="/">Бортовий журнал Бендера</a> © 2017-2020 <br>
+      <span style="font-size: 0.8em; color: #555;">Hugo port of <a href="https://github.com/TryGhost/Casper">Casper 2.1.7</a> by <a href="https://www.telematika.org">EM</a></span>
+    </section>
+    <nav class="site-footer-nav">
+        <a href="/">Latest Posts</a>
+        
+        <a href="https://twitter.com/kr_ingulets" target="_blank" rel="noopener">Twitter</a>
+        <a href="https://github.com/alex-79" target="_blank" rel="noopener">Github</a>
+        
+        
+    </nav>  
+  </div>
+</footer>
+
+</div>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="https://alex-79.github.io/js/jquery.fitvids.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+    <script>
+
+
+
+
+
+$(document).ready(function () {
+    
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+</body></html>

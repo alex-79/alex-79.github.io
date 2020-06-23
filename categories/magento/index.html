@@ -120,7 +120,7 @@
     <div class="site-header-content">
         <h1 class="site-title">Magento</h1>
         <h2 class="site-description">
-                A collection of 3 posts
+                A collection of 19 posts
                 
         </h2>
     </div>
@@ -136,13 +136,13 @@
 
 <article class="post-card post"> 
     
-    <a class="post-card-image-link" href="https://alex-79.github.io/magento-payment-plugin-for-bitpay/">
-      <div class="post-card-image" style="background-image: url(https://alex-79.github.io/img/bender-bitpay.png)"></div>
+    <a class="post-card-image-link" href="https://alex-79.github.io/magento-2-cron-indexer-repair/">
+      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1562259929-b4e1fd3aef09?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
     </a>
     
 
     <div class="post-card-content">
-      <a class="post-card-content-link" href="https://alex-79.github.io/magento-payment-plugin-for-bitpay/">
+      <a class="post-card-content-link" href="https://alex-79.github.io/magento-2-cron-indexer-repair/">
           <header class="post-card-header">
               
                 <span class="post-card-tags">
@@ -151,11 +151,13 @@
                    
                 </span>
               
-              <h2 class="post-card-title">Рубимо електронні гроші в Magento</h2>
+              <h2 class="post-card-title">Magento 2: не працює індексація за розкладом</h2>
           </header>
           <section class="post-card-excerpt">
-               
-                <p>Підключення bitcoin в магазині на Magento 1.9</p>
+              
+                <p>Іноді, за нез&rsquo;ясованих поки обставин, в Magento 2 ламаєть виконання переіндексації за розкладом. В логах це виглядає як main.WARNING: Could not acquire lock for cron group: index, skipping run.
+Щоб &ldquo;поремонтувати&rdquo; крон необхідно: 1. Знайти та вбити процес який відповідає за запуск завдань в Magento 2: php bin/magento cron:run &ndash;group=index &ndash;bootstrap=standaloneProcessStarted=1
+ps ufx | grep cron kill XXXX   Очистити таблицю cron_schedule  DELETE FROM `cron_schedule`;  Очистити кеш Magento  php bin/magento cache:flush    </p>
               
           </section>
       </a>
@@ -170,28 +172,138 @@
 
 <article class="post-card post"> 
     
-    <a class="post-card-image-link" href="https://alex-79.github.io/magick-248/">
-      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1534653169071-4f036d137aca?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=80)"></div>
+    <a class="post-card-image-link" href="https://alex-79.github.io/howto-install-magento2-cli/">
+      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1571505280193-4b4e29712a77?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
     </a>
     
 
     <div class="post-card-content">
-      <a class="post-card-content-link" href="https://alex-79.github.io/magick-248/">
+      <a class="post-card-content-link" href="https://alex-79.github.io/howto-install-magento2-cli/">
           <header class="post-card-header">
               
                 <span class="post-card-tags">
+                  
+                    #magento
+                  
+                    #mysql
                   
                     #web
+                   
+                </span>
+              
+              <h2 class="post-card-title">Встановлення Magento 2 з командного рядка</h2>
+          </header>
+          <section class="post-card-excerpt">
+               
+                <p>Простий скрипт на bash для створення локальної інсталяції Magento 2</p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <a href="/about"><img class="author-profile-image" src="https://alex-79.github.io/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
+          <span class="reading-time">0 хв</span>
+      </footer>
+    </div>
+</article>
+
+
+<article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="https://alex-79.github.io/mysql-and-regexp/">
+      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1508873535684-277a3cbcc4e8?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
+    </a>
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="https://alex-79.github.io/mysql-and-regexp/">
+          <header class="post-card-header">
+              
+                <span class="post-card-tags">
+                  
+                    #mysql
                   
                     #magento
                    
                 </span>
               
-              <h2 class="post-card-title">Магічне число 248 або Чому я не можу додати значення атрибута в Magento 2?</h2>
+              <h2 class="post-card-title">Пошук в MySQL за допомогою регулярних виразів</h2>
+          </header>
+          <section class="post-card-excerpt">
+              
+                <p> Завдання: знайти в каталозі sku із знаком &ldquo;-&rdquo; в кінці.
+Для знаходження відповідних sku виконуємо запит в базу
+SELECT sku FROM `catalog_product_entity` WHERE sku REGEXP &quot;-$&quot; = 1;  REGEXP віддає 1 якщо значення відповідає регулярному виразу, інакше - 0.
+Посилання  http://www.mysql.ru/docs/man/Regexp.html   </p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <a href="/about"><img class="author-profile-image" src="https://alex-79.github.io/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
+          <span class="reading-time">0 хв</span>
+      </footer>
+    </div>
+</article>
+
+
+<article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="https://alex-79.github.io/howto-hide-default-store-code-from-url-magento-2/">
+      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1477650614459-1c25033a8953?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
+    </a>
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="https://alex-79.github.io/howto-hide-default-store-code-from-url-magento-2/">
+          <header class="post-card-header">
+              
+                <span class="post-card-tags">
+                  
+                    #magento
+                   
+                </span>
+              
+              <h2 class="post-card-title">Як прибрати Store Code з URL для основного магазину в Magento 2</h2>
           </header>
           <section class="post-card-excerpt">
                
-                <p>Магічне число 248 або Чому я не можу додати значення атрибута в Magento 2?</p>
+                <p>Простий модуль для вилучення store code з адреси основного магазину в Magento 2</p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <a href="/about"><img class="author-profile-image" src="https://alex-79.github.io/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
+          <span class="reading-time">2 хв</span>
+      </footer>
+    </div>
+</article>
+
+
+<article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="https://alex-79.github.io/magento-2-modules-and-tools/">
+      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1444208393177-b2a88904ed8d?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
+    </a>
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="https://alex-79.github.io/magento-2-modules-and-tools/">
+          <header class="post-card-header">
+              
+                <span class="post-card-tags">
+                  
+                    #magento
+                   
+                </span>
+              
+              <h2 class="post-card-title">Модулі та інструменти для роботи з Magento 2 (оновлюється)</h2>
+          </header>
+          <section class="post-card-excerpt">
+              
+                <p> Список корисних модулів і рішень для Magento 2. Список, ясна річ, дуже суб&rsquo;єктивний і використовується для зберігання цікавих для мене посилань.
+Розгортання  Magento 2 Zero Downtime Deployment  Оптимізація  Відключення непотрібних модулів - один та два Відключення непотрібних модулів The “ultimate guide” to Magento 2 JavaScript Bundling How to improve Magento 2 Page Speed Insights Score?  Пошук  Модуль для Elastic App Search Smile ElasticSuite - комплексне рішення для пошуку, фільтрації та створення віртуальних категорій  Зовнішній вигляд та теми  Open Source alternative to Magento PageBuilder  Youtube  Max Pronko UA / Max Pronko   </p>
               
           </section>
       </a>
@@ -206,13 +318,13 @@
 
 <article class="post-card post"> 
     
-    <a class="post-card-image-link" href="https://alex-79.github.io/why-magento/">
-      <div class="post-card-image" style="background-image: url(https://alex-79.github.io/img/magento-logo-1280.png)"></div>
+    <a class="post-card-image-link" href="https://alex-79.github.io/howto-remove-parent-category-from-url-magento-2/">
+      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
     </a>
     
 
     <div class="post-card-content">
-      <a class="post-card-content-link" href="https://alex-79.github.io/why-magento/">
+      <a class="post-card-content-link" href="https://alex-79.github.io/howto-remove-parent-category-from-url-magento-2/">
           <header class="post-card-header">
               
                 <span class="post-card-tags">
@@ -221,18 +333,20 @@
                    
                 </span>
               
-              <h2 class="post-card-title">Чому ми обираємо Magento, а не інші системи</h2>
+              <h2 class="post-card-title">Вилучення ієрархії категорій з URL в Magento 2</h2>
           </header>
           <section class="post-card-excerpt">
-               
-                <p>Як не загубитися у великій кількості пропозицій, розпізнати словоблуддя маркетологів та інтеграторів і, зрештою, зберегти сили, гроші та час.</p>
+              
+                <p>В Magento 2 є налаштування, яке дозволяє не показувати категорії для адрес товарів: Stores &gt; Configuration &gt; General &gt; Catalog &gt; Catalog &gt; Search Engine Optimization &gt; Use Categories Path for Product URLs Результатом буде отримання URL виду https://mysite.com/product1.html замість https://mysite.com/category1/category2/product1.html. На жаль для категорій такої можливості не передбачено і не можна отримати https://mysite.com/category2.
+За генерацію URL категорій відповідає клас Magento\CatalogUrlRewrite\Model\CategoryUrlPathGenerator.
+public function getUrlPath($category, $parentCategory = null) { ... if ($this-&gt;isNeedToGenerateUrlPathForParent($category)) { $parentCategory = $parentCategory === null ? ...  </p>
               
           </section>
       </a>
 
       <footer class="post-card-meta">
           <a href="/about"><img class="author-profile-image" src="https://alex-79.github.io/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-          <span class="reading-time">11 хв</span>
+          <span class="reading-time">2 хв</span>
       </footer>
     </div>
 </article>
@@ -242,7 +356,9 @@
 
     <nav class="pagination" role="navigation">
       
-      <span class="page-number"><span class="hide">Page 1 of 1</span>&nbsp;</span>
+      <span class="page-number"><span class="hide">Page 1 of 4</span>&nbsp;</span>
+      
+          <a class="older-posts" href="/categories/magento/page/2/"><span class="hide">Previous Posts</span> &rarr;</a>
       
     </nav>
   </div>

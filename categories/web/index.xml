@@ -6,26 +6,158 @@
     <description>Recent content in Web on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>uk-UA</language>
-    <lastBuildDate>Wed, 18 Oct 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 17 Feb 2020 02:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://alex-79.github.io/categories/web/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Магічне число 248 або Чому я не можу додати значення атрибута в Magento 2?</title>
-      <link>https://alex-79.github.io/magick-248/</link>
-      <pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate>
+      <title>Встановлення зв&#39;язки Django та MySQL на Debian 9</title>
+      <link>https://alex-79.github.io/howto-install-django-mysql-debian-9/</link>
+      <pubDate>Mon, 17 Feb 2020 02:00:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/magick-248/</guid>
-      <description>Не можу додати ще одне значення атрибута в Magento 2. Підрахував кількість вже існуючих значень - 248. Виявилося, що у всьому винен PHP, а саме значення за замовчуванням max_input_vars = 1000. Змінив на 100000.
-Згадав, що знаю про цю штуку ще з Magento 1, але поки не записав рецепт, змушений був в черговий раз гуглити.
-Подробиці тут</description>
+      <guid>https://alex-79.github.io/howto-install-django-mysql-debian-9/</guid>
+      <description>Встановлення Django  Встановлюємо Python та додатковий інструментарій  apt install python3 python3-pip python3-venv  Створюємо папку для проекту та віртуальне середовище  mkdir myproject cd myproject python3 -m venv venv source venv/bin/activate  Встановлюємо Django та перевыряємо встановлену версію  python3 -m pip install Django python -m django --version  Створюємо новий проект  django-admin startproject myproject   З&amp;rsquo;єднання з MySQL  Встановлюємо Percona Server  wget https://repo.</description>
+    </item>
+    
+    <item>
+      <title>Блокування трафіку за допомогою iptables та ipset</title>
+      <link>https://alex-79.github.io/iptables-ipset/</link>
+      <pubDate>Tue, 24 Dec 2019 09:58:19 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/iptables-ipset/</guid>
+      <description>Для захисту від DDOS-атак або паразитного трафіку, блокування на рівні сервера, а не nginx (як наприклад тут - https://bender.kr.ua/nginx-geoip/) , є більш ефективним. Тому, якщо у вас виникла потреба блокувати IP з певних країн і не існує інших застережень, варто скористатись зв&amp;rsquo;язкою iptables + ipset.
+Для початку встановлюємо ipset:
+apt-get install ipset  Створюємо скрипт, який буде оновлювати таблюцю адрес для блокування. Списки IP за приналежністю до країни, можна взяти на сайті ipdeny.</description>
+    </item>
+    
+    <item>
+      <title>Блокування трафіку з окремих країн за допомогою Nginx та GeoIP</title>
+      <link>https://alex-79.github.io/nginx-geoip/</link>
+      <pubDate>Mon, 09 Dec 2019 02:00:00 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/nginx-geoip/</guid>
+      <description>Блокуємо паразитний трафік до сайту з певних країн безкоштовно, без реєстрацій та sms ;)
+ Зібрати nginx з опцією &amp;ndash;with-http_geoip_module. Як це зробити написано тут - https://bender.kr.ua/howto-lemp-install/ Встановити бази GeoIP  apt-get install geoip-database libgeoip1  Оновити бази до останньої версії  mv /usr/share/GeoIP/GeoIP.dat /usr/share/GeoIP/GeoIP.bak wget https://dl.miyuru.lk/geoip/maxmind/country/maxmind.dat.gz gunzip maxmind.dat.gz mv maxmind.dat /usr/share/GeoIP/GeoIP.dat  В /etc/nginx/nginx.conf в секції http блокуємо наприклад роісію та Пакистан  http { ... geoip_country /usr/share/GeoIP/GeoIP.dat; map $geoip_country_code $allowed_country_mysite { default yes; RU no; PK no; } .</description>
+    </item>
+    
+    <item>
+      <title>Встановлення Magento 2 з командного рядка</title>
+      <link>https://alex-79.github.io/howto-install-magento2-cli/</link>
+      <pubDate>Mon, 11 Nov 2019 02:00:00 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/howto-install-magento2-cli/</guid>
+      <description>Простий скрипт на bash для створення локальної інсталяції Magento 2.
+#!/bin/bash # install_magento.sh create_db=&amp;quot;CREATE DATABASE $1 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;&amp;quot; create_user=&amp;quot;GRANT ALL PRIVILEGES ON $1.* TO &#39;$1&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;$1&#39;;&amp;quot; flush=&amp;quot;FLUSH PRIVILEGES;&amp;quot; mysql -u root -p -e &amp;quot;${create_db}${create_user}${flush}&amp;quot; mkdir $1.local composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition $1.local cd $1.local php bin/magento setup:install --base-url=http://$1.local/ \ --db-host=localhost --db-name=$1 \ --db-user=$1 --db-password=$1 \ --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \ --admin-user=admin --admin-password=admin123 --language=en_US \ --currency=UAH --timezone=Europe/Kiev --use-rewrites=1  Застосування:</description>
+    </item>
+    
+    <item>
+      <title>NetBeans і проблема зі шрифтами</title>
+      <link>https://alex-79.github.io/netbeans-and-fonts/</link>
+      <pubDate>Wed, 06 Nov 2019 02:00:00 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/netbeans-and-fonts/</guid>
+      <description>Традиційно після встановлення NetBeans на Linux постає питання відображення шрифтів в IDE. В конфігурації за замовчування вони виглядають дуже погано.
+Найпопулярнішою порадою в інтернетах є додавання до файлу конфігурації etc/netbeans.conf такого рядка
+netbeans_default_options=&amp;quot; ... -J-Dswing.aatext=true -J-Dawt.useSystemAAFontSettings=lcd&amp;quot;  Після цього шрифти не набагато, але стають краще, особливо, якщо використати темну тему, бо на світлій все ще помітно &amp;ldquo;мило&amp;rdquo;.
+Ось тут на допомогу може прийти JetBrains :)))
+Є два варіанти: 1) користуватись PHPStorm, в якому зі шрифтами все добре (в силу різних причин для мене це взагалі не варіант) або 2) використати пропатчену JetBrains версію JDK.</description>
+    </item>
+    
+    <item>
+      <title>Швидкий старт Jenkins в Debian 10 за допомогою Docker</title>
+      <link>https://alex-79.github.io/quick-start-with-jenkins-in-docker/</link>
+      <pubDate>Wed, 14 Aug 2019 14:03:32 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/quick-start-with-jenkins-in-docker/</guid>
+      <description>Для швидкого старту системи CI/CD Jenkins скористаємось docker-ом. Працюємо в Debian 10, але рецепт певно спрацює для будь-якого deb-похідного дистрибутиву.
+ Встановлюємо Docker  apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - apt-get update apt-get install docker-ce   systemctl status docker ● docker.service - Docker Application Container Engine Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled) Active: active (running) since Wed 2019-07-31 12:48:03 EEST; 5min ago Docs: https://docs.</description>
+    </item>
+    
+    <item>
+      <title>&#34;Прогрівання&#34; кешу для закритих частин сайту за допомогою Puppeteer</title>
+      <link>https://alex-79.github.io/puppeteer-with-authorization/</link>
+      <pubDate>Mon, 03 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/puppeteer-with-authorization/</guid>
+      <description>Найпростіший спосіб &amp;ldquo;прогріти&amp;rdquo; кеш - пройтись за допомогою wget по карті сайту. У випадку, коли сайт чи окремі його розділи доступні лише зареєстрованим користувачам, цей спосіб не підійде.
+У пригоді може стати Headless Chrome - хром, якому не потрібно рендерити сторінку в окреме вікно (хоча він це може). Найлегший спосіб почати працювати з ним - використати puppeteer.
+Встановлюємо Node.js та puppeteer
+curl -sL https://deb.nodesource.com/setup_10.x | bash - apt-get install nodejs libxss1 npm i puppeteer  Наш краулер з авторизацією crawler.</description>
+    </item>
+    
+    <item>
+      <title>Простий моніторинг роботи сервера за допомогою Munin</title>
+      <link>https://alex-79.github.io/howto-install-munin/</link>
+      <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/howto-install-munin/</guid>
+      <description>Munin — це дуже простий в налаштуванні засіб моніторинга серверів. Для Munin існує величезна кількість плагінів для спостереження за load average, дисковими операціями, CPU, RAM, mysql тощо. Вся інформація зберігається в кільцевій базі даних RRDtool.
+Встановлюємо систему моніторингу:
+apt-get install munin munin-node service munin-node start  Налаштовуємо nginx
+	location / { root /var/cache/munin/www; autoindex on; auth_basic &amp;quot;Munin Statistics&amp;quot;; auth_basic_user_file /etc/munin/.passwd; }  Додаткові плагіни знаходяться в директорії /usr/share/munin/plugins .</description>
+    </item>
+    
+    <item>
+      <title>Отримання SSL-сертифікату для Nginx на Debian 9</title>
+      <link>https://alex-79.github.io/howto-certbot-nginx-debian/</link>
+      <pubDate>Thu, 16 May 2019 07:13:43 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/howto-certbot-nginx-debian/</guid>
+      <description>Простий спосіб отримати безкоштовний SSL-сертифікат з оцінкою A+ для Nginx на Debian 9
+Спочатку додаємо репозиторій stretch-backports
+add-apt-repository &#39;deb http://deb.debian.org/debian stretch-backports main&#39; apt-get update  Встановлюємо утиліту для автоматичного отримання та оновлення сертифікатів certbot
+apt-get install certbot python-certbot-nginx -t stretch-backports  В конфігураційному файлі для нашого сайту надаємо certbot-у доступ до необхідної йому директорії
+# Let’s Encrypt location ~ /.well-known { allow all; }  та перечитуємо конфігурацію nginx</description>
+    </item>
+    
+    <item>
+      <title>Встановлення Nginx &#43; PHP &#43; MySQL на Debian 9</title>
+      <link>https://alex-79.github.io/howto-lemp-install/</link>
+      <pubDate>Thu, 16 May 2019 07:09:58 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/howto-lemp-install/</guid>
+      <description>Покрокова інструкція по встановленню і запуску зв&amp;rsquo;язки LEMP (Linux + Nginx + MySQL + PHP).
+1. Оновлення системи Оновлюємо версії ПЗ до актуального стану
+apt-get update apt-get upgrade  2. Налаштування захисту 2.1 iptables Спочатку встановлюю mc. Для тих у кого в цей момент засвербіло &amp;ldquo;mc - для лохів, vim - наше всьо, nano рулить&amp;rdquo; - поцілуйте мій блискучий металевий зад (С).
+apt-get install mc update-alternatives --config editor  Створюємо правила файервола</description>
+    </item>
+    
+    <item>
+      <title>Встановлення Python 3.6 на Debian 8</title>
+      <link>https://alex-79.github.io/installing-python-3-6-on-debian-8/</link>
+      <pubDate>Wed, 15 Aug 2018 11:42:00 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/installing-python-3-6-on-debian-8/</guid>
+      <description>#!/bin/sh # python_install.sh PYTHON_VER=$1 cd /opt wget -c https://www.python.org/ftp/python/$PYTHON_VER/Python-$PYTHON_VER.tgz tar -xvf Python-$PYTHON_VER.tgz rm Python-$PYTHON_VER.tgz cd Python-$PYTHON_VER ./configure --enable-optimizations make -j `nproc` make test make altinstall  Приклад встановлення:
+./python_install.sh 3.6.6  python3 -V Python 3.4.2 python3.6 -V Python 3.6.6  Джерело тут і тут</description>
+    </item>
+    
+    <item>
+      <title>Помилка при оновлені сертифікатів від Let&#39;s Encrypt</title>
+      <link>https://alex-79.github.io/letsencrypt-and-ipv6/</link>
+      <pubDate>Thu, 14 Jun 2018 11:33:00 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/letsencrypt-and-ipv6/</guid>
+      <description>При оновлені сертифікату Let&amp;rsquo;s Encrypt виникла помилка
+Attempting to renew cert (example.com.ua) from /etc/letsencrypt/renewal/example.com.ua.conf produced an unexpected error: Failed authorization procedure. www.example.com.ua (http-01): urn:acme:error:unauthorized :: The client lacks sufficient authorization :: Invalid response from http://www.example.com.ua/.well-known/acme-challenge/BKPbQzerSwVSz9PrVcVqOoSX5MxDvF2lh5eOHVamgQ4  Перевірка доступності http://www.example.com.ua/.well-known/acme-challenge/BKPbQzerSwVSz9PrVcVqOoSX5MxDvF2lh5eOHVamgQ4 не виявила проблем. Let&amp;rsquo;s Encrypt мав би верифікувати домен, але в нього була інша думка.
+Око зачепилося за AAAA у відповіді:
+To fix these errors, please make sure that your domain name was entered correctly and the DNS A/AAAA record(s) for that domain contain(s) the right IP address.</description>
+    </item>
+    
+    <item>
+      <title>Як забрати гілку з git</title>
+      <link>https://alex-79.github.io/git-branch/</link>
+      <pubDate>Fri, 20 Oct 2017 11:04:00 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/git-branch/</guid>
+      <description>git init git remote add origin remote_git.git git fetch git checkout -b new_branch git pull origin new_branch  </description>
     </item>
     
     <item>
       <title>NGINX - 301-й редирект адрес з get-аргументами</title>
       <link>https://alex-79.github.io/nginx-redirection-get-arg/</link>
-      <pubDate>Mon, 18 Sep 2017 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 18 Sep 2017 10:56:00 +0000</pubDate>
       
       <guid>https://alex-79.github.io/nginx-redirection-get-arg/</guid>
       <description>Якщо необхідно зробити редирект зі сторінки с get-аргументом, то необхідно дописати в конфіг таке
@@ -35,7 +167,7 @@ location / { if ($arg_param = value) { return 301 $uri; } }  Взяв тут - h
     <item>
       <title>Як я готую NGINX з модулем PAGESPEED</title>
       <link>https://alex-79.github.io/nginx-pagespeed-openssl/</link>
-      <pubDate>Fri, 07 Jul 2017 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 07 Jul 2017 07:08:00 +0000</pubDate>
       
       <guid>https://alex-79.github.io/nginx-pagespeed-openssl/</guid>
       <description>Останнім часом майже взагалі не використовую Apache. Є кілька проектів з категорії &amp;ldquo;ой, а про вас забули&amp;rdquo; та &amp;ldquo;не чіпай поки працює&amp;rdquo;, а на нових - лише nginx.

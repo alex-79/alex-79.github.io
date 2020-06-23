@@ -6,7 +6,7 @@
     <description>Recent content in Linux on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>uk-UA</language>
-    <lastBuildDate>Mon, 03 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 03 Feb 2020 05:39:14 +0000</lastBuildDate>
     
 	<atom:link href="https://alex-79.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,41 +14,307 @@
     <item>
       <title>Встановлення Telegram на Debian 9</title>
       <link>https://alex-79.github.io/howto-install-telegram-debian-9/</link>
-      <pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 03 Feb 2020 05:39:14 +0000</pubDate>
       
       <guid>https://alex-79.github.io/howto-install-telegram-debian-9/</guid>
-      <description> Для встановлення Telegram на Debian 9 можна скористатись Ubuntu PPA. Для цього виконаємо наступну послідовність:
- Додаємо репозиторій в /etc/apt/source.list.d/telegram.list
-deb http://ppa.launchpad.net/atareao/telegram/ubuntu xenial main deb-src http://ppa.launchpad.net/atareao/telegram/ubuntu xenial main  Додаємо в систему відкритий ключ PGP до цього PPA
-apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 36FD5529  За необхідності встановлюємо dirmngr
-apt install dirmngr  Оновлюємо список пакетів
-apt update  Встановлюємо Telegram
-apt install telegram   Посилання  https://www.linuxbabe.com/debian/3-ways-install-telegram-messenger-debian-9-stretch  </description>
+      <description>Для встановлення Telegram на Debian 9 можна скористатись Ubuntu PPA. Для цього виконаємо наступну послідовність:
+ Додаємо репозиторій в /etc/apt/source.list.d/telegram.list  deb http://ppa.launchpad.net/atareao/telegram/ubuntu xenial main deb-src http://ppa.launchpad.net/atareao/telegram/ubuntu xenial main  Додаємо в систему відкритий ключ PGP до цього PPA  apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 36FD5529  За необхідності встановлюємо dirmngr  apt install dirmngr  Оновлюємо список пакетів  apt update  Встановлюємо Telegram  apt install telegram   Посилання  https://www.</description>
     </item>
     
     <item>
-      <title>Як забрати гілку з git</title>
-      <link>https://alex-79.github.io/git-branch/</link>
-      <pubDate>Fri, 20 Oct 2017 00:00:00 +0000</pubDate>
+      <title>IP-телефонія на базі Asterisk. Частина 5: Деталізований звіт про виклики (Call Detail Records, CDR)</title>
+      <link>https://alex-79.github.io/howto-asterisk-part-5/</link>
+      <pubDate>Mon, 13 Jan 2020 02:00:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/git-branch/</guid>
-      <description>git init git remote add origin remote_git.git git fetch git checkout -b new_branch git pull origin new_branch  </description>
+      <guid>https://alex-79.github.io/howto-asterisk-part-5/</guid>
+      <description>Цикл статей по розгортанню IP-телефонії на базі Asterisk. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Робота була захищена, сертифікат отриманий, все написане тестувалось і є повтінстю робочою реалізацією. Інформація в статті і версії програмного забезбечення актуальні на 2017 рік.
+ частина 1 - Встановлення сервера Asterisk частина 2 - Налаштування SIP частина 3 - Логіка обробки дзвінків (Dialplan) частина 4 - Голосове меню  5.</description>
     </item>
     
     <item>
-      <title>NGINX - 301-й редирект адрес з get-аргументами</title>
-      <link>https://alex-79.github.io/nginx-redirection-get-arg/</link>
-      <pubDate>Mon, 18 Sep 2017 00:00:00 +0000</pubDate>
+      <title>IP-телефонія на базі Asterisk. Частина 4: Голосове меню</title>
+      <link>https://alex-79.github.io/howto-asterisk-part-4/</link>
+      <pubDate>Mon, 30 Dec 2019 02:00:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/nginx-redirection-get-arg/</guid>
-      <description>Якщо необхідно зробити редирект зі сторінки с get-аргументом, то необхідно дописати в конфіг таке
-location / { if ($arg_param = value) { return 301 $uri; } }  Взяв тут - https://stackoverflow.com/questions/27078909/nginx-redirect-url-with-specific-query-parameter</description>
+      <guid>https://alex-79.github.io/howto-asterisk-part-4/</guid>
+      <description>Цикл статей по розгортанню IP-телефонії на базі Asterisk. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Робота була захищена, сертифікат отриманий, все написане тестувалось і є повтінстю робочою реалізацією. Інформація в статті і версії програмного забезбечення актуальні на 2017 рік.
+ частина 1 - Встановлення сервера Asterisk частина 2 - Налаштування SIP частина 3 - Логіка обробки дзвінків (Dialplan)  4. Голосове меню 4.1 Створення багаторівневого голосового меню Створюємо голосове меню з 3 рівнями:</description>
+    </item>
+    
+    <item>
+      <title>Блокування трафіку за допомогою iptables та ipset</title>
+      <link>https://alex-79.github.io/iptables-ipset/</link>
+      <pubDate>Tue, 24 Dec 2019 09:58:19 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/iptables-ipset/</guid>
+      <description>Для захисту від DDOS-атак або паразитного трафіку, блокування на рівні сервера, а не nginx (як наприклад тут - https://bender.kr.ua/nginx-geoip/) , є більш ефективним. Тому, якщо у вас виникла потреба блокувати IP з певних країн і не існує інших застережень, варто скористатись зв&amp;rsquo;язкою iptables + ipset.
+Для початку встановлюємо ipset:
+apt-get install ipset  Створюємо скрипт, який буде оновлювати таблюцю адрес для блокування. Списки IP за приналежністю до країни, можна взяти на сайті ipdeny.</description>
+    </item>
+    
+    <item>
+      <title>Блокування трафіку з окремих країн за допомогою Nginx та GeoIP</title>
+      <link>https://alex-79.github.io/nginx-geoip/</link>
+      <pubDate>Mon, 09 Dec 2019 02:00:00 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/nginx-geoip/</guid>
+      <description>Блокуємо паразитний трафік до сайту з певних країн безкоштовно, без реєстрацій та sms ;)
+ Зібрати nginx з опцією &amp;ndash;with-http_geoip_module. Як це зробити написано тут - https://bender.kr.ua/howto-lemp-install/ Встановити бази GeoIP  apt-get install geoip-database libgeoip1  Оновити бази до останньої версії  mv /usr/share/GeoIP/GeoIP.dat /usr/share/GeoIP/GeoIP.bak wget https://dl.miyuru.lk/geoip/maxmind/country/maxmind.dat.gz gunzip maxmind.dat.gz mv maxmind.dat /usr/share/GeoIP/GeoIP.dat  В /etc/nginx/nginx.conf в секції http блокуємо наприклад роісію та Пакистан  http { ... geoip_country /usr/share/GeoIP/GeoIP.dat; map $geoip_country_code $allowed_country_mysite { default yes; RU no; PK no; } .</description>
+    </item>
+    
+    <item>
+      <title>IP-телефонія на базі Asterisk. Частина 3: Логіка обробки дзвінків (Dialplan)</title>
+      <link>https://alex-79.github.io/howto-asterisk-part-3/</link>
+      <pubDate>Mon, 02 Dec 2019 02:00:00 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/howto-asterisk-part-3/</guid>
+      <description>Цикл статей по розгортанню IP-телефонії на базі Asterisk. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Робота була захищена, сертифікат отриманий, все написане тестувалось і є повтінстю робочою реалізацією. Інформація в статті і версії програмного забезбечення актуальні на 2017 рік.
+ частина 1 - Встановлення сервера Asterisk частина 2 - Налаштування SIP
+3. Логіка обробки дзвінків (Dialplan) 3.1 План дозвона на разні напрямки Створимо кілька контекстів для обробки дзвінків:</description>
+    </item>
+    
+    <item>
+      <title>NetBeans і проблема зі шрифтами</title>
+      <link>https://alex-79.github.io/netbeans-and-fonts/</link>
+      <pubDate>Wed, 06 Nov 2019 02:00:00 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/netbeans-and-fonts/</guid>
+      <description>Традиційно після встановлення NetBeans на Linux постає питання відображення шрифтів в IDE. В конфігурації за замовчування вони виглядають дуже погано.
+Найпопулярнішою порадою в інтернетах є додавання до файлу конфігурації etc/netbeans.conf такого рядка
+netbeans_default_options=&amp;quot; ... -J-Dswing.aatext=true -J-Dawt.useSystemAAFontSettings=lcd&amp;quot;  Після цього шрифти не набагато, але стають краще, особливо, якщо використати темну тему, бо на світлій все ще помітно &amp;ldquo;мило&amp;rdquo;.
+Ось тут на допомогу може прийти JetBrains :)))
+Є два варіанти: 1) користуватись PHPStorm, в якому зі шрифтами все добре (в силу різних причин для мене це взагалі не варіант) або 2) використати пропатчену JetBrains версію JDK.</description>
+    </item>
+    
+    <item>
+      <title>IP-телефонія на базі Asterisk. Частина 2: Налаштування SIP</title>
+      <link>https://alex-79.github.io/howto-asterisk-part-2/</link>
+      <pubDate>Mon, 28 Oct 2019 02:00:00 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/howto-asterisk-part-2/</guid>
+      <description>Цикл статей по розгортанню IP-телефонії на базі Asterisk. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Робота була захищена, сертифікат отриманий, все написане тестувалось і є повтінстю робочою реалізацією. Інформація в статті і версії програмного забезбечення актуальні на 2017 рік.
+ частина 1 - Встановлення сервера Asterisk
+2. Налаштування SIP 2.1 Схема нумерації  За проектним завданням, наша умовна компанія складається з 5-ти підрозділів: управлінський персонал, відділ продажів, відділ закупівель, склад, відділ техпідтримки.</description>
+    </item>
+    
+    <item>
+      <title>Mint 19 і сканер Epson Perfection V33</title>
+      <link>https://alex-79.github.io/mint-19-and-epson-perfection-v33/</link>
+      <pubDate>Wed, 23 Oct 2019 06:46:44 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/mint-19-and-epson-perfection-v33/</guid>
+      <description> На замовчування програма iscan в Linux Mint не працює зі сканером Epson Perfection V33. Щоб вирішити цю проблему, винонуємо наступні дії:
+sudo ln -sfr /usr/lib/sane/libsane-epkowa* /usr/lib/x86_64-linux-gnu/sane  та сворюємо правило для підключення сканера /etc/udev/rules.d/79-udev-epson.rules:
+# chmod device EPSON group ATTRS{manufacturer}==&amp;quot;EPSON&amp;quot;, DRIVERS==&amp;quot;usb&amp;quot;, SUBSYSTEMS==&amp;quot;usb&amp;quot;, ATTRS{idVendor}==&amp;quot;04b8&amp;quot;, ATTRS{idProduct}==&amp;quot;*&amp;quot;, MODE=&amp;quot;0777&amp;quot;  Посилання  https://forums.linuxmint.com/viewtopic.php?t=275853  </description>
+    </item>
+    
+    <item>
+      <title>IP-телефонія на базі Asterisk. Частина 1: Встановлення сервера Asterisk</title>
+      <link>https://alex-79.github.io/howto-asterisk-part-1/</link>
+      <pubDate>Thu, 17 Oct 2019 15:53:49 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/howto-asterisk-part-1/</guid>
+      <description>Цикл статей по розгортанню IP-телефонії на базі Asterisk. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Робота була захищена, сертифікат отриманий, все написане тестувалось і є повтінстю робочою реалізацією. Інформація в статті і версії програмного забезбечення актуальні на 2017 рік.
+Середовище Операційна система встановлена з образу CentOS-7-i386-Minimal-1611.iso. Им&amp;rsquo;я сервера asterisk-centos.localhost.local. Адреса сервера в локальній мережі 192.168.1.201.
+Встановлення сервера Asterisk 1.1 Підготовка середовища Розширюємо bash, встановлюємо vim и пакет wget для скачування архівів з сирцевим кодом:</description>
+    </item>
+    
+    <item>
+      <title>Після оновлення сертифікату на поштовому сервері в GMAIL не працює POP3</title>
+      <link>https://alex-79.github.io/wtf-ssl-error-leaf-certificate-is-expired/</link>
+      <pubDate>Mon, 23 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/wtf-ssl-error-leaf-certificate-is-expired/</guid>
+      <description>Після оновлення сертифікату Let&amp;rsquo;s Encrypt на поштовому сервері iRedMail в GMAIL перестав збирати пошту по протоколу POP3, помилка SSL error: Leaf certificate is expired.
+Перевірка на 995 порту тут показувала, що сертифікат не дійсний, а тут - що все ОК.
+Вирішення проблеми постфактум очевидне, але на пошуки був витрачений час.
+Отже, після оновлення сертифікатів треба перезавантажити не лише nginx, а й dovecot, що зроблено не було :(
+Посилання  https://docs.</description>
+    </item>
+    
+    <item>
+      <title>Про користь borg-ів</title>
+      <link>https://alex-79.github.io/backup-with-borg/</link>
+      <pubDate>Mon, 16 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/backup-with-borg/</guid>
+      <description>До недавнього часу для створення резервних копій я активно користувався tartarus-ом. Хоча цей інструмент може створювати інкрементні бекапи і тим самим оптимізувати збереження резервних копій на диску, розміри повних бекапів мене не влаштовували. Крім того, розпаковка повного архіву було ще тим задоволенням :) На допомогу прийшла програма borgbackup (або просто borg). В роботі вона нагадує git. А головним для мене стала дедуплікація даних. Розміри повних бекапів в кілька разів менше за аналогічні від tartarus-а.</description>
+    </item>
+    
+    <item>
+      <title>Швидкий старт Jenkins в Debian 10 за допомогою Docker</title>
+      <link>https://alex-79.github.io/quick-start-with-jenkins-in-docker/</link>
+      <pubDate>Wed, 14 Aug 2019 14:03:32 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/quick-start-with-jenkins-in-docker/</guid>
+      <description>Для швидкого старту системи CI/CD Jenkins скористаємось docker-ом. Працюємо в Debian 10, але рецепт певно спрацює для будь-якого deb-похідного дистрибутиву.
+ Встановлюємо Docker  apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - apt-get update apt-get install docker-ce   systemctl status docker ● docker.service - Docker Application Container Engine Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled) Active: active (running) since Wed 2019-07-31 12:48:03 EEST; 5min ago Docs: https://docs.</description>
+    </item>
+    
+    <item>
+      <title>Як розблокувати себе в fail2ban</title>
+      <link>https://alex-79.github.io/fail2ban-unban-ip/</link>
+      <pubDate>Mon, 22 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/fail2ban-unban-ip/</guid>
+      <description> Щоб розблокувати себе в fail2ban, треба виконати наступну команду
+fail2ban-client set yourjailname unbanip youripaddress  Приклад:
+fail2ban-client set sshd unbanip 123.123.123.123  Посилання  https://bobcares.com/blog/fail2ban-unban-ip/  </description>
+    </item>
+    
+    <item>
+      <title>Проблема з backports репозиторієм в Debian 8</title>
+      <link>https://alex-79.github.io/failed-to-fetch-jessie-backports-repository/</link>
+      <pubDate>Mon, 15 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/failed-to-fetch-jessie-backports-repository/</guid>
+      <description>Якщо ви користуєтесь Debian 8, то могли помітити проблему з репозиторієм jessie-backports при оновлені.
+W: Failed to fetch http://ftp.debian.org/debian/dists/jessie-backports/main/binary-amd64/Packages 404 Not Found [IP: 130.89.148.12 80]  Причина в тому, що 8-ма версія офіційно більше не підтримується і репозиторій переїхав в архів.
+Змінимо адресу в /etc/apt/source.list на:
+deb http://archive.debian.org/debian jessie-backports main  При оновлені отримуємо натяк, що ми все одно слоупоки і треба таки оновити систему:
+E: Release file for http://archive.</description>
+    </item>
+    
+    <item>
+      <title>&#34;Прогрівання&#34; кешу для закритих частин сайту за допомогою Puppeteer</title>
+      <link>https://alex-79.github.io/puppeteer-with-authorization/</link>
+      <pubDate>Mon, 03 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/puppeteer-with-authorization/</guid>
+      <description>Найпростіший спосіб &amp;ldquo;прогріти&amp;rdquo; кеш - пройтись за допомогою wget по карті сайту. У випадку, коли сайт чи окремі його розділи доступні лише зареєстрованим користувачам, цей спосіб не підійде.
+У пригоді може стати Headless Chrome - хром, якому не потрібно рендерити сторінку в окреме вікно (хоча він це може). Найлегший спосіб почати працювати з ним - використати puppeteer.
+Встановлюємо Node.js та puppeteer
+curl -sL https://deb.nodesource.com/setup_10.x | bash - apt-get install nodejs libxss1 npm i puppeteer  Наш краулер з авторизацією crawler.</description>
+    </item>
+    
+    <item>
+      <title>Ніл Стівенсон. Спочатку був командний рядок</title>
+      <link>https://alex-79.github.io/review-neal-stephenson-in-the-beginning-was-the-command-line/</link>
+      <pubDate>Wed, 29 May 2019 10:52:00 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/review-neal-stephenson-in-the-beginning-was-the-command-line/</guid>
+      <description>Книга відомого письменника-фантаста Ніла Стівенсона датована 1999 роком про еволюцію операційних систем.
+Назва мовою оригіналу: Neal Stephenson. In the Beginning&amp;hellip; Was the Command Line
+Книга стала цікава мені з кількох причин: * Стівенсон є одним з моїх улюблених авторів * загальні оцінки на книжкових форумах у цієї книжки не дуже високі (принаймі в порівнянні з іншим його творами) і дуже кортіло дізнатись чому * я сам багато часу проводжу в командному рядку</description>
+    </item>
+    
+    <item>
+      <title>Простий моніторинг роботи сервера за допомогою Munin</title>
+      <link>https://alex-79.github.io/howto-install-munin/</link>
+      <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/howto-install-munin/</guid>
+      <description>Munin — це дуже простий в налаштуванні засіб моніторинга серверів. Для Munin існує величезна кількість плагінів для спостереження за load average, дисковими операціями, CPU, RAM, mysql тощо. Вся інформація зберігається в кільцевій базі даних RRDtool.
+Встановлюємо систему моніторингу:
+apt-get install munin munin-node service munin-node start  Налаштовуємо nginx
+	location / { root /var/cache/munin/www; autoindex on; auth_basic &amp;quot;Munin Statistics&amp;quot;; auth_basic_user_file /etc/munin/.passwd; }  Додаткові плагіни знаходяться в директорії /usr/share/munin/plugins .</description>
+    </item>
+    
+    <item>
+      <title>Резервне копіювання і трохи грецької міфології</title>
+      <link>https://alex-79.github.io/backup-with-tartarus/</link>
+      <pubDate>Thu, 16 May 2019 07:21:38 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/backup-with-tartarus/</guid>
+      <description>Tartarus - це система створення резервних копій. Може створювати інкрементні архіви. Базується на використанні звичних в nix-середовищі утиліт curl, tar, gzip та інших.
+Репозиторій проекту доволі давно не оновлювався та від цього не втратив своєї привабливості в якості дуже простого і зрозумілого інструменту.
+ Та́ртар (грец. Τάρταρος, Tartaros) — у давньогрецькій міфології місце в підземному світі, темна безодня в глибині космосу, нижче від Аїду. (Вікіпедія)
+ Встановлюємо необхідні утиліти</description>
+    </item>
+    
+    <item>
+      <title>Отримання SSL-сертифікату для Nginx на Debian 9</title>
+      <link>https://alex-79.github.io/howto-certbot-nginx-debian/</link>
+      <pubDate>Thu, 16 May 2019 07:13:43 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/howto-certbot-nginx-debian/</guid>
+      <description>Простий спосіб отримати безкоштовний SSL-сертифікат з оцінкою A+ для Nginx на Debian 9
+Спочатку додаємо репозиторій stretch-backports
+add-apt-repository &#39;deb http://deb.debian.org/debian stretch-backports main&#39; apt-get update  Встановлюємо утиліту для автоматичного отримання та оновлення сертифікатів certbot
+apt-get install certbot python-certbot-nginx -t stretch-backports  В конфігураційному файлі для нашого сайту надаємо certbot-у доступ до необхідної йому директорії
+# Let’s Encrypt location ~ /.well-known { allow all; }  та перечитуємо конфігурацію nginx</description>
+    </item>
+    
+    <item>
+      <title>Встановлення Nginx &#43; PHP &#43; MySQL на Debian 9</title>
+      <link>https://alex-79.github.io/howto-lemp-install/</link>
+      <pubDate>Thu, 16 May 2019 07:09:58 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/howto-lemp-install/</guid>
+      <description>Покрокова інструкція по встановленню і запуску зв&amp;rsquo;язки LEMP (Linux + Nginx + MySQL + PHP).
+1. Оновлення системи Оновлюємо версії ПЗ до актуального стану
+apt-get update apt-get upgrade  2. Налаштування захисту 2.1 iptables Спочатку встановлюю mc. Для тих у кого в цей момент засвербіло &amp;ldquo;mc - для лохів, vim - наше всьо, nano рулить&amp;rdquo; - поцілуйте мій блискучий металевий зад (С).
+apt-get install mc update-alternatives --config editor  Створюємо правила файервола</description>
+    </item>
+    
+    <item>
+      <title>Встановлення Python 3.6 на Debian 8</title>
+      <link>https://alex-79.github.io/installing-python-3-6-on-debian-8/</link>
+      <pubDate>Wed, 15 Aug 2018 11:42:00 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/installing-python-3-6-on-debian-8/</guid>
+      <description>#!/bin/sh # python_install.sh PYTHON_VER=$1 cd /opt wget -c https://www.python.org/ftp/python/$PYTHON_VER/Python-$PYTHON_VER.tgz tar -xvf Python-$PYTHON_VER.tgz rm Python-$PYTHON_VER.tgz cd Python-$PYTHON_VER ./configure --enable-optimizations make -j `nproc` make test make altinstall  Приклад встановлення:
+./python_install.sh 3.6.6  python3 -V Python 3.4.2 python3.6 -V Python 3.6.6  Джерело тут і тут</description>
+    </item>
+    
+    <item>
+      <title>Як я місяць майнив криптовалюту за допомогою ноутбуку, навіщо мені це та що з того вийшло</title>
+      <link>https://alex-79.github.io/mining-karbowanec/</link>
+      <pubDate>Tue, 31 Jul 2018 11:38:00 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/mining-karbowanec/</guid>
+      <description>Надихнувшись книгою Роберта Кіосакі про багатого та бідного батька, я спробував втілити деякі з його ідей на практиці, принаймні так як я їх зрозумів, а саме перетворити пасиви в активи.
+0 день В якості пасиву маємо ноутбук ASUS, який працює майже цілодобово і за відсутності телевізора виконує функцію такого собі медіа-центру. Ідея наступна - навчити піддослідного заробляти собі гроші на їжу (ну а в нашому випадку на електроенергію). Ну і наслухавшись Леді Ю (прийду до влади - зраблю всім блакчейн), вирішив помайнити криптовалюту.</description>
+    </item>
+    
+    <item>
+      <title>Не працюють комбінації клавіш CTRL-SHIFT в Ubuntu</title>
+      <link>https://alex-79.github.io/fix-conflict-keyboard-shortcuts/</link>
+      <pubDate>Fri, 27 Jul 2018 11:36:00 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/fix-conflict-keyboard-shortcuts/</guid>
+      <description>В роботі часто користуюсь комбінаціями Ctrl-Shift-Up/Down в LibreOffice Calc, а мову змінюю через Ctrl-Shift. В Ubuntu 14.04 все було гаразд, але при оновлені версій щось зламалось і комбінація в LibreOffice припинила працювати: замість виділяти стовпці, перемикалась розкладка. Варіант поставити зміну мов на іншу клавішу не розглядався в силу того що я раб своїх звичок, а змінювати звички для мене дуже не легко. Якийсь час розрулював цей конфлікт через xNeur, який використовував виключно для зміни розкладок, але воно час від часу падало.</description>
+    </item>
+    
+    <item>
+      <title>Помилка при оновлені сертифікатів від Let&#39;s Encrypt</title>
+      <link>https://alex-79.github.io/letsencrypt-and-ipv6/</link>
+      <pubDate>Thu, 14 Jun 2018 11:33:00 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/letsencrypt-and-ipv6/</guid>
+      <description>При оновлені сертифікату Let&amp;rsquo;s Encrypt виникла помилка
+Attempting to renew cert (example.com.ua) from /etc/letsencrypt/renewal/example.com.ua.conf produced an unexpected error: Failed authorization procedure. www.example.com.ua (http-01): urn:acme:error:unauthorized :: The client lacks sufficient authorization :: Invalid response from http://www.example.com.ua/.well-known/acme-challenge/BKPbQzerSwVSz9PrVcVqOoSX5MxDvF2lh5eOHVamgQ4  Перевірка доступності http://www.example.com.ua/.well-known/acme-challenge/BKPbQzerSwVSz9PrVcVqOoSX5MxDvF2lh5eOHVamgQ4 не виявила проблем. Let&amp;rsquo;s Encrypt мав би верифікувати домен, але в нього була інша думка.
+Око зачепилося за AAAA у відповіді:
+To fix these errors, please make sure that your domain name was entered correctly and the DNS A/AAAA record(s) for that domain contain(s) the right IP address.</description>
+    </item>
+    
+    <item>
+      <title>df і du показують різні значення</title>
+      <link>https://alex-79.github.io/df-and-du-show-different-values/</link>
+      <pubDate>Tue, 24 Apr 2018 11:28:00 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/df-and-du-show-different-values/</guid>
+      <description>Якщо команди df та du показують різні значення, можлива причина полягає в тому, що процес утримує файл який вже було видалено з системи. Що побачити список таких процесів слід використати наступну команду:
+lsof -nP | grep &#39;(deleted)&#39; find /proc/*/fd -ls | grep &#39;(deleted)&#39;  Потім треба зробити наступне:
+cat /dev/null &amp;gt; /proc/6466/fd/3  данні взяти з виводу попередньої команди
+Джерела тут, тут і тут</description>
+    </item>
+    
+    <item>
+      <title>Оновлення Magento 2</title>
+      <link>https://alex-79.github.io/cli-upgrade-magento2/</link>
+      <pubDate>Wed, 03 Jan 2018 13:23:00 +0000</pubDate>
+      
+      <guid>https://alex-79.github.io/cli-upgrade-magento2/</guid>
+      <description>Скрипт для оновлення Magento 2:
+#!/bin/bash # upgrade.sh composer require magento/product-community-edition $1 --no-update composer update rm -rf var/cache/* var/page_cache/* var/generation/* php bin/magento setup:upgrade find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; chown -R :www-data . chmod u+x bin/magento  Приклад запуску:
+upgrade.sh 2.2.2  Джерело тут</description>
     </item>
     
     <item>
       <title>Як я готую NGINX з модулем PAGESPEED</title>
       <link>https://alex-79.github.io/nginx-pagespeed-openssl/</link>
-      <pubDate>Fri, 07 Jul 2017 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 07 Jul 2017 07:08:00 +0000</pubDate>
       
       <guid>https://alex-79.github.io/nginx-pagespeed-openssl/</guid>
       <description>Останнім часом майже взагалі не використовую Apache. Є кілька проектів з категорії &amp;ldquo;ой, а про вас забули&amp;rdquo; та &amp;ldquo;не чіпай поки працює&amp;rdquo;, а на нових - лише nginx.
