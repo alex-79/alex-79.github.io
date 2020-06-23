@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Magento on </title>
-    <link>https://alex-79.github.io/tags/magento/</link>
+    <link>https://bender.kr.ua/tags/magento/</link>
     <description>Recent content in Magento on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>uk-UA</language>
     <lastBuildDate>Tue, 10 Mar 2020 08:56:19 +0000</lastBuildDate>
     
-	<atom:link href="https://alex-79.github.io/tags/magento/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://bender.kr.ua/tags/magento/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Magento 2: не працює індексація за розкладом</title>
-      <link>https://alex-79.github.io/magento-2-cron-indexer-repair/</link>
+      <link>https://bender.kr.ua/magento-2-cron-indexer-repair/</link>
       <pubDate>Tue, 10 Mar 2020 08:56:19 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/magento-2-cron-indexer-repair/</guid>
+      <guid>https://bender.kr.ua/magento-2-cron-indexer-repair/</guid>
       <description>Іноді, за нез&amp;rsquo;ясованих поки обставин, в Magento 2 ламаєть виконання переіндексації за розкладом. В логах це виглядає як main.WARNING: Could not acquire lock for cron group: index, skipping run.
 Щоб &amp;ldquo;поремонтувати&amp;rdquo; крон необхідно: 1. Знайти та вбити процес який відповідає за запуск завдань в Magento 2: php bin/magento cron:run &amp;ndash;group=index &amp;ndash;bootstrap=standaloneProcessStarted=1
 ps ufx | grep cron kill XXXX   Очистити таблицю cron_schedule  DELETE FROM `cron_schedule`;  Очистити кеш Magento  php bin/magento cache:flush   </description>
@@ -24,20 +24,20 @@ ps ufx | grep cron kill XXXX   Очистити таблицю cron_schedule  DE
     
     <item>
       <title>Встановлення Magento 2 з командного рядка</title>
-      <link>https://alex-79.github.io/howto-install-magento2-cli/</link>
+      <link>https://bender.kr.ua/howto-install-magento2-cli/</link>
       <pubDate>Mon, 11 Nov 2019 02:00:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/howto-install-magento2-cli/</guid>
+      <guid>https://bender.kr.ua/howto-install-magento2-cli/</guid>
       <description>Простий скрипт на bash для створення локальної інсталяції Magento 2.
 #!/bin/bash # install_magento.sh create_db=&amp;quot;CREATE DATABASE $1 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;&amp;quot; create_user=&amp;quot;GRANT ALL PRIVILEGES ON $1.* TO &#39;$1&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;$1&#39;;&amp;quot; flush=&amp;quot;FLUSH PRIVILEGES;&amp;quot; mysql -u root -p -e &amp;quot;${create_db}${create_user}${flush}&amp;quot; mkdir $1.local composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition $1.local cd $1.local php bin/magento setup:install --base-url=http://$1.local/ \ --db-host=localhost --db-name=$1 \ --db-user=$1 --db-password=$1 \ --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \ --admin-user=admin --admin-password=admin123 --language=en_US \ --currency=UAH --timezone=Europe/Kiev --use-rewrites=1  Застосування:</description>
     </item>
     
     <item>
       <title>Пошук в MySQL за допомогою регулярних виразів</title>
-      <link>https://alex-79.github.io/mysql-and-regexp/</link>
+      <link>https://bender.kr.ua/mysql-and-regexp/</link>
       <pubDate>Mon, 07 Oct 2019 05:52:41 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/mysql-and-regexp/</guid>
+      <guid>https://bender.kr.ua/mysql-and-regexp/</guid>
       <description> Завдання: знайти в каталозі sku із знаком &amp;ldquo;-&amp;rdquo; в кінці.
 Для знаходження відповідних sku виконуємо запит в базу
 SELECT sku FROM `catalog_product_entity` WHERE sku REGEXP &amp;quot;-$&amp;quot; = 1;  REGEXP віддає 1 якщо значення відповідає регулярному виразу, інакше - 0.
@@ -46,10 +46,10 @@ SELECT sku FROM `catalog_product_entity` WHERE sku REGEXP &amp;quot;-$&amp;quot;
     
     <item>
       <title>Як прибрати Store Code з URL для основного магазину в Magento 2</title>
-      <link>https://alex-79.github.io/howto-hide-default-store-code-from-url-magento-2/</link>
+      <link>https://bender.kr.ua/howto-hide-default-store-code-from-url-magento-2/</link>
       <pubDate>Mon, 26 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/howto-hide-default-store-code-from-url-magento-2/</guid>
+      <guid>https://bender.kr.ua/howto-hide-default-store-code-from-url-magento-2/</guid>
       <description>Вихідні дані: є магазин з двома мовними версіями, наприклад, ua та en, версія українською мовою - основна. Задача: прибрати store code з адреси основного магазину, тобто замість https://mysite.com/ua/ зробити просто https://mysite.com/, міжнародну версію залишити без змін - https://mysite.com/en/.
 Для цього нам треба навісити плагін на метод getBaseUrl класу Magento\Store\Model\Store.
  Створюємо заготовку для модуля в директорії Noon/HideDefaultStoreCode  registration.php
@@ -59,20 +59,20 @@ SELECT sku FROM `catalog_product_entity` WHERE sku REGEXP &amp;quot;-$&amp;quot;
     
     <item>
       <title>Модулі та інструменти для роботи з Magento 2 (оновлюється)</title>
-      <link>https://alex-79.github.io/magento-2-modules-and-tools/</link>
+      <link>https://bender.kr.ua/magento-2-modules-and-tools/</link>
       <pubDate>Fri, 23 Aug 2019 08:32:18 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/magento-2-modules-and-tools/</guid>
+      <guid>https://bender.kr.ua/magento-2-modules-and-tools/</guid>
       <description> Список корисних модулів і рішень для Magento 2. Список, ясна річ, дуже суб&amp;rsquo;єктивний і використовується для зберігання цікавих для мене посилань.
 Розгортання  Magento 2 Zero Downtime Deployment  Оптимізація  Відключення непотрібних модулів - один та два Відключення непотрібних модулів The “ultimate guide” to Magento 2 JavaScript Bundling How to improve Magento 2 Page Speed Insights Score?  Пошук  Модуль для Elastic App Search Smile ElasticSuite - комплексне рішення для пошуку, фільтрації та створення віртуальних категорій  Зовнішній вигляд та теми  Open Source alternative to Magento PageBuilder  Youtube  Max Pronko UA / Max Pronko  </description>
     </item>
     
     <item>
       <title>Вилучення ієрархії категорій з URL в Magento 2</title>
-      <link>https://alex-79.github.io/howto-remove-parent-category-from-url-magento-2/</link>
+      <link>https://bender.kr.ua/howto-remove-parent-category-from-url-magento-2/</link>
       <pubDate>Mon, 05 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/howto-remove-parent-category-from-url-magento-2/</guid>
+      <guid>https://bender.kr.ua/howto-remove-parent-category-from-url-magento-2/</guid>
       <description>В Magento 2 є налаштування, яке дозволяє не показувати категорії для адрес товарів: Stores &amp;gt; Configuration &amp;gt; General &amp;gt; Catalog &amp;gt; Catalog &amp;gt; Search Engine Optimization &amp;gt; Use Categories Path for Product URLs Результатом буде отримання URL виду https://mysite.com/product1.html замість https://mysite.com/category1/category2/product1.html. На жаль для категорій такої можливості не передбачено і не можна отримати https://mysite.com/category2.
 За генерацію URL категорій відповідає клас Magento\CatalogUrlRewrite\Model\CategoryUrlPathGenerator.
 public function getUrlPath($category, $parentCategory = null) { ... if ($this-&amp;gt;isNeedToGenerateUrlPathForParent($category)) { $parentCategory = $parentCategory === null ?</description>
@@ -80,10 +80,10 @@ public function getUrlPath($category, $parentCategory = null) { ... if ($this-&a
     
     <item>
       <title>Паралельна індексація в Magento 2</title>
-      <link>https://alex-79.github.io/magento-2-reindex-parallel/</link>
+      <link>https://bender.kr.ua/magento-2-reindex-parallel/</link>
       <pubDate>Mon, 29 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/magento-2-reindex-parallel/</guid>
+      <guid>https://bender.kr.ua/magento-2-reindex-parallel/</guid>
       <description>З версії Magento 2.2.6 є можливість розпаралелити процес індексації. Зробити це доволі просто.
 В паралельному режимі можна індексувати: * Пошуковий індекс (Catalog Search Fulltext) на рівні магазину * Категорії (Category Product) на рівні магазину * Ціни (Product Price) на рівні веб-сайту (website), групи покупців (customer_group), веб-сайту та групи (website_and_customer_group). За замовчуванням індексування ціни каталогу не використовує багатопоточність і знаходиться в режимі none.
 Щоб встановити один з режимів, треба виконати команду</description>
@@ -91,10 +91,10 @@ public function getUrlPath($category, $parentCategory = null) { ... if ($this-&a
     
     <item>
       <title>Проблема переіндексації великого каталогу в Magento 2</title>
-      <link>https://alex-79.github.io/magento2-reindexer-for-large-catalog/</link>
+      <link>https://bender.kr.ua/magento2-reindexer-for-large-catalog/</link>
       <pubDate>Mon, 08 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/magento2-reindexer-for-large-catalog/</guid>
+      <guid>https://bender.kr.ua/magento2-reindexer-for-large-catalog/</guid>
       <description>Вихідні данні: Magento 2.3.1, каталог - 300K Проблема: переіндексація каталогу може відбуватись більше 24 годин (може й більше, ніхто не перевіряв)
 Пошуки рішення привели до такого твіту:
 had similar problems (price and eav indexers in 2.2.1) with 50k products and 2 storeviews. increasing batch size helped immensly - still slower than 2.1.7 tho. pic.twitter.com/vomnyykeSz
@@ -104,20 +104,20 @@ had similar problems (price and eav indexers in 2.2.1) with 50k products and 2 s
     
     <item>
       <title>Magento 2: як додати посилання в header.links</title>
-      <link>https://alex-79.github.io/howto-add-header-links-in-magento2/</link>
+      <link>https://bender.kr.ua/howto-add-header-links-in-magento2/</link>
       <pubDate>Tue, 02 Jul 2019 04:41:28 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/howto-add-header-links-in-magento2/</guid>
+      <guid>https://bender.kr.ua/howto-add-header-links-in-magento2/</guid>
       <description> Щоб додати власнe посилання у верхню панель, необхідно дописати в app/design/frontend/Vendor/theme/child/Magento_Theme/layout/default.xml наступне:
 &amp;lt;referenceBlock name=&amp;quot;header.links&amp;quot;&amp;gt; &amp;lt;block class=&amp;quot;Magento\Framework\View\Element\Html\Link&amp;quot; name=&amp;quot;my-link&amp;quot;&amp;gt; &amp;lt;arguments&amp;gt; &amp;lt;argument name=&amp;quot;label&amp;quot; xsi:type=&amp;quot;string&amp;quot; translate=&amp;quot;true&amp;quot;&amp;gt;My Link&amp;lt;/argument&amp;gt; &amp;lt;argument name=&amp;quot;path&amp;quot; xsi:type=&amp;quot;string&amp;quot; translate=&amp;quot;true&amp;quot;&amp;gt;my-link&amp;lt;/argument&amp;gt; &amp;lt;argument name=&amp;quot;class&amp;quot; xsi:type=&amp;quot;string&amp;quot;&amp;gt;my-link&amp;lt;/argument&amp;gt; &amp;lt;/arguments&amp;gt; &amp;lt;/block&amp;gt; &amp;lt;/referenceBlock&amp;gt;  Посилання  https://magento.stackexchange.com/a/138359/37969 https://magento.stackexchange.com/a/134666/37969  </description>
     </item>
     
     <item>
       <title>Оновлення Magento до версії 2.3.2</title>
-      <link>https://alex-79.github.io/upgrade-magento-232/</link>
+      <link>https://bender.kr.ua/upgrade-magento-232/</link>
       <pubDate>Wed, 26 Jun 2019 02:56:59 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/upgrade-magento-232/</guid>
+      <guid>https://bender.kr.ua/upgrade-magento-232/</guid>
       <description>25 червня 2019 року вийшла версія Magento 2.3.2. Покращення безпеки, що входять до складу Magento 2.3.2, вимагають встановлення криптографічної бібліотеки libsodium версії 1.0.13 або вище. Без цього ви отримаєте помилку в модулі MSP_TwoFactorAuth.
 Missing required argument $encoder of MSP\TwoFactorAuth\Model\UserConfigManager.  Отже для успішного оновлення, виконуємо наступні дії:
  Встановлюємо libsodium
@@ -126,10 +126,10 @@ cd /opt/ wget -c https://download.libsodium.org/libsodium/releases/libsodium-1.0
     
     <item>
       <title>Заміна даних в MariaDB</title>
-      <link>https://alex-79.github.io/regexp-replace-in-mariadb/</link>
+      <link>https://bender.kr.ua/regexp-replace-in-mariadb/</link>
       <pubDate>Mon, 10 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/regexp-replace-in-mariadb/</guid>
+      <guid>https://bender.kr.ua/regexp-replace-in-mariadb/</guid>
       <description>Швидкий спосіб виправити текстові дані в БД:
  Прибрати перехід на новий рядок (\n)
 UPDATE catalog_product_entity_varchar SET value = REPLACE(value, &amp;quot;\n&amp;quot;, &amp;quot;&amp;quot;) WHERE attribute_id = 73;  Прибрати зайві пробіли
@@ -139,10 +139,10 @@ UPDATE catalog_product_entity_varchar SET value = REGEXP_REPLACE(value, &#39;[[:
     
     <item>
       <title>Проблема з переіндексацією catalogsearch_fulltext на Magento 2</title>
-      <link>https://alex-79.github.io/how-to-fix-elasticsearch-forbidden-12-index-read-only-allow-delete-api/</link>
+      <link>https://bender.kr.ua/how-to-fix-elasticsearch-forbidden-12-index-read-only-allow-delete-api/</link>
       <pubDate>Mon, 20 May 2019 05:21:30 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/how-to-fix-elasticsearch-forbidden-12-index-read-only-allow-delete-api/</guid>
+      <guid>https://bender.kr.ua/how-to-fix-elasticsearch-forbidden-12-index-read-only-allow-delete-api/</guid>
       <description>Під час переіндексації отримую
 php bin/magento indexer:reindex catalogsearch_fulltext Catalog Search indexer process unknown error: {&amp;quot;error&amp;quot;:{&amp;quot;root_cause&amp;quot;:[{&amp;quot;type&amp;quot;:&amp;quot;cluster_block_exception&amp;quot;,&amp;quot;reason&amp;quot;:&amp;quot;blocked by: [FORBIDDEN/12/index read-only / allow delete (api)];&amp;quot;}],&amp;quot;type&amp;quot;:&amp;quot;cluster_block_exception&amp;quot;,&amp;quot;reason&amp;quot;:&amp;quot;blocked by: [FORBIDDEN/12/index read-only / allow delete (api)];&amp;quot;},&amp;quot;status&amp;quot;:403}  Проблема пов&amp;rsquo;язана з ElasticSearch, а саме тим, що на диску залишилось менше 5% вільного місця. Щоб усе запрацювало, крім вивільнення необхідної кількості байт, необхідно ще виконати наступну команду:
 curl -XPUT -H &amp;quot;Content-Type: application/json&amp;quot; http://localhost:9200/_all/_settings -d &#39;{&amp;quot;index.blocks.read_only_allow_delete&amp;quot;: null}&#39;  Посилання  https://techoverflow.</description>
@@ -150,10 +150,10 @@ curl -XPUT -H &amp;quot;Content-Type: application/json&amp;quot; http://localhos
     
     <item>
       <title>Magento2: налаштування періодичних завдань власного модуля через адмін-панель</title>
-      <link>https://alex-79.github.io/configurable-crontab-magento2/</link>
+      <link>https://bender.kr.ua/configurable-crontab-magento2/</link>
       <pubDate>Thu, 14 Feb 2019 13:44:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/configurable-crontab-magento2/</guid>
+      <guid>https://bender.kr.ua/configurable-crontab-magento2/</guid>
       <description>Для створення періодичного завдання у власному модулі треба виконати наступні кроки:
 1) Сворюємо crontab.xml в app/VendorName/ModuleName/etc
 &amp;lt;?xml version=&amp;quot;1.0&amp;quot;?&amp;gt; &amp;lt;config xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot; xsi:noNamespaceSchemaLocation=&amp;quot;urn:magento:module:Magento_Cron:etc/crontab.xsd&amp;quot;&amp;gt; &amp;lt;group id=&amp;quot;default&amp;quot;&amp;gt; &amp;lt;job name=&amp;quot;vendorname_modulename_job&amp;quot; instance=&amp;quot;VendorName\ModuleName\Cron\CronJob&amp;quot; method=&amp;quot;execute&amp;quot;&amp;gt; &amp;lt;config_path&amp;gt;crontab/default/jobs/vendorname_modulename_job/schedule/cron_expr&amp;lt;/config_path&amp;gt; &amp;lt;/job&amp;gt; &amp;lt;/group&amp;gt; &amp;lt;/config&amp;gt;  2) Створюємо поле для налаштування періодичного завдання у файлі app/VendorName/ModuleName/etc/adminhtml/system.xml
@@ -162,10 +162,10 @@ curl -XPUT -H &amp;quot;Content-Type: application/json&amp;quot; http://localhos
     
     <item>
       <title>Magento2: Як писати логи модуля в окремий файл?</title>
-      <link>https://alex-79.github.io/custom-logging-module-magento2/</link>
+      <link>https://bender.kr.ua/custom-logging-module-magento2/</link>
       <pubDate>Mon, 13 Aug 2018 11:30:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/custom-logging-module-magento2/</guid>
+      <guid>https://bender.kr.ua/custom-logging-module-magento2/</guid>
       <description>Щоб писати логи модуля в окремий файл треба виконати наступні кроки:
 1) Сворюємо класи Logger.php та Hadler.php
 &amp;lt;?php namespace VendorName\ModuleName\Model\Logger; class Logger extends \Monolog\Logger { }  &amp;lt;?php namespace VendorName\ModuleName\Model\Logger; use Monolog\Logger; class Handler extends \Magento\Framework\Logger\Handler\Base { protected $loggerType = Logger::INFO; protected $fileName = &#39;/var/log/mymodule.log&#39;; }  2) Додаємо власний логер до конфігурації в di.xml
@@ -174,10 +174,10 @@ curl -XPUT -H &amp;quot;Content-Type: application/json&amp;quot; http://localhos
     
     <item>
       <title>Оновлення Magento 2</title>
-      <link>https://alex-79.github.io/cli-upgrade-magento2/</link>
+      <link>https://bender.kr.ua/cli-upgrade-magento2/</link>
       <pubDate>Wed, 03 Jan 2018 13:23:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/cli-upgrade-magento2/</guid>
+      <guid>https://bender.kr.ua/cli-upgrade-magento2/</guid>
       <description>Скрипт для оновлення Magento 2:
 #!/bin/bash # upgrade.sh composer require magento/product-community-edition $1 --no-update composer update rm -rf var/cache/* var/page_cache/* var/generation/* php bin/magento setup:upgrade find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; chown -R :www-data . chmod u+x bin/magento  Приклад запуску:
 upgrade.sh 2.2.2  Джерело тут</description>
@@ -185,10 +185,10 @@ upgrade.sh 2.2.2  Джерело тут</description>
     
     <item>
       <title>5 розширень, які ти зобов&#39;язаний поставити на Magento 2</title>
-      <link>https://alex-79.github.io/5-extensions-for-default-magento2/</link>
+      <link>https://bender.kr.ua/5-extensions-for-default-magento2/</link>
       <pubDate>Tue, 02 Jan 2018 13:18:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/5-extensions-for-default-magento2/</guid>
+      <guid>https://bender.kr.ua/5-extensions-for-default-magento2/</guid>
       <description>Magento 2 - дійсно крута система, але деякі штуки, як на мене, настільки очевидно мають бути всередині, що коли їх не знаходиш, то лишається лише сказати &amp;ldquo;ну як, так!?&amp;rdquo;
 Виконавши кілька проектів на Magento 2, зібрав список модулів, які обов&amp;rsquo;язково ставлю після інсталяції системи.
 1. Google Tag Manager Дивно, що не &amp;ldquo;з коробки&amp;rdquo;, бо Google Analytics та Google AdWords в системі присутні.
@@ -199,20 +199,20 @@ composer require magepal/magento2-googletagmanager php -f bin/magento module:ena
     
     <item>
       <title>Рубимо електронні гроші в Magento</title>
-      <link>https://alex-79.github.io/magento-payment-plugin-for-bitpay/</link>
+      <link>https://bender.kr.ua/magento-payment-plugin-for-bitpay/</link>
       <pubDate>Sat, 21 Oct 2017 11:06:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/magento-payment-plugin-for-bitpay/</guid>
+      <guid>https://bender.kr.ua/magento-payment-plugin-for-bitpay/</guid>
       <description>Як отримати bitcoin-и без того, щоб скуповувати відеокарти? Правильно, щось за них продати. Для цього трема мати магазин на Magento та виконати невеличку інструкцію:
  Зробити гаманець на https://bitpay.com/. Встановити модуль https://github.com/bitpay/magento-plugin. Тут увага, не намагайтесь ставити через modman - все одно не запрацює. Краще зробити це з архіву https://github.com/bitpay/magento-plugin/releases. Далі налаштовуємо через System &amp;gt; Configuration &amp;gt; Sales &amp;gt; Payment Methods. Щоб прив&amp;rsquo;язати гаманець до Magento, треба отримати токен https://bitpay.com/api-tokens і ввести його у відповідне поле.</description>
     </item>
     
     <item>
       <title>Магічне число 248 або Чому я не можу додати значення атрибута в Magento 2?</title>
-      <link>https://alex-79.github.io/magick-248/</link>
+      <link>https://bender.kr.ua/magick-248/</link>
       <pubDate>Wed, 18 Oct 2017 10:59:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/magick-248/</guid>
+      <guid>https://bender.kr.ua/magick-248/</guid>
       <description>Не можу додати ще одне значення атрибута в Magento 2. Підрахував кількість вже існуючих значень - 248. Виявилося, що у всьому винен PHP, а саме значення за замовчуванням _max_inputvars = 1000. Змінив на 100000.
 Згадав, що знаю про цю штуку ще з Magento 1, але поки не записав рецепт, змушений був в черговий раз гуглити.
 Подробиці тут</description>
@@ -220,10 +220,10 @@ composer require magepal/magento2-googletagmanager php -f bin/magento module:ena
     
     <item>
       <title>Чому ми обираємо Magento, а не інші системи</title>
-      <link>https://alex-79.github.io/why-magento/</link>
+      <link>https://bender.kr.ua/why-magento/</link>
       <pubDate>Sat, 24 Jun 2017 07:04:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/why-magento/</guid>
+      <guid>https://bender.kr.ua/why-magento/</guid>
       <description>Від початку стаття призначалася для інтернет-агенції Studio370, тому в тексті багато &amp;ldquo;ми&amp;rdquo; і &amp;ldquo;нас&amp;rdquo;. З появою власного блогу, прийшов час перетягти її сюди. Планую дописувати та переписувати цей допис, тому, скоріш за все, скоро ця стаття буде дуже не схожа на оригінал.
  Отже у вас є товар, ви точно знаєте де ваш покупець, лишилося зовсім мало - запустити інтернет-магазин і ось воно щастя. Тут і починається головний біль.</description>
     </item>

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on </title>
-    <link>https://alex-79.github.io/post/</link>
+    <link>https://bender.kr.ua/post/</link>
     <description>Recent content in Posts on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>uk-UA</language>
     <lastBuildDate>Tue, 10 Mar 2020 08:56:19 +0000</lastBuildDate>
     
-	<atom:link href="https://alex-79.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://bender.kr.ua/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Magento 2: не працює індексація за розкладом</title>
-      <link>https://alex-79.github.io/magento-2-cron-indexer-repair/</link>
+      <link>https://bender.kr.ua/magento-2-cron-indexer-repair/</link>
       <pubDate>Tue, 10 Mar 2020 08:56:19 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/magento-2-cron-indexer-repair/</guid>
+      <guid>https://bender.kr.ua/magento-2-cron-indexer-repair/</guid>
       <description>Іноді, за нез&amp;rsquo;ясованих поки обставин, в Magento 2 ламаєть виконання переіндексації за розкладом. В логах це виглядає як main.WARNING: Could not acquire lock for cron group: index, skipping run.
 Щоб &amp;ldquo;поремонтувати&amp;rdquo; крон необхідно: 1. Знайти та вбити процес який відповідає за запуск завдань в Magento 2: php bin/magento cron:run &amp;ndash;group=index &amp;ndash;bootstrap=standaloneProcessStarted=1
 ps ufx | grep cron kill XXXX   Очистити таблицю cron_schedule  DELETE FROM `cron_schedule`;  Очистити кеш Magento  php bin/magento cache:flush   </description>
@@ -24,58 +24,58 @@ ps ufx | grep cron kill XXXX   Очистити таблицю cron_schedule  DE
     
     <item>
       <title>Встановлення зв&#39;язки Django та MySQL на Debian 9</title>
-      <link>https://alex-79.github.io/howto-install-django-mysql-debian-9/</link>
+      <link>https://bender.kr.ua/howto-install-django-mysql-debian-9/</link>
       <pubDate>Mon, 17 Feb 2020 02:00:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/howto-install-django-mysql-debian-9/</guid>
+      <guid>https://bender.kr.ua/howto-install-django-mysql-debian-9/</guid>
       <description>Встановлення Django  Встановлюємо Python та додатковий інструментарій  apt install python3 python3-pip python3-venv  Створюємо папку для проекту та віртуальне середовище  mkdir myproject cd myproject python3 -m venv venv source venv/bin/activate  Встановлюємо Django та перевыряємо встановлену версію  python3 -m pip install Django python -m django --version  Створюємо новий проект  django-admin startproject myproject   З&amp;rsquo;єднання з MySQL  Встановлюємо Percona Server  wget https://repo.</description>
     </item>
     
     <item>
       <title>Встановлення Telegram на Debian 9</title>
-      <link>https://alex-79.github.io/howto-install-telegram-debian-9/</link>
+      <link>https://bender.kr.ua/howto-install-telegram-debian-9/</link>
       <pubDate>Mon, 03 Feb 2020 05:39:14 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/howto-install-telegram-debian-9/</guid>
+      <guid>https://bender.kr.ua/howto-install-telegram-debian-9/</guid>
       <description>Для встановлення Telegram на Debian 9 можна скористатись Ubuntu PPA. Для цього виконаємо наступну послідовність:
  Додаємо репозиторій в /etc/apt/source.list.d/telegram.list  deb http://ppa.launchpad.net/atareao/telegram/ubuntu xenial main deb-src http://ppa.launchpad.net/atareao/telegram/ubuntu xenial main  Додаємо в систему відкритий ключ PGP до цього PPA  apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 36FD5529  За необхідності встановлюємо dirmngr  apt install dirmngr  Оновлюємо список пакетів  apt update  Встановлюємо Telegram  apt install telegram   Посилання  https://www.</description>
     </item>
     
     <item>
       <title>IP-телефонія на базі Asterisk. Частина 5: Деталізований звіт про виклики (Call Detail Records, CDR)</title>
-      <link>https://alex-79.github.io/howto-asterisk-part-5/</link>
+      <link>https://bender.kr.ua/howto-asterisk-part-5/</link>
       <pubDate>Mon, 13 Jan 2020 02:00:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/howto-asterisk-part-5/</guid>
+      <guid>https://bender.kr.ua/howto-asterisk-part-5/</guid>
       <description>Цикл статей по розгортанню IP-телефонії на базі Asterisk. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Робота була захищена, сертифікат отриманий, все написане тестувалось і є повтінстю робочою реалізацією. Інформація в статті і версії програмного забезбечення актуальні на 2017 рік.
  частина 1 - Встановлення сервера Asterisk частина 2 - Налаштування SIP частина 3 - Логіка обробки дзвінків (Dialplan) частина 4 - Голосове меню  5.</description>
     </item>
     
     <item>
       <title>Мій книжковий 2019 рік</title>
-      <link>https://alex-79.github.io/year-in-books-2019/</link>
+      <link>https://bender.kr.ua/year-in-books-2019/</link>
       <pubDate>Mon, 06 Jan 2020 02:00:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/year-in-books-2019/</guid>
+      <guid>https://bender.kr.ua/year-in-books-2019/</guid>
       <description>За минулий рік я прочитав 13 книжок. Усі вони були художніми, бо до історій &amp;ldquo;успішного успіху&amp;rdquo; я останніми роками відношусь з великою долею скептицизму, а по роботі за минулий рік читав статті виключно з інтернету. Якщо коротко по підсумкам, то &amp;ldquo;передозування&amp;rdquo; Пратчеттом у 2018, не дало насолодитись ним у 2019, не все зі Стівена Кінга виявляється золотом, а магія книжок з дитинства не розвіюється навіть коли в тебе вже з&amp;rsquo;являються власні діти.</description>
     </item>
     
     <item>
       <title>IP-телефонія на базі Asterisk. Частина 4: Голосове меню</title>
-      <link>https://alex-79.github.io/howto-asterisk-part-4/</link>
+      <link>https://bender.kr.ua/howto-asterisk-part-4/</link>
       <pubDate>Mon, 30 Dec 2019 02:00:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/howto-asterisk-part-4/</guid>
+      <guid>https://bender.kr.ua/howto-asterisk-part-4/</guid>
       <description>Цикл статей по розгортанню IP-телефонії на базі Asterisk. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Робота була захищена, сертифікат отриманий, все написане тестувалось і є повтінстю робочою реалізацією. Інформація в статті і версії програмного забезбечення актуальні на 2017 рік.
  частина 1 - Встановлення сервера Asterisk частина 2 - Налаштування SIP частина 3 - Логіка обробки дзвінків (Dialplan)  4. Голосове меню 4.1 Створення багаторівневого голосового меню Створюємо голосове меню з 3 рівнями:</description>
     </item>
     
     <item>
       <title>Блокування трафіку за допомогою iptables та ipset</title>
-      <link>https://alex-79.github.io/iptables-ipset/</link>
+      <link>https://bender.kr.ua/iptables-ipset/</link>
       <pubDate>Tue, 24 Dec 2019 09:58:19 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/iptables-ipset/</guid>
+      <guid>https://bender.kr.ua/iptables-ipset/</guid>
       <description>Для захисту від DDOS-атак або паразитного трафіку, блокування на рівні сервера, а не nginx (як наприклад тут - https://bender.kr.ua/nginx-geoip/) , є більш ефективним. Тому, якщо у вас виникла потреба блокувати IP з певних країн і не існує інших застережень, варто скористатись зв&amp;rsquo;язкою iptables + ipset.
 Для початку встановлюємо ipset:
 apt-get install ipset  Створюємо скрипт, який буде оновлювати таблюцю адрес для блокування. Списки IP за приналежністю до країни, можна взяти на сайті ipdeny.</description>
@@ -83,20 +83,20 @@ apt-get install ipset  Створюємо скрипт, який буде оно
     
     <item>
       <title>Блокування трафіку з окремих країн за допомогою Nginx та GeoIP</title>
-      <link>https://alex-79.github.io/nginx-geoip/</link>
+      <link>https://bender.kr.ua/nginx-geoip/</link>
       <pubDate>Mon, 09 Dec 2019 02:00:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/nginx-geoip/</guid>
+      <guid>https://bender.kr.ua/nginx-geoip/</guid>
       <description>Блокуємо паразитний трафік до сайту з певних країн безкоштовно, без реєстрацій та sms ;)
  Зібрати nginx з опцією &amp;ndash;with-http_geoip_module. Як це зробити написано тут - https://bender.kr.ua/howto-lemp-install/ Встановити бази GeoIP  apt-get install geoip-database libgeoip1  Оновити бази до останньої версії  mv /usr/share/GeoIP/GeoIP.dat /usr/share/GeoIP/GeoIP.bak wget https://dl.miyuru.lk/geoip/maxmind/country/maxmind.dat.gz gunzip maxmind.dat.gz mv maxmind.dat /usr/share/GeoIP/GeoIP.dat  В /etc/nginx/nginx.conf в секції http блокуємо наприклад роісію та Пакистан  http { ... geoip_country /usr/share/GeoIP/GeoIP.dat; map $geoip_country_code $allowed_country_mysite { default yes; RU no; PK no; } .</description>
     </item>
     
     <item>
       <title>IP-телефонія на базі Asterisk. Частина 3: Логіка обробки дзвінків (Dialplan)</title>
-      <link>https://alex-79.github.io/howto-asterisk-part-3/</link>
+      <link>https://bender.kr.ua/howto-asterisk-part-3/</link>
       <pubDate>Mon, 02 Dec 2019 02:00:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/howto-asterisk-part-3/</guid>
+      <guid>https://bender.kr.ua/howto-asterisk-part-3/</guid>
       <description>Цикл статей по розгортанню IP-телефонії на базі Asterisk. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Робота була захищена, сертифікат отриманий, все написане тестувалось і є повтінстю робочою реалізацією. Інформація в статті і версії програмного забезбечення актуальні на 2017 рік.
  частина 1 - Встановлення сервера Asterisk частина 2 - Налаштування SIP
 3. Логіка обробки дзвінків (Dialplan) 3.1 План дозвона на разні напрямки Створимо кілька контекстів для обробки дзвінків:</description>
@@ -104,20 +104,20 @@ apt-get install ipset  Створюємо скрипт, який буде оно
     
     <item>
       <title>Встановлення Magento 2 з командного рядка</title>
-      <link>https://alex-79.github.io/howto-install-magento2-cli/</link>
+      <link>https://bender.kr.ua/howto-install-magento2-cli/</link>
       <pubDate>Mon, 11 Nov 2019 02:00:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/howto-install-magento2-cli/</guid>
+      <guid>https://bender.kr.ua/howto-install-magento2-cli/</guid>
       <description>Простий скрипт на bash для створення локальної інсталяції Magento 2.
 #!/bin/bash # install_magento.sh create_db=&amp;quot;CREATE DATABASE $1 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;&amp;quot; create_user=&amp;quot;GRANT ALL PRIVILEGES ON $1.* TO &#39;$1&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;$1&#39;;&amp;quot; flush=&amp;quot;FLUSH PRIVILEGES;&amp;quot; mysql -u root -p -e &amp;quot;${create_db}${create_user}${flush}&amp;quot; mkdir $1.local composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition $1.local cd $1.local php bin/magento setup:install --base-url=http://$1.local/ \ --db-host=localhost --db-name=$1 \ --db-user=$1 --db-password=$1 \ --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \ --admin-user=admin --admin-password=admin123 --language=en_US \ --currency=UAH --timezone=Europe/Kiev --use-rewrites=1  Застосування:</description>
     </item>
     
     <item>
       <title>NetBeans і проблема зі шрифтами</title>
-      <link>https://alex-79.github.io/netbeans-and-fonts/</link>
+      <link>https://bender.kr.ua/netbeans-and-fonts/</link>
       <pubDate>Wed, 06 Nov 2019 02:00:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/netbeans-and-fonts/</guid>
+      <guid>https://bender.kr.ua/netbeans-and-fonts/</guid>
       <description>Традиційно після встановлення NetBeans на Linux постає питання відображення шрифтів в IDE. В конфігурації за замовчування вони виглядають дуже погано.
 Найпопулярнішою порадою в інтернетах є додавання до файлу конфігурації etc/netbeans.conf такого рядка
 netbeans_default_options=&amp;quot; ... -J-Dswing.aatext=true -J-Dawt.useSystemAAFontSettings=lcd&amp;quot;  Після цього шрифти не набагато, але стають краще, особливо, якщо використати темну тему, бо на світлій все ще помітно &amp;ldquo;мило&amp;rdquo;.
@@ -127,10 +127,10 @@ netbeans_default_options=&amp;quot; ... -J-Dswing.aatext=true -J-Dawt.useSystemA
     
     <item>
       <title>IP-телефонія на базі Asterisk. Частина 2: Налаштування SIP</title>
-      <link>https://alex-79.github.io/howto-asterisk-part-2/</link>
+      <link>https://bender.kr.ua/howto-asterisk-part-2/</link>
       <pubDate>Mon, 28 Oct 2019 02:00:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/howto-asterisk-part-2/</guid>
+      <guid>https://bender.kr.ua/howto-asterisk-part-2/</guid>
       <description>Цикл статей по розгортанню IP-телефонії на базі Asterisk. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Робота була захищена, сертифікат отриманий, все написане тестувалось і є повтінстю робочою реалізацією. Інформація в статті і версії програмного забезбечення актуальні на 2017 рік.
  частина 1 - Встановлення сервера Asterisk
 2. Налаштування SIP 2.1 Схема нумерації  За проектним завданням, наша умовна компанія складається з 5-ти підрозділів: управлінський персонал, відділ продажів, відділ закупівель, склад, відділ техпідтримки.</description>
@@ -138,10 +138,10 @@ netbeans_default_options=&amp;quot; ... -J-Dswing.aatext=true -J-Dawt.useSystemA
     
     <item>
       <title>Mint 19 і сканер Epson Perfection V33</title>
-      <link>https://alex-79.github.io/mint-19-and-epson-perfection-v33/</link>
+      <link>https://bender.kr.ua/mint-19-and-epson-perfection-v33/</link>
       <pubDate>Wed, 23 Oct 2019 06:46:44 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/mint-19-and-epson-perfection-v33/</guid>
+      <guid>https://bender.kr.ua/mint-19-and-epson-perfection-v33/</guid>
       <description> На замовчування програма iscan в Linux Mint не працює зі сканером Epson Perfection V33. Щоб вирішити цю проблему, винонуємо наступні дії:
 sudo ln -sfr /usr/lib/sane/libsane-epkowa* /usr/lib/x86_64-linux-gnu/sane  та сворюємо правило для підключення сканера /etc/udev/rules.d/79-udev-epson.rules:
 # chmod device EPSON group ATTRS{manufacturer}==&amp;quot;EPSON&amp;quot;, DRIVERS==&amp;quot;usb&amp;quot;, SUBSYSTEMS==&amp;quot;usb&amp;quot;, ATTRS{idVendor}==&amp;quot;04b8&amp;quot;, ATTRS{idProduct}==&amp;quot;*&amp;quot;, MODE=&amp;quot;0777&amp;quot;  Посилання  https://forums.linuxmint.com/viewtopic.php?t=275853  </description>
@@ -149,10 +149,10 @@ sudo ln -sfr /usr/lib/sane/libsane-epkowa* /usr/lib/x86_64-linux-gnu/sane  та 
     
     <item>
       <title>IP-телефонія на базі Asterisk. Частина 1: Встановлення сервера Asterisk</title>
-      <link>https://alex-79.github.io/howto-asterisk-part-1/</link>
+      <link>https://bender.kr.ua/howto-asterisk-part-1/</link>
       <pubDate>Thu, 17 Oct 2019 15:53:49 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/howto-asterisk-part-1/</guid>
+      <guid>https://bender.kr.ua/howto-asterisk-part-1/</guid>
       <description>Цикл статей по розгортанню IP-телефонії на базі Asterisk. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Робота була захищена, сертифікат отриманий, все написане тестувалось і є повтінстю робочою реалізацією. Інформація в статті і версії програмного забезбечення актуальні на 2017 рік.
 Середовище Операційна система встановлена з образу CentOS-7-i386-Minimal-1611.iso. Им&amp;rsquo;я сервера asterisk-centos.localhost.local. Адреса сервера в локальній мережі 192.168.1.201.
 Встановлення сервера Asterisk 1.1 Підготовка середовища Розширюємо bash, встановлюємо vim и пакет wget для скачування архівів з сирцевим кодом:</description>
@@ -160,10 +160,10 @@ sudo ln -sfr /usr/lib/sane/libsane-epkowa* /usr/lib/x86_64-linux-gnu/sane  та 
     
     <item>
       <title>Пошук в MySQL за допомогою регулярних виразів</title>
-      <link>https://alex-79.github.io/mysql-and-regexp/</link>
+      <link>https://bender.kr.ua/mysql-and-regexp/</link>
       <pubDate>Mon, 07 Oct 2019 05:52:41 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/mysql-and-regexp/</guid>
+      <guid>https://bender.kr.ua/mysql-and-regexp/</guid>
       <description> Завдання: знайти в каталозі sku із знаком &amp;ldquo;-&amp;rdquo; в кінці.
 Для знаходження відповідних sku виконуємо запит в базу
 SELECT sku FROM `catalog_product_entity` WHERE sku REGEXP &amp;quot;-$&amp;quot; = 1;  REGEXP віддає 1 якщо значення відповідає регулярному виразу, інакше - 0.
@@ -172,10 +172,10 @@ SELECT sku FROM `catalog_product_entity` WHERE sku REGEXP &amp;quot;-$&amp;quot;
     
     <item>
       <title>Після оновлення сертифікату на поштовому сервері в GMAIL не працює POP3</title>
-      <link>https://alex-79.github.io/wtf-ssl-error-leaf-certificate-is-expired/</link>
+      <link>https://bender.kr.ua/wtf-ssl-error-leaf-certificate-is-expired/</link>
       <pubDate>Mon, 23 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/wtf-ssl-error-leaf-certificate-is-expired/</guid>
+      <guid>https://bender.kr.ua/wtf-ssl-error-leaf-certificate-is-expired/</guid>
       <description>Після оновлення сертифікату Let&amp;rsquo;s Encrypt на поштовому сервері iRedMail в GMAIL перестав збирати пошту по протоколу POP3, помилка SSL error: Leaf certificate is expired.
 Перевірка на 995 порту тут показувала, що сертифікат не дійсний, а тут - що все ОК.
 Вирішення проблеми постфактум очевидне, але на пошуки був витрачений час.
@@ -185,19 +185,19 @@ SELECT sku FROM `catalog_product_entity` WHERE sku REGEXP &amp;quot;-$&amp;quot;
     
     <item>
       <title>Про користь borg-ів</title>
-      <link>https://alex-79.github.io/backup-with-borg/</link>
+      <link>https://bender.kr.ua/backup-with-borg/</link>
       <pubDate>Mon, 16 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/backup-with-borg/</guid>
+      <guid>https://bender.kr.ua/backup-with-borg/</guid>
       <description>До недавнього часу для створення резервних копій я активно користувався tartarus-ом. Хоча цей інструмент може створювати інкрементні бекапи і тим самим оптимізувати збереження резервних копій на диску, розміри повних бекапів мене не влаштовували. Крім того, розпаковка повного архіву було ще тим задоволенням :) На допомогу прийшла програма borgbackup (або просто borg). В роботі вона нагадує git. А головним для мене стала дедуплікація даних. Розміри повних бекапів в кілька разів менше за аналогічні від tartarus-а.</description>
     </item>
     
     <item>
       <title>Конні Вілліс. Книга судного дня</title>
-      <link>https://alex-79.github.io/connie-willis-doomsday-book/</link>
+      <link>https://bender.kr.ua/connie-willis-doomsday-book/</link>
       <pubDate>Thu, 12 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/connie-willis-doomsday-book/</guid>
+      <guid>https://bender.kr.ua/connie-willis-doomsday-book/</guid>
       <description>Перша книга з &amp;ldquo;Оксфордського циклу&amp;rdquo; Конні Вілліс. Роман виграв премію Г&amp;rsquo;юго в 1993 і премію Неб&amp;rsquo;юла в 1992 році.
 Назва мовою оригіналу: Connie Willis. Doomsday Book
 Якщо плануєш потрапити в минуле, то що ти зробиш у першу чергу?
@@ -206,10 +206,10 @@ SELECT sku FROM `catalog_product_entity` WHERE sku REGEXP &amp;quot;-$&amp;quot;
     
     <item>
       <title>Як прибрати Store Code з URL для основного магазину в Magento 2</title>
-      <link>https://alex-79.github.io/howto-hide-default-store-code-from-url-magento-2/</link>
+      <link>https://bender.kr.ua/howto-hide-default-store-code-from-url-magento-2/</link>
       <pubDate>Mon, 26 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/howto-hide-default-store-code-from-url-magento-2/</guid>
+      <guid>https://bender.kr.ua/howto-hide-default-store-code-from-url-magento-2/</guid>
       <description>Вихідні дані: є магазин з двома мовними версіями, наприклад, ua та en, версія українською мовою - основна. Задача: прибрати store code з адреси основного магазину, тобто замість https://mysite.com/ua/ зробити просто https://mysite.com/, міжнародну версію залишити без змін - https://mysite.com/en/.
 Для цього нам треба навісити плагін на метод getBaseUrl класу Magento\Store\Model\Store.
  Створюємо заготовку для модуля в директорії Noon/HideDefaultStoreCode  registration.php
@@ -219,30 +219,30 @@ SELECT sku FROM `catalog_product_entity` WHERE sku REGEXP &amp;quot;-$&amp;quot;
     
     <item>
       <title>Модулі та інструменти для роботи з Magento 2 (оновлюється)</title>
-      <link>https://alex-79.github.io/magento-2-modules-and-tools/</link>
+      <link>https://bender.kr.ua/magento-2-modules-and-tools/</link>
       <pubDate>Fri, 23 Aug 2019 08:32:18 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/magento-2-modules-and-tools/</guid>
+      <guid>https://bender.kr.ua/magento-2-modules-and-tools/</guid>
       <description> Список корисних модулів і рішень для Magento 2. Список, ясна річ, дуже суб&amp;rsquo;єктивний і використовується для зберігання цікавих для мене посилань.
 Розгортання  Magento 2 Zero Downtime Deployment  Оптимізація  Відключення непотрібних модулів - один та два Відключення непотрібних модулів The “ultimate guide” to Magento 2 JavaScript Bundling How to improve Magento 2 Page Speed Insights Score?  Пошук  Модуль для Elastic App Search Smile ElasticSuite - комплексне рішення для пошуку, фільтрації та створення віртуальних категорій  Зовнішній вигляд та теми  Open Source alternative to Magento PageBuilder  Youtube  Max Pronko UA / Max Pronko  </description>
     </item>
     
     <item>
       <title>Швидкий старт Jenkins в Debian 10 за допомогою Docker</title>
-      <link>https://alex-79.github.io/quick-start-with-jenkins-in-docker/</link>
+      <link>https://bender.kr.ua/quick-start-with-jenkins-in-docker/</link>
       <pubDate>Wed, 14 Aug 2019 14:03:32 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/quick-start-with-jenkins-in-docker/</guid>
+      <guid>https://bender.kr.ua/quick-start-with-jenkins-in-docker/</guid>
       <description>Для швидкого старту системи CI/CD Jenkins скористаємось docker-ом. Працюємо в Debian 10, але рецепт певно спрацює для будь-якого deb-похідного дистрибутиву.
  Встановлюємо Docker  apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - apt-get update apt-get install docker-ce   systemctl status docker ● docker.service - Docker Application Container Engine Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled) Active: active (running) since Wed 2019-07-31 12:48:03 EEST; 5min ago Docs: https://docs.</description>
     </item>
     
     <item>
       <title>Вилучення ієрархії категорій з URL в Magento 2</title>
-      <link>https://alex-79.github.io/howto-remove-parent-category-from-url-magento-2/</link>
+      <link>https://bender.kr.ua/howto-remove-parent-category-from-url-magento-2/</link>
       <pubDate>Mon, 05 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/howto-remove-parent-category-from-url-magento-2/</guid>
+      <guid>https://bender.kr.ua/howto-remove-parent-category-from-url-magento-2/</guid>
       <description>В Magento 2 є налаштування, яке дозволяє не показувати категорії для адрес товарів: Stores &amp;gt; Configuration &amp;gt; General &amp;gt; Catalog &amp;gt; Catalog &amp;gt; Search Engine Optimization &amp;gt; Use Categories Path for Product URLs Результатом буде отримання URL виду https://mysite.com/product1.html замість https://mysite.com/category1/category2/product1.html. На жаль для категорій такої можливості не передбачено і не можна отримати https://mysite.com/category2.
 За генерацію URL категорій відповідає клас Magento\CatalogUrlRewrite\Model\CategoryUrlPathGenerator.
 public function getUrlPath($category, $parentCategory = null) { ... if ($this-&amp;gt;isNeedToGenerateUrlPathForParent($category)) { $parentCategory = $parentCategory === null ?</description>
@@ -250,10 +250,10 @@ public function getUrlPath($category, $parentCategory = null) { ... if ($this-&a
     
     <item>
       <title>Паралельна індексація в Magento 2</title>
-      <link>https://alex-79.github.io/magento-2-reindex-parallel/</link>
+      <link>https://bender.kr.ua/magento-2-reindex-parallel/</link>
       <pubDate>Mon, 29 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/magento-2-reindex-parallel/</guid>
+      <guid>https://bender.kr.ua/magento-2-reindex-parallel/</guid>
       <description>З версії Magento 2.2.6 є можливість розпаралелити процес індексації. Зробити це доволі просто.
 В паралельному режимі можна індексувати: * Пошуковий індекс (Catalog Search Fulltext) на рівні магазину * Категорії (Category Product) на рівні магазину * Ціни (Product Price) на рівні веб-сайту (website), групи покупців (customer_group), веб-сайту та групи (website_and_customer_group). За замовчуванням індексування ціни каталогу не використовує багатопоточність і знаходиться в режимі none.
 Щоб встановити один з режимів, треба виконати команду</description>
@@ -261,10 +261,10 @@ public function getUrlPath($category, $parentCategory = null) { ... if ($this-&a
     
     <item>
       <title>Як розблокувати себе в fail2ban</title>
-      <link>https://alex-79.github.io/fail2ban-unban-ip/</link>
+      <link>https://bender.kr.ua/fail2ban-unban-ip/</link>
       <pubDate>Mon, 22 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/fail2ban-unban-ip/</guid>
+      <guid>https://bender.kr.ua/fail2ban-unban-ip/</guid>
       <description> Щоб розблокувати себе в fail2ban, треба виконати наступну команду
 fail2ban-client set yourjailname unbanip youripaddress  Приклад:
 fail2ban-client set sshd unbanip 123.123.123.123  Посилання  https://bobcares.com/blog/fail2ban-unban-ip/  </description>
@@ -272,10 +272,10 @@ fail2ban-client set sshd unbanip 123.123.123.123  Посилання  https://bo
     
     <item>
       <title>Проблема з backports репозиторієм в Debian 8</title>
-      <link>https://alex-79.github.io/failed-to-fetch-jessie-backports-repository/</link>
+      <link>https://bender.kr.ua/failed-to-fetch-jessie-backports-repository/</link>
       <pubDate>Mon, 15 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/failed-to-fetch-jessie-backports-repository/</guid>
+      <guid>https://bender.kr.ua/failed-to-fetch-jessie-backports-repository/</guid>
       <description>Якщо ви користуєтесь Debian 8, то могли помітити проблему з репозиторієм jessie-backports при оновлені.
 W: Failed to fetch http://ftp.debian.org/debian/dists/jessie-backports/main/binary-amd64/Packages 404 Not Found [IP: 130.89.148.12 80]  Причина в тому, що 8-ма версія офіційно більше не підтримується і репозиторій переїхав в архів.
 Змінимо адресу в /etc/apt/source.list на:
@@ -285,10 +285,10 @@ E: Release file for http://archive.</description>
     
     <item>
       <title>Проблема переіндексації великого каталогу в Magento 2</title>
-      <link>https://alex-79.github.io/magento2-reindexer-for-large-catalog/</link>
+      <link>https://bender.kr.ua/magento2-reindexer-for-large-catalog/</link>
       <pubDate>Mon, 08 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/magento2-reindexer-for-large-catalog/</guid>
+      <guid>https://bender.kr.ua/magento2-reindexer-for-large-catalog/</guid>
       <description>Вихідні данні: Magento 2.3.1, каталог - 300K Проблема: переіндексація каталогу може відбуватись більше 24 годин (може й більше, ніхто не перевіряв)
 Пошуки рішення привели до такого твіту:
 had similar problems (price and eav indexers in 2.2.1) with 50k products and 2 storeviews. increasing batch size helped immensly - still slower than 2.1.7 tho. pic.twitter.com/vomnyykeSz
@@ -298,20 +298,20 @@ had similar problems (price and eav indexers in 2.2.1) with 50k products and 2 s
     
     <item>
       <title>Magento 2: як додати посилання в header.links</title>
-      <link>https://alex-79.github.io/howto-add-header-links-in-magento2/</link>
+      <link>https://bender.kr.ua/howto-add-header-links-in-magento2/</link>
       <pubDate>Tue, 02 Jul 2019 04:41:28 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/howto-add-header-links-in-magento2/</guid>
+      <guid>https://bender.kr.ua/howto-add-header-links-in-magento2/</guid>
       <description> Щоб додати власнe посилання у верхню панель, необхідно дописати в app/design/frontend/Vendor/theme/child/Magento_Theme/layout/default.xml наступне:
 &amp;lt;referenceBlock name=&amp;quot;header.links&amp;quot;&amp;gt; &amp;lt;block class=&amp;quot;Magento\Framework\View\Element\Html\Link&amp;quot; name=&amp;quot;my-link&amp;quot;&amp;gt; &amp;lt;arguments&amp;gt; &amp;lt;argument name=&amp;quot;label&amp;quot; xsi:type=&amp;quot;string&amp;quot; translate=&amp;quot;true&amp;quot;&amp;gt;My Link&amp;lt;/argument&amp;gt; &amp;lt;argument name=&amp;quot;path&amp;quot; xsi:type=&amp;quot;string&amp;quot; translate=&amp;quot;true&amp;quot;&amp;gt;my-link&amp;lt;/argument&amp;gt; &amp;lt;argument name=&amp;quot;class&amp;quot; xsi:type=&amp;quot;string&amp;quot;&amp;gt;my-link&amp;lt;/argument&amp;gt; &amp;lt;/arguments&amp;gt; &amp;lt;/block&amp;gt; &amp;lt;/referenceBlock&amp;gt;  Посилання  https://magento.stackexchange.com/a/138359/37969 https://magento.stackexchange.com/a/134666/37969  </description>
     </item>
     
     <item>
       <title>Оновлення Magento до версії 2.3.2</title>
-      <link>https://alex-79.github.io/upgrade-magento-232/</link>
+      <link>https://bender.kr.ua/upgrade-magento-232/</link>
       <pubDate>Wed, 26 Jun 2019 02:56:59 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/upgrade-magento-232/</guid>
+      <guid>https://bender.kr.ua/upgrade-magento-232/</guid>
       <description>25 червня 2019 року вийшла версія Magento 2.3.2. Покращення безпеки, що входять до складу Magento 2.3.2, вимагають встановлення криптографічної бібліотеки libsodium версії 1.0.13 або вище. Без цього ви отримаєте помилку в модулі MSP_TwoFactorAuth.
 Missing required argument $encoder of MSP\TwoFactorAuth\Model\UserConfigManager.  Отже для успішного оновлення, виконуємо наступні дії:
  Встановлюємо libsodium
@@ -320,10 +320,10 @@ cd /opt/ wget -c https://download.libsodium.org/libsodium/releases/libsodium-1.0
     
     <item>
       <title>Тимчасові таблиці MySQL в tmpfs</title>
-      <link>https://alex-79.github.io/mysql-tmp-table-in-tmpfs/</link>
+      <link>https://bender.kr.ua/mysql-tmp-table-in-tmpfs/</link>
       <pubDate>Mon, 17 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/mysql-tmp-table-in-tmpfs/</guid>
+      <guid>https://bender.kr.ua/mysql-tmp-table-in-tmpfs/</guid>
       <description>Для прискорення роботи бази даних можна винести тимчасові таблиці в оперативну пам&amp;rsquo;ять. Зробити це дуже просто.
 Створюємо папку для зберігання тимчасових таблиць
 mkdir /var/lib/mysql/tmp  Змінюємо власника папки на mysql
@@ -336,10 +336,10 @@ tmpdir=/var/lib/mysql/tmp  Перезапускаємо MySQL</description>
     
     <item>
       <title>Заміна даних в MariaDB</title>
-      <link>https://alex-79.github.io/regexp-replace-in-mariadb/</link>
+      <link>https://bender.kr.ua/regexp-replace-in-mariadb/</link>
       <pubDate>Mon, 10 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/regexp-replace-in-mariadb/</guid>
+      <guid>https://bender.kr.ua/regexp-replace-in-mariadb/</guid>
       <description>Швидкий спосіб виправити текстові дані в БД:
  Прибрати перехід на новий рядок (\n)
 UPDATE catalog_product_entity_varchar SET value = REPLACE(value, &amp;quot;\n&amp;quot;, &amp;quot;&amp;quot;) WHERE attribute_id = 73;  Прибрати зайві пробіли
@@ -349,10 +349,10 @@ UPDATE catalog_product_entity_varchar SET value = REGEXP_REPLACE(value, &#39;[[:
     
     <item>
       <title>&#34;Прогрівання&#34; кешу для закритих частин сайту за допомогою Puppeteer</title>
-      <link>https://alex-79.github.io/puppeteer-with-authorization/</link>
+      <link>https://bender.kr.ua/puppeteer-with-authorization/</link>
       <pubDate>Mon, 03 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/puppeteer-with-authorization/</guid>
+      <guid>https://bender.kr.ua/puppeteer-with-authorization/</guid>
       <description>Найпростіший спосіб &amp;ldquo;прогріти&amp;rdquo; кеш - пройтись за допомогою wget по карті сайту. У випадку, коли сайт чи окремі його розділи доступні лише зареєстрованим користувачам, цей спосіб не підійде.
 У пригоді може стати Headless Chrome - хром, якому не потрібно рендерити сторінку в окреме вікно (хоча він це може). Найлегший спосіб почати працювати з ним - використати puppeteer.
 Встановлюємо Node.js та puppeteer
@@ -361,10 +361,10 @@ curl -sL https://deb.nodesource.com/setup_10.x | bash - apt-get install nodejs l
     
     <item>
       <title>Ніл Стівенсон. Спочатку був командний рядок</title>
-      <link>https://alex-79.github.io/review-neal-stephenson-in-the-beginning-was-the-command-line/</link>
+      <link>https://bender.kr.ua/review-neal-stephenson-in-the-beginning-was-the-command-line/</link>
       <pubDate>Wed, 29 May 2019 10:52:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/review-neal-stephenson-in-the-beginning-was-the-command-line/</guid>
+      <guid>https://bender.kr.ua/review-neal-stephenson-in-the-beginning-was-the-command-line/</guid>
       <description>Книга відомого письменника-фантаста Ніла Стівенсона датована 1999 роком про еволюцію операційних систем.
 Назва мовою оригіналу: Neal Stephenson. In the Beginning&amp;hellip; Was the Command Line
 Книга стала цікава мені з кількох причин: * Стівенсон є одним з моїх улюблених авторів * загальні оцінки на книжкових форумах у цієї книжки не дуже високі (принаймі в порівнянні з іншим його творами) і дуже кортіло дізнатись чому * я сам багато часу проводжу в командному рядку</description>
@@ -372,10 +372,10 @@ curl -sL https://deb.nodesource.com/setup_10.x | bash - apt-get install nodejs l
     
     <item>
       <title>Простий моніторинг роботи сервера за допомогою Munin</title>
-      <link>https://alex-79.github.io/howto-install-munin/</link>
+      <link>https://bender.kr.ua/howto-install-munin/</link>
       <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/howto-install-munin/</guid>
+      <guid>https://bender.kr.ua/howto-install-munin/</guid>
       <description>Munin — це дуже простий в налаштуванні засіб моніторинга серверів. Для Munin існує величезна кількість плагінів для спостереження за load average, дисковими операціями, CPU, RAM, mysql тощо. Вся інформація зберігається в кільцевій базі даних RRDtool.
 Встановлюємо систему моніторингу:
 apt-get install munin munin-node service munin-node start  Налаштовуємо nginx
@@ -384,10 +384,10 @@ apt-get install munin munin-node service munin-node start  Налаштовує�
     
     <item>
       <title>Проблема з переіндексацією catalogsearch_fulltext на Magento 2</title>
-      <link>https://alex-79.github.io/how-to-fix-elasticsearch-forbidden-12-index-read-only-allow-delete-api/</link>
+      <link>https://bender.kr.ua/how-to-fix-elasticsearch-forbidden-12-index-read-only-allow-delete-api/</link>
       <pubDate>Mon, 20 May 2019 05:21:30 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/how-to-fix-elasticsearch-forbidden-12-index-read-only-allow-delete-api/</guid>
+      <guid>https://bender.kr.ua/how-to-fix-elasticsearch-forbidden-12-index-read-only-allow-delete-api/</guid>
       <description>Під час переіндексації отримую
 php bin/magento indexer:reindex catalogsearch_fulltext Catalog Search indexer process unknown error: {&amp;quot;error&amp;quot;:{&amp;quot;root_cause&amp;quot;:[{&amp;quot;type&amp;quot;:&amp;quot;cluster_block_exception&amp;quot;,&amp;quot;reason&amp;quot;:&amp;quot;blocked by: [FORBIDDEN/12/index read-only / allow delete (api)];&amp;quot;}],&amp;quot;type&amp;quot;:&amp;quot;cluster_block_exception&amp;quot;,&amp;quot;reason&amp;quot;:&amp;quot;blocked by: [FORBIDDEN/12/index read-only / allow delete (api)];&amp;quot;},&amp;quot;status&amp;quot;:403}  Проблема пов&amp;rsquo;язана з ElasticSearch, а саме тим, що на диску залишилось менше 5% вільного місця. Щоб усе запрацювало, крім вивільнення необхідної кількості байт, необхідно ще виконати наступну команду:
 curl -XPUT -H &amp;quot;Content-Type: application/json&amp;quot; http://localhost:9200/_all/_settings -d &#39;{&amp;quot;index.blocks.read_only_allow_delete&amp;quot;: null}&#39;  Посилання  https://techoverflow.</description>
@@ -395,10 +395,10 @@ curl -XPUT -H &amp;quot;Content-Type: application/json&amp;quot; http://localhos
     
     <item>
       <title>Резервне копіювання і трохи грецької міфології</title>
-      <link>https://alex-79.github.io/backup-with-tartarus/</link>
+      <link>https://bender.kr.ua/backup-with-tartarus/</link>
       <pubDate>Thu, 16 May 2019 07:21:38 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/backup-with-tartarus/</guid>
+      <guid>https://bender.kr.ua/backup-with-tartarus/</guid>
       <description>Tartarus - це система створення резервних копій. Може створювати інкрементні архіви. Базується на використанні звичних в nix-середовищі утиліт curl, tar, gzip та інших.
 Репозиторій проекту доволі давно не оновлювався та від цього не втратив своєї привабливості в якості дуже простого і зрозумілого інструменту.
  Та́ртар (грец. Τάρταρος, Tartaros) — у давньогрецькій міфології місце в підземному світі, темна безодня в глибині космосу, нижче від Аїду. (Вікіпедія)
@@ -407,10 +407,10 @@ curl -XPUT -H &amp;quot;Content-Type: application/json&amp;quot; http://localhos
     
     <item>
       <title>Отримання SSL-сертифікату для Nginx на Debian 9</title>
-      <link>https://alex-79.github.io/howto-certbot-nginx-debian/</link>
+      <link>https://bender.kr.ua/howto-certbot-nginx-debian/</link>
       <pubDate>Thu, 16 May 2019 07:13:43 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/howto-certbot-nginx-debian/</guid>
+      <guid>https://bender.kr.ua/howto-certbot-nginx-debian/</guid>
       <description>Простий спосіб отримати безкоштовний SSL-сертифікат з оцінкою A+ для Nginx на Debian 9
 Спочатку додаємо репозиторій stretch-backports
 add-apt-repository &#39;deb http://deb.debian.org/debian stretch-backports main&#39; apt-get update  Встановлюємо утиліту для автоматичного отримання та оновлення сертифікатів certbot
@@ -420,10 +420,10 @@ apt-get install certbot python-certbot-nginx -t stretch-backports  В конфі
     
     <item>
       <title>Встановлення Nginx &#43; PHP &#43; MySQL на Debian 9</title>
-      <link>https://alex-79.github.io/howto-lemp-install/</link>
+      <link>https://bender.kr.ua/howto-lemp-install/</link>
       <pubDate>Thu, 16 May 2019 07:09:58 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/howto-lemp-install/</guid>
+      <guid>https://bender.kr.ua/howto-lemp-install/</guid>
       <description>Покрокова інструкція по встановленню і запуску зв&amp;rsquo;язки LEMP (Linux + Nginx + MySQL + PHP).
 1. Оновлення системи Оновлюємо версії ПЗ до актуального стану
 apt-get update apt-get upgrade  2. Налаштування захисту 2.1 iptables Спочатку встановлюю mc. Для тих у кого в цей момент засвербіло &amp;ldquo;mc - для лохів, vim - наше всьо, nano рулить&amp;rdquo; - поцілуйте мій блискучий металевий зад (С).
@@ -432,10 +432,10 @@ apt-get install mc update-alternatives --config editor  Створюємо пр�
     
     <item>
       <title>Magento2: налаштування періодичних завдань власного модуля через адмін-панель</title>
-      <link>https://alex-79.github.io/configurable-crontab-magento2/</link>
+      <link>https://bender.kr.ua/configurable-crontab-magento2/</link>
       <pubDate>Thu, 14 Feb 2019 13:44:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/configurable-crontab-magento2/</guid>
+      <guid>https://bender.kr.ua/configurable-crontab-magento2/</guid>
       <description>Для створення періодичного завдання у власному модулі треба виконати наступні кроки:
 1) Сворюємо crontab.xml в app/VendorName/ModuleName/etc
 &amp;lt;?xml version=&amp;quot;1.0&amp;quot;?&amp;gt; &amp;lt;config xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot; xsi:noNamespaceSchemaLocation=&amp;quot;urn:magento:module:Magento_Cron:etc/crontab.xsd&amp;quot;&amp;gt; &amp;lt;group id=&amp;quot;default&amp;quot;&amp;gt; &amp;lt;job name=&amp;quot;vendorname_modulename_job&amp;quot; instance=&amp;quot;VendorName\ModuleName\Cron\CronJob&amp;quot; method=&amp;quot;execute&amp;quot;&amp;gt; &amp;lt;config_path&amp;gt;crontab/default/jobs/vendorname_modulename_job/schedule/cron_expr&amp;lt;/config_path&amp;gt; &amp;lt;/job&amp;gt; &amp;lt;/group&amp;gt; &amp;lt;/config&amp;gt;  2) Створюємо поле для налаштування періодичного завдання у файлі app/VendorName/ModuleName/etc/adminhtml/system.xml
@@ -444,20 +444,20 @@ apt-get install mc update-alternatives --config editor  Створюємо пр�
     
     <item>
       <title>Встановлення Python 3.6 на Debian 8</title>
-      <link>https://alex-79.github.io/installing-python-3-6-on-debian-8/</link>
+      <link>https://bender.kr.ua/installing-python-3-6-on-debian-8/</link>
       <pubDate>Wed, 15 Aug 2018 11:42:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/installing-python-3-6-on-debian-8/</guid>
+      <guid>https://bender.kr.ua/installing-python-3-6-on-debian-8/</guid>
       <description>#!/bin/sh # python_install.sh PYTHON_VER=$1 cd /opt wget -c https://www.python.org/ftp/python/$PYTHON_VER/Python-$PYTHON_VER.tgz tar -xvf Python-$PYTHON_VER.tgz rm Python-$PYTHON_VER.tgz cd Python-$PYTHON_VER ./configure --enable-optimizations make -j `nproc` make test make altinstall  Приклад встановлення:
 ./python_install.sh 3.6.6  python3 -V Python 3.4.2 python3.6 -V Python 3.6.6  Джерело тут і тут</description>
     </item>
     
     <item>
       <title>Magento2: Як писати логи модуля в окремий файл?</title>
-      <link>https://alex-79.github.io/custom-logging-module-magento2/</link>
+      <link>https://bender.kr.ua/custom-logging-module-magento2/</link>
       <pubDate>Mon, 13 Aug 2018 11:30:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/custom-logging-module-magento2/</guid>
+      <guid>https://bender.kr.ua/custom-logging-module-magento2/</guid>
       <description>Щоб писати логи модуля в окремий файл треба виконати наступні кроки:
 1) Сворюємо класи Logger.php та Hadler.php
 &amp;lt;?php namespace VendorName\ModuleName\Model\Logger; class Logger extends \Monolog\Logger { }  &amp;lt;?php namespace VendorName\ModuleName\Model\Logger; use Monolog\Logger; class Handler extends \Magento\Framework\Logger\Handler\Base { protected $loggerType = Logger::INFO; protected $fileName = &#39;/var/log/mymodule.log&#39;; }  2) Додаємо власний логер до конфігурації в di.xml
@@ -466,29 +466,29 @@ apt-get install mc update-alternatives --config editor  Створюємо пр�
     
     <item>
       <title>Як я місяць майнив криптовалюту за допомогою ноутбуку, навіщо мені це та що з того вийшло</title>
-      <link>https://alex-79.github.io/mining-karbowanec/</link>
+      <link>https://bender.kr.ua/mining-karbowanec/</link>
       <pubDate>Tue, 31 Jul 2018 11:38:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/mining-karbowanec/</guid>
+      <guid>https://bender.kr.ua/mining-karbowanec/</guid>
       <description>Надихнувшись книгою Роберта Кіосакі про багатого та бідного батька, я спробував втілити деякі з його ідей на практиці, принаймні так як я їх зрозумів, а саме перетворити пасиви в активи.
 0 день В якості пасиву маємо ноутбук ASUS, який працює майже цілодобово і за відсутності телевізора виконує функцію такого собі медіа-центру. Ідея наступна - навчити піддослідного заробляти собі гроші на їжу (ну а в нашому випадку на електроенергію). Ну і наслухавшись Леді Ю (прийду до влади - зраблю всім блакчейн), вирішив помайнити криптовалюту.</description>
     </item>
     
     <item>
       <title>Не працюють комбінації клавіш CTRL-SHIFT в Ubuntu</title>
-      <link>https://alex-79.github.io/fix-conflict-keyboard-shortcuts/</link>
+      <link>https://bender.kr.ua/fix-conflict-keyboard-shortcuts/</link>
       <pubDate>Fri, 27 Jul 2018 11:36:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/fix-conflict-keyboard-shortcuts/</guid>
+      <guid>https://bender.kr.ua/fix-conflict-keyboard-shortcuts/</guid>
       <description>В роботі часто користуюсь комбінаціями Ctrl-Shift-Up/Down в LibreOffice Calc, а мову змінюю через Ctrl-Shift. В Ubuntu 14.04 все було гаразд, але при оновлені версій щось зламалось і комбінація в LibreOffice припинила працювати: замість виділяти стовпці, перемикалась розкладка. Варіант поставити зміну мов на іншу клавішу не розглядався в силу того що я раб своїх звичок, а змінювати звички для мене дуже не легко. Якийсь час розрулював цей конфлікт через xNeur, який використовував виключно для зміни розкладок, але воно час від часу падало.</description>
     </item>
     
     <item>
       <title>Помилка при оновлені сертифікатів від Let&#39;s Encrypt</title>
-      <link>https://alex-79.github.io/letsencrypt-and-ipv6/</link>
+      <link>https://bender.kr.ua/letsencrypt-and-ipv6/</link>
       <pubDate>Thu, 14 Jun 2018 11:33:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/letsencrypt-and-ipv6/</guid>
+      <guid>https://bender.kr.ua/letsencrypt-and-ipv6/</guid>
       <description>При оновлені сертифікату Let&amp;rsquo;s Encrypt виникла помилка
 Attempting to renew cert (example.com.ua) from /etc/letsencrypt/renewal/example.com.ua.conf produced an unexpected error: Failed authorization procedure. www.example.com.ua (http-01): urn:acme:error:unauthorized :: The client lacks sufficient authorization :: Invalid response from http://www.example.com.ua/.well-known/acme-challenge/BKPbQzerSwVSz9PrVcVqOoSX5MxDvF2lh5eOHVamgQ4  Перевірка доступності http://www.example.com.ua/.well-known/acme-challenge/BKPbQzerSwVSz9PrVcVqOoSX5MxDvF2lh5eOHVamgQ4 не виявила проблем. Let&amp;rsquo;s Encrypt мав би верифікувати домен, але в нього була інша думка.
 Око зачепилося за AAAA у відповіді:
@@ -497,10 +497,10 @@ To fix these errors, please make sure that your domain name was entered correctl
     
     <item>
       <title>df і du показують різні значення</title>
-      <link>https://alex-79.github.io/df-and-du-show-different-values/</link>
+      <link>https://bender.kr.ua/df-and-du-show-different-values/</link>
       <pubDate>Tue, 24 Apr 2018 11:28:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/df-and-du-show-different-values/</guid>
+      <guid>https://bender.kr.ua/df-and-du-show-different-values/</guid>
       <description>Якщо команди df та du показують різні значення, можлива причина полягає в тому, що процес утримує файл який вже було видалено з системи. Що побачити список таких процесів слід використати наступну команду:
 lsof -nP | grep &#39;(deleted)&#39; find /proc/*/fd -ls | grep &#39;(deleted)&#39;  Потім треба зробити наступне:
 cat /dev/null &amp;gt; /proc/6466/fd/3  данні взяти з виводу попередньої команди
@@ -509,19 +509,19 @@ cat /dev/null &amp;gt; /proc/6466/fd/3  данні взяти з виводу п
     
     <item>
       <title>Створення бази даних в MySQL</title>
-      <link>https://alex-79.github.io/new-db-in-mysql/</link>
+      <link>https://bender.kr.ua/new-db-in-mysql/</link>
       <pubDate>Sun, 25 Feb 2018 09:19:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/new-db-in-mysql/</guid>
+      <guid>https://bender.kr.ua/new-db-in-mysql/</guid>
       <description>CREATE DATABASE new_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci; GRANT ALL PRIVILEGES ON new_db.* TO &#39;new_user&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;password&#39;; FLUSH PRIVILEGES;  </description>
     </item>
     
     <item>
       <title>Оновлення Magento 2</title>
-      <link>https://alex-79.github.io/cli-upgrade-magento2/</link>
+      <link>https://bender.kr.ua/cli-upgrade-magento2/</link>
       <pubDate>Wed, 03 Jan 2018 13:23:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/cli-upgrade-magento2/</guid>
+      <guid>https://bender.kr.ua/cli-upgrade-magento2/</guid>
       <description>Скрипт для оновлення Magento 2:
 #!/bin/bash # upgrade.sh composer require magento/product-community-edition $1 --no-update composer update rm -rf var/cache/* var/page_cache/* var/generation/* php bin/magento setup:upgrade find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; chown -R :www-data . chmod u+x bin/magento  Приклад запуску:
 upgrade.sh 2.2.2  Джерело тут</description>
@@ -529,10 +529,10 @@ upgrade.sh 2.2.2  Джерело тут</description>
     
     <item>
       <title>5 розширень, які ти зобов&#39;язаний поставити на Magento 2</title>
-      <link>https://alex-79.github.io/5-extensions-for-default-magento2/</link>
+      <link>https://bender.kr.ua/5-extensions-for-default-magento2/</link>
       <pubDate>Tue, 02 Jan 2018 13:18:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/5-extensions-for-default-magento2/</guid>
+      <guid>https://bender.kr.ua/5-extensions-for-default-magento2/</guid>
       <description>Magento 2 - дійсно крута система, але деякі штуки, як на мене, настільки очевидно мають бути всередині, що коли їх не знаходиш, то лишається лише сказати &amp;ldquo;ну як, так!?&amp;rdquo;
 Виконавши кілька проектів на Magento 2, зібрав список модулів, які обов&amp;rsquo;язково ставлю після інсталяції системи.
 1. Google Tag Manager Дивно, що не &amp;ldquo;з коробки&amp;rdquo;, бо Google Analytics та Google AdWords в системі присутні.
@@ -543,39 +543,39 @@ composer require magepal/magento2-googletagmanager php -f bin/magento module:ena
     
     <item>
       <title>Вибіркове завантаження таблиць дампа в MySQL</title>
-      <link>https://alex-79.github.io/how-to-exclude-dump-tables/</link>
+      <link>https://bender.kr.ua/how-to-exclude-dump-tables/</link>
       <pubDate>Sat, 11 Nov 2017 13:12:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/how-to-exclude-dump-tables/</guid>
+      <guid>https://bender.kr.ua/how-to-exclude-dump-tables/</guid>
       <description>Є в мене дамп магазину на Magento розміром 4Gb. В ньому таблиці з логами займають 3,5Gb. O_o Фігассє, нафіга воно мені на тестовому сервері. Людина, що передала мені архів, в даний момент недоступна, тобто зробить новий дамп без логів не варіант. Що робить!? Правильно, #!bash-ить:
 cat old.sql | sed -e &#39;/^LOCK TABLES .log_/,/^UNLOCK TABLES;/d&#39; &amp;gt; new.sql  </description>
     </item>
     
     <item>
       <title>Рубимо електронні гроші в Magento</title>
-      <link>https://alex-79.github.io/magento-payment-plugin-for-bitpay/</link>
+      <link>https://bender.kr.ua/magento-payment-plugin-for-bitpay/</link>
       <pubDate>Sat, 21 Oct 2017 11:06:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/magento-payment-plugin-for-bitpay/</guid>
+      <guid>https://bender.kr.ua/magento-payment-plugin-for-bitpay/</guid>
       <description>Як отримати bitcoin-и без того, щоб скуповувати відеокарти? Правильно, щось за них продати. Для цього трема мати магазин на Magento та виконати невеличку інструкцію:
  Зробити гаманець на https://bitpay.com/. Встановити модуль https://github.com/bitpay/magento-plugin. Тут увага, не намагайтесь ставити через modman - все одно не запрацює. Краще зробити це з архіву https://github.com/bitpay/magento-plugin/releases. Далі налаштовуємо через System &amp;gt; Configuration &amp;gt; Sales &amp;gt; Payment Methods. Щоб прив&amp;rsquo;язати гаманець до Magento, треба отримати токен https://bitpay.com/api-tokens і ввести його у відповідне поле.</description>
     </item>
     
     <item>
       <title>Як забрати гілку з git</title>
-      <link>https://alex-79.github.io/git-branch/</link>
+      <link>https://bender.kr.ua/git-branch/</link>
       <pubDate>Fri, 20 Oct 2017 11:04:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/git-branch/</guid>
+      <guid>https://bender.kr.ua/git-branch/</guid>
       <description>git init git remote add origin remote_git.git git fetch git checkout -b new_branch git pull origin new_branch  </description>
     </item>
     
     <item>
       <title>Магічне число 248 або Чому я не можу додати значення атрибута в Magento 2?</title>
-      <link>https://alex-79.github.io/magick-248/</link>
+      <link>https://bender.kr.ua/magick-248/</link>
       <pubDate>Wed, 18 Oct 2017 10:59:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/magick-248/</guid>
+      <guid>https://bender.kr.ua/magick-248/</guid>
       <description>Не можу додати ще одне значення атрибута в Magento 2. Підрахував кількість вже існуючих значень - 248. Виявилося, що у всьому винен PHP, а саме значення за замовчуванням _max_inputvars = 1000. Змінив на 100000.
 Згадав, що знаю про цю штуку ще з Magento 1, але поки не записав рецепт, змушений був в черговий раз гуглити.
 Подробиці тут</description>
@@ -583,20 +583,20 @@ cat old.sql | sed -e &#39;/^LOCK TABLES .log_/,/^UNLOCK TABLES;/d&#39; &amp;gt; 
     
     <item>
       <title>NGINX - 301-й редирект адрес з get-аргументами</title>
-      <link>https://alex-79.github.io/nginx-redirection-get-arg/</link>
+      <link>https://bender.kr.ua/nginx-redirection-get-arg/</link>
       <pubDate>Mon, 18 Sep 2017 10:56:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/nginx-redirection-get-arg/</guid>
+      <guid>https://bender.kr.ua/nginx-redirection-get-arg/</guid>
       <description>Якщо необхідно зробити редирект зі сторінки с get-аргументом, то необхідно дописати в конфіг таке
 location / { if ($arg_param = value) { return 301 $uri; } }  Взяв тут - https://stackoverflow.com/questions/27078909/nginx-redirect-url-with-specific-query-parameter</description>
     </item>
     
     <item>
       <title>Як я готую NGINX з модулем PAGESPEED</title>
-      <link>https://alex-79.github.io/nginx-pagespeed-openssl/</link>
+      <link>https://bender.kr.ua/nginx-pagespeed-openssl/</link>
       <pubDate>Fri, 07 Jul 2017 07:08:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/nginx-pagespeed-openssl/</guid>
+      <guid>https://bender.kr.ua/nginx-pagespeed-openssl/</guid>
       <description>Останнім часом майже взагалі не використовую Apache. Є кілька проектів з категорії &amp;ldquo;ой, а про вас забули&amp;rdquo; та &amp;ldquo;не чіпай поки працює&amp;rdquo;, а на нових - лише nginx.
 Готую nginx з pagespeed-ом за таким рецептом:
 #!/bin/sh apt-get install build-essential ca-certificates zlib1g-dev libpcre3 libpcre3-dev tar unzip libssl-dev checkinstall OPENSSL_VER=1.1.0g NPS_VER=1.12.34.3-stable NGINX_VER=1.13.8 cd /opt wget -c https://www.openssl.org/source/openssl-$OPENSSL_VER.tar.gz tar -xzvf openssl-$OPENSSL_VER.tar.gz rm openssl-$OPENSSL_VER.tar.gz wget https://github.com/apache/incubator-pagespeed-ngx/archive/v${NPS_VER}.zip unzip v${NPS_VER}.zip rm v${NPS_VER}.zip NPS_DIR=$(find . -name &amp;quot;*pagespeed-ngx-${NPS_VER}&amp;quot; -type d | sed -e &#39;s/\.</description>
@@ -604,10 +604,10 @@ location / { if ($arg_param = value) { return 301 $uri; } }  Взяв тут - h
     
     <item>
       <title>Чому ми обираємо Magento, а не інші системи</title>
-      <link>https://alex-79.github.io/why-magento/</link>
+      <link>https://bender.kr.ua/why-magento/</link>
       <pubDate>Sat, 24 Jun 2017 07:04:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/why-magento/</guid>
+      <guid>https://bender.kr.ua/why-magento/</guid>
       <description>Від початку стаття призначалася для інтернет-агенції Studio370, тому в тексті багато &amp;ldquo;ми&amp;rdquo; і &amp;ldquo;нас&amp;rdquo;. З появою власного блогу, прийшов час перетягти її сюди. Планую дописувати та переписувати цей допис, тому, скоріш за все, скоро ця стаття буде дуже не схожа на оригінал.
  Отже у вас є товар, ви точно знаєте де ваш покупець, лишилося зовсім мало - запустити інтернет-магазин і ось воно щастя. Тут і починається головний біль.</description>
     </item>

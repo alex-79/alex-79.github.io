@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Js on </title>
-    <link>https://alex-79.github.io/tags/js/</link>
+    <link>https://bender.kr.ua/tags/js/</link>
     <description>Recent content in Js on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>uk-UA</language>
     <lastBuildDate>Mon, 03 Jun 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://alex-79.github.io/tags/js/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://bender.kr.ua/tags/js/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>&#34;Прогрівання&#34; кешу для закритих частин сайту за допомогою Puppeteer</title>
-      <link>https://alex-79.github.io/puppeteer-with-authorization/</link>
+      <link>https://bender.kr.ua/puppeteer-with-authorization/</link>
       <pubDate>Mon, 03 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://alex-79.github.io/puppeteer-with-authorization/</guid>
+      <guid>https://bender.kr.ua/puppeteer-with-authorization/</guid>
       <description>Найпростіший спосіб &amp;ldquo;прогріти&amp;rdquo; кеш - пройтись за допомогою wget по карті сайту. У випадку, коли сайт чи окремі його розділи доступні лише зареєстрованим користувачам, цей спосіб не підійде.
 У пригоді може стати Headless Chrome - хром, якому не потрібно рендерити сторінку в окреме вікно (хоча він це може). Найлегший спосіб почати працювати з ним - використати puppeteer.
 Встановлюємо Node.js та puppeteer
