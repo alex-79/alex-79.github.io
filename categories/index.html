@@ -154,20 +154,25 @@
 
 <article class="post-card post"> 
     
-    <a class="post-card-image-link" href="https://bender.kr.ua/post/">
-      <div class="post-card-image" style="background-image: url(https://bender.kr.ua/defimg/3.jpg)"></div>
-    </a>    
+    <a class="post-card-image-link" href="https://bender.kr.ua/installing-python-3-6-on-debian-8/">
+      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1553470861-71372491e886?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
+    </a>
     
 
     <div class="post-card-content">
-      <a class="post-card-content-link" href="https://bender.kr.ua/post/">
+      <a class="post-card-content-link" href="https://bender.kr.ua/installing-python-3-6-on-debian-8/">
           <header class="post-card-header">
+              <span class="post-card-tags">
+              #linux 
+              #web 
+              #python  </span>
               
-              <h2 class="post-card-title">Posts</h2>
+              <h2 class="post-card-title">Встановлення Python 3.6 на Debian 8</h2>
           </header>
           <section class="post-card-excerpt">
               
-                <p> </p>
+                <p>#!/bin/sh # python_install.sh PYTHON_VER=$1 cd /opt wget -c https://www.python.org/ftp/python/$PYTHON_VER/Python-$PYTHON_VER.tgz tar -xvf Python-$PYTHON_VER.tgz rm Python-$PYTHON_VER.tgz cd Python-$PYTHON_VER ./configure --enable-optimizations make -j `nproc` make test make altinstall  Приклад встановлення:
+./python_install.sh 3.6.6  python3 -V Python 3.4.2 python3.6 -V Python 3.6.6  Джерело тут і тут </p>
               
           </section>
       </a>
@@ -182,25 +187,25 @@
 
 <article class="post-card post"> 
     
-    <a class="post-card-image-link" href="https://bender.kr.ua/nginx-pagespeed-openssl/">
-      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
+    <a class="post-card-image-link" href="https://bender.kr.ua/custom-logging-module-magento2/">
+      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1534137667199-675a46e143f3?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
     </a>
     
 
     <div class="post-card-content">
-      <a class="post-card-content-link" href="https://bender.kr.ua/nginx-pagespeed-openssl/">
+      <a class="post-card-content-link" href="https://bender.kr.ua/custom-logging-module-magento2/">
           <header class="post-card-header">
               <span class="post-card-tags">
-              #web 
-              #linux  </span>
+              #magento  </span>
               
-              <h2 class="post-card-title">Як я готую NGINX з модулем PAGESPEED</h2>
+              <h2 class="post-card-title">Magento2: Як писати логи модуля в окремий файл?</h2>
           </header>
           <section class="post-card-excerpt">
               
-                <p>Останнім часом майже взагалі не використовую Apache. Є кілька проектів з категорії &ldquo;ой, а про вас забули&rdquo; та &ldquo;не чіпай поки працює&rdquo;, а на нових - лише nginx.
-Готую nginx з pagespeed-ом за таким рецептом:
-#!/bin/sh apt-get install build-essential ca-certificates zlib1g-dev libpcre3 libpcre3-dev tar unzip libssl-dev checkinstall OPENSSL_VER=1.1.0g NPS_VER=1.12.34.3-stable NGINX_VER=1.13.8 cd /opt wget -c https://www.openssl.org/source/openssl-$OPENSSL_VER.tar.gz tar -xzvf openssl-$OPENSSL_VER.tar.gz rm openssl-$OPENSSL_VER.tar.gz wget https://github.com/apache/incubator-pagespeed-ngx/archive/v${NPS_VER}.zip unzip v${NPS_VER}.zip rm v${NPS_VER}.zip NPS_DIR=$(find . -name &quot;*pagespeed-ngx-${NPS_VER}&quot; -type d | sed -e 's/\. ...  </p>
+                <p>Щоб писати логи модуля в окремий файл треба виконати наступні кроки:
+1) Сворюємо класи Logger.php та Hadler.php
+&lt;?php namespace VendorName\ModuleName\Model\Logger; class Logger extends \Monolog\Logger { }  &lt;?php namespace VendorName\ModuleName\Model\Logger; use Monolog\Logger; class Handler extends \Magento\Framework\Logger\Handler\Base { protected $loggerType = Logger::INFO; protected $fileName = '/var/log/mymodule.log'; }  2) Додаємо власний логер до конфігурації в di.xml
+&lt;?xml version=&quot;1.0&quot;?&gt; &lt;config xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;&gt; &lt;type name=&quot;VendorName\ModuleName\Model\Logger\Handler&quot;&gt; &lt;arguments&gt; &lt;argument name=&quot;filesystem&quot; xsi:type=&quot;object&quot;&gt;Magento\Framework\Filesystem\Driver\File&lt;/argument&gt; &lt;/arguments&gt; &lt;/type&gt; &lt;type name=&quot;VendorName\ModuleName\Model\Logger\Logger&quot;&gt; &lt;arguments&gt; &lt;argument name=&quot;name&quot; xsi:type=&quot;string&quot;&gt;MyLogger&lt;/argument&gt; &lt;argument name=&quot;handlers&quot; xsi:type=&quot;array&quot;&gt; &lt;item name=&quot;system&quot; xsi:type=&quot;object&quot;&gt;VendorName\ModuleName\Model\Logger\Handler&lt;/item&gt; &lt;/argument&gt; &lt;/arguments&gt; &lt;/type&gt; &lt;/config&gt;  3) Тепер можемо використати логер, наприклад так ...  </p>
               
           </section>
       </a>
@@ -215,25 +220,22 @@
 
 <article class="post-card post"> 
     
-    <a class="post-card-image-link" href="https://bender.kr.ua/iptables-ipset/">
-      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1546088018-16609adf2afa?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
+    <a class="post-card-image-link" href="https://bender.kr.ua/magento2-reindexer-for-large-catalog/">
+      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1470173274384-c4e8e2f9ea4c?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
     </a>
     
 
     <div class="post-card-content">
-      <a class="post-card-content-link" href="https://bender.kr.ua/iptables-ipset/">
+      <a class="post-card-content-link" href="https://bender.kr.ua/magento2-reindexer-for-large-catalog/">
           <header class="post-card-header">
               <span class="post-card-tags">
-              #linux 
-              #web  </span>
+              #magento  </span>
               
-              <h2 class="post-card-title">Блокування трафіку за допомогою iptables та ipset</h2>
+              <h2 class="post-card-title">Проблема переіндексації великого каталогу в Magento 2</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Для захисту від DDOS-атак або паразитного трафіку, блокування на рівні сервера, а не nginx (як наприклад тут - https://bender.kr.ua/nginx-geoip/) , є більш ефективним. Тому, якщо у вас виникла потреба блокувати IP з певних країн і не існує інших застережень, варто скористатись зв&rsquo;язкою iptables + ipset.
-Для початку встановлюємо ipset:
-apt-get install ipset  Створюємо скрипт, який буде оновлювати таблюцю адрес для блокування. Списки IP за приналежністю до країни, можна взяти на сайті ipdeny. ...  </p>
+               
+                <p>Вирішення проблеми довгої переіндексації великого (~300K) каталогу в Magento 2</p>
               
           </section>
       </a>

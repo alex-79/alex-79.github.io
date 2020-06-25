@@ -12,7 +12,7 @@
     <link rel="shortcut icon" href="https://bender.kr.ua/favicon.ico" />
     <link rel="canonical" href="https://bender.kr.ua/5-extensions-for-default-magento2/" />
 
-     <meta name="description" content="Magento 2 - дійсно крута система, але деякі штуки, як на мене, настільки очевидно мають бути всередині, що коли їх не знаходиш, то лишається лише сказати &amp;ldquo" /> 
+     <meta name="description" content="5 розширень, які ти зобов&#39;язаний поставити на Magento 2" /> 
 
      
     
@@ -21,7 +21,7 @@
     
  
     <meta name="twitter:title" content="5 розширень, які ти зобов&#39;язаний поставити на Magento 2"/>
-    <meta name="twitter:description" content="Magento 2 - дійсно крута система, але деякі штуки, як на мене, настільки очевидно мають бути всередині, що коли їх не знаходиш, то лишається лише сказати &amp;ldquo"/>
+    <meta name="twitter:description" content="5 розширень, які ти зобов&#39;язаний поставити на Magento 2"/>
     <meta name="twitter:url" content="https://bender.kr.ua/5-extensions-for-default-magento2/" />
     <meta name="twitter:site" content="@kr_ingulets"/>
 
@@ -31,9 +31,9 @@
     
 
     <meta property="og:type" content="article" />
-    <meta property="og:description" content="Magento 2 - дійсно крута система, але деякі штуки, як на мене, настільки очевидно мають бути всередині, що коли їх не знаходиш, то лишається лише сказати &amp;ldquo" />
+    <meta property="og:description" content="5 розширень, які ти зобов&#39;язаний поставити на Magento 2" />
 
-    <meta property="article:published_time" content="2018-01-02T13:18:00Z" />
+    <meta property="article:published_time" content="0001-01-01T00:00:00Z" />
     <meta property="article:tag" content="magento" />
 
     <meta property="og:image" content="https://images.unsplash.com/photo-1506645292803-579c17d4ba6a?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
@@ -132,7 +132,7 @@
       <article class="post-full post"> 
     <header class="post-full-header">
         <section class="post-full-meta">
-            <time class="post-full-meta-date" datetime="2018-01-02">2 January 2018</time>
+            <time class="post-full-meta-date" datetime="0001-01-01">1 January 0001</time>
                 <span class="date-divider">/</span> <a href="https://bender.kr.ua/tags/magento/">#magento</a>&nbsp;
         </section>
         <h1 class="post-full-title">5 розширень, які ти зобов&#39;язаний поставити на Magento 2</h1>
@@ -255,13 +255,13 @@ php bin/magento setup:static-content:deploy
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/iptables-ipset/">Блокування трафіку за допомогою iptables та ipset</a></li>            
-        
-          <li><a href="https://bender.kr.ua/upgrade-magento-232/">Оновлення Magento до версії 2.3.2</a></li>            
-        
-          <li><a href="https://bender.kr.ua/mysql-and-regexp/">Пошук в MySQL за допомогою регулярних виразів</a></li>            
+          <li><a href="https://bender.kr.ua/mining-karbowanec/">Як я місяць майнив криптовалюту за допомогою ноутбуку, навіщо мені це та що з того вийшло</a></li>            
         
           <li><a href="https://bender.kr.ua/new-db-in-mysql/">Створення бази даних в MySQL</a></li>            
+        
+          <li><a href="https://bender.kr.ua/magento2-reindexer-for-large-catalog/">Проблема переіндексації великого каталогу в Magento 2</a></li>            
+        
+          <li><a href="https://bender.kr.ua/howto-asterisk-part-1/">IP-телефонія на базі Asterisk. Частина 1: Встановлення сервера Asterisk</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -274,66 +274,34 @@ php bin/magento setup:static-content:deploy
       
       <article class="post-card post"> 
     
-    <a class="post-card-image-link" href="https://bender.kr.ua/cli-upgrade-magento2/">
-      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1524741978410-350ba91a70d7?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
+    <a class="post-card-image-link" href="https://bender.kr.ua/why-magento/">
+      <div class="post-card-image" style="background-image: url(https://bender.kr.ua/img/why-magento-1.png)"></div>
     </a>
     
 
     <div class="post-card-content">
-      <a class="post-card-content-link" href="https://bender.kr.ua/cli-upgrade-magento2/">
+      <a class="post-card-content-link" href="https://bender.kr.ua/why-magento/">
           <header class="post-card-header">
               <span class="post-card-tags">
-              #magento 
-              #linux  </span>
+              #magento  </span>
               
-              <h2 class="post-card-title">Оновлення Magento 2</h2>
+              <h2 class="post-card-title">Чому ми обираємо Magento, а не інші системи</h2>
           </header>
           <section class="post-card-excerpt">
               
-                <p>Скрипт для оновлення Magento 2:
-#!/bin/bash # upgrade.sh composer require magento/product-community-edition $1 --no-update composer update rm -rf var/cache/* var/page_cache/* var/generation/* php bin/magento setup:upgrade find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; chown -R :www-data . chmod u+x bin/magento  Приклад запуску:
-upgrade.sh 2.2.2  Джерело тут </p>
+                <p>Від початку стаття призначалася для інтернет-агенції Studio370, тому в тексті багато &ldquo;ми&rdquo; і &ldquo;нас&rdquo;. З появою власного блогу, прийшов час перетягти її сюди. Планую дописувати та переписувати цей допис, тому, скоріш за все, скоро ця стаття буде дуже не схожа на оригінал.
+ Отже у вас є товар, ви точно знаєте де ваш покупець, лишилося зовсім мало - запустити інтернет-магазин і ось воно щастя. Тут і починається головний біль. ...  </p>
               
           </section>
       </a>
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">0 хв</span>
+        <span class="reading-time">11 хв</span>
       </footer>
     </div>
 </article>
       
-      
-      <article class="post-card post"> 
-    
-    <a class="post-card-image-link" href="https://bender.kr.ua/how-to-exclude-dump-tables/">
-      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1489875347897-49f64b51c1f8?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
-    </a>
-    
-
-    <div class="post-card-content">
-      <a class="post-card-content-link" href="https://bender.kr.ua/how-to-exclude-dump-tables/">
-          <header class="post-card-header">
-              <span class="post-card-tags">
-              #mysql  </span>
-              
-              <h2 class="post-card-title">Вибіркове завантаження таблиць дампа в MySQL</h2>
-          </header>
-          <section class="post-card-excerpt">
-              
-                <p>Є в мене дамп магазину на Magento розміром 4Gb. В ньому таблиці з логами займають 3,5Gb. O_o Фігассє, нафіга воно мені на тестовому сервері. Людина, що передала мені архів, в даний момент недоступна, тобто зробить новий дамп без логів не варіант. Що робить!? Правильно, #!bash-ить:
-cat old.sql | sed -e '/^LOCK TABLES .log_/,/^UNLOCK TABLES;/d' &gt; new.sql   </p>
-              
-          </section>
-      </a>
-
-      <footer class="post-card-meta">
-        <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">1 хв</span>
-      </footer>
-    </div>
-</article>
       
     </div>
   </div>

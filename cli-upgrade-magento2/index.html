@@ -206,13 +206,13 @@ chmod u+x bin/magento
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/puppeteer-with-authorization/">&#34;Прогрівання&#34; кешу для закритих частин сайту за допомогою Puppeteer</a></li>            
-        
-          <li><a href="https://bender.kr.ua/howto-remove-parent-category-from-url-magento-2/">Вилучення ієрархії категорій з URL в Magento 2</a></li>            
+          <li><a href="https://bender.kr.ua/fail2ban-unban-ip/">Як розблокувати себе в fail2ban</a></li>            
         
           <li><a href="https://bender.kr.ua/howto-install-telegram-debian-9/">Встановлення Telegram на Debian 9</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-asterisk-part-1/">IP-телефонія на базі Asterisk. Частина 1: Встановлення сервера Asterisk</a></li>            
+          <li><a href="https://bender.kr.ua/mining-karbowanec/">Як я місяць майнив криптовалюту за допомогою ноутбуку, навіщо мені це та що з того вийшло</a></li>            
+        
+          <li><a href="https://bender.kr.ua/nginx-pagespeed-openssl/">Як я готую NGINX з модулем PAGESPEED</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -255,34 +255,30 @@ chmod u+x bin/magento
       
       <article class="post-card post"> 
     
-    <a class="post-card-image-link" href="https://bender.kr.ua/5-extensions-for-default-magento2/">
-      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1506645292803-579c17d4ba6a?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
+    <a class="post-card-image-link" href="https://bender.kr.ua/how-to-exclude-dump-tables/">
+      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1489875347897-49f64b51c1f8?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
     </a>
     
 
     <div class="post-card-content">
-      <a class="post-card-content-link" href="https://bender.kr.ua/5-extensions-for-default-magento2/">
+      <a class="post-card-content-link" href="https://bender.kr.ua/how-to-exclude-dump-tables/">
           <header class="post-card-header">
               <span class="post-card-tags">
-              #magento  </span>
+              #mysql  </span>
               
-              <h2 class="post-card-title">5 розширень, які ти зобов&#39;язаний поставити на Magento 2</h2>
+              <h2 class="post-card-title">Вибіркове завантаження таблиць дампа в MySQL</h2>
           </header>
           <section class="post-card-excerpt">
               
-                <p>Magento 2 - дійсно крута система, але деякі штуки, як на мене, настільки очевидно мають бути всередині, що коли їх не знаходиш, то лишається лише сказати &ldquo;ну як, так!?&rdquo;
-Виконавши кілька проектів на Magento 2, зібрав список модулів, які обов&rsquo;язково ставлю після інсталяції системи.
-1. Google Tag Manager Дивно, що не &ldquo;з коробки&rdquo;, бо Google Analytics та Google AdWords в системі присутні.
-сайт: magepal/magento2-googletagmanager
-встановлення:
-composer require magepal/magento2-googletagmanager php -f bin/magento module:enable --clear-static-content MagePal_GoogleTagManager php -f bin/magento setup:upgrade  Далі в адмінку і там Stores -&gt; Configuration -&gt; MagePal -&gt; Google Tag Manager ...  </p>
+                <p>Є в мене дамп магазину на Magento розміром 4Gb. В ньому таблиці з логами займають 3,5Gb. O_o Фігассє, нафіга воно мені на тестовому сервері. Людина, що передала мені архів, в даний момент недоступна, тобто зробить новий дамп без логів не варіант. Що робить!? Правильно, #!bash-ить:
+cat old.sql | sed -e '/^LOCK TABLES .log_/,/^UNLOCK TABLES;/d' &gt; new.sql   </p>
               
           </section>
       </a>
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">3 хв</span>
+        <span class="reading-time">1 хв</span>
       </footer>
     </div>
 </article>
