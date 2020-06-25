@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uk-UA" />
+<html lang="uk" />
 <head>
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -9,7 +9,7 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="shortcut icon" href="https://bender.kr.ua/favicon.ico" />
+    <link rel="shortcut icon" href="https://bender.kr.ua/favicon.png" />
     <link rel="canonical" href="https://bender.kr.ua/" />
 
     
@@ -52,7 +52,7 @@
 <header class="site-header outer "  style="background-image: url(https://bender.kr.ua/img/blog-cover.jpg)"  >
   <div class="inner">
     <div class="site-header-content">
-      <h1 class="site-title"> Бортовий журнал Бендера  </h1>
+      <h1 class="site-title">Бортовий журнал Бендера</h1>
         <h2 class="site-description"> </h2>
     </div>
 
@@ -131,33 +131,65 @@
 
 <article class="post-card post"> 
     
-    <a class="post-card-image-link" href="https://bender.kr.ua/puppeteer-with-authorization/">
-      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1432639020363-5632f7f04e0b?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
+    <a class="post-card-image-link" href="https://bender.kr.ua/cli-upgrade-magento2/">
+      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1524741978410-350ba91a70d7?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
     </a>
     
 
     <div class="post-card-content">
-      <a class="post-card-content-link" href="https://bender.kr.ua/puppeteer-with-authorization/">
+      <a class="post-card-content-link" href="https://bender.kr.ua/cli-upgrade-magento2/">
           <header class="post-card-header">
               
                 <span class="post-card-tags">
                   
-                    #web
+                    #magento
                   
                     #linux
-                  
-                    #js
                    
                 </span>
               
-              <h2 class="post-card-title">&#34;Прогрівання&#34; кешу для закритих частин сайту за допомогою Puppeteer</h2>
+              <h2 class="post-card-title">Оновлення Magento 2</h2>
           </header>
           <section class="post-card-excerpt">
               
-                <p>Найпростіший спосіб &ldquo;прогріти&rdquo; кеш - пройтись за допомогою wget по карті сайту. У випадку, коли сайт чи окремі його розділи доступні лише зареєстрованим користувачам, цей спосіб не підійде.
-У пригоді може стати Headless Chrome - хром, якому не потрібно рендерити сторінку в окреме вікно (хоча він це може). Найлегший спосіб почати працювати з ним - використати puppeteer.
-Встановлюємо Node.js та puppeteer
-curl -sL https://deb.nodesource.com/setup_10.x | bash - apt-get install nodejs libxss1 npm i puppeteer  Наш краулер з авторизацією crawler. ...  </p>
+                <p>Скрипт для оновлення Magento 2:
+#!/bin/bash # upgrade.sh composer require magento/product-community-edition $1 --no-update composer update rm -rf var/cache/* var/page_cache/* var/generation/* php bin/magento setup:upgrade find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; chown -R :www-data . chmod u+x bin/magento  Приклад запуску:
+upgrade.sh 2.2.2  Джерело тут </p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
+          <span class="reading-time">0 хв</span>
+      </footer>
+    </div>
+</article>
+
+
+<article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="https://bender.kr.ua/how-to-exclude-dump-tables/">
+      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1489875347897-49f64b51c1f8?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
+    </a>
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="https://bender.kr.ua/how-to-exclude-dump-tables/">
+          <header class="post-card-header">
+              
+                <span class="post-card-tags">
+                  
+                    #mysql
+                   
+                </span>
+              
+              <h2 class="post-card-title">Вибіркове завантаження таблиць дампа в MySQL</h2>
+          </header>
+          <section class="post-card-excerpt">
+              
+                <p>Є в мене дамп магазину на Magento розміром 4Gb. В ньому таблиці з логами займають 3,5Gb. O_o Фігассє, нафіга воно мені на тестовому сервері. Людина, що передала мені архів, в даний момент недоступна, тобто зробить новий дамп без логів не варіант. Що робить!? Правильно, #!bash-ить:
+cat old.sql | sed -e '/^LOCK TABLES .log_/,/^UNLOCK TABLES;/d' &gt; new.sql   </p>
               
           </section>
       </a>
@@ -172,92 +204,13 @@ curl -sL https://deb.nodesource.com/setup_10.x | bash - apt-get install nodejs l
 
 <article class="post-card post"> 
     
-    <a class="post-card-image-link" href="https://bender.kr.ua/review-neal-stephenson-in-the-beginning-was-the-command-line/">
-      <div class="post-card-image" style="background-image: url(https://bender.kr.ua/img/in-the-beginning-was-the-command-line.png)"></div>
+    <a class="post-card-image-link" href="https://bender.kr.ua/magento-payment-plugin-for-bitpay/">
+      <div class="post-card-image" style="background-image: url(https://bender.kr.ua/img/bender-bitpay.png)"></div>
     </a>
     
 
     <div class="post-card-content">
-      <a class="post-card-content-link" href="https://bender.kr.ua/review-neal-stephenson-in-the-beginning-was-the-command-line/">
-          <header class="post-card-header">
-              
-                <span class="post-card-tags">
-                  
-                    #books
-                  
-                    #linux
-                   
-                </span>
-              
-              <h2 class="post-card-title">Ніл Стівенсон. Спочатку був командний рядок</h2>
-          </header>
-          <section class="post-card-excerpt">
-              
-                <p>Книга відомого письменника-фантаста Ніла Стівенсона датована 1999 роком про еволюцію операційних систем.
-Назва мовою оригіналу: Neal Stephenson. In the Beginning&hellip; Was the Command Line
-Книга стала цікава мені з кількох причин: * Стівенсон є одним з моїх улюблених авторів * загальні оцінки на книжкових форумах у цієї книжки не дуже високі (принаймі в порівнянні з іншим його творами) і дуже кортіло дізнатись чому * я сам багато часу проводжу в командному рядку ...  </p>
-              
-          </section>
-      </a>
-
-      <footer class="post-card-meta">
-          <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-          <span class="reading-time">4 хв</span>
-      </footer>
-    </div>
-</article>
-
-
-<article class="post-card post"> 
-    
-    <a class="post-card-image-link" href="https://bender.kr.ua/howto-install-munin/">
-      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1459609336665-6ef3866c8930?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
-    </a>
-    
-
-    <div class="post-card-content">
-      <a class="post-card-content-link" href="https://bender.kr.ua/howto-install-munin/">
-          <header class="post-card-header">
-              
-                <span class="post-card-tags">
-                  
-                    #linux
-                  
-                    #mysql
-                  
-                    #web
-                   
-                </span>
-              
-              <h2 class="post-card-title">Простий моніторинг роботи сервера за допомогою Munin</h2>
-          </header>
-          <section class="post-card-excerpt">
-              
-                <p>Munin — це дуже простий в налаштуванні засіб моніторинга серверів. Для Munin існує величезна кількість плагінів для спостереження за load average, дисковими операціями, CPU, RAM, mysql тощо. Вся інформація зберігається в кільцевій базі даних RRDtool.
-Встановлюємо систему моніторингу:
-apt-get install munin munin-node service munin-node start  Налаштовуємо nginx
-	location / { root /var/cache/munin/www; autoindex on; auth_basic &quot;Munin Statistics&quot;; auth_basic_user_file /etc/munin/.passwd; }  Додаткові плагіни знаходяться в директорії /usr/share/munin/plugins . ...  </p>
-              
-          </section>
-      </a>
-
-      <footer class="post-card-meta">
-          <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-          <span class="reading-time">2 хв</span>
-      </footer>
-    </div>
-</article>
-
-
-<article class="post-card post"> 
-    
-    <a class="post-card-image-link" href="https://bender.kr.ua/how-to-fix-elasticsearch-forbidden-12-index-read-only-allow-delete-api/">
-      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1494059980473-813e73ee784b?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
-    </a>
-    
-
-    <div class="post-card-content">
-      <a class="post-card-content-link" href="https://bender.kr.ua/how-to-fix-elasticsearch-forbidden-12-index-read-only-allow-delete-api/">
+      <a class="post-card-content-link" href="https://bender.kr.ua/magento-payment-plugin-for-bitpay/">
           <header class="post-card-header">
               
                 <span class="post-card-tags">
@@ -266,13 +219,12 @@ apt-get install munin munin-node service munin-node start  Налаштовує�
                    
                 </span>
               
-              <h2 class="post-card-title">Проблема з переіндексацією catalogsearch_fulltext на Magento 2</h2>
+              <h2 class="post-card-title">Рубимо електронні гроші в Magento</h2>
           </header>
           <section class="post-card-excerpt">
               
-                <p>Під час переіндексації отримую
-php bin/magento indexer:reindex catalogsearch_fulltext Catalog Search indexer process unknown error: {&quot;error&quot;:{&quot;root_cause&quot;:[{&quot;type&quot;:&quot;cluster_block_exception&quot;,&quot;reason&quot;:&quot;blocked by: [FORBIDDEN/12/index read-only / allow delete (api)];&quot;}],&quot;type&quot;:&quot;cluster_block_exception&quot;,&quot;reason&quot;:&quot;blocked by: [FORBIDDEN/12/index read-only / allow delete (api)];&quot;},&quot;status&quot;:403}  Проблема пов&rsquo;язана з ElasticSearch, а саме тим, що на диску залишилось менше 5% вільного місця. Щоб усе запрацювало, крім вивільнення необхідної кількості байт, необхідно ще виконати наступну команду:
-curl -XPUT -H &quot;Content-Type: application/json&quot; http://localhost:9200/_all/_settings -d '{&quot;index.blocks.read_only_allow_delete&quot;: null}'  Посилання  https://techoverflow. ...  </p>
+                <p>Як отримати bitcoin-и без того, щоб скуповувати відеокарти? Правильно, щось за них продати. Для цього трема мати магазин на Magento та виконати невеличку інструкцію:
+ Зробити гаманець на https://bitpay.com/. Встановити модуль https://github.com/bitpay/magento-plugin. Тут увага, не намагайтесь ставити через modman - все одно не запрацює. Краще зробити це з архіву https://github.com/bitpay/magento-plugin/releases. Далі налаштовуємо через System &gt; Configuration &gt; Sales &gt; Payment Methods. Щоб прив&rsquo;язати гаманець до Magento, треба отримати токен https://bitpay.com/api-tokens і ввести його у відповідне поле. ...  </p>
               
           </section>
       </a>
@@ -287,36 +239,33 @@ curl -XPUT -H &quot;Content-Type: application/json&quot; http://localhost:9200/_
 
 <article class="post-card post"> 
     
-    <a class="post-card-image-link" href="https://bender.kr.ua/backup-with-tartarus/">
-      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1507475380673-1246fa72eeea?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
+    <a class="post-card-image-link" href="https://bender.kr.ua/git-branch/">
+      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1556075798-4825dfaaf498?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
     </a>
     
 
     <div class="post-card-content">
-      <a class="post-card-content-link" href="https://bender.kr.ua/backup-with-tartarus/">
+      <a class="post-card-content-link" href="https://bender.kr.ua/git-branch/">
           <header class="post-card-header">
               
                 <span class="post-card-tags">
                   
-                    #linux
+                    #web
                    
                 </span>
               
-              <h2 class="post-card-title">Резервне копіювання і трохи грецької міфології</h2>
+              <h2 class="post-card-title">Як забрати гілку з git</h2>
           </header>
           <section class="post-card-excerpt">
               
-                <p>Tartarus - це система створення резервних копій. Може створювати інкрементні архіви. Базується на використанні звичних в nix-середовищі утиліт curl, tar, gzip та інших.
-Репозиторій проекту доволі давно не оновлювався та від цього не втратив своєї привабливості в якості дуже простого і зрозумілого інструменту.
- Та́ртар (грец. Τάρταρος, Tartaros) — у давньогрецькій міфології місце в підземному світі, темна безодня в глибині космосу, нижче від Аїду. (Вікіпедія)
- Встановлюємо необхідні утиліти ...  </p>
+                <p>git init git remote add origin remote_git.git git fetch git checkout -b new_branch git pull origin new_branch   </p>
               
           </section>
       </a>
 
       <footer class="post-card-meta">
           <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-          <span class="reading-time">2 хв</span>
+          <span class="reading-time">0 хв</span>
       </footer>
     </div>
 </article>
@@ -324,39 +273,179 @@ curl -XPUT -H &quot;Content-Type: application/json&quot; http://localhost:9200/_
 
 <article class="post-card post"> 
     
-    <a class="post-card-image-link" href="https://bender.kr.ua/howto-certbot-nginx-debian/">
-      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
+    <a class="post-card-image-link" href="https://bender.kr.ua/magick-248/">
+      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1534653169071-4f036d137aca?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
     </a>
     
 
     <div class="post-card-content">
-      <a class="post-card-content-link" href="https://bender.kr.ua/howto-certbot-nginx-debian/">
+      <a class="post-card-content-link" href="https://bender.kr.ua/magick-248/">
           <header class="post-card-header">
               
                 <span class="post-card-tags">
                   
-                    #linux
+                    #php
                   
-                    #web
+                    #magento
                    
                 </span>
               
-              <h2 class="post-card-title">Отримання SSL-сертифікату для Nginx на Debian 9</h2>
+              <h2 class="post-card-title">Магічне число 248 або Чому я не можу додати значення атрибута в Magento 2?</h2>
           </header>
           <section class="post-card-excerpt">
               
-                <p>Простий спосіб отримати безкоштовний SSL-сертифікат з оцінкою A+ для Nginx на Debian 9
-Спочатку додаємо репозиторій stretch-backports
-add-apt-repository 'deb http://deb.debian.org/debian stretch-backports main' apt-get update  Встановлюємо утиліту для автоматичного отримання та оновлення сертифікатів certbot
-apt-get install certbot python-certbot-nginx -t stretch-backports  В конфігураційному файлі для нашого сайту надаємо certbot-у доступ до необхідної йому директорії
-# Let’s Encrypt location ~ /.well-known { allow all; }  та перечитуємо конфігурацію nginx ...  </p>
+                <p>Не можу додати ще одне значення атрибута в Magento 2. Підрахував кількість вже існуючих значень - 248. Виявилося, що у всьому винен PHP, а саме значення за замовчуванням _max_inputvars = 1000. Змінив на 100000.
+Згадав, що знаю про цю штуку ще з Magento 1, але поки не записав рецепт, змушений був в черговий раз гуглити.
+Подробиці тут </p>
               
           </section>
       </a>
 
       <footer class="post-card-meta">
           <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-          <span class="reading-time">2 хв</span>
+          <span class="reading-time">1 хв</span>
+      </footer>
+    </div>
+</article>
+
+
+<article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="https://bender.kr.ua/nginx-redirection-get-arg/">
+      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1542744095-291d1f67b221?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
+    </a>
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="https://bender.kr.ua/nginx-redirection-get-arg/">
+          <header class="post-card-header">
+              
+                <span class="post-card-tags">
+                  
+                    #web
+                   
+                </span>
+              
+              <h2 class="post-card-title">NGINX - 301-й редирект адрес з get-аргументами</h2>
+          </header>
+          <section class="post-card-excerpt">
+              
+                <p>Якщо необхідно зробити редирект зі сторінки с get-аргументом, то необхідно дописати в конфіг таке
+location / { if ($arg_param = value) { return 301 $uri; } }  Взяв тут - https://stackoverflow.com/questions/27078909/nginx-redirect-url-with-specific-query-parameter </p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
+          <span class="reading-time">0 хв</span>
+      </footer>
+    </div>
+</article>
+
+
+<article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="https://bender.kr.ua/nginx-pagespeed-openssl/">
+      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
+    </a>
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="https://bender.kr.ua/nginx-pagespeed-openssl/">
+          <header class="post-card-header">
+              
+                <span class="post-card-tags">
+                  
+                    #web
+                  
+                    #linux
+                   
+                </span>
+              
+              <h2 class="post-card-title">Як я готую NGINX з модулем PAGESPEED</h2>
+          </header>
+          <section class="post-card-excerpt">
+              
+                <p>Останнім часом майже взагалі не використовую Apache. Є кілька проектів з категорії &ldquo;ой, а про вас забули&rdquo; та &ldquo;не чіпай поки працює&rdquo;, а на нових - лише nginx.
+Готую nginx з pagespeed-ом за таким рецептом:
+#!/bin/sh apt-get install build-essential ca-certificates zlib1g-dev libpcre3 libpcre3-dev tar unzip libssl-dev checkinstall OPENSSL_VER=1.1.0g NPS_VER=1.12.34.3-stable NGINX_VER=1.13.8 cd /opt wget -c https://www.openssl.org/source/openssl-$OPENSSL_VER.tar.gz tar -xzvf openssl-$OPENSSL_VER.tar.gz rm openssl-$OPENSSL_VER.tar.gz wget https://github.com/apache/incubator-pagespeed-ngx/archive/v${NPS_VER}.zip unzip v${NPS_VER}.zip rm v${NPS_VER}.zip NPS_DIR=$(find . -name &quot;*pagespeed-ngx-${NPS_VER}&quot; -type d | sed -e 's/\. ...  </p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
+          <span class="reading-time">1 хв</span>
+      </footer>
+    </div>
+</article>
+
+
+<article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="https://bender.kr.ua/why-magento/">
+      <div class="post-card-image" style="background-image: url(https://bender.kr.ua/img/why-magento-1.png)"></div>
+    </a>
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="https://bender.kr.ua/why-magento/">
+          <header class="post-card-header">
+              
+                <span class="post-card-tags">
+                  
+                    #magento
+                   
+                </span>
+              
+              <h2 class="post-card-title">Чому ми обираємо Magento, а не інші системи</h2>
+          </header>
+          <section class="post-card-excerpt">
+              
+                <p>Від початку стаття призначалася для інтернет-агенції Studio370, тому в тексті багато &ldquo;ми&rdquo; і &ldquo;нас&rdquo;. З появою власного блогу, прийшов час перетягти її сюди. Планую дописувати та переписувати цей допис, тому, скоріш за все, скоро ця стаття буде дуже не схожа на оригінал.
+ Отже у вас є товар, ви точно знаєте де ваш покупець, лишилося зовсім мало - запустити інтернет-магазин і ось воно щастя. Тут і починається головний біль. ...  </p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
+          <span class="reading-time">11 хв</span>
+      </footer>
+    </div>
+</article>
+
+
+<article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="https://bender.kr.ua/5-extensions-for-default-magento2/">
+      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1506645292803-579c17d4ba6a?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
+    </a>
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="https://bender.kr.ua/5-extensions-for-default-magento2/">
+          <header class="post-card-header">
+              
+                <span class="post-card-tags">
+                  
+                    #magento
+                   
+                </span>
+              
+              <h2 class="post-card-title">5 розширень, які ти зобов&#39;язаний поставити на Magento 2</h2>
+          </header>
+          <section class="post-card-excerpt">
+               
+                <p>5 розширень, які ти зобов&rsquo;язаний поставити на Magento 2</p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
+          <span class="reading-time">3 хв</span>
       </footer>
     </div>
 </article>
@@ -368,9 +457,7 @@ apt-get install certbot python-certbot-nginx -t stretch-backports  В конфі
       
           <a class="newer-posts" href="/page/5/">&larr; <span class="hide">Next Posts</span></a>
       
-      <span class="page-number"><span class="hide">Page 6 of 9</span>&nbsp;</span>
-      
-          <a class="older-posts" href="/page/7/"><span class="hide">Previous Posts</span> &rarr;</a>
+      <span class="page-number"><span class="hide">Page 6 of 6</span>&nbsp;</span>
       
     </nav>
   </div>

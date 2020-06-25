@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uk-UA" />
+<html lang="uk" />
 <head>
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -9,7 +9,7 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="shortcut icon" href="https://bender.kr.ua/favicon.ico" />
+    <link rel="shortcut icon" href="https://bender.kr.ua/favicon.png" />
     <link rel="canonical" href="https://bender.kr.ua/" />
 
     
@@ -52,7 +52,7 @@
 <header class="site-header outer "  style="background-image: url(https://bender.kr.ua/img/blog-cover.jpg)"  >
   <div class="inner">
     <div class="site-header-content">
-      <h1 class="site-title"> Бортовий журнал Бендера  </h1>
+      <h1 class="site-title">Бортовий журнал Бендера</h1>
         <h2 class="site-description"> </h2>
     </div>
 
@@ -131,110 +131,33 @@
 
 <article class="post-card post"> 
     
-    <a class="post-card-image-link" href="https://bender.kr.ua/mint-19-and-epson-perfection-v33/">
-      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1503789146722-cf137a3c0fea?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
+    <a class="post-card-image-link" href="https://bender.kr.ua/howto-hide-default-store-code-from-url-magento-2/">
+      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1477650614459-1c25033a8953?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
     </a>
     
 
     <div class="post-card-content">
-      <a class="post-card-content-link" href="https://bender.kr.ua/mint-19-and-epson-perfection-v33/">
+      <a class="post-card-content-link" href="https://bender.kr.ua/howto-hide-default-store-code-from-url-magento-2/">
           <header class="post-card-header">
               
                 <span class="post-card-tags">
-                  
-                    #linux
-                   
-                </span>
-              
-              <h2 class="post-card-title">Mint 19 і сканер Epson Perfection V33</h2>
-          </header>
-          <section class="post-card-excerpt">
-              
-                <p> На замовчування програма iscan в Linux Mint не працює зі сканером Epson Perfection V33. Щоб вирішити цю проблему, винонуємо наступні дії:
-sudo ln -sfr /usr/lib/sane/libsane-epkowa* /usr/lib/x86_64-linux-gnu/sane  та сворюємо правило для підключення сканера /etc/udev/rules.d/79-udev-epson.rules:
-# chmod device EPSON group ATTRS{manufacturer}==&quot;EPSON&quot;, DRIVERS==&quot;usb&quot;, SUBSYSTEMS==&quot;usb&quot;, ATTRS{idVendor}==&quot;04b8&quot;, ATTRS{idProduct}==&quot;*&quot;, MODE=&quot;0777&quot;  Посилання  https://forums.linuxmint.com/viewtopic.php?t=275853   </p>
-              
-          </section>
-      </a>
-
-      <footer class="post-card-meta">
-          <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-          <span class="reading-time">0 хв</span>
-      </footer>
-    </div>
-</article>
-
-
-<article class="post-card post"> 
-    
-    <a class="post-card-image-link" href="https://bender.kr.ua/howto-asterisk-part-1/">
-      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1475691058852-37b5d9b6a878?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
-    </a>
-    
-
-    <div class="post-card-content">
-      <a class="post-card-content-link" href="https://bender.kr.ua/howto-asterisk-part-1/">
-          <header class="post-card-header">
-              
-                <span class="post-card-tags">
-                  
-                    #linux
-                   
-                </span>
-              
-              <h2 class="post-card-title">IP-телефонія на базі Asterisk. Частина 1: Встановлення сервера Asterisk</h2>
-          </header>
-          <section class="post-card-excerpt">
-              
-                <p>Цикл статей по розгортанню IP-телефонії на базі Asterisk. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Робота була захищена, сертифікат отриманий, все написане тестувалось і є повтінстю робочою реалізацією. Інформація в статті і версії програмного забезбечення актуальні на 2017 рік.
-Середовище Операційна система встановлена з образу CentOS-7-i386-Minimal-1611.iso. Им&rsquo;я сервера asterisk-centos.localhost.local. Адреса сервера в локальній мережі 192.168.1.201.
-Встановлення сервера Asterisk 1.1 Підготовка середовища Розширюємо bash, встановлюємо vim и пакет wget для скачування архівів з сирцевим кодом: ...  </p>
-              
-          </section>
-      </a>
-
-      <footer class="post-card-meta">
-          <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-          <span class="reading-time">5 хв</span>
-      </footer>
-    </div>
-</article>
-
-
-<article class="post-card post"> 
-    
-    <a class="post-card-image-link" href="https://bender.kr.ua/mysql-and-regexp/">
-      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1508873535684-277a3cbcc4e8?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
-    </a>
-    
-
-    <div class="post-card-content">
-      <a class="post-card-content-link" href="https://bender.kr.ua/mysql-and-regexp/">
-          <header class="post-card-header">
-              
-                <span class="post-card-tags">
-                  
-                    #mysql
                   
                     #magento
                    
                 </span>
               
-              <h2 class="post-card-title">Пошук в MySQL за допомогою регулярних виразів</h2>
+              <h2 class="post-card-title">Як прибрати Store Code з URL для основного магазину в Magento 2</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p> Завдання: знайти в каталозі sku із знаком &ldquo;-&rdquo; в кінці.
-Для знаходження відповідних sku виконуємо запит в базу
-SELECT sku FROM `catalog_product_entity` WHERE sku REGEXP &quot;-$&quot; = 1;  REGEXP віддає 1 якщо значення відповідає регулярному виразу, інакше - 0.
-Посилання  http://www.mysql.ru/docs/man/Regexp.html   </p>
+               
+                <p>Простий модуль для вилучення store code з адреси основного магазину в Magento 2</p>
               
           </section>
       </a>
 
       <footer class="post-card-meta">
           <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-          <span class="reading-time">0 хв</span>
+          <span class="reading-time">2 хв</span>
       </footer>
     </div>
 </article>
@@ -242,30 +165,27 @@ SELECT sku FROM `catalog_product_entity` WHERE sku REGEXP &quot;-$&quot; = 1;  R
 
 <article class="post-card post"> 
     
-    <a class="post-card-image-link" href="https://bender.kr.ua/wtf-ssl-error-leaf-certificate-is-expired/">
-      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1485761954900-f9a29f318567?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
+    <a class="post-card-image-link" href="https://bender.kr.ua/magento-2-modules-and-tools/">
+      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1444208393177-b2a88904ed8d?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
     </a>
     
 
     <div class="post-card-content">
-      <a class="post-card-content-link" href="https://bender.kr.ua/wtf-ssl-error-leaf-certificate-is-expired/">
+      <a class="post-card-content-link" href="https://bender.kr.ua/magento-2-modules-and-tools/">
           <header class="post-card-header">
               
                 <span class="post-card-tags">
                   
-                    #linux
+                    #magento
                    
                 </span>
               
-              <h2 class="post-card-title">Після оновлення сертифікату на поштовому сервері в GMAIL не працює POP3</h2>
+              <h2 class="post-card-title">Модулі та інструменти для роботи з Magento 2 (оновлюється)</h2>
           </header>
           <section class="post-card-excerpt">
               
-                <p>Після оновлення сертифікату Let&rsquo;s Encrypt на поштовому сервері iRedMail в GMAIL перестав збирати пошту по протоколу POP3, помилка SSL error: Leaf certificate is expired.
-Перевірка на 995 порту тут показувала, що сертифікат не дійсний, а тут - що все ОК.
-Вирішення проблеми постфактум очевидне, але на пошуки був витрачений час.
-Отже, після оновлення сертифікатів треба перезавантажити не лише nginx, а й dovecot, що зроблено не було :(
-Посилання  https://docs. ...  </p>
+                <p> Список корисних модулів і рішень для Magento 2. Список, ясна річ, дуже суб&rsquo;єктивний і використовується для зберігання цікавих для мене посилань.
+Розгортання  Magento 2 Zero Downtime Deployment  Оптимізація  Відключення непотрібних модулів - один та два Відключення непотрібних модулів The “ultimate guide” to Magento 2 JavaScript Bundling How to improve Magento 2 Page Speed Insights Score?  Пошук  Модуль для Elastic App Search Smile ElasticSuite - комплексне рішення для пошуку, фільтрації та створення віртуальних категорій  Зовнішній вигляд та теми  Open Source alternative to Magento PageBuilder  Youtube  Max Pronko UA / Max Pronko   </p>
               
           </section>
       </a>
@@ -280,13 +200,120 @@ SELECT sku FROM `catalog_product_entity` WHERE sku REGEXP &quot;-$&quot; = 1;  R
 
 <article class="post-card post"> 
     
-    <a class="post-card-image-link" href="https://bender.kr.ua/backup-with-borg/">
-      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1466071110707-a017f96ef5c9?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
+    <a class="post-card-image-link" href="https://bender.kr.ua/quick-start-with-jenkins-in-docker/">
+      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1493946740644-2d8a1f1a6aff?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
     </a>
     
 
     <div class="post-card-content">
-      <a class="post-card-content-link" href="https://bender.kr.ua/backup-with-borg/">
+      <a class="post-card-content-link" href="https://bender.kr.ua/quick-start-with-jenkins-in-docker/">
+          <header class="post-card-header">
+              
+                <span class="post-card-tags">
+                  
+                    #web
+                  
+                    #linux
+                   
+                </span>
+              
+              <h2 class="post-card-title">Швидкий старт Jenkins в Debian 10 за допомогою Docker</h2>
+          </header>
+          <section class="post-card-excerpt">
+              
+                <p>Для швидкого старту системи CI/CD Jenkins скористаємось docker-ом. Працюємо в Debian 10, але рецепт певно спрацює для будь-якого deb-похідного дистрибутиву.
+ Встановлюємо Docker  apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - apt-get update apt-get install docker-ce   systemctl status docker ● docker.service - Docker Application Container Engine Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled) Active: active (running) since Wed 2019-07-31 12:48:03 EEST; 5min ago Docs: https://docs. ...  </p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
+          <span class="reading-time">1 хв</span>
+      </footer>
+    </div>
+</article>
+
+
+<article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="https://bender.kr.ua/howto-remove-parent-category-from-url-magento-2/">
+      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
+    </a>
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="https://bender.kr.ua/howto-remove-parent-category-from-url-magento-2/">
+          <header class="post-card-header">
+              
+                <span class="post-card-tags">
+                  
+                    #magento
+                   
+                </span>
+              
+              <h2 class="post-card-title">Вилучення ієрархії категорій з URL в Magento 2</h2>
+          </header>
+          <section class="post-card-excerpt">
+              
+                <p>В Magento 2 є налаштування, яке дозволяє не показувати категорії для адрес товарів: Stores &gt; Configuration &gt; General &gt; Catalog &gt; Catalog &gt; Search Engine Optimization &gt; Use Categories Path for Product URLs Результатом буде отримання URL виду https://mysite.com/product1.html замість https://mysite.com/category1/category2/product1.html. На жаль для категорій такої можливості не передбачено і не можна отримати https://mysite.com/category2.
+За генерацію URL категорій відповідає клас Magento\CatalogUrlRewrite\Model\CategoryUrlPathGenerator.
+public function getUrlPath($category, $parentCategory = null) { ... if ($this-&gt;isNeedToGenerateUrlPathForParent($category)) { $parentCategory = $parentCategory === null ? ...  </p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
+          <span class="reading-time">2 хв</span>
+      </footer>
+    </div>
+</article>
+
+
+<article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="https://bender.kr.ua/magento-2-reindex-parallel/">
+      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1474546652694-a33dd8161d66?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
+    </a>
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="https://bender.kr.ua/magento-2-reindex-parallel/">
+          <header class="post-card-header">
+              
+                <span class="post-card-tags">
+                  
+                    #magento
+                   
+                </span>
+              
+              <h2 class="post-card-title">Паралельна індексація в Magento 2</h2>
+          </header>
+          <section class="post-card-excerpt">
+               
+                <p>З версії Magento 2.2.6 є можливість розпаралелити процес індексації. Зробити це доволі просто.</p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
+          <span class="reading-time">1 хв</span>
+      </footer>
+    </div>
+</article>
+
+
+<article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="https://bender.kr.ua/fail2ban-unban-ip/">
+      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1550527882-b71dea5f8089?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
+    </a>
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="https://bender.kr.ua/fail2ban-unban-ip/">
           <header class="post-card-header">
               
                 <span class="post-card-tags">
@@ -295,18 +322,18 @@ SELECT sku FROM `catalog_product_entity` WHERE sku REGEXP &quot;-$&quot; = 1;  R
                    
                 </span>
               
-              <h2 class="post-card-title">Про користь borg-ів</h2>
+              <h2 class="post-card-title">Як розблокувати себе в fail2ban</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>До недавнього часу для створення резервних копій я активно користувався tartarus-ом. Хоча цей інструмент може створювати інкрементні бекапи і тим самим оптимізувати збереження резервних копій на диску, розміри повних бекапів мене не влаштовували. Крім того, розпаковка повного архіву було ще тим задоволенням :) На допомогу прийшла програма borgbackup (або просто borg). В роботі вона нагадує git. А головним для мене стала дедуплікація даних. Розміри повних бекапів в кілька разів менше за аналогічні від tartarus-а. ...  </p>
+               
+                <p>Як розблокувати себе в fail2ban</p>
               
           </section>
       </a>
 
       <footer class="post-card-meta">
           <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-          <span class="reading-time">4 хв</span>
+          <span class="reading-time">0 хв</span>
       </footer>
     </div>
 </article>
@@ -314,36 +341,101 @@ SELECT sku FROM `catalog_product_entity` WHERE sku REGEXP &quot;-$&quot; = 1;  R
 
 <article class="post-card post"> 
     
-    <a class="post-card-image-link" href="https://bender.kr.ua/connie-willis-doomsday-book/">
-      <div class="post-card-image" style="background-image: url(https://bender.kr.ua/img/connie-willis-doomsday-book.png)"></div>
+    <a class="post-card-image-link" href="https://bender.kr.ua/failed-to-fetch-jessie-backports-repository/">
+      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1508455858334-95337ba25607?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
     </a>
     
 
     <div class="post-card-content">
-      <a class="post-card-content-link" href="https://bender.kr.ua/connie-willis-doomsday-book/">
+      <a class="post-card-content-link" href="https://bender.kr.ua/failed-to-fetch-jessie-backports-repository/">
           <header class="post-card-header">
               
                 <span class="post-card-tags">
                   
-                    #books
+                    #linux
                    
                 </span>
               
-              <h2 class="post-card-title">Конні Вілліс. Книга судного дня</h2>
+              <h2 class="post-card-title">Проблема з backports репозиторієм в Debian 8</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Перша книга з &ldquo;Оксфордського циклу&rdquo; Конні Вілліс. Роман виграв премію Г&rsquo;юго в 1993 і премію Неб&rsquo;юла в 1992 році.
-Назва мовою оригіналу: Connie Willis. Doomsday Book
-Якщо плануєш потрапити в минуле, то що ти зробиш у першу чергу?
-Певно спочатку визначиш час і місце, щоб не потрапити, наприклад, на мальовничі поля поблизу Ватерлоо 18 червня 1815 року. Нехай це буде дорога в лісі біля невеличкого англійського села поблизу Оксфорда, так щоб і випадково не побачили як ти з&rsquo;явився нізвідки, і не блукать довго в пошуках людей. ...  </p>
+               
+                <p>Вирішення проблеми з відключеним репозиторієм jessie-backports при оновлені</p>
               
           </section>
       </a>
 
       <footer class="post-card-meta">
           <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-          <span class="reading-time">5 хв</span>
+          <span class="reading-time">1 хв</span>
+      </footer>
+    </div>
+</article>
+
+
+<article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="https://bender.kr.ua/magento2-reindexer-for-large-catalog/">
+      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1470173274384-c4e8e2f9ea4c?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
+    </a>
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="https://bender.kr.ua/magento2-reindexer-for-large-catalog/">
+          <header class="post-card-header">
+              
+                <span class="post-card-tags">
+                  
+                    #magento
+                   
+                </span>
+              
+              <h2 class="post-card-title">Проблема переіндексації великого каталогу в Magento 2</h2>
+          </header>
+          <section class="post-card-excerpt">
+               
+                <p>Вирішення проблеми довгої переіндексації великого (~300K) каталогу в Magento 2</p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
+          <span class="reading-time">2 хв</span>
+      </footer>
+    </div>
+</article>
+
+
+<article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="https://bender.kr.ua/howto-add-header-links-in-magento2/">
+      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1421940943431-d392fcc1079f?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
+    </a>
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="https://bender.kr.ua/howto-add-header-links-in-magento2/">
+          <header class="post-card-header">
+              
+                <span class="post-card-tags">
+                  
+                    #magento
+                   
+                </span>
+              
+              <h2 class="post-card-title">Magento 2: як додати посилання в header.links</h2>
+          </header>
+          <section class="post-card-excerpt">
+               
+                <p>Рецепт для додавання посилань у верхню панель інтернет-магазину на Magento 2</p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
+          <span class="reading-time">0 хв</span>
       </footer>
     </div>
 </article>
@@ -355,7 +447,7 @@ SELECT sku FROM `catalog_product_entity` WHERE sku REGEXP &quot;-$&quot; = 1;  R
       
           <a class="newer-posts" href="/page/2/">&larr; <span class="hide">Next Posts</span></a>
       
-      <span class="page-number"><span class="hide">Page 3 of 9</span>&nbsp;</span>
+      <span class="page-number"><span class="hide">Page 3 of 6</span>&nbsp;</span>
       
           <a class="older-posts" href="/page/4/"><span class="hide">Previous Posts</span> &rarr;</a>
       
