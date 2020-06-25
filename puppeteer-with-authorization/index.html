@@ -12,7 +12,7 @@
     <link rel="shortcut icon" href="https://bender.kr.ua/favicon.png" />
     <link rel="canonical" href="https://bender.kr.ua/puppeteer-with-authorization/" />
 
-     <meta name="description" content="Найпростіший спосіб &amp;ldquo;прогріти&amp;rdquo; кеш - пройтись за допомогою wget по карті сайту. У випадку, коли сайт чи окремі його розділи доступні лише зареєстров" /> 
+     <meta name="description" content="Найпростіший спосіб &#39;прогріти&#39; кеш - пройтись за допомогою wget по карті сайту. У випадку, коли сайт чи окремі його розділи доступні лише зареєстрованим користувачам, цей спосіб не підійде." /> 
 
      
     
@@ -21,7 +21,7 @@
     
  
     <meta name="twitter:title" content="&#34;Прогрівання&#34; кешу для закритих частин сайту за допомогою Puppeteer"/>
-    <meta name="twitter:description" content="Найпростіший спосіб &amp;ldquo;прогріти&amp;rdquo; кеш - пройтись за допомогою wget по карті сайту. У випадку, коли сайт чи окремі його розділи доступні лише зареєстров"/>
+    <meta name="twitter:description" content="Найпростіший спосіб &#39;прогріти&#39; кеш - пройтись за допомогою wget по карті сайту. У випадку, коли сайт чи окремі його розділи доступні лише зареєстрованим користувачам, цей спосіб не підійде."/>
     <meta name="twitter:url" content="https://bender.kr.ua/puppeteer-with-authorization/" />
     <meta name="twitter:site" content="@kr_ingulets"/>
 
@@ -31,7 +31,7 @@
     
 
     <meta property="og:type" content="article" />
-    <meta property="og:description" content="Найпростіший спосіб &amp;ldquo;прогріти&amp;rdquo; кеш - пройтись за допомогою wget по карті сайту. У випадку, коли сайт чи окремі його розділи доступні лише зареєстров" />
+    <meta property="og:description" content="Найпростіший спосіб &#39;прогріти&#39; кеш - пройтись за допомогою wget по карті сайту. У випадку, коли сайт чи окремі його розділи доступні лише зареєстрованим користувачам, цей спосіб не підійде." />
 
     <meta property="article:published_time" content="2019-06-03T00:00:00Z" />
     <meta property="article:tag" content="web" /><meta property="article:tag" content="linux" /><meta property="article:tag" content="js" />
@@ -302,13 +302,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/howto-install-django-mysql-debian-9/">Встановлення зв&#39;язки Django та MySQL на Debian 9</a></li>            
+          <li><a href="https://bender.kr.ua/how-to-exclude-dump-tables/">Вибіркове завантаження таблиць дампа в MySQL</a></li>            
         
-          <li><a href="https://bender.kr.ua/magento-2-cron-indexer-repair/">Magento 2: не працює індексація за розкладом</a></li>            
+          <li><a href="https://bender.kr.ua/howto-install-telegram-debian-9/">Встановлення Telegram на Debian 9</a></li>            
         
-          <li><a href="https://bender.kr.ua/fix-conflict-keyboard-shortcuts/">Не працюють комбінації клавіш CTRL-SHIFT в Ubuntu</a></li>            
+          <li><a href="https://bender.kr.ua/mysql-and-regexp/">Пошук в MySQL за допомогою регулярних виразів</a></li>            
         
-          <li><a href="https://bender.kr.ua/why-magento/">Чому ми обираємо Magento, а не інші системи</a></li>            
+          <li><a href="https://bender.kr.ua/df-and-du-show-different-values/">df і du показують різні значення</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -336,12 +336,8 @@ s.setAttribute('data-timestamp', +new Date());
               <h2 class="post-card-title">Заміна даних в MariaDB</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Швидкий спосіб виправити текстові дані в БД:
- Прибрати перехід на новий рядок (\n)
-UPDATE catalog_product_entity_varchar SET value = REPLACE(value, &quot;\n&quot;, &quot;&quot;) WHERE attribute_id = 73;  Прибрати зайві пробіли
-UPDATE catalog_product_entity_varchar SET value = REGEXP_REPLACE(value, '[[:space:]]+', ' ') WHERE attribute_id = 73;  Увага!!! [[:space:]] працює тільки в MariaDB
-   </p>
+               
+                <p>Заміна даних в MariaDB</p>
               
           </section>
       </a>
@@ -371,10 +367,8 @@ UPDATE catalog_product_entity_varchar SET value = REGEXP_REPLACE(value, '[[:spac
               <h2 class="post-card-title">Ніл Стівенсон. Спочатку був командний рядок</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Книга відомого письменника-фантаста Ніла Стівенсона датована 1999 роком про еволюцію операційних систем.
-Назва мовою оригіналу: Neal Stephenson. In the Beginning&hellip; Was the Command Line
-Книга стала цікава мені з кількох причин: * Стівенсон є одним з моїх улюблених авторів * загальні оцінки на книжкових форумах у цієї книжки не дуже високі (принаймі в порівнянні з іншим його творами) і дуже кортіло дізнатись чому * я сам багато часу проводжу в командному рядку ...  </p>
+               
+                <p>Книга відомого письменника-фантаста Ніла Стівенсона датована 1999 роком про еволюцію операційних систем.</p>
               
           </section>
       </a>

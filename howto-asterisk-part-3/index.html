@@ -12,7 +12,7 @@
     <link rel="shortcut icon" href="https://bender.kr.ua/favicon.png" />
     <link rel="canonical" href="https://bender.kr.ua/howto-asterisk-part-3/" />
 
-     <meta name="description" content="Цикл статей по розгортанню IP-телефонії на базі Asterisk. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Роб" /> 
+     <meta name="description" content="IP-телефонія на базі Asterisk. Частина 3: Логіка обробки дзвінків (Dialplan)" /> 
 
      
     
@@ -21,7 +21,7 @@
     
  
     <meta name="twitter:title" content="IP-телефонія на базі Asterisk. Частина 3: Логіка обробки дзвінків (Dialplan)"/>
-    <meta name="twitter:description" content="Цикл статей по розгортанню IP-телефонії на базі Asterisk. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Роб"/>
+    <meta name="twitter:description" content="IP-телефонія на базі Asterisk. Частина 3: Логіка обробки дзвінків (Dialplan)"/>
     <meta name="twitter:url" content="https://bender.kr.ua/howto-asterisk-part-3/" />
     <meta name="twitter:site" content="@kr_ingulets"/>
 
@@ -31,7 +31,7 @@
     
 
     <meta property="og:type" content="article" />
-    <meta property="og:description" content="Цикл статей по розгортанню IP-телефонії на базі Asterisk. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Роб" />
+    <meta property="og:description" content="IP-телефонія на базі Asterisk. Частина 3: Логіка обробки дзвінків (Dialplan)" />
 
     <meta property="article:published_time" content="2019-12-02T02:00:00Z" />
     <meta property="article:tag" content="linux" />
@@ -574,13 +574,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/nginx-geoip/">Блокування трафіку з окремих країн за допомогою Nginx та GeoIP</a></li>            
+          <li><a href="https://bender.kr.ua/nginx-pagespeed-openssl/">Як я готую NGINX з модулем PAGESPEED</a></li>            
         
-          <li><a href="https://bender.kr.ua/fix-conflict-keyboard-shortcuts/">Не працюють комбінації клавіш CTRL-SHIFT в Ubuntu</a></li>            
+          <li><a href="https://bender.kr.ua/howto-install-django-mysql-debian-9/">Встановлення зв&#39;язки Django та MySQL на Debian 9</a></li>            
         
-          <li><a href="https://bender.kr.ua/installing-python-3-6-on-debian-8/">Встановлення Python 3.6 на Debian 8</a></li>            
+          <li><a href="https://bender.kr.ua/letsencrypt-and-ipv6/">Помилка при оновлені сертифікатів від Let&#39;s Encrypt</a></li>            
         
-          <li><a href="https://bender.kr.ua/magento2-reindexer-for-large-catalog/">Проблема переіндексації великого каталогу в Magento 2</a></li>            
+          <li><a href="https://bender.kr.ua/mining-karbowanec/">Як я місяць майнив криптовалюту за допомогою ноутбуку, навіщо мені це та що з того вийшло</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -608,9 +608,8 @@ s.setAttribute('data-timestamp', +new Date());
               <h2 class="post-card-title">Блокування трафіку з окремих країн за допомогою Nginx та GeoIP</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Блокуємо паразитний трафік до сайту з певних країн безкоштовно, без реєстрацій та sms ;)
- Зібрати nginx з опцією &ndash;with-http_geoip_module. Як це зробити написано тут - https://bender.kr.ua/howto-lemp-install/ Встановити бази GeoIP  apt-get install geoip-database libgeoip1  Оновити бази до останньої версії  mv /usr/share/GeoIP/GeoIP.dat /usr/share/GeoIP/GeoIP.bak wget https://dl.miyuru.lk/geoip/maxmind/country/maxmind.dat.gz gunzip maxmind.dat.gz mv maxmind.dat /usr/share/GeoIP/GeoIP.dat  В /etc/nginx/nginx.conf в секції http блокуємо наприклад роісію та Пакистан  http { ... geoip_country /usr/share/GeoIP/GeoIP.dat; map $geoip_country_code $allowed_country_mysite { default yes; RU no; PK no; } . ...  </p>
+               
+                <p>Блокуємо паразитний трафік до сайту з певних країн безкоштовно, без реєстрацій та sms ;)</p>
               
           </section>
       </a>

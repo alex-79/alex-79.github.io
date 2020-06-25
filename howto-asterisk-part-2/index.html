@@ -12,7 +12,7 @@
     <link rel="shortcut icon" href="https://bender.kr.ua/favicon.png" />
     <link rel="canonical" href="https://bender.kr.ua/howto-asterisk-part-2/" />
 
-     <meta name="description" content="Цикл статей по розгортанню IP-телефонії на базі Asterisk. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Роб" /> 
+     <meta name="description" content="IP-телефонія на базі Asterisk. Частина 2: Налаштування SIP" /> 
 
      
     
@@ -21,7 +21,7 @@
     
  
     <meta name="twitter:title" content="IP-телефонія на базі Asterisk. Частина 2: Налаштування SIP"/>
-    <meta name="twitter:description" content="Цикл статей по розгортанню IP-телефонії на базі Asterisk. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Роб"/>
+    <meta name="twitter:description" content="IP-телефонія на базі Asterisk. Частина 2: Налаштування SIP"/>
     <meta name="twitter:url" content="https://bender.kr.ua/howto-asterisk-part-2/" />
     <meta name="twitter:site" content="@kr_ingulets"/>
 
@@ -31,7 +31,7 @@
     
 
     <meta property="og:type" content="article" />
-    <meta property="og:description" content="Цикл статей по розгортанню IP-телефонії на базі Asterisk. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Роб" />
+    <meta property="og:description" content="IP-телефонія на базі Asterisk. Частина 2: Налаштування SIP" />
 
     <meta property="article:published_time" content="2019-10-28T02:00:00Z" />
     <meta property="article:tag" content="linux" />
@@ -426,13 +426,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/how-to-fix-elasticsearch-forbidden-12-index-read-only-allow-delete-api/">Проблема з переіндексацією catalogsearch_fulltext на Magento 2</a></li>            
+          <li><a href="https://bender.kr.ua/howto-certbot-nginx-debian/">Отримання SSL-сертифікату для Nginx на Debian 9</a></li>            
         
-          <li><a href="https://bender.kr.ua/fail2ban-unban-ip/">Як розблокувати себе в fail2ban</a></li>            
+          <li><a href="https://bender.kr.ua/review-neal-stephenson-in-the-beginning-was-the-command-line/">Ніл Стівенсон. Спочатку був командний рядок</a></li>            
         
-          <li><a href="https://bender.kr.ua/mint-19-and-epson-perfection-v33/">Mint 19 і сканер Epson Perfection V33</a></li>            
+          <li><a href="https://bender.kr.ua/5-extensions-for-default-magento2/">5 розширень, які ти зобов&#39;язаний поставити на Magento 2</a></li>            
         
-          <li><a href="https://bender.kr.ua/year-in-books-2019/">Мій книжковий 2019 рік</a></li>            
+          <li><a href="https://bender.kr.ua/howto-install-django-mysql-debian-9/">Встановлення зв&#39;язки Django та MySQL на Debian 9</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -461,12 +461,8 @@ s.setAttribute('data-timestamp', +new Date());
               <h2 class="post-card-title">NetBeans і проблема зі шрифтами</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Традиційно після встановлення NetBeans на Linux постає питання відображення шрифтів в IDE. В конфігурації за замовчування вони виглядають дуже погано.
-Найпопулярнішою порадою в інтернетах є додавання до файлу конфігурації etc/netbeans.conf такого рядка
-netbeans_default_options=&quot; ... -J-Dswing.aatext=true -J-Dawt.useSystemAAFontSettings=lcd&quot;  Після цього шрифти не набагато, але стають краще, особливо, якщо використати темну тему, бо на світлій все ще помітно &ldquo;мило&rdquo;.
-Ось тут на допомогу може прийти JetBrains :)))
-Є два варіанти: 1) користуватись PHPStorm, в якому зі шрифтами все добре (в силу різних причин для мене це взагалі не варіант) або 2) використати пропатчену JetBrains версію JDK. ...  </p>
+               
+                <p>Linux, Java і шрифти. Все як завжди - трохи сексу, гівно і палки.</p>
               
           </section>
       </a>
@@ -495,10 +491,8 @@ netbeans_default_options=&quot; ... -J-Dswing.aatext=true -J-Dawt.useSystemAAFon
               <h2 class="post-card-title">Mint 19 і сканер Epson Perfection V33</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p> На замовчування програма iscan в Linux Mint не працює зі сканером Epson Perfection V33. Щоб вирішити цю проблему, винонуємо наступні дії:
-sudo ln -sfr /usr/lib/sane/libsane-epkowa* /usr/lib/x86_64-linux-gnu/sane  та сворюємо правило для підключення сканера /etc/udev/rules.d/79-udev-epson.rules:
-# chmod device EPSON group ATTRS{manufacturer}==&quot;EPSON&quot;, DRIVERS==&quot;usb&quot;, SUBSYSTEMS==&quot;usb&quot;, ATTRS{idVendor}==&quot;04b8&quot;, ATTRS{idProduct}==&quot;*&quot;, MODE=&quot;0777&quot;  Посилання  https://forums.linuxmint.com/viewtopic.php?t=275853   </p>
+               
+                <p>Налаштування сканера Epson Perfection V33 в Mint 19</p>
               
           </section>
       </a>

@@ -156,10 +156,8 @@
               <h2 class="post-card-title">Як я готую NGINX з модулем PAGESPEED</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Останнім часом майже взагалі не використовую Apache. Є кілька проектів з категорії &ldquo;ой, а про вас забули&rdquo; та &ldquo;не чіпай поки працює&rdquo;, а на нових - лише nginx.
-Готую nginx з pagespeed-ом за таким рецептом:
-#!/bin/sh apt-get install build-essential ca-certificates zlib1g-dev libpcre3 libpcre3-dev tar unzip libssl-dev checkinstall OPENSSL_VER=1.1.0g NPS_VER=1.12.34.3-stable NGINX_VER=1.13.8 cd /opt wget -c https://www.openssl.org/source/openssl-$OPENSSL_VER.tar.gz tar -xzvf openssl-$OPENSSL_VER.tar.gz rm openssl-$OPENSSL_VER.tar.gz wget https://github.com/apache/incubator-pagespeed-ngx/archive/v${NPS_VER}.zip unzip v${NPS_VER}.zip rm v${NPS_VER}.zip NPS_DIR=$(find . -name &quot;*pagespeed-ngx-${NPS_VER}&quot; -type d | sed -e 's/\. ...  </p>
+               
+                <p>Nginx з модулем pagespeed та свіжою версією openssl.</p>
               
           </section>
       </a>

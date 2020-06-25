@@ -154,11 +154,8 @@
               <h2 class="post-card-title">Резервне копіювання і трохи грецької міфології</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Tartarus - це система створення резервних копій. Може створювати інкрементні архіви. Базується на використанні звичних в nix-середовищі утиліт curl, tar, gzip та інших.
-Репозиторій проекту доволі давно не оновлювався та від цього не втратив своєї привабливості в якості дуже простого і зрозумілого інструменту.
- Та́ртар (грец. Τάρταρος, Tartaros) — у давньогрецькій міфології місце в підземному світі, темна безодня в глибині космосу, нижче від Аїду. (Вікіпедія)
- Встановлюємо необхідні утиліти ...  </p>
+               
+                <p>Резервне копіювання за допомогою простих і зрозумілих інструментів</p>
               
           </section>
       </a>
@@ -193,12 +190,8 @@
               <h2 class="post-card-title">Отримання SSL-сертифікату для Nginx на Debian 9</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Простий спосіб отримати безкоштовний SSL-сертифікат з оцінкою A+ для Nginx на Debian 9
-Спочатку додаємо репозиторій stretch-backports
-add-apt-repository 'deb http://deb.debian.org/debian stretch-backports main' apt-get update  Встановлюємо утиліту для автоматичного отримання та оновлення сертифікатів certbot
-apt-get install certbot python-certbot-nginx -t stretch-backports  В конфігураційному файлі для нашого сайту надаємо certbot-у доступ до необхідної йому директорії
-# Let’s Encrypt location ~ /.well-known { allow all; }  та перечитуємо конфігурацію nginx ...  </p>
+               
+                <p>Отримання та налаштування SSL-сертифікату рівня A+</p>
               
           </section>
       </a>
@@ -271,9 +264,8 @@ apt-get install certbot python-certbot-nginx -t stretch-backports  В конфі
               <h2 class="post-card-title">Встановлення Python 3.6 на Debian 8</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>#!/bin/sh # python_install.sh PYTHON_VER=$1 cd /opt wget -c https://www.python.org/ftp/python/$PYTHON_VER/Python-$PYTHON_VER.tgz tar -xvf Python-$PYTHON_VER.tgz rm Python-$PYTHON_VER.tgz cd Python-$PYTHON_VER ./configure --enable-optimizations make -j `nproc` make test make altinstall  Приклад встановлення:
-./python_install.sh 3.6.6  python3 -V Python 3.4.2 python3.6 -V Python 3.6.6  Джерело тут і тут </p>
+               
+                <p>Встановлення Python 3.6 на Debian 8</p>
               
           </section>
       </a>
@@ -306,9 +298,8 @@ apt-get install certbot python-certbot-nginx -t stretch-backports  В конфі
               <h2 class="post-card-title">Як я місяць майнив криптовалюту за допомогою ноутбуку, навіщо мені це та що з того вийшло</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Надихнувшись книгою Роберта Кіосакі про багатого та бідного батька, я спробував втілити деякі з його ідей на практиці, принаймні так як я їх зрозумів, а саме перетворити пасиви в активи.
-0 день В якості пасиву маємо ноутбук ASUS, який працює майже цілодобово і за відсутності телевізора виконує функцію такого собі медіа-центру. Ідея наступна - навчити піддослідного заробляти собі гроші на їжу (ну а в нашому випадку на електроенергію). Ну і наслухавшись Леді Ю (прийду до влади - зраблю всім блакчейн), вирішив помайнити криптовалюту. ...  </p>
+               
+                <p>Трохи сумна, але повчальна історія про намагання на@@@бати долю і стати багатим не доклавши зусиль. Хроніки халявщика.</p>
               
           </section>
       </a>
@@ -341,8 +332,8 @@ apt-get install certbot python-certbot-nginx -t stretch-backports  В конфі
               <h2 class="post-card-title">Не працюють комбінації клавіш CTRL-SHIFT в Ubuntu</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>В роботі часто користуюсь комбінаціями Ctrl-Shift-Up/Down в LibreOffice Calc, а мову змінюю через Ctrl-Shift. В Ubuntu 14.04 все було гаразд, але при оновлені версій щось зламалось і комбінація в LibreOffice припинила працювати: замість виділяти стовпці, перемикалась розкладка. Варіант поставити зміну мов на іншу клавішу не розглядався в силу того що я раб своїх звичок, а змінювати звички для мене дуже не легко. Якийсь час розрулював цей конфлікт через xNeur, який використовував виключно для зміни розкладок, але воно час від часу падало. ...  </p>
+               
+                <p>Як полагодити комбінацію клавіш CTRL-SHIFT в Ubuntu/Mint</p>
               
           </section>
       </a>
@@ -377,11 +368,8 @@ apt-get install certbot python-certbot-nginx -t stretch-backports  В конфі
               <h2 class="post-card-title">Помилка при оновлені сертифікатів від Let&#39;s Encrypt</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>При оновлені сертифікату Let&rsquo;s Encrypt виникла помилка
-Attempting to renew cert (example.com.ua) from /etc/letsencrypt/renewal/example.com.ua.conf produced an unexpected error: Failed authorization procedure. www.example.com.ua (http-01): urn:acme:error:unauthorized :: The client lacks sufficient authorization :: Invalid response from http://www.example.com.ua/.well-known/acme-challenge/BKPbQzerSwVSz9PrVcVqOoSX5MxDvF2lh5eOHVamgQ4  Перевірка доступності http://www.example.com.ua/.well-known/acme-challenge/BKPbQzerSwVSz9PrVcVqOoSX5MxDvF2lh5eOHVamgQ4 не виявила проблем. Let&rsquo;s Encrypt мав би верифікувати домен, але в нього була інша думка.
-Око зачепилося за AAAA у відповіді:
-To fix these errors, please make sure that your domain name was entered correctly and the DNS A/AAAA record(s) for that domain contain(s) the right IP address. ...  </p>
+               
+                <p>Помилка при оновлені сертифікатів від Let&rsquo;s Encrypt: To fix these errors, please make sure that your domain name was entered correctly and the DNS A/AAAA record(s) for that domain contain(s) the right IP address</p>
               
           </section>
       </a>
@@ -414,11 +402,8 @@ To fix these errors, please make sure that your domain name was entered correctl
               <h2 class="post-card-title">df і du показують різні значення</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Якщо команди df та du показують різні значення, можлива причина полягає в тому, що процес утримує файл який вже було видалено з системи. Що побачити список таких процесів слід використати наступну команду:
-lsof -nP | grep '(deleted)' find /proc/*/fd -ls | grep '(deleted)'  Потім треба зробити наступне:
-cat /dev/null &gt; /proc/6466/fd/3  данні взяти з виводу попередньої команди
-Джерела тут, тут і тут </p>
+               
+                <p>Якщо команди df та du показують різні значення, можлива причина полягає в тому, що процес утримує файл який вже було видалено з системи</p>
               
           </section>
       </a>
@@ -453,10 +438,8 @@ cat /dev/null &gt; /proc/6466/fd/3  данні взяти з виводу поп
               <h2 class="post-card-title">Оновлення Magento 2</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Скрипт для оновлення Magento 2:
-#!/bin/bash # upgrade.sh composer require magento/product-community-edition $1 --no-update composer update rm -rf var/cache/* var/page_cache/* var/generation/* php bin/magento setup:upgrade find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; chown -R :www-data . chmod u+x bin/magento  Приклад запуску:
-upgrade.sh 2.2.2  Джерело тут </p>
+               
+                <p>Простий скрипт для оновлення Magento 2</p>
               
           </section>
       </a>

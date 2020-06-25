@@ -12,9 +12,7 @@
     <link rel="shortcut icon" href="https://bender.kr.ua/favicon.png" />
     <link rel="canonical" href="https://bender.kr.ua/regexp-replace-in-mariadb/" />
 
-     <meta name="description" content="Швидкий спосіб виправити текстові дані в БД:
- Прибрати перехід на новий рядок (\n)
-UPDATE catalog_product_entity_varchar SET value = REPLACE(value, &amp;quot;\n&amp;quo" /> 
+     <meta name="description" content="Заміна даних в MariaDB" /> 
 
      
     
@@ -23,9 +21,7 @@ UPDATE catalog_product_entity_varchar SET value = REPLACE(value, &amp;quot;\n&am
     
  
     <meta name="twitter:title" content="Заміна даних в MariaDB"/>
-    <meta name="twitter:description" content="Швидкий спосіб виправити текстові дані в БД:
- Прибрати перехід на новий рядок (\n)
-UPDATE catalog_product_entity_varchar SET value = REPLACE(value, &amp;quot;\n&amp;quo"/>
+    <meta name="twitter:description" content="Заміна даних в MariaDB"/>
     <meta name="twitter:url" content="https://bender.kr.ua/regexp-replace-in-mariadb/" />
     <meta name="twitter:site" content="@kr_ingulets"/>
 
@@ -35,9 +31,7 @@ UPDATE catalog_product_entity_varchar SET value = REPLACE(value, &amp;quot;\n&am
     
 
     <meta property="og:type" content="article" />
-    <meta property="og:description" content="Швидкий спосіб виправити текстові дані в БД:
- Прибрати перехід на новий рядок (\n)
-UPDATE catalog_product_entity_varchar SET value = REPLACE(value, &amp;quot;\n&amp;quo" />
+    <meta property="og:description" content="Заміна даних в MariaDB" />
 
     <meta property="article:published_time" content="2019-06-10T00:00:00Z" />
     <meta property="article:tag" content="mysql" /><meta property="article:tag" content="magento" />
@@ -224,13 +218,15 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/howto-asterisk-part-2/">IP-телефонія на базі Asterisk. Частина 2: Налаштування SIP</a></li>            
+                      
         
-          <li><a href="https://bender.kr.ua/connie-willis-doomsday-book/">Конні Вілліс. Книга судного дня</a></li>            
+          <li><a href="https://bender.kr.ua/howto-add-header-links-in-magento2/">Magento 2: як додати посилання в header.links</a></li>            
         
-          <li><a href="https://bender.kr.ua/nginx-pagespeed-openssl/">Як я готую NGINX з модулем PAGESPEED</a></li>            
+          <li><a href="https://bender.kr.ua/mysql-tmp-table-in-tmpfs/">Тимчасові таблиці MySQL в tmpfs</a></li>            
         
-          <li><a href="https://bender.kr.ua/custom-logging-module-magento2/">Magento2: Як писати логи модуля в окремий файл?</a></li>            
+          <li><a href="https://bender.kr.ua/nginx-geoip/">Блокування трафіку з окремих країн за допомогою Nginx та GeoIP</a></li>            
+        
+          <li><a href="https://bender.kr.ua/magento2-reindexer-for-large-catalog/">Проблема переіндексації великого каталогу в Magento 2</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -289,11 +285,8 @@ s.setAttribute('data-timestamp', +new Date());
               <h2 class="post-card-title">&#34;Прогрівання&#34; кешу для закритих частин сайту за допомогою Puppeteer</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Найпростіший спосіб &ldquo;прогріти&rdquo; кеш - пройтись за допомогою wget по карті сайту. У випадку, коли сайт чи окремі його розділи доступні лише зареєстрованим користувачам, цей спосіб не підійде.
-У пригоді може стати Headless Chrome - хром, якому не потрібно рендерити сторінку в окреме вікно (хоча він це може). Найлегший спосіб почати працювати з ним - використати puppeteer.
-Встановлюємо Node.js та puppeteer
-curl -sL https://deb.nodesource.com/setup_10.x | bash - apt-get install nodejs libxss1 npm i puppeteer  Наш краулер з авторизацією crawler. ...  </p>
+               
+                <p>Найпростіший спосіб &lsquo;прогріти&rsquo; кеш - пройтись за допомогою wget по карті сайту. У випадку, коли сайт чи окремі його розділи доступні лише зареєстрованим користувачам, цей спосіб не підійде.</p>
               
           </section>
       </a>

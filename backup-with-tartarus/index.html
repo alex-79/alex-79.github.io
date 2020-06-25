@@ -12,7 +12,7 @@
     <link rel="shortcut icon" href="https://bender.kr.ua/favicon.png" />
     <link rel="canonical" href="https://bender.kr.ua/backup-with-tartarus/" />
 
-     <meta name="description" content="Tartarus - це система створення резервних копій. Може створювати інкрементні архіви. Базується на використанні звичних в nix-середовищі утиліт curl, tar, gzip т" /> 
+     <meta name="description" content="Резервне копіювання за допомогою простих і зрозумілих інструментів" /> 
 
      
     
@@ -21,7 +21,7 @@
     
  
     <meta name="twitter:title" content="Резервне копіювання і трохи грецької міфології"/>
-    <meta name="twitter:description" content="Tartarus - це система створення резервних копій. Може створювати інкрементні архіви. Базується на використанні звичних в nix-середовищі утиліт curl, tar, gzip т"/>
+    <meta name="twitter:description" content="Резервне копіювання за допомогою простих і зрозумілих інструментів"/>
     <meta name="twitter:url" content="https://bender.kr.ua/backup-with-tartarus/" />
     <meta name="twitter:site" content="@kr_ingulets"/>
 
@@ -31,7 +31,7 @@
     
 
     <meta property="og:type" content="article" />
-    <meta property="og:description" content="Tartarus - це система створення резервних копій. Може створювати інкрементні архіви. Базується на використанні звичних в nix-середовищі утиліт curl, tar, gzip т" />
+    <meta property="og:description" content="Резервне копіювання за допомогою простих і зрозумілих інструментів" />
 
     <meta property="article:published_time" content="2019-05-16T07:21:38Z" />
     <meta property="article:tag" content="linux" />
@@ -296,13 +296,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/mysql-tmp-table-in-tmpfs/">Тимчасові таблиці MySQL в tmpfs</a></li>            
+          <li><a href="https://bender.kr.ua/regexp-replace-in-mariadb/">Заміна даних в MariaDB</a></li>            
         
           <li><a href="https://bender.kr.ua/howto-install-telegram-debian-9/">Встановлення Telegram на Debian 9</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-asterisk-part-1/">IP-телефонія на базі Asterisk. Частина 1: Встановлення сервера Asterisk</a></li>            
+          <li><a href="https://bender.kr.ua/iptables-ipset/">Блокування трафіку за допомогою iptables та ipset</a></li>            
         
-          <li><a href="https://bender.kr.ua/magick-248/">Магічне число 248 або Чому я не можу додати значення атрибута в Magento 2?</a></li>            
+          <li><a href="https://bender.kr.ua/connie-willis-doomsday-book/">Конні Вілліс. Книга судного дня</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -329,10 +329,8 @@ s.setAttribute('data-timestamp', +new Date());
               <h2 class="post-card-title">Проблема з переіндексацією catalogsearch_fulltext на Magento 2</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Під час переіндексації отримую
-php bin/magento indexer:reindex catalogsearch_fulltext Catalog Search indexer process unknown error: {&quot;error&quot;:{&quot;root_cause&quot;:[{&quot;type&quot;:&quot;cluster_block_exception&quot;,&quot;reason&quot;:&quot;blocked by: [FORBIDDEN/12/index read-only / allow delete (api)];&quot;}],&quot;type&quot;:&quot;cluster_block_exception&quot;,&quot;reason&quot;:&quot;blocked by: [FORBIDDEN/12/index read-only / allow delete (api)];&quot;},&quot;status&quot;:403}  Проблема пов&rsquo;язана з ElasticSearch, а саме тим, що на диску залишилось менше 5% вільного місця. Щоб усе запрацювало, крім вивільнення необхідної кількості байт, необхідно ще виконати наступну команду:
-curl -XPUT -H &quot;Content-Type: application/json&quot; http://localhost:9200/_all/_settings -d '{&quot;index.blocks.read_only_allow_delete&quot;: null}'  Посилання  https://techoverflow. ...  </p>
+               
+                <p>Проблема з переіндексацією catalogsearch_fulltext на Magento 2</p>
               
           </section>
       </a>
@@ -362,12 +360,8 @@ curl -XPUT -H &quot;Content-Type: application/json&quot; http://localhost:9200/_
               <h2 class="post-card-title">Отримання SSL-сертифікату для Nginx на Debian 9</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Простий спосіб отримати безкоштовний SSL-сертифікат з оцінкою A+ для Nginx на Debian 9
-Спочатку додаємо репозиторій stretch-backports
-add-apt-repository 'deb http://deb.debian.org/debian stretch-backports main' apt-get update  Встановлюємо утиліту для автоматичного отримання та оновлення сертифікатів certbot
-apt-get install certbot python-certbot-nginx -t stretch-backports  В конфігураційному файлі для нашого сайту надаємо certbot-у доступ до необхідної йому директорії
-# Let’s Encrypt location ~ /.well-known { allow all; }  та перечитуємо конфігурацію nginx ...  </p>
+               
+                <p>Отримання та налаштування SSL-сертифікату рівня A+</p>
               
           </section>
       </a>

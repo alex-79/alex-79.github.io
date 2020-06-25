@@ -12,8 +12,7 @@
     <link rel="shortcut icon" href="https://bender.kr.ua/favicon.png" />
     <link rel="canonical" href="https://bender.kr.ua/nginx-redirection-get-arg/" />
 
-     <meta name="description" content="Якщо необхідно зробити редирект зі сторінки с get-аргументом, то необхідно дописати в конфіг таке
-location / { if ($arg_param = value) { return 301 $uri; } }  В" /> 
+     <meta name="description" content="Як зробити редирект зі сторінки с get-аргументом" /> 
 
      
     
@@ -22,8 +21,7 @@ location / { if ($arg_param = value) { return 301 $uri; } }  В" />
     
  
     <meta name="twitter:title" content="NGINX - 301-й редирект адрес з get-аргументами"/>
-    <meta name="twitter:description" content="Якщо необхідно зробити редирект зі сторінки с get-аргументом, то необхідно дописати в конфіг таке
-location / { if ($arg_param = value) { return 301 $uri; } }  В"/>
+    <meta name="twitter:description" content="Як зробити редирект зі сторінки с get-аргументом"/>
     <meta name="twitter:url" content="https://bender.kr.ua/nginx-redirection-get-arg/" />
     <meta name="twitter:site" content="@kr_ingulets"/>
 
@@ -33,8 +31,7 @@ location / { if ($arg_param = value) { return 301 $uri; } }  В"/>
     
 
     <meta property="og:type" content="article" />
-    <meta property="og:description" content="Якщо необхідно зробити редирект зі сторінки с get-аргументом, то необхідно дописати в конфіг таке
-location / { if ($arg_param = value) { return 301 $uri; } }  В" />
+    <meta property="og:description" content="Як зробити редирект зі сторінки с get-аргументом" />
 
     <meta property="article:published_time" content="2017-09-18T10:56:00Z" />
     <meta property="article:tag" content="web" />
@@ -216,13 +213,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/magento-2-cron-indexer-repair/">Magento 2: не працює індексація за розкладом</a></li>            
+          <li><a href="https://bender.kr.ua/puppeteer-with-authorization/">&#34;Прогрівання&#34; кешу для закритих частин сайту за допомогою Puppeteer</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-hide-default-store-code-from-url-magento-2/">Як прибрати Store Code з URL для основного магазину в Magento 2</a></li>            
+          <li><a href="https://bender.kr.ua/letsencrypt-and-ipv6/">Помилка при оновлені сертифікатів від Let&#39;s Encrypt</a></li>            
         
-          <li><a href="https://bender.kr.ua/connie-willis-doomsday-book/">Конні Вілліс. Книга судного дня</a></li>            
+          <li><a href="https://bender.kr.ua/installing-python-3-6-on-debian-8/">Встановлення Python 3.6 на Debian 8</a></li>            
         
-          <li><a href="https://bender.kr.ua/failed-to-fetch-jessie-backports-repository/">Проблема з backports репозиторієм в Debian 8</a></li>            
+          <li><a href="https://bender.kr.ua/upgrade-magento-232/">Оновлення Magento до версії 2.3.2</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -250,10 +247,8 @@ s.setAttribute('data-timestamp', +new Date());
               <h2 class="post-card-title">Магічне число 248 або Чому я не можу додати значення атрибута в Magento 2?</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Не можу додати ще одне значення атрибута в Magento 2. Підрахував кількість вже існуючих значень - 248. Виявилося, що у всьому винен PHP, а саме значення за замовчуванням _max_inputvars = 1000. Змінив на 100000.
-Згадав, що знаю про цю штуку ще з Magento 1, але поки не записав рецепт, змушений був в черговий раз гуглити.
-Подробиці тут </p>
+               
+                <p>Не можу додати ще одне значення атрибута в Magento 2.</p>
               
           </section>
       </a>
@@ -283,10 +278,8 @@ s.setAttribute('data-timestamp', +new Date());
               <h2 class="post-card-title">Як я готую NGINX з модулем PAGESPEED</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Останнім часом майже взагалі не використовую Apache. Є кілька проектів з категорії &ldquo;ой, а про вас забули&rdquo; та &ldquo;не чіпай поки працює&rdquo;, а на нових - лише nginx.
-Готую nginx з pagespeed-ом за таким рецептом:
-#!/bin/sh apt-get install build-essential ca-certificates zlib1g-dev libpcre3 libpcre3-dev tar unzip libssl-dev checkinstall OPENSSL_VER=1.1.0g NPS_VER=1.12.34.3-stable NGINX_VER=1.13.8 cd /opt wget -c https://www.openssl.org/source/openssl-$OPENSSL_VER.tar.gz tar -xzvf openssl-$OPENSSL_VER.tar.gz rm openssl-$OPENSSL_VER.tar.gz wget https://github.com/apache/incubator-pagespeed-ngx/archive/v${NPS_VER}.zip unzip v${NPS_VER}.zip rm v${NPS_VER}.zip NPS_DIR=$(find . -name &quot;*pagespeed-ngx-${NPS_VER}&quot; -type d | sed -e 's/\. ...  </p>
+               
+                <p>Nginx з модулем pagespeed та свіжою версією openssl.</p>
               
           </section>
       </a>

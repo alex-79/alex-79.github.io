@@ -12,7 +12,7 @@
     <link rel="shortcut icon" href="https://bender.kr.ua/favicon.png" />
     <link rel="canonical" href="https://bender.kr.ua/installing-python-3-6-on-debian-8/" />
 
-     <meta name="description" content="#!/bin/sh # python_install.sh PYTHON_VER=$1 cd /opt wget -c https://www.python.org/ftp/python/$PYTHON_VER/Python-$PYTHON_VER.tgz tar -xvf Python-$PYTHON_VER.tgz" /> 
+     <meta name="description" content="Встановлення Python 3.6 на Debian 8" /> 
 
      
     
@@ -21,7 +21,7 @@
     
  
     <meta name="twitter:title" content="Встановлення Python 3.6 на Debian 8"/>
-    <meta name="twitter:description" content="#!/bin/sh # python_install.sh PYTHON_VER=$1 cd /opt wget -c https://www.python.org/ftp/python/$PYTHON_VER/Python-$PYTHON_VER.tgz tar -xvf Python-$PYTHON_VER.tgz"/>
+    <meta name="twitter:description" content="Встановлення Python 3.6 на Debian 8"/>
     <meta name="twitter:url" content="https://bender.kr.ua/installing-python-3-6-on-debian-8/" />
     <meta name="twitter:site" content="@kr_ingulets"/>
 
@@ -31,7 +31,7 @@
     
 
     <meta property="og:type" content="article" />
-    <meta property="og:description" content="#!/bin/sh # python_install.sh PYTHON_VER=$1 cd /opt wget -c https://www.python.org/ftp/python/$PYTHON_VER/Python-$PYTHON_VER.tgz tar -xvf Python-$PYTHON_VER.tgz" />
+    <meta property="og:description" content="Встановлення Python 3.6 на Debian 8" />
 
     <meta property="article:published_time" content="2018-08-15T11:42:00Z" />
     <meta property="article:tag" content="linux" /><meta property="article:tag" content="web" /><meta property="article:tag" content="python" />
@@ -235,13 +235,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/df-and-du-show-different-values/">df і du показують різні значення</a></li>            
+          <li><a href="https://bender.kr.ua/how-to-exclude-dump-tables/">Вибіркове завантаження таблиць дампа в MySQL</a></li>            
         
-          <li><a href="https://bender.kr.ua/nginx-pagespeed-openssl/">Як я готую NGINX з модулем PAGESPEED</a></li>            
+          <li><a href="https://bender.kr.ua/connie-willis-doomsday-book/">Конні Вілліс. Книга судного дня</a></li>            
         
-          <li><a href="https://bender.kr.ua/magento-2-reindex-parallel/">Паралельна індексація в Magento 2</a></li>            
+          <li><a href="https://bender.kr.ua/iptables-ipset/">Блокування трафіку за допомогою iptables та ipset</a></li>            
         
-          <li><a href="https://bender.kr.ua/custom-logging-module-magento2/">Magento2: Як писати логи модуля в окремий файл?</a></li>            
+          <li><a href="https://bender.kr.ua/backup-with-borg/">Про користь borg-ів</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -268,11 +268,8 @@ s.setAttribute('data-timestamp', +new Date());
               <h2 class="post-card-title">Magento2: налаштування періодичних завдань власного модуля через адмін-панель</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Для створення періодичного завдання у власному модулі треба виконати наступні кроки:
-1) Сворюємо crontab.xml в app/VendorName/ModuleName/etc
-&lt;?xml version=&quot;1.0&quot;?&gt; &lt;config xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;urn:magento:module:Magento_Cron:etc/crontab.xsd&quot;&gt; &lt;group id=&quot;default&quot;&gt; &lt;job name=&quot;vendorname_modulename_job&quot; instance=&quot;VendorName\ModuleName\Cron\CronJob&quot; method=&quot;execute&quot;&gt; &lt;config_path&gt;crontab/default/jobs/vendorname_modulename_job/schedule/cron_expr&lt;/config_path&gt; &lt;/job&gt; &lt;/group&gt; &lt;/config&gt;  2) Створюємо поле для налаштування періодичного завдання у файлі app/VendorName/ModuleName/etc/adminhtml/system.xml
-... &lt;group id=&quot;configurable_cron&quot; translate=&quot;label&quot; type=&quot;text&quot; sortOrder=&quot;150&quot; showInDefault=&quot;1&quot; showInWebsite=&quot;1&quot; showInStore=&quot;0&quot;&gt; &lt;label&gt;Cron&lt;/label&gt; &lt;field id=&quot;crontab&quot; translate=&quot;label&quot; type=&quot;text&quot; sortOrder=&quot;10&quot; showInDefault=&quot;1&quot; showInWebsite=&quot;1&quot; showInStore=&quot;1&quot;&gt; &lt;label&gt;Crontab&lt;/label&gt; &lt;validate&gt;required-entry&lt;/validate&gt; &lt;backend_model&gt;VendorName\ModuleName\Model\Config\CronConfig&lt;/backend_model&gt; &lt;/field&gt; &lt;/group&gt; ...  3) Створюємо бекенд-модель app/VendorName/ModuleName/Model/Config/CronConfig. ...  </p>
+               
+                <p>Magento2: налаштування періодичних завдань власного модуля через адмін-панель</p>
               
           </section>
       </a>
@@ -301,11 +298,8 @@ s.setAttribute('data-timestamp', +new Date());
               <h2 class="post-card-title">Magento2: Як писати логи модуля в окремий файл?</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Щоб писати логи модуля в окремий файл треба виконати наступні кроки:
-1) Сворюємо класи Logger.php та Hadler.php
-&lt;?php namespace VendorName\ModuleName\Model\Logger; class Logger extends \Monolog\Logger { }  &lt;?php namespace VendorName\ModuleName\Model\Logger; use Monolog\Logger; class Handler extends \Magento\Framework\Logger\Handler\Base { protected $loggerType = Logger::INFO; protected $fileName = '/var/log/mymodule.log'; }  2) Додаємо власний логер до конфігурації в di.xml
-&lt;?xml version=&quot;1.0&quot;?&gt; &lt;config xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;&gt; &lt;type name=&quot;VendorName\ModuleName\Model\Logger\Handler&quot;&gt; &lt;arguments&gt; &lt;argument name=&quot;filesystem&quot; xsi:type=&quot;object&quot;&gt;Magento\Framework\Filesystem\Driver\File&lt;/argument&gt; &lt;/arguments&gt; &lt;/type&gt; &lt;type name=&quot;VendorName\ModuleName\Model\Logger\Logger&quot;&gt; &lt;arguments&gt; &lt;argument name=&quot;name&quot; xsi:type=&quot;string&quot;&gt;MyLogger&lt;/argument&gt; &lt;argument name=&quot;handlers&quot; xsi:type=&quot;array&quot;&gt; &lt;item name=&quot;system&quot; xsi:type=&quot;object&quot;&gt;VendorName\ModuleName\Model\Logger\Handler&lt;/item&gt; &lt;/argument&gt; &lt;/arguments&gt; &lt;/type&gt; &lt;/config&gt;  3) Тепер можемо використати логер, наприклад так ...  </p>
+               
+                <p>Magento2: Як писати логи модуля в окремий файл?</p>
               
           </section>
       </a>

@@ -589,6 +589,20 @@ location / { if ($arg_param = value) { return 301 $uri; } }  Взяв тут - h
     </item>
     
     <item>
+      <title>5 розширень, які ти зобов&#39;язаний поставити на Magento 2</title>
+      <link>https://bender.kr.ua/5-extensions-for-default-magento2/</link>
+      <pubDate>Fri, 30 Jun 2017 07:04:00 +0000</pubDate>
+      
+      <guid>https://bender.kr.ua/5-extensions-for-default-magento2/</guid>
+      <description>Magento 2 - дійсно крута система, але деякі штуки, як на мене, настільки очевидно мають бути всередині, що коли їх не знаходиш, то лишається лише сказати &amp;ldquo;ну як, так!?&amp;rdquo;
+Виконавши кілька проектів на Magento 2, зібрав список модулів, які обов&amp;rsquo;язково ставлю після інсталяції системи.
+1. Google Tag Manager Дивно, що не &amp;ldquo;з коробки&amp;rdquo;, бо Google Analytics та Google AdWords в системі присутні.
+сайт: magepal/magento2-googletagmanager
+встановлення:
+composer require magepal/magento2-googletagmanager php -f bin/magento module:enable --clear-static-content MagePal_GoogleTagManager php -f bin/magento setup:upgrade  Далі в адмінку і там Stores -&amp;gt; Configuration -&amp;gt; MagePal -&amp;gt; Google Tag Manager</description>
+    </item>
+    
+    <item>
       <title>Про мене</title>
       <link>https://bender.kr.ua/about/</link>
       <pubDate>Sat, 24 Jun 2017 10:04:00 +0000</pubDate>
@@ -605,20 +619,6 @@ location / { if ($arg_param = value) { return 301 $uri; } }  Взяв тут - h
       <guid>https://bender.kr.ua/why-magento/</guid>
       <description>Від початку стаття призначалася для інтернет-агенції Studio370, тому в тексті багато &amp;ldquo;ми&amp;rdquo; і &amp;ldquo;нас&amp;rdquo;. З появою власного блогу, прийшов час перетягти її сюди. Планую дописувати та переписувати цей допис, тому, скоріш за все, скоро ця стаття буде дуже не схожа на оригінал.
  Отже у вас є товар, ви точно знаєте де ваш покупець, лишилося зовсім мало - запустити інтернет-магазин і ось воно щастя. Тут і починається головний біль.</description>
-    </item>
-    
-    <item>
-      <title>5 розширень, які ти зобов&#39;язаний поставити на Magento 2</title>
-      <link>https://bender.kr.ua/5-extensions-for-default-magento2/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://bender.kr.ua/5-extensions-for-default-magento2/</guid>
-      <description>Magento 2 - дійсно крута система, але деякі штуки, як на мене, настільки очевидно мають бути всередині, що коли їх не знаходиш, то лишається лише сказати &amp;ldquo;ну як, так!?&amp;rdquo;
-Виконавши кілька проектів на Magento 2, зібрав список модулів, які обов&amp;rsquo;язково ставлю після інсталяції системи.
-1. Google Tag Manager Дивно, що не &amp;ldquo;з коробки&amp;rdquo;, бо Google Analytics та Google AdWords в системі присутні.
-сайт: magepal/magento2-googletagmanager
-встановлення:
-composer require magepal/magento2-googletagmanager php -f bin/magento module:enable --clear-static-content MagePal_GoogleTagManager php -f bin/magento setup:upgrade  Далі в адмінку і там Stores -&amp;gt; Configuration -&amp;gt; MagePal -&amp;gt; Google Tag Manager</description>
     </item>
     
   </channel>

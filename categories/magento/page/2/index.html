@@ -190,12 +190,8 @@
               <h2 class="post-card-title">Заміна даних в MariaDB</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Швидкий спосіб виправити текстові дані в БД:
- Прибрати перехід на новий рядок (\n)
-UPDATE catalog_product_entity_varchar SET value = REPLACE(value, &quot;\n&quot;, &quot;&quot;) WHERE attribute_id = 73;  Прибрати зайві пробіли
-UPDATE catalog_product_entity_varchar SET value = REGEXP_REPLACE(value, '[[:space:]]+', ' ') WHERE attribute_id = 73;  Увага!!! [[:space:]] працює тільки в MariaDB
-   </p>
+               
+                <p>Заміна даних в MariaDB</p>
               
           </section>
       </a>
@@ -228,10 +224,8 @@ UPDATE catalog_product_entity_varchar SET value = REGEXP_REPLACE(value, '[[:spac
               <h2 class="post-card-title">Проблема з переіндексацією catalogsearch_fulltext на Magento 2</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Під час переіндексації отримую
-php bin/magento indexer:reindex catalogsearch_fulltext Catalog Search indexer process unknown error: {&quot;error&quot;:{&quot;root_cause&quot;:[{&quot;type&quot;:&quot;cluster_block_exception&quot;,&quot;reason&quot;:&quot;blocked by: [FORBIDDEN/12/index read-only / allow delete (api)];&quot;}],&quot;type&quot;:&quot;cluster_block_exception&quot;,&quot;reason&quot;:&quot;blocked by: [FORBIDDEN/12/index read-only / allow delete (api)];&quot;},&quot;status&quot;:403}  Проблема пов&rsquo;язана з ElasticSearch, а саме тим, що на диску залишилось менше 5% вільного місця. Щоб усе запрацювало, крім вивільнення необхідної кількості байт, необхідно ще виконати наступну команду:
-curl -XPUT -H &quot;Content-Type: application/json&quot; http://localhost:9200/_all/_settings -d '{&quot;index.blocks.read_only_allow_delete&quot;: null}'  Посилання  https://techoverflow. ...  </p>
+               
+                <p>Проблема з переіндексацією catalogsearch_fulltext на Magento 2</p>
               
           </section>
       </a>
@@ -264,11 +258,8 @@ curl -XPUT -H &quot;Content-Type: application/json&quot; http://localhost:9200/_
               <h2 class="post-card-title">Magento2: налаштування періодичних завдань власного модуля через адмін-панель</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Для створення періодичного завдання у власному модулі треба виконати наступні кроки:
-1) Сворюємо crontab.xml в app/VendorName/ModuleName/etc
-&lt;?xml version=&quot;1.0&quot;?&gt; &lt;config xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;urn:magento:module:Magento_Cron:etc/crontab.xsd&quot;&gt; &lt;group id=&quot;default&quot;&gt; &lt;job name=&quot;vendorname_modulename_job&quot; instance=&quot;VendorName\ModuleName\Cron\CronJob&quot; method=&quot;execute&quot;&gt; &lt;config_path&gt;crontab/default/jobs/vendorname_modulename_job/schedule/cron_expr&lt;/config_path&gt; &lt;/job&gt; &lt;/group&gt; &lt;/config&gt;  2) Створюємо поле для налаштування періодичного завдання у файлі app/VendorName/ModuleName/etc/adminhtml/system.xml
-... &lt;group id=&quot;configurable_cron&quot; translate=&quot;label&quot; type=&quot;text&quot; sortOrder=&quot;150&quot; showInDefault=&quot;1&quot; showInWebsite=&quot;1&quot; showInStore=&quot;0&quot;&gt; &lt;label&gt;Cron&lt;/label&gt; &lt;field id=&quot;crontab&quot; translate=&quot;label&quot; type=&quot;text&quot; sortOrder=&quot;10&quot; showInDefault=&quot;1&quot; showInWebsite=&quot;1&quot; showInStore=&quot;1&quot;&gt; &lt;label&gt;Crontab&lt;/label&gt; &lt;validate&gt;required-entry&lt;/validate&gt; &lt;backend_model&gt;VendorName\ModuleName\Model\Config\CronConfig&lt;/backend_model&gt; &lt;/field&gt; &lt;/group&gt; ...  3) Створюємо бекенд-модель app/VendorName/ModuleName/Model/Config/CronConfig. ...  </p>
+               
+                <p>Magento2: налаштування періодичних завдань власного модуля через адмін-панель</p>
               
           </section>
       </a>
@@ -301,11 +292,8 @@ curl -XPUT -H &quot;Content-Type: application/json&quot; http://localhost:9200/_
               <h2 class="post-card-title">Magento2: Як писати логи модуля в окремий файл?</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Щоб писати логи модуля в окремий файл треба виконати наступні кроки:
-1) Сворюємо класи Logger.php та Hadler.php
-&lt;?php namespace VendorName\ModuleName\Model\Logger; class Logger extends \Monolog\Logger { }  &lt;?php namespace VendorName\ModuleName\Model\Logger; use Monolog\Logger; class Handler extends \Magento\Framework\Logger\Handler\Base { protected $loggerType = Logger::INFO; protected $fileName = '/var/log/mymodule.log'; }  2) Додаємо власний логер до конфігурації в di.xml
-&lt;?xml version=&quot;1.0&quot;?&gt; &lt;config xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;&gt; &lt;type name=&quot;VendorName\ModuleName\Model\Logger\Handler&quot;&gt; &lt;arguments&gt; &lt;argument name=&quot;filesystem&quot; xsi:type=&quot;object&quot;&gt;Magento\Framework\Filesystem\Driver\File&lt;/argument&gt; &lt;/arguments&gt; &lt;/type&gt; &lt;type name=&quot;VendorName\ModuleName\Model\Logger\Logger&quot;&gt; &lt;arguments&gt; &lt;argument name=&quot;name&quot; xsi:type=&quot;string&quot;&gt;MyLogger&lt;/argument&gt; &lt;argument name=&quot;handlers&quot; xsi:type=&quot;array&quot;&gt; &lt;item name=&quot;system&quot; xsi:type=&quot;object&quot;&gt;VendorName\ModuleName\Model\Logger\Handler&lt;/item&gt; &lt;/argument&gt; &lt;/arguments&gt; &lt;/type&gt; &lt;/config&gt;  3) Тепер можемо використати логер, наприклад так ...  </p>
+               
+                <p>Magento2: Як писати логи модуля в окремий файл?</p>
               
           </section>
       </a>
@@ -340,10 +328,8 @@ curl -XPUT -H &quot;Content-Type: application/json&quot; http://localhost:9200/_
               <h2 class="post-card-title">Оновлення Magento 2</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Скрипт для оновлення Magento 2:
-#!/bin/bash # upgrade.sh composer require magento/product-community-edition $1 --no-update composer update rm -rf var/cache/* var/page_cache/* var/generation/* php bin/magento setup:upgrade find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; chown -R :www-data . chmod u+x bin/magento  Приклад запуску:
-upgrade.sh 2.2.2  Джерело тут </p>
+               
+                <p>Простий скрипт для оновлення Magento 2</p>
               
           </section>
       </a>
@@ -376,9 +362,8 @@ upgrade.sh 2.2.2  Джерело тут </p>
               <h2 class="post-card-title">Рубимо електронні гроші в Magento</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Як отримати bitcoin-и без того, щоб скуповувати відеокарти? Правильно, щось за них продати. Для цього трема мати магазин на Magento та виконати невеличку інструкцію:
- Зробити гаманець на https://bitpay.com/. Встановити модуль https://github.com/bitpay/magento-plugin. Тут увага, не намагайтесь ставити через modman - все одно не запрацює. Краще зробити це з архіву https://github.com/bitpay/magento-plugin/releases. Далі налаштовуємо через System &gt; Configuration &gt; Sales &gt; Payment Methods. Щоб прив&rsquo;язати гаманець до Magento, треба отримати токен https://bitpay.com/api-tokens і ввести його у відповідне поле. ...  </p>
+               
+                <p>Налаштування Magento 1.9 на оплату Bitcoin-ами</p>
               
           </section>
       </a>
@@ -413,10 +398,8 @@ upgrade.sh 2.2.2  Джерело тут </p>
               <h2 class="post-card-title">Магічне число 248 або Чому я не можу додати значення атрибута в Magento 2?</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Не можу додати ще одне значення атрибута в Magento 2. Підрахував кількість вже існуючих значень - 248. Виявилося, що у всьому винен PHP, а саме значення за замовчуванням _max_inputvars = 1000. Змінив на 100000.
-Згадав, що знаю про цю штуку ще з Magento 1, але поки не записав рецепт, змушений був в черговий раз гуглити.
-Подробиці тут </p>
+               
+                <p>Не можу додати ще одне значення атрибута в Magento 2.</p>
               
           </section>
       </a>
@@ -431,13 +414,13 @@ upgrade.sh 2.2.2  Джерело тут </p>
 
 <article class="post-card post"> 
     
-    <a class="post-card-image-link" href="https://bender.kr.ua/why-magento/">
-      <div class="post-card-image" style="background-image: url(https://bender.kr.ua/img/why-magento-1.png)"></div>
+    <a class="post-card-image-link" href="https://bender.kr.ua/5-extensions-for-default-magento2/">
+      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1506645292803-579c17d4ba6a?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
     </a>
     
 
     <div class="post-card-content">
-      <a class="post-card-content-link" href="https://bender.kr.ua/why-magento/">
+      <a class="post-card-content-link" href="https://bender.kr.ua/5-extensions-for-default-magento2/">
           <header class="post-card-header">
               
                 <span class="post-card-tags">
@@ -446,19 +429,18 @@ upgrade.sh 2.2.2  Джерело тут </p>
                    
                 </span>
               
-              <h2 class="post-card-title">Чому ми обираємо Magento, а не інші системи</h2>
+              <h2 class="post-card-title">5 розширень, які ти зобов&#39;язаний поставити на Magento 2</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Від початку стаття призначалася для інтернет-агенції Studio370, тому в тексті багато &ldquo;ми&rdquo; і &ldquo;нас&rdquo;. З появою власного блогу, прийшов час перетягти її сюди. Планую дописувати та переписувати цей допис, тому, скоріш за все, скоро ця стаття буде дуже не схожа на оригінал.
- Отже у вас є товар, ви точно знаєте де ваш покупець, лишилося зовсім мало - запустити інтернет-магазин і ось воно щастя. Тут і починається головний біль. ...  </p>
+               
+                <p>5 розширень, які ти зобов&rsquo;язаний поставити на Magento 2</p>
               
           </section>
       </a>
 
       <footer class="post-card-meta">
           <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-          <span class="reading-time">11 хв</span>
+          <span class="reading-time">3 хв</span>
       </footer>
     </div>
 </article>

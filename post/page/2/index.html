@@ -191,12 +191,8 @@
               <h2 class="post-card-title">NetBeans і проблема зі шрифтами</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Традиційно після встановлення NetBeans на Linux постає питання відображення шрифтів в IDE. В конфігурації за замовчування вони виглядають дуже погано.
-Найпопулярнішою порадою в інтернетах є додавання до файлу конфігурації etc/netbeans.conf такого рядка
-netbeans_default_options=&quot; ... -J-Dswing.aatext=true -J-Dawt.useSystemAAFontSettings=lcd&quot;  Після цього шрифти не набагато, але стають краще, особливо, якщо використати темну тему, бо на світлій все ще помітно &ldquo;мило&rdquo;.
-Ось тут на допомогу може прийти JetBrains :)))
-Є два варіанти: 1) користуватись PHPStorm, в якому зі шрифтами все добре (в силу різних причин для мене це взагалі не варіант) або 2) використати пропатчену JetBrains версію JDK. ...  </p>
+               
+                <p>Linux, Java і шрифти. Все як завжди - трохи сексу, гівно і палки.</p>
               
           </section>
       </a>
@@ -229,10 +225,8 @@ netbeans_default_options=&quot; ... -J-Dswing.aatext=true -J-Dawt.useSystemAAFon
               <h2 class="post-card-title">IP-телефонія на базі Asterisk. Частина 2: Налаштування SIP</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Цикл статей по розгортанню IP-телефонії на базі Asterisk. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Робота була захищена, сертифікат отриманий, все написане тестувалось і є повтінстю робочою реалізацією. Інформація в статті і версії програмного забезбечення актуальні на 2017 рік.
- частина 1 - Встановлення сервера Asterisk
-2. Налаштування SIP 2.1 Схема нумерації  За проектним завданням, наша умовна компанія складається з 5-ти підрозділів: управлінський персонал, відділ продажів, відділ закупівель, склад, відділ техпідтримки. ...  </p>
+               
+                <p>IP-телефонія на базі Asterisk. Частина 2: Налаштування SIP</p>
               
           </section>
       </a>
@@ -265,10 +259,8 @@ netbeans_default_options=&quot; ... -J-Dswing.aatext=true -J-Dawt.useSystemAAFon
               <h2 class="post-card-title">Mint 19 і сканер Epson Perfection V33</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p> На замовчування програма iscan в Linux Mint не працює зі сканером Epson Perfection V33. Щоб вирішити цю проблему, винонуємо наступні дії:
-sudo ln -sfr /usr/lib/sane/libsane-epkowa* /usr/lib/x86_64-linux-gnu/sane  та сворюємо правило для підключення сканера /etc/udev/rules.d/79-udev-epson.rules:
-# chmod device EPSON group ATTRS{manufacturer}==&quot;EPSON&quot;, DRIVERS==&quot;usb&quot;, SUBSYSTEMS==&quot;usb&quot;, ATTRS{idVendor}==&quot;04b8&quot;, ATTRS{idProduct}==&quot;*&quot;, MODE=&quot;0777&quot;  Посилання  https://forums.linuxmint.com/viewtopic.php?t=275853   </p>
+               
+                <p>Налаштування сканера Epson Perfection V33 в Mint 19</p>
               
           </section>
       </a>
@@ -301,10 +293,8 @@ sudo ln -sfr /usr/lib/sane/libsane-epkowa* /usr/lib/x86_64-linux-gnu/sane  та 
               <h2 class="post-card-title">IP-телефонія на базі Asterisk. Частина 1: Встановлення сервера Asterisk</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Цикл статей по розгортанню IP-телефонії на базі Asterisk. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Робота була захищена, сертифікат отриманий, все написане тестувалось і є повтінстю робочою реалізацією. Інформація в статті і версії програмного забезбечення актуальні на 2017 рік.
-Середовище Операційна система встановлена з образу CentOS-7-i386-Minimal-1611.iso. Им&rsquo;я сервера asterisk-centos.localhost.local. Адреса сервера в локальній мережі 192.168.1.201.
-Встановлення сервера Asterisk 1.1 Підготовка середовища Розширюємо bash, встановлюємо vim и пакет wget для скачування архівів з сирцевим кодом: ...  </p>
+               
+                <p>IP-телефонія на базі Asterisk. Частина 1: Встановлення сервера Asterisk</p>
               
           </section>
       </a>
@@ -339,11 +329,8 @@ sudo ln -sfr /usr/lib/sane/libsane-epkowa* /usr/lib/x86_64-linux-gnu/sane  та 
               <h2 class="post-card-title">Пошук в MySQL за допомогою регулярних виразів</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p> Завдання: знайти в каталозі sku із знаком &ldquo;-&rdquo; в кінці.
-Для знаходження відповідних sku виконуємо запит в базу
-SELECT sku FROM `catalog_product_entity` WHERE sku REGEXP &quot;-$&quot; = 1;  REGEXP віддає 1 якщо значення відповідає регулярному виразу, інакше - 0.
-Посилання  http://www.mysql.ru/docs/man/Regexp.html   </p>
+               
+                <p>Пошук в MySQL за допомогою регулярних виразів</p>
               
           </section>
       </a>
@@ -376,12 +363,8 @@ SELECT sku FROM `catalog_product_entity` WHERE sku REGEXP &quot;-$&quot; = 1;  R
               <h2 class="post-card-title">Після оновлення сертифікату на поштовому сервері в GMAIL не працює POP3</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Після оновлення сертифікату Let&rsquo;s Encrypt на поштовому сервері iRedMail в GMAIL перестав збирати пошту по протоколу POP3, помилка SSL error: Leaf certificate is expired.
-Перевірка на 995 порту тут показувала, що сертифікат не дійсний, а тут - що все ОК.
-Вирішення проблеми постфактум очевидне, але на пошуки був витрачений час.
-Отже, після оновлення сертифікатів треба перезавантажити не лише nginx, а й dovecot, що зроблено не було :(
-Посилання  https://docs. ...  </p>
+               
+                <p>Помилка з сертифікатом на поштовому сервері iRedMail</p>
               
           </section>
       </a>
@@ -414,8 +397,8 @@ SELECT sku FROM `catalog_product_entity` WHERE sku REGEXP &quot;-$&quot; = 1;  R
               <h2 class="post-card-title">Про користь borg-ів</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>До недавнього часу для створення резервних копій я активно користувався tartarus-ом. Хоча цей інструмент може створювати інкрементні бекапи і тим самим оптимізувати збереження резервних копій на диску, розміри повних бекапів мене не влаштовували. Крім того, розпаковка повного архіву було ще тим задоволенням :) На допомогу прийшла програма borgbackup (або просто borg). В роботі вона нагадує git. А головним для мене стала дедуплікація даних. Розміри повних бекапів в кілька разів менше за аналогічні від tartarus-а. ...  </p>
+               
+                <p>Створення резервних копій з дедуплікацією даних за допомогою borgbackup</p>
               
           </section>
       </a>
@@ -448,11 +431,8 @@ SELECT sku FROM `catalog_product_entity` WHERE sku REGEXP &quot;-$&quot; = 1;  R
               <h2 class="post-card-title">Конні Вілліс. Книга судного дня</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Перша книга з &ldquo;Оксфордського циклу&rdquo; Конні Вілліс. Роман виграв премію Г&rsquo;юго в 1993 і премію Неб&rsquo;юла в 1992 році.
-Назва мовою оригіналу: Connie Willis. Doomsday Book
-Якщо плануєш потрапити в минуле, то що ти зробиш у першу чергу?
-Певно спочатку визначиш час і місце, щоб не потрапити, наприклад, на мальовничі поля поблизу Ватерлоо 18 червня 1815 року. Нехай це буде дорога в лісі біля невеличкого англійського села поблизу Оксфорда, так щоб і випадково не побачили як ти з&rsquo;явився нізвідки, і не блукать довго в пошуках людей. ...  </p>
+               
+                <p>Перша книга з &lsquo;Оксфордського циклу&rsquo; Конні Вілліс. Роман виграв премію Г&rsquo;юго в 1993 і премію Неб&rsquo;юла в 1992 році.</p>
               
           </section>
       </a>

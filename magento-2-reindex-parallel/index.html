@@ -238,13 +238,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/howto-asterisk-part-3/">IP-телефонія на базі Asterisk. Частина 3: Логіка обробки дзвінків (Dialplan)</a></li>            
+          <li><a href="https://bender.kr.ua/backup-with-borg/">Про користь borg-ів</a></li>            
+        
+          <li><a href="https://bender.kr.ua/df-and-du-show-different-values/">df і du показують різні значення</a></li>            
+        
+          <li><a href="https://bender.kr.ua/fail2ban-unban-ip/">Як розблокувати себе в fail2ban</a></li>            
         
           <li><a href="https://bender.kr.ua/how-to-fix-elasticsearch-forbidden-12-index-read-only-allow-delete-api/">Проблема з переіндексацією catalogsearch_fulltext на Magento 2</a></li>            
-        
-          <li><a href="https://bender.kr.ua/nginx-geoip/">Блокування трафіку з окремих країн за допомогою Nginx та GeoIP</a></li>            
-        
-          <li><a href="https://bender.kr.ua/nginx-pagespeed-openssl/">Як я готую NGINX з модулем PAGESPEED</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -271,10 +271,8 @@ s.setAttribute('data-timestamp', +new Date());
               <h2 class="post-card-title">Вилучення ієрархії категорій з URL в Magento 2</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>В Magento 2 є налаштування, яке дозволяє не показувати категорії для адрес товарів: Stores &gt; Configuration &gt; General &gt; Catalog &gt; Catalog &gt; Search Engine Optimization &gt; Use Categories Path for Product URLs Результатом буде отримання URL виду https://mysite.com/product1.html замість https://mysite.com/category1/category2/product1.html. На жаль для категорій такої можливості не передбачено і не можна отримати https://mysite.com/category2.
-За генерацію URL категорій відповідає клас Magento\CatalogUrlRewrite\Model\CategoryUrlPathGenerator.
-public function getUrlPath($category, $parentCategory = null) { ... if ($this-&gt;isNeedToGenerateUrlPathForParent($category)) { $parentCategory = $parentCategory === null ? ...  </p>
+               
+                <p>В Magento 2 є налаштування, яке дозволяє не показувати категорії для адрес товарів, на жаль для категорій такої можливості не передбачено. Виправляємо.</p>
               
           </section>
       </a>

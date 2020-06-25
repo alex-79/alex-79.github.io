@@ -194,9 +194,8 @@
               <h2 class="post-card-title">Встановлення Python 3.6 на Debian 8</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>#!/bin/sh # python_install.sh PYTHON_VER=$1 cd /opt wget -c https://www.python.org/ftp/python/$PYTHON_VER/Python-$PYTHON_VER.tgz tar -xvf Python-$PYTHON_VER.tgz rm Python-$PYTHON_VER.tgz cd Python-$PYTHON_VER ./configure --enable-optimizations make -j `nproc` make test make altinstall  Приклад встановлення:
-./python_install.sh 3.6.6  python3 -V Python 3.4.2 python3.6 -V Python 3.6.6  Джерело тут і тут </p>
+               
+                <p>Встановлення Python 3.6 на Debian 8</p>
               
           </section>
       </a>
@@ -231,11 +230,8 @@
               <h2 class="post-card-title">Помилка при оновлені сертифікатів від Let&#39;s Encrypt</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>При оновлені сертифікату Let&rsquo;s Encrypt виникла помилка
-Attempting to renew cert (example.com.ua) from /etc/letsencrypt/renewal/example.com.ua.conf produced an unexpected error: Failed authorization procedure. www.example.com.ua (http-01): urn:acme:error:unauthorized :: The client lacks sufficient authorization :: Invalid response from http://www.example.com.ua/.well-known/acme-challenge/BKPbQzerSwVSz9PrVcVqOoSX5MxDvF2lh5eOHVamgQ4  Перевірка доступності http://www.example.com.ua/.well-known/acme-challenge/BKPbQzerSwVSz9PrVcVqOoSX5MxDvF2lh5eOHVamgQ4 не виявила проблем. Let&rsquo;s Encrypt мав би верифікувати домен, але в нього була інша думка.
-Око зачепилося за AAAA у відповіді:
-To fix these errors, please make sure that your domain name was entered correctly and the DNS A/AAAA record(s) for that domain contain(s) the right IP address. ...  </p>
+               
+                <p>Помилка при оновлені сертифікатів від Let&rsquo;s Encrypt: To fix these errors, please make sure that your domain name was entered correctly and the DNS A/AAAA record(s) for that domain contain(s) the right IP address</p>
               
           </section>
       </a>
@@ -268,8 +264,8 @@ To fix these errors, please make sure that your domain name was entered correctl
               <h2 class="post-card-title">Як забрати гілку з git</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>git init git remote add origin remote_git.git git fetch git checkout -b new_branch git pull origin new_branch   </p>
+               
+                <p>Як забрати гілку з git</p>
               
           </section>
       </a>
@@ -302,9 +298,8 @@ To fix these errors, please make sure that your domain name was entered correctl
               <h2 class="post-card-title">NGINX - 301-й редирект адрес з get-аргументами</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Якщо необхідно зробити редирект зі сторінки с get-аргументом, то необхідно дописати в конфіг таке
-location / { if ($arg_param = value) { return 301 $uri; } }  Взяв тут - https://stackoverflow.com/questions/27078909/nginx-redirect-url-with-specific-query-parameter </p>
+               
+                <p>Як зробити редирект зі сторінки с get-аргументом</p>
               
           </section>
       </a>
@@ -339,10 +334,8 @@ location / { if ($arg_param = value) { return 301 $uri; } }  Взяв тут - h
               <h2 class="post-card-title">Як я готую NGINX з модулем PAGESPEED</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Останнім часом майже взагалі не використовую Apache. Є кілька проектів з категорії &ldquo;ой, а про вас забули&rdquo; та &ldquo;не чіпай поки працює&rdquo;, а на нових - лише nginx.
-Готую nginx з pagespeed-ом за таким рецептом:
-#!/bin/sh apt-get install build-essential ca-certificates zlib1g-dev libpcre3 libpcre3-dev tar unzip libssl-dev checkinstall OPENSSL_VER=1.1.0g NPS_VER=1.12.34.3-stable NGINX_VER=1.13.8 cd /opt wget -c https://www.openssl.org/source/openssl-$OPENSSL_VER.tar.gz tar -xzvf openssl-$OPENSSL_VER.tar.gz rm openssl-$OPENSSL_VER.tar.gz wget https://github.com/apache/incubator-pagespeed-ngx/archive/v${NPS_VER}.zip unzip v${NPS_VER}.zip rm v${NPS_VER}.zip NPS_DIR=$(find . -name &quot;*pagespeed-ngx-${NPS_VER}&quot; -type d | sed -e 's/\. ...  </p>
+               
+                <p>Nginx з модулем pagespeed та свіжою версією openssl.</p>
               
           </section>
       </a>

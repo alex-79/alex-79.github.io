@@ -429,13 +429,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/review-neal-stephenson-in-the-beginning-was-the-command-line/">Ніл Стівенсон. Спочатку був командний рядок</a></li>            
+          <li><a href="https://bender.kr.ua/upgrade-magento-232/">Оновлення Magento до версії 2.3.2</a></li>            
         
-          <li><a href="https://bender.kr.ua/year-in-books-2019/">Мій книжковий 2019 рік</a></li>            
+          <li><a href="https://bender.kr.ua/cli-upgrade-magento2/">Оновлення Magento 2</a></li>            
         
-          <li><a href="https://bender.kr.ua/magento-2-reindex-parallel/">Паралельна індексація в Magento 2</a></li>            
+          <li><a href="https://bender.kr.ua/letsencrypt-and-ipv6/">Помилка при оновлені сертифікатів від Let&#39;s Encrypt</a></li>            
         
-          <li><a href="https://bender.kr.ua/mysql-and-regexp/">Пошук в MySQL за допомогою регулярних виразів</a></li>            
+          <li><a href="https://bender.kr.ua/iptables-ipset/">Блокування трафіку за допомогою iptables та ipset</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -463,12 +463,8 @@ s.setAttribute('data-timestamp', +new Date());
               <h2 class="post-card-title">Отримання SSL-сертифікату для Nginx на Debian 9</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Простий спосіб отримати безкоштовний SSL-сертифікат з оцінкою A+ для Nginx на Debian 9
-Спочатку додаємо репозиторій stretch-backports
-add-apt-repository 'deb http://deb.debian.org/debian stretch-backports main' apt-get update  Встановлюємо утиліту для автоматичного отримання та оновлення сертифікатів certbot
-apt-get install certbot python-certbot-nginx -t stretch-backports  В конфігураційному файлі для нашого сайту надаємо certbot-у доступ до необхідної йому директорії
-# Let’s Encrypt location ~ /.well-known { allow all; }  та перечитуємо конфігурацію nginx ...  </p>
+               
+                <p>Отримання та налаштування SSL-сертифікату рівня A+</p>
               
           </section>
       </a>
@@ -497,11 +493,8 @@ apt-get install certbot python-certbot-nginx -t stretch-backports  В конфі
               <h2 class="post-card-title">Magento2: налаштування періодичних завдань власного модуля через адмін-панель</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Для створення періодичного завдання у власному модулі треба виконати наступні кроки:
-1) Сворюємо crontab.xml в app/VendorName/ModuleName/etc
-&lt;?xml version=&quot;1.0&quot;?&gt; &lt;config xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;urn:magento:module:Magento_Cron:etc/crontab.xsd&quot;&gt; &lt;group id=&quot;default&quot;&gt; &lt;job name=&quot;vendorname_modulename_job&quot; instance=&quot;VendorName\ModuleName\Cron\CronJob&quot; method=&quot;execute&quot;&gt; &lt;config_path&gt;crontab/default/jobs/vendorname_modulename_job/schedule/cron_expr&lt;/config_path&gt; &lt;/job&gt; &lt;/group&gt; &lt;/config&gt;  2) Створюємо поле для налаштування періодичного завдання у файлі app/VendorName/ModuleName/etc/adminhtml/system.xml
-... &lt;group id=&quot;configurable_cron&quot; translate=&quot;label&quot; type=&quot;text&quot; sortOrder=&quot;150&quot; showInDefault=&quot;1&quot; showInWebsite=&quot;1&quot; showInStore=&quot;0&quot;&gt; &lt;label&gt;Cron&lt;/label&gt; &lt;field id=&quot;crontab&quot; translate=&quot;label&quot; type=&quot;text&quot; sortOrder=&quot;10&quot; showInDefault=&quot;1&quot; showInWebsite=&quot;1&quot; showInStore=&quot;1&quot;&gt; &lt;label&gt;Crontab&lt;/label&gt; &lt;validate&gt;required-entry&lt;/validate&gt; &lt;backend_model&gt;VendorName\ModuleName\Model\Config\CronConfig&lt;/backend_model&gt; &lt;/field&gt; &lt;/group&gt; ...  3) Створюємо бекенд-модель app/VendorName/ModuleName/Model/Config/CronConfig. ...  </p>
+               
+                <p>Magento2: налаштування періодичних завдань власного модуля через адмін-панель</p>
               
           </section>
       </a>

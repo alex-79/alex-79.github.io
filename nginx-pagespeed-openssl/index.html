@@ -12,7 +12,7 @@
     <link rel="shortcut icon" href="https://bender.kr.ua/favicon.png" />
     <link rel="canonical" href="https://bender.kr.ua/nginx-pagespeed-openssl/" />
 
-     <meta name="description" content="Останнім часом майже взагалі не використовую Apache. Є кілька проектів з категорії &amp;ldquo;ой, а про вас забули&amp;rdquo; та &amp;ldquo;не чіпай поки працює&amp;rdquo;, а н" /> 
+     <meta name="description" content="Nginx з модулем pagespeed та свіжою версією openssl." /> 
 
      
     
@@ -21,7 +21,7 @@
     
  
     <meta name="twitter:title" content="Як я готую NGINX з модулем PAGESPEED"/>
-    <meta name="twitter:description" content="Останнім часом майже взагалі не використовую Apache. Є кілька проектів з категорії &amp;ldquo;ой, а про вас забули&amp;rdquo; та &amp;ldquo;не чіпай поки працює&amp;rdquo;, а н"/>
+    <meta name="twitter:description" content="Nginx з модулем pagespeed та свіжою версією openssl."/>
     <meta name="twitter:url" content="https://bender.kr.ua/nginx-pagespeed-openssl/" />
     <meta name="twitter:site" content="@kr_ingulets"/>
 
@@ -31,7 +31,7 @@
     
 
     <meta property="og:type" content="article" />
-    <meta property="og:description" content="Останнім часом майже взагалі не використовую Apache. Є кілька проектів з категорії &amp;ldquo;ой, а про вас забули&amp;rdquo; та &amp;ldquo;не чіпай поки працює&amp;rdquo;, а н" />
+    <meta property="og:description" content="Nginx з модулем pagespeed та свіжою версією openssl." />
 
     <meta property="article:published_time" content="2017-07-07T07:08:00Z" />
     <meta property="article:tag" content="web" /><meta property="article:tag" content="linux" />
@@ -301,13 +301,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/magento-2-cron-indexer-repair/">Magento 2: не працює індексація за розкладом</a></li>            
+          <li><a href="https://bender.kr.ua/magento-2-reindex-parallel/">Паралельна індексація в Magento 2</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-asterisk-part-2/">IP-телефонія на базі Asterisk. Частина 2: Налаштування SIP</a></li>            
+          <li><a href="https://bender.kr.ua/netbeans-and-fonts/">NetBeans і проблема зі шрифтами</a></li>            
         
-          <li><a href="https://bender.kr.ua/upgrade-magento-232/">Оновлення Magento до версії 2.3.2</a></li>            
+          <li><a href="https://bender.kr.ua/how-to-fix-elasticsearch-forbidden-12-index-read-only-allow-delete-api/">Проблема з переіндексацією catalogsearch_fulltext на Magento 2</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-certbot-nginx-debian/">Отримання SSL-сертифікату для Nginx на Debian 9</a></li>            
+          <li><a href="https://bender.kr.ua/nginx-redirection-get-arg/">NGINX - 301-й редирект адрес з get-аргументами</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -334,9 +334,8 @@ s.setAttribute('data-timestamp', +new Date());
               <h2 class="post-card-title">NGINX - 301-й редирект адрес з get-аргументами</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Якщо необхідно зробити редирект зі сторінки с get-аргументом, то необхідно дописати в конфіг таке
-location / { if ($arg_param = value) { return 301 $uri; } }  Взяв тут - https://stackoverflow.com/questions/27078909/nginx-redirect-url-with-specific-query-parameter </p>
+               
+                <p>Як зробити редирект зі сторінки с get-аргументом</p>
               
           </section>
       </a>
@@ -351,30 +350,29 @@ location / { if ($arg_param = value) { return 301 $uri; } }  Взяв тут - h
       
       <article class="post-card post"> 
     
-    <a class="post-card-image-link" href="https://bender.kr.ua/why-magento/">
-      <div class="post-card-image" style="background-image: url(https://bender.kr.ua/img/why-magento-1.png)"></div>
+    <a class="post-card-image-link" href="https://bender.kr.ua/5-extensions-for-default-magento2/">
+      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1506645292803-579c17d4ba6a?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
     </a>
     
 
     <div class="post-card-content">
-      <a class="post-card-content-link" href="https://bender.kr.ua/why-magento/">
+      <a class="post-card-content-link" href="https://bender.kr.ua/5-extensions-for-default-magento2/">
           <header class="post-card-header">
               <span class="post-card-tags">
               #magento  </span>
               
-              <h2 class="post-card-title">Чому ми обираємо Magento, а не інші системи</h2>
+              <h2 class="post-card-title">5 розширень, які ти зобов&#39;язаний поставити на Magento 2</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Від початку стаття призначалася для інтернет-агенції Studio370, тому в тексті багато &ldquo;ми&rdquo; і &ldquo;нас&rdquo;. З появою власного блогу, прийшов час перетягти її сюди. Планую дописувати та переписувати цей допис, тому, скоріш за все, скоро ця стаття буде дуже не схожа на оригінал.
- Отже у вас є товар, ви точно знаєте де ваш покупець, лишилося зовсім мало - запустити інтернет-магазин і ось воно щастя. Тут і починається головний біль. ...  </p>
+               
+                <p>5 розширень, які ти зобов&rsquo;язаний поставити на Magento 2</p>
               
           </section>
       </a>
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">11 хв</span>
+        <span class="reading-time">3 хв</span>
       </footer>
     </div>
 </article>

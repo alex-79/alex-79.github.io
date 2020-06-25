@@ -12,8 +12,7 @@
     <link rel="shortcut icon" href="https://bender.kr.ua/favicon.png" />
     <link rel="canonical" href="https://bender.kr.ua/letsencrypt-and-ipv6/" />
 
-     <meta name="description" content="При оновлені сертифікату Let&amp;rsquo;s Encrypt виникла помилка
-Attempting to renew cert (example.com.ua) from /etc/letsencrypt/renewal/example.com.ua.conf produce" /> 
+     <meta name="description" content="Помилка при оновлені сертифікатів від Let&#39;s Encrypt: To fix these errors, please make sure that your domain name was entered correctly and the DNS A/AAAA record(s) for that domain contain(s) the right IP address" /> 
 
      
     
@@ -22,8 +21,7 @@ Attempting to renew cert (example.com.ua) from /etc/letsencrypt/renewal/example.
     
  
     <meta name="twitter:title" content="Помилка при оновлені сертифікатів від Let&#39;s Encrypt"/>
-    <meta name="twitter:description" content="При оновлені сертифікату Let&amp;rsquo;s Encrypt виникла помилка
-Attempting to renew cert (example.com.ua) from /etc/letsencrypt/renewal/example.com.ua.conf produce"/>
+    <meta name="twitter:description" content="Помилка при оновлені сертифікатів від Let&#39;s Encrypt: To fix these errors, please make sure that your domain name was entered correctly and the DNS A/AAAA record(s) for that domain contain(s) the right IP address"/>
     <meta name="twitter:url" content="https://bender.kr.ua/letsencrypt-and-ipv6/" />
     <meta name="twitter:site" content="@kr_ingulets"/>
 
@@ -33,8 +31,7 @@ Attempting to renew cert (example.com.ua) from /etc/letsencrypt/renewal/example.
     
 
     <meta property="og:type" content="article" />
-    <meta property="og:description" content="При оновлені сертифікату Let&amp;rsquo;s Encrypt виникла помилка
-Attempting to renew cert (example.com.ua) from /etc/letsencrypt/renewal/example.com.ua.conf produce" />
+    <meta property="og:description" content="Помилка при оновлені сертифікатів від Let&#39;s Encrypt: To fix these errors, please make sure that your domain name was entered correctly and the DNS A/AAAA record(s) for that domain contain(s) the right IP address" />
 
     <meta property="article:published_time" content="2018-06-14T11:33:00Z" />
     <meta property="article:tag" content="linux" /><meta property="article:tag" content="web" />
@@ -226,15 +223,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/magento-2-reindex-parallel/">Паралельна індексація в Magento 2</a></li>            
+          <li><a href="https://bender.kr.ua/nginx-redirection-get-arg/">NGINX - 301-й редирект адрес з get-аргументами</a></li>            
         
-                      
+          <li><a href="https://bender.kr.ua/howto-remove-parent-category-from-url-magento-2/">Вилучення ієрархії категорій з URL в Magento 2</a></li>            
+        
+          <li><a href="https://bender.kr.ua/howto-asterisk-part-2/">IP-телефонія на базі Asterisk. Частина 2: Налаштування SIP</a></li>            
         
           <li><a href="https://bender.kr.ua/why-magento/">Чому ми обираємо Magento, а не інші системи</a></li>            
-        
-          <li><a href="https://bender.kr.ua/howto-hide-default-store-code-from-url-magento-2/">Як прибрати Store Code з URL для основного магазину в Magento 2</a></li>            
-        
-          <li><a href="https://bender.kr.ua/fix-conflict-keyboard-shortcuts/">Не працюють комбінації клавіш CTRL-SHIFT в Ubuntu</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -261,8 +256,8 @@ s.setAttribute('data-timestamp', +new Date());
               <h2 class="post-card-title">Не працюють комбінації клавіш CTRL-SHIFT в Ubuntu</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>В роботі часто користуюсь комбінаціями Ctrl-Shift-Up/Down в LibreOffice Calc, а мову змінюю через Ctrl-Shift. В Ubuntu 14.04 все було гаразд, але при оновлені версій щось зламалось і комбінація в LibreOffice припинила працювати: замість виділяти стовпці, перемикалась розкладка. Варіант поставити зміну мов на іншу клавішу не розглядався в силу того що я раб своїх звичок, а змінювати звички для мене дуже не легко. Якийсь час розрулював цей конфлікт через xNeur, який використовував виключно для зміни розкладок, але воно час від часу падало. ...  </p>
+               
+                <p>Як полагодити комбінацію клавіш CTRL-SHIFT в Ubuntu/Mint</p>
               
           </section>
       </a>
@@ -291,11 +286,8 @@ s.setAttribute('data-timestamp', +new Date());
               <h2 class="post-card-title">df і du показують різні значення</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Якщо команди df та du показують різні значення, можлива причина полягає в тому, що процес утримує файл який вже було видалено з системи. Що побачити список таких процесів слід використати наступну команду:
-lsof -nP | grep '(deleted)' find /proc/*/fd -ls | grep '(deleted)'  Потім треба зробити наступне:
-cat /dev/null &gt; /proc/6466/fd/3  данні взяти з виводу попередньої команди
-Джерела тут, тут і тут </p>
+               
+                <p>Якщо команди df та du показують різні значення, можлива причина полягає в тому, що процес утримує файл який вже було видалено з системи</p>
               
           </section>
       </a>

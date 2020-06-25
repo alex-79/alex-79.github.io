@@ -154,10 +154,8 @@
               <h2 class="post-card-title">Magento 2: не працює індексація за розкладом</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Іноді, за нез&rsquo;ясованих поки обставин, в Magento 2 ламаєть виконання переіндексації за розкладом. В логах це виглядає як main.WARNING: Could not acquire lock for cron group: index, skipping run.
-Щоб &ldquo;поремонтувати&rdquo; крон необхідно: 1. Знайти та вбити процес який відповідає за запуск завдань в Magento 2: php bin/magento cron:run &ndash;group=index &ndash;bootstrap=standaloneProcessStarted=1
-ps ufx | grep cron kill XXXX   Очистити таблицю cron_schedule  DELETE FROM `cron_schedule`;  Очистити кеш Magento  php bin/magento cache:flush    </p>
+               
+                <p>Magento 2: не працює індексація за розкладом</p>
               
           </section>
       </a>
@@ -230,11 +228,8 @@ ps ufx | grep cron kill XXXX   Очистити таблицю cron_schedule  DE
               <h2 class="post-card-title">Пошук в MySQL за допомогою регулярних виразів</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p> Завдання: знайти в каталозі sku із знаком &ldquo;-&rdquo; в кінці.
-Для знаходження відповідних sku виконуємо запит в базу
-SELECT sku FROM `catalog_product_entity` WHERE sku REGEXP &quot;-$&quot; = 1;  REGEXP віддає 1 якщо значення відповідає регулярному виразу, інакше - 0.
-Посилання  http://www.mysql.ru/docs/man/Regexp.html   </p>
+               
+                <p>Пошук в MySQL за допомогою регулярних виразів</p>
               
           </section>
       </a>
@@ -301,9 +296,8 @@ SELECT sku FROM `catalog_product_entity` WHERE sku REGEXP &quot;-$&quot; = 1;  R
               <h2 class="post-card-title">Модулі та інструменти для роботи з Magento 2 (оновлюється)</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p> Список корисних модулів і рішень для Magento 2. Список, ясна річ, дуже суб&rsquo;єктивний і використовується для зберігання цікавих для мене посилань.
-Розгортання  Magento 2 Zero Downtime Deployment  Оптимізація  Відключення непотрібних модулів - один та два Відключення непотрібних модулів The “ultimate guide” to Magento 2 JavaScript Bundling How to improve Magento 2 Page Speed Insights Score?  Пошук  Модуль для Elastic App Search Smile ElasticSuite - комплексне рішення для пошуку, фільтрації та створення віртуальних категорій  Зовнішній вигляд та теми  Open Source alternative to Magento PageBuilder  Youtube  Max Pronko UA / Max Pronko   </p>
+               
+                <p>Список корисних модулів і рішень для Magento 2. Список, ясна річ, дуже суб&rsquo;єктивний і використовується для зберігання цікавих для мене посилань.</p>
               
           </section>
       </a>
@@ -336,10 +330,8 @@ SELECT sku FROM `catalog_product_entity` WHERE sku REGEXP &quot;-$&quot; = 1;  R
               <h2 class="post-card-title">Вилучення ієрархії категорій з URL в Magento 2</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>В Magento 2 є налаштування, яке дозволяє не показувати категорії для адрес товарів: Stores &gt; Configuration &gt; General &gt; Catalog &gt; Catalog &gt; Search Engine Optimization &gt; Use Categories Path for Product URLs Результатом буде отримання URL виду https://mysite.com/product1.html замість https://mysite.com/category1/category2/product1.html. На жаль для категорій такої можливості не передбачено і не можна отримати https://mysite.com/category2.
-За генерацію URL категорій відповідає клас Magento\CatalogUrlRewrite\Model\CategoryUrlPathGenerator.
-public function getUrlPath($category, $parentCategory = null) { ... if ($this-&gt;isNeedToGenerateUrlPathForParent($category)) { $parentCategory = $parentCategory === null ? ...  </p>
+               
+                <p>В Magento 2 є налаштування, яке дозволяє не показувати категорії для адрес товарів, на жаль для категорій такої можливості не передбачено. Виправляємо.</p>
               
           </section>
       </a>

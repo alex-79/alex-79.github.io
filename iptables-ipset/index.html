@@ -12,7 +12,7 @@
     <link rel="shortcut icon" href="https://bender.kr.ua/favicon.png" />
     <link rel="canonical" href="https://bender.kr.ua/iptables-ipset/" />
 
-     <meta name="description" content="Для захисту від DDOS-атак або паразитного трафіку, блокування на рівні сервера, а не nginx (як наприклад тут - https://bender.kr.ua/nginx-geoip/) , є більш ефек" /> 
+     <meta name="description" content="Блокування трафіку за допомогою iptables та ipset" /> 
 
      
     
@@ -21,7 +21,7 @@
     
  
     <meta name="twitter:title" content="Блокування трафіку за допомогою iptables та ipset"/>
-    <meta name="twitter:description" content="Для захисту від DDOS-атак або паразитного трафіку, блокування на рівні сервера, а не nginx (як наприклад тут - https://bender.kr.ua/nginx-geoip/) , є більш ефек"/>
+    <meta name="twitter:description" content="Блокування трафіку за допомогою iptables та ipset"/>
     <meta name="twitter:url" content="https://bender.kr.ua/iptables-ipset/" />
     <meta name="twitter:site" content="@kr_ingulets"/>
 
@@ -31,7 +31,7 @@
     
 
     <meta property="og:type" content="article" />
-    <meta property="og:description" content="Для захисту від DDOS-атак або паразитного трафіку, блокування на рівні сервера, а не nginx (як наприклад тут - https://bender.kr.ua/nginx-geoip/) , є більш ефек" />
+    <meta property="og:description" content="Блокування трафіку за допомогою iptables та ipset" />
 
     <meta property="article:published_time" content="2019-12-24T09:58:19Z" />
     <meta property="article:tag" content="linux" /><meta property="article:tag" content="web" />
@@ -275,13 +275,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/letsencrypt-and-ipv6/">Помилка при оновлені сертифікатів від Let&#39;s Encrypt</a></li>            
+          <li><a href="https://bender.kr.ua/backup-with-tartarus/">Резервне копіювання і трохи грецької міфології</a></li>            
         
-          <li><a href="https://bender.kr.ua/nginx-pagespeed-openssl/">Як я готую NGINX з модулем PAGESPEED</a></li>            
+          <li><a href="https://bender.kr.ua/nginx-geoip/">Блокування трафіку з окремих країн за допомогою Nginx та GeoIP</a></li>            
         
-          <li><a href="https://bender.kr.ua/failed-to-fetch-jessie-backports-repository/">Проблема з backports репозиторієм в Debian 8</a></li>            
+          <li><a href="https://bender.kr.ua/howto-add-header-links-in-magento2/">Magento 2: як додати посилання в header.links</a></li>            
         
-          <li><a href="https://bender.kr.ua/fail2ban-unban-ip/">Як розблокувати себе в fail2ban</a></li>            
+          <li><a href="https://bender.kr.ua/magento-2-modules-and-tools/">Модулі та інструменти для роботи з Magento 2 (оновлюється)</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -308,9 +308,8 @@ s.setAttribute('data-timestamp', +new Date());
               <h2 class="post-card-title">IP-телефонія на базі Asterisk. Частина 4: Голосове меню</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Цикл статей по розгортанню IP-телефонії на базі Asterisk. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Робота була захищена, сертифікат отриманий, все написане тестувалось і є повтінстю робочою реалізацією. Інформація в статті і версії програмного забезбечення актуальні на 2017 рік.
- частина 1 - Встановлення сервера Asterisk частина 2 - Налаштування SIP частина 3 - Логіка обробки дзвінків (Dialplan)  4. Голосове меню 4.1 Створення багаторівневого голосового меню Створюємо голосове меню з 3 рівнями: ...  </p>
+               
+                <p>IP-телефонія на базі Asterisk. Частина 4: Голосове меню</p>
               
           </section>
       </a>
@@ -340,9 +339,8 @@ s.setAttribute('data-timestamp', +new Date());
               <h2 class="post-card-title">Блокування трафіку з окремих країн за допомогою Nginx та GeoIP</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Блокуємо паразитний трафік до сайту з певних країн безкоштовно, без реєстрацій та sms ;)
- Зібрати nginx з опцією &ndash;with-http_geoip_module. Як це зробити написано тут - https://bender.kr.ua/howto-lemp-install/ Встановити бази GeoIP  apt-get install geoip-database libgeoip1  Оновити бази до останньої версії  mv /usr/share/GeoIP/GeoIP.dat /usr/share/GeoIP/GeoIP.bak wget https://dl.miyuru.lk/geoip/maxmind/country/maxmind.dat.gz gunzip maxmind.dat.gz mv maxmind.dat /usr/share/GeoIP/GeoIP.dat  В /etc/nginx/nginx.conf в секції http блокуємо наприклад роісію та Пакистан  http { ... geoip_country /usr/share/GeoIP/GeoIP.dat; map $geoip_country_code $allowed_country_mysite { default yes; RU no; PK no; } . ...  </p>
+               
+                <p>Блокуємо паразитний трафік до сайту з певних країн безкоштовно, без реєстрацій та sms ;)</p>
               
           </section>
       </a>

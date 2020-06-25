@@ -12,7 +12,7 @@
     <link rel="shortcut icon" href="https://bender.kr.ua/favicon.png" />
     <link rel="canonical" href="https://bender.kr.ua/mining-karbowanec/" />
 
-     <meta name="description" content="Надихнувшись книгою Роберта Кіосакі про багатого та бідного батька, я спробував втілити деякі з його ідей на практиці, принаймні так як я їх зрозумів, а саме пе" /> 
+     <meta name="description" content="Трохи сумна, але повчальна історія про намагання на@@@бати долю і стати багатим не доклавши зусиль. Хроніки халявщика." /> 
 
      
     
@@ -21,7 +21,7 @@
     
  
     <meta name="twitter:title" content="Як я місяць майнив криптовалюту за допомогою ноутбуку, навіщо мені це та що з того вийшло"/>
-    <meta name="twitter:description" content="Надихнувшись книгою Роберта Кіосакі про багатого та бідного батька, я спробував втілити деякі з його ідей на практиці, принаймні так як я їх зрозумів, а саме пе"/>
+    <meta name="twitter:description" content="Трохи сумна, але повчальна історія про намагання на@@@бати долю і стати багатим не доклавши зусиль. Хроніки халявщика."/>
     <meta name="twitter:url" content="https://bender.kr.ua/mining-karbowanec/" />
     <meta name="twitter:site" content="@kr_ingulets"/>
 
@@ -31,7 +31,7 @@
     
 
     <meta property="og:type" content="article" />
-    <meta property="og:description" content="Надихнувшись книгою Роберта Кіосакі про багатого та бідного батька, я спробував втілити деякі з його ідей на практиці, принаймні так як я їх зрозумів, а саме пе" />
+    <meta property="og:description" content="Трохи сумна, але повчальна історія про намагання на@@@бати долю і стати багатим не доклавши зусиль. Хроніки халявщика." />
 
     <meta property="article:published_time" content="2018-07-31T11:38:00Z" />
     <meta property="article:tag" content="linux" />
@@ -314,13 +314,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/git-branch/">Як забрати гілку з git</a></li>            
+          <li><a href="https://bender.kr.ua/howto-add-header-links-in-magento2/">Magento 2: як додати посилання в header.links</a></li>            
         
-          <li><a href="https://bender.kr.ua/iptables-ipset/">Блокування трафіку за допомогою iptables та ipset</a></li>            
+          <li><a href="https://bender.kr.ua/cli-upgrade-magento2/">Оновлення Magento 2</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-hide-default-store-code-from-url-magento-2/">Як прибрати Store Code з URL для основного магазину в Magento 2</a></li>            
+          <li><a href="https://bender.kr.ua/fail2ban-unban-ip/">Як розблокувати себе в fail2ban</a></li>            
         
-          <li><a href="https://bender.kr.ua/how-to-exclude-dump-tables/">Вибіркове завантаження таблиць дампа в MySQL</a></li>            
+          <li><a href="https://bender.kr.ua/year-in-books-2019/">Мій книжковий 2019 рік</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -347,11 +347,8 @@ s.setAttribute('data-timestamp', +new Date());
               <h2 class="post-card-title">Magento2: Як писати логи модуля в окремий файл?</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Щоб писати логи модуля в окремий файл треба виконати наступні кроки:
-1) Сворюємо класи Logger.php та Hadler.php
-&lt;?php namespace VendorName\ModuleName\Model\Logger; class Logger extends \Monolog\Logger { }  &lt;?php namespace VendorName\ModuleName\Model\Logger; use Monolog\Logger; class Handler extends \Magento\Framework\Logger\Handler\Base { protected $loggerType = Logger::INFO; protected $fileName = '/var/log/mymodule.log'; }  2) Додаємо власний логер до конфігурації в di.xml
-&lt;?xml version=&quot;1.0&quot;?&gt; &lt;config xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;&gt; &lt;type name=&quot;VendorName\ModuleName\Model\Logger\Handler&quot;&gt; &lt;arguments&gt; &lt;argument name=&quot;filesystem&quot; xsi:type=&quot;object&quot;&gt;Magento\Framework\Filesystem\Driver\File&lt;/argument&gt; &lt;/arguments&gt; &lt;/type&gt; &lt;type name=&quot;VendorName\ModuleName\Model\Logger\Logger&quot;&gt; &lt;arguments&gt; &lt;argument name=&quot;name&quot; xsi:type=&quot;string&quot;&gt;MyLogger&lt;/argument&gt; &lt;argument name=&quot;handlers&quot; xsi:type=&quot;array&quot;&gt; &lt;item name=&quot;system&quot; xsi:type=&quot;object&quot;&gt;VendorName\ModuleName\Model\Logger\Handler&lt;/item&gt; &lt;/argument&gt; &lt;/arguments&gt; &lt;/type&gt; &lt;/config&gt;  3) Тепер можемо використати логер, наприклад так ...  </p>
+               
+                <p>Magento2: Як писати логи модуля в окремий файл?</p>
               
           </section>
       </a>
@@ -380,8 +377,8 @@ s.setAttribute('data-timestamp', +new Date());
               <h2 class="post-card-title">Не працюють комбінації клавіш CTRL-SHIFT в Ubuntu</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>В роботі часто користуюсь комбінаціями Ctrl-Shift-Up/Down в LibreOffice Calc, а мову змінюю через Ctrl-Shift. В Ubuntu 14.04 все було гаразд, але при оновлені версій щось зламалось і комбінація в LibreOffice припинила працювати: замість виділяти стовпці, перемикалась розкладка. Варіант поставити зміну мов на іншу клавішу не розглядався в силу того що я раб своїх звичок, а змінювати звички для мене дуже не легко. Якийсь час розрулював цей конфлікт через xNeur, який використовував виключно для зміни розкладок, але воно час від часу падало. ...  </p>
+               
+                <p>Як полагодити комбінацію клавіш CTRL-SHIFT в Ubuntu/Mint</p>
               
           </section>
       </a>

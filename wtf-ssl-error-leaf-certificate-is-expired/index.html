@@ -12,7 +12,7 @@
     <link rel="shortcut icon" href="https://bender.kr.ua/favicon.png" />
     <link rel="canonical" href="https://bender.kr.ua/wtf-ssl-error-leaf-certificate-is-expired/" />
 
-     <meta name="description" content="Після оновлення сертифікату Let&amp;rsquo;s Encrypt на поштовому сервері iRedMail в GMAIL перестав збирати пошту по протоколу POP3, помилка SSL error: Leaf certific" /> 
+     <meta name="description" content="Помилка з сертифікатом на поштовому сервері iRedMail" /> 
 
      
     
@@ -21,7 +21,7 @@
     
  
     <meta name="twitter:title" content="Після оновлення сертифікату на поштовому сервері в GMAIL не працює POP3"/>
-    <meta name="twitter:description" content="Після оновлення сертифікату Let&amp;rsquo;s Encrypt на поштовому сервері iRedMail в GMAIL перестав збирати пошту по протоколу POP3, помилка SSL error: Leaf certific"/>
+    <meta name="twitter:description" content="Помилка з сертифікатом на поштовому сервері iRedMail"/>
     <meta name="twitter:url" content="https://bender.kr.ua/wtf-ssl-error-leaf-certificate-is-expired/" />
     <meta name="twitter:site" content="@kr_ingulets"/>
 
@@ -31,7 +31,7 @@
     
 
     <meta property="og:type" content="article" />
-    <meta property="og:description" content="Після оновлення сертифікату Let&amp;rsquo;s Encrypt на поштовому сервері iRedMail в GMAIL перестав збирати пошту по протоколу POP3, помилка SSL error: Leaf certific" />
+    <meta property="og:description" content="Помилка з сертифікатом на поштовому сервері iRedMail" />
 
     <meta property="article:published_time" content="2019-09-23T00:00:00Z" />
     <meta property="article:tag" content="linux" />
@@ -221,13 +221,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/backup-with-borg/">Про користь borg-ів</a></li>            
+          <li><a href="https://bender.kr.ua/fail2ban-unban-ip/">Як розблокувати себе в fail2ban</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-add-header-links-in-magento2/">Magento 2: як додати посилання в header.links</a></li>            
+          <li><a href="https://bender.kr.ua/quick-start-with-jenkins-in-docker/">Швидкий старт Jenkins в Debian 10 за допомогою Docker</a></li>            
         
           <li><a href="https://bender.kr.ua/cli-upgrade-magento2/">Оновлення Magento 2</a></li>            
         
-          <li><a href="https://bender.kr.ua/magento-payment-plugin-for-bitpay/">Рубимо електронні гроші в Magento</a></li>            
+          <li><a href="https://bender.kr.ua/connie-willis-doomsday-book/">Конні Вілліс. Книга судного дня</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -255,11 +255,8 @@ s.setAttribute('data-timestamp', +new Date());
               <h2 class="post-card-title">Пошук в MySQL за допомогою регулярних виразів</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p> Завдання: знайти в каталозі sku із знаком &ldquo;-&rdquo; в кінці.
-Для знаходження відповідних sku виконуємо запит в базу
-SELECT sku FROM `catalog_product_entity` WHERE sku REGEXP &quot;-$&quot; = 1;  REGEXP віддає 1 якщо значення відповідає регулярному виразу, інакше - 0.
-Посилання  http://www.mysql.ru/docs/man/Regexp.html   </p>
+               
+                <p>Пошук в MySQL за допомогою регулярних виразів</p>
               
           </section>
       </a>
@@ -288,8 +285,8 @@ SELECT sku FROM `catalog_product_entity` WHERE sku REGEXP &quot;-$&quot; = 1;  R
               <h2 class="post-card-title">Про користь borg-ів</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>До недавнього часу для створення резервних копій я активно користувався tartarus-ом. Хоча цей інструмент може створювати інкрементні бекапи і тим самим оптимізувати збереження резервних копій на диску, розміри повних бекапів мене не влаштовували. Крім того, розпаковка повного архіву було ще тим задоволенням :) На допомогу прийшла програма borgbackup (або просто borg). В роботі вона нагадує git. А головним для мене стала дедуплікація даних. Розміри повних бекапів в кілька разів менше за аналогічні від tartarus-а. ...  </p>
+               
+                <p>Створення резервних копій з дедуплікацією даних за допомогою borgbackup</p>
               
           </section>
       </a>

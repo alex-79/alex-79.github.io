@@ -12,8 +12,7 @@
     <link rel="shortcut icon" href="https://bender.kr.ua/favicon.png" />
     <link rel="canonical" href="https://bender.kr.ua/quick-start-with-jenkins-in-docker/" />
 
-     <meta name="description" content="Для швидкого старту системи CI/CD Jenkins скористаємось docker-ом. Працюємо в Debian 10, але рецепт певно спрацює для будь-якого deb-похідного дистрибутиву.
- Вс" /> 
+     <meta name="description" content="Для швидкого старту системи CI/CD Jenkins скористаємось docker-ом. Працюємо в Debian 10, але рецепт певно спрацює для будь-якого deb-похідного дистрибутиву." /> 
 
      
     
@@ -22,8 +21,7 @@
     
  
     <meta name="twitter:title" content="Швидкий старт Jenkins в Debian 10 за допомогою Docker"/>
-    <meta name="twitter:description" content="Для швидкого старту системи CI/CD Jenkins скористаємось docker-ом. Працюємо в Debian 10, але рецепт певно спрацює для будь-якого deb-похідного дистрибутиву.
- Вс"/>
+    <meta name="twitter:description" content="Для швидкого старту системи CI/CD Jenkins скористаємось docker-ом. Працюємо в Debian 10, але рецепт певно спрацює для будь-якого deb-похідного дистрибутиву."/>
     <meta name="twitter:url" content="https://bender.kr.ua/quick-start-with-jenkins-in-docker/" />
     <meta name="twitter:site" content="@kr_ingulets"/>
 
@@ -33,8 +31,7 @@
     
 
     <meta property="og:type" content="article" />
-    <meta property="og:description" content="Для швидкого старту системи CI/CD Jenkins скористаємось docker-ом. Працюємо в Debian 10, але рецепт певно спрацює для будь-якого deb-похідного дистрибутиву.
- Вс" />
+    <meta property="og:description" content="Для швидкого старту системи CI/CD Jenkins скористаємось docker-ом. Працюємо в Debian 10, але рецепт певно спрацює для будь-якого deb-похідного дистрибутиву." />
 
     <meta property="article:published_time" content="2019-08-14T14:03:32Z" />
     <meta property="article:tag" content="web" /><meta property="article:tag" content="linux" />
@@ -320,13 +317,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/mysql-tmp-table-in-tmpfs/">Тимчасові таблиці MySQL в tmpfs</a></li>            
-        
-          <li><a href="https://bender.kr.ua/fix-conflict-keyboard-shortcuts/">Не працюють комбінації клавіш CTRL-SHIFT в Ubuntu</a></li>            
-        
           <li><a href="https://bender.kr.ua/backup-with-borg/">Про користь borg-ів</a></li>            
         
-          <li><a href="https://bender.kr.ua/df-and-du-show-different-values/">df і du показують різні значення</a></li>            
+          <li><a href="https://bender.kr.ua/howto-certbot-nginx-debian/">Отримання SSL-сертифікату для Nginx на Debian 9</a></li>            
+        
+          <li><a href="https://bender.kr.ua/howto-lemp-install/">Встановлення Nginx &#43; PHP &#43; MySQL на Debian 9</a></li>            
+        
+          <li><a href="https://bender.kr.ua/failed-to-fetch-jessie-backports-repository/">Проблема з backports репозиторієм в Debian 8</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -353,9 +350,8 @@ s.setAttribute('data-timestamp', +new Date());
               <h2 class="post-card-title">Модулі та інструменти для роботи з Magento 2 (оновлюється)</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p> Список корисних модулів і рішень для Magento 2. Список, ясна річ, дуже суб&rsquo;єктивний і використовується для зберігання цікавих для мене посилань.
-Розгортання  Magento 2 Zero Downtime Deployment  Оптимізація  Відключення непотрібних модулів - один та два Відключення непотрібних модулів The “ultimate guide” to Magento 2 JavaScript Bundling How to improve Magento 2 Page Speed Insights Score?  Пошук  Модуль для Elastic App Search Smile ElasticSuite - комплексне рішення для пошуку, фільтрації та створення віртуальних категорій  Зовнішній вигляд та теми  Open Source alternative to Magento PageBuilder  Youtube  Max Pronko UA / Max Pronko   </p>
+               
+                <p>Список корисних модулів і рішень для Magento 2. Список, ясна річ, дуже суб&rsquo;єктивний і використовується для зберігання цікавих для мене посилань.</p>
               
           </section>
       </a>
@@ -384,10 +380,8 @@ s.setAttribute('data-timestamp', +new Date());
               <h2 class="post-card-title">Вилучення ієрархії категорій з URL в Magento 2</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>В Magento 2 є налаштування, яке дозволяє не показувати категорії для адрес товарів: Stores &gt; Configuration &gt; General &gt; Catalog &gt; Catalog &gt; Search Engine Optimization &gt; Use Categories Path for Product URLs Результатом буде отримання URL виду https://mysite.com/product1.html замість https://mysite.com/category1/category2/product1.html. На жаль для категорій такої можливості не передбачено і не можна отримати https://mysite.com/category2.
-За генерацію URL категорій відповідає клас Magento\CatalogUrlRewrite\Model\CategoryUrlPathGenerator.
-public function getUrlPath($category, $parentCategory = null) { ... if ($this-&gt;isNeedToGenerateUrlPathForParent($category)) { $parentCategory = $parentCategory === null ? ...  </p>
+               
+                <p>В Magento 2 є налаштування, яке дозволяє не показувати категорії для адрес товарів, на жаль для категорій такої можливості не передбачено. Виправляємо.</p>
               
           </section>
       </a>

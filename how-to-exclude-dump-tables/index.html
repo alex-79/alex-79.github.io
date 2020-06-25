@@ -12,7 +12,7 @@
     <link rel="shortcut icon" href="https://bender.kr.ua/favicon.png" />
     <link rel="canonical" href="https://bender.kr.ua/how-to-exclude-dump-tables/" />
 
-     <meta name="description" content="Є в мене дамп магазину на Magento розміром 4Gb. В ньому таблиці з логами займають 3,5Gb. O_o Фігассє, нафіга воно мені на тестовому сервері. Людина, що передала" /> 
+     <meta name="description" content="Трохи sed і bash для виправлення дампу бази даних" /> 
 
      
     
@@ -21,7 +21,7 @@
     
  
     <meta name="twitter:title" content="Вибіркове завантаження таблиць дампа в MySQL"/>
-    <meta name="twitter:description" content="Є в мене дамп магазину на Magento розміром 4Gb. В ньому таблиці з логами займають 3,5Gb. O_o Фігассє, нафіга воно мені на тестовому сервері. Людина, що передала"/>
+    <meta name="twitter:description" content="Трохи sed і bash для виправлення дампу бази даних"/>
     <meta name="twitter:url" content="https://bender.kr.ua/how-to-exclude-dump-tables/" />
     <meta name="twitter:site" content="@kr_ingulets"/>
 
@@ -31,7 +31,7 @@
     
 
     <meta property="og:type" content="article" />
-    <meta property="og:description" content="Є в мене дамп магазину на Magento розміром 4Gb. В ньому таблиці з логами займають 3,5Gb. O_o Фігассє, нафіга воно мені на тестовому сервері. Людина, що передала" />
+    <meta property="og:description" content="Трохи sed і bash для виправлення дампу бази даних" />
 
     <meta property="article:published_time" content="2017-11-11T13:12:00Z" />
     <meta property="article:tag" content="mysql" />
@@ -207,13 +207,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
+          <li><a href="https://bender.kr.ua/howto-asterisk-part-5/">IP-телефонія на базі Asterisk. Частина 5: Деталізований звіт про виклики (Call Detail Records, CDR)</a></li>            
+        
           <li><a href="https://bender.kr.ua/howto-add-header-links-in-magento2/">Magento 2: як додати посилання в header.links</a></li>            
         
-          <li><a href="https://bender.kr.ua/mysql-and-regexp/">Пошук в MySQL за допомогою регулярних виразів</a></li>            
+          <li><a href="https://bender.kr.ua/year-in-books-2019/">Мій книжковий 2019 рік</a></li>            
         
-          <li><a href="https://bender.kr.ua/nginx-pagespeed-openssl/">Як я готую NGINX з модулем PAGESPEED</a></li>            
-        
-          <li><a href="https://bender.kr.ua/howto-remove-parent-category-from-url-magento-2/">Вилучення ієрархії категорій з URL в Magento 2</a></li>            
+          <li><a href="https://bender.kr.ua/failed-to-fetch-jessie-backports-repository/">Проблема з backports репозиторієм в Debian 8</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -241,10 +241,8 @@ s.setAttribute('data-timestamp', +new Date());
               <h2 class="post-card-title">Оновлення Magento 2</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Скрипт для оновлення Magento 2:
-#!/bin/bash # upgrade.sh composer require magento/product-community-edition $1 --no-update composer update rm -rf var/cache/* var/page_cache/* var/generation/* php bin/magento setup:upgrade find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; chown -R :www-data . chmod u+x bin/magento  Приклад запуску:
-upgrade.sh 2.2.2  Джерело тут </p>
+               
+                <p>Простий скрипт для оновлення Magento 2</p>
               
           </section>
       </a>
@@ -273,9 +271,8 @@ upgrade.sh 2.2.2  Джерело тут </p>
               <h2 class="post-card-title">Рубимо електронні гроші в Magento</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Як отримати bitcoin-и без того, щоб скуповувати відеокарти? Правильно, щось за них продати. Для цього трема мати магазин на Magento та виконати невеличку інструкцію:
- Зробити гаманець на https://bitpay.com/. Встановити модуль https://github.com/bitpay/magento-plugin. Тут увага, не намагайтесь ставити через modman - все одно не запрацює. Краще зробити це з архіву https://github.com/bitpay/magento-plugin/releases. Далі налаштовуємо через System &gt; Configuration &gt; Sales &gt; Payment Methods. Щоб прив&rsquo;язати гаманець до Magento, треба отримати токен https://bitpay.com/api-tokens і ввести його у відповідне поле. ...  </p>
+               
+                <p>Налаштування Magento 1.9 на оплату Bitcoin-ами</p>
               
           </section>
       </a>

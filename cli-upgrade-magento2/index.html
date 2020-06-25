@@ -12,8 +12,7 @@
     <link rel="shortcut icon" href="https://bender.kr.ua/favicon.png" />
     <link rel="canonical" href="https://bender.kr.ua/cli-upgrade-magento2/" />
 
-     <meta name="description" content="Скрипт для оновлення Magento 2:
-#!/bin/bash # upgrade.sh composer require magento/product-community-edition $1 --no-update composer update rm -rf var/cache/* va" /> 
+     <meta name="description" content="Простий скрипт для оновлення Magento 2" /> 
 
      
     
@@ -22,8 +21,7 @@
     
  
     <meta name="twitter:title" content="Оновлення Magento 2"/>
-    <meta name="twitter:description" content="Скрипт для оновлення Magento 2:
-#!/bin/bash # upgrade.sh composer require magento/product-community-edition $1 --no-update composer update rm -rf var/cache/* va"/>
+    <meta name="twitter:description" content="Простий скрипт для оновлення Magento 2"/>
     <meta name="twitter:url" content="https://bender.kr.ua/cli-upgrade-magento2/" />
     <meta name="twitter:site" content="@kr_ingulets"/>
 
@@ -33,8 +31,7 @@
     
 
     <meta property="og:type" content="article" />
-    <meta property="og:description" content="Скрипт для оновлення Magento 2:
-#!/bin/bash # upgrade.sh composer require magento/product-community-edition $1 --no-update composer update rm -rf var/cache/* va" />
+    <meta property="og:description" content="Простий скрипт для оновлення Magento 2" />
 
     <meta property="article:published_time" content="2018-01-03T13:23:00Z" />
     <meta property="article:tag" content="magento" /><meta property="article:tag" content="linux" />
@@ -227,15 +224,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/how-to-exclude-dump-tables/">Вибіркове завантаження таблиць дампа в MySQL</a></li>            
+          <li><a href="https://bender.kr.ua/howto-lemp-install/">Встановлення Nginx &#43; PHP &#43; MySQL на Debian 9</a></li>            
         
-          <li><a href="https://bender.kr.ua/connie-willis-doomsday-book/">Конні Вілліс. Книга судного дня</a></li>            
+          <li><a href="https://bender.kr.ua/nginx-redirection-get-arg/">NGINX - 301-й редирект адрес з get-аргументами</a></li>            
         
-                      
+          <li><a href="https://bender.kr.ua/magento-2-cron-indexer-repair/">Magento 2: не працює індексація за розкладом</a></li>            
         
-          <li><a href="https://bender.kr.ua/fix-conflict-keyboard-shortcuts/">Не працюють комбінації клавіш CTRL-SHIFT в Ubuntu</a></li>            
-        
-          <li><a href="https://bender.kr.ua/howto-remove-parent-category-from-url-magento-2/">Вилучення ієрархії категорій з URL в Magento 2</a></li>            
+          <li><a href="https://bender.kr.ua/backup-with-tartarus/">Резервне копіювання і трохи грецької міфології</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -262,8 +257,8 @@ s.setAttribute('data-timestamp', +new Date());
               <h2 class="post-card-title">Створення бази даних в MySQL</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>CREATE DATABASE new_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci; GRANT ALL PRIVILEGES ON new_db.* TO 'new_user'@'localhost' IDENTIFIED BY 'password'; FLUSH PRIVILEGES;   </p>
+               
+                <p>Нагадування для самого себе, щоб не забувати</p>
               
           </section>
       </a>
@@ -292,9 +287,8 @@ s.setAttribute('data-timestamp', +new Date());
               <h2 class="post-card-title">Вибіркове завантаження таблиць дампа в MySQL</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Є в мене дамп магазину на Magento розміром 4Gb. В ньому таблиці з логами займають 3,5Gb. O_o Фігассє, нафіга воно мені на тестовому сервері. Людина, що передала мені архів, в даний момент недоступна, тобто зробить новий дамп без логів не варіант. Що робить!? Правильно, #!bash-ить:
-cat old.sql | sed -e '/^LOCK TABLES .log_/,/^UNLOCK TABLES;/d' &gt; new.sql   </p>
+               
+                <p>Трохи sed і bash для виправлення дампу бази даних</p>
               
           </section>
       </a>

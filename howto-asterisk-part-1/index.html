@@ -12,7 +12,7 @@
     <link rel="shortcut icon" href="https://bender.kr.ua/favicon.png" />
     <link rel="canonical" href="https://bender.kr.ua/howto-asterisk-part-1/" />
 
-     <meta name="description" content="Цикл статей по розгортанню IP-телефонії на базі Asterisk. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Роб" /> 
+     <meta name="description" content="IP-телефонія на базі Asterisk. Частина 1: Встановлення сервера Asterisk" /> 
 
      
     
@@ -21,7 +21,7 @@
     
  
     <meta name="twitter:title" content="IP-телефонія на базі Asterisk. Частина 1: Встановлення сервера Asterisk"/>
-    <meta name="twitter:description" content="Цикл статей по розгортанню IP-телефонії на базі Asterisk. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Роб"/>
+    <meta name="twitter:description" content="IP-телефонія на базі Asterisk. Частина 1: Встановлення сервера Asterisk"/>
     <meta name="twitter:url" content="https://bender.kr.ua/howto-asterisk-part-1/" />
     <meta name="twitter:site" content="@kr_ingulets"/>
 
@@ -31,7 +31,7 @@
     
 
     <meta property="og:type" content="article" />
-    <meta property="og:description" content="Цикл статей по розгортанню IP-телефонії на базі Asterisk. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Роб" />
+    <meta property="og:description" content="IP-телефонія на базі Asterisk. Частина 1: Встановлення сервера Asterisk" />
 
     <meta property="article:published_time" content="2019-10-17T15:53:49Z" />
     <meta property="article:tag" content="linux" />
@@ -471,13 +471,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/netbeans-and-fonts/">NetBeans і проблема зі шрифтами</a></li>            
+          <li><a href="https://bender.kr.ua/git-branch/">Як забрати гілку з git</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-install-munin/">Простий моніторинг роботи сервера за допомогою Munin</a></li>            
+          <li><a href="https://bender.kr.ua/nginx-redirection-get-arg/">NGINX - 301-й редирект адрес з get-аргументами</a></li>            
         
-          <li><a href="https://bender.kr.ua/configurable-crontab-magento2/">Magento2: налаштування періодичних завдань власного модуля через адмін-панель</a></li>            
+          <li><a href="https://bender.kr.ua/magick-248/">Магічне число 248 або Чому я не можу додати значення атрибута в Magento 2?</a></li>            
         
-          <li><a href="https://bender.kr.ua/custom-logging-module-magento2/">Magento2: Як писати логи модуля в окремий файл?</a></li>            
+          <li><a href="https://bender.kr.ua/installing-python-3-6-on-debian-8/">Встановлення Python 3.6 на Debian 8</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -504,10 +504,8 @@ s.setAttribute('data-timestamp', +new Date());
               <h2 class="post-card-title">Mint 19 і сканер Epson Perfection V33</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p> На замовчування програма iscan в Linux Mint не працює зі сканером Epson Perfection V33. Щоб вирішити цю проблему, винонуємо наступні дії:
-sudo ln -sfr /usr/lib/sane/libsane-epkowa* /usr/lib/x86_64-linux-gnu/sane  та сворюємо правило для підключення сканера /etc/udev/rules.d/79-udev-epson.rules:
-# chmod device EPSON group ATTRS{manufacturer}==&quot;EPSON&quot;, DRIVERS==&quot;usb&quot;, SUBSYSTEMS==&quot;usb&quot;, ATTRS{idVendor}==&quot;04b8&quot;, ATTRS{idProduct}==&quot;*&quot;, MODE=&quot;0777&quot;  Посилання  https://forums.linuxmint.com/viewtopic.php?t=275853   </p>
+               
+                <p>Налаштування сканера Epson Perfection V33 в Mint 19</p>
               
           </section>
       </a>
@@ -537,11 +535,8 @@ sudo ln -sfr /usr/lib/sane/libsane-epkowa* /usr/lib/x86_64-linux-gnu/sane  та 
               <h2 class="post-card-title">Пошук в MySQL за допомогою регулярних виразів</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p> Завдання: знайти в каталозі sku із знаком &ldquo;-&rdquo; в кінці.
-Для знаходження відповідних sku виконуємо запит в базу
-SELECT sku FROM `catalog_product_entity` WHERE sku REGEXP &quot;-$&quot; = 1;  REGEXP віддає 1 якщо значення відповідає регулярному виразу, інакше - 0.
-Посилання  http://www.mysql.ru/docs/man/Regexp.html   </p>
+               
+                <p>Пошук в MySQL за допомогою регулярних виразів</p>
               
           </section>
       </a>

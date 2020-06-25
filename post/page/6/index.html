@@ -151,10 +151,8 @@
               <h2 class="post-card-title">Оновлення Magento 2</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Скрипт для оновлення Magento 2:
-#!/bin/bash # upgrade.sh composer require magento/product-community-edition $1 --no-update composer update rm -rf var/cache/* var/page_cache/* var/generation/* php bin/magento setup:upgrade find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; chown -R :www-data . chmod u+x bin/magento  Приклад запуску:
-upgrade.sh 2.2.2  Джерело тут </p>
+               
+                <p>Простий скрипт для оновлення Magento 2</p>
               
           </section>
       </a>
@@ -187,9 +185,8 @@ upgrade.sh 2.2.2  Джерело тут </p>
               <h2 class="post-card-title">Вибіркове завантаження таблиць дампа в MySQL</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Є в мене дамп магазину на Magento розміром 4Gb. В ньому таблиці з логами займають 3,5Gb. O_o Фігассє, нафіга воно мені на тестовому сервері. Людина, що передала мені архів, в даний момент недоступна, тобто зробить новий дамп без логів не варіант. Що робить!? Правильно, #!bash-ить:
-cat old.sql | sed -e '/^LOCK TABLES .log_/,/^UNLOCK TABLES;/d' &gt; new.sql   </p>
+               
+                <p>Трохи sed і bash для виправлення дампу бази даних</p>
               
           </section>
       </a>
@@ -222,9 +219,8 @@ cat old.sql | sed -e '/^LOCK TABLES .log_/,/^UNLOCK TABLES;/d' &gt; new.sql   </
               <h2 class="post-card-title">Рубимо електронні гроші в Magento</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Як отримати bitcoin-и без того, щоб скуповувати відеокарти? Правильно, щось за них продати. Для цього трема мати магазин на Magento та виконати невеличку інструкцію:
- Зробити гаманець на https://bitpay.com/. Встановити модуль https://github.com/bitpay/magento-plugin. Тут увага, не намагайтесь ставити через modman - все одно не запрацює. Краще зробити це з архіву https://github.com/bitpay/magento-plugin/releases. Далі налаштовуємо через System &gt; Configuration &gt; Sales &gt; Payment Methods. Щоб прив&rsquo;язати гаманець до Magento, треба отримати токен https://bitpay.com/api-tokens і ввести його у відповідне поле. ...  </p>
+               
+                <p>Налаштування Magento 1.9 на оплату Bitcoin-ами</p>
               
           </section>
       </a>
@@ -257,8 +253,8 @@ cat old.sql | sed -e '/^LOCK TABLES .log_/,/^UNLOCK TABLES;/d' &gt; new.sql   </
               <h2 class="post-card-title">Як забрати гілку з git</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>git init git remote add origin remote_git.git git fetch git checkout -b new_branch git pull origin new_branch   </p>
+               
+                <p>Як забрати гілку з git</p>
               
           </section>
       </a>
@@ -293,10 +289,8 @@ cat old.sql | sed -e '/^LOCK TABLES .log_/,/^UNLOCK TABLES;/d' &gt; new.sql   </
               <h2 class="post-card-title">Магічне число 248 або Чому я не можу додати значення атрибута в Magento 2?</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Не можу додати ще одне значення атрибута в Magento 2. Підрахував кількість вже існуючих значень - 248. Виявилося, що у всьому винен PHP, а саме значення за замовчуванням _max_inputvars = 1000. Змінив на 100000.
-Згадав, що знаю про цю штуку ще з Magento 1, але поки не записав рецепт, змушений був в черговий раз гуглити.
-Подробиці тут </p>
+               
+                <p>Не можу додати ще одне значення атрибута в Magento 2.</p>
               
           </section>
       </a>
@@ -329,9 +323,8 @@ cat old.sql | sed -e '/^LOCK TABLES .log_/,/^UNLOCK TABLES;/d' &gt; new.sql   </
               <h2 class="post-card-title">NGINX - 301-й редирект адрес з get-аргументами</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Якщо необхідно зробити редирект зі сторінки с get-аргументом, то необхідно дописати в конфіг таке
-location / { if ($arg_param = value) { return 301 $uri; } }  Взяв тут - https://stackoverflow.com/questions/27078909/nginx-redirect-url-with-specific-query-parameter </p>
+               
+                <p>Як зробити редирект зі сторінки с get-аргументом</p>
               
           </section>
       </a>
@@ -366,10 +359,8 @@ location / { if ($arg_param = value) { return 301 $uri; } }  Взяв тут - h
               <h2 class="post-card-title">Як я готую NGINX з модулем PAGESPEED</h2>
           </header>
           <section class="post-card-excerpt">
-              
-                <p>Останнім часом майже взагалі не використовую Apache. Є кілька проектів з категорії &ldquo;ой, а про вас забули&rdquo; та &ldquo;не чіпай поки працює&rdquo;, а на нових - лише nginx.
-Готую nginx з pagespeed-ом за таким рецептом:
-#!/bin/sh apt-get install build-essential ca-certificates zlib1g-dev libpcre3 libpcre3-dev tar unzip libssl-dev checkinstall OPENSSL_VER=1.1.0g NPS_VER=1.12.34.3-stable NGINX_VER=1.13.8 cd /opt wget -c https://www.openssl.org/source/openssl-$OPENSSL_VER.tar.gz tar -xzvf openssl-$OPENSSL_VER.tar.gz rm openssl-$OPENSSL_VER.tar.gz wget https://github.com/apache/incubator-pagespeed-ngx/archive/v${NPS_VER}.zip unzip v${NPS_VER}.zip rm v${NPS_VER}.zip NPS_DIR=$(find . -name &quot;*pagespeed-ngx-${NPS_VER}&quot; -type d | sed -e 's/\. ...  </p>
+               
+                <p>Nginx з модулем pagespeed та свіжою версією openssl.</p>
               
           </section>
       </a>
@@ -377,41 +368,6 @@ location / { if ($arg_param = value) { return 301 $uri; } }  Взяв тут - h
       <footer class="post-card-meta">
           <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
           <span class="reading-time">1 хв</span>
-      </footer>
-    </div>
-</article>
-
-
-<article class="post-card post"> 
-    
-    <a class="post-card-image-link" href="https://bender.kr.ua/why-magento/">
-      <div class="post-card-image" style="background-image: url(https://bender.kr.ua/img/why-magento-1.png)"></div>
-    </a>
-    
-
-    <div class="post-card-content">
-      <a class="post-card-content-link" href="https://bender.kr.ua/why-magento/">
-          <header class="post-card-header">
-              
-                <span class="post-card-tags">
-                  
-                    #magento
-                   
-                </span>
-              
-              <h2 class="post-card-title">Чому ми обираємо Magento, а не інші системи</h2>
-          </header>
-          <section class="post-card-excerpt">
-              
-                <p>Від початку стаття призначалася для інтернет-агенції Studio370, тому в тексті багато &ldquo;ми&rdquo; і &ldquo;нас&rdquo;. З появою власного блогу, прийшов час перетягти її сюди. Планую дописувати та переписувати цей допис, тому, скоріш за все, скоро ця стаття буде дуже не схожа на оригінал.
- Отже у вас є товар, ви точно знаєте де ваш покупець, лишилося зовсім мало - запустити інтернет-магазин і ось воно щастя. Тут і починається головний біль. ...  </p>
-              
-          </section>
-      </a>
-
-      <footer class="post-card-meta">
-          <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-          <span class="reading-time">11 хв</span>
       </footer>
     </div>
 </article>
@@ -446,6 +402,40 @@ location / { if ($arg_param = value) { return 301 $uri; } }  Взяв тут - h
       <footer class="post-card-meta">
           <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
           <span class="reading-time">3 хв</span>
+      </footer>
+    </div>
+</article>
+
+
+<article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="https://bender.kr.ua/why-magento/">
+      <div class="post-card-image" style="background-image: url(https://bender.kr.ua/img/why-magento-1.png)"></div>
+    </a>
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="https://bender.kr.ua/why-magento/">
+          <header class="post-card-header">
+              
+                <span class="post-card-tags">
+                  
+                    #magento
+                   
+                </span>
+              
+              <h2 class="post-card-title">Чому ми обираємо Magento, а не інші системи</h2>
+          </header>
+          <section class="post-card-excerpt">
+               
+                <p>Потік думок про переваги Magento над конкурентами.</p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
+          <span class="reading-time">11 хв</span>
       </footer>
     </div>
 </article>
