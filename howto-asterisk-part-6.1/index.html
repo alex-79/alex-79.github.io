@@ -4,39 +4,39 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    <title>IP-телефонія на базі Asterisk. Частина 5: Деталізований звіт про виклики (Call Detail Records, CDR) &middot; </title>
+    <title>IP-телефонія на базі Asterisk. Частина 6.1: Додаткові функції Asterisk. Паркування дзвінка. &middot; </title>
 
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="shortcut icon" href="https://bender.kr.ua/favicon.png" />
-    <link rel="canonical" href="https://bender.kr.ua/howto-asterisk-part-5/" />
+    <link rel="canonical" href="https://bender.kr.ua/howto-asterisk-part-6.1/" />
 
-     <meta name="description" content="IP-телефонія на базі Asterisk. Частина 5: Деталізований звіт про виклики (Call Detail Records, CDR)" /> 
+     <meta name="description" content="IP-телефонія на базі Asterisk. Частина 6.1: Додаткові функції Asterisk. Паркування дзвінка." /> 
 
      
     
     <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:image" content="https://images.unsplash.com/photo-1484191914255-a429e6f819b4?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1434123342969-25a249e8d144?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1995&q=80"/>
     
  
-    <meta name="twitter:title" content="IP-телефонія на базі Asterisk. Частина 5: Деталізований звіт про виклики (Call Detail Records, CDR)"/>
-    <meta name="twitter:description" content="IP-телефонія на базі Asterisk. Частина 5: Деталізований звіт про виклики (Call Detail Records, CDR)"/>
-    <meta name="twitter:url" content="https://bender.kr.ua/howto-asterisk-part-5/" />
+    <meta name="twitter:title" content="IP-телефонія на базі Asterisk. Частина 6.1: Додаткові функції Asterisk. Паркування дзвінка."/>
+    <meta name="twitter:description" content="IP-телефонія на базі Asterisk. Частина 6.1: Додаткові функції Asterisk. Паркування дзвінка."/>
+    <meta name="twitter:url" content="https://bender.kr.ua/howto-asterisk-part-6.1/" />
     <meta name="twitter:site" content="@kr_ingulets"/>
 
     <meta property="og:site_name" content="" />
-    <meta property="og:title" content="IP-телефонія на базі Asterisk. Частина 5: Деталізований звіт про виклики (Call Detail Records, CDR) &middot; Бортовий журнал Бендера" />
-    <meta property="og:url" content="https://bender.kr.ua/howto-asterisk-part-5/" />
+    <meta property="og:title" content="IP-телефонія на базі Asterisk. Частина 6.1: Додаткові функції Asterisk. Паркування дзвінка. &middot; Бортовий журнал Бендера" />
+    <meta property="og:url" content="https://bender.kr.ua/howto-asterisk-part-6.1/" />
     
 
     <meta property="og:type" content="article" />
-    <meta property="og:description" content="IP-телефонія на базі Asterisk. Частина 5: Деталізований звіт про виклики (Call Detail Records, CDR)" />
+    <meta property="og:description" content="IP-телефонія на базі Asterisk. Частина 6.1: Додаткові функції Asterisk. Паркування дзвінка." />
 
-    <meta property="article:published_time" content="2020-01-13T02:00:00Z" />
+    <meta property="article:published_time" content="2020-06-29T00:00:00Z" />
     <meta property="article:tag" content="linux" />
 
-    <meta property="og:image" content="https://images.unsplash.com/photo-1484191914255-a429e6f819b4?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
+    <meta property="og:image" content="https://images.unsplash.com/photo-1434123342969-25a249e8d144?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1995&q=80"/>
 
 
     <meta name="generator" content="Hugo 0.40.1" />
@@ -132,13 +132,13 @@
       <article class="post-full post"> 
     <header class="post-full-header">
         <section class="post-full-meta">
-            <time class="post-full-meta-date" datetime="2020-01-13">13 January 2020</time>
+            <time class="post-full-meta-date" datetime="2020-06-29">29 June 2020</time>
                 <span class="date-divider">/</span> <a href="https://bender.kr.ua/tags/linux/">#linux</a>&nbsp;
         </section>
-        <h1 class="post-full-title">IP-телефонія на базі Asterisk. Частина 5: Деталізований звіт про виклики (Call Detail Records, CDR)</h1>
+        <h1 class="post-full-title">IP-телефонія на базі Asterisk. Частина 6.1: Додаткові функції Asterisk. Паркування дзвінка.</h1>
     </header>
     
-    <figure class="post-full-image" style="background-image: url(https://images.unsplash.com/photo-1484191914255-a429e6f819b4?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)">
+    <figure class="post-full-image" style="background-image: url(https://images.unsplash.com/photo-1434123342969-25a249e8d144?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1995&amp;q=80)">
     </figure>
 
     <section class="post-full-content">
@@ -152,216 +152,126 @@
 <li>частина 2 - <a href="https://bender.kr.ua/howto-asterisk-part-2/">Налаштування SIP</a></li>
 <li>частина 3 - <a href="https://bender.kr.ua/howto-asterisk-part-3/">Логіка обробки дзвінків (Dialplan)</a></li>
 <li>частина 4 - <a href="https://bender.kr.ua/howto-asterisk-part-4/">Голосове меню</a></li>
+<li>частина 5 - <a href="https://bender.kr.ua/howto-asterisk-part-5/">Деталізований звіт про виклики (Call Detail Records, CDR)</a></li>
 </ul>
 
-<h1 id="5-деталізований-звіт-про-виклики-call-detail-records-cdr">5. Деталізований звіт про виклики (Call Detail Records, CDR)</h1>
+<h1 id="6-додаткові-функції-asterisk">6. Додаткові функції Asterisk.</h1>
 
-<p>Налаштуємо зберігання статистики в БД MySQL.</p>
+<h2 id="6-1-паркування-дзвінка">6.1 Паркування дзвінка.</h2>
 
-<p>Встановимо MySQL:</p>
+<p>Паркування виклику - це перенаправлення дзвінка абонента в спеціальний слот. Кожен слот має свій номер. Якщо перейти на інший телефон та набрати відповідний номер слота, то можна продовжити розмову з абонентом. В процесі очікування абонент ставитися на утримання і прослуховує музику.</p>
 
-<pre><code>wget https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm
-rpm -ivh mysql57-community-release-el7-11.noarch.rpm
-yum install mysql-server
+<p>Додаємо можливість паркувати дзвінки. Використаємо номер за замовчуванням - <strong><em>700</em></strong>, тобто, якщо в процесі розмови набрати <strong><em># 700</em></strong>, то почуємо номер слоту, який потім треба буде набрати з іншого телефоного апарату для з&rsquo;єднання з <strong><em>&ldquo;запаркованим&rdquo;</em></strong> абонентом.</p>
+
+<pre><code>[manager]
+include =&gt; call-local-manager
+include =&gt; call-local
+include =&gt; call-out-world
+include =&gt; parkedcalls
+ 
+[sales]
+include =&gt; call-local-manager
+include =&gt; call-local
+include =&gt; call-out-ua
+include =&gt; parkedcalls
+ 
+[buyings]
+include =&gt; call-local-manager
+include =&gt; call-local
+include =&gt; call-out-ua
+include =&gt; parkedcalls
+ 
+[warehouse]
+include =&gt; call-local-manager
+include =&gt; call-local
+include =&gt; parkedcalls
+ 
+[it]
+include =&gt; call-local
+include =&gt; parkedcalls
+
+[reception]
+include =&gt; call-local-manager
+include =&gt; call-local
+include =&gt; call-out-ua
+include =&gt; parkedcalls
 </code></pre>
 
-<p>Оскільки будемо використовувати для перегляду статистики дзвінків веб-застосунок <em>CDR Viewer</em>, то встановлюємо і налаштовуємо веб-сервер:</p>
+<p>Для користувачів слід дозволити функцію переводу виклику, щоб вони могли скористатись функцією паркування, відповідно необхідно додати у виклики Dial() параметр t:</p>
 
-<pre><code>cd /usr/src/
-wget https://nginx.org/download/nginx-1.13.0.tar.gz
-tar vxfz nginx-1.13.0.tar.gz 
-cd nginx-1.13.0/
-./configure 
-make &amp;&amp; make install
-useradd -r nginx
-ln -s /usr/local/nginx/conf/ /etc/nginx
-ln -s /usr/local/nginx/sbin/nginx /usr/sbin/nginx
-wget -O /etc/init.d/nginx https://gist.github.com/sairam/5892520/raw/b8195a71e944d46271c8a49f2717f70bcd04bf1a/etc-init.d-nginx
-chmod +x /etc/init.d/nginx
+<pre><code>;внутрішні лінії за виключенням manager
+[call-local]
+exten =&gt; _[2-6],1,Set(RECORDING=0)
+exten =&gt; _[2-6],n,Macro(recording,${CALLERID(num)},${EXTEN})
+exten =&gt; _[2-6]XX,n,Dial(SIP/${EXTEN},20,t)
+exten =&gt; _[2-6],n,Hangup()
 </code></pre>
 
-<p>Створюємо файл <em>/lib/systemd/system/nginx.service</em>:</p>
+<p>Перевіряємо паркування викликів:</p>
 
-<pre><code>[Unit]
-Description=The NGINX HTTP and reverse proxy server
-After=syslog.target network.target remote-fs.target nss-lookup.target
-
-[Service]
-Type=forking
-PIDFile=/run/nginx.pid
-ExecStartPre=/usr/sbin/nginx -t
-ExecStart=/usr/sbin/nginx
-ExecReload=/bin/kill -s HUP $MAINPID
-ExecStop=/bin/kill -s QUIT $MAINPID
-PrivateTmp=true
-
-[Install]
-WantedBy=multi-user.target
-Запускаем сервер:
-systemctl enable nginx
-systemctl start nginx
+<pre><code>asterisk-centos*CLI&gt; 
+  == Using SIP RTP CoS mark 5
+    -- Executing [740648@call-in:1] Set(&quot;SIP/zadarma-0000001c&quot;, &quot;RECORDING=1&quot;) in new stack
+    -- Executing [740648@call-in:2] Goto(&quot;SIP/zadarma-0000001c&quot;, &quot;ivr-mainmenu,s,1&quot;) in new stack
+    -- Goto (ivr-mainmenu,s,1)
+    -- Executing [s@ivr-mainmenu:1] Answer(&quot;SIP/zadarma-0000001c&quot;, &quot;&quot;) in new stack
+    -- Executing [s@ivr-mainmenu:2] BackGround(&quot;SIP/zadarma-0000001c&quot;, &quot;ivr/welcome&quot;) in new stack
+    -- &lt;SIP/zadarma-0000001c&gt; Playing 'ivr/welcome.slin' (language 'ru')
+       &gt; 0x8da8a40 -- Probation passed - setting RTP source address to 185.45.152.162:19710
+    -- Executing [s@ivr-mainmenu:3] GotoIfTime(&quot;SIP/zadarma-0000001c&quot;, &quot;19:00-9:00|mon-fri|*|*?ivr-holiday,s,1&quot;) in new stack
+    -- Executing [s@ivr-mainmenu:4] GotoIfTime(&quot;SIP/zadarma-0000001c&quot;, &quot;*|sat-sun|*|*?ivr-holiday,s,1&quot;) in new stack
+    -- Executing [s@ivr-mainmenu:5] BackGround(&quot;SIP/zadarma-0000001c&quot;, &quot;ivr/mainmenu&quot;) in new stack
+    -- &lt;SIP/zadarma-0000001c&gt; Playing 'ivr/mainmenu.slin' (language 'ru')
+    -- Executing [2@ivr-mainmenu:1] Goto(&quot;SIP/zadarma-0000001c&quot;, &quot;ivr-buying-1,s,1&quot;) in new stack
+    -- Goto (ivr-buying-1,s,1)
+    -- Executing [s@ivr-buying-1:1] BackGround(&quot;SIP/zadarma-0000001c&quot;, &quot;ivr/buyingmenu-1&quot;) in new stack
+    -- &lt;SIP/zadarma-0000001c&gt; Playing 'ivr/buyingmenu-1.slin' (language 'ru')
+    -- Executing [1@ivr-buying-1:1] Goto(&quot;SIP/zadarma-0000001c&quot;, &quot;ivr-buying-2,s,1&quot;) in new stack
+    -- Goto (ivr-buying-2,s,1)
+    -- Executing [s@ivr-buying-2:1] BackGround(&quot;SIP/zadarma-0000001c&quot;, &quot;ivr/buyingmenu-2&quot;) in new stack
+    -- &lt;SIP/zadarma-0000001c&gt; Playing 'ivr/buyingmenu-2.slin' (language 'ru')
+    -- Executing [301@ivr-buying-2:1] Dial(&quot;SIP/zadarma-0000001c&quot;, &quot;SIP/301,20,t&quot;) in new stack
+  == Using SIP RTP CoS mark 5
+    -- Called SIP/301
+    -- SIP/301-0000001d is ringing
+    -- SIP/301-0000001d answered SIP/zadarma-0000001c
+    -- Channel SIP/301-0000001d joined 'simple_bridge' basic-bridge &lt;27b52abb-6f09-4e56-8a80-8ca3202ff2a4&gt;
+       &gt; 0x919b4f8 -- Probation passed - setting RTP source address to 192.168.1.100:7078
+    -- Channel SIP/zadarma-0000001c joined 'simple_bridge' basic-bridge &lt;27b52abb-6f09-4e56-8a80-8ca3202ff2a4&gt;
+    -- &lt;SIP/301-0000001d&gt; Playing 'pbx-transfer.slin' (language 'ru')
+    -- Started music on hold, class 'default', on channel 'SIP/zadarma-0000001c'
+    -- Stopped music on hold on SIP/zadarma-0000001c
+    -- Channel SIP/zadarma-0000001c left 'simple_bridge' basic-bridge &lt;27b52abb-6f09-4e56-8a80-8ca3202ff2a4&gt;
+    -- Parking 'SIP/zadarma-0000001c' in 'default' at space 701
+    -- Channel SIP/zadarma-0000001c joined 'holding_bridge' parking-bridge &lt;e26ea0d2-a288-40da-92e2-e45e8bf1dc5e&gt;
+    -- Started music on hold, class 'default', on channel 'SIP/zadarma-0000001c'
+    -- &lt;SIP/301-0000001d&gt; Playing 'digits/7.slin' (language 'ru')
+    -- &lt;SIP/301-0000001d&gt; Playing 'digits/0.slin' (language 'ru')
+    -- &lt;SIP/301-0000001d&gt; Playing 'digits/1.slin' (language 'ru')
+    -- Channel SIP/301-0000001d left 'simple_bridge' basic-bridge &lt;27b52abb-6f09-4e56-8a80-8ca3202ff2a4&gt;
+    -- Executing [701@manager:1] ParkedCall(&quot;SIP/102-0000001e&quot;, &quot;default,701&quot;) in new stack
+    -- Channel SIP/zadarma-0000001c left 'holding_bridge' parking-bridge &lt;e26ea0d2-a288-40da-92e2-e45e8bf1dc5e&gt;
+    -- Stopped music on hold on SIP/zadarma-0000001c
+    -- Channel SIP/zadarma-0000001c joined 'simple_bridge' basic-bridge &lt;8787ac45-0b13-4760-b15f-7ad2d5f57f19&gt;
+    -- Channel SIP/102-0000001e joined 'simple_bridge' basic-bridge &lt;8787ac45-0b13-4760-b15f-7ad2d5f57f19&gt;
+       &gt; Bridge 8787ac45-0b13-4760-b15f-7ad2d5f57f19: switching from simple_bridge technology to native_rtp
+       &gt; Locally RTP bridged 'SIP/102-0000001e' and 'SIP/zadarma-0000001c' in stack
+       &gt; Locally RTP bridged 'SIP/102-0000001e' and 'SIP/zadarma-0000001c' in stack
+       &gt; 0x919b4f8 -- Probation passed - setting RTP source address to 192.168.1.103:7078
+    -- Channel SIP/102-0000001e left 'native_rtp' basic-bridge &lt;8787ac45-0b13-4760-b15f-7ad2d5f57f19&gt;
+  == Spawn extension (manager, 701, 1) exited non-zero on 'SIP/102-0000001e'
+    -- Channel SIP/zadarma-0000001c left 'native_rtp' basic-bridge &lt;8787ac45-0b13-4760-b15f-7ad2d5f57f19&gt;
+  == Spawn extension (ivr-buying-2, 301, 1) exited non-zero on 'SIP/zadarma-0000001c'
 </code></pre>
 
-<pre><code>[root@asterisk-centos conf]# nginx -V
-nginx version: nginx/1.13.0
-built by gcc 4.8.5 20150623 (Red Hat 4.8.5-11) (GCC) 
-</code></pre>
-
-<p>Встановлюємо php:</p>
-
-<pre><code>yum install php-fpm
-systemctl start php-fpm
-</code></pre>
-
-<p>Налаштовуємо веб-сервер:</p>
-
-<pre><code>user  nginx;
-worker_processes  1;
-error_log  logs/error.log;
-pid        /run/nginx.pid;
-events {
-    worker_connections  1024;
-}
-http {
-    include       mime.types;
-    default_type  application/octet-stream;
-    sendfile        on;
-    keepalive_timeout  65;
-    server {
-        listen       80;
-        server_name  192.168.1.201;
-	  root /var/www;
-        location / {
-            index  index.html index.htm;
-        }
-        error_page   500 502 503 504  /50x.html;
-        location = /50x.html {
-            root   html;
-        }
-        location ~* \.php$ {
-            include fastcgi_params;
-            fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-            fastcgi_pass 127.0.0.1:9000;
-            try_files $uri @yii =404;
-        }
-    }
-}
-</code></pre>
-
-<p>Для роботи з CDR забезпечуємо коректну синхронізацію часу на сервері</p>
-
-<pre><code>yum install ntp
-systemctl enable ntpd
-service ntpd restart
-</code></pre>
-
-<p>Встановлюємо програму для керування БД:</p>
-
-<pre><code>cd /var/www/
-wget https://github.com/vrana/adminer/releases/download/v4.3.1/adminer-4.3.1-mysql.php -O adminer.php
-</code></pre>
-
-<p>Входимо в <em>adminer</em> за адресою <a href="http://192.168.1.201/adminer.php">http://192.168.1.201/adminer.php</a>, створюємо базу <em>asteriskcdr</em> і користувача з правами запису в цю базу - <em>asteriskuser</em>, а також таблицю для зберігання даних:</p>
-
-<pre><code>CREATE TABLE `cdr` (
-  `id` int(11) unsigned NOT NULL auto_increment,
-  `calldate` datetime NOT NULL default '0000-00-00 00:00:00',
-  `clid` varchar(80) NOT NULL default '',
-  `src` varchar(80) NOT NULL default '',
-  `dst` varchar(80) NOT NULL default '',
-  `dcontext` varchar(80) NOT NULL default '',
-  `channel` varchar(80) NOT NULL default '',
-  `dstchannel` varchar(80) NOT NULL default '',
-  `lastapp` varchar(80) NOT NULL default '',
-  `lastdata` varchar(80) NOT NULL default '',
-  `duration` int(11) NOT NULL default '0',
-  `billsec` int(11) NOT NULL default '0',
-  `start` datetime NULL default NULL,
-  `answer` datetime NULL default NULL,
-  `end` datetime NULL default NULL,
-  `disposition` varchar(45) NOT NULL default '',
-  `amaflags` int(11) NOT NULL default '0',
-  `accountcode` varchar(20) NOT NULL default '',
-  `uniqueid` varchar(32) NOT NULL default '',
-  `userfield` varchar(255) NOT NULL default '',
-  PRIMARY KEY  (`id`),
-  KEY `calldate` (`calldate`),
-  KEY `accountcode` (`accountcode`),
-  KEY `uniqueid` (`uniqueid`),
-  KEY `dst` (`dst`),
-  KEY `src` (`src`)
-);
-</code></pre>
-
-<p>Відкриваємо файл <em>/etc/asterisk/cdrmysql.conf</em> і налаштовуємо підключення до MySQL:</p>
-
-<pre><code>[global]
-hostname=localhost
-dbname=asteriskcdr
-table=cdr
-password=asterisk_password
-user=asterisk_user
-port=3306
-</code></pre>
-
-<p>В файлі <em>/etc/asterisk/cdr.conf</em> відключаємо стандартне логування дзвінків в csv-файл:</p>
-
-<pre><code>;[csv]
-;usegmtime=yes    ; log date/time in GMT.  Default is &quot;no&quot;
-;loguniqueid=yes  ; log uniqueid.  Default is &quot;no&quot;
-;loguserfield=yes ; log user field.  Default is &quot;no&quot;
-;accountlogs=yes  ; create separate log file for each account code. Default is &quot;yes&quot;
-</code></pre>
-
-<p>Перезапустимо Asterisk:</p>
-
-<pre><code>service asterisk restart
-</code></pre>
-
-<p>Встановлюємо <em>CDR Viewer</em>:</p>
-
-<pre><code>cd /var/www/html
-wget https://github.com/g613/asterisk-cdr-viewer/raw/master/asterisk-cdr-viewer-latest.tgz
-tar xzfv asterisk-cdr-viewer-latest.tgz
-</code></pre>
-
-<p>В файлі <em>include/config.inc.php</em> налаштовуємо підключення до БД:</p>
-
-<pre><code>$db_type = 'mysql';
-$db_host = 'localhost';
-$db_port = '3306';
-$db_user = 'asterisk_user';
-$db_pass = 'asterisk_password';
-$db_name = 'asteriskcdr';
-$db_table_name = 'cdr';
-$db_options = array();
-</code></pre>
-
-<p>В файлі <em>/etc/extension.conf</em> расширюємо макрос запису дзвінків для можливості роботи з БД:</p>
-
-<pre><code>;MixMonitor
-[macro-recording]
-exten =&gt; s,1,GoToIf($[&quot;${RECORDING}&quot; = &quot;1&quot;]?yes:no);
-exten =&gt; s,n(yes),Set(fname=${STRFTIME(${EPOCH},,%Y)}/${STRFTIME(${EPOCH},,%Y-%m)}/${STRFTIME(${EPOCH},,%Y-%m-%d)}/${UNIQUEID}-${STRFTIME(${EPOCH},,%Y-%m-%d-%H_%M)}-${ARG1}-${ARG2})
-exten =&gt; s,n,Set(fname=${STRFTIME(${EPOCH},,%Y)}/${STRFTIME(${EPOCH},,%Y-%m)}/${STRFTIME(${EPOCH},,%Y-%m-%d)}/${UNIQUEID}-${STRFTIME(${EPOCH},,%Y-%m-%d-%H_%M)}-${ARG1}-${ARG2})
-exten =&gt; s,n,Set(DIR_RECORDS=/var/spool/asterisk/monitor/)
-exten =&gt; s,n,NoOp(Dir  - ${STRFTIME(${EPOCH},,%Y)}/${STRFTIME(${EPOCH},,%Y-%m)}/${STRFTIME(${EPOCH},,%Y-%m-%d)})
-exten =&gt; s,n,Set(monopt=nice -n 19 /usr/local/bin/lame -b 32  --silent &quot;${DIR_RECORDS}${fname}.wav&quot;  &quot;${DIR_RECORDS}${fname}.mp3&quot; &amp;&amp; rm -f &quot;${DIR_RECORDS}${fname}.wav&quot; &amp;&amp; chmod o+r &quot;${DIR_RECORDS}${fname}.mp3&quot;);
-exten =&gt; s,n,Set(CDR(filename)=${fname}.mp3);
-exten =&gt; s,n,Set(CDR(realdst)=${called});
-exten =&gt; s,n,MixMonitor(${DIR_RECORDS}${fname}.wav,b,${monopt});
-exten =&gt; s,n(no),Verbose(Exit record);
-</code></pre>
-
-<p>Здійснюємо кілька дзвінків і перевіряємо роботу CDR Viewer.</p>
-
-<p><a href="https://bender.kr.ua/howto-asterisk-part-6.1/">В наступній статті поговоримо про <strong>додаткові функції Asterisk</strong>.</a></p>
+<p><a href="https://bender.kr.ua/howto-asterisk-part-6.2/">В наступній статті поговоримо про <strong>переадресацію дзвінків в Asterisk</strong>.</a></p>
 
 <ul>
 <li>частина 1 - <a href="https://bender.kr.ua/howto-asterisk-part-1/">Встановлення сервера Asterisk</a></li>
 <li>частина 2 - <a href="https://bender.kr.ua/howto-asterisk-part-2/">Налаштування SIP</a></li>
 <li>частина 3 - <a href="https://bender.kr.ua/howto-asterisk-part-3/">Логіка обробки дзвінків (Dialplan)</a></li>
 <li>частина 4 - <a href="https://bender.kr.ua/howto-asterisk-part-4/">Голосове меню</a></li>
+<li>частина 5 - <a href="https://bender.kr.ua/howto-asterisk-part-5/">Деталізований звіт про виклики (Call Detail Records, CDR)</a></li>
 </ul>
     
         </div>
@@ -388,8 +298,8 @@ exten =&gt; s,n(no),Verbose(Exit record);
 
 
 var disqus_config = function () {
-this.page.url = "https:\/\/bender.kr.ua\/howto-asterisk-part-5\/";  
-this.page.identifier = "https:\/\/bender.kr.ua\/howto-asterisk-part-5\/"; 
+this.page.url = "https:\/\/bender.kr.ua\/howto-asterisk-part-6.1\/";  
+this.page.identifier = "https:\/\/bender.kr.ua\/howto-asterisk-part-6.1\/"; 
 };
 
 (function() { 
@@ -423,13 +333,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/iptables-ipset/">Блокування трафіку за допомогою iptables та ipset</a></li>            
-        
-          <li><a href="https://bender.kr.ua/why-magento/">Чому ми обираємо Magento, а не інші системи</a></li>            
+          <li><a href="https://bender.kr.ua/howto-add-header-links-in-magento2/">Magento 2: як додати посилання в header.links</a></li>            
         
           <li><a href="https://bender.kr.ua/custom-logging-module-magento2/">Magento2: Як писати логи модуля в окремий файл?</a></li>            
         
-          <li><a href="https://bender.kr.ua/regexp-replace-in-mariadb/">Заміна даних в MariaDB</a></li>            
+          <li><a href="https://bender.kr.ua/year-in-books-2019/">Мій книжковий 2019 рік</a></li>            
+        
+          <li><a href="https://bender.kr.ua/magento-2-modules-and-tools/">Модулі та інструменти для роботи з Magento 2 (оновлюється)</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -440,24 +350,25 @@ s.setAttribute('data-timestamp', +new Date());
 
 
       
+      
       <article class="post-card post"> 
     
-    <a class="post-card-image-link" href="https://bender.kr.ua/howto-install-telegram-debian-9/">
-      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
+    <a class="post-card-image-link" href="https://bender.kr.ua/magento-2-cron-indexer-repair/">
+      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1562259929-b4e1fd3aef09?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
     </a>
     
 
     <div class="post-card-content">
-      <a class="post-card-content-link" href="https://bender.kr.ua/howto-install-telegram-debian-9/">
+      <a class="post-card-content-link" href="https://bender.kr.ua/magento-2-cron-indexer-repair/">
           <header class="post-card-header">
               <span class="post-card-tags">
-              #linux  </span>
+              #magento  </span>
               
-              <h2 class="post-card-title">Встановлення Telegram на Debian 9</h2>
+              <h2 class="post-card-title">Magento 2: не працює індексація за розкладом</h2>
           </header>
           <section class="post-card-excerpt">
                
-                <p>Встановлення Telegram на Debian 9 за допомогою Ubuntu PPA</p>
+                <p>Magento 2: не працює індексація за розкладом</p>
               
           </section>
       </a>
@@ -465,36 +376,6 @@ s.setAttribute('data-timestamp', +new Date());
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
         <span class="reading-time">1 хв</span>
-      </footer>
-    </div>
-</article>
-      
-      
-      <article class="post-card post"> 
-    
-    <a class="post-card-image-link" href="https://bender.kr.ua/year-in-books-2019/">
-      <div class="post-card-image" style="background-image: url(https://bender.kr.ua/img/goodreads-2019-3.png)"></div>
-    </a>
-    
-
-    <div class="post-card-content">
-      <a class="post-card-content-link" href="https://bender.kr.ua/year-in-books-2019/">
-          <header class="post-card-header">
-              <span class="post-card-tags">
-              #books  </span>
-              
-              <h2 class="post-card-title">Мій книжковий 2019 рік</h2>
-          </header>
-          <section class="post-card-excerpt">
-               
-                <p>За минулий рік я прочитав 13 книжок. Усі вони були художніми, бо до історій &lsquo;успішного успіху&rsquo; я останніми роками відношусь з великою долею скептицизму, а по роботі за минулий рік читав статті виключно з інтернету. Якщо коротко по підсумкам, то &lsquo;передозування&rsquo; Пратчеттом у 2018, не дало насолодитись ним у 2019, не все зі Стівена Кінга виявляється золотом, а магія книжок з дитинства не розвіюється навіть коли в тебе вже з&rsquo;являються власні діти.</p>
-              
-          </section>
-      </a>
-
-      <footer class="post-card-meta">
-        <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">15 хв</span>
       </footer>
     </div>
 </article>
@@ -509,13 +390,13 @@ s.setAttribute('data-timestamp', +new Date());
       <img src="https://bender.kr.ua/logo.png" alt="Бортовий журнал Бендера" />
     </a>
   </div>
-  <div class="floating-header-title">IP-телефонія на базі Asterisk. Частина 5: Деталізований звіт про виклики (Call Detail Records, CDR)</div>
+  <div class="floating-header-title">IP-телефонія на базі Asterisk. Частина 6.1: Додаткові функції Asterisk. Паркування дзвінка.</div>
   <div class="floating-header-share">  
-    <a class="floating-header-share-tw" href="https://twitter.com/share?text=IP-%d1%82%d0%b5%d0%bb%d0%b5%d1%84%d0%be%d0%bd%d1%96%d1%8f%20%d0%bd%d0%b0%20%d0%b1%d0%b0%d0%b7%d1%96%20Asterisk.%20%d0%a7%d0%b0%d1%81%d1%82%d0%b8%d0%bd%d0%b0%205%3a%20%d0%94%d0%b5%d1%82%d0%b0%d0%bb%d1%96%d0%b7%d0%be%d0%b2%d0%b0%d0%bd%d0%b8%d0%b9%20%d0%b7%d0%b2%d1%96%d1%82%20%d0%bf%d1%80%d0%be%20%d0%b2%d0%b8%d0%ba%d0%bb%d0%b8%d0%ba%d0%b8%20%28Call%20Detail%20Records%2c%20CDR%29&amp;url=https%3a%2f%2fbender.kr.ua%2fhowto-asterisk-part-5%2f"
+    <a class="floating-header-share-tw" href="https://twitter.com/share?text=IP-%d1%82%d0%b5%d0%bb%d0%b5%d1%84%d0%be%d0%bd%d1%96%d1%8f%20%d0%bd%d0%b0%20%d0%b1%d0%b0%d0%b7%d1%96%20Asterisk.%20%d0%a7%d0%b0%d1%81%d1%82%d0%b8%d0%bd%d0%b0%206.1%3a%20%d0%94%d0%be%d0%b4%d0%b0%d1%82%d0%ba%d0%be%d0%b2%d1%96%20%d1%84%d1%83%d0%bd%d0%ba%d1%86%d1%96%d1%97%20Asterisk.%20%d0%9f%d0%b0%d1%80%d0%ba%d1%83%d0%b2%d0%b0%d0%bd%d0%bd%d1%8f%20%d0%b4%d0%b7%d0%b2%d1%96%d0%bd%d0%ba%d0%b0.&amp;url=https%3a%2f%2fbender.kr.ua%2fhowto-asterisk-part-6.1%2f"
           onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
       </a>
-      <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbender.kr.ua%2fhowto-asterisk-part-5%2f"
+      <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbender.kr.ua%2fhowto-asterisk-part-6.1%2f"
           onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
       </a>
