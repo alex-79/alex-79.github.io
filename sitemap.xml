@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://bender.kr.ua/howto-install-rocketchat-debian-9/</loc>
+    <lastmod>2020-09-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://bender.kr.ua/howto-asterisk-part-6.1/</loc>
     <lastmod>2020-06-29T00:00:00+00:00</lastmod>
   </url>
@@ -284,18 +289,18 @@
   
   <url>
     <loc>https://bender.kr.ua/</loc>
-    <lastmod>2020-06-29T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://bender.kr.ua/categories/books/</loc>
-    <lastmod>2020-01-06T02:00:00+00:00</lastmod>
+    <lastmod>2020-09-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://bender.kr.ua/tags/books/</loc>
+    <lastmod>2020-01-06T02:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bender.kr.ua/categories/books/</loc>
     <lastmod>2020-01-06T02:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -307,32 +312,32 @@
   </url>
   
   <url>
-    <loc>https://bender.kr.ua/categories/js/</loc>
-    <lastmod>2019-06-03T00:00:00+00:00</lastmod>
+    <loc>https://bender.kr.ua/tags/debian/</loc>
+    <lastmod>2020-09-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://bender.kr.ua/tags/js/</loc>
-    <lastmod>2019-06-03T00:00:00+00:00</lastmod>
+    <lastmod>2020-09-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://bender.kr.ua/categories/linux/</loc>
-    <lastmod>2020-06-29T00:00:00+00:00</lastmod>
+    <loc>https://bender.kr.ua/categories/js/</loc>
+    <lastmod>2020-09-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://bender.kr.ua/tags/linux/</loc>
-    <lastmod>2020-06-29T00:00:00+00:00</lastmod>
+    <lastmod>2020-09-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://bender.kr.ua/categories/magento/</loc>
-    <lastmod>2020-03-10T08:56:19+00:00</lastmod>
+    <loc>https://bender.kr.ua/categories/linux/</loc>
+    <lastmod>2020-09-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -343,8 +348,8 @@
   </url>
   
   <url>
-    <loc>https://bender.kr.ua/categories/mysql/</loc>
-    <lastmod>2020-02-17T02:00:00+00:00</lastmod>
+    <loc>https://bender.kr.ua/categories/magento/</loc>
+    <lastmod>2020-03-10T08:56:19+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -355,8 +360,8 @@
   </url>
   
   <url>
-    <loc>https://bender.kr.ua/categories/php/</loc>
-    <lastmod>2019-11-06T02:00:00+00:00</lastmod>
+    <loc>https://bender.kr.ua/categories/mysql/</loc>
+    <lastmod>2020-02-17T02:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -367,14 +372,14 @@
   </url>
   
   <url>
-    <loc>https://bender.kr.ua/post/</loc>
-    <lastmod>2020-06-29T00:00:00+00:00</lastmod>
+    <loc>https://bender.kr.ua/categories/php/</loc>
+    <lastmod>2019-11-06T02:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://bender.kr.ua/categories/python/</loc>
-    <lastmod>2020-02-17T02:00:00+00:00</lastmod>
+    <loc>https://bender.kr.ua/post/</loc>
+    <lastmod>2020-09-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -385,20 +390,32 @@
   </url>
   
   <url>
+    <loc>https://bender.kr.ua/categories/python/</loc>
+    <lastmod>2020-02-17T02:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bender.kr.ua/tags/rocketchat/</loc>
+    <lastmod>2020-09-07T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://bender.kr.ua/tags/</loc>
     <lastmod>2020-01-06T02:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://bender.kr.ua/categories/web/</loc>
-    <lastmod>2020-02-17T02:00:00+00:00</lastmod>
+    <loc>https://bender.kr.ua/tags/web/</loc>
+    <lastmod>2020-09-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://bender.kr.ua/tags/web/</loc>
-    <lastmod>2020-02-17T02:00:00+00:00</lastmod>
+    <loc>https://bender.kr.ua/categories/web/</loc>
+    <lastmod>2020-09-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
