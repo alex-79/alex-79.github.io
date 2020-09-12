@@ -150,15 +150,15 @@
 <p>Для швидкого старту системи CI/CD Jenkins скористаємось docker-ом. Працюємо в Debian 10, але рецепт певно спрацює для будь-якого deb-похідного дистрибутиву.</p>
 
 <ol>
-<li>Встановлюємо Docker
-<code>
-apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common
+<li><p>Встановлюємо Docker</p>
+
+<pre><code>apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common
 curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
 apt-get update
 apt-get install docker-ce
-</code>
-<code>
-systemctl status docker
+</code></pre>
+
+<pre><code>systemctl status docker
 ● docker.service - Docker Application Container Engine
 Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled)
 Active: active (running) since Wed 2019-07-31 12:48:03 EEST; 5min ago
@@ -168,27 +168,30 @@ Tasks: 10
 Memory: 49.1M
 CGroup: /system.slice/docker.service
        └─3518 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
-</code>
-Додаємо користувача <em>developer</em> в групу <em>docker</em>
-<code>
-usermod -aG docker developer
-</code></li>
-<li>Встановлюємо docker-compose
-<code>
-curl -L &quot;https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose
+</code></pre>
+
+<p>Додаємо користувача <em>developer</em> в групу <em>docker</em></p>
+
+<pre><code>usermod -aG docker developer
+</code></pre></li>
+
+<li><p>Встановлюємо docker-compose</p>
+
+<pre><code>curl -L &quot;https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
-</code>
-<code>
-which docker-compose
+</code></pre>
+
+<pre><code>which docker-compose
 /usr/local/bin/docker-compose
-</code></li>
-<li>Створюємо docker-compose.yml для Jenkins
-<code>
-cd /home/developer
+</code></pre></li>
+
+<li><p>Створюємо docker-compose.yml для Jenkins</p>
+
+<pre><code>cd /home/developer
 mkdir docker-jenkins
 cd docker-jenkins
 mcedit docker-compose.yml
-</code></li>
+</code></pre></li>
 </ol>
 
 <pre><code>version: '3.6'
@@ -319,13 +322,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/regexp-replace-in-mariadb/">Заміна даних в MariaDB</a></li>            
-        
-          <li><a href="https://bender.kr.ua/upgrade-magento-232/">Оновлення Magento до версії 2.3.2</a></li>            
+          <li><a href="https://bender.kr.ua/howto-install-django-mysql-debian-9/">Встановлення зв&#39;язки Django та MySQL на Debian 9</a></li>            
         
           <li><a href="https://bender.kr.ua/iptables-ipset/">Блокування трафіку за допомогою iptables та ipset</a></li>            
         
-          <li><a href="https://bender.kr.ua/nginx-redirection-get-arg/">NGINX - 301-й редирект адрес з get-аргументами</a></li>            
+          <li><a href="https://bender.kr.ua/connie-willis-doomsday-book/">Конні Вілліс. Книга судного дня</a></li>            
+        
+          <li><a href="https://bender.kr.ua/howto-asterisk-part-3/">IP-телефонія на базі Asterisk. Частина 3: Логіка обробки дзвінків (Dialplan)</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">

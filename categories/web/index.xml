@@ -49,7 +49,11 @@ apt-get install ipset  Створюємо скрипт, який буде оно
       
       <guid>https://bender.kr.ua/nginx-geoip/</guid>
       <description>Блокуємо паразитний трафік до сайту з певних країн безкоштовно, без реєстрацій та sms ;)
- Зібрати nginx з опцією &amp;ndash;with-http_geoip_module. Як це зробити написано тут - https://bender.kr.ua/howto-lemp-install/ Встановити бази GeoIP  apt-get install geoip-database libgeoip1  Оновити бази до останньої версії  mv /usr/share/GeoIP/GeoIP.dat /usr/share/GeoIP/GeoIP.bak wget https://dl.miyuru.lk/geoip/maxmind/country/maxmind.dat.gz gunzip maxmind.dat.gz mv maxmind.dat /usr/share/GeoIP/GeoIP.dat  В /etc/nginx/nginx.conf в секції http блокуємо наприклад роісію та Пакистан  http { ... geoip_country /usr/share/GeoIP/GeoIP.dat; map $geoip_country_code $allowed_country_mysite { default yes; RU no; PK no; } .</description>
+ Зібрати nginx з опцією &amp;ndash;with-http_geoip_module. Як це зробити написано тут
+ Встановити бази GeoIP
+apt-get install geoip-database libgeoip1  Оновити бази до останньої версії
+mv /usr/share/GeoIP/GeoIP.dat /usr/share/GeoIP/GeoIP.bak wget https://dl.miyuru.lk/geoip/maxmind/country/maxmind.dat.gz gunzip maxmind.dat.gz mv maxmind.dat /usr/share/GeoIP/GeoIP.dat  В /etc/nginx/nginx.conf в секції http блокуємо наприклад роісію та Пакистан
+http { ... geoip_country /usr/share/GeoIP/GeoIP.dat; map $geoip_country_code $allowed_country_mysite { default yes; RU no; PK no; } .</description>
     </item>
     
     <item>
@@ -82,7 +86,8 @@ netbeans_default_options=&amp;quot; ... -J-Dswing.aatext=true -J-Dawt.useSystemA
       
       <guid>https://bender.kr.ua/quick-start-with-jenkins-in-docker/</guid>
       <description>Для швидкого старту системи CI/CD Jenkins скористаємось docker-ом. Працюємо в Debian 10, але рецепт певно спрацює для будь-якого deb-похідного дистрибутиву.
- Встановлюємо Docker  apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - apt-get update apt-get install docker-ce   systemctl status docker ● docker.service - Docker Application Container Engine Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled) Active: active (running) since Wed 2019-07-31 12:48:03 EEST; 5min ago Docs: https://docs.</description>
+ Встановлюємо Docker
+apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - apt-get update apt-get install docker-ce  systemctl status docker ● docker.service - Docker Application Container Engine Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled) Active: active (running) since Wed 2019-07-31 12:48:03 EEST; 5min ago Docs: https://docs.</description>
     </item>
     
     <item>

@@ -150,21 +150,24 @@
 <p>Блокуємо паразитний трафік до сайту з певних країн безкоштовно, без реєстрацій та sms ;)</p>
 
 <ol>
-<li>Зібрати <strong>nginx</strong> з опцією <em>&ndash;with-http_geoip_module</em>. Як це зробити написано тут - <a href="https://bender.kr.ua/howto-lemp-install/">https://bender.kr.ua/howto-lemp-install/</a></li>
-<li>Встановити бази GeoIP
-<code>
-apt-get install geoip-database libgeoip1
-</code></li>
-<li>Оновити бази до останньої версії
-<code>
-mv /usr/share/GeoIP/GeoIP.dat /usr/share/GeoIP/GeoIP.bak
+<li><p>Зібрати <strong>nginx</strong> з опцією <em>&ndash;with-http_geoip_module</em>. Як це зробити написано <a href="https://bender.kr.ua/howto-lemp-install/">тут</a></p></li>
+
+<li><p>Встановити бази GeoIP</p>
+
+<pre><code>apt-get install geoip-database libgeoip1
+</code></pre></li>
+
+<li><p>Оновити бази до останньої версії</p>
+
+<pre><code>mv /usr/share/GeoIP/GeoIP.dat /usr/share/GeoIP/GeoIP.bak
 wget https://dl.miyuru.lk/geoip/maxmind/country/maxmind.dat.gz
 gunzip maxmind.dat.gz
 mv maxmind.dat /usr/share/GeoIP/GeoIP.dat
-</code></li>
-<li>В <em>/etc/nginx/nginx.conf</em> в секції <em>http</em> блокуємо наприклад роісію та Пакистан
-<code>
-http {
+</code></pre></li>
+
+<li><p>В <em>/etc/nginx/nginx.conf</em> в секції <em>http</em> блокуємо наприклад роісію та Пакистан</p>
+
+<pre><code>http {
 ...
 geoip_country /usr/share/GeoIP/GeoIP.dat;
 map $geoip_country_code $allowed_country_mysite {
@@ -174,10 +177,11 @@ PK no;
 }
 ...
 }
-</code>
-Можно навпаки заблокувати всіх, залишити тільки Неньку
-<code>
-http {
+</code></pre>
+
+<p>Можно навпаки заблокувати всіх, залишити тільки Неньку</p>
+
+<pre><code>http {
 ...
 geoip_country /usr/share/GeoIP/GeoIP.dat;
 map $geoip_country_code $allowed_country_mysite {
@@ -186,11 +190,13 @@ UA yes;
 }
 ...
 }
-</code>
-Коди країн тут - <a href="https://dev.maxmind.com/geoip/legacy/codes/iso3166/">https://dev.maxmind.com/geoip/legacy/codes/iso3166/</a>.</li>
-<li>Для потрібного сайту блокуємо доступ із заборонених країн
-<code>
-server {
+</code></pre>
+
+<p>Коди країн <a href="https://dev.maxmind.com/geoip/legacy/codes/iso3166/">тут</a>.</p></li>
+
+<li><p>Для потрібного сайту блокуємо доступ із заборонених країн</p>
+
+<pre><code>server {
 ...
 location / {
 if ($allowed_country_mysite = no) {
@@ -199,12 +205,13 @@ if ($allowed_country_mysite = no) {
 }
 ...
 }
-</code></li>
-<li>Перевіряємо конфіги та перезавантажуємо конфігурацію
-<code>
-nginx -t
+</code></pre></li>
+
+<li><p>Перевіряємо конфіги та перезавантажуємо конфігурацію</p>
+
+<pre><code>nginx -t
 nginx -s reload
-</code></li>
+</code></pre></li>
 </ol>
 
 <h2 id="посилання">Посилання</h2>
@@ -275,13 +282,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/mint-19-and-epson-perfection-v33/">Mint 19 і сканер Epson Perfection V33</a></li>            
+          <li><a href="https://bender.kr.ua/puppeteer-with-authorization/">&#34;Прогрівання&#34; кешу для закритих частин сайту за допомогою Puppeteer</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-add-header-links-in-magento2/">Magento 2: як додати посилання в header.links</a></li>            
+          <li><a href="https://bender.kr.ua/mining-karbowanec/">Як я місяць майнив криптовалюту за допомогою ноутбуку, навіщо мені це та що з того вийшло</a></li>            
         
-          <li><a href="https://bender.kr.ua/mysql-tmp-table-in-tmpfs/">Тимчасові таблиці MySQL в tmpfs</a></li>            
+          <li><a href="https://bender.kr.ua/df-and-du-show-different-values/">df і du показують різні значення</a></li>            
         
-          <li><a href="https://bender.kr.ua/connie-willis-doomsday-book/">Конні Вілліс. Книга судного дня</a></li>            
+          <li><a href="https://bender.kr.ua/howto-asterisk-part-3/">IP-телефонія на базі Asterisk. Частина 3: Логіка обробки дзвінків (Dialplan)</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
