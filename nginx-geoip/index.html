@@ -168,27 +168,27 @@ mv maxmind.dat /usr/share/GeoIP/GeoIP.dat
 <li><p>В <em>/etc/nginx/nginx.conf</em> в секції <em>http</em> блокуємо наприклад роісію та Пакистан</p>
 
 <pre><code>http {
-...
-geoip_country /usr/share/GeoIP/GeoIP.dat;
-map $geoip_country_code $allowed_country_mysite {
-default yes;
-RU no;
-PK no;
-}
-...
+    ...
+    geoip_country /usr/share/GeoIP/GeoIP.dat;
+    map $geoip_country_code $allowed_country_mysite {
+        default yes;
+        RU no;
+        PK no;
+    }
+    ...
 }
 </code></pre>
 
 <p>Можно навпаки заблокувати всіх, залишити тільки Неньку</p>
 
 <pre><code>http {
-...
-geoip_country /usr/share/GeoIP/GeoIP.dat;
-map $geoip_country_code $allowed_country_mysite {
-default no;
-UA yes;
-}
-...
+    ...
+    geoip_country /usr/share/GeoIP/GeoIP.dat;
+    map $geoip_country_code $allowed_country_mysite {
+        default no;
+        UA yes;
+    }
+    ...
 }
 </code></pre>
 
@@ -197,13 +197,13 @@ UA yes;
 <li><p>Для потрібного сайту блокуємо доступ із заборонених країн</p>
 
 <pre><code>server {
-...
-location / {
-if ($allowed_country_mysite = no) {
-        return 444;
-}
-}
-...
+    ...
+    location / {
+        if ($allowed_country_mysite = no) {
+                return 444;
+        }
+    }
+    ...
 }
 </code></pre></li>
 
@@ -282,13 +282,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/review-neal-stephenson-in-the-beginning-was-the-command-line/">Ніл Стівенсон. Спочатку був командний рядок</a></li>            
+          <li><a href="https://bender.kr.ua/fix-conflict-keyboard-shortcuts/">Не працюють комбінації клавіш CTRL-SHIFT в Ubuntu</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-install-munin/">Простий моніторинг роботи сервера за допомогою Munin</a></li>            
+          <li><a href="https://bender.kr.ua/installing-python-3-6-on-debian-8/">Встановлення Python 3.6 на Debian 8</a></li>            
         
-          <li><a href="https://bender.kr.ua/year-in-books-2019/">Мій книжковий 2019 рік</a></li>            
+          <li><a href="https://bender.kr.ua/regexp-replace-in-mariadb/">Заміна даних в MariaDB</a></li>            
         
-          <li><a href="https://bender.kr.ua/netbeans-and-fonts/">NetBeans і проблема зі шрифтами</a></li>            
+          <li><a href="https://bender.kr.ua/magento-2-modules-and-tools/">Модулі та інструменти для роботи з Magento 2 (оновлюється)</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">

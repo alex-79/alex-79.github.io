@@ -162,68 +162,69 @@
 <p>Мені допомогли ці дві штуки:</p>
 
 <ol>
-<li>задати великий <strong>batchRowsCount</strong> в <em>di.xml</em>
-<code>
-&lt;type name=&quot;Magento\Catalog\Model\ResourceModel\Product\Indexer\Price\BatchSizeCalculator&quot;&gt;
-&lt;arguments&gt;
-    &lt;argument name=&quot;batchRowsCount&quot; xsi:type=&quot;array&quot;&gt;
-        &lt;item name=&quot;default&quot; xsi:type=&quot;number&quot;&gt;500000&lt;/item&gt;
-    &lt;/argument&gt;
-&lt;/arguments&gt;
+<li><p>задати великий <strong>batchRowsCount</strong> в <em>di.xml</em></p>
+
+<pre><code>&lt;type name=&quot;Magento\Catalog\Model\ResourceModel\Product\Indexer\Price\BatchSizeCalculator&quot;&gt;
+    &lt;arguments&gt;
+        &lt;argument name=&quot;batchRowsCount&quot; xsi:type=&quot;array&quot;&gt;
+            &lt;item name=&quot;default&quot; xsi:type=&quot;number&quot;&gt;500000&lt;/item&gt;
+        &lt;/argument&gt;
+    &lt;/arguments&gt;
 &lt;/type&gt;
-</code></li>
-<li>збільшити <strong>$batchSize</strong> в <em>/vendor/magento/module-catalog-inventory/Model/Indexer/ProductPriceIndexFilter.php</em> (67)
-```
-public function __construct(
-    StockConfigurationInterface $stockConfiguration,
-    Item $stockItem,
-    ResourceConnection $resourceConnection = null,
-    $connectionName = &lsquo;indexer&rsquo;,
-    Generator $batchQueryGenerator = null,
-    $batchSize = 20000
-) {
-    $this-&gt;stockConfiguration = $stockConfiguration;
-    $this-&gt;stockItem = $stockItem;
-    $this-&gt;resourceConnection = $resourceConnection ?: ObjectManager::getInstance()-&gt;get(ResourceConnection::class);
-    $this-&gt;connectionName = $connectionName;
-    $this-&gt;batchQueryGenerator = $batchQueryGenerator ?: ObjectManager::getInstance()-&gt;get(Generator::class);
-    $this-&gt;batchSize = $batchSize;
-}</li>
+</code></pre></li>
+
+<li><p>збільшити <strong>$batchSize</strong> в <em>/vendor/magento/module-catalog-inventory/Model/Indexer/ProductPriceIndexFilter.php</em> (67)</p>
+
+<pre><code>    public function __construct(
+        StockConfigurationInterface $stockConfiguration,
+        Item $stockItem,
+        ResourceConnection $resourceConnection = null,
+        $connectionName = 'indexer',
+        Generator $batchQueryGenerator = null,
+        $batchSize = 20000
+    ) {
+        $this-&gt;stockConfiguration = $stockConfiguration;
+        $this-&gt;stockItem = $stockItem;
+        $this-&gt;resourceConnection = $resourceConnection ?: ObjectManager::getInstance()-&gt;get(ResourceConnection::class);
+        $this-&gt;connectionName = $connectionName;
+        $this-&gt;batchQueryGenerator = $batchQueryGenerator ?: ObjectManager::getInstance()-&gt;get(Generator::class);
+        $this-&gt;batchSize = $batchSize;
+    }
+
+</code></pre></li>
 </ol>
 
-<pre><code>
-**P.S.** Ейфорія тривала не довго, аж до наступної переіндексації. Розслідування продовжилось і виплив ось такий issue - https://github.com/magento/magento2/issues/23077, який пов'язаний з неправильною роботою тригерів і створенням дублів товарів для індексації. Ну і власне виправлення - https://github.com/sebastien-kathmandu/magento2/pull/1/commits/444bc8d2805ab0c57a66e656332394f0123c63df.
+<p><strong>P.S.</strong> Ейфорія тривала не довго, аж до наступної переіндексації. Розслідування продовжилось і виплив ось такий issue - <a href="https://github.com/magento/magento2/issues/23077">https://github.com/magento/magento2/issues/23077</a>, який пов&rsquo;язаний з неправильною роботою тригерів і створенням дублів товарів для індексації. Ну і власне виправлення - <a href="https://github.com/sebastien-kathmandu/magento2/pull/1/commits/444bc8d2805ab0c57a66e656332394f0123c63df">https://github.com/sebastien-kathmandu/magento2/pull/1/commits/444bc8d2805ab0c57a66e656332394f0123c63df</a>.</p>
 
-Раніше у *vendor/magento/framework/Mview/View/Subscription.php* (принаймі у версії 2.2.5) було так:
-</code></pre>
+<p>Раніше у <em>vendor/magento/framework/Mview/View/Subscription.php</em> (принаймі у версії 2.2.5) було так:</p>
 
-<p>foreach ($columnNames as $columnName) {
+<pre><code>foreach ($columnNames as $columnName) {
     $columns[] = sprintf(
-        &lsquo;NEW.%1$s != OLD.%1$s&rsquo;,
+        'NEW.%1$s != OLD.%1$s',
         $this-&gt;connection-&gt;quoteIdentifier($columnName)
     );
-}</p>
-
-<pre><code>потім стало так:
+}  
 </code></pre>
 
-<p>foreach ($columnNames as $columnName) {
+<p>потім стало так:</p>
+
+<pre><code>foreach ($columnNames as $columnName) {
     $columns[] = sprintf(
-        &lsquo;NEW.%1$s &lt;=&gt; OLD.%1$s&rsquo;,
+        'NEW.%1$s &lt;=&gt; OLD.%1$s',
         $this-&gt;connection-&gt;quoteIdentifier($columnName)
     );
-}</p>
-
-<pre><code>Фактично, від перевірки на нерівність двох змінних, перейшли до перевірки на рівність, що очевидно є помилкою, бо спричиняє лавиноподібне заповнення таблиць з префіксом *cl*. В якості виправлення запропоновано такий варіант:
+} 
 </code></pre>
 
-<p>foreach ($columnNames as $columnName) {
+<p>Фактично, від перевірки на нерівність двох змінних, перейшли до перевірки на рівність, що очевидно є помилкою, бо спричиняє лавиноподібне заповнення таблиць з префіксом <em>cl</em>. В якості виправлення запропоновано такий варіант:</p>
+
+<pre><code>foreach ($columnNames as $columnName) {
     $columns[] = sprintf(
-        &lsquo;NOT NEW.%1$s &lt;=&gt; OLD.%1$s&rsquo;,
+        'NOT NEW.%1$s &lt;=&gt; OLD.%1$s',
         $this-&gt;connection-&gt;quoteIdentifier($columnName)
     );
-}
-```</p>
+} 
+</code></pre>
 
 <h2 id="посилання">Посилання</h2>
 
@@ -290,13 +291,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/magento-2-reindex-parallel/">Паралельна індексація в Magento 2</a></li>            
+          <li><a href="https://bender.kr.ua/magick-248/">Магічне число 248 або Чому я не можу додати значення атрибута в Magento 2?</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-add-header-links-in-magento2/">Magento 2: як додати посилання в header.links</a></li>            
+          <li><a href="https://bender.kr.ua/configurable-crontab-magento2/">Magento2: налаштування періодичних завдань власного модуля через адмін-панель</a></li>            
         
-          <li><a href="https://bender.kr.ua/quick-start-with-jenkins-in-docker/">Швидкий старт Jenkins в Debian 10 за допомогою Docker</a></li>            
+          <li><a href="https://bender.kr.ua/howto-asterisk-part-3/">IP-телефонія на базі Asterisk. Частина 3: Логіка обробки дзвінків (Dialplan)</a></li>            
         
-          <li><a href="https://bender.kr.ua/connie-willis-doomsday-book/">Конні Вілліс. Книга судного дня</a></li>            
+          <li><a href="https://bender.kr.ua/mint-19-and-epson-perfection-v33/">Mint 19 і сканер Epson Perfection V33</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">

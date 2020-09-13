@@ -147,7 +147,8 @@
         <div class="kg-card-markdown">
         <p>Для створення періодичного завдання у власному модулі треба виконати наступні кроки:</p>
 
-<p>1) Сворюємо <strong>crontab.xml</strong> в <em>app/VendorName/ModuleName/etc</em></p>
+<ol>
+<li><p>Сворюємо <strong>crontab.xml</strong> в <em>app/VendorName/ModuleName/etc</em></p>
 
 <pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot;?&gt;
 &lt;config xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;urn:magento:module:Magento_Cron:etc/crontab.xsd&quot;&gt;
@@ -157,9 +158,9 @@
         &lt;/job&gt;
     &lt;/group&gt;
 &lt;/config&gt; 
-</code></pre>
+</code></pre></li>
 
-<p>2) Створюємо поле для налаштування періодичного завдання у файлі <em>app/VendorName/ModuleName/etc/adminhtml/system.xml</em></p>
+<li><p>Створюємо поле для налаштування періодичного завдання у файлі <em>app/VendorName/ModuleName/etc/adminhtml/system.xml</em></p>
 
 <pre><code class="language-xml">            ...
             &lt;group id=&quot;configurable_cron&quot; translate=&quot;label&quot; type=&quot;text&quot; sortOrder=&quot;150&quot; showInDefault=&quot;1&quot; showInWebsite=&quot;1&quot; showInStore=&quot;0&quot;&gt;
@@ -171,53 +172,53 @@
                 &lt;/field&gt;
             &lt;/group&gt; 
             ...
-</code></pre>
+</code></pre></li>
 
-<p>3) Створюємо бекенд-модель <em>app/VendorName/ModuleName/Model/Config/CronConfig.php</em></p>
+<li><p>Створюємо бекенд-модель <em>app/VendorName/ModuleName/Model/Config/CronConfig.php</em></p>
 
 <pre><code class="language-php">&lt;?php
 
 namespace VendorName\ModuleName\Model\Config;
- 
+    
 class CronConfig extends \Magento\Framework\App\Config\Value
 {
- 
+    
     /**
-     * @var \Magento\Framework\App\Config\ValueFactory
-     */
+    * @var \Magento\Framework\App\Config\ValueFactory
+    */
     protected $configValueFactory;
- 
+    
     /**
-     * @var string
-     */
+    * @var string
+    */
     protected $runModelPath = '';
-    
+        
     /**
-     * Cron string path
-     */
+    * Cron string path
+    */
     const CRON_STRING_PATH = 'crontab/default/jobs/vendorname_modulename_job/schedule/cron_expr';
- 
-    /**
-     * Cron model path
-     */
-    const CRON_MODEL_PATH = 'crontab/default/jobs/vendorname_modulename_job/run/model';
     
     /**
-     * Cron config data
-     */      
-    const CONFIG_DATA = 'groups/configurable_cron/fields/crontab/value';
- 
+    * Cron model path
+    */
+    const CRON_MODEL_PATH = 'crontab/default/jobs/vendorname_modulename_job/run/model';
+        
     /**
-     * @param \Magento\Framework\Model\Context $context
-     * @param \Magento\Framework\Registry $registry
-     * @param \Magento\Framework\App\Config\ScopeConfigInterface $config
-     * @param \Magento\Framework\App\Cache\TypeListInterface $cacheTypeList
-     * @param \Magento\Framework\App\Config\ValueFactory $configValueFactory
-     * @param \Magento\Framework\Model\ResourceModel\AbstractResource $resource
-     * @param \Magento\Framework\Data\Collection\AbstractDb $resourceCollection
-     * @param string $runModelPath
-     * @param array $data
-     */
+    * Cron config data
+    */      
+    const CONFIG_DATA = 'groups/configurable_cron/fields/crontab/value';
+    
+    /**
+    * @param \Magento\Framework\Model\Context $context
+    * @param \Magento\Framework\Registry $registry
+    * @param \Magento\Framework\App\Config\ScopeConfigInterface $config
+    * @param \Magento\Framework\App\Cache\TypeListInterface $cacheTypeList
+    * @param \Magento\Framework\App\Config\ValueFactory $configValueFactory
+    * @param \Magento\Framework\Model\ResourceModel\AbstractResource $resource
+    * @param \Magento\Framework\Data\Collection\AbstractDb $resourceCollection
+    * @param string $runModelPath
+    * @param array $data
+    */
     public function __construct(
         \Magento\Framework\Model\Context $context,
         \Magento\Framework\Registry $registry,
@@ -233,14 +234,14 @@ class CronConfig extends \Magento\Framework\App\Config\Value
         $this-&gt;configValueFactory = $configValueFactory;
         parent::__construct($context, $registry, $config, $cacheTypeList, $resource, $resourceCollection, $data);
     }
-                 
-    
+                    
+        
     /**
-     * {@inheritdoc}
-     *
-     * @return $this
-     * @throws \Exception
-     */
+    * {@inheritdoc}
+    *
+    * @return $this
+    * @throws \Exception
+    */
     public function afterSave()
     {
         $cronExprString = $this-&gt;getData(self::CONFIG_DATA);
@@ -265,14 +266,14 @@ class CronConfig extends \Magento\Framework\App\Config\Value
         } catch (\Exception $e) {
             throw new \Exception(__('We can\'t save the cron expression.'));
         }
- 
+    
         return parent::afterSave();
     }
 
 }                 
-</code></pre>
+</code></pre></li>
 
-<p>4) І нарешті створюємо <em>app/VendorName/ModuleName/Cron/CronJob.php</em></p>
+<li><p>І нарешті створюємо <em>app/VendorName/ModuleName/Cron/CronJob.php</em></p>
 
 <pre><code class="language-php">&lt;?php
 
@@ -281,13 +282,14 @@ namespace VendorName\ModuleName\Cron;
 class CronJob
 {
 
-	public function execute()
-	{
+    public function execute()
+    {
                 ...
-		return $this;
-	}
+        return $this;
+    }
 }
-</code></pre>
+</code></pre></li>
+</ol>
     
         </div>
     </section>
@@ -348,13 +350,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/magento-2-reindex-parallel/">Паралельна індексація в Magento 2</a></li>            
+          <li><a href="https://bender.kr.ua/review-neal-stephenson-in-the-beginning-was-the-command-line/">Ніл Стівенсон. Спочатку був командний рядок</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-asterisk-part-1/">IP-телефонія на базі Asterisk. Частина 1: Встановлення сервера Asterisk</a></li>            
+          <li><a href="https://bender.kr.ua/df-and-du-show-different-values/">df і du показують різні значення</a></li>            
         
           <li><a href="https://bender.kr.ua/nginx-pagespeed-openssl/">Як я готую NGINX з модулем PAGESPEED</a></li>            
         
-          <li><a href="https://bender.kr.ua/why-magento/">Чому ми обираємо Magento, а не інші системи</a></li>            
+          <li><a href="https://bender.kr.ua/quick-start-with-jenkins-in-docker/">Швидкий старт Jenkins в Debian 10 за допомогою Docker</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">

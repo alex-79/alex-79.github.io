@@ -17,7 +17,12 @@
       <pubDate>Mon, 17 Feb 2020 02:00:00 +0000</pubDate>
       
       <guid>https://bender.kr.ua/howto-install-django-mysql-debian-9/</guid>
-      <description>Встановлення Django  Встановлюємо Python та додатковий інструментарій  apt install python3 python3-pip python3-venv  Створюємо папку для проекту та віртуальне середовище  mkdir myproject cd myproject python3 -m venv venv source venv/bin/activate  Встановлюємо Django та перевыряємо встановлену версію  python3 -m pip install Django python -m django --version  Створюємо новий проект  django-admin startproject myproject   З&amp;rsquo;єднання з MySQL  Встановлюємо Percona Server  wget https://repo.</description>
+      <description>Встановлення Django  Встановлюємо Python та додатковий інструментарій
+apt install python3 python3-pip python3-venv  Створюємо папку для проекту та віртуальне середовище
+mkdir myproject cd myproject python3 -m venv venv source venv/bin/activate  Встановлюємо Django та перевыряємо встановлену версію
+python3 -m pip install Django python -m django --version  Створюємо новий проект
+django-admin startproject myproject   З&amp;rsquo;єднання з MySQL  Встановлюємо Percona Server
+wget https://repo.percona.com/apt/percona-release_latest.$(lsb_release -sc)_all.deb dpkg -i percona-release_latest.$(lsb_release -sc)_all.</description>
     </item>
     
     <item>

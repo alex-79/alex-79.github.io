@@ -151,8 +151,7 @@
 <p>Для цього нам треба навісити плагін на метод <em>getBaseUrl</em> класу <em>Magento\Store\Model\Store</em>.</p>
 
 <ol>
-<li>Створюємо заготовку для модуля в директорії <em>Noon/HideDefaultStoreCode</em></li>
-</ol>
+<li><p>Створюємо заготовку для модуля в директорії <em>Noon/HideDefaultStoreCode</em></p>
 
 <p><em>registration.php</em></p>
 
@@ -171,11 +170,9 @@
 xsi:noNamespaceSchemaLocation=&quot;urn:magento:framework:Module/etc/module.xsd&quot;&gt;
     &lt;module name=&quot;Noon_HideDefaultStoreCode&quot; setup_version=&quot;0.1.0&quot; /&gt;
 &lt;/config&gt;
-</code></pre>
+</code></pre></li>
 
-<ol>
-<li>Додаємо до адмінки опцію для включення/відключення Store Code в URL</li>
-</ol>
+<li><p>Додаємо до адмінки опцію для включення/відключення Store Code в URL</p>
 
 <p><em>etc/adminhtml/system.xml</em></p>
 
@@ -211,11 +208,9 @@ xsi:noNamespaceSchemaLocation=&quot;urn:magento:framework:Module/etc/module.xsd&
         &lt;/web&gt;
     &lt;/default&gt;
 &lt;/config&gt;
-</code></pre>
+</code></pre></li>
 
-<ol>
-<li>Робимо хелпер для можливості отримати значення налаштування з адмін-панелі</li>
-</ol>
+<li><p>Робимо хелпер для можливості отримати значення налаштування з адмін-панелі</p>
 
 <p><em>Helper/Data.php</em></p>
 
@@ -227,16 +222,16 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     const XML_PATH_HIDE_DEFAULT_STORE_CODE = 'web/url/hide_default_store_code';
 
     /**
-     *
-     * @var \Magento\Framework\App\Config\ScopeConfigInterface
-     */
+    *
+    * @var \Magento\Framework\App\Config\ScopeConfigInterface
+    */
     protected $scopeConfig;
 
     /**
-     *
-     * @param \Magento\Framework\App\Helper\Context $context
-     * @param \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig
-     */
+    *
+    * @param \Magento\Framework\App\Helper\Context $context
+    * @param \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig
+    */
     public function __construct(
         \Magento\Framework\App\Helper\Context $context,
         \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig
@@ -246,9 +241,9 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     }
 
     /**
-     *
-     * @return boolean
-     */
+    *
+    * @return boolean
+    */
     public function isHideDefaultStoreCode()
     {
         if ($this-&gt;scopeConfig-&gt;getValue(self::XML_PATH_HIDE_DEFAULT_STORE_CODE, \Magento\Store\Model\ScopeInterface::SCOPE_STORE)) {
@@ -257,11 +252,9 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
         return false;
     }
 }
-</code></pre>
+</code></pre></li>
 
-<ol>
-<li>Створюємо after-плагін</li>
-</ol>
+<li><p>Створюємо after-плагін</p>
 
 <p><em>etc/di.xml</em></p>
 
@@ -282,22 +275,22 @@ namespace Noon\HideDefaultStoreCode\Plugin\Model;
 class HideDefaultStoreCode
 {
     /**
-     *
-     * @var \Noon\HideDefaultStoreCode\Helper\Data 
-     */
+    *
+    * @var \Noon\HideDefaultStoreCode\Helper\Data 
+    */
     protected $helper;
-    
+        
     /**
-     *
-     * @var \Magento\Store\Model\StoreManagerInterface
-     */
+    *
+    * @var \Magento\Store\Model\StoreManagerInterface
+    */
     protected $storeManager;
-    
+        
     /**
-     * 
-     * @param \Noon\HideDefaultStoreCode\Helper\Data $helper
-     * @param \Magento\Store\Model\StoreManagerInterface $storeManager
-     */
+    * 
+    * @param \Noon\HideDefaultStoreCode\Helper\Data $helper
+    * @param \Magento\Store\Model\StoreManagerInterface $storeManager
+    */
     public function __construct(
         \Noon\HideDefaultStoreCode\Helper\Data $helper,
         \Magento\Store\Model\StoreManagerInterface $storeManager
@@ -307,11 +300,11 @@ class HideDefaultStoreCode
     }
 
     /**
-     * 
-     * @param \Magento\Store\Model\Store $subject
-     * @param string $url
-     * @return string
-     */
+    * 
+    * @param \Magento\Store\Model\Store $subject
+    * @param string $url
+    * @return string
+    */
     public function afterGetBaseUrl(\Magento\Store\Model\Store $subject, $url)
     {
         if ($this-&gt;helper-&gt;isHideDefaultStoreCode()) {
@@ -320,7 +313,8 @@ class HideDefaultStoreCode
         return $url;
     }
 }
-</code></pre>
+</code></pre></li>
+</ol>
 
 <p>Репозиторій плагіна - <a href="https://github.com/alex-79/magento2-hide-default-store-code-from-url">https://github.com/alex-79/magento2-hide-default-store-code-from-url</a>.</p>
     
@@ -383,13 +377,15 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/howto-asterisk-part-5/">IP-телефонія на базі Asterisk. Частина 5: Деталізований звіт про виклики (Call Detail Records, CDR)</a></li>            
+          <li><a href="https://bender.kr.ua/iptables-ipset/">Блокування трафіку за допомогою iptables та ipset</a></li>            
         
-          <li><a href="https://bender.kr.ua/new-db-in-mysql/">Створення бази даних в MySQL</a></li>            
+          <li><a href="https://bender.kr.ua/how-to-fix-elasticsearch-forbidden-12-index-read-only-allow-delete-api/">Проблема з переіндексацією catalogsearch_fulltext на Magento 2</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-install-rocketchat-debian-9/">Встановлення відкритого месенджера Rocket.Chat на Debian 9</a></li>            
+                      
         
-          <li><a href="https://bender.kr.ua/nginx-geoip/">Блокування трафіку з окремих країн за допомогою Nginx та GeoIP</a></li>            
+          <li><a href="https://bender.kr.ua/mysql-and-regexp/">Пошук в MySQL за допомогою регулярних виразів</a></li>            
+        
+          <li><a href="https://bender.kr.ua/mint-19-and-epson-perfection-v33/">Mint 19 і сканер Epson Perfection V33</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">

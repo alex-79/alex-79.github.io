@@ -147,7 +147,8 @@
         <div class="kg-card-markdown">
         <p>Щоб писати логи модуля в окремий файл треба виконати наступні кроки:</p>
 
-<p>1) Сворюємо класи <strong>Logger.php</strong> та <strong>Hadler.php</strong></p>
+<ol>
+<li><p>Сворюємо класи <strong>Logger.php</strong> та <strong>Hadler.php</strong></p>
 
 <pre><code class="language-php">&lt;?php
 
@@ -170,9 +171,9 @@ class Handler extends \Magento\Framework\Logger\Handler\Base
     protected $loggerType = Logger::INFO;
     protected $fileName = '/var/log/mymodule.log';
 }
-</code></pre>
+</code></pre></li>
 
-<p>2) Додаємо власний логер до конфігурації в <strong>di.xml</strong></p>
+<li><p>Додаємо власний логер до конфігурації в <strong>di.xml</strong></p>
 
 <pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot;?&gt;
 &lt;config xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;&gt;
@@ -190,9 +191,9 @@ class Handler extends \Magento\Framework\Logger\Handler\Base
         &lt;/arguments&gt;
     &lt;/type&gt;    
 &lt;/config&gt;
-</code></pre>
+</code></pre></li>
 
-<p>3) Тепер можемо використати логер, наприклад так</p>
+<li><p>Тепер можемо використати логер, наприклад так</p>
 
 <pre><code class="language-php">&lt;?php
 
@@ -213,14 +214,15 @@ class Test extends \Magento\Framework\App\Action\Action
 
     public function execute()
     {
-              
+                
         ...
         $this-&gt;logger-&gt;info('my message');
         ...
 
     }
 }
-</code></pre>
+</code></pre></li>
+</ol>
     
         </div>
     </section>
@@ -281,13 +283,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/magick-248/">Магічне число 248 або Чому я не можу додати значення атрибута в Magento 2?</a></li>            
+          <li><a href="https://bender.kr.ua/new-db-in-mysql/">Створення бази даних в MySQL</a></li>            
         
-          <li><a href="https://bender.kr.ua/magento-payment-plugin-for-bitpay/">Рубимо електронні гроші в Magento</a></li>            
+          <li><a href="https://bender.kr.ua/git-branch/">Як забрати гілку з git</a></li>            
         
-          <li><a href="https://bender.kr.ua/magento-2-cron-indexer-repair/">Magento 2: не працює індексація за розкладом</a></li>            
+          <li><a href="https://bender.kr.ua/howto-install-telegram-debian-9/">Встановлення Telegram на Debian 9</a></li>            
         
-          <li><a href="https://bender.kr.ua/how-to-exclude-dump-tables/">Вибіркове завантаження таблиць дампа в MySQL</a></li>            
+          <li><a href="https://bender.kr.ua/how-to-fix-elasticsearch-forbidden-12-index-read-only-allow-delete-api/">Проблема з переіндексацією catalogsearch_fulltext на Magento 2</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
