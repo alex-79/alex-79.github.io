@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1501290301209-7a0323622985?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.40.1" />
+    <meta name="generator" content="Hugo 0.76.2" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -145,18 +145,12 @@
 
     <section class="post-full-content">
         <div class="kg-card-markdown">
-        
-
-<p>25 червня 2019 року вийшла версія Magento 2.3.2. Покращення безпеки, що входять до складу Magento 2.3.2, вимагають встановлення криптографічної бібліотеки libsodium версії 1.0.13 або вище. Без цього ви отримаєте помилку в модулі MSP_TwoFactorAuth.</p>
-
+        <p>25 червня 2019 року вийшла версія Magento 2.3.2. Покращення безпеки, що входять до складу Magento 2.3.2, вимагають встановлення криптографічної бібліотеки libsodium версії 1.0.13 або вище. Без цього ви отримаєте помилку в модулі MSP_TwoFactorAuth.</p>
 <pre><code>Missing required argument $encoder of MSP\TwoFactorAuth\Model\UserConfigManager.
-</code></pre>
-
-<p>Отже для успішного оновлення, виконуємо наступні дії:</p>
-
+</code></pre><p>Отже для успішного оновлення, виконуємо наступні дії:</p>
 <ol>
-<li><p>Встановлюємо libsodium</p>
-
+<li>Встановлюємо libsodium</li>
+</ol>
 <pre><code>cd /opt/
 wget -c https://download.libsodium.org/libsodium/releases/libsodium-1.0.18.tar.gz
 tar -xzvf libsodium-1.0.18.tar.gz
@@ -165,10 +159,9 @@ cd libsodium-1.0.18
 ./configure
 make &amp;&amp; make check
 make install
-</code></pre></li>
-
-<li><p>Оновлюємо Magento</p>
-
+</code></pre><ol start="2">
+<li>Оновлюємо Magento</li>
+</ol>
 <pre><code>composer require magento/product-community-edition 2.3.2 --no-update
 composer update
 rm -rf var/cache/* var/page_cache/* var/generation/* generated/code/*
@@ -177,11 +170,7 @@ find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
 find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
 chown -R :www-data .
 chmod u+x bin/magento
-</code></pre></li>
-</ol>
-
-<h3 id="посилання">Посилання:</h3>
-
+</code></pre><h3 id="посилання">Посилання:</h3>
 <ul>
 <li><a href="https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.2OpenSource.html">https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.2OpenSource.html</a></li>
 <li><a href="https://download.libsodium.org/doc/installation">https://download.libsodium.org/doc/installation</a></li>
@@ -247,13 +236,15 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/backup-with-tartarus/">Резервне копіювання і трохи грецької міфології</a></li>            
+                      
         
-          <li><a href="https://bender.kr.ua/iptables-ipset/">Блокування трафіку за допомогою iptables та ipset</a></li>            
+          <li><a href="https://bender.kr.ua/magento-2-cron-indexer-repair/">Magento 2: не працює індексація за розкладом</a></li>            
         
-          <li><a href="https://bender.kr.ua/backup-with-borg/">Про користь borg-ів</a></li>            
+          <li><a href="https://bender.kr.ua/connie-willis-doomsday-book/">Конні Вілліс. Книга судного дня</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-remove-parent-category-from-url-magento-2/">Вилучення ієрархії категорій з URL в Magento 2</a></li>            
+          <li><a href="https://bender.kr.ua/howto-add-header-links-in-magento2/">Magento 2: як додати посилання в header.links</a></li>            
+        
+          <li><a href="https://bender.kr.ua/magento-2-modules-and-tools/">Модулі та інструменти для роботи з Magento 2 (оновлюється)</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">

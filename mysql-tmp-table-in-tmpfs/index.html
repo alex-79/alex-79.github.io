@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1517026575980-3e1e2dedeab4?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.40.1" />
+    <meta name="generator" content="Hugo 0.76.2" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -146,42 +146,21 @@
     <section class="post-full-content">
         <div class="kg-card-markdown">
         <p>Для прискорення роботи бази даних можна винести тимчасові таблиці в оперативну пам&rsquo;ять. Зробити це дуже просто.</p>
-
 <p>Створюємо папку для зберігання тимчасових таблиць</p>
-
 <pre><code>mkdir /var/lib/mysql/tmp
-</code></pre>
-
-<p>Змінюємо власника папки на mysql</p>
-
+</code></pre><p>Змінюємо власника папки на mysql</p>
 <pre><code>chown mysql:mysql /var/lib/mysql/tmp
-</code></pre>
-
-<p>Знаходимо uid та gid для mysql</p>
-
+</code></pre><p>Знаходимо uid та gid для mysql</p>
 <pre><code>id mysql
-</code></pre>
-
-<p>В файл fstab додаємо</p>
-
+</code></pre><p>В файл fstab додаємо</p>
 <pre><code>tmpfs /var/lib/mysql/tmp tmpfs rw,gid=1001,uid=1001,size=1G,nr_inodes=10k,mode=0700 0 0
-</code></pre>
-
-<p>та монтуємо новий tmpfs-разділ</p>
-
+</code></pre><p>та монтуємо новий tmpfs-разділ</p>
 <pre><code>mount /var/lib/mysql/tmp
-</code></pre>
-
-<p>Змінюємо конфігурацию MySQL в /etc/mysql/my.cnf</p>
-
+</code></pre><p>Змінюємо конфігурацию MySQL в /etc/mysql/my.cnf</p>
 <pre><code>tmpdir=/var/lib/mysql/tmp
-</code></pre>
-
-<p>Перезапускаємо MySQL</p>
-
+</code></pre><p>Перезапускаємо MySQL</p>
 <pre><code>service mysql restart
-</code></pre>
-    
+</code></pre>    
         </div>
     </section>
 
@@ -241,13 +220,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/magento-2-cron-indexer-repair/">Magento 2: не працює індексація за розкладом</a></li>            
+          <li><a href="https://bender.kr.ua/git-branch/">Як забрати гілку з git</a></li>            
         
-          <li><a href="https://bender.kr.ua/nginx-geoip/">Блокування трафіку з окремих країн за допомогою Nginx та GeoIP</a></li>            
+          <li><a href="https://bender.kr.ua/howto-install-munin/">Простий моніторинг роботи сервера за допомогою Munin</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-install-rocketchat-debian-9/">Встановлення відкритого месенджера Rocket.Chat на Debian 9</a></li>            
+          <li><a href="https://bender.kr.ua/5-extensions-for-default-magento2/">5 розширень, які ти зобов&#39;язаний поставити на Magento 2</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-asterisk-part-2/">IP-телефонія на базі Asterisk. Частина 2: Налаштування SIP</a></li>            
+          <li><a href="https://bender.kr.ua/howto-asterisk-part-1/">IP-телефонія на базі Asterisk. Частина 1: Встановлення сервера Asterisk</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">

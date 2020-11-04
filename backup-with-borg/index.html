@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1466071110707-a017f96ef5c9?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.40.1" />
+    <meta name="generator" content="Hugo 0.76.2" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -145,46 +145,23 @@
 
     <section class="post-full-content">
         <div class="kg-card-markdown">
-        
-
-<p>До недавнього часу для створення резервних копій я активно користувався <a href="https://bender.kr.ua/backup-with-tartarus/">tartarus</a>-ом. Хоча цей інструмент може створювати інкрементні бекапи і тим самим оптимізувати збереження резервних копій на диску, розміри повних бекапів мене не влаштовували. Крім того, розпаковка повного архіву було ще тим задоволенням :) На допомогу прийшла програма <strong><a href="https://borgbackup.readthedocs.io/en/stable/">borgbackup</a></strong> (або просто <em>borg</em>). В роботі вона нагадує <em>git</em>. А головним для мене стала дедуплікація даних. Розміри повних бекапів в кілька разів менше за аналогічні від tartarus-а.</p>
-
+        <p>До недавнього часу для створення резервних копій я активно користувався <a href="https://bender.kr.ua/backup-with-tartarus/">tartarus</a>-ом. Хоча цей інструмент може створювати інкрементні бекапи і тим самим оптимізувати збереження резервних копій на диску, розміри повних бекапів мене не влаштовували. Крім того, розпаковка повного архіву було ще тим задоволенням :) На допомогу прийшла програма <strong><a href="https://borgbackup.readthedocs.io/en/stable/">borgbackup</a></strong> (або просто <em>borg</em>). В роботі вона нагадує <em>git</em>. А головним для мене стала дедуплікація даних. Розміри повних бекапів в кілька разів менше за аналогічні від tartarus-а.</p>
 <p><strong>Вихідні дані:</strong> сервери PROD (<em>клієнт</em>, на якому зберігаються дані, prod.example.com) та BACKUP (<em>сервер</em>, на якому зберігаються резервні копії, backup.example.com)</p>
-
 <h1 id="підготовка-до-роботи">Підготовка до роботи</h1>
-
 <p>На обох серверах треба встановити borg. Для багатьох дистрибутивів встановлюється штатними засобами системи, інакше можна взяти готовий бінарник (подробиці <a href="https://borgbackup.readthedocs.io/en/stable/installation.html#distribution-package">тут</a>)</p>
-
 <p>Для Debian:</p>
-
 <pre><code>apt install borgbackup fuse
-</code></pre>
-
-<p>Слід пам&rsquo;ятати, що сервер і клієнт повинні мати однакові версії borg. Використання різних версій може призвести до помилок та непрацюючої резервної копії.</p>
-
+</code></pre><p>Слід пам&rsquo;ятати, що сервер і клієнт повинні мати однакові версії borg. Використання різних версій може призвести до помилок та непрацюючої резервної копії.</p>
 <p>На сервері PROD генеруємо ключ для користувача <em>myuser</em></p>
-
 <pre><code>ssh-keygen
-</code></pre>
-
-<p>Потім вміст <em>.ssh/idrsa.pub</em> з PROD треба перенести до <em>.ssh/authorizedkeys</em> на BACKUP. В подальшому це дозволить автоматизувати процес створення резервної копії.</p>
-
+</code></pre><p>Потім вміст <em>.ssh/idrsa.pub</em> з PROD треба перенести до <em>.ssh/authorizedkeys</em> на BACKUP. В подальшому це дозволить автоматизувати процес створення резервної копії.</p>
 <h1 id="створення-резервної-копії">Створення резервної копії</h1>
-
 <p>Робота з borg подібна до роботи з git. Спочатку треба створити сховище (для прикладу сховище <em>FirstRepository</em> в домашній папці користувача <em>myuser</em> на сервері <em>backup.example.com</em>):</p>
-
 <pre><code>borg init -e none ssh://myuser@backup.example.com/~/FirstRepository
-</code></pre>
-
-<p><em>-e none</em> показує що ми не використувуємо шифрування.</p>
-
+</code></pre><p><em>-e none</em> показує що ми не використувуємо шифрування.</p>
 <p>Тепер створюємо резервну копію директорії <em>/var/www/mysite</em>, за виключенням папки <em>/var/www/mysite/cache</em>:</p>
-
 <pre><code>borg create -v --stats FirstRepository::'{now:%Y-%m-%d_%H:%M}' /var/www/mysite --exclude /var/www/mysite/cache
-</code></pre>
-
-<p>Результатом буде:</p>
-
+</code></pre><p>Результатом буде:</p>
 <pre><code>------------------------------------------------------------------------------
 Archive name: 2019-09-12_10:26
 Archive fingerprint: fd84bfec85dc2aee7469112d8d0beeff06ac911a73ded047515e7b323fb04524
@@ -200,39 +177,20 @@ All archives:                6.74 GB              6.74 GB              4.94 GB
                        Unique chunks         Total chunks
 Chunk index:                   96581               111141
 ------------------------------------------------------------------------------
-</code></pre>
-
-<p>Як видно, за рахунок дедуплікації вдалось зекономити майже 2G. Перший бекап створюється довго, наступні швидше.</p>
-
+</code></pre><p>Як видно, за рахунок дедуплікації вдалось зекономити майже 2G. Перший бекап створюється довго, наступні швидше.</p>
 <p>Щоб переглянути список бекапів:</p>
-
 <pre><code>borg list ssh://myuser@backup.example.com/~/FirstRepository
-</code></pre>
-
-<pre><code>2019-09-12_10:26                     Thu, 2019-09-12 10:26:04
+</code></pre><pre><code>2019-09-12_10:26                     Thu, 2019-09-12 10:26:04
 2019-09-12_11:44                     Thu, 2019-09-12 11:44:01
-</code></pre>
-
-<p>Щоб переглянути вміст конкретного бекапу:</p>
-
+</code></pre><p>Щоб переглянути вміст конкретного бекапу:</p>
 <pre><code>borg list FirstRepository::2019-09-12_10:26
-</code></pre>
-
-<h1 id="відновлення-з-резервної-копії">Відновлення з резервної копії</h1>
-
+</code></pre><h1 id="відновлення-з-резервної-копії">Відновлення з резервної копії</h1>
 <p>Щоб відновити інформаціє з резервної копії, треба змонтувати віддалене сховище на локальну машину (в нашому випадку на PROD):</p>
-
 <pre><code>mkdir -p backup-restore
 borg mount ssh://myuser@backup.example.com/~/FirstRepository::2019-09-12_10:26 backup-restore/
-</code></pre>
-
-<p>Після закінчення роботи відмонтуємо сховище</p>
-
+</code></pre><p>Після закінчення роботи відмонтуємо сховище</p>
 <pre><code>borg umount backup-restore
-</code></pre>
-
-<h2 id="посилання">Посилання</h2>
-
+</code></pre><h2 id="посилання">Посилання</h2>
 <ul>
 <li><a href="https://borgbackup.readthedocs.io/en/stable/">https://borgbackup.readthedocs.io/en/stable/</a></li>
 <li><a href="https://freeuser.org.ua/2018/01/borg-backup/">https://freeuser.org.ua/2018/01/borg-backup/</a></li>
@@ -299,13 +257,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
+          <li><a href="https://bender.kr.ua/regexp-replace-in-mariadb/">Заміна даних в MariaDB</a></li>            
+        
+          <li><a href="https://bender.kr.ua/custom-logging-module-magento2/">Magento2: Як писати логи модуля в окремий файл?</a></li>            
+        
+          <li><a href="https://bender.kr.ua/why-magento/">Чому ми обираємо Magento, а не інші системи</a></li>            
+        
           <li><a href="https://bender.kr.ua/howto-asterisk-part-1/">IP-телефонія на базі Asterisk. Частина 1: Встановлення сервера Asterisk</a></li>            
-        
-          <li><a href="https://bender.kr.ua/mint-19-and-epson-perfection-v33/">Mint 19 і сканер Epson Perfection V33</a></li>            
-        
-          <li><a href="https://bender.kr.ua/fix-conflict-keyboard-shortcuts/">Не працюють комбінації клавіш CTRL-SHIFT в Ubuntu</a></li>            
-        
-          <li><a href="https://bender.kr.ua/howto-install-rocketchat-debian-9/">Встановлення відкритого месенджера Rocket.Chat на Debian 9</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">

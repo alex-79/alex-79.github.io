@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1484662020986-75935d2ebc66?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.40.1" />
+    <meta name="generator" content="Hugo 0.76.2" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -146,18 +146,11 @@
     <section class="post-full-content">
         <div class="kg-card-markdown">
         <p>Якщо команди <strong>df</strong> та <strong>du</strong> показують різні значення, можлива причина полягає в тому, що процес утримує файл який вже було видалено з системи. Що побачити список таких процесів слід використати наступну команду:</p>
-
 <pre><code>lsof -nP | grep '(deleted)'
 find /proc/*/fd -ls | grep  '(deleted)'
-</code></pre>
-
-<p>Потім треба зробити наступне:</p>
-
+</code></pre><p>Потім треба зробити наступне:</p>
 <pre><code>cat /dev/null &gt; /proc/6466/fd/3
-</code></pre>
-
-<p>данні взяти з виводу попередньої команди</p>
-
+</code></pre><p>данні взяти з виводу попередньої команди</p>
 <p>Джерела <a href="http://blog.pridybailo.com/%D0%BA%D0%BE%D0%B3%D0%B4%D0%B0-df-%D0%B8-du-%D0%BF%D0%BE%D0%BA%D0%B0%D0%B7%D1%8B%D0%B2%D0%B0%D1%8E%D1%82-%D1%80%D0%B0%D0%B7%D0%BD%D1%8B%D0%B5/">тут</a>, <a href="https://toster.ru/q/383426">тут</a> і <a href="https://unix.stackexchange.com/questions/68523/find-and-remove-large-files-that-are-open-but-have-been-deleted">тут</a></p>
     
         </div>
@@ -219,13 +212,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/configurable-crontab-magento2/">Magento2: налаштування періодичних завдань власного модуля через адмін-панель</a></li>            
+          <li><a href="https://bender.kr.ua/new-db-in-mysql/">Створення бази даних в MySQL</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-asterisk-part-3/">IP-телефонія на базі Asterisk. Частина 3: Логіка обробки дзвінків (Dialplan)</a></li>            
+          <li><a href="https://bender.kr.ua/magento-2-cron-indexer-repair/">Magento 2: не працює індексація за розкладом</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-install-magento2-cli/">Встановлення Magento 2 з командного рядка</a></li>            
+          <li><a href="https://bender.kr.ua/howto-remove-parent-category-from-url-magento-2/">Вилучення ієрархії категорій з URL в Magento 2</a></li>            
         
-          <li><a href="https://bender.kr.ua/letsencrypt-and-ipv6/">Помилка при оновлені сертифікатів від Let&#39;s Encrypt</a></li>            
+          <li><a href="https://bender.kr.ua/howto-install-rocketchat-debian-9/">Встановлення відкритого месенджера Rocket.Chat на Debian 9</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">

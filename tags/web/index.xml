@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Web on </title>
+    <title>web on </title>
     <link>https://bender.kr.ua/tags/web/</link>
-    <description>Recent content in Web on </description>
+    <description>Recent content in web on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>uk</language>
-    <lastBuildDate>Mon, 07 Sep 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://bender.kr.ua/tags/web/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 07 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://bender.kr.ua/tags/web/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Встановлення відкритого месенджера Rocket.Chat на Debian 9</title>
       <link>https://bender.kr.ua/howto-install-rocketchat-debian-9/</link>
@@ -19,7 +15,8 @@
       <guid>https://bender.kr.ua/howto-install-rocketchat-debian-9/</guid>
       <description>Rocket.Chat - відкритий месенджер, який підтримує групові чати, відеовиклики, конференції, обмін файлами, ботів та багато іншого. Має як десктопні, так і мобільні клієнти під всі популярні системи (https://rocket.chat/install). Може бути розгорнутий на власних серверах та використовуватись в якості корпоративного чату. В якості приємного бонусу - може виконувати роль чату-помічника в інтернет-магазинах.
 Підготовчий етап - встановлення залежностей Оновлюємо список пакетів:
-sudo apt-get -y update  Встановлюємо MongoDB, Node.js та graphicsmagick:</description>
+sudo apt-get -y update Встановлюємо MongoDB, Node.js та graphicsmagick:
+sudo apt-get install -y dirmngr gnupg &amp;amp;&amp;amp; sudo apt-key adv --keyserver hkp://keyserver.</description>
     </item>
     
     <item>
@@ -28,12 +25,12 @@ sudo apt-get -y update  Встановлюємо MongoDB, Node.js та graphicsm
       <pubDate>Mon, 17 Feb 2020 02:00:00 +0000</pubDate>
       
       <guid>https://bender.kr.ua/howto-install-django-mysql-debian-9/</guid>
-      <description>Встановлення Django  Встановлюємо Python та додатковий інструментарій
-apt install python3 python3-pip python3-venv  Створюємо папку для проекту та віртуальне середовище
-mkdir myproject cd myproject python3 -m venv venv source venv/bin/activate  Встановлюємо Django та перевыряємо встановлену версію
-python3 -m pip install Django python -m django --version  Створюємо новий проект
-django-admin startproject myproject   З&amp;rsquo;єднання з MySQL  Встановлюємо Percona Server
-wget https://repo.percona.com/apt/percona-release_latest.$(lsb_release -sc)_all.deb dpkg -i percona-release_latest.$(lsb_release -sc)_all.</description>
+      <description>Встановлення Django   Встановлюємо Python та додатковий інструментарій
+apt install python3 python3-pip python3-venv   Створюємо папку для проекту та віртуальне середовище
+mkdir myproject cd myproject python3 -m venv venv source venv/bin/activate   Встановлюємо Django та перевыряємо встановлену версію
+python3 -m pip install Django python -m django --version   Створюємо новий проект
+django-admin startproject myproject   З&amp;rsquo;єднання з MySQL   Встановлюємо Percona Server
+wget https://repo.percona.com/apt/percona-release_latest.$(lsb_release -sc)_all.</description>
     </item>
     
     <item>
@@ -44,7 +41,7 @@ wget https://repo.percona.com/apt/percona-release_latest.$(lsb_release -sc)_all.
       <guid>https://bender.kr.ua/iptables-ipset/</guid>
       <description>Для захисту від DDOS-атак або паразитного трафіку, блокування на рівні сервера, а не nginx (як наприклад тут - https://bender.kr.ua/nginx-geoip/) , є більш ефективним. Тому, якщо у вас виникла потреба блокувати IP з певних країн і не існує інших застережень, варто скористатись зв&amp;rsquo;язкою iptables + ipset.
 Для початку встановлюємо ipset:
-apt-get install ipset  Створюємо скрипт, який буде оновлювати таблюцю адрес для блокування. Списки IP за приналежністю до країни, можна взяти на сайті ipdeny.</description>
+apt-get install ipset Створюємо скрипт, який буде оновлювати таблюцю адрес для блокування. Списки IP за приналежністю до країни, можна взяти на сайті ipdeny.</description>
     </item>
     
     <item>
@@ -54,10 +51,10 @@ apt-get install ipset  Створюємо скрипт, який буде оно
       
       <guid>https://bender.kr.ua/nginx-geoip/</guid>
       <description>Блокуємо паразитний трафік до сайту з певних країн безкоштовно, без реєстрацій та sms ;)
- Зібрати nginx з опцією &amp;ndash;with-http_geoip_module. Як це зробити написано тут
- Встановити бази GeoIP
-apt-get install geoip-database libgeoip1  Оновити бази до останньої версії
-mv /usr/share/GeoIP/GeoIP.dat /usr/share/GeoIP/GeoIP.bak wget https://dl.miyuru.lk/geoip/maxmind/country/maxmind.dat.gz gunzip maxmind.dat.gz mv maxmind.dat /usr/share/GeoIP/GeoIP.dat  В /etc/nginx/nginx.conf в секції http блокуємо наприклад роісію та Пакистан
+  Зібрати nginx з опцією &amp;ndash;with-http_geoip_module. Як це зробити написано тут
+  Встановити бази GeoIP
+apt-get install geoip-database libgeoip1   Оновити бази до останньої версії
+mv /usr/share/GeoIP/GeoIP.dat /usr/share/GeoIP/GeoIP.bak wget https://dl.miyuru.lk/geoip/maxmind/country/maxmind.dat.gz gunzip maxmind.dat.gz mv maxmind.dat /usr/share/GeoIP/GeoIP.dat   В /etc/nginx/nginx.conf в секції http блокуємо наприклад роісію та Пакистан
 http { ... geoip_country /usr/share/GeoIP/GeoIP.dat; map $geoip_country_code $allowed_country_mysite { default yes; RU no; PK no; } .</description>
     </item>
     
@@ -68,7 +65,7 @@ http { ... geoip_country /usr/share/GeoIP/GeoIP.dat; map $geoip_country_code $al
       
       <guid>https://bender.kr.ua/howto-install-magento2-cli/</guid>
       <description>Простий скрипт на bash для створення локальної інсталяції Magento 2.
-#!/bin/bash # install_magento.sh create_db=&amp;quot;CREATE DATABASE $1 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;&amp;quot; create_user=&amp;quot;GRANT ALL PRIVILEGES ON $1.* TO &#39;$1&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;$1&#39;;&amp;quot; flush=&amp;quot;FLUSH PRIVILEGES;&amp;quot; mysql -u root -p -e &amp;quot;${create_db}${create_user}${flush}&amp;quot; mkdir $1.local composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition $1.local cd $1.local php bin/magento setup:install --base-url=http://$1.local/ \ --db-host=localhost --db-name=$1 \ --db-user=$1 --db-password=$1 \ --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \ --admin-user=admin --admin-password=admin123 --language=en_US \ --currency=UAH --timezone=Europe/Kiev --use-rewrites=1  Застосування:</description>
+#!/bin/bash # install_magento.sh create_db=&amp;quot;CREATE DATABASE $1 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;&amp;quot; create_user=&amp;quot;GRANT ALL PRIVILEGES ON $1.* TO &#39;$1&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;$1&#39;;&amp;quot; flush=&amp;quot;FLUSH PRIVILEGES;&amp;quot; mysql -u root -p -e &amp;quot;${create_db}${create_user}${flush}&amp;quot; mkdir $1.local composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition $1.local cd $1.local php bin/magento setup:install --base-url=http://$1.local/ \ --db-host=localhost --db-name=$1 \ --db-user=$1 --db-password=$1 \ --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \ --admin-user=admin --admin-password=admin123 --language=en_US \ --currency=UAH --timezone=Europe/Kiev --use-rewrites=1 Застосування:</description>
     </item>
     
     <item>
@@ -79,7 +76,7 @@ http { ... geoip_country /usr/share/GeoIP/GeoIP.dat; map $geoip_country_code $al
       <guid>https://bender.kr.ua/netbeans-and-fonts/</guid>
       <description>Традиційно після встановлення NetBeans на Linux постає питання відображення шрифтів в IDE. В конфігурації за замовчування вони виглядають дуже погано.
 Найпопулярнішою порадою в інтернетах є додавання до файлу конфігурації etc/netbeans.conf такого рядка
-netbeans_default_options=&amp;quot; ... -J-Dswing.aatext=true -J-Dawt.useSystemAAFontSettings=lcd&amp;quot;  Після цього шрифти не набагато, але стають краще, особливо, якщо використати темну тему, бо на світлій все ще помітно &amp;ldquo;мило&amp;rdquo;.
+netbeans_default_options=&amp;quot; ... -J-Dswing.aatext=true -J-Dawt.useSystemAAFontSettings=lcd&amp;quot; Після цього шрифти не набагато, але стають краще, особливо, якщо використати темну тему, бо на світлій все ще помітно &amp;ldquo;мило&amp;rdquo;.
 Ось тут на допомогу може прийти JetBrains :)))
 Є два варіанти: 1) користуватись PHPStorm, в якому зі шрифтами все добре (в силу різних причин для мене це взагалі не варіант) або 2) використати пропатчену JetBrains версію JDK.</description>
     </item>
@@ -91,8 +88,7 @@ netbeans_default_options=&amp;quot; ... -J-Dswing.aatext=true -J-Dawt.useSystemA
       
       <guid>https://bender.kr.ua/quick-start-with-jenkins-in-docker/</guid>
       <description>Для швидкого старту системи CI/CD Jenkins скористаємось docker-ом. Працюємо в Debian 10, але рецепт певно спрацює для будь-якого deb-похідного дистрибутиву.
- Встановлюємо Docker
-apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - apt-get update apt-get install docker-ce  systemctl status docker ● docker.service - Docker Application Container Engine Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled) Active: active (running) since Wed 2019-07-31 12:48:03 EEST; 5min ago Docs: https://docs.</description>
+ Встановлюємо Docker  apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - apt-get update apt-get install docker-ce systemctl status docker ● docker.service - Docker Application Container Engine Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled) Active: active (running) since Wed 2019-07-31 12:48:03 EEST; 5min ago Docs: https://docs.</description>
     </item>
     
     <item>
@@ -104,7 +100,7 @@ apt-get install apt-transport-https ca-certificates curl gnupg2 software-propert
       <description>Найпростіший спосіб &amp;ldquo;прогріти&amp;rdquo; кеш - пройтись за допомогою wget по карті сайту. У випадку, коли сайт чи окремі його розділи доступні лише зареєстрованим користувачам, цей спосіб не підійде.
 У пригоді може стати Headless Chrome - хром, якому не потрібно рендерити сторінку в окреме вікно (хоча він це може). Найлегший спосіб почати працювати з ним - використати puppeteer.
 Встановлюємо Node.js та puppeteer
-curl -sL https://deb.nodesource.com/setup_10.x | bash - apt-get install nodejs libxss1 npm i puppeteer  Наш краулер з авторизацією crawler.</description>
+curl -sL https://deb.nodesource.com/setup_10.x | bash - apt-get install nodejs libxss1 npm i puppeteer Наш краулер з авторизацією crawler.</description>
     </item>
     
     <item>
@@ -115,8 +111,8 @@ curl -sL https://deb.nodesource.com/setup_10.x | bash - apt-get install nodejs l
       <guid>https://bender.kr.ua/howto-install-munin/</guid>
       <description>Munin — це дуже простий в налаштуванні засіб моніторинга серверів. Для Munin існує величезна кількість плагінів для спостереження за load average, дисковими операціями, CPU, RAM, mysql тощо. Вся інформація зберігається в кільцевій базі даних RRDtool.
 Встановлюємо систему моніторингу:
-apt-get install munin munin-node service munin-node start  Налаштовуємо nginx
-	location / { root /var/cache/munin/www; autoindex on; auth_basic &amp;quot;Munin Statistics&amp;quot;; auth_basic_user_file /etc/munin/.passwd; }  Додаткові плагіни знаходяться в директорії /usr/share/munin/plugins .</description>
+apt-get install munin munin-node service munin-node start Налаштовуємо nginx
+	location / { root /var/cache/munin/www; autoindex on; auth_basic &amp;quot;Munin Statistics&amp;quot;; auth_basic_user_file /etc/munin/.passwd; } Додаткові плагіни знаходяться в директорії /usr/share/munin/plugins . Встановимо, для прикладу, набір плагінів для відстеження роботи MySQL.</description>
     </item>
     
     <item>
@@ -127,9 +123,10 @@ apt-get install munin munin-node service munin-node start  Налаштовує�
       <guid>https://bender.kr.ua/howto-certbot-nginx-debian/</guid>
       <description>Простий спосіб отримати безкоштовний SSL-сертифікат з оцінкою A+ для Nginx на Debian 9
 Спочатку додаємо репозиторій stretch-backports
-add-apt-repository &#39;deb http://deb.debian.org/debian stretch-backports main&#39; apt-get update  Встановлюємо утиліту для автоматичного отримання та оновлення сертифікатів certbot
-apt-get install certbot python-certbot-nginx -t stretch-backports  В конфігураційному файлі для нашого сайту надаємо certbot-у доступ до необхідної йому директорії
-# Let’s Encrypt location ~ /.well-known { allow all; }  та перечитуємо конфігурацію nginx</description>
+add-apt-repository &#39;deb http://deb.debian.org/debian stretch-backports main&#39; apt-get update Встановлюємо утиліту для автоматичного отримання та оновлення сертифікатів certbot
+apt-get install certbot python-certbot-nginx -t stretch-backports В конфігураційному файлі для нашого сайту надаємо certbot-у доступ до необхідної йому директорії
+# Let’s Encrypt location ~ /.well-known { allow all; } та перечитуємо конфігурацію nginx
+nginx -t nginx -s reload Отримуємо сертифікати</description>
     </item>
     
     <item>
@@ -140,8 +137,8 @@ apt-get install certbot python-certbot-nginx -t stretch-backports  В конфі
       <guid>https://bender.kr.ua/howto-lemp-install/</guid>
       <description>Покрокова інструкція по встановленню і запуску зв&amp;rsquo;язки LEMP (Linux + Nginx + MySQL + PHP).
 1. Оновлення системи Оновлюємо версії ПЗ до актуального стану
-apt-get update apt-get upgrade  2. Налаштування захисту 2.1 iptables Спочатку встановлюю mc. Для тих у кого в цей момент засвербіло &amp;ldquo;mc - для лохів, vim - наше всьо, nano рулить&amp;rdquo; - поцілуйте мій блискучий металевий зад (С).
-apt-get install mc update-alternatives --config editor  Створюємо правила файервола</description>
+apt-get update apt-get upgrade 2. Налаштування захисту 2.1 iptables Спочатку встановлюю mc. Для тих у кого в цей момент засвербіло &amp;ldquo;mc - для лохів, vim - наше всьо, nano рулить&amp;rdquo; - поцілуйте мій блискучий металевий зад (С).
+apt-get install mc update-alternatives --config editor Створюємо правила файервола</description>
     </item>
     
     <item>
@@ -150,8 +147,8 @@ apt-get install mc update-alternatives --config editor  Створюємо пр�
       <pubDate>Wed, 15 Aug 2018 11:42:00 +0000</pubDate>
       
       <guid>https://bender.kr.ua/installing-python-3-6-on-debian-8/</guid>
-      <description>#!/bin/sh # python_install.sh PYTHON_VER=$1 cd /opt wget -c https://www.python.org/ftp/python/$PYTHON_VER/Python-$PYTHON_VER.tgz tar -xvf Python-$PYTHON_VER.tgz rm Python-$PYTHON_VER.tgz cd Python-$PYTHON_VER ./configure --enable-optimizations make -j `nproc` make test make altinstall  Приклад встановлення:
-./python_install.sh 3.6.6  python3 -V Python 3.4.2 python3.6 -V Python 3.6.6  Джерело тут і тут</description>
+      <description>#!/bin/sh  # python_install.sh PYTHON_VER=$1 cd /opt wget -c https://www.python.org/ftp/python/$PYTHON_VER/Python-$PYTHON_VER.tgz tar -xvf Python-$PYTHON_VER.tgz rm Python-$PYTHON_VER.tgz cd Python-$PYTHON_VER ./configure --enable-optimizations make -j `nproc` make test make altinstall Приклад встановлення:
+./python_install.sh 3.6.6 python3 -V Python 3.4.2 python3.6 -V Python 3.6.6 Джерело тут і тут</description>
     </item>
     
     <item>
@@ -161,7 +158,7 @@ apt-get install mc update-alternatives --config editor  Створюємо пр�
       
       <guid>https://bender.kr.ua/letsencrypt-and-ipv6/</guid>
       <description>При оновлені сертифікату Let&amp;rsquo;s Encrypt виникла помилка
-Attempting to renew cert (example.com.ua) from /etc/letsencrypt/renewal/example.com.ua.conf produced an unexpected error: Failed authorization procedure. www.example.com.ua (http-01): urn:acme:error:unauthorized :: The client lacks sufficient authorization :: Invalid response from http://www.example.com.ua/.well-known/acme-challenge/BKPbQzerSwVSz9PrVcVqOoSX5MxDvF2lh5eOHVamgQ4  Перевірка доступності http://www.example.com.ua/.well-known/acme-challenge/BKPbQzerSwVSz9PrVcVqOoSX5MxDvF2lh5eOHVamgQ4 не виявила проблем. Let&amp;rsquo;s Encrypt мав би верифікувати домен, але в нього була інша думка.
+Attempting to renew cert (example.com.ua) from /etc/letsencrypt/renewal/example.com.ua.conf produced an unexpected error: Failed authorization procedure. www.example.com.ua (http-01): urn:acme:error:unauthorized :: The client lacks sufficient authorization :: Invalid response from http://www.example.com.ua/.well-known/acme-challenge/BKPbQzerSwVSz9PrVcVqOoSX5MxDvF2lh5eOHVamgQ4 Перевірка доступності http://www.example.com.ua/.well-known/acme-challenge/BKPbQzerSwVSz9PrVcVqOoSX5MxDvF2lh5eOHVamgQ4 не виявила проблем. Let&amp;rsquo;s Encrypt мав би верифікувати домен, але в нього була інша думка.
 Око зачепилося за AAAA у відповіді:
 To fix these errors, please make sure that your domain name was entered correctly and the DNS A/AAAA record(s) for that domain contain(s) the right IP address.</description>
     </item>
@@ -172,7 +169,7 @@ To fix these errors, please make sure that your domain name was entered correctl
       <pubDate>Fri, 20 Oct 2017 11:04:00 +0000</pubDate>
       
       <guid>https://bender.kr.ua/git-branch/</guid>
-      <description>git init git remote add origin remote_git.git git fetch git checkout -b new_branch git pull origin new_branch  </description>
+      <description>git init git remote add origin remote_git.git git fetch git checkout -b new_branch git pull origin new_branch </description>
     </item>
     
     <item>
@@ -182,7 +179,7 @@ To fix these errors, please make sure that your domain name was entered correctl
       
       <guid>https://bender.kr.ua/nginx-redirection-get-arg/</guid>
       <description>Якщо необхідно зробити редирект зі сторінки с get-аргументом, то необхідно дописати в конфіг таке
-location / { if ($arg_param = value) { return 301 $uri; } }  Взяв тут - https://stackoverflow.com/questions/27078909/nginx-redirect-url-with-specific-query-parameter</description>
+location / { if ($arg_param = value) { return 301 $uri; } } Взяв тут - https://stackoverflow.com/questions/27078909/nginx-redirect-url-with-specific-query-parameter</description>
     </item>
     
     <item>

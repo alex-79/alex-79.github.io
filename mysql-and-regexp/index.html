@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1508873535684-277a3cbcc4e8?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.40.1" />
+    <meta name="generator" content="Hugo 0.76.2" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -145,19 +145,11 @@
 
     <section class="post-full-content">
         <div class="kg-card-markdown">
-        
-
-<p><strong>Завдання:</strong> знайти в каталозі sku із знаком &ldquo;-&rdquo; в кінці.</p>
-
+        <p><strong>Завдання:</strong> знайти в каталозі sku із знаком &ldquo;-&rdquo; в кінці.</p>
 <p>Для знаходження відповідних sku виконуємо запит в базу</p>
-
-<pre><code class="language-sql">SELECT sku FROM `catalog_product_entity` WHERE sku REGEXP &quot;-$&quot; = 1;
-</code></pre>
-
-<p><em>REGEXP</em> віддає 1 якщо значення відповідає регулярному виразу, інакше - 0.</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> sku <span style="color:#66d9ef">FROM</span> <span style="color:#f92672">`</span>catalog_product_entity<span style="color:#f92672">`</span> <span style="color:#66d9ef">WHERE</span> sku REGEXP <span style="color:#e6db74">&#34;-$&#34;</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</code></pre></div><p><em>REGEXP</em> віддає 1 якщо значення відповідає регулярному виразу, інакше - 0.</p>
 <h2 id="посилання">Посилання</h2>
-
 <ul>
 <li><a href="http://www.mysql.ru/docs/man/Regexp.html">http://www.mysql.ru/docs/man/Regexp.html</a></li>
 </ul>
@@ -221,13 +213,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/howto-install-telegram-debian-9/">Встановлення Telegram на Debian 9</a></li>            
+          <li><a href="https://bender.kr.ua/backup-with-tartarus/">Резервне копіювання і трохи грецької міфології</a></li>            
         
           <li><a href="https://bender.kr.ua/howto-install-rocketchat-debian-9/">Встановлення відкритого месенджера Rocket.Chat на Debian 9</a></li>            
         
-          <li><a href="https://bender.kr.ua/mint-19-and-epson-perfection-v33/">Mint 19 і сканер Epson Perfection V33</a></li>            
+          <li><a href="https://bender.kr.ua/nginx-pagespeed-openssl/">Як я готую NGINX з модулем PAGESPEED</a></li>            
         
-          <li><a href="https://bender.kr.ua/why-magento/">Чому ми обираємо Magento, а не інші системи</a></li>            
+          <li><a href="https://bender.kr.ua/5-extensions-for-default-magento2/">5 розширень, які ти зобов&#39;язаний поставити на Magento 2</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">

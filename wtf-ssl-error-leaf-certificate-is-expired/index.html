@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1485761954900-f9a29f318567?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.40.1" />
+    <meta name="generator" content="Hugo 0.76.2" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -145,18 +145,11 @@
 
     <section class="post-full-content">
         <div class="kg-card-markdown">
-        
-
-<p>Після оновлення сертифікату Let&rsquo;s Encrypt на поштовому сервері iRedMail в GMAIL перестав збирати пошту по протоколу POP3, помилка <strong><em>SSL error: Leaf certificate is expired</em></strong>.</p>
-
+        <p>Після оновлення сертифікату Let&rsquo;s Encrypt на поштовому сервері iRedMail в GMAIL перестав збирати пошту по протоколу POP3, помилка <em><strong>SSL error: Leaf certificate is expired</strong></em>.</p>
 <p>Перевірка на 995 порту <a href="https://www.digicert.com/help/">тут</a> показувала, що сертифікат не дійсний, а <a href="https://www.ssllabs.com/ssltest/index.html">тут</a> - що все ОК.</p>
-
 <p>Вирішення проблеми постфактум очевидне, але на пошуки був витрачений час.</p>
-
 <p>Отже, після оновлення сертифікатів треба перезавантажити не лише <em>nginx</em>, а й <em>dovecot</em>, що зроблено не було :(</p>
-
 <h2 id="посилання">Посилання</h2>
-
 <ul>
 <li><a href="https://docs.iredmail.org/letsencrypt.html">https://docs.iredmail.org/letsencrypt.html</a> - отримання на налаштування сертифікатів у iRedMail</li>
 <li><a href="https://www.digicert.com/help/">https://www.digicert.com/help/</a> - перевірка сертифікатів на довільних портах</li>
@@ -223,13 +216,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/backup-with-borg/">Про користь borg-ів</a></li>            
-        
-          <li><a href="https://bender.kr.ua/backup-with-tartarus/">Резервне копіювання і трохи грецької міфології</a></li>            
-        
-          <li><a href="https://bender.kr.ua/fail2ban-unban-ip/">Як розблокувати себе в fail2ban</a></li>            
+          <li><a href="https://bender.kr.ua/magento-2-modules-and-tools/">Модулі та інструменти для роботи з Magento 2 (оновлюється)</a></li>            
         
           <li><a href="https://bender.kr.ua/howto-asterisk-part-5/">IP-телефонія на базі Asterisk. Частина 5: Деталізований звіт про виклики (Call Detail Records, CDR)</a></li>            
+        
+          <li><a href="https://bender.kr.ua/puppeteer-with-authorization/">&#34;Прогрівання&#34; кешу для закритих частин сайту за допомогою Puppeteer</a></li>            
+        
+          <li><a href="https://bender.kr.ua/letsencrypt-and-ipv6/">Помилка при оновлені сертифікатів від Let&#39;s Encrypt</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">

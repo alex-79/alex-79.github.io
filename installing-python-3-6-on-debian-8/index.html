@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1553470861-71372491e886?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.40.1" />
+    <meta name="generator" content="Hugo 0.76.2" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -145,11 +145,11 @@
 
     <section class="post-full-content">
         <div class="kg-card-markdown">
-        <pre><code class="language-bash">#!/bin/sh
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/sh
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e"># python_install.sh</span>
 
-# python_install.sh
-
-PYTHON_VER=$1
+PYTHON_VER<span style="color:#f92672">=</span>$1
 
 cd /opt
 wget -c https://www.python.org/ftp/python/$PYTHON_VER/Python-$PYTHON_VER.tgz
@@ -160,23 +160,16 @@ cd Python-$PYTHON_VER
 
 ./configure --enable-optimizations
 
-make -j `nproc`
+make -j <span style="color:#e6db74">`</span>nproc<span style="color:#e6db74">`</span>
 make test
 make altinstall
-</code></pre>
-
-<p>Приклад встановлення:</p>
-
-<pre><code class="language-bash">./python_install.sh 3.6.6
-</code></pre>
-
-<pre><code class="language-bash">python3 -V
+</code></pre></div><p>Приклад встановлення:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./python_install.sh 3.6.6
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">python3 -V
 Python 3.4.2
 python3.6 -V
 Python 3.6.6
-</code></pre>
-
-<p>Джерело <a href="http://elliothallmark.com/2017/04/08/installing-python3-6-on-debian-jessie/">тут</a> і <a href="https://ru.stackoverflow.com/questions/619799/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BD%D0%B5%D0%B9-%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8-python-%D0%BD%D0%B0-debian">тут</a></p>
+</code></pre></div><p>Джерело <a href="http://elliothallmark.com/2017/04/08/installing-python3-6-on-debian-jessie/">тут</a> і <a href="https://ru.stackoverflow.com/questions/619799/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BD%D0%B5%D0%B9-%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8-python-%D0%BD%D0%B0-debian">тут</a></p>
     
         </div>
     </section>
@@ -237,13 +230,15 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/regexp-replace-in-mariadb/">Заміна даних в MariaDB</a></li>            
+                      
         
-          <li><a href="https://bender.kr.ua/review-neal-stephenson-in-the-beginning-was-the-command-line/">Ніл Стівенсон. Спочатку був командний рядок</a></li>            
+          <li><a href="https://bender.kr.ua/custom-logging-module-magento2/">Magento2: Як писати логи модуля в окремий файл?</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-asterisk-part-3/">IP-телефонія на базі Asterisk. Частина 3: Логіка обробки дзвінків (Dialplan)</a></li>            
+          <li><a href="https://bender.kr.ua/howto-asterisk-part-1/">IP-телефонія на базі Asterisk. Частина 1: Встановлення сервера Asterisk</a></li>            
         
-          <li><a href="https://bender.kr.ua/nginx-redirection-get-arg/">NGINX - 301-й редирект адрес з get-аргументами</a></li>            
+          <li><a href="https://bender.kr.ua/letsencrypt-and-ipv6/">Помилка при оновлені сертифікатів від Let&#39;s Encrypt</a></li>            
+        
+          <li><a href="https://bender.kr.ua/configurable-crontab-magento2/">Magento2: налаштування періодичних завдань власного модуля через адмін-панель</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">

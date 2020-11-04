@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1534137667199-675a46e143f3?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.40.1" />
+    <meta name="generator" content="Hugo 0.76.2" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -146,82 +146,77 @@
     <section class="post-full-content">
         <div class="kg-card-markdown">
         <p>Щоб писати логи модуля в окремий файл треба виконати наступні кроки:</p>
-
 <ol>
-<li><p>Сворюємо класи <strong>Logger.php</strong> та <strong>Hadler.php</strong></p>
+<li>
+<p>Сворюємо класи <strong>Logger.php</strong> та <strong>Hadler.php</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
 
-<pre><code class="language-php">&lt;?php
+<span style="color:#66d9ef">namespace</span> <span style="color:#a6e22e">VendorName\ModuleName\Model\Logger</span>;
 
-namespace VendorName\ModuleName\Model\Logger;
-
-class Logger extends \Monolog\Logger
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Logger</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">\Monolog\Logger</span>
 {
 
 }
-</code></pre>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
 
-<pre><code class="language-php">&lt;?php
+<span style="color:#66d9ef">namespace</span> <span style="color:#a6e22e">VendorName\ModuleName\Model\Logger</span>;
 
-namespace VendorName\ModuleName\Model\Logger;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Monolog\Logger</span>;
 
-use Monolog\Logger;
-
-class Handler extends \Magento\Framework\Logger\Handler\Base 
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Handler</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">\Magento\Framework\Logger\Handler\Base</span> 
 {
-    protected $loggerType = Logger::INFO;
-    protected $fileName = '/var/log/mymodule.log';
+    <span style="color:#66d9ef">protected</span> $loggerType <span style="color:#f92672">=</span> <span style="color:#a6e22e">Logger</span><span style="color:#f92672">::</span><span style="color:#a6e22e">INFO</span>;
+    <span style="color:#66d9ef">protected</span> $fileName <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/var/log/mymodule.log&#39;</span>;
 }
-</code></pre></li>
+</code></pre></div></li>
+<li>
+<p>Додаємо власний логер до конфігурації в <strong>di.xml</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34;?&gt;</span>
+<span style="color:#f92672">&lt;config</span> <span style="color:#a6e22e">xmlns:xsi=</span><span style="color:#e6db74">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span> <span style="color:#a6e22e">xsi:noNamespaceSchemaLocation=</span><span style="color:#e6db74">&#34;urn:magento:framework:ObjectManager/etc/config.xsd&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;type</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;VendorName\ModuleName\Model\Logger\Handler&#34;</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;arguments&gt;</span>
+            <span style="color:#f92672">&lt;argument</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;filesystem&#34;</span> <span style="color:#a6e22e">xsi:type=</span><span style="color:#e6db74">&#34;object&#34;</span><span style="color:#f92672">&gt;</span>Magento\Framework\Filesystem\Driver\File<span style="color:#f92672">&lt;/argument&gt;</span>
+        <span style="color:#f92672">&lt;/arguments&gt;</span>
+    <span style="color:#f92672">&lt;/type&gt;</span>
+    <span style="color:#f92672">&lt;type</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;VendorName\ModuleName\Model\Logger\Logger&#34;</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;arguments&gt;</span>
+            <span style="color:#f92672">&lt;argument</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#a6e22e">xsi:type=</span><span style="color:#e6db74">&#34;string&#34;</span><span style="color:#f92672">&gt;</span>MyLogger<span style="color:#f92672">&lt;/argument&gt;</span>
+            <span style="color:#f92672">&lt;argument</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;handlers&#34;</span>  <span style="color:#a6e22e">xsi:type=</span><span style="color:#e6db74">&#34;array&#34;</span><span style="color:#f92672">&gt;</span>
+                <span style="color:#f92672">&lt;item</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;system&#34;</span> <span style="color:#a6e22e">xsi:type=</span><span style="color:#e6db74">&#34;object&#34;</span><span style="color:#f92672">&gt;</span>VendorName\ModuleName\Model\Logger\Handler<span style="color:#f92672">&lt;/item&gt;</span>
+            <span style="color:#f92672">&lt;/argument&gt;</span>
+        <span style="color:#f92672">&lt;/arguments&gt;</span>
+    <span style="color:#f92672">&lt;/type&gt;</span>    
+<span style="color:#f92672">&lt;/config&gt;</span>
+</code></pre></div></li>
+<li>
+<p>Тепер можемо використати логер, наприклад так</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
 
-<li><p>Додаємо власний логер до конфігурації в <strong>di.xml</strong></p>
+<span style="color:#66d9ef">namespace</span> <span style="color:#a6e22e">VendorName\ModuleName\Controller\Index</span>;
 
-<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot;?&gt;
-&lt;config xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;&gt;
-    &lt;type name=&quot;VendorName\ModuleName\Model\Logger\Handler&quot;&gt;
-        &lt;arguments&gt;
-            &lt;argument name=&quot;filesystem&quot; xsi:type=&quot;object&quot;&gt;Magento\Framework\Filesystem\Driver\File&lt;/argument&gt;
-        &lt;/arguments&gt;
-    &lt;/type&gt;
-    &lt;type name=&quot;VendorName\ModuleName\Model\Logger\Logger&quot;&gt;
-        &lt;arguments&gt;
-            &lt;argument name=&quot;name&quot; xsi:type=&quot;string&quot;&gt;MyLogger&lt;/argument&gt;
-            &lt;argument name=&quot;handlers&quot;  xsi:type=&quot;array&quot;&gt;
-                &lt;item name=&quot;system&quot; xsi:type=&quot;object&quot;&gt;VendorName\ModuleName\Model\Logger\Handler&lt;/item&gt;
-            &lt;/argument&gt;
-        &lt;/arguments&gt;
-    &lt;/type&gt;    
-&lt;/config&gt;
-</code></pre></li>
-
-<li><p>Тепер можемо використати логер, наприклад так</p>
-
-<pre><code class="language-php">&lt;?php
-
-namespace VendorName\ModuleName\Controller\Index;
-
-class Test extends \Magento\Framework\App\Action\Action
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Test</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">\Magento\Framework\App\Action\Action</span>
 {
-    ...
-    protected $logger;
+    <span style="color:#f92672">...</span>
+    <span style="color:#66d9ef">protected</span> $logger;
 
-    public function __construct(
-        ...
-        \VendorName\ModuleName\Model\Logger\Logger $logger    
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> __construct(
+        <span style="color:#f92672">...</span>
+        <span style="color:#a6e22e">\VendorName\ModuleName\Model\Logger\Logger</span> $logger    
     ) {
-        ...
-        $this-&gt;logger = $logger;
+        <span style="color:#f92672">...</span>
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">logger</span> <span style="color:#f92672">=</span> $logger;
     }
 
-    public function execute()
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">execute</span>()
     {
-                
-        ...
-        $this-&gt;logger-&gt;info('my message');
-        ...
+               
+        <span style="color:#f92672">...</span>
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">logger</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">info</span>(<span style="color:#e6db74">&#39;my message&#39;</span>);
+        <span style="color:#f92672">...</span>
 
     }
 }
-</code></pre></li>
+</code></pre></div></li>
 </ol>
     
         </div>
@@ -283,13 +278,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/new-db-in-mysql/">Створення бази даних в MySQL</a></li>            
+          <li><a href="https://bender.kr.ua/failed-to-fetch-jessie-backports-repository/">Проблема з backports репозиторієм в Debian 8</a></li>            
         
-          <li><a href="https://bender.kr.ua/git-branch/">Як забрати гілку з git</a></li>            
+          <li><a href="https://bender.kr.ua/fix-conflict-keyboard-shortcuts/">Не працюють комбінації клавіш CTRL-SHIFT в Ubuntu</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-install-telegram-debian-9/">Встановлення Telegram на Debian 9</a></li>            
+          <li><a href="https://bender.kr.ua/regexp-replace-in-mariadb/">Заміна даних в MariaDB</a></li>            
         
-          <li><a href="https://bender.kr.ua/how-to-fix-elasticsearch-forbidden-12-index-read-only-allow-delete-api/">Проблема з переіндексацією catalogsearch_fulltext на Magento 2</a></li>            
+          <li><a href="https://bender.kr.ua/mysql-and-regexp/">Пошук в MySQL за допомогою регулярних виразів</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">

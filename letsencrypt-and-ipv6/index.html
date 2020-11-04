@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1532003885409-ed84d334f6cc?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.40.1" />
+    <meta name="generator" content="Hugo 0.76.2" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -146,25 +146,15 @@
     <section class="post-full-content">
         <div class="kg-card-markdown">
         <p>При оновлені сертифікату Let&rsquo;s Encrypt виникла помилка</p>
-
-<pre><code class="language-bash">Attempting to renew cert (example.com.ua) from /etc/letsencrypt/renewal/example.com.ua.conf produced an unexpected error: Failed authorization procedure. www.example.com.ua (http-01): urn:acme:error:unauthorized :: The client lacks sufficient authorization :: Invalid response from http://www.example.com.ua/.well-known/acme-challenge/BKPbQzerSwVSz9PrVcVqOoSX5MxDvF2lh5eOHVamgQ4
-</code></pre>
-
-<p>Перевірка доступності <a href="http://www.example.com.ua/.well-known/acme-challenge/BKPbQzerSwVSz9PrVcVqOoSX5MxDvF2lh5eOHVamgQ4">http://www.example.com.ua/.well-known/acme-challenge/BKPbQzerSwVSz9PrVcVqOoSX5MxDvF2lh5eOHVamgQ4</a> не виявила проблем. Let&rsquo;s Encrypt мав би верифікувати домен, але в нього була інша думка.</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Attempting to renew cert <span style="color:#f92672">(</span>example.com.ua<span style="color:#f92672">)</span> from /etc/letsencrypt/renewal/example.com.ua.conf produced an unexpected error: Failed authorization procedure. www.example.com.ua <span style="color:#f92672">(</span>http-01<span style="color:#f92672">)</span>: urn:acme:error:unauthorized :: The client lacks sufficient authorization :: Invalid response from http://www.example.com.ua/.well-known/acme-challenge/BKPbQzerSwVSz9PrVcVqOoSX5MxDvF2lh5eOHVamgQ4
+</code></pre></div><p>Перевірка доступності <a href="http://www.example.com.ua/.well-known/acme-challenge/BKPbQzerSwVSz9PrVcVqOoSX5MxDvF2lh5eOHVamgQ4">http://www.example.com.ua/.well-known/acme-challenge/BKPbQzerSwVSz9PrVcVqOoSX5MxDvF2lh5eOHVamgQ4</a> не виявила проблем. Let&rsquo;s Encrypt мав би верифікувати домен, але в нього була інша думка.</p>
 <p>Око зачепилося за <strong>AAAA</strong> у відповіді:</p>
-
 <pre><code>To fix these errors, please make sure that your domain name was
    entered correctly and the DNS A/AAAA record(s) for that domain
    contain(s) the right IP address.
-</code></pre>
-
-<p>Вирішив перевірити відповідь DNS</p>
-
-<pre><code class="language-bash">dig example.com.ua any
-</code></pre>
-
-<p>Там знайшов AAAA-записи, які вказували на вже не актуальну адресу. Вилучив їх і вуаля - все працює.</p>
+</code></pre><p>Вирішив перевірити відповідь DNS</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dig example.com.ua any
+</code></pre></div><p>Там знайшов AAAA-записи, які вказували на вже не актуальну адресу. Вилучив їх і вуаля - все працює.</p>
     
         </div>
     </section>
@@ -225,15 +215,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-                      
+          <li><a href="https://bender.kr.ua/how-to-fix-elasticsearch-forbidden-12-index-read-only-allow-delete-api/">Проблема з переіндексацією catalogsearch_fulltext на Magento 2</a></li>            
         
-          <li><a href="https://bender.kr.ua/magento-2-modules-and-tools/">Модулі та інструменти для роботи з Magento 2 (оновлюється)</a></li>            
+          <li><a href="https://bender.kr.ua/failed-to-fetch-jessie-backports-repository/">Проблема з backports репозиторієм в Debian 8</a></li>            
         
           <li><a href="https://bender.kr.ua/connie-willis-doomsday-book/">Конні Вілліс. Книга судного дня</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-hide-default-store-code-from-url-magento-2/">Як прибрати Store Code з URL для основного магазину в Magento 2</a></li>            
-        
-          <li><a href="https://bender.kr.ua/how-to-exclude-dump-tables/">Вибіркове завантаження таблиць дампа в MySQL</a></li>            
+          <li><a href="https://bender.kr.ua/mysql-tmp-table-in-tmpfs/">Тимчасові таблиці MySQL в tmpfs</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">

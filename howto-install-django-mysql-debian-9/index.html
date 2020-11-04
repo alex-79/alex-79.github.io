@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1538439907460-1596cafd4eff?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.40.1" />
+    <meta name="generator" content="Hugo 0.76.2" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -145,61 +145,48 @@
 
     <section class="post-full-content">
         <div class="kg-card-markdown">
-        
-
-<h1 id="встановлення-django">Встановлення Django</h1>
-
+        <h1 id="встановлення-django">Встановлення Django</h1>
 <ol>
-<li><p>Встановлюємо <em>Python</em> та додатковий інструментарій</p>
-
+<li>
+<p>Встановлюємо <em>Python</em> та додатковий інструментарій</p>
 <pre><code>apt install python3 python3-pip python3-venv
 </code></pre></li>
-
-<li><p>Створюємо папку для проекту та віртуальне середовище</p>
-
+<li>
+<p>Створюємо папку для проекту та віртуальне середовище</p>
 <pre><code>mkdir myproject
 cd myproject
 python3 -m venv venv
 source venv/bin/activate
 </code></pre></li>
-
-<li><p>Встановлюємо <em>Django</em> та перевыряємо встановлену версію</p>
-
+<li>
+<p>Встановлюємо <em>Django</em> та перевыряємо встановлену версію</p>
 <pre><code>python3 -m pip install Django
 python -m django --version
 </code></pre></li>
-
-<li><p>Створюємо новий проект</p>
-
+<li>
+<p>Створюємо новий проект</p>
 <pre><code>django-admin startproject myproject
 </code></pre></li>
 </ol>
-
-<h1 id="з-єднання-з-mysql">З&rsquo;єднання з MySQL</h1>
-
+<h1 id="зєднання-з-mysql">З&rsquo;єднання з MySQL</h1>
 <ol>
-<li><p>Встановлюємо <em>Percona Server</em></p>
-
+<li>
+<p>Встановлюємо <em>Percona Server</em></p>
 <pre><code>wget https://repo.percona.com/apt/percona-release_latest.$(lsb_release -sc)_all.deb
 dpkg -i percona-release_latest.$(lsb_release -sc)_all.deb
 apt update
 apt install percona-server-server-5.7
 </code></pre></li>
-
-<li><p>Створюємо базу данних</p>
-
+<li>
+<p>Створюємо базу данних</p>
 <pre><code>CREATE DATABASE test CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 GRANT ALL PRIVILEGES ON test.* TO 'test'@'localhost' IDENTIFIED BY 'password';
 FLUSH PRIVILEGES;
 </code></pre></li>
-
-<li><p>Встановлюємо mysqlclient</p>
-
+<li>
+<p>Встановлюємо mysqlclient</p>
 <pre><code>apt install libmysqlclient-dev
-</code></pre>
-
-<p>Для <em>percona-server</em> отримаємо наступне попередження</p>
-
+</code></pre><p>Для <em>percona-server</em> отримаємо наступне попередження</p>
 <pre><code>    Чтение списков пакетов… Готово
     Построение дерева зависимостей       
     Чтение информации о состоянии… Готово
@@ -210,18 +197,12 @@ FLUSH PRIVILEGES;
     Вы должны явно указать, какой именно вы хотите установить.
 
     E: Для пакета «libmysqlclient-dev» не найден кандидат на установку
-</code></pre>
-
-<p>Уважно читаємо та робимо вибір у відповідності до встановленої версії MySQL (в нашому випадку версія 5.7)</p>
-
+</code></pre><p>Уважно читаємо та робимо вибір у відповідності до встановленої версії MySQL (в нашому випадку версія 5.7)</p>
 <pre><code>apt install libperconaserverclient20-dev
-</code></pre>
-
-<pre><code>python3 -m pip install mysqlclient
+</code></pre><pre><code>python3 -m pip install mysqlclient
 </code></pre></li>
-
-<li><p>Редагуэмо файл <em>~/myproject/myproject/settings.py</em>:</p>
-
+<li>
+<p>Редагуэмо файл <em>~/myproject/myproject/settings.py</em>:</p>
 <pre><code>    DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
@@ -233,15 +214,12 @@ FLUSH PRIVILEGES;
         }
     }
 </code></pre></li>
-
-<li><p>Створюємо і застосовуємо міграції</p>
-
+<li>
+<p>Створюємо і застосовуємо міграції</p>
 <pre><code>python manage.py makemigrations
 cd myproject
 python3 manage.py migrate
-</code></pre>
-
-<pre><code>    Operations to perform:
+</code></pre><pre><code>    Operations to perform:
         Apply all migrations: admin, auth, contenttypes, sessions
     Running migrations:
         Applying contenttypes.0001_initial... OK
@@ -262,14 +240,12 @@ python3 manage.py migrate
         Applying auth.0011_update_proxy_permissions... OK
         Applying sessions.0001_initial... OK
 </code></pre></li>
-
-<li><p>Створюємо адміністратора</p>
-
+<li>
+<p>Створюємо адміністратора</p>
 <pre><code>python3 manage.py createsuperuser
 </code></pre></li>
-
-<li><p>Запускаємо сервер</p>
-
+<li>
+<p>Запускаємо сервер</p>
 <pre><code>python3 manage.py runserver
 </code></pre></li>
 </ol>
@@ -333,13 +309,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/df-and-du-show-different-values/">df і du показують різні значення</a></li>            
+          <li><a href="https://bender.kr.ua/howto-hide-default-store-code-from-url-magento-2/">Як прибрати Store Code з URL для основного магазину в Magento 2</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-asterisk-part-5/">IP-телефонія на базі Asterisk. Частина 5: Деталізований звіт про виклики (Call Detail Records, CDR)</a></li>            
+          <li><a href="https://bender.kr.ua/magick-248/">Магічне число 248 або Чому я не можу додати значення атрибута в Magento 2?</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-asterisk-part-2/">IP-телефонія на базі Asterisk. Частина 2: Налаштування SIP</a></li>            
+          <li><a href="https://bender.kr.ua/magento2-reindexer-for-large-catalog/">Проблема переіндексації великого каталогу в Magento 2</a></li>            
         
-          <li><a href="https://bender.kr.ua/fix-conflict-keyboard-shortcuts/">Не працюють комбінації клавіш CTRL-SHIFT в Ubuntu</a></li>            
+          <li><a href="https://bender.kr.ua/magento-2-reindex-parallel/">Паралельна індексація в Magento 2</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">

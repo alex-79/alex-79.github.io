@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1508455858334-95337ba25607?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.40.1" />
+    <meta name="generator" content="Hugo 0.76.2" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -145,41 +145,20 @@
 
     <section class="post-full-content">
         <div class="kg-card-markdown">
-        
-
-<p>Якщо ви користуєтесь Debian 8, то могли помітити проблему з репозиторієм <strong>jessie-backports</strong> при оновлені.</p>
-
+        <p>Якщо ви користуєтесь Debian 8, то могли помітити проблему з репозиторієм <strong>jessie-backports</strong> при оновлені.</p>
 <pre><code>W: Failed to fetch http://ftp.debian.org/debian/dists/jessie-backports/main/binary-amd64/Packages 404 Not Found [IP: 130.89.148.12 80]
-</code></pre>
-
-<p>Причина в тому, що 8-ма версія офіційно більше не підтримується і репозиторій переїхав в архів.</p>
-
+</code></pre><p>Причина в тому, що 8-ма версія офіційно більше не підтримується і репозиторій переїхав в архів.</p>
 <p>Змінимо адресу в <em>/etc/apt/source.list</em> на:</p>
-
 <pre><code>deb http://archive.debian.org/debian jessie-backports main
-</code></pre>
-
-<p>При оновлені отримуємо натяк, що ми все одно слоупоки і треба таки оновити систему:</p>
-
+</code></pre><p>При оновлені отримуємо натяк, що ми все одно слоупоки і треба таки оновити систему:</p>
 <pre><code>E: Release file for http://archive.debian.org/debian/dists/jessie-backports/InRelease is expired (invalid since 34d 12h 43min 16s). Updates for this repository will not be applied.
-</code></pre>
-
-<p>Натяк зрозумілий, але &hellip; Забиваємо на валідацію:</p>
-
+</code></pre><p>Натяк зрозумілий, але &hellip; Забиваємо на валідацію:</p>
 <pre><code>echo 'Acquire::Check-Valid-Until no;' &gt; /etc/apt/apt.conf.d/99no-check-valid-until
-</code></pre>
-
-<p>Тепер можна оновлюватись</p>
-
+</code></pre><p>Тепер можна оновлюватись</p>
 <pre><code>apt-get update
-</code></pre>
-
-<p>Ю-х-у-у-у-у-у, все працює!!!</p>
-
+</code></pre><p>Ю-х-у-у-у-у-у, все працює!!!</p>
 <p>Ну а насправді, треба оновлювати систему до Debian 10 ;)</p>
-
 <h3 id="посилання">Посилання</h3>
-
 <ul>
 <li><a href="https://www.lucas-nussbaum.net/blog/?p=947">https://www.lucas-nussbaum.net/blog/?p=947</a></li>
 </ul>
@@ -243,13 +222,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/wtf-ssl-error-leaf-certificate-is-expired/">Після оновлення сертифікату на поштовому сервері в GMAIL не працює POP3</a></li>            
+          <li><a href="https://bender.kr.ua/howto-remove-parent-category-from-url-magento-2/">Вилучення ієрархії категорій з URL в Magento 2</a></li>            
         
-          <li><a href="https://bender.kr.ua/nginx-pagespeed-openssl/">Як я готую NGINX з модулем PAGESPEED</a></li>            
+          <li><a href="https://bender.kr.ua/netbeans-and-fonts/">NetBeans і проблема зі шрифтами</a></li>            
         
-          <li><a href="https://bender.kr.ua/how-to-fix-elasticsearch-forbidden-12-index-read-only-allow-delete-api/">Проблема з переіндексацією catalogsearch_fulltext на Magento 2</a></li>            
+          <li><a href="https://bender.kr.ua/iptables-ipset/">Блокування трафіку за допомогою iptables та ipset</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-certbot-nginx-debian/">Отримання SSL-сертифікату для Nginx на Debian 9</a></li>            
+          <li><a href="https://bender.kr.ua/magick-248/">Магічне число 248 або Чому я не можу додати значення атрибута в Magento 2?</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">

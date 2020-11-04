@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1474546652694-a33dd8161d66?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.40.1" />
+    <meta name="generator" content="Hugo 0.76.2" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -145,37 +145,22 @@
 
     <section class="post-full-content">
         <div class="kg-card-markdown">
-        
-
-<p>З версії Magento 2.2.6 є можливість розпаралелити процес індексації. Зробити це доволі просто.</p>
-
-<p>В паралельному режимі можна індексувати:
-* Пошуковий індекс (Catalog Search Fulltext) на рівні магазину
-* Категорії (Category Product) на рівні магазину
-* Ціни (Product Price) на рівні веб-сайту (<em>website</em>), групи покупців (<em>customer_group</em>), веб-сайту та групи (<em>website_and_customer_group</em>). За замовчуванням індексування ціни каталогу не використовує багатопоточність і знаходиться в режимі <em>none</em>.</p>
-
+        <p>З версії Magento 2.2.6 є можливість розпаралелити процес індексації. Зробити це доволі просто.</p>
+<p>В паралельному режимі можна індексувати:</p>
+<ul>
+<li>Пошуковий індекс (Catalog Search Fulltext) на рівні магазину</li>
+<li>Категорії (Category Product) на рівні магазину</li>
+<li>Ціни (Product Price) на рівні веб-сайту (<em>website</em>), групи покупців (<em>customer_group</em>), веб-сайту та групи (<em>website_and_customer_group</em>). За замовчуванням індексування ціни каталогу не використовує багатопоточність і знаходиться в режимі <em>none</em>.</li>
+</ul>
 <p>Щоб встановити один з режимів, треба виконати команду</p>
-
 <pre><code>php bin/magento indexer:set-dimensions-mode [&lt;indexer&gt;] [&lt;mode&gt;] 
-</code></pre>
-
-<p>наприклад</p>
-
+</code></pre><p>наприклад</p>
 <pre><code>php bin/magento indexer:set-dimensions-mode catalog_product_price customer_group
-</code></pre>
-
-<p>Перевірити поточний режим</p>
-
+</code></pre><p>Перевірити поточний режим</p>
 <pre><code>php bin/magento indexer:show-dimensions-mode
-</code></pre>
-
-<p>Кількість потоків задається змінною MAGE_INDEXER_THREADS_COUNT у файлі env.php</p>
-
+</code></pre><p>Кількість потоків задається змінною MAGE_INDEXER_THREADS_COUNT у файлі env.php</p>
 <pre><code>'MAGE_INDEXER_THREADS_COUNT' =&gt; 3
-</code></pre>
-
-<h2 id="посилання">Посилання</h2>
-
+</code></pre><h2 id="посилання">Посилання</h2>
 <ul>
 <li><a href="https://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex-parallel">https://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex-parallel</a></li>
 <li><a href="https://community.magento.com/t5/Magento-DevBlog/Indexers-parallelization-and-optimization/ba-p/104922">https://community.magento.com/t5/Magento-DevBlog/Indexers-parallelization-and-optimization/ba-p/104922</a></li>
@@ -240,13 +225,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/nginx-pagespeed-openssl/">Як я готую NGINX з модулем PAGESPEED</a></li>            
+          <li><a href="https://bender.kr.ua/howto-install-rocketchat-debian-9/">Встановлення відкритого месенджера Rocket.Chat на Debian 9</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-asterisk-part-4/">IP-телефонія на базі Asterisk. Частина 4: Голосове меню</a></li>            
+          <li><a href="https://bender.kr.ua/netbeans-and-fonts/">NetBeans і проблема зі шрифтами</a></li>            
         
-          <li><a href="https://bender.kr.ua/nginx-geoip/">Блокування трафіку з окремих країн за допомогою Nginx та GeoIP</a></li>            
+          <li><a href="https://bender.kr.ua/magick-248/">Магічне число 248 або Чому я не можу додати значення атрибута в Magento 2?</a></li>            
         
-          <li><a href="https://bender.kr.ua/mysql-and-regexp/">Пошук в MySQL за допомогою регулярних виразів</a></li>            
+          <li><a href="https://bender.kr.ua/mining-karbowanec/">Як я місяць майнив криптовалюту за допомогою ноутбуку, навіщо мені це та що з того вийшло</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">

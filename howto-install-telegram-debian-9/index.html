@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.40.1" />
+    <meta name="generator" content="Hugo 0.76.2" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -145,40 +145,27 @@
 
     <section class="post-full-content">
         <div class="kg-card-markdown">
-        
-
-<p>Для встановлення <strong>Telegram</strong> на Debian 9 можна скористатись <em>Ubuntu PPA</em>. Для цього виконаємо наступну послідовність:</p>
-
+        <p>Для встановлення <strong>Telegram</strong> на Debian 9 можна скористатись <em>Ubuntu PPA</em>. Для цього виконаємо наступну послідовність:</p>
 <ol>
-<li><p>Додаємо репозиторій в <em>/etc/apt/source.list.d/telegram.list</em></p>
-
+<li>Додаємо репозиторій в <em>/etc/apt/source.list.d/telegram.list</em></li>
+</ol>
 <pre><code>deb http://ppa.launchpad.net/atareao/telegram/ubuntu xenial main
 deb-src http://ppa.launchpad.net/atareao/telegram/ubuntu xenial main
-</code></pre></li>
-
-<li><p>Додаємо в систему відкритий ключ PGP до цього PPA</p>
-
-<pre><code>apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 36FD5529
-</code></pre>
-
-<p>За необхідності встановлюємо <em>dirmngr</em></p>
-
-<pre><code>apt install dirmngr
-</code></pre></li>
-
-<li><p>Оновлюємо список пакетів</p>
-
-<pre><code>apt update
-</code></pre></li>
-
-<li><p>Встановлюємо Telegram</p>
-
-<pre><code>apt install telegram
-</code></pre></li>
+</code></pre><ol start="2">
+<li>Додаємо в систему відкритий ключ PGP до цього PPA</li>
 </ol>
-
-<h2 id="посилання">Посилання</h2>
-
+<pre><code>apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 36FD5529
+</code></pre><p>За необхідності встановлюємо <em>dirmngr</em></p>
+<pre><code>apt install dirmngr
+</code></pre><ol start="3">
+<li>Оновлюємо список пакетів</li>
+</ol>
+<pre><code>apt update
+</code></pre><ol start="4">
+<li>Встановлюємо Telegram</li>
+</ol>
+<pre><code>apt install telegram
+</code></pre><h2 id="посилання">Посилання</h2>
 <ul>
 <li><a href="https://www.linuxbabe.com/debian/3-ways-install-telegram-messenger-debian-9-stretch">https://www.linuxbabe.com/debian/3-ways-install-telegram-messenger-debian-9-stretch</a></li>
 </ul>
@@ -242,13 +229,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/howto-asterisk-part-2/">IP-телефонія на базі Asterisk. Частина 2: Налаштування SIP</a></li>            
+          <li><a href="https://bender.kr.ua/upgrade-magento-232/">Оновлення Magento до версії 2.3.2</a></li>            
         
-          <li><a href="https://bender.kr.ua/mysql-tmp-table-in-tmpfs/">Тимчасові таблиці MySQL в tmpfs</a></li>            
+          <li><a href="https://bender.kr.ua/how-to-fix-elasticsearch-forbidden-12-index-read-only-allow-delete-api/">Проблема з переіндексацією catalogsearch_fulltext на Magento 2</a></li>            
         
-          <li><a href="https://bender.kr.ua/df-and-du-show-different-values/">df і du показують різні значення</a></li>            
+          <li><a href="https://bender.kr.ua/howto-asterisk-part-1/">IP-телефонія на базі Asterisk. Частина 1: Встановлення сервера Asterisk</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-install-django-mysql-debian-9/">Встановлення зв&#39;язки Django та MySQL на Debian 9</a></li>            
+          <li><a href="https://bender.kr.ua/howto-asterisk-part-3/">IP-телефонія на базі Asterisk. Частина 3: Логіка обробки дзвінків (Dialplan)</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">

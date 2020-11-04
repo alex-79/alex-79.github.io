@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on </title>
@@ -6,22 +6,9 @@
     <description>Recent content in Categories on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>uk</language>
-    <lastBuildDate>Mon, 06 Jan 2020 02:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://bender.kr.ua/categories/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 07 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://bender.kr.ua/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Books</title>
-      <link>https://bender.kr.ua/categories/books/</link>
-      <pubDate>Mon, 06 Jan 2020 02:00:00 +0000</pubDate>
-      
-      <guid>https://bender.kr.ua/categories/books/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Js</title>
+      <title>js</title>
       <link>https://bender.kr.ua/categories/js/</link>
       <pubDate>Mon, 07 Sep 2020 00:00:00 +0000</pubDate>
       
@@ -30,11 +17,20 @@
     </item>
     
     <item>
-      <title>Linux</title>
+      <title>linux</title>
       <link>https://bender.kr.ua/categories/linux/</link>
       <pubDate>Mon, 07 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://bender.kr.ua/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web</title>
+      <link>https://bender.kr.ua/categories/web/</link>
+      <pubDate>Mon, 07 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://bender.kr.ua/categories/web/</guid>
       <description></description>
     </item>
     
@@ -48,7 +44,7 @@
     </item>
     
     <item>
-      <title>Mysql</title>
+      <title>mysql</title>
       <link>https://bender.kr.ua/categories/mysql/</link>
       <pubDate>Mon, 17 Feb 2020 02:00:00 +0000</pubDate>
       
@@ -57,16 +53,7 @@
     </item>
     
     <item>
-      <title>Php</title>
-      <link>https://bender.kr.ua/categories/php/</link>
-      <pubDate>Wed, 06 Nov 2019 02:00:00 +0000</pubDate>
-      
-      <guid>https://bender.kr.ua/categories/php/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
+      <title>python</title>
       <link>https://bender.kr.ua/categories/python/</link>
       <pubDate>Mon, 17 Feb 2020 02:00:00 +0000</pubDate>
       
@@ -75,11 +62,20 @@
     </item>
     
     <item>
-      <title>Web</title>
-      <link>https://bender.kr.ua/categories/web/</link>
-      <pubDate>Mon, 07 Sep 2020 00:00:00 +0000</pubDate>
+      <title>books</title>
+      <link>https://bender.kr.ua/categories/books/</link>
+      <pubDate>Mon, 06 Jan 2020 02:00:00 +0000</pubDate>
       
-      <guid>https://bender.kr.ua/categories/web/</guid>
+      <guid>https://bender.kr.ua/categories/books/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>php</title>
+      <link>https://bender.kr.ua/categories/php/</link>
+      <pubDate>Wed, 06 Nov 2019 02:00:00 +0000</pubDate>
+      
+      <guid>https://bender.kr.ua/categories/php/</guid>
       <description></description>
     </item>
     

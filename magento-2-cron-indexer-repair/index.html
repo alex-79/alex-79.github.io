@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1562259929-b4e1fd3aef09?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.40.1" />
+    <meta name="generator" content="Hugo 0.76.2" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -146,23 +146,19 @@
     <section class="post-full-content">
         <div class="kg-card-markdown">
         <p>Іноді, за нез&rsquo;ясованих поки обставин, в Magento 2 ламаєть виконання переіндексації за розкладом. В логах це виглядає як <em>main.WARNING: Could not acquire lock for cron group: index, skipping run</em>.</p>
-
 <p>Щоб &ldquo;поремонтувати&rdquo; крон необхідно:</p>
-
 <ol>
-<li><p>Знайти та вбити процес який відповідає за запуск завдань в Magento 2: <em>php bin/magento cron:run &ndash;group=index &ndash;bootstrap=standaloneProcessStarted=1</em></p>
-
+<li>
+<p>Знайти та вбити процес який відповідає за запуск завдань в Magento 2: <em>php bin/magento cron:run &ndash;group=index &ndash;bootstrap=standaloneProcessStarted=1</em></p>
 <pre><code>ps ufx | grep cron
 kill XXXX
 </code></pre></li>
-
-<li><p>Очистити таблицю <em>cron_schedule</em></p>
-
+<li>
+<p>Очистити таблицю <em>cron_schedule</em></p>
 <pre><code>DELETE FROM `cron_schedule`;
 </code></pre></li>
-
-<li><p>Очистити кеш Magento</p>
-
+<li>
+<p>Очистити кеш Magento</p>
 <pre><code>php bin/magento cache:flush
 </code></pre></li>
 </ol>
@@ -226,13 +222,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/howto-asterisk-part-5/">IP-телефонія на базі Asterisk. Частина 5: Деталізований звіт про виклики (Call Detail Records, CDR)</a></li>            
-        
-          <li><a href="https://bender.kr.ua/regexp-replace-in-mariadb/">Заміна даних в MariaDB</a></li>            
-        
-          <li><a href="https://bender.kr.ua/howto-lemp-install/">Встановлення Nginx &#43; PHP &#43; MySQL на Debian 9</a></li>            
+          <li><a href="https://bender.kr.ua/howto-asterisk-part-4/">IP-телефонія на базі Asterisk. Частина 4: Голосове меню</a></li>            
         
           <li><a href="https://bender.kr.ua/5-extensions-for-default-magento2/">5 розширень, які ти зобов&#39;язаний поставити на Magento 2</a></li>            
+        
+          <li><a href="https://bender.kr.ua/howto-asterisk-part-2/">IP-телефонія на базі Asterisk. Частина 2: Налаштування SIP</a></li>            
+        
+          <li><a href="https://bender.kr.ua/mint-19-and-epson-perfection-v33/">Mint 19 і сканер Epson Perfection V33</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">

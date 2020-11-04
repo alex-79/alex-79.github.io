@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.40.1" />
+    <meta name="generator" content="Hugo 0.76.2" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -145,91 +145,47 @@
 
     <section class="post-full-content">
         <div class="kg-card-markdown">
-        
-
-<p>Простий спосіб отримати безкоштовний SSL-сертифікат з оцінкою A+ для Nginx на Debian 9</p>
-
+        <p>Простий спосіб отримати безкоштовний SSL-сертифікат з оцінкою A+ для Nginx на Debian 9</p>
 <p>Спочатку додаємо репозиторій stretch-backports</p>
-
 <pre><code>add-apt-repository 'deb http://deb.debian.org/debian stretch-backports main'
 apt-get update
-</code></pre>
-
-<p>Встановлюємо утиліту для автоматичного отримання та оновлення сертифікатів <strong>certbot</strong></p>
-
+</code></pre><p>Встановлюємо утиліту для автоматичного отримання та оновлення сертифікатів <strong>certbot</strong></p>
 <pre><code>apt-get install certbot python-certbot-nginx -t stretch-backports
-</code></pre>
-
-<p>В конфігураційному файлі для нашого сайту надаємо certbot-у доступ до необхідної йому директорії</p>
-
+</code></pre><p>В конфігураційному файлі для нашого сайту надаємо certbot-у доступ до необхідної йому директорії</p>
 <pre><code># Let’s Encrypt
 location ~ /.well-known {
     allow all;
 }
-</code></pre>
-
-<p>та перечитуємо конфігурацію nginx</p>
-
+</code></pre><p>та перечитуємо конфігурацію nginx</p>
 <pre><code>nginx -t
 nginx -s reload
-</code></pre>
-
-<p>Отримуємо сертифікати</p>
-
+</code></pre><p>Отримуємо сертифікати</p>
 <pre><code>certbot --nginx
-</code></pre>
-
-<p>Відповідаємо на питання бота, дозволяємо внести зміни в конфігурацію nginx і вуаля )))</p>
-
+</code></pre><p>Відповідаємо на питання бота, дозволяємо внести зміни в конфігурацію nginx і вуаля )))</p>
 <p>На останок certbot пропонує перевірити сертифікати за посиланням <a href="https://www.ssllabs.com/ssltest/analyze.html?d=sample.bender.kr.ua">https://www.ssllabs.com/ssltest/analyze.html?d=sample.bender.kr.ua</a></p>
-
-<p><img src="/img/howto-certbot-nginx-debian-1.png" alt="howto-certbot-nginx-debian-1" /></p>
-
+<p><img src="/img/howto-certbot-nginx-debian-1.png" alt="howto-certbot-nginx-debian-1"></p>
 <p>Добре, але можна краще.</p>
-
 <p>Поглянемо які налаштування додав certbot в конфіг сайту.</p>
-
 <pre><code>include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
 ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
-</code></pre>
-
-<p>Згенеруємо новий 4096 бітний ключ</p>
-
+</code></pre><p>Згенеруємо новий 4096 бітний ключ</p>
 <pre><code>openssl dhparam -out /etc/letsencrypt/ssl-dhparams-4096.pem 4096
-</code></pre>
-
-<p>та поміняємо налаштування</p>
-
+</code></pre><p>та поміняємо налаштування</p>
 <pre><code>ssl_dhparam /etc/letsencrypt/ssl-dhparams-4096.pem; # managed by Certbot
-</code></pre>
-
-<p>Поки генерується ключ (а процес це доволі довгий), внесемо зміни в options-ssl-nginx.conf.</p>
-
+</code></pre><p>Поки генерується ключ (а процес це доволі довгий), внесемо зміни в options-ssl-nginx.conf.</p>
 <p>Кешуємо відповіді з ЦА, який видав сертифікат. В якості резолвера вказуємо Google DNS.</p>
-
 <pre><code>ssl_stapling on;
 ssl_stapling_verify on;
 resolver 8.8.8.8 8.8.4.4 valid=300s;
 resolver_timeout 10s;
-</code></pre>
-
-<p>Встановлюємо заголовок HTTP Strict Transport Security (HSTS).</p>
-
+</code></pre><p>Встановлюємо заголовок HTTP Strict Transport Security (HSTS).</p>
 <pre><code>add_header Strict-Transport-Security &quot;max-age=31536000;&quot;;
-</code></pre>
-
-<p>Перечитуємо конфігурацію Nginx і перевіряємо сертифікат</p>
-
+</code></pre><p>Перечитуємо конфігурацію Nginx і перевіряємо сертифікат</p>
 <pre><code>nginx -t
 nginx -s reload
-</code></pre>
-
-<p><img src="/img/howto-certbot-nginx-debian-2.png" alt="howto-certbot-nginx-debian-2" /></p>
-
+</code></pre><p><img src="/img/howto-certbot-nginx-debian-2.png" alt="howto-certbot-nginx-debian-2"></p>
 <p>Юх-у-у-у-у!!!</p>
-
 <h2 id="посилання">Посилання</h2>
-
 <ul>
 <li><a href="https://certbot.eff.org/lets-encrypt/debianstretch-nginx">https://certbot.eff.org/lets-encrypt/debianstretch-nginx</a></li>
 <li><a href="https://www.ssllabs.com/ssltest/index.html">https://www.ssllabs.com/ssltest/index.html</a></li>
@@ -294,13 +250,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/mint-19-and-epson-perfection-v33/">Mint 19 і сканер Epson Perfection V33</a></li>            
+          <li><a href="https://bender.kr.ua/puppeteer-with-authorization/">&#34;Прогрівання&#34; кешу для закритих частин сайту за допомогою Puppeteer</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-install-magento2-cli/">Встановлення Magento 2 з командного рядка</a></li>            
+          <li><a href="https://bender.kr.ua/mysql-tmp-table-in-tmpfs/">Тимчасові таблиці MySQL в tmpfs</a></li>            
         
-          <li><a href="https://bender.kr.ua/magento-payment-plugin-for-bitpay/">Рубимо електронні гроші в Magento</a></li>            
+          <li><a href="https://bender.kr.ua/howto-install-telegram-debian-9/">Встановлення Telegram на Debian 9</a></li>            
         
-          <li><a href="https://bender.kr.ua/cli-upgrade-magento2/">Оновлення Magento 2</a></li>            
+          <li><a href="https://bender.kr.ua/configurable-crontab-magento2/">Magento2: налаштування періодичних завдань власного модуля через адмін-панель</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">

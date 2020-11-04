@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.40.1" />
+    <meta name="generator" content="Hugo 0.76.2" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -145,118 +145,78 @@
 
     <section class="post-full-content">
         <div class="kg-card-markdown">
-        
-
-<p>Покрокова інструкція по встановленню і запуску зв&rsquo;язки LEMP (Linux + Nginx + MySQL + PHP).</p>
-
+        <p>Покрокова інструкція по встановленню і запуску зв&rsquo;язки LEMP (Linux + Nginx + MySQL + PHP).</p>
 <h3 id="1-оновлення-системи">1. Оновлення системи</h3>
-
 <p>Оновлюємо версії ПЗ до актуального стану</p>
-
-<pre><code class="language-bash">apt-get update
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt-get update
 apt-get upgrade
-</code></pre>
-
-<h3 id="2-налаштування-захисту">2. Налаштування захисту</h3>
-
-<h4 id="2-1-iptables">2.1 iptables</h4>
-
-<p>Спочатку встановлюю <strong><em>mc</em></strong>. Для тих у кого в цей момент засвербіло <em>&ldquo;mc - для лохів, vim - наше всьо, nano рулить&rdquo;</em> - поцілуйте мій блискучий металевий зад (С).</p>
-
-<pre><code class="language-bash">apt-get install mc
+</code></pre></div><h3 id="2-налаштування-захисту">2. Налаштування захисту</h3>
+<h4 id="21-iptables">2.1 iptables</h4>
+<p>Спочатку встановлюю <em><strong>mc</strong></em>. Для тих у кого в цей момент засвербіло <em>&ldquo;mc - для лохів, vim - наше всьо, nano рулить&rdquo;</em> - поцілуйте мій блискучий металевий зад (С).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt-get install mc
 update-alternatives --config editor
-</code></pre>
+</code></pre></div><p>Створюємо правила файервола</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">editor /etc/iptables.up.rules
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">*filter
 
-<p>Створюємо правила файервола</p>
-
-<pre><code class="language-bash">editor /etc/iptables.up.rules
-</code></pre>
-
-<pre><code class="language-bash">*filter
-
-# Allows all loopback (lo0) traffic and drop all traffic to 127/8 that doesn't use lo0
+<span style="color:#75715e"># Allows all loopback (lo0) traffic and drop all traffic to 127/8 that doesn&#39;t use lo0</span>
 -A INPUT -i lo -j ACCEPT
 -A INPUT ! -i lo -d 127.0.0.0/8 -j REJECT
 
-# Accepts all established inbound connections
+<span style="color:#75715e"># Accepts all established inbound connections</span>
 -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 
-# Allows all outbound traffic
-# You could modify this to only allow certain traffic
+<span style="color:#75715e"># Allows all outbound traffic</span>
+<span style="color:#75715e"># You could modify this to only allow certain traffic</span>
 -A OUTPUT -j ACCEPT
 
-# Allows HTTP and HTTPS connections from anywhere (the normal ports for websites)
--A INPUT -p tcp --dport 80 -j ACCEPT
--A INPUT -p tcp --dport 443 -j ACCEPT
+<span style="color:#75715e"># Allows HTTP and HTTPS connections from anywhere (the normal ports for websites)</span>
+-A INPUT -p tcp --dport <span style="color:#ae81ff">80</span> -j ACCEPT
+-A INPUT -p tcp --dport <span style="color:#ae81ff">443</span> -j ACCEPT
 
-# Allows SSH connections 
-# The --dport number is the same as in /etc/ssh/sshd_config
--A INPUT -p tcp -m state --state NEW --dport 22 -j ACCEPT
+<span style="color:#75715e"># Allows SSH connections </span>
+<span style="color:#75715e"># The --dport number is the same as in /etc/ssh/sshd_config</span>
+-A INPUT -p tcp -m state --state NEW --dport <span style="color:#ae81ff">22</span> -j ACCEPT
 
-# Now you should read up on iptables rules and consider whether ssh access 
-# for everyone is really desired. Most likely you will only allow access from certain IPs.
+<span style="color:#75715e"># Now you should read up on iptables rules and consider whether ssh access </span>
+<span style="color:#75715e"># for everyone is really desired. Most likely you will only allow access from certain IPs.</span>
 
-# Allow ping
-#  note that blocking other types of icmp packets is considered a bad idea by some
-#  remove -m icmp --icmp-type 8 from this line to allow all kinds of icmp:
-#  https://security.stackexchange.com/questions/22711
--A INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT
+<span style="color:#75715e"># Allow ping</span>
+<span style="color:#75715e">#  note that blocking other types of icmp packets is considered a bad idea by some</span>
+<span style="color:#75715e">#  remove -m icmp --icmp-type 8 from this line to allow all kinds of icmp:</span>
+<span style="color:#75715e">#  https://security.stackexchange.com/questions/22711</span>
+-A INPUT -p icmp -m icmp --icmp-type <span style="color:#ae81ff">8</span> -j ACCEPT
 
-# log iptables denied calls (access via 'dmesg' command)
--A INPUT -m limit --limit 5/min -j LOG --log-prefix &quot;iptables denied: &quot; --log-level 7
+<span style="color:#75715e"># log iptables denied calls (access via &#39;dmesg&#39; command)</span>
+-A INPUT -m limit --limit 5/min -j LOG --log-prefix <span style="color:#e6db74">&#34;iptables denied: &#34;</span> --log-level <span style="color:#ae81ff">7</span>
 
-# Reject all other inbound - default deny unless explicitly allowed policy:
+<span style="color:#75715e"># Reject all other inbound - default deny unless explicitly allowed policy:</span>
 -A INPUT -j REJECT
 -A FORWARD -j REJECT
 
 COMMIT
 
-</code></pre>
-
-<p><strong>Увага!!!</strong> Після <em>COMMIT</em> один порожній рядок.</p>
-
+</code></pre></div><p><strong>Увага!!!</strong> Після <em>COMMIT</em> один порожній рядок.</p>
 <p>Завантажуємо правила</p>
-
-<pre><code class="language-bash">iptables-restore &lt; /etc/iptables.up.rules
-</code></pre>
-
-<p>Додаємо правила в автозавантаження</p>
-
-<pre><code class="language-bash">editor /etc/network/if-pre-up.d/iptables
-</code></pre>
-
-<pre><code class="language-bash">#!/bin/sh
-/sbin/iptables-restore &lt; /etc/iptables.up.rules
-</code></pre>
-
-<pre><code class="language-bash">chmod +x /etc/network/if-pre-up.d/iptables
-</code></pre>
-
-<p>Джерело <a href="https://wiki.debian.org/iptables">тут</a></p>
-
-<h4 id="2-2-fail2ban">2.2 fail2ban</h4>
-
-<pre><code class="language-bash">apt-get install fail2ban
-</code></pre>
-
-<pre><code class="language-bash">cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">iptables-restore &lt; /etc/iptables.up.rules
+</code></pre></div><p>Додаємо правила в автозавантаження</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">editor /etc/network/if-pre-up.d/iptables
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/sh
+</span><span style="color:#75715e"></span>/sbin/iptables-restore &lt; /etc/iptables.up.rules
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">chmod +x /etc/network/if-pre-up.d/iptables
+</code></pre></div><p>Джерело <a href="https://wiki.debian.org/iptables">тут</a></p>
+<h4 id="22-fail2ban">2.2 fail2ban</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt-get install fail2ban
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
 editor /etc/fail2ban/jail.local
-</code></pre>
-
-<pre><code class="language-bash">[DEFAULT]
-ignoreip = 127.0.0.1
-bantime  = 3600 
-findtime = 600
-maxretry = 3
-</code></pre>
-
-<pre><code class="language-bash">service fail2ban restart
-</code></pre>
-
-<h3 id="3-nginx">3. Nginx</h3>
-
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>DEFAULT<span style="color:#f92672">]</span>
+ignoreip <span style="color:#f92672">=</span> 127.0.0.1
+bantime  <span style="color:#f92672">=</span> <span style="color:#ae81ff">3600</span> 
+findtime <span style="color:#f92672">=</span> <span style="color:#ae81ff">600</span>
+maxretry <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">service fail2ban restart
+</code></pre></div><h3 id="3-nginx">3. Nginx</h3>
 <p>Збираємо nginx з модулем pagespeed, brotli та останньою версією openssl:</p>
-
 <pre><code>#!/bin/sh
 
 apt-get install build-essential ca-certificates zlib1g-dev libpcre3 libpcre3-dev tar unzip libssl-dev checkinstall git uuid-dev libgeoip-dev
@@ -350,27 +310,19 @@ mkdir -p /var/cache/nginx
 mkdir -p /var/log/nginx
 
 systemctl enable nginx.service
-</code></pre>
-
-<h3 id="4-php-7">4. PHP 7</h3>
-
-<pre><code class="language-bash">apt-get install ca-certificates apt-transport-https
+</code></pre><h3 id="4-php-7">4. PHP 7</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt-get install ca-certificates apt-transport-https
 wget -q https://packages.sury.org/php/apt.gpg -O- | apt-key add -
-echo &quot;deb https://packages.sury.org/php/ stretch main&quot; | tee /etc/apt/sources.list.d/php.list
+echo <span style="color:#e6db74">&#34;deb https://packages.sury.org/php/ stretch main&#34;</span> | tee /etc/apt/sources.list.d/php.list
 apt-get update
 apt-get install php7.2-fpm
-</code></pre>
-
-<h3 id="5-percona-server-mysql">5. Percona Server (MySQL)</h3>
-
-<pre><code class="language-bash">apt-get install lsb-release
-wget https://repo.percona.com/apt/percona-release_latest.$(lsb_release -sc)_all.deb
-dpkg -i percona-release_latest.$(lsb_release -sc)_all.deb
+</code></pre></div><h3 id="5-percona-server-mysql">5. Percona Server (MySQL)</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt-get install lsb-release
+wget https://repo.percona.com/apt/percona-release_latest.<span style="color:#66d9ef">$(</span>lsb_release -sc<span style="color:#66d9ef">)</span>_all.deb
+dpkg -i percona-release_latest.<span style="color:#66d9ef">$(</span>lsb_release -sc<span style="color:#66d9ef">)</span>_all.deb
 apt-get update
 apt-get install percona-server-server-5.7 php7.0-mysql
-</code></pre>
-
-<p>Джерело <a href="https://www.percona.com/doc/percona-server/5.7/installation/apt_repo.html">тут</a></p>
+</code></pre></div><p>Джерело <a href="https://www.percona.com/doc/percona-server/5.7/installation/apt_repo.html">тут</a></p>
     
         </div>
     </section>
@@ -431,13 +383,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/nginx-pagespeed-openssl/">Як я готую NGINX з модулем PAGESPEED</a></li>            
+          <li><a href="https://bender.kr.ua/quick-start-with-jenkins-in-docker/">Швидкий старт Jenkins в Debian 10 за допомогою Docker</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-install-magento2-cli/">Встановлення Magento 2 з командного рядка</a></li>            
+          <li><a href="https://bender.kr.ua/cli-upgrade-magento2/">Оновлення Magento 2</a></li>            
         
-          <li><a href="https://bender.kr.ua/letsencrypt-and-ipv6/">Помилка при оновлені сертифікатів від Let&#39;s Encrypt</a></li>            
+          <li><a href="https://bender.kr.ua/git-branch/">Як забрати гілку з git</a></li>            
         
-          <li><a href="https://bender.kr.ua/configurable-crontab-magento2/">Magento2: налаштування періодичних завдань власного модуля через адмін-панель</a></li>            
+          <li><a href="https://bender.kr.ua/installing-python-3-6-on-debian-8/">Встановлення Python 3.6 на Debian 8</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
