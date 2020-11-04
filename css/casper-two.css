@@ -92,3 +92,17 @@ ol, ul {
     float: right;
 
 }
+
+div#___gcse_0 {
+    width: 100%;
+    z-index:999999;
+}
+
+.gsc-control-cse {
+    background-color: transparent !important;
+    border: 0px solid #fff !important;
+}
+
+input.gsc-input {
+    color: #000 !important;
+}
