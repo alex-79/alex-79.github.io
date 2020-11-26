@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1560579499-ab30d29dfd9a?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.76.2" />
+    <meta name="generator" content="Hugo 0.54.0" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -145,29 +145,38 @@
 
     <section class="post-full-content">
         <div class="kg-card-markdown">
-        <p>Цикл статей по розгортанню IP-телефонії на базі <em><strong>Asterisk</strong></em>. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Робота була захищена, сертифікат отриманий, все написане тестувалось і є повтінстю робочою реалізацією. Інформація в статті і версії програмного забезбечення актуальні на 2017 рік.</p>
+        
+
+<p>Цикл статей по розгортанню IP-телефонії на базі <strong><em>Asterisk</em></strong>. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Робота була захищена, сертифікат отриманий, все написане тестувалось і є повтінстю робочою реалізацією. Інформація в статті і версії програмного забезбечення актуальні на 2017 рік.</p>
+
 <ul>
 <li>частина 1 - <a href="https://bender.kr.ua/howto-asterisk-part-1/">Встановлення сервера Asterisk</a></li>
 <li>частина 2 - <a href="https://bender.kr.ua/howto-asterisk-part-2/">Налаштування SIP</a></li>
 <li>частина 3 - <a href="https://bender.kr.ua/howto-asterisk-part-3/">Логіка обробки дзвінків (Dialplan)</a></li>
 </ul>
+
 <h1 id="4-голосове-меню">4. Голосове меню</h1>
-<h2 id="41-створення-багаторівневого-голосового-меню">4.1 Створення багаторівневого голосового меню</h2>
+
+<h2 id="4-1-створення-багаторівневого-голосового-меню">4.1 Створення багаторівневого голосового меню</h2>
+
 <p>Створюємо голосове меню з 3 рівнями:</p>
+
 <ol>
 <li><em>Головне меню</em> - вітання, пропозиція набрати додатковий номер для дозвону в конкретний відділ компанії (1 - відділ продажів, 2 - відділ закупівель, 3 - питання доставки, 4 - з&rsquo;єднання з секретарем, 5 - залишити голосове повідомлення, 0 - повторити меню).
+
 <ol>
 <li><em>Меню відділу продажів</em> - пропозиція набрати додатковий номер для з&rsquo;єднання з фахівцем з конкретної товарної групи (1 - питання і консультації по товарній групі 1, 2 - питання і консультації по товарній групі 2, 3 - з&rsquo;єднання з оператором, 0 - повторити меню, 9 - повернутися до попереднього меню).</li>
 <li><em>Меню відділу закупівель</em> - пропозиція набрати додатковий номер для з&rsquo;єднання з фахівцем із закупівель (1 - з&rsquo;єднання з персональним менеджером, 2 - пропозиції щодо співпраці, 0 - повторити меню, 9 - повернутися до попереднього меню).
+
 <ol>
 <li><em>Меню вибору додаткового номера менеджера із закупівель</em> (1 - з&rsquo;єднання з менеджером 1, 2 - з&rsquo;єднання з менеджером 2, 0 - повторити меню, 9 - повернутися до попереднього меню, 8 - перейти в головне меню).</li>
-</ol>
-</li>
+</ol></li>
 <li><em>Меню для питань пов&rsquo;язаних з доставкою</em> - пропозиція набрати додатковий номер для уточнення питань комплектації і доставки замовлень (1 - дізнатися статус замовлення за номером, 2 - з&rsquo;єднання з оператором, 0 - повторити меню, 9 - повернутися до попереднього меню).</li>
+</ol></li>
 </ol>
-</li>
-</ol>
+
 <p>Описуємо вищевказане меню:</p>
+
 <pre><code>; головне меню
 [ivr-mainmenu] 
 exten =&gt; s,1,Answer() 
@@ -286,13 +295,19 @@ exten =&gt; 9,1,Goto(ivr-mainmenu,s,5)
 exten =&gt; i,1,Goto(s,1)  
 ; по таймауту пропонуємо ще раз зробити вибір
 exten =&gt; t,1,Goto(s,2)
-</code></pre><p>Змінюємо контекст вхідних дзвінків із зовнішніх ліній (умовно на номер <em>YYYYYY</em>):</p>
+</code></pre>
+
+<p>Змінюємо контекст вхідних дзвінків із зовнішніх ліній (умовно на номер <em>YYYYYY</em>):</p>
+
 <pre><code>;вхідні звінки із зовнішніх ліній
 [call-in]
 exten =&gt; YYYYYY,1,Set(RECORDING=1)
 exten =&gt; YYYYYY,1,Macro(recording,${CALLERID(num)},${EXTEN})
 exten =&gt; YYYYYY,n,Goto(ivr-mainmenu,s,1) ; всі вхідні дзвінки адресуються на голосове меню
-</code></pre><p>Файли для голосового меню зберігаємо в директорію <em>/var/lib/asterisk/sounds/en/ivr</em></p>
+</code></pre>
+
+<p>Файли для голосового меню зберігаємо в директорію <em>/var/lib/asterisk/sounds/en/ivr</em></p>
+
 <pre><code>[root@asterisk-centos en]# ls -l /var/lib/asterisk/sounds/en/ivr
 итого 1156
 -rw-r--r-- 1 asterisk asterisk 171404 Май  7 10:56 buyingmenu-1.wav
@@ -304,7 +319,10 @@ exten =&gt; YYYYYY,n,Goto(ivr-mainmenu,s,1) ; всі вхідні дзвінки
 -rw-r--r-- 1 asterisk asterisk 239564 Май  7 10:55 salesmenu.wav
 -rw-r--r-- 1 asterisk asterisk 175244 Май  7 10:58 warehousemenu.wav
 -rw-r--r-- 1 asterisk asterisk  30284 Май  7 10:51 welcome.wav
-</code></pre><p>Перевіряємо работу голосового меню:</p>
+</code></pre>
+
+<p>Перевіряємо работу голосового меню:</p>
+
 <pre><code>asterisk-centos*CLI&gt; 
   == Using SIP RTP CoS mark 5
     -- Executing [YYYYYY@call-in:1] Set(&quot;SIP/zadarma-00000000&quot;, &quot;RECORDING=1&quot;) in new stack
@@ -343,10 +361,17 @@ exten =&gt; YYYYYY,n,Goto(ivr-mainmenu,s,1) ; всі вхідні дзвінки
     -- Executing [s@ivr-mainmenu:6] BackGround(&quot;SIP/zadarma-00000000&quot;, &quot;ivr/make-a-choice&quot;) in new stack
     -- &lt;SIP/zadarma-00000000&gt; Playing 'ivr/make-a-choice.slin' (language 'ru')
   == Spawn extension (ivr-mainmenu, s, 6) exited non-zero on 'SIP/zadarma-00000000'
-</code></pre><h2 id="42-налаштування-голосовї-пошти">4.2 Налаштування голосовї пошти</h2>
+</code></pre>
+
+<h2 id="4-2-налаштування-голосовї-пошти">4.2 Налаштування голосовї пошти</h2>
+
 <p>Встановимо пакет <em>ssmtp</em> для відправлення повідомлень на електронну пошту:</p>
+
 <pre><code>yum install http://dl.fedoraproject.org/pub/fedora/linux/releases/25/Everything/i386/os/Packages/s/ssmtp-2.64-16.fc24.i686.rpm
-</code></pre><p>Налаштовуємо відправлення через обліковий запис на <em>pdd.yandex.ru</em>. (<strong>!!! Ніякої &ldquo;зради&rdquo;, на момент виконання проекту яндекс ще не був заблокований, тому пишу все як було, принципово налаштування для інших поштових сервісів будуть мало чим відрізнятись !!!</strong>) Змінюємо файл <em>/etc/ssmtp/ssmtp.conf:</em></p>
+</code></pre>
+
+<p>Налаштовуємо відправлення через обліковий запис на <em>pdd.yandex.ru</em>. (<strong>!!! Ніякої &ldquo;зради&rdquo;, на момент виконання проекту яндекс ще не був заблокований, тому пишу все як було, принципово налаштування для інших поштових сервісів будуть мало чим відрізнятись !!!</strong>) Змінюємо файл <em>/etc/ssmtp/ssmtp.conf:</em></p>
+
 <pre><code>mailhub=smtp.yandex.ru:465
 UseTLS=YES
 AuthUser=login@my-company.com.ua
@@ -356,9 +381,15 @@ hostname=localhost
 FromLineOverride=NO
 Root=login@my-company.com.ua
 TLS_CA_File=/etc/pki/tls/certs/ca-bundle.crt
-</code></pre><p>В файл <em>/etc/ssmtp/revaliases</em> додаємо рядок:</p>
+</code></pre>
+
+<p>В файл <em>/etc/ssmtp/revaliases</em> додаємо рядок:</p>
+
 <pre><code>root:login@my-company.com.ua:smtp.yandex.ru:465
-</code></pre><p>В файлі <em>/etc/asterisk/voicemail.conf</em> налаштовуємо голосову пошту в Asterisk:</p>
+</code></pre>
+
+<p>В файлі <em>/etc/asterisk/voicemail.conf</em> налаштовуємо голосову пошту в Asterisk:</p>
+
 <pre><code>[general] 
 format = wav 
 attach = yes 
@@ -375,10 +406,17 @@ fromstring=VoiceMail
 
 [default] 
 601 =&gt; 123456,office,login@my-company.com.ua,attach=yes
-</code></pre><p>Для доступу до голосової пошти додаємо в контекст внутрішніх ліній наступний рядок:</p>
+</code></pre>
+
+<p>Для доступу до голосової пошти додаємо в контекст внутрішніх ліній наступний рядок:</p>
+
 <pre><code>exten =&gt; 999,1,VoiceMailMain()
-</code></pre><h2 id="43-налаштування-виводу-голосових-повідомлень-festival">4.3 Налаштування виводу голосових повідомлень (Festival)</h2>
+</code></pre>
+
+<h2 id="4-3-налаштування-виводу-голосових-повідомлень-festival">4.3 Налаштування виводу голосових повідомлень (Festival)</h2>
+
 <p>Для програвання тексту встановимо пакет <em>Festival</em>:</p>
+
 <pre><code>cd /usr/src 
 wget http://www.cstr.ed.ac.uk/downloads/festival/2.4/speech_tools-2.4-release.tar.gz
 wget http://www.cstr.ed.ac.uk/downloads/festival/2.4/festival-2.4-release.tar.gz
@@ -391,16 +429,25 @@ cd ..
 cd festival 
 ./configure  
 make &amp;&amp; make install
-</code></pre><p>Додаємо в PATH шлях до бінарного файла festival:</p>
+</code></pre>
+
+<p>Додаємо в PATH шлях до бінарного файла festival:</p>
+
 <pre><code>export PATH=$PATH:/usr/src/festival/bin/
-</code></pre><p>Встановлюємо мовні файли:</p>
+</code></pre>
+
+<p>Встановлюємо мовні файли:</p>
+
 <pre><code>mkdir /usr/src/festival/lib/voices/ 
 mkdir /usr/src/festival/lib/voices/russian/
 cd /usr/src/ 
 wget http://sourceforge.net/projects/festlang.berlios/files/msu_ru_nsh_clunits-0.5.tar.bz2 
 tar xjfv msu_ru_nsh_clunits-0.5.tar.bz2 
 mv /usr/src/msu_ru_nsh_clunits/ /usr/src/festival/lib/voices/russian
-</code></pre><p>Далі додаємо на початок файлу <em>/usr/src/festival/lib/languages.scm</em></p>
+</code></pre>
+
+<p>Далі додаємо на початок файлу <em>/usr/src/festival/lib/languages.scm</em></p>
+
 <pre><code>(define (language_russian)  
 &quot;(language_russian)   
 Set up language parameters for Russian.&quot;   
@@ -408,27 +455,48 @@ Set up language parameters for Russian.&quot;
 (male1)   
 (Parameter.set 'Language 'russian) 
 )
-</code></pre><p>додаємо перед</p>
+</code></pre>
+
+<p>додаємо перед</p>
+
 <pre><code>((equal? language 'americanenglish)
     (language_american_english))
-</code></pre><p>наступний код</p>
+</code></pre>
+
+<p>наступний код</p>
+
 <pre><code>((equal? language 'russian)
     (language_russian))      
-</code></pre><p>Встановлюємо мову на замовчування в файлі <em>/usr/src/festival/lib/siteinit.scm</em></p>
+</code></pre>
+
+<p>Встановлюємо мову на замовчування в файлі <em>/usr/src/festival/lib/siteinit.scm</em></p>
+
 <pre><code>(set! voice_default 'voice_msu_ru_nsh_clunits)
-</code></pre><p>Конфігураційний файл <em>/etc/asterisk/festival.conf</em>:</p>
+</code></pre>
+
+<p>Конфігураційний файл <em>/etc/asterisk/festival.conf</em>:</p>
+
 <pre><code>[general] 
 host=localhost 
 port=1314 
 usecache=yes 
 cachedir=/var/lib/asterisk/festivalcache/ 
 festivalcommand=(tts_textasterisk &quot;%s&quot; 'file)(quit)\n
-</code></pre><p>Для зберігання кешу створюємо відповідну папку</p>
+</code></pre>
+
+<p>Для зберігання кешу створюємо відповідну папку</p>
+
 <pre><code>mkdir /var/lib/asterisk/festivalcache/
 chown asterisk. /var/lib/asterisk/festivalcache/
-</code></pre><p>Запускаємо сервер Festival</p>
+</code></pre>
+
+<p>Запускаємо сервер Festival</p>
+
 <pre><code>/usr/src/festival/bin/festival --server
-</code></pre><p>Скрипт <em>checkstatus.php</em> для перевірки статуса заказу може виглядатити так:</p>
+</code></pre>
+
+<p>Скрипт <em>checkstatus.php</em> для перевірки статуса заказу може виглядатити так:</p>
+
 <pre><code>&lt;?php
 $conn = mysql_connect(&quot;localhost&quot;, &quot;mysql_user&quot;, &quot;mysql_password&quot;);
 mysql_select_db(&quot;myshop&quot;);
@@ -438,8 +506,12 @@ $result = mysql_query($sql);
 $row = mysql_fetch_assoc($result);
 echo 'SET VARIABLE ORDERSTATUS '.$row[&quot;status&quot;];
 ?&gt;
-</code></pre><hr>
-<p><a href="https://bender.kr.ua/howto-asterisk-part-5/">В наступній статті навчимося <em><strong>зберігати статистику в MySQL</strong></em>.</a></p>
+</code></pre>
+
+<hr />
+
+<p><a href="https://bender.kr.ua/howto-asterisk-part-5/">В наступній статті навчимося <strong><em>зберігати статистику в MySQL</em></strong>.</a></p>
+
 <ul>
 <li>частина 1 - <a href="https://bender.kr.ua/howto-asterisk-part-1/">Встановлення сервера Asterisk</a></li>
 <li>частина 2 - <a href="https://bender.kr.ua/howto-asterisk-part-2/">Налаштування SIP</a></li>
@@ -505,13 +577,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/custom-logging-module-magento2/">Magento2: Як писати логи модуля в окремий файл?</a></li>            
+          <li><a href="https://bender.kr.ua/magento2-reindexer-for-large-catalog/">Проблема переіндексації великого каталогу в Magento 2</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-install-magento2-cli/">Встановлення Magento 2 з командного рядка</a></li>            
+          <li><a href="https://bender.kr.ua/howto-install-django-mysql-debian-9/">Встановлення зв&#39;язки Django та MySQL на Debian 9</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-lemp-install/">Встановлення Nginx &#43; PHP &#43; MySQL на Debian 9</a></li>            
+          <li><a href="https://bender.kr.ua/how-to-fix-elasticsearch-forbidden-12-index-read-only-allow-delete-api/">Проблема з переіндексацією catalogsearch_fulltext на Magento 2</a></li>            
         
-          <li><a href="https://bender.kr.ua/regexp-replace-in-mariadb/">Заміна даних в MariaDB</a></li>            
+          <li><a href="https://bender.kr.ua/quick-start-with-jenkins-in-docker/">Швидкий старт Jenkins в Debian 10 за допомогою Docker</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">

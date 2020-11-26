@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1562259929-b4e1fd3aef09?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.76.2" />
+    <meta name="generator" content="Hugo 0.54.0" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -146,19 +146,23 @@
     <section class="post-full-content">
         <div class="kg-card-markdown">
         <p>Іноді, за нез&rsquo;ясованих поки обставин, в Magento 2 ламаєть виконання переіндексації за розкладом. В логах це виглядає як <em>main.WARNING: Could not acquire lock for cron group: index, skipping run</em>.</p>
+
 <p>Щоб &ldquo;поремонтувати&rdquo; крон необхідно:</p>
+
 <ol>
-<li>
-<p>Знайти та вбити процес який відповідає за запуск завдань в Magento 2: <em>php bin/magento cron:run &ndash;group=index &ndash;bootstrap=standaloneProcessStarted=1</em></p>
+<li><p>Знайти та вбити процес який відповідає за запуск завдань в Magento 2: <em>php bin/magento cron:run &ndash;group=index &ndash;bootstrap=standaloneProcessStarted=1</em></p>
+
 <pre><code>ps ufx | grep cron
 kill XXXX
 </code></pre></li>
-<li>
-<p>Очистити таблицю <em>cron_schedule</em></p>
+
+<li><p>Очистити таблицю <em>cron_schedule</em></p>
+
 <pre><code>DELETE FROM `cron_schedule`;
 </code></pre></li>
-<li>
-<p>Очистити кеш Magento</p>
+
+<li><p>Очистити кеш Magento</p>
+
 <pre><code>php bin/magento cache:flush
 </code></pre></li>
 </ol>
@@ -222,13 +226,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/mining-karbowanec/">Як я місяць майнив криптовалюту за допомогою ноутбуку, навіщо мені це та що з того вийшло</a></li>            
-        
-          <li><a href="https://bender.kr.ua/5-extensions-for-default-magento2/">5 розширень, які ти зобов&#39;язаний поставити на Magento 2</a></li>            
-        
-          <li><a href="https://bender.kr.ua/fix-conflict-keyboard-shortcuts/">Не працюють комбінації клавіш CTRL-SHIFT в Ubuntu</a></li>            
-        
           <li><a href="https://bender.kr.ua/iptables-ipset/">Блокування трафіку за допомогою iptables та ipset</a></li>            
+        
+          <li><a href="https://bender.kr.ua/new-db-in-mysql/">Створення бази даних в MySQL</a></li>            
+        
+          <li><a href="https://bender.kr.ua/howto-asterisk-part-4/">IP-телефонія на базі Asterisk. Частина 4: Голосове меню</a></li>            
+        
+          <li><a href="https://bender.kr.ua/configurable-crontab-magento2/">Magento2: налаштування періодичних завдань власного модуля через адмін-панель</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">

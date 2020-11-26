@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1484191914255-a429e6f819b4?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.76.2" />
+    <meta name="generator" content="Hugo 0.54.0" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -145,20 +145,30 @@
 
     <section class="post-full-content">
         <div class="kg-card-markdown">
-        <p>Цикл статей по розгортанню IP-телефонії на базі <em><strong>Asterisk</strong></em>. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Робота була захищена, сертифікат отриманий, все написане тестувалось і є повтінстю робочою реалізацією. Інформація в статті і версії програмного забезбечення актуальні на 2017 рік.</p>
+        
+
+<p>Цикл статей по розгортанню IP-телефонії на базі <strong><em>Asterisk</em></strong>. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Робота була захищена, сертифікат отриманий, все написане тестувалось і є повтінстю робочою реалізацією. Інформація в статті і версії програмного забезбечення актуальні на 2017 рік.</p>
+
 <ul>
 <li>частина 1 - <a href="https://bender.kr.ua/howto-asterisk-part-1/">Встановлення сервера Asterisk</a></li>
 <li>частина 2 - <a href="https://bender.kr.ua/howto-asterisk-part-2/">Налаштування SIP</a></li>
 <li>частина 3 - <a href="https://bender.kr.ua/howto-asterisk-part-3/">Логіка обробки дзвінків (Dialplan)</a></li>
 <li>частина 4 - <a href="https://bender.kr.ua/howto-asterisk-part-4/">Голосове меню</a></li>
 </ul>
+
 <h1 id="5-деталізований-звіт-про-виклики-call-detail-records-cdr">5. Деталізований звіт про виклики (Call Detail Records, CDR)</h1>
+
 <p>Налаштуємо зберігання статистики в БД MySQL.</p>
+
 <p>Встановимо MySQL:</p>
+
 <pre><code>wget https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm
 rpm -ivh mysql57-community-release-el7-11.noarch.rpm
 yum install mysql-server
-</code></pre><p>Оскільки будемо використовувати для перегляду статистики дзвінків веб-застосунок <em>CDR Viewer</em>, то встановлюємо і налаштовуємо веб-сервер:</p>
+</code></pre>
+
+<p>Оскільки будемо використовувати для перегляду статистики дзвінків веб-застосунок <em>CDR Viewer</em>, то встановлюємо і налаштовуємо веб-сервер:</p>
+
 <pre><code>cd /usr/src/
 wget https://nginx.org/download/nginx-1.13.0.tar.gz
 tar vxfz nginx-1.13.0.tar.gz 
@@ -170,7 +180,10 @@ ln -s /usr/local/nginx/conf/ /etc/nginx
 ln -s /usr/local/nginx/sbin/nginx /usr/sbin/nginx
 wget -O /etc/init.d/nginx https://gist.github.com/sairam/5892520/raw/b8195a71e944d46271c8a49f2717f70bcd04bf1a/etc-init.d-nginx
 chmod +x /etc/init.d/nginx
-</code></pre><p>Створюємо файл <em>/lib/systemd/system/nginx.service</em>:</p>
+</code></pre>
+
+<p>Створюємо файл <em>/lib/systemd/system/nginx.service</em>:</p>
+
 <pre><code>[Unit]
 Description=The NGINX HTTP and reverse proxy server
 After=syslog.target network.target remote-fs.target nss-lookup.target
@@ -189,13 +202,21 @@ WantedBy=multi-user.target
 Запускаем сервер:
 systemctl enable nginx
 systemctl start nginx
-</code></pre><pre><code>[root@asterisk-centos conf]# nginx -V
+</code></pre>
+
+<pre><code>[root@asterisk-centos conf]# nginx -V
 nginx version: nginx/1.13.0
 built by gcc 4.8.5 20150623 (Red Hat 4.8.5-11) (GCC) 
-</code></pre><p>Встановлюємо php:</p>
+</code></pre>
+
+<p>Встановлюємо php:</p>
+
 <pre><code>yum install php-fpm
 systemctl start php-fpm
-</code></pre><p>Налаштовуємо веб-сервер:</p>
+</code></pre>
+
+<p>Налаштовуємо веб-сервер:</p>
+
 <pre><code>user  nginx;
 worker_processes  1;
 error_log  logs/error.log;
@@ -227,14 +248,23 @@ http {
         }
     }
 }
-</code></pre><p>Для роботи з CDR забезпечуємо коректну синхронізацію часу на сервері</p>
+</code></pre>
+
+<p>Для роботи з CDR забезпечуємо коректну синхронізацію часу на сервері</p>
+
 <pre><code>yum install ntp
 systemctl enable ntpd
 service ntpd restart
-</code></pre><p>Встановлюємо програму для керування БД:</p>
+</code></pre>
+
+<p>Встановлюємо програму для керування БД:</p>
+
 <pre><code>cd /var/www/
 wget https://github.com/vrana/adminer/releases/download/v4.3.1/adminer-4.3.1-mysql.php -O adminer.php
-</code></pre><p>Входимо в <em>adminer</em> за адресою http://192.168.1.201/adminer.php, створюємо базу <em>asteriskcdr</em> і користувача з правами запису в цю базу - <em>asteriskuser</em>, а також таблицю для зберігання даних:</p>
+</code></pre>
+
+<p>Входимо в <em>adminer</em> за адресою <a href="http://192.168.1.201/adminer.php">http://192.168.1.201/adminer.php</a>, створюємо базу <em>asteriskcdr</em> і користувача з правами запису в цю базу - <em>asteriskuser</em>, а також таблицю для зберігання даних:</p>
+
 <pre><code>CREATE TABLE `cdr` (
   `id` int(11) unsigned NOT NULL auto_increment,
   `calldate` datetime NOT NULL default '0000-00-00 00:00:00',
@@ -263,7 +293,10 @@ wget https://github.com/vrana/adminer/releases/download/v4.3.1/adminer-4.3.1-mys
   KEY `dst` (`dst`),
   KEY `src` (`src`)
 );
-</code></pre><p>Відкриваємо файл <em>/etc/asterisk/cdrmysql.conf</em> і налаштовуємо підключення до MySQL:</p>
+</code></pre>
+
+<p>Відкриваємо файл <em>/etc/asterisk/cdrmysql.conf</em> і налаштовуємо підключення до MySQL:</p>
+
 <pre><code>[global]
 hostname=localhost
 dbname=asteriskcdr
@@ -271,19 +304,31 @@ table=cdr
 password=asterisk_password
 user=asterisk_user
 port=3306
-</code></pre><p>В файлі <em>/etc/asterisk/cdr.conf</em> відключаємо стандартне логування дзвінків в csv-файл:</p>
+</code></pre>
+
+<p>В файлі <em>/etc/asterisk/cdr.conf</em> відключаємо стандартне логування дзвінків в csv-файл:</p>
+
 <pre><code>;[csv]
 ;usegmtime=yes    ; log date/time in GMT.  Default is &quot;no&quot;
 ;loguniqueid=yes  ; log uniqueid.  Default is &quot;no&quot;
 ;loguserfield=yes ; log user field.  Default is &quot;no&quot;
 ;accountlogs=yes  ; create separate log file for each account code. Default is &quot;yes&quot;
-</code></pre><p>Перезапустимо Asterisk:</p>
+</code></pre>
+
+<p>Перезапустимо Asterisk:</p>
+
 <pre><code>service asterisk restart
-</code></pre><p>Встановлюємо <em>CDR Viewer</em>:</p>
+</code></pre>
+
+<p>Встановлюємо <em>CDR Viewer</em>:</p>
+
 <pre><code>cd /var/www/html
 wget https://github.com/g613/asterisk-cdr-viewer/raw/master/asterisk-cdr-viewer-latest.tgz
 tar xzfv asterisk-cdr-viewer-latest.tgz
-</code></pre><p>В файлі <em>include/config.inc.php</em> налаштовуємо підключення до БД:</p>
+</code></pre>
+
+<p>В файлі <em>include/config.inc.php</em> налаштовуємо підключення до БД:</p>
+
 <pre><code>$db_type = 'mysql';
 $db_host = 'localhost';
 $db_port = '3306';
@@ -292,7 +337,10 @@ $db_pass = 'asterisk_password';
 $db_name = 'asteriskcdr';
 $db_table_name = 'cdr';
 $db_options = array();
-</code></pre><p>В файлі <em>/etc/extension.conf</em> расширюємо макрос запису дзвінків для можливості роботи з БД:</p>
+</code></pre>
+
+<p>В файлі <em>/etc/extension.conf</em> расширюємо макрос запису дзвінків для можливості роботи з БД:</p>
+
 <pre><code>;MixMonitor
 [macro-recording]
 exten =&gt; s,1,GoToIf($[&quot;${RECORDING}&quot; = &quot;1&quot;]?yes:no);
@@ -305,8 +353,12 @@ exten =&gt; s,n,Set(CDR(filename)=${fname}.mp3);
 exten =&gt; s,n,Set(CDR(realdst)=${called});
 exten =&gt; s,n,MixMonitor(${DIR_RECORDS}${fname}.wav,b,${monopt});
 exten =&gt; s,n(no),Verbose(Exit record);
-</code></pre><p>Здійснюємо кілька дзвінків і перевіряємо роботу CDR Viewer.</p>
+</code></pre>
+
+<p>Здійснюємо кілька дзвінків і перевіряємо роботу CDR Viewer.</p>
+
 <p><a href="https://bender.kr.ua/howto-asterisk-part-6.1/">В наступній статті поговоримо про <strong>додаткові функції Asterisk</strong>.</a></p>
+
 <ul>
 <li>частина 1 - <a href="https://bender.kr.ua/howto-asterisk-part-1/">Встановлення сервера Asterisk</a></li>
 <li>частина 2 - <a href="https://bender.kr.ua/howto-asterisk-part-2/">Налаштування SIP</a></li>
@@ -373,13 +425,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
+          <li><a href="https://bender.kr.ua/wtf-ssl-error-leaf-certificate-is-expired/">Після оновлення сертифікату на поштовому сервері в GMAIL не працює POP3</a></li>            
+        
           <li><a href="https://bender.kr.ua/howto-asterisk-part-2/">IP-телефонія на базі Asterisk. Частина 2: Налаштування SIP</a></li>            
         
-          <li><a href="https://bender.kr.ua/df-and-du-show-different-values/">df і du показують різні значення</a></li>            
+          <li><a href="https://bender.kr.ua/new-db-in-mysql/">Створення бази даних в MySQL</a></li>            
         
-          <li><a href="https://bender.kr.ua/nginx-pagespeed-openssl/">Як я готую NGINX з модулем PAGESPEED</a></li>            
-        
-          <li><a href="https://bender.kr.ua/iptables-ipset/">Блокування трафіку за допомогою iptables та ipset</a></li>            
+          <li><a href="https://bender.kr.ua/year-in-books-2019/">Мій книжковий 2019 рік</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">

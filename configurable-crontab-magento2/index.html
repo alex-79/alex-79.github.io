@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1495364141860-b0d03eccd065?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.76.2" />
+    <meta name="generator" content="Hugo 0.54.0" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -146,145 +146,155 @@
     <section class="post-full-content">
         <div class="kg-card-markdown">
         <p>Для створення періодичного завдання у власному модулі треба виконати наступні кроки:</p>
+
 <ol>
-<li>
-<p>Сворюємо <strong>crontab.xml</strong> в <em>app/VendorName/ModuleName/etc</em></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34;?&gt;</span>
-<span style="color:#f92672">&lt;config</span> <span style="color:#a6e22e">xmlns:xsi=</span><span style="color:#e6db74">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span> <span style="color:#a6e22e">xsi:noNamespaceSchemaLocation=</span><span style="color:#e6db74">&#34;urn:magento:module:Magento_Cron:etc/crontab.xsd&#34;</span><span style="color:#f92672">&gt;</span>
-    <span style="color:#f92672">&lt;group</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;default&#34;</span><span style="color:#f92672">&gt;</span>
-        <span style="color:#f92672">&lt;job</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;vendorname_modulename_job&#34;</span> <span style="color:#a6e22e">instance=</span><span style="color:#e6db74">&#34;VendorName\ModuleName\Cron\CronJob&#34;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#34;execute&#34;</span><span style="color:#f92672">&gt;</span>
-            <span style="color:#f92672">&lt;config_path&gt;</span>crontab/default/jobs/vendorname_modulename_job/schedule/cron_expr<span style="color:#f92672">&lt;/config_path&gt;</span>
-        <span style="color:#f92672">&lt;/job&gt;</span>
-    <span style="color:#f92672">&lt;/group&gt;</span>
-<span style="color:#f92672">&lt;/config&gt;</span> 
-</code></pre></div></li>
-<li>
-<p>Створюємо поле для налаштування періодичного завдання у файлі <em>app/VendorName/ModuleName/etc/adminhtml/system.xml</em></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">            ...
-            <span style="color:#f92672">&lt;group</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;configurable_cron&#34;</span> <span style="color:#a6e22e">translate=</span><span style="color:#e6db74">&#34;label&#34;</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">sortOrder=</span><span style="color:#e6db74">&#34;150&#34;</span> <span style="color:#a6e22e">showInDefault=</span><span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#a6e22e">showInWebsite=</span><span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#a6e22e">showInStore=</span><span style="color:#e6db74">&#34;0&#34;</span><span style="color:#f92672">&gt;</span>
-                <span style="color:#f92672">&lt;label&gt;</span>Cron<span style="color:#f92672">&lt;/label&gt;</span>
-                <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;crontab&#34;</span> <span style="color:#a6e22e">translate=</span><span style="color:#e6db74">&#34;label&#34;</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">sortOrder=</span><span style="color:#e6db74">&#34;10&#34;</span> <span style="color:#a6e22e">showInDefault=</span><span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#a6e22e">showInWebsite=</span><span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#a6e22e">showInStore=</span><span style="color:#e6db74">&#34;1&#34;</span><span style="color:#f92672">&gt;</span>
-                    <span style="color:#f92672">&lt;label&gt;</span>Crontab<span style="color:#f92672">&lt;/label&gt;</span>
-                    <span style="color:#f92672">&lt;validate&gt;</span>required-entry<span style="color:#f92672">&lt;/validate&gt;</span>
-                    <span style="color:#f92672">&lt;backend_model&gt;</span>VendorName\ModuleName\Model\Config\CronConfig<span style="color:#f92672">&lt;/backend_model&gt;</span>
-                <span style="color:#f92672">&lt;/field&gt;</span>
-            <span style="color:#f92672">&lt;/group&gt;</span> 
-            ...
-</code></pre></div></li>
-<li>
-<p>Створюємо бекенд-модель <em>app/VendorName/ModuleName/Model/Config/CronConfig.php</em></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+<li><p>Сворюємо <strong>crontab.xml</strong> в <em>app/VendorName/ModuleName/etc</em></p>
 
-<span style="color:#66d9ef">namespace</span> <span style="color:#a6e22e">VendorName\ModuleName\Model\Config</span>;
-   
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CronConfig</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">\Magento\Framework\App\Config\Value</span>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;config xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;urn:magento:module:Magento_Cron:etc/crontab.xsd&quot;&gt;
+    &lt;group id=&quot;default&quot;&gt;
+        &lt;job name=&quot;vendorname_modulename_job&quot; instance=&quot;VendorName\ModuleName\Cron\CronJob&quot; method=&quot;execute&quot;&gt;
+            &lt;config_path&gt;crontab/default/jobs/vendorname_modulename_job/schedule/cron_expr&lt;/config_path&gt;
+        &lt;/job&gt;
+    &lt;/group&gt;
+&lt;/config&gt; 
+</code></pre>
+
+<ol>
+<li>Створюємо поле для налаштування періодичного завдання у файлі <em>app/VendorName/ModuleName/etc/adminhtml/system.xml</em>
+<code>xml
+        ...
+        &lt;group id=&quot;configurable_cron&quot; translate=&quot;label&quot; type=&quot;text&quot; sortOrder=&quot;150&quot; showInDefault=&quot;1&quot; showInWebsite=&quot;1&quot; showInStore=&quot;0&quot;&gt;
+            &lt;label&gt;Cron&lt;/label&gt;
+            &lt;field id=&quot;crontab&quot; translate=&quot;label&quot; type=&quot;text&quot; sortOrder=&quot;10&quot; showInDefault=&quot;1&quot; showInWebsite=&quot;1&quot; showInStore=&quot;1&quot;&gt;
+                &lt;label&gt;Crontab&lt;/label&gt;
+                &lt;validate&gt;required-entry&lt;/validate&gt;
+                &lt;backend_model&gt;VendorName\ModuleName\Model\Config\CronConfig&lt;/backend_model&gt;
+            &lt;/field&gt;
+        &lt;/group&gt; 
+        ...
+</code></li>
+</ol></li>
+
+<li><p>Створюємо бекенд-модель <em>app/VendorName/ModuleName/Model/Config/CronConfig.php</em></p>
+
+<pre><code class="language-php">&lt;?php
+
+namespace VendorName\ModuleName\Model\Config;
+    
+class CronConfig extends \Magento\Framework\App\Config\Value
 {
-   
-    <span style="color:#e6db74">/**
-</span><span style="color:#e6db74">    * @var \Magento\Framework\App\Config\ValueFactory
-</span><span style="color:#e6db74">    */</span>
-    <span style="color:#66d9ef">protected</span> $configValueFactory;
-   
-    <span style="color:#e6db74">/**
-</span><span style="color:#e6db74">    * @var string
-</span><span style="color:#e6db74">    */</span>
-    <span style="color:#66d9ef">protected</span> $runModelPath <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
-       
-    <span style="color:#e6db74">/**
-</span><span style="color:#e6db74">    * Cron string path
-</span><span style="color:#e6db74">    */</span>
-    <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">CRON_STRING_PATH</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;crontab/default/jobs/vendorname_modulename_job/schedule/cron_expr&#39;</span>;
-   
-    <span style="color:#e6db74">/**
-</span><span style="color:#e6db74">    * Cron model path
-</span><span style="color:#e6db74">    */</span>
-    <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">CRON_MODEL_PATH</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;crontab/default/jobs/vendorname_modulename_job/run/model&#39;</span>;
-       
-    <span style="color:#e6db74">/**
-</span><span style="color:#e6db74">    * Cron config data
-</span><span style="color:#e6db74">    */</span>      
-    <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">CONFIG_DATA</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;groups/configurable_cron/fields/crontab/value&#39;</span>;
-   
-    <span style="color:#e6db74">/**
-</span><span style="color:#e6db74">    * @param \Magento\Framework\Model\Context $context
-</span><span style="color:#e6db74">    * @param \Magento\Framework\Registry $registry
-</span><span style="color:#e6db74">    * @param \Magento\Framework\App\Config\ScopeConfigInterface $config
-</span><span style="color:#e6db74">    * @param \Magento\Framework\App\Cache\TypeListInterface $cacheTypeList
-</span><span style="color:#e6db74">    * @param \Magento\Framework\App\Config\ValueFactory $configValueFactory
-</span><span style="color:#e6db74">    * @param \Magento\Framework\Model\ResourceModel\AbstractResource $resource
-</span><span style="color:#e6db74">    * @param \Magento\Framework\Data\Collection\AbstractDb $resourceCollection
-</span><span style="color:#e6db74">    * @param string $runModelPath
-</span><span style="color:#e6db74">    * @param array $data
-</span><span style="color:#e6db74">    */</span>
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> __construct(
-        <span style="color:#a6e22e">\Magento\Framework\Model\Context</span> $context,
-        <span style="color:#a6e22e">\Magento\Framework\Registry</span> $registry,
-        <span style="color:#a6e22e">\Magento\Framework\App\Config\ScopeConfigInterface</span> $config,
-        <span style="color:#a6e22e">\Magento\Framework\App\Cache\TypeListInterface</span> $cacheTypeList,
-        <span style="color:#a6e22e">\Magento\Framework\App\Config\ValueFactory</span> $configValueFactory,
-        <span style="color:#a6e22e">\Magento\Framework\Model\ResourceModel\AbstractResource</span> $resource <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>,
-        <span style="color:#a6e22e">\Magento\Framework\Data\Collection\AbstractDb</span> $resourceCollection <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>,
-        $runModelPath <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>,
-        <span style="color:#66d9ef">array</span> $data <span style="color:#f92672">=</span> []
+    
+    /**
+    * @var \Magento\Framework\App\Config\ValueFactory
+    */
+    protected $configValueFactory;
+    
+    /**
+    * @var string
+    */
+    protected $runModelPath = '';
+        
+    /**
+    * Cron string path
+    */
+    const CRON_STRING_PATH = 'crontab/default/jobs/vendorname_modulename_job/schedule/cron_expr';
+    
+    /**
+    * Cron model path
+    */
+    const CRON_MODEL_PATH = 'crontab/default/jobs/vendorname_modulename_job/run/model';
+        
+    /**
+    * Cron config data
+    */      
+    const CONFIG_DATA = 'groups/configurable_cron/fields/crontab/value';
+    
+    /**
+    * @param \Magento\Framework\Model\Context $context
+    * @param \Magento\Framework\Registry $registry
+    * @param \Magento\Framework\App\Config\ScopeConfigInterface $config
+    * @param \Magento\Framework\App\Cache\TypeListInterface $cacheTypeList
+    * @param \Magento\Framework\App\Config\ValueFactory $configValueFactory
+    * @param \Magento\Framework\Model\ResourceModel\AbstractResource $resource
+    * @param \Magento\Framework\Data\Collection\AbstractDb $resourceCollection
+    * @param string $runModelPath
+    * @param array $data
+    */
+    public function __construct(
+        \Magento\Framework\Model\Context $context,
+        \Magento\Framework\Registry $registry,
+        \Magento\Framework\App\Config\ScopeConfigInterface $config,
+        \Magento\Framework\App\Cache\TypeListInterface $cacheTypeList,
+        \Magento\Framework\App\Config\ValueFactory $configValueFactory,
+        \Magento\Framework\Model\ResourceModel\AbstractResource $resource = null,
+        \Magento\Framework\Data\Collection\AbstractDb $resourceCollection = null,
+        $runModelPath = '',
+        array $data = []
     ) {
-        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">runModelPath</span> <span style="color:#f92672">=</span> $runModelPath;
-        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">configValueFactory</span> <span style="color:#f92672">=</span> $configValueFactory;
-        <span style="color:#66d9ef">parent</span><span style="color:#f92672">::</span><span style="color:#a6e22e">__construct</span>($context, $registry, $config, $cacheTypeList, $resource, $resourceCollection, $data);
+        $this-&gt;runModelPath = $runModelPath;
+        $this-&gt;configValueFactory = $configValueFactory;
+        parent::__construct($context, $registry, $config, $cacheTypeList, $resource, $resourceCollection, $data);
     }
-                   
-       
-    <span style="color:#e6db74">/**
-</span><span style="color:#e6db74">    * {@inheritdoc}
-</span><span style="color:#e6db74">    *
-</span><span style="color:#e6db74">    * @return $this
-</span><span style="color:#e6db74">    * @throws \Exception
-</span><span style="color:#e6db74">    */</span>
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">afterSave</span>()
+                    
+        
+    /**
+    * {@inheritdoc}
+    *
+    * @return $this
+    * @throws \Exception
+    */
+    public function afterSave()
     {
-        $cronExprString <span style="color:#f92672">=</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getData</span>(<span style="color:#a6e22e">self</span><span style="color:#f92672">::</span><span style="color:#a6e22e">CONFIG_DATA</span>);
+        $cronExprString = $this-&gt;getData(self::CONFIG_DATA);
 
-        <span style="color:#66d9ef">try</span> {
-            $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">configValueFactory</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">create</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">load</span>(
-                <span style="color:#a6e22e">self</span><span style="color:#f92672">::</span><span style="color:#a6e22e">CRON_STRING_PATH</span>,
-                <span style="color:#e6db74">&#39;path&#39;</span>
-            )<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setValue</span>(
+        try {
+            $this-&gt;configValueFactory-&gt;create()-&gt;load(
+                self::CRON_STRING_PATH,
+                'path'
+            )-&gt;setValue(
                 $cronExprString
-            )<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setPath</span>(
-                <span style="color:#a6e22e">self</span><span style="color:#f92672">::</span><span style="color:#a6e22e">CRON_STRING_PATH</span>
-            )<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">save</span>();
-            $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">configValueFactory</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">create</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">load</span>(
-                <span style="color:#a6e22e">self</span><span style="color:#f92672">::</span><span style="color:#a6e22e">CRON_MODEL_PATH</span>,
-                <span style="color:#e6db74">&#39;path&#39;</span>
-            )<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setValue</span>(
-                $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">runModelPath</span>
-            )<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setPath</span>(
-                <span style="color:#a6e22e">self</span><span style="color:#f92672">::</span><span style="color:#a6e22e">CRON_MODEL_PATH</span>
-            )<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">save</span>();
-        } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">\Exception</span> $e) {
-            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">\Exception</span>(<span style="color:#a6e22e">__</span>(<span style="color:#e6db74">&#39;We can\&#39;t save the cron expression.&#39;</span>));
+            )-&gt;setPath(
+                self::CRON_STRING_PATH
+            )-&gt;save();
+            $this-&gt;configValueFactory-&gt;create()-&gt;load(
+                self::CRON_MODEL_PATH,
+                'path'
+            )-&gt;setValue(
+                $this-&gt;runModelPath
+            )-&gt;setPath(
+                self::CRON_MODEL_PATH
+            )-&gt;save();
+        } catch (\Exception $e) {
+            throw new \Exception(__('We can\'t save the cron expression.'));
         }
-   
-        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">parent</span><span style="color:#f92672">::</span><span style="color:#a6e22e">afterSave</span>();
+    
+        return parent::afterSave();
     }
 
 }                 
-</code></pre></div></li>
-<li>
-<p>І нарешті створюємо <em>app/VendorName/ModuleName/Cron/CronJob.php</em></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</code></pre>
 
-<span style="color:#66d9ef">namespace</span> <span style="color:#a6e22e">VendorName\ModuleName\Cron</span>;
+<ol>
+<li>І нарешті створюємо <em>app/VendorName/ModuleName/Cron/CronJob.php</em>
+```php
+&lt;?php</li>
+</ol>
 
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CronJob</span>
+<p>namespace VendorName\ModuleName\Cron;</p>
+
+<p>class CronJob
+{</p>
+
+<pre><code>public function execute()
 {
-
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">execute</span>()
-    {
-                <span style="color:#f92672">...</span>
-        <span style="color:#66d9ef">return</span> $this;
-    }
+            ...
+    return $this;
 }
-</code></pre></div></li>
+</code></pre>
+
+<p>}
+```</p></li>
 </ol>
     
         </div>
@@ -346,13 +356,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/upgrade-magento-232/">Оновлення Magento до версії 2.3.2</a></li>            
+          <li><a href="https://bender.kr.ua/howto-add-header-links-in-magento2/">Magento 2: як додати посилання в header.links</a></li>            
         
-          <li><a href="https://bender.kr.ua/nginx-geoip/">Блокування трафіку з окремих країн за допомогою Nginx та GeoIP</a></li>            
+          <li><a href="https://bender.kr.ua/howto-asterisk-part-4/">IP-телефонія на базі Asterisk. Частина 4: Голосове меню</a></li>            
         
-          <li><a href="https://bender.kr.ua/cli-upgrade-magento2/">Оновлення Magento 2</a></li>            
+          <li><a href="https://bender.kr.ua/howto-asterisk-part-2/">IP-телефонія на базі Asterisk. Частина 2: Налаштування SIP</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-certbot-nginx-debian/">Отримання SSL-сертифікату для Nginx на Debian 9</a></li>            
+          <li><a href="https://bender.kr.ua/fail2ban-unban-ip/">Як розблокувати себе в fail2ban</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">

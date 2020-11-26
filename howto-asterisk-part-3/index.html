@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1559619608-21ed24d8035b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.76.2" />
+    <meta name="generator" content="Hugo 0.54.0" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -145,23 +145,35 @@
 
     <section class="post-full-content">
         <div class="kg-card-markdown">
-        <p>Цикл статей по розгортанню IP-телефонії на базі <em><strong>Asterisk</strong></em>. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Робота була захищена, сертифікат отриманий, все написане тестувалось і є повтінстю робочою реалізацією. Інформація в статті і версії програмного забезбечення актуальні на 2017 рік.</p>
+        
+
+<p>Цикл статей по розгортанню IP-телефонії на базі <strong><em>Asterisk</em></strong>. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Робота була захищена, сертифікат отриманий, все написане тестувалось і є повтінстю робочою реалізацією. Інформація в статті і версії програмного забезбечення актуальні на 2017 рік.</p>
+
 <ul>
 <li>частина 1 - <a href="https://bender.kr.ua/howto-asterisk-part-1/">Встановлення сервера Asterisk</a></li>
-<li>частина 2 - <a href="https://bender.kr.ua/howto-asterisk-part-2/">Налаштування SIP</a></li>
-</ul>
+
+<li><p>частина 2 - <a href="https://bender.kr.ua/howto-asterisk-part-2/">Налаштування SIP</a></p>
+
 <h1 id="3-логіка-обробки-дзвінків-dialplan">3. Логіка обробки дзвінків (Dialplan)</h1>
-<h2 id="31-план-дозвона-на-разні-напрямки">3.1 План дозвона на разні напрямки</h2>
-<p>Створимо кілька контекстів для обробки дзвінків:</p>
-<ul>
-<li><em>call-local</em> - контекст для дзвінків між внутрішніми номерами</li>
-<li><em>call-in</em> - контекст для вхідних дзвінків з &ldquo;зовнішніх&rdquo; номерів</li>
-<li><em>call-out</em> - контекст для вихідних дзвінків на &ldquo;зовнішні&rdquo; номери
-Робимо резервну копію файлу <em>extensions.conf</em> і створюємо новий файл для налаштування плану дозвону:</li>
-</ul>
+
+<h2 id="3-1-план-дозвона-на-разні-напрямки">3.1 План дозвона на разні напрямки</h2>
+
+<p>Створимо кілька контекстів для обробки дзвінків:</p></li>
+
+<li><p><em>call-local</em> - контекст для дзвінків між внутрішніми номерами</p></li>
+
+<li><p><em>call-in</em> - контекст для вхідних дзвінків з &ldquo;зовнішніх&rdquo; номерів</p></li>
+
+<li><p><em>call-out</em> - контекст для вихідних дзвінків на &ldquo;зовнішні&rdquo; номери
+Робимо резервну копію файлу <em>extensions.conf</em> і створюємо новий файл для налаштування плану дозвону:</p>
+
 <pre><code>mv extensions.conf extensions.conf.default
 touch extensions.conf
-</code></pre><p>Вносимо в створений файл такі контексти:</p>
+</code></pre></li>
+</ul>
+
+<p>Вносимо в створений файл такі контексти:</p>
+
 <pre><code>[general]
 static=yes
 writeprotect=no
@@ -187,7 +199,10 @@ exten =&gt; YYYYYY,1,Dial(SIP/101)
 [manager]
 include =&gt; call-local
 include =&gt; call-out
-</code></pre><p>Перевіряємо дзвінки між внутрішніми лініями:</p>
+</code></pre>
+
+<p>Перевіряємо дзвінки між внутрішніми лініями:</p>
+
 <pre><code>asterisk-centos*CLI&gt; 
   == Using SIP RTP CoS mark 5
     -- Executing [102@manager:1] Dial(&quot;SIP/101-0000002a&quot;, &quot;SIP/102&quot;) in new stack
@@ -217,7 +232,10 @@ include =&gt; call-out
     -- Channel SIP/101-0000002d left 'native_rtp' basic-bridge &lt;10e80012-fb40-47ab-be85-7d76cb584588&gt;
     -- Channel SIP/102-0000002c left 'native_rtp' basic-bridge &lt;10e80012-fb40-47ab-be85-7d76cb584588&gt;
   == Spawn extension (manager, 101, 1) exited non-zero on 'SIP/102-0000002c'
-</code></pre><p>Перевіряємо дзвінки на зовнішні лінії, а саме на номер <em>XXXXXX</em> провайдера Zadarma.</p>
+</code></pre>
+
+<p>Перевіряємо дзвінки на зовнішні лінії, а саме на номер <em>XXXXXX</em> провайдера Zadarma.</p>
+
 <pre><code>asterisk-centos*CLI&gt; 
   == Using SIP RTP CoS mark 5
     -- Executing [XXXXXX@manager:1] Dial(&quot;SIP/101-00000035&quot;, &quot;SIP/XXXXXX@zadarma&quot;) in new stack
@@ -233,7 +251,10 @@ include =&gt; call-out
     -- Channel SIP/101-00000035 left 'native_rtp' basic-bridge &lt;d19036d2-735c-4c43-b2b5-9ac8d3b040f6&gt;
   == Spawn extension (manager, XXXXXX, 1) exited non-zero on 'SIP/101-00000035'
     -- Channel SIP/zadarma-00000036 left 'native_rtp' basic-bridge &lt;d19036d2-735c-4c43-b2b5-9ac8d3b040f6&gt;
-</code></pre><p>Перевіряємо можливість додзвонитися на наш Asterisk з зовнішнього номера, для цього дзвонимо на номер <em>YYYYYY</em> провайдера Zadarma, який вважаємо &ldquo;зовнішнім&rdquo; номером нашої компанії:</p>
+</code></pre>
+
+<p>Перевіряємо можливість додзвонитися на наш Asterisk з зовнішнього номера, для цього дзвонимо на номер <em>YYYYYY</em> провайдера Zadarma, який вважаємо &ldquo;зовнішнім&rdquo; номером нашої компанії:</p>
+
 <pre><code>asterisk-centos*CLI&gt; 
   == Using SIP RTP CoS mark 5
     -- Executing [YYYYYY@call-in:1] Dial(&quot;SIP/zadarma-00000004&quot;, &quot;SIP/101&quot;) in new stack
@@ -249,14 +270,16 @@ include =&gt; call-out
     -- Channel SIP/101-00000005 left 'native_rtp' basic-bridge &lt;de21e7c6-f846-401c-8eaa-ccb947a8c88b&gt;
     -- Channel SIP/zadarma-00000004 left 'native_rtp' basic-bridge &lt;de21e7c6-f846-401c-8eaa-ccb947a8c88b&gt;
   == Spawn extension (call-in, YYYYYY, 1) exited non-zero on 'SIP/zadarma-00000004'
-</code></pre><h2 id="32-ролі-і-політики-дзвінків">3.2 Ролі і політики дзвінків</h2>
-<p>Доповнимо файл <em>extensions.conf</em> контекстами для різних ролей компанії, застосуємо до них такі політики дзвінків:</p>
-<ul>
-<li>керуючий персонал - дзвінки на будь-які напрямки, включаючи міжнародні;</li>
-<li>відділ продажів, відділ закупівель, секретар - заборонені дзвінки на міжнародні лінії;</li>
-<li>склад - заборонені дзвінки на зовнішні лінії;</li>
-<li>технічний відділ - заборонені дзвінки до керуючого персоналу і на зовнішні лінії.</li>
-</ul>
+</code></pre>
+
+<h2 id="3-2-ролі-і-політики-дзвінків">3.2 Ролі і політики дзвінків</h2>
+
+<p>Доповнимо файл <em>extensions.conf</em> контекстами для різних ролей компанії, застосуємо до них такі політики дзвінків:
+* керуючий персонал - дзвінки на будь-які напрямки, включаючи міжнародні;
+* відділ продажів, відділ закупівель, секретар - заборонені дзвінки на міжнародні лінії;
+* склад - заборонені дзвінки на зовнішні лінії;
+* технічний відділ - заборонені дзвінки до керуючого персоналу і на зовнішні лінії.</p>
+
 <pre><code>[general]
 static=yes
 writeprotect=no
@@ -315,7 +338,10 @@ include =&gt; call-local
 include =&gt; call-local-manager
 include =&gt; call-local
 include =&gt; call-out-ua
-</code></pre><p>Перевіряємо заборону дзвінків на групу manager:</p>
+</code></pre>
+
+<p>Перевіряємо заборону дзвінків на групу manager:</p>
+
 <pre><code>asterisk-centos*CLI&gt; 
   == Using SIP RTP CoS mark 5
 [2017-05-01 19:35:30] NOTICE[2173][C-00000028]: chan_sip.c:26374 handle_request_invite: Call from '501' (192.168.1.101:5060) to extension '380938694966' rejected because extension not found in context 'it'.
@@ -330,9 +356,13 @@ asterisk-centos*CLI&gt;
        &gt; 0xb3286448 -- Probation passed - setting RTP source address to 192.168.1.105:7078
        &gt; 0xb690fc70 -- Probation passed - setting RTP source address to 185.45.152.163:15936
   == Spawn extension (manager, 380938694966, 1) exited non-zero on 'SIP/102-0000003b'
-</code></pre><h2 id="33-запис-дзвінків">3.3 Запис дзвінків</h2>
+</code></pre>
+
+<h2 id="3-3-запис-дзвінків">3.3 Запис дзвінків</h2>
+
 <p>Додамо функцію запису дзвінків в форматі mp3 &ldquo;на льоту&rdquo;. За замовчуванням запис дзвінків буде включена, але з можливістю відключити її під час розмови.
 Для підтримки формату mp3 встановимо в системі пакет <em>lame</em>:</p>
+
 <pre><code>cd /usr/src/
 wget https://downloads.sourceforge.net/project/lame/lame/3.99/lame-3.99.5.tar.gz
 tar vxfz lame-3.99.5.tar.gz 
@@ -340,7 +370,10 @@ rm -f lame-3.99.5.tar.gz
 cd lame-3.99.5
 ./configure 
 make &amp;&amp; make install
-</code></pre><p>Додаємо можливість запису дзвінків в діалплан:</p>
+</code></pre>
+
+<p>Додаємо можливість запису дзвінків в діалплан:</p>
+
 <pre><code>[general]
 static=yes
 writeprotect=no
@@ -421,8 +454,11 @@ include =&gt; call-local
 include =&gt; call-local-manager
 include =&gt; call-local
 include =&gt; call-out-ua
-</code></pre><p>Запис дзвінків в контексті call-in:</p>
-<pre><code class="language-asterisk-centos*CLI>" data-lang="asterisk-centos*CLI>">  == Using SIP RTP CoS mark 5
+</code></pre>
+
+<p>Запис дзвінків в контексті call-in:</p>
+
+<pre><code class="language-asterisk-centos*CLI&gt;">  == Using SIP RTP CoS mark 5
     -- Executing [YYYYYY@call-in:1] Macro(&quot;SIP/zadarma-00000000&quot;, &quot;recording,XXXXXX,YYYYYY&quot;) in new stack
     -- Executing [s@macro-recording:1] GotoIf(&quot;SIP/zadarma-00000000&quot;, &quot;1?yes:no&quot;) in new stack
     -- Goto (macro-recording,s,2)
@@ -470,8 +506,12 @@ Exit record
     -- Channel SIP/501-00000011 left 'native_rtp' basic-bridge &lt;f219765d-eced-41e3-8a5d-4e27d5651e14&gt;
     -- Channel SIP/102-00000010 left 'native_rtp' basic-bridge &lt;f219765d-eced-41e3-8a5d-4e27d5651e14&gt;
   == Spawn extension (manager, 501, 3) exited non-zero on 'SIP/102-00000010'
-</code></pre><hr>
-<p><a href="https://bender.kr.ua/howto-asterisk-part-4/">В наступній статті будемо налаштовувати <em><strong>голосове меню</strong></em>.</a></p>
+</code></pre>
+
+<hr />
+
+<p><a href="https://bender.kr.ua/howto-asterisk-part-4/">В наступній статті будемо налаштовувати <strong><em>голосове меню</em></strong>.</a></p>
+
 <ul>
 <li>частина 1 - <a href="https://bender.kr.ua/howto-asterisk-part-1/">Встановлення сервера Asterisk</a></li>
 <li>частина 2 - <a href="https://bender.kr.ua/howto-asterisk-part-2/">Налаштування SIP</a></li>
@@ -536,13 +576,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/how-to-exclude-dump-tables/">Вибіркове завантаження таблиць дампа в MySQL</a></li>            
+          <li><a href="https://bender.kr.ua/git-branch/">Як забрати гілку з git</a></li>            
         
-          <li><a href="https://bender.kr.ua/netbeans-and-fonts/">NetBeans і проблема зі шрифтами</a></li>            
+          <li><a href="https://bender.kr.ua/mining-karbowanec/">Як я місяць майнив криптовалюту за допомогою ноутбуку, навіщо мені це та що з того вийшло</a></li>            
         
-          <li><a href="https://bender.kr.ua/regexp-replace-in-mariadb/">Заміна даних в MariaDB</a></li>            
+          <li><a href="https://bender.kr.ua/configurable-crontab-magento2/">Magento2: налаштування періодичних завдань власного модуля через адмін-панель</a></li>            
         
-          <li><a href="https://bender.kr.ua/magento2-reindexer-for-large-catalog/">Проблема переіндексації великого каталогу в Magento 2</a></li>            
+          <li><a href="https://bender.kr.ua/howto-lemp-install/">Встановлення Nginx &#43; PHP &#43; MySQL на Debian 9</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">

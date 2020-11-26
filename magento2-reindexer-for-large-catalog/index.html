@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1470173274384-c4e8e2f9ea4c?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.76.2" />
+    <meta name="generator" content="Hugo 0.54.0" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -145,16 +145,25 @@
 
     <section class="post-full-content">
         <div class="kg-card-markdown">
-        <p><strong>Вихідні данні:</strong> Magento 2.3.1, каталог - 300K
+        
+
+<p><strong>Вихідні данні:</strong> Magento 2.3.1, каталог - 300K
 <strong>Проблема:</strong> переіндексація каталогу може відбуватись більше 24 годин (може й більше, ніхто не перевіряв)</p>
+
 <p>Пошуки рішення привели до такого твіту:</p>
-<!-- raw HTML omitted -->
+
+<p><blockquote class="twitter-tweet"><p lang="en" dir="ltr">had similar problems (price and eav indexers in 2.2.1) with 50k products and 2 storeviews. increasing batch size helped immensly - still slower than 2.1.7 tho. <a href="https://t.co/vomnyykeSz">pic.twitter.com/vomnyykeSz</a></p>&mdash; Thomas ツ (@heldchen) <a href="https://twitter.com/heldchen/status/933552859765006336?ref_src=twsrc%5Etfw">November 23, 2017</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
 <p>а також до такого issue <a href="https://github.com/magento/magento2/issues/10531">https://github.com/magento/magento2/issues/10531</a> .</p>
+
 <p>Хоча обговоренню більше 2 років, здається воно актуальне і для 2.3.1.</p>
+
 <p>Мені допомогли ці дві штуки:</p>
+
 <ol>
-<li>
-<p>задати великий <strong>batchRowsCount</strong> в <em>di.xml</em></p>
+<li><p>задати великий <strong>batchRowsCount</strong> в <em>di.xml</em></p>
+
 <pre><code>&lt;type name=&quot;Magento\Catalog\Model\ResourceModel\Product\Indexer\Price\BatchSizeCalculator&quot;&gt;
     &lt;arguments&gt;
         &lt;argument name=&quot;batchRowsCount&quot; xsi:type=&quot;array&quot;&gt;
@@ -163,8 +172,9 @@
     &lt;/arguments&gt;
 &lt;/type&gt;
 </code></pre></li>
-<li>
-<p>збільшити <strong>$batchSize</strong> в <em>/vendor/magento/module-catalog-inventory/Model/Indexer/ProductPriceIndexFilter.php</em> (67)</p>
+
+<li><p>збільшити <strong>$batchSize</strong> в <em>/vendor/magento/module-catalog-inventory/Model/Indexer/ProductPriceIndexFilter.php</em> (67)</p>
+
 <pre><code>    public function __construct(
         StockConfigurationInterface $stockConfiguration,
         Item $stockItem,
@@ -183,29 +193,41 @@
 
 </code></pre></li>
 </ol>
-<p><strong>P.S.</strong> Ейфорія тривала не довго, аж до наступної переіндексації. Розслідування продовжилось і виплив ось такий issue - <a href="https://github.com/magento/magento2/issues/23077,">https://github.com/magento/magento2/issues/23077,</a> який пов&rsquo;язаний з неправильною роботою тригерів і створенням дублів товарів для індексації. Ну і власне виправлення - <a href="https://github.com/sebastien-kathmandu/magento2/pull/1/commits/444bc8d2805ab0c57a66e656332394f0123c63df">https://github.com/sebastien-kathmandu/magento2/pull/1/commits/444bc8d2805ab0c57a66e656332394f0123c63df</a>.</p>
+
+<p><strong>P.S.</strong> Ейфорія тривала не довго, аж до наступної переіндексації. Розслідування продовжилось і виплив ось такий issue - <a href="https://github.com/magento/magento2/issues/23077">https://github.com/magento/magento2/issues/23077</a>, який пов&rsquo;язаний з неправильною роботою тригерів і створенням дублів товарів для індексації. Ну і власне виправлення - <a href="https://github.com/sebastien-kathmandu/magento2/pull/1/commits/444bc8d2805ab0c57a66e656332394f0123c63df">https://github.com/sebastien-kathmandu/magento2/pull/1/commits/444bc8d2805ab0c57a66e656332394f0123c63df</a>.</p>
+
 <p>Раніше у <em>vendor/magento/framework/Mview/View/Subscription.php</em> (принаймі у версії 2.2.5) було так:</p>
+
 <pre><code>foreach ($columnNames as $columnName) {
     $columns[] = sprintf(
         'NEW.%1$s != OLD.%1$s',
         $this-&gt;connection-&gt;quoteIdentifier($columnName)
     );
 }  
-</code></pre><p>потім стало так:</p>
+</code></pre>
+
+<p>потім стало так:</p>
+
 <pre><code>foreach ($columnNames as $columnName) {
     $columns[] = sprintf(
         'NEW.%1$s &lt;=&gt; OLD.%1$s',
         $this-&gt;connection-&gt;quoteIdentifier($columnName)
     );
 } 
-</code></pre><p>Фактично, від перевірки на нерівність двох змінних, перейшли до перевірки на рівність, що очевидно є помилкою, бо спричиняє лавиноподібне заповнення таблиць з префіксом <em>cl</em>. В якості виправлення запропоновано такий варіант:</p>
+</code></pre>
+
+<p>Фактично, від перевірки на нерівність двох змінних, перейшли до перевірки на рівність, що очевидно є помилкою, бо спричиняє лавиноподібне заповнення таблиць з префіксом <em>cl</em>. В якості виправлення запропоновано такий варіант:</p>
+
 <pre><code>foreach ($columnNames as $columnName) {
     $columns[] = sprintf(
         'NOT NEW.%1$s &lt;=&gt; OLD.%1$s',
         $this-&gt;connection-&gt;quoteIdentifier($columnName)
     );
 } 
-</code></pre><h2 id="посилання">Посилання</h2>
+</code></pre>
+
+<h2 id="посилання">Посилання</h2>
+
 <ul>
 <li>Про те, як влаштована індексація в Magento 2 можна почитати тут - <a href="https://belvg.com/blog/how-it-works-magento-2-partial-index.html">https://belvg.com/blog/how-it-works-magento-2-partial-index.html</a>.</li>
 </ul>
@@ -269,13 +291,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/how-to-fix-elasticsearch-forbidden-12-index-read-only-allow-delete-api/">Проблема з переіндексацією catalogsearch_fulltext на Magento 2</a></li>            
+          <li><a href="https://bender.kr.ua/review-neal-stephenson-in-the-beginning-was-the-command-line/">Ніл Стівенсон. Спочатку був командний рядок</a></li>            
         
-          <li><a href="https://bender.kr.ua/why-magento/">Чому ми обираємо Magento, а не інші системи</a></li>            
+          <li><a href="https://bender.kr.ua/howto-install-django-mysql-debian-9/">Встановлення зв&#39;язки Django та MySQL на Debian 9</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-asterisk-part-2/">IP-телефонія на базі Asterisk. Частина 2: Налаштування SIP</a></li>            
+          <li><a href="https://bender.kr.ua/year-in-books-2019/">Мій книжковий 2019 рік</a></li>            
         
-          <li><a href="https://bender.kr.ua/mint-19-and-epson-perfection-v33/">Mint 19 і сканер Epson Perfection V33</a></li>            
+          <li><a href="https://bender.kr.ua/mining-karbowanec/">Як я місяць майнив криптовалюту за допомогою ноутбуку, навіщо мені це та що з того вийшло</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">

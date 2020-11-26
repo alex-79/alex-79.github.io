@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1494059980473-813e73ee784b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.76.2" />
+    <meta name="generator" content="Hugo 0.54.0" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -145,13 +145,22 @@
 
     <section class="post-full-content">
         <div class="kg-card-markdown">
-        <p>Під час переіндексації отримую</p>
+        
+
+<p>Під час переіндексації отримую</p>
+
 <pre><code>php bin/magento indexer:reindex catalogsearch_fulltext
 Catalog Search indexer process unknown error:
 {&quot;error&quot;:{&quot;root_cause&quot;:[{&quot;type&quot;:&quot;cluster_block_exception&quot;,&quot;reason&quot;:&quot;blocked by: [FORBIDDEN/12/index read-only / allow delete (api)];&quot;}],&quot;type&quot;:&quot;cluster_block_exception&quot;,&quot;reason&quot;:&quot;blocked by: [FORBIDDEN/12/index read-only / allow delete (api)];&quot;},&quot;status&quot;:403}
-</code></pre><p>Проблема пов&rsquo;язана з <strong>ElasticSearch</strong>, а саме тим, що на диску залишилось менше 5% вільного місця. Щоб усе запрацювало, крім вивільнення необхідної кількості байт, необхідно ще виконати наступну команду:</p>
+</code></pre>
+
+<p>Проблема пов&rsquo;язана з <strong>ElasticSearch</strong>, а саме тим, що на диску залишилось менше 5% вільного місця. Щоб усе запрацювало, крім вивільнення необхідної кількості байт, необхідно ще виконати наступну команду:</p>
+
 <pre><code>curl -XPUT -H &quot;Content-Type: application/json&quot; http://localhost:9200/_all/_settings -d '{&quot;index.blocks.read_only_allow_delete&quot;: null}'
-</code></pre><h2 id="посилання">Посилання</h2>
+</code></pre>
+
+<h2 id="посилання">Посилання</h2>
+
 <ul>
 <li><a href="https://techoverflow.net/2019/04/17/how-to-fix-elasticsearch-forbidden-12-index-read-only-allow-delete-api/">https://techoverflow.net/2019/04/17/how-to-fix-elasticsearch-forbidden-12-index-read-only-allow-delete-api/</a></li>
 </ul>
@@ -215,13 +224,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/magento-2-cron-indexer-repair/">Magento 2: не працює індексація за розкладом</a></li>            
+          <li><a href="https://bender.kr.ua/failed-to-fetch-jessie-backports-repository/">Проблема з backports репозиторієм в Debian 8</a></li>            
         
-          <li><a href="https://bender.kr.ua/quick-start-with-jenkins-in-docker/">Швидкий старт Jenkins в Debian 10 за допомогою Docker</a></li>            
+          <li><a href="https://bender.kr.ua/howto-remove-parent-category-from-url-magento-2/">Вилучення ієрархії категорій з URL в Magento 2</a></li>            
         
-          <li><a href="https://bender.kr.ua/magick-248/">Магічне число 248 або Чому я не можу додати значення атрибута в Magento 2?</a></li>            
+          <li><a href="https://bender.kr.ua/nginx-redirection-get-arg/">NGINX - 301-й редирект адрес з get-аргументами</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-certbot-nginx-debian/">Отримання SSL-сертифікату для Nginx на Debian 9</a></li>            
+          <li><a href="https://bender.kr.ua/upgrade-magento-232/">Оновлення Magento до версії 2.3.2</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">

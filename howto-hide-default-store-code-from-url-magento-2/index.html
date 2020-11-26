@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1477650614459-1c25033a8953?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.76.2" />
+    <meta name="generator" content="Hugo 0.54.0" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -146,28 +146,36 @@
     <section class="post-full-content">
         <div class="kg-card-markdown">
         <p><strong>Вихідні дані:</strong> є магазин з двома мовними версіями, наприклад, <em>ua</em> та <em>en</em>, версія українською мовою - основна.
-<strong>Задача:</strong> прибрати store code з адреси основного магазину, тобто замість <a href="https://mysite.com/ua/">https://mysite.com/ua/</a> зробити просто <a href="https://mysite.com/,">https://mysite.com/,</a> міжнародну версію залишити без змін - <a href="https://mysite.com/en/">https://mysite.com/en/</a>.</p>
+<strong>Задача:</strong> прибрати store code з адреси основного магазину, тобто замість <a href="https://mysite.com/ua/">https://mysite.com/ua/</a> зробити просто <a href="https://mysite.com/">https://mysite.com/</a>, міжнародну версію залишити без змін - <a href="https://mysite.com/en/">https://mysite.com/en/</a>.</p>
+
 <p>Для цього нам треба навісити плагін на метод <em>getBaseUrl</em> класу <em>Magento\Store\Model\Store</em>.</p>
+
 <ol>
-<li>
-<p>Створюємо заготовку для модуля в директорії <em>Noon/HideDefaultStoreCode</em></p>
+<li><p>Створюємо заготовку для модуля в директорії <em>Noon/HideDefaultStoreCode</em></p>
+
 <p><em>registration.php</em></p>
+
 <pre><code>&lt;?php
 \Magento\Framework\Component\ComponentRegistrar::register(
 \Magento\Framework\Component\ComponentRegistrar::MODULE,
     'Noon_HideDefaultStoreCode',
     __DIR__
 );
-</code></pre><p><em>etc/module.xml</em></p>
+</code></pre>
+
+<p><em>etc/module.xml</em></p>
+
 <pre><code>&lt;?xml version=&quot;1.0&quot;?&gt;
 &lt;config xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
 xsi:noNamespaceSchemaLocation=&quot;urn:magento:framework:Module/etc/module.xsd&quot;&gt;
     &lt;module name=&quot;Noon_HideDefaultStoreCode&quot; setup_version=&quot;0.1.0&quot; /&gt;
 &lt;/config&gt;
 </code></pre></li>
-<li>
-<p>Додаємо до адмінки опцію для включення/відключення Store Code в URL</p>
+
+<li><p>Додаємо до адмінки опцію для включення/відключення Store Code в URL</p>
+
 <p><em>etc/adminhtml/system.xml</em></p>
+
 <pre><code>&lt;?xml version=&quot;1.0&quot;?&gt;
 &lt;config xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;urn:magento:module:Magento_Config:etc/system_file.xsd&quot;&gt;
     &lt;system&gt;
@@ -181,10 +189,15 @@ xsi:noNamespaceSchemaLocation=&quot;urn:magento:framework:Module/etc/module.xsd&
         &lt;/section&gt;
     &lt;/system&gt;
 &lt;/config&gt;
-</code></pre><p>Результатом буде такий вигляд адмінки
-<img src="/img/howto-hide-default-store-code-from-url-magento-2-1-1.png" alt="howto-hide-default-store-code-from-url-magento-2-1-1"></p>
+</code></pre>
+
+<p>Результатом буде такий вигляд адмінки
+<img src="/img/howto-hide-default-store-code-from-url-magento-2-1-1.png" alt="howto-hide-default-store-code-from-url-magento-2-1-1" /></p>
+
 <p>Задаємо значення <em>No</em> на замовчання</p>
+
 <p><em>etc/config.xml</em></p>
+
 <pre><code>&lt;?xml version=&quot;1.0&quot;?&gt;
 &lt;config xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;urn:magento:module:Magento_Store:etc/config.xsd&quot;&gt;
     &lt;default&gt;
@@ -196,9 +209,11 @@ xsi:noNamespaceSchemaLocation=&quot;urn:magento:framework:Module/etc/module.xsd&
     &lt;/default&gt;
 &lt;/config&gt;
 </code></pre></li>
-<li>
-<p>Робимо хелпер для можливості отримати значення налаштування з адмін-панелі</p>
+
+<li><p>Робимо хелпер для можливості отримати значення налаштування з адмін-панелі</p>
+
 <p><em>Helper/Data.php</em></p>
+
 <pre><code>&lt;?php
 namespace Noon\HideDefaultStoreCode\Helper;
 
@@ -238,16 +253,21 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     }
 }
 </code></pre></li>
-<li>
-<p>Створюємо after-плагін</p>
+
+<li><p>Створюємо after-плагін</p>
+
 <p><em>etc/di.xml</em></p>
+
 <pre><code>&lt;?xml version=&quot;1.0&quot;?&gt;
 &lt;config xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;&gt;
     &lt;type name=&quot;Magento\Store\Model\Store&quot;&gt;
         &lt;plugin name=&quot;Noon_hide_default_store_code&quot; type=&quot;\Noon\HideDefaultStoreCode\Plugin\Model\HideDefaultStoreCode&quot; sortOrder=&quot;0&quot; /&gt;
     &lt;/type&gt;
 &lt;/config&gt;
-</code></pre><p><em>Plugin/Model/HideDefaultStoreCode.php</em></p>
+</code></pre>
+
+<p><em>Plugin/Model/HideDefaultStoreCode.php</em></p>
+
 <pre><code>&lt;?php
 
 namespace Noon\HideDefaultStoreCode\Plugin\Model;
@@ -259,13 +279,13 @@ class HideDefaultStoreCode
     * @var \Noon\HideDefaultStoreCode\Helper\Data 
     */
     protected $helper;
-       
+        
     /**
     *
     * @var \Magento\Store\Model\StoreManagerInterface
     */
     protected $storeManager;
-       
+        
     /**
     * 
     * @param \Noon\HideDefaultStoreCode\Helper\Data $helper
@@ -295,6 +315,7 @@ class HideDefaultStoreCode
 }
 </code></pre></li>
 </ol>
+
 <p>Репозиторій плагіна - <a href="https://github.com/alex-79/magento2-hide-default-store-code-from-url">https://github.com/alex-79/magento2-hide-default-store-code-from-url</a>.</p>
     
         </div>
@@ -356,13 +377,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/review-neal-stephenson-in-the-beginning-was-the-command-line/">Ніл Стівенсон. Спочатку був командний рядок</a></li>            
+          <li><a href="https://bender.kr.ua/why-magento/">Чому ми обираємо Magento, а не інші системи</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-asterisk-part-3/">IP-телефонія на базі Asterisk. Частина 3: Логіка обробки дзвінків (Dialplan)</a></li>            
+          <li><a href="https://bender.kr.ua/git-branch/">Як забрати гілку з git</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-install-munin/">Простий моніторинг роботи сервера за допомогою Munin</a></li>            
+          <li><a href="https://bender.kr.ua/df-and-du-show-different-values/">df і du показують різні значення</a></li>            
         
-          <li><a href="https://bender.kr.ua/magick-248/">Магічне число 248 або Чому я не можу додати значення атрибута в Magento 2?</a></li>            
+          <li><a href="https://bender.kr.ua/cli-upgrade-magento2/">Оновлення Magento 2</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">

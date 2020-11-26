@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1475691058852-37b5d9b6a878?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.76.2" />
+    <meta name="generator" content="Hugo 0.54.0" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -145,37 +145,67 @@
 
     <section class="post-full-content">
         <div class="kg-card-markdown">
-        <p>Цикл статей по розгортанню IP-телефонії на базі <em><strong>Asterisk</strong></em>. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Робота була захищена, сертифікат отриманий, все написане тестувалось і є повтінстю робочою реалізацією. Інформація в статті і версії програмного забезбечення актуальні на 2017 рік.</p>
+        
+
+<p>Цикл статей по розгортанню IP-телефонії на базі <strong><em>Asterisk</em></strong>. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Робота була захищена, сертифікат отриманий, все написане тестувалось і є повтінстю робочою реалізацією. Інформація в статті і версії програмного забезбечення актуальні на 2017 рік.</p>
+
 <h1 id="середовище">Середовище</h1>
+
 <p>Операційна система встановлена з образу <em>CentOS-7-i386-Minimal-1611.iso</em>. Им&rsquo;я сервера <em>asterisk-centos.localhost.local</em>. Адреса сервера в локальній мережі <em>192.168.1.201</em>.</p>
+
 <h1 id="встановлення-сервера-asterisk">Встановлення сервера Asterisk</h1>
-<h2 id="11-підготовка-середовища">1.1 Підготовка середовища</h2>
+
+<h2 id="1-1-підготовка-середовища">1.1 Підготовка середовища</h2>
+
 <p>Розширюємо <em>bash</em>, встановлюємо <em>vim</em> и пакет <em>wget</em> для скачування архівів з сирцевим кодом:</p>
+
 <pre><code>yum install bash-completion vim-enhanced wget
-</code></pre><p>Встановлюємо набір утиліт для компіляції програм з сирцевих кодов:</p>
+</code></pre>
+
+<p>Встановлюємо набір утиліт для компіляції програм з сирцевих кодов:</p>
+
 <pre><code>yum groupinstall -y Development Tools
-</code></pre><p>Оновлюємо пакети в системі до останніх версій:</p>
+</code></pre>
+
+<p>Оновлюємо пакети в системі до останніх версій:</p>
+
 <pre><code>yum update
-</code></pre><p>Відключаємо SElinux (знаю що за це хтось має бути підсмажений в *nix-овому пеклі, але що було, те було), Для цього в файлі <em>/etc/sysconfig/selinux</em> треба вказати:</p>
+</code></pre>
+
+<p>Відключаємо SElinux (знаю що за це хтось має бути підсмажений в *nix-овому пеклі, але що було, те було), Для цього в файлі <em>/etc/sysconfig/selinux</em> треба вказати:</p>
+
 <pre><code>SELINUX=disabled
-</code></pre><p>Перезавантажуємо систему:</p>
+</code></pre>
+
+<p>Перезавантажуємо систему:</p>
+
 <pre><code>reboot
-</code></pre><h2 id="12-збирання-залежностей-asterisk">1.2 Збирання залежностей Asterisk</h2>
-<p>Встановлюємо <em><strong>DAHDI</strong></em> для роботи з телефоними лініями загального призначення:</p>
+</code></pre>
+
+<h2 id="1-2-збирання-залежностей-asterisk">1.2 Збирання залежностей Asterisk</h2>
+
+<p>Встановлюємо <strong><em>DAHDI</em></strong> для роботи з телефоними лініями загального призначення:</p>
+
 <pre><code>cd /usr/src
 wget http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-current.tar.gz
 tar xvfz dahdi-linux-complete-current.tar.gz
 rm -f dahdi-linux-complete-current.tar.gz
 cd dahdi-linux-complete-2.11.1+2.11.1/
 make all &amp;&amp; make install &amp;&amp; make config
-</code></pre><p>Встановлюємо <em><strong>LibPRI</strong></em> для підтримки системи сигналізації <em>ISDN</em>:</p>
+</code></pre>
+
+<p>Встановлюємо <strong><em>LibPRI</em></strong> для підтримки системи сигналізації <em>ISDN</em>:</p>
+
 <pre><code>cd /usr/src
 wget http://downloads.asterisk.org/pub/telephony/libpri/libpri-current.tar.gz
 tar xvfz libpri-current.tar.gz
 rm -f libpri-current.tar.gz
 cd libpri-1.6.0/
 make &amp;&amp; make install
-</code></pre><p>Встановлюємо <em><strong>PJProject</strong></em> для підтримки канального драйвера <em>PJSIP</em>:</p>
+</code></pre>
+
+<p>Встановлюємо <strong><em>PJProject</em></strong> для підтримки канального драйвера <em>PJSIP</em>:</p>
+
 <pre><code>cd /usr/src
 wget http://www.pjsip.org/release/2.6/pjproject-2.6.tar.bz2
 tar xvfj pjproject-2.6.tar.bz2
@@ -183,8 +213,12 @@ rm -f pjproject-2.6.tar.bz2
 cd pjproject-2.6
 ./configure CFLAGS=&quot;-DNDEBUG -DPJ_HAS_IPV6=1&quot; --prefix=/usr --enable-shared --disable-video --disable-sound --disable-opencore-amr
 make dep &amp;&amp; make &amp;&amp; make install
-</code></pre><pre><code>ldconfig -p | grep pj
-</code></pre><pre><code>	libpjsua2.so.2 (libc6) =&gt; /lib/libpjsua2.so.2
+</code></pre>
+
+<pre><code>ldconfig -p | grep pj
+</code></pre>
+
+<pre><code>	libpjsua2.so.2 (libc6) =&gt; /lib/libpjsua2.so.2
 	libpjsua2.so (libc6) =&gt; /lib/libpjsua2.so
 	libpjsua.so.2 (libc6) =&gt; /lib/libpjsua.so.2
 	libpjsua.so (libc6) =&gt; /lib/libpjsua.so
@@ -208,7 +242,10 @@ make dep &amp;&amp; make &amp;&amp; make install
 	libpjlib-util.so (libc6) =&gt; /lib/libpjlib-util.so
 	libpj.so.2 (libc6) =&gt; /lib/libpj.so.2
 	libpj.so (libc6) =&gt; /lib/libpj.so
-</code></pre><p>Встановлюємо <em><strong>jansson</strong></em>, бібліотеку для роботи з даними в форматі <em>json</em>:</p>
+</code></pre>
+
+<p>Встановлюємо <strong><em>jansson</em></strong>, бібліотеку для роботи з даними в форматі <em>json</em>:</p>
+
 <pre><code>cd /usr/src
 wget -O jansson.tar.gz http://www.digip.org/jansson/releases/jansson-2.10.tar.gz
 tar vxfz jansson.tar.gz
@@ -217,7 +254,10 @@ cd jansson-2.10/
 autoreconf --force --install
 ./configure
 make &amp;&amp; make install
-</code></pre><h2 id="13-встановлення-asterisk">1.3 Встановлення Asterisk</h2>
+</code></pre>
+
+<h2 id="1-3-встановлення-asterisk">1.3 Встановлення Asterisk</h2>
+
 <pre><code>cd /usr/src
 wget http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-13-current.tar.gz
 tar xvfz asterisk-13-current.tar.gz
@@ -227,30 +267,53 @@ contrib/scripts/get_mp3_source.sh
 contrib/scripts/install_prereq install
 ./configure
 make menuselect
-</code></pre><p>Крім запропонованих значень обираємо підтримку <em>MySQL</em> і звукові файли російською мовою (української озвучки тоді ще не підвезли, можливо зараз ситуація інша - не перевіряв):</p>
+</code></pre>
+
+<p>Крім запропонованих значень обираємо підтримку <em>MySQL</em> і звукові файли російською мовою (української озвучки тоді ще не підвезли, можливо зараз ситуація інша - не перевіряв):</p>
+
 <pre><code>    • Add-ons: format_mp3, res_config_mysql, app_mysql и cdr_mysql
     • Core Sound Packages: CORE-SOUNDS-RU-WAV
-</code></pre><p>Після вибору налаштувань в menuselect встановлюємо <em><strong>Asterisk</strong></em>:</p>
+</code></pre>
+
+<p>Після вибору налаштувань в menuselect встановлюємо <strong><em>Asterisk</em></strong>:</p>
+
 <pre><code>make
 make install
 make config
 ldconfig
-</code></pre><p>Створюємо конфігураційні файли:</p>
+</code></pre>
+
+<p>Створюємо конфігураційні файли:</p>
+
 <pre><code>make samples
-</code></pre><p>Для запуску Asterisk необхідно створити користувача з відповідними правами:</p>
+</code></pre>
+
+<p>Для запуску Asterisk необхідно створити користувача з відповідними правами:</p>
+
 <pre><code>useradd -m asterisk
 chown asterisk. /var/run/asterisk
 chown -R asterisk. /etc/asterisk
 chown -R asterisk. /var/{lib,log,spool}/asterisk
 chown -R asterisk. /usr/lib/asterisk
-</code></pre><p>В файлі <em>/etc/sysconfig/asterisk</em> розкоментуємо рядки:</p>
+</code></pre>
+
+<p>В файлі <em>/etc/sysconfig/asterisk</em> розкоментуємо рядки:</p>
+
 <pre><code>AST_USER=&quot;asterisk&quot;
 AST_GROUP=&quot;asterisk&quot;
-</code></pre><p>Запустимо Asterisk:</p>
+</code></pre>
+
+<p>Запустимо Asterisk:</p>
+
 <pre><code>service asterisk start
-</code></pre><p>Перевіримо роботу Asterisk:</p>
+</code></pre>
+
+<p>Перевіримо роботу Asterisk:</p>
+
 <pre><code>asterisk -r
-</code></pre><pre><code>Asterisk 13.15.0, Copyright (C) 1999 - 2014, Digium, Inc. and others.
+</code></pre>
+
+<pre><code>Asterisk 13.15.0, Copyright (C) 1999 - 2014, Digium, Inc. and others.
 Created by Mark Spencer &lt;markster@digium.com&gt;
 Asterisk comes with ABSOLUTELY NO WARRANTY; type 'core show warranty' for details.
 This is free software, with components licensed under the GNU General Public
@@ -259,33 +322,60 @@ certain conditions. Type 'core show license' for details.
 =========================================================================
 Connected to Asterisk 13.15.0 currently running on asterisk-centos (pid = 25939)
 asterisk-centos*CLI&gt; 
-</code></pre><h2 id="14-налаштування-журналу-подій">1.4 Налаштування журналу подій</h2>
+</code></pre>
+
+<h2 id="1-4-налаштування-журналу-подій">1.4 Налаштування журналу подій</h2>
+
 <p>Налаштуємо ведення логів Asterisk в форматі, який буде необхіден для програми <em>fail2ban</em>. Для цього в файлі <em>/etc/asterisk/logger.conf</em> розкоментуємо рядок:</p>
+
 <pre><code>dateformat=%F %T ; ISO 8601 date format
-</code></pre><p>Увімкнемо <em>Asterisk Security Framework</em>. Для цього в файлі <em>logger.conf</em>  розкоментуємо рядок:</p>
+</code></pre>
+
+<p>Увімкнемо <em>Asterisk Security Framework</em>. Для цього в файлі <em>logger.conf</em>  розкоментуємо рядок:</p>
+
 <pre><code>security =&gt; security
-</code></pre><p>В цьому випадку інформація Asterisk Security Framework буде писатися у файл <em>security</em>.
+</code></pre>
+
+<p>В цьому випадку інформація Asterisk Security Framework буде писатися у файл <em>security</em>.
 Після внесення змін необхідно перечитати конфігурацію:</p>
+
 <pre><code>asterisk-centos*CLI&gt; logger reload
-</code></pre><p>В папці логів Asterisk (<em>/var/log/asterisk</em>) має з&rsquo;явитись файл з назвою security.</p>
+</code></pre>
+
+<p>В папці логів Asterisk (<em>/var/log/asterisk</em>) має з&rsquo;явитись файл з назвою security.</p>
+
 <pre><code>asterisk-centos*CLI&gt; logger show channels
-</code></pre><pre><code>Channel                             Type     Status    Configuration
+</code></pre>
+
+<pre><code>Channel                             Type     Status    Configuration
 -------                             ----     ------    -------------
 /var/log/asterisk/messages          File     Enabled    - NOTICE WARNING ERROR 
                                     Console  Enabled    - NOTICE WARNING ERROR 
 /var/log/asterisk/security          File     Enabled    - SECURITY 
-</code></pre><p>Змінимо рівень деталізації логів. В файлі <em>/etc/asterisk/asterisk.conf</em> встановимо рівень деталізації 9:</p>
+</code></pre>
+
+<p>Змінимо рівень деталізації логів. В файлі <em>/etc/asterisk/asterisk.conf</em> встановимо рівень деталізації 9:</p>
+
 <pre><code>verbose = 9
-</code></pre><p>Перезапустимо Asterisk і перевіримо рівень деталізації:</p>
+</code></pre>
+
+<p>Перезапустимо Asterisk і перевіримо рівень деталізації:</p>
+
 <pre><code>asterisk-centos*CLI&gt; core show settings
-</code></pre><pre><code>PBX Core settings
+</code></pre>
+
+<pre><code>PBX Core settings
 -----------------
   Version:                     13.15.0
   ...
   Current console verbosity:   9
   ...
-</code></pre><h2 id="15-налаштування-ротації-логів">1.5 Налаштування ротації логів</h2>
+</code></pre>
+
+<h2 id="1-5-налаштування-ротації-логів">1.5 Налаштування ротації логів</h2>
+
 <p>Налаштуємо ротацію логів. Для цього в папці <em>/etc/logrotate.d</em> створюємо файл <em>asterisk</em>:</p>
+
 <pre><code>/var/log/asterisk/security
 /var/log/asterisk/messages
 {
@@ -299,10 +389,17 @@ asterisk-centos*CLI&gt;
                 asterisk -rx 'reload'
         endscript
 }
-</code></pre><p>Запускаємо <em>logrotate</em> для перевірки роботи:</p>
+</code></pre>
+
+<p>Запускаємо <em>logrotate</em> для перевірки роботи:</p>
+
 <pre><code>logrotate -f /etc/logrotate.d/asterisk
-</code></pre><pre><code>ls -l /var/log/asterisk/
-</code></pre><pre><code>итого 20
+</code></pre>
+
+<pre><code>ls -l /var/log/asterisk/
+</code></pre>
+
+<pre><code>итого 20
 drwxr-xr-x 2 asterisk asterisk   6 Апр 22 21:32 cdr-csv
 drwxr-xr-x 2 asterisk asterisk   6 Апр 22 21:32 cdr-custom
 drwxr-xr-x 2 asterisk asterisk   6 Апр 22 21:32 cel-custom
@@ -311,8 +408,11 @@ drwxr-xr-x 2 asterisk asterisk   6 Апр 22 21:32 cel-custom
 -rw-r--r-- 1 root     root     432 Апр 23 12:57 queue_log
 -rw-r--r-- 1 asterisk asterisk 244 Апр 23 12:57 security
 -rw-r--r-- 1 asterisk asterisk 131 Апр 23 12:50 security.1.gz
-</code></pre><hr>
-<p><a href="https://bender.kr.ua/howto-asterisk-part-2/">В наступній статті будемо налаштовувати <em><strong>SIP</strong></em>.</a></p>
+</code></pre>
+
+<hr />
+
+<p><a href="https://bender.kr.ua/howto-asterisk-part-2/">В наступній статті будемо налаштовувати <strong><em>SIP</em></strong>.</a></p>
     
         </div>
     </section>
@@ -373,13 +473,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/magento-2-reindex-parallel/">Паралельна індексація в Magento 2</a></li>            
+          <li><a href="https://bender.kr.ua/mint-19-and-epson-perfection-v33/">Mint 19 і сканер Epson Perfection V33</a></li>            
         
-          <li><a href="https://bender.kr.ua/fail2ban-unban-ip/">Як розблокувати себе в fail2ban</a></li>            
+          <li><a href="https://bender.kr.ua/nginx-pagespeed-openssl/">Як я готую NGINX з модулем PAGESPEED</a></li>            
         
-          <li><a href="https://bender.kr.ua/connie-willis-doomsday-book/">Конні Вілліс. Книга судного дня</a></li>            
+          <li><a href="https://bender.kr.ua/installing-python-3-6-on-debian-8/">Встановлення Python 3.6 на Debian 8</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-install-magento2-cli/">Встановлення Magento 2 з командного рядка</a></li>            
+          <li><a href="https://bender.kr.ua/howto-asterisk-part-3/">IP-телефонія на базі Asterisk. Частина 3: Логіка обробки дзвінків (Dialplan)</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">

@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.76.2" />
+    <meta name="generator" content="Hugo 0.54.0" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -145,27 +145,40 @@
 
     <section class="post-full-content">
         <div class="kg-card-markdown">
-        <p>Для встановлення <strong>Telegram</strong> на Debian 9 можна скористатись <em>Ubuntu PPA</em>. Для цього виконаємо наступну послідовність:</p>
+        
+
+<p>Для встановлення <strong>Telegram</strong> на Debian 9 можна скористатись <em>Ubuntu PPA</em>. Для цього виконаємо наступну послідовність:</p>
+
 <ol>
-<li>Додаємо репозиторій в <em>/etc/apt/source.list.d/telegram.list</em></li>
-</ol>
+<li><p>Додаємо репозиторій в <em>/etc/apt/source.list.d/telegram.list</em></p>
+
 <pre><code>deb http://ppa.launchpad.net/atareao/telegram/ubuntu xenial main
 deb-src http://ppa.launchpad.net/atareao/telegram/ubuntu xenial main
-</code></pre><ol start="2">
-<li>Додаємо в систему відкритий ключ PGP до цього PPA</li>
-</ol>
+</code></pre></li>
+
+<li><p>Додаємо в систему відкритий ключ PGP до цього PPA</p>
+
 <pre><code>apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 36FD5529
-</code></pre><p>За необхідності встановлюємо <em>dirmngr</em></p>
+</code></pre>
+
+<p>За необхідності встановлюємо <em>dirmngr</em></p>
+
 <pre><code>apt install dirmngr
-</code></pre><ol start="3">
-<li>Оновлюємо список пакетів</li>
-</ol>
+</code></pre></li>
+
+<li><p>Оновлюємо список пакетів</p>
+
 <pre><code>apt update
-</code></pre><ol start="4">
-<li>Встановлюємо Telegram</li>
-</ol>
+</code></pre></li>
+
+<li><p>Встановлюємо Telegram</p>
+
 <pre><code>apt install telegram
-</code></pre><h2 id="посилання">Посилання</h2>
+</code></pre></li>
+</ol>
+
+<h2 id="посилання">Посилання</h2>
+
 <ul>
 <li><a href="https://www.linuxbabe.com/debian/3-ways-install-telegram-messenger-debian-9-stretch">https://www.linuxbabe.com/debian/3-ways-install-telegram-messenger-debian-9-stretch</a></li>
 </ul>
@@ -229,13 +242,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
+          <li><a href="https://bender.kr.ua/howto-install-magento2-cli/">Встановлення Magento 2 з командного рядка</a></li>            
+        
           <li><a href="https://bender.kr.ua/howto-asterisk-part-6.1/">IP-телефонія на базі Asterisk. Частина 6.1: Додаткові функції Asterisk. Паркування дзвінка.</a></li>            
         
-          <li><a href="https://bender.kr.ua/configurable-crontab-magento2/">Magento2: налаштування періодичних завдань власного модуля через адмін-панель</a></li>            
+          <li><a href="https://bender.kr.ua/fix-conflict-keyboard-shortcuts/">Не працюють комбінації клавіш CTRL-SHIFT в Ubuntu</a></li>            
         
-          <li><a href="https://bender.kr.ua/backup-with-tartarus/">Резервне копіювання і трохи грецької міфології</a></li>            
-        
-          <li><a href="https://bender.kr.ua/howto-asterisk-part-5/">IP-телефонія на базі Asterisk. Частина 5: Деталізований звіт про виклики (Call Detail Records, CDR)</a></li>            
+          <li><a href="https://bender.kr.ua/howto-install-django-mysql-debian-9/">Встановлення зв&#39;язки Django та MySQL на Debian 9</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">

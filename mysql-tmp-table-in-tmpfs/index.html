@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1517026575980-3e1e2dedeab4?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.76.2" />
+    <meta name="generator" content="Hugo 0.54.0" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -146,21 +146,42 @@
     <section class="post-full-content">
         <div class="kg-card-markdown">
         <p>Для прискорення роботи бази даних можна винести тимчасові таблиці в оперативну пам&rsquo;ять. Зробити це дуже просто.</p>
+
 <p>Створюємо папку для зберігання тимчасових таблиць</p>
+
 <pre><code>mkdir /var/lib/mysql/tmp
-</code></pre><p>Змінюємо власника папки на mysql</p>
+</code></pre>
+
+<p>Змінюємо власника папки на mysql</p>
+
 <pre><code>chown mysql:mysql /var/lib/mysql/tmp
-</code></pre><p>Знаходимо uid та gid для mysql</p>
+</code></pre>
+
+<p>Знаходимо uid та gid для mysql</p>
+
 <pre><code>id mysql
-</code></pre><p>В файл fstab додаємо</p>
+</code></pre>
+
+<p>В файл fstab додаємо</p>
+
 <pre><code>tmpfs /var/lib/mysql/tmp tmpfs rw,gid=1001,uid=1001,size=1G,nr_inodes=10k,mode=0700 0 0
-</code></pre><p>та монтуємо новий tmpfs-разділ</p>
+</code></pre>
+
+<p>та монтуємо новий tmpfs-разділ</p>
+
 <pre><code>mount /var/lib/mysql/tmp
-</code></pre><p>Змінюємо конфігурацию MySQL в /etc/mysql/my.cnf</p>
+</code></pre>
+
+<p>Змінюємо конфігурацию MySQL в /etc/mysql/my.cnf</p>
+
 <pre><code>tmpdir=/var/lib/mysql/tmp
-</code></pre><p>Перезапускаємо MySQL</p>
+</code></pre>
+
+<p>Перезапускаємо MySQL</p>
+
 <pre><code>service mysql restart
-</code></pre>    
+</code></pre>
+    
         </div>
     </section>
 
@@ -220,13 +241,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/review-neal-stephenson-in-the-beginning-was-the-command-line/">Ніл Стівенсон. Спочатку був командний рядок</a></li>            
-        
-          <li><a href="https://bender.kr.ua/mining-karbowanec/">Як я місяць майнив криптовалюту за допомогою ноутбуку, навіщо мені це та що з того вийшло</a></li>            
-        
-          <li><a href="https://bender.kr.ua/cli-upgrade-magento2/">Оновлення Magento 2</a></li>            
-        
           <li><a href="https://bender.kr.ua/backup-with-tartarus/">Резервне копіювання і трохи грецької міфології</a></li>            
+        
+          <li><a href="https://bender.kr.ua/howto-asterisk-part-5/">IP-телефонія на базі Asterisk. Частина 5: Деталізований звіт про виклики (Call Detail Records, CDR)</a></li>            
+        
+          <li><a href="https://bender.kr.ua/how-to-fix-elasticsearch-forbidden-12-index-read-only-allow-delete-api/">Проблема з переіндексацією catalogsearch_fulltext на Magento 2</a></li>            
+        
+          <li><a href="https://bender.kr.ua/regexp-replace-in-mariadb/">Заміна даних в MariaDB</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">

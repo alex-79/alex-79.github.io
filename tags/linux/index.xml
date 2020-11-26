@@ -1,12 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>linux on </title>
+    <title>Linux on </title>
     <link>https://bender.kr.ua/tags/linux/</link>
-    <description>Recent content in linux on </description>
+    <description>Recent content in Linux on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>uk</language>
-    <lastBuildDate>Mon, 07 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://bender.kr.ua/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 07 Sep 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://bender.kr.ua/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Встановлення відкритого месенджера Rocket.Chat на Debian 9</title>
       <link>https://bender.kr.ua/howto-install-rocketchat-debian-9/</link>
@@ -15,8 +19,7 @@
       <guid>https://bender.kr.ua/howto-install-rocketchat-debian-9/</guid>
       <description>Rocket.Chat - відкритий месенджер, який підтримує групові чати, відеовиклики, конференції, обмін файлами, ботів та багато іншого. Має як десктопні, так і мобільні клієнти під всі популярні системи (https://rocket.chat/install). Може бути розгорнутий на власних серверах та використовуватись в якості корпоративного чату. В якості приємного бонусу - може виконувати роль чату-помічника в інтернет-магазинах.
 Підготовчий етап - встановлення залежностей Оновлюємо список пакетів:
-sudo apt-get -y update Встановлюємо MongoDB, Node.js та graphicsmagick:
-sudo apt-get install -y dirmngr gnupg &amp;amp;&amp;amp; sudo apt-key adv --keyserver hkp://keyserver.</description>
+sudo apt-get -y update  Встановлюємо MongoDB, Node.js та graphicsmagick:</description>
     </item>
     
     <item>
@@ -35,9 +38,13 @@ sudo apt-get install -y dirmngr gnupg &amp;amp;&amp;amp; sudo apt-key adv --keys
       <pubDate>Mon, 03 Feb 2020 05:39:14 +0000</pubDate>
       
       <guid>https://bender.kr.ua/howto-install-telegram-debian-9/</guid>
-      <description>Для встановлення Telegram на Debian 9 можна скористатись Ubuntu PPA. Для цього виконаємо наступну послідовність:
- Додаємо репозиторій в /etc/apt/source.list.d/telegram.list  deb http://ppa.launchpad.net/atareao/telegram/ubuntu xenial main deb-src http://ppa.launchpad.net/atareao/telegram/ubuntu xenial main Додаємо в систему відкритий ключ PGP до цього PPA  apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 36FD5529 За необхідності встановлюємо dirmngr
-apt install dirmngr Оновлюємо список пакетів  apt update Встановлюємо Telegram  apt install telegram Посилання  https://www.linuxbabe.com/debian/3-ways-install-telegram-messenger-debian-9-stretch  </description>
+      <description> Для встановлення Telegram на Debian 9 можна скористатись Ubuntu PPA. Для цього виконаємо наступну послідовність:
+ Додаємо репозиторій в /etc/apt/source.list.d/telegram.list
+deb http://ppa.launchpad.net/atareao/telegram/ubuntu xenial main deb-src http://ppa.launchpad.net/atareao/telegram/ubuntu xenial main  Додаємо в систему відкритий ключ PGP до цього PPA
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 36FD5529  За необхідності встановлюємо dirmngr
+apt install dirmngr  Оновлюємо список пакетів
+apt update  Встановлюємо Telegram
+apt install telegram   Посилання  https://www.linuxbabe.com/debian/3-ways-install-telegram-messenger-debian-9-stretch  </description>
     </item>
     
     <item>
@@ -68,7 +75,7 @@ apt install dirmngr Оновлюємо список пакетів  apt update �
       <guid>https://bender.kr.ua/iptables-ipset/</guid>
       <description>Для захисту від DDOS-атак або паразитного трафіку, блокування на рівні сервера, а не nginx (як наприклад тут - https://bender.kr.ua/nginx-geoip/) , є більш ефективним. Тому, якщо у вас виникла потреба блокувати IP з певних країн і не існує інших застережень, варто скористатись зв&amp;rsquo;язкою iptables + ipset.
 Для початку встановлюємо ipset:
-apt-get install ipset Створюємо скрипт, який буде оновлювати таблюцю адрес для блокування. Списки IP за приналежністю до країни, можна взяти на сайті ipdeny.</description>
+apt-get install ipset  Створюємо скрипт, який буде оновлювати таблюцю адрес для блокування. Списки IP за приналежністю до країни, можна взяти на сайті ipdeny.</description>
     </item>
     
     <item>
@@ -78,10 +85,10 @@ apt-get install ipset Створюємо скрипт, який буде оно�
       
       <guid>https://bender.kr.ua/nginx-geoip/</guid>
       <description>Блокуємо паразитний трафік до сайту з певних країн безкоштовно, без реєстрацій та sms ;)
-  Зібрати nginx з опцією &amp;ndash;with-http_geoip_module. Як це зробити написано тут
-  Встановити бази GeoIP
-apt-get install geoip-database libgeoip1   Оновити бази до останньої версії
-mv /usr/share/GeoIP/GeoIP.dat /usr/share/GeoIP/GeoIP.bak wget https://dl.miyuru.lk/geoip/maxmind/country/maxmind.dat.gz gunzip maxmind.dat.gz mv maxmind.dat /usr/share/GeoIP/GeoIP.dat   В /etc/nginx/nginx.conf в секції http блокуємо наприклад роісію та Пакистан
+ Зібрати nginx з опцією &amp;ndash;with-http_geoip_module. Як це зробити написано тут
+ Встановити бази GeoIP
+apt-get install geoip-database libgeoip1  Оновити бази до останньої версії
+mv /usr/share/GeoIP/GeoIP.dat /usr/share/GeoIP/GeoIP.bak wget https://dl.miyuru.lk/geoip/maxmind/country/maxmind.dat.gz gunzip maxmind.dat.gz mv maxmind.dat /usr/share/GeoIP/GeoIP.dat  В /etc/nginx/nginx.conf в секції http блокуємо наприклад роісію та Пакистан
 http { ... geoip_country /usr/share/GeoIP/GeoIP.dat; map $geoip_country_code $allowed_country_mysite { default yes; RU no; PK no; } .</description>
     </item>
     
@@ -92,7 +99,8 @@ http { ... geoip_country /usr/share/GeoIP/GeoIP.dat; map $geoip_country_code $al
       
       <guid>https://bender.kr.ua/howto-asterisk-part-3/</guid>
       <description>Цикл статей по розгортанню IP-телефонії на базі Asterisk. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Робота була захищена, сертифікат отриманий, все написане тестувалось і є повтінстю робочою реалізацією. Інформація в статті і версії програмного забезбечення актуальні на 2017 рік.
- частина 1 - Встановлення сервера Asterisk частина 2 - Налаштування SIP  3. Логіка обробки дзвінків (Dialplan) 3.1 План дозвона на разні напрямки Створимо кілька контекстів для обробки дзвінків:</description>
+ частина 1 - Встановлення сервера Asterisk частина 2 - Налаштування SIP
+3. Логіка обробки дзвінків (Dialplan) 3.1 План дозвона на разні напрямки Створимо кілька контекстів для обробки дзвінків:</description>
     </item>
     
     <item>
@@ -103,7 +111,7 @@ http { ... geoip_country /usr/share/GeoIP/GeoIP.dat; map $geoip_country_code $al
       <guid>https://bender.kr.ua/netbeans-and-fonts/</guid>
       <description>Традиційно після встановлення NetBeans на Linux постає питання відображення шрифтів в IDE. В конфігурації за замовчування вони виглядають дуже погано.
 Найпопулярнішою порадою в інтернетах є додавання до файлу конфігурації etc/netbeans.conf такого рядка
-netbeans_default_options=&amp;quot; ... -J-Dswing.aatext=true -J-Dawt.useSystemAAFontSettings=lcd&amp;quot; Після цього шрифти не набагато, але стають краще, особливо, якщо використати темну тему, бо на світлій все ще помітно &amp;ldquo;мило&amp;rdquo;.
+netbeans_default_options=&amp;quot; ... -J-Dswing.aatext=true -J-Dawt.useSystemAAFontSettings=lcd&amp;quot;  Після цього шрифти не набагато, але стають краще, особливо, якщо використати темну тему, бо на світлій все ще помітно &amp;ldquo;мило&amp;rdquo;.
 Ось тут на допомогу може прийти JetBrains :)))
 Є два варіанти: 1) користуватись PHPStorm, в якому зі шрифтами все добре (в силу різних причин для мене це взагалі не варіант) або 2) використати пропатчену JetBrains версію JDK.</description>
     </item>
@@ -115,7 +123,8 @@ netbeans_default_options=&amp;quot; ... -J-Dswing.aatext=true -J-Dawt.useSystemA
       
       <guid>https://bender.kr.ua/howto-asterisk-part-2/</guid>
       <description>Цикл статей по розгортанню IP-телефонії на базі Asterisk. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Робота була захищена, сертифікат отриманий, все написане тестувалось і є повтінстю робочою реалізацією. Інформація в статті і версії програмного забезбечення актуальні на 2017 рік.
- частина 1 - Встановлення сервера Asterisk  2. Налаштування SIP 2.1 Схема нумерації За проектним завданням, наша умовна компанія складається з 5-ти підрозділів: управлінський персонал, відділ продажів, відділ закупівель, склад, відділ техпідтримки.</description>
+ частина 1 - Встановлення сервера Asterisk
+2. Налаштування SIP 2.1 Схема нумерації  За проектним завданням, наша умовна компанія складається з 5-ти підрозділів: управлінський персонал, відділ продажів, відділ закупівель, склад, відділ техпідтримки.</description>
     </item>
     
     <item>
@@ -124,9 +133,9 @@ netbeans_default_options=&amp;quot; ... -J-Dswing.aatext=true -J-Dawt.useSystemA
       <pubDate>Wed, 23 Oct 2019 06:46:44 +0000</pubDate>
       
       <guid>https://bender.kr.ua/mint-19-and-epson-perfection-v33/</guid>
-      <description>На замовчування програма iscan в Linux Mint не працює зі сканером Epson Perfection V33. Щоб вирішити цю проблему, винонуємо наступні дії:
-sudo ln -sfr /usr/lib/sane/libsane-epkowa* /usr/lib/x86_64-linux-gnu/sane та сворюємо правило для підключення сканера /etc/udev/rules.d/79-udev-epson.rules:
-# chmod device EPSON group ATTRS{manufacturer}==&amp;quot;EPSON&amp;quot;, DRIVERS==&amp;quot;usb&amp;quot;, SUBSYSTEMS==&amp;quot;usb&amp;quot;, ATTRS{idVendor}==&amp;quot;04b8&amp;quot;, ATTRS{idProduct}==&amp;quot;*&amp;quot;, MODE=&amp;quot;0777&amp;quot; Посилання  https://forums.linuxmint.com/viewtopic.php?t=275853  </description>
+      <description> На замовчування програма iscan в Linux Mint не працює зі сканером Epson Perfection V33. Щоб вирішити цю проблему, винонуємо наступні дії:
+sudo ln -sfr /usr/lib/sane/libsane-epkowa* /usr/lib/x86_64-linux-gnu/sane  та сворюємо правило для підключення сканера /etc/udev/rules.d/79-udev-epson.rules:
+# chmod device EPSON group ATTRS{manufacturer}==&amp;quot;EPSON&amp;quot;, DRIVERS==&amp;quot;usb&amp;quot;, SUBSYSTEMS==&amp;quot;usb&amp;quot;, ATTRS{idVendor}==&amp;quot;04b8&amp;quot;, ATTRS{idProduct}==&amp;quot;*&amp;quot;, MODE=&amp;quot;0777&amp;quot;  Посилання  https://forums.linuxmint.com/viewtopic.php?t=275853  </description>
     </item>
     
     <item>
@@ -150,7 +159,7 @@ sudo ln -sfr /usr/lib/sane/libsane-epkowa* /usr/lib/x86_64-linux-gnu/sane та �
 Перевірка на 995 порту тут показувала, що сертифікат не дійсний, а тут - що все ОК.
 Вирішення проблеми постфактум очевидне, але на пошуки був витрачений час.
 Отже, після оновлення сертифікатів треба перезавантажити не лише nginx, а й dovecot, що зроблено не було :(
-Посилання  https://docs.iredmail.org/letsencrypt.html - отримання на налаштування сертифікатів у iRedMail https://www.</description>
+Посилання  https://docs.</description>
     </item>
     
     <item>
@@ -169,7 +178,8 @@ sudo ln -sfr /usr/lib/sane/libsane-epkowa* /usr/lib/x86_64-linux-gnu/sane та �
       
       <guid>https://bender.kr.ua/quick-start-with-jenkins-in-docker/</guid>
       <description>Для швидкого старту системи CI/CD Jenkins скористаємось docker-ом. Працюємо в Debian 10, але рецепт певно спрацює для будь-якого deb-похідного дистрибутиву.
- Встановлюємо Docker  apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - apt-get update apt-get install docker-ce systemctl status docker ● docker.service - Docker Application Container Engine Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled) Active: active (running) since Wed 2019-07-31 12:48:03 EEST; 5min ago Docs: https://docs.</description>
+ Встановлюємо Docker
+apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - apt-get update apt-get install docker-ce  systemctl status docker ● docker.service - Docker Application Container Engine Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled) Active: active (running) since Wed 2019-07-31 12:48:03 EEST; 5min ago Docs: https://docs.</description>
     </item>
     
     <item>
@@ -178,9 +188,9 @@ sudo ln -sfr /usr/lib/sane/libsane-epkowa* /usr/lib/x86_64-linux-gnu/sane та �
       <pubDate>Mon, 22 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>https://bender.kr.ua/fail2ban-unban-ip/</guid>
-      <description>Щоб розблокувати себе в fail2ban, треба виконати наступну команду
-fail2ban-client set yourjailname unbanip youripaddress Приклад:
-fail2ban-client set sshd unbanip 123.123.123.123 Посилання  https://bobcares.com/blog/fail2ban-unban-ip/  </description>
+      <description> Щоб розблокувати себе в fail2ban, треба виконати наступну команду
+fail2ban-client set yourjailname unbanip youripaddress  Приклад:
+fail2ban-client set sshd unbanip 123.123.123.123  Посилання  https://bobcares.com/blog/fail2ban-unban-ip/  </description>
     </item>
     
     <item>
@@ -190,10 +200,10 @@ fail2ban-client set sshd unbanip 123.123.123.123 Посилання  https://bob
       
       <guid>https://bender.kr.ua/failed-to-fetch-jessie-backports-repository/</guid>
       <description>Якщо ви користуєтесь Debian 8, то могли помітити проблему з репозиторієм jessie-backports при оновлені.
-W: Failed to fetch http://ftp.debian.org/debian/dists/jessie-backports/main/binary-amd64/Packages 404 Not Found [IP: 130.89.148.12 80] Причина в тому, що 8-ма версія офіційно більше не підтримується і репозиторій переїхав в архів.
+W: Failed to fetch http://ftp.debian.org/debian/dists/jessie-backports/main/binary-amd64/Packages 404 Not Found [IP: 130.89.148.12 80]  Причина в тому, що 8-ма версія офіційно більше не підтримується і репозиторій переїхав в архів.
 Змінимо адресу в /etc/apt/source.list на:
-deb http://archive.debian.org/debian jessie-backports main При оновлені отримуємо натяк, що ми все одно слоупоки і треба таки оновити систему:
-E: Release file for http://archive.debian.org/debian/dists/jessie-backports/InRelease is expired (invalid since 34d 12h 43min 16s).</description>
+deb http://archive.debian.org/debian jessie-backports main  При оновлені отримуємо натяк, що ми все одно слоупоки і треба таки оновити систему:
+E: Release file for http://archive.</description>
     </item>
     
     <item>
@@ -205,7 +215,7 @@ E: Release file for http://archive.debian.org/debian/dists/jessie-backports/InRe
       <description>Найпростіший спосіб &amp;ldquo;прогріти&amp;rdquo; кеш - пройтись за допомогою wget по карті сайту. У випадку, коли сайт чи окремі його розділи доступні лише зареєстрованим користувачам, цей спосіб не підійде.
 У пригоді може стати Headless Chrome - хром, якому не потрібно рендерити сторінку в окреме вікно (хоча він це може). Найлегший спосіб почати працювати з ним - використати puppeteer.
 Встановлюємо Node.js та puppeteer
-curl -sL https://deb.nodesource.com/setup_10.x | bash - apt-get install nodejs libxss1 npm i puppeteer Наш краулер з авторизацією crawler.</description>
+curl -sL https://deb.nodesource.com/setup_10.x | bash - apt-get install nodejs libxss1 npm i puppeteer  Наш краулер з авторизацією crawler.</description>
     </item>
     
     <item>
@@ -216,8 +226,7 @@ curl -sL https://deb.nodesource.com/setup_10.x | bash - apt-get install nodejs l
       <guid>https://bender.kr.ua/review-neal-stephenson-in-the-beginning-was-the-command-line/</guid>
       <description>Книга відомого письменника-фантаста Ніла Стівенсона датована 1999 роком про еволюцію операційних систем.
 Назва мовою оригіналу: Neal Stephenson. In the Beginning&amp;hellip; Was the Command Line
-Книга стала цікава мені з кількох причин:
- Стівенсон є одним з моїх улюблених авторів загальні оцінки на книжкових форумах у цієї книжки не дуже високі (принаймі в порівнянні з іншим його творами) і дуже кортіло дізнатись чому я сам багато часу проводжу в командному рядку  Скажу одразу, книжка мене не вразила від слова &amp;ldquo;зовсім&amp;rdquo;.</description>
+Книга стала цікава мені з кількох причин: * Стівенсон є одним з моїх улюблених авторів * загальні оцінки на книжкових форумах у цієї книжки не дуже високі (принаймі в порівнянні з іншим його творами) і дуже кортіло дізнатись чому * я сам багато часу проводжу в командному рядку</description>
     </item>
     
     <item>
@@ -228,8 +237,8 @@ curl -sL https://deb.nodesource.com/setup_10.x | bash - apt-get install nodejs l
       <guid>https://bender.kr.ua/howto-install-munin/</guid>
       <description>Munin — це дуже простий в налаштуванні засіб моніторинга серверів. Для Munin існує величезна кількість плагінів для спостереження за load average, дисковими операціями, CPU, RAM, mysql тощо. Вся інформація зберігається в кільцевій базі даних RRDtool.
 Встановлюємо систему моніторингу:
-apt-get install munin munin-node service munin-node start Налаштовуємо nginx
-	location / { root /var/cache/munin/www; autoindex on; auth_basic &amp;quot;Munin Statistics&amp;quot;; auth_basic_user_file /etc/munin/.passwd; } Додаткові плагіни знаходяться в директорії /usr/share/munin/plugins . Встановимо, для прикладу, набір плагінів для відстеження роботи MySQL.</description>
+apt-get install munin munin-node service munin-node start  Налаштовуємо nginx
+	location / { root /var/cache/munin/www; autoindex on; auth_basic &amp;quot;Munin Statistics&amp;quot;; auth_basic_user_file /etc/munin/.passwd; }  Додаткові плагіни знаходяться в директорії /usr/share/munin/plugins .</description>
     </item>
     
     <item>
@@ -241,8 +250,7 @@ apt-get install munin munin-node service munin-node start Налаштовуєм
       <description>Tartarus - це система створення резервних копій. Може створювати інкрементні архіви. Базується на використанні звичних в nix-середовищі утиліт curl, tar, gzip та інших.
 Репозиторій проекту доволі давно не оновлювався та від цього не втратив своєї привабливості в якості дуже простого і зрозумілого інструменту.
  Та́ртар (грец. Τάρταρος, Tartaros) — у давньогрецькій міфології місце в підземному світі, темна безодня в глибині космосу, нижче від Аїду. (Вікіпедія)
- Встановлюємо необхідні утиліти
-apt-get update apt-get install tar bzip2 lvm2 gnupg curl git clone https://github.</description>
+ Встановлюємо необхідні утиліти</description>
     </item>
     
     <item>
@@ -253,10 +261,9 @@ apt-get update apt-get install tar bzip2 lvm2 gnupg curl git clone https://githu
       <guid>https://bender.kr.ua/howto-certbot-nginx-debian/</guid>
       <description>Простий спосіб отримати безкоштовний SSL-сертифікат з оцінкою A+ для Nginx на Debian 9
 Спочатку додаємо репозиторій stretch-backports
-add-apt-repository &#39;deb http://deb.debian.org/debian stretch-backports main&#39; apt-get update Встановлюємо утиліту для автоматичного отримання та оновлення сертифікатів certbot
-apt-get install certbot python-certbot-nginx -t stretch-backports В конфігураційному файлі для нашого сайту надаємо certbot-у доступ до необхідної йому директорії
-# Let’s Encrypt location ~ /.well-known { allow all; } та перечитуємо конфігурацію nginx
-nginx -t nginx -s reload Отримуємо сертифікати</description>
+add-apt-repository &#39;deb http://deb.debian.org/debian stretch-backports main&#39; apt-get update  Встановлюємо утиліту для автоматичного отримання та оновлення сертифікатів certbot
+apt-get install certbot python-certbot-nginx -t stretch-backports  В конфігураційному файлі для нашого сайту надаємо certbot-у доступ до необхідної йому директорії
+# Let’s Encrypt location ~ /.well-known { allow all; }  та перечитуємо конфігурацію nginx</description>
     </item>
     
     <item>
@@ -267,8 +274,8 @@ nginx -t nginx -s reload Отримуємо сертифікати</description>
       <guid>https://bender.kr.ua/howto-lemp-install/</guid>
       <description>Покрокова інструкція по встановленню і запуску зв&amp;rsquo;язки LEMP (Linux + Nginx + MySQL + PHP).
 1. Оновлення системи Оновлюємо версії ПЗ до актуального стану
-apt-get update apt-get upgrade 2. Налаштування захисту 2.1 iptables Спочатку встановлюю mc. Для тих у кого в цей момент засвербіло &amp;ldquo;mc - для лохів, vim - наше всьо, nano рулить&amp;rdquo; - поцілуйте мій блискучий металевий зад (С).
-apt-get install mc update-alternatives --config editor Створюємо правила файервола</description>
+apt-get update apt-get upgrade  2. Налаштування захисту 2.1 iptables Спочатку встановлюю mc. Для тих у кого в цей момент засвербіло &amp;ldquo;mc - для лохів, vim - наше всьо, nano рулить&amp;rdquo; - поцілуйте мій блискучий металевий зад (С).
+apt-get install mc update-alternatives --config editor  Створюємо правила файервола</description>
     </item>
     
     <item>
@@ -277,8 +284,8 @@ apt-get install mc update-alternatives --config editor Створюємо пра
       <pubDate>Wed, 15 Aug 2018 11:42:00 +0000</pubDate>
       
       <guid>https://bender.kr.ua/installing-python-3-6-on-debian-8/</guid>
-      <description>#!/bin/sh  # python_install.sh PYTHON_VER=$1 cd /opt wget -c https://www.python.org/ftp/python/$PYTHON_VER/Python-$PYTHON_VER.tgz tar -xvf Python-$PYTHON_VER.tgz rm Python-$PYTHON_VER.tgz cd Python-$PYTHON_VER ./configure --enable-optimizations make -j `nproc` make test make altinstall Приклад встановлення:
-./python_install.sh 3.6.6 python3 -V Python 3.4.2 python3.6 -V Python 3.6.6 Джерело тут і тут</description>
+      <description>#!/bin/sh # python_install.sh PYTHON_VER=$1 cd /opt wget -c https://www.python.org/ftp/python/$PYTHON_VER/Python-$PYTHON_VER.tgz tar -xvf Python-$PYTHON_VER.tgz rm Python-$PYTHON_VER.tgz cd Python-$PYTHON_VER ./configure --enable-optimizations make -j `nproc` make test make altinstall  Приклад встановлення:
+./python_install.sh 3.6.6  python3 -V Python 3.4.2 python3.6 -V Python 3.6.6  Джерело тут і тут</description>
     </item>
     
     <item>
@@ -307,7 +314,7 @@ apt-get install mc update-alternatives --config editor Створюємо пра
       
       <guid>https://bender.kr.ua/letsencrypt-and-ipv6/</guid>
       <description>При оновлені сертифікату Let&amp;rsquo;s Encrypt виникла помилка
-Attempting to renew cert (example.com.ua) from /etc/letsencrypt/renewal/example.com.ua.conf produced an unexpected error: Failed authorization procedure. www.example.com.ua (http-01): urn:acme:error:unauthorized :: The client lacks sufficient authorization :: Invalid response from http://www.example.com.ua/.well-known/acme-challenge/BKPbQzerSwVSz9PrVcVqOoSX5MxDvF2lh5eOHVamgQ4 Перевірка доступності http://www.example.com.ua/.well-known/acme-challenge/BKPbQzerSwVSz9PrVcVqOoSX5MxDvF2lh5eOHVamgQ4 не виявила проблем. Let&amp;rsquo;s Encrypt мав би верифікувати домен, але в нього була інша думка.
+Attempting to renew cert (example.com.ua) from /etc/letsencrypt/renewal/example.com.ua.conf produced an unexpected error: Failed authorization procedure. www.example.com.ua (http-01): urn:acme:error:unauthorized :: The client lacks sufficient authorization :: Invalid response from http://www.example.com.ua/.well-known/acme-challenge/BKPbQzerSwVSz9PrVcVqOoSX5MxDvF2lh5eOHVamgQ4  Перевірка доступності http://www.example.com.ua/.well-known/acme-challenge/BKPbQzerSwVSz9PrVcVqOoSX5MxDvF2lh5eOHVamgQ4 не виявила проблем. Let&amp;rsquo;s Encrypt мав би верифікувати домен, але в нього була інша думка.
 Око зачепилося за AAAA у відповіді:
 To fix these errors, please make sure that your domain name was entered correctly and the DNS A/AAAA record(s) for that domain contain(s) the right IP address.</description>
     </item>
@@ -319,8 +326,8 @@ To fix these errors, please make sure that your domain name was entered correctl
       
       <guid>https://bender.kr.ua/df-and-du-show-different-values/</guid>
       <description>Якщо команди df та du показують різні значення, можлива причина полягає в тому, що процес утримує файл який вже було видалено з системи. Що побачити список таких процесів слід використати наступну команду:
-lsof -nP | grep &#39;(deleted)&#39; find /proc/*/fd -ls | grep &#39;(deleted)&#39; Потім треба зробити наступне:
-cat /dev/null &amp;gt; /proc/6466/fd/3 данні взяти з виводу попередньої команди
+lsof -nP | grep &#39;(deleted)&#39; find /proc/*/fd -ls | grep &#39;(deleted)&#39;  Потім треба зробити наступне:
+cat /dev/null &amp;gt; /proc/6466/fd/3  данні взяти з виводу попередньої команди
 Джерела тут, тут і тут</description>
     </item>
     
@@ -331,8 +338,8 @@ cat /dev/null &amp;gt; /proc/6466/fd/3 данні взяти з виводу п�
       
       <guid>https://bender.kr.ua/cli-upgrade-magento2/</guid>
       <description>Скрипт для оновлення Magento 2:
-#!/bin/bash # upgrade.sh composer require magento/product-community-edition $1 --no-update composer update rm -rf var/cache/* var/page_cache/* var/generation/* php bin/magento setup:upgrade find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; chown -R :www-data . chmod u+x bin/magento Приклад запуску:
-upgrade.sh 2.2.2 Джерело тут</description>
+#!/bin/bash # upgrade.sh composer require magento/product-community-edition $1 --no-update composer update rm -rf var/cache/* var/page_cache/* var/generation/* php bin/magento setup:upgrade find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; chown -R :www-data . chmod u+x bin/magento  Приклад запуску:
+upgrade.sh 2.2.2  Джерело тут</description>
     </item>
     
     <item>

@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1508693484929-012827ef8c81?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.76.2" />
+    <meta name="generator" content="Hugo 0.54.0" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -145,30 +145,60 @@
 
     <section class="post-full-content">
         <div class="kg-card-markdown">
-        <p><strong>Rocket.Chat</strong> - відкритий месенджер, який підтримує групові чати, відеовиклики, конференції, обмін файлами, ботів та багато іншого. Має як десктопні, так і мобільні клієнти під всі популярні системи (<a href="https://rocket.chat/install)">https://rocket.chat/install)</a>. Може бути розгорнутий на власних серверах та використовуватись в якості корпоративного чату. В якості приємного бонусу - може виконувати роль чату-помічника в інтернет-магазинах.</p>
-<p><img src="https://rocket.chat/wp-content/uploads/2020/07/devices-screens-1024x577.png" alt="Зовнішній вигляд Rocket.Chat, зображення с сайту https://rocket.chat/"></p>
-<h2 id="підготовчий-етап---встановлення-залежностей">Підготовчий етап - встановлення залежностей</h2>
+        
+
+<p><strong>Rocket.Chat</strong> - відкритий месенджер, який підтримує групові чати, відеовиклики, конференції, обмін файлами, ботів та багато іншого. Має як десктопні, так і мобільні клієнти під всі популярні системи (<a href="https://rocket.chat/install">https://rocket.chat/install</a>). Може бути розгорнутий на власних серверах та використовуватись в якості корпоративного чату. В якості приємного бонусу - може виконувати роль чату-помічника в інтернет-магазинах.</p>
+
+<p><img src="https://rocket.chat/wp-content/uploads/2020/07/devices-screens-1024x577.png" alt="Зовнішній вигляд Rocket.Chat, зображення с сайту https://rocket.chat/" /></p>
+
+<h2 id="підготовчий-етап-встановлення-залежностей">Підготовчий етап - встановлення залежностей</h2>
+
 <p>Оновлюємо список пакетів:</p>
+
 <pre><code>sudo apt-get -y update
-</code></pre><p>Встановлюємо <em>MongoDB</em>, <em>Node.js</em> та <em>graphicsmagick</em>:</p>
+</code></pre>
+
+<p>Встановлюємо <em>MongoDB</em>, <em>Node.js</em> та <em>graphicsmagick</em>:</p>
+
 <pre><code>sudo apt-get install -y dirmngr gnupg &amp;&amp; sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4
-</code></pre><pre><code>echo &quot;deb http://repo.mongodb.org/apt/debian stretch/mongodb-org/4.0 main&quot; | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
-</code></pre><pre><code>sudo apt-get install -y build-essential mongodb-org nodejs graphicsmagick
-</code></pre><p>Встановлюємо необхідну для Rocket.Chat версію nodejs:</p>
+</code></pre>
+
+<pre><code>echo &quot;deb http://repo.mongodb.org/apt/debian stretch/mongodb-org/4.0 main&quot; | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
+</code></pre>
+
+<pre><code>sudo apt-get install -y build-essential mongodb-org nodejs graphicsmagick
+</code></pre>
+
+<p>Встановлюємо необхідну для Rocket.Chat версію nodejs:</p>
+
 <pre><code>sudo npm install -g inherits n &amp;&amp; sudo n 12.14.0
-</code></pre><h2 id="встановлення-rocketchat">Встановлення Rocket.Chat</h2>
+</code></pre>
+
+<h2 id="встановлення-rocket-chat">Встановлення Rocket.Chat</h2>
+
 <p>Отримуємо останню версію <em>Rocket.Chat</em></p>
+
 <pre><code>curl -L https://releases.rocket.chat/latest/download -o /tmp/rocket.chat.tgz
 
-</code></pre><p>та встановлюємо в директорію /opt/Rocket.Chat (за необхідністю можна змінити на іншу)</p>
+</code></pre>
+
+<p>та встановлюємо в директорію /opt/Rocket.Chat (за необхідністю можна змінити на іншу)</p>
+
 <pre><code>tar -xzf /tmp/rocket.chat.tgz -C /tmp
 cd /tmp/bundle/programs/server &amp;&amp; npm install
 sudo mv /tmp/bundle /opt/Rocket.Chat
-</code></pre><h2 id="налаштування-служби-rocketchat">Налаштування служби Rocket.Chat</h2>
+</code></pre>
+
+<h2 id="налаштування-служби-rocket-chat">Налаштування служби Rocket.Chat</h2>
+
 <p>Створюємо користувача <em>rocketchat</em> з відповідними доступами:</p>
+
 <pre><code>sudo useradd -M rocketchat &amp;&amp; sudo usermod -L rocketchat
 sudo chown -R rocketchat:rocketchat /opt/Rocket.Chat
-</code></pre><p>Налаштовуємо службу (<em><strong>Увага! Є розбіжності  офіційною документацією</strong></em>)</p>
+</code></pre>
+
+<p>Налаштовуємо службу (<strong><em>Увага! Є розбіжності  офіційною документацією</em></strong>)</p>
+
 <pre><code>cat &lt;&lt; EOF |sudo tee -a /lib/systemd/system/rocketchat.service
 [Unit]
 Description=The Rocket.Chat server
@@ -186,14 +216,25 @@ Environment=PORT=3000
 [Install]
 WantedBy=multi-user.target
 EOF
-</code></pre><p>Налаштовуємо зберігання та реплікацію в MongoDB:</p>
+</code></pre>
+
+<p>Налаштовуємо зберігання та реплікацію в MongoDB:</p>
+
 <pre><code>sudo sed -i &quot;s/^#  engine:/  engine: wiredTiger/&quot;  /etc/mongod.conf
 sudo sed -i &quot;s/^#replication:/replication:\n  replSetName: rs01/&quot; /etc/mongod.conf
-</code></pre><pre><code>sudo systemctl enable mongod &amp;&amp; sudo systemctl start mongod
+</code></pre>
+
+<pre><code>sudo systemctl enable mongod &amp;&amp; sudo systemctl start mongod
 mongo --eval &quot;printjson(rs.initiate())&quot;
-</code></pre><p>Активуємо сервіс та запускаємо RocketChat</p>
+</code></pre>
+
+<p>Активуємо сервіс та запускаємо RocketChat</p>
+
 <pre><code>sudo systemctl enable rocketchat &amp;&amp; sudo systemctl start rocketchat
-</code></pre><h2 id="посилання">Посилання</h2>
+</code></pre>
+
+<h2 id="посилання">Посилання</h2>
+
 <ul>
 <li><a href="https://rocket.chat/">https://rocket.chat/</a> - сайт проекту</li>
 <li><a href="https://docs.rocket.chat/installation/manual-installation/debian">https://docs.rocket.chat/installation/manual-installation/debian</a> - документація</li>
@@ -258,13 +299,15 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/howto-install-django-mysql-debian-9/">Встановлення зв&#39;язки Django та MySQL на Debian 9</a></li>            
+          <li><a href="https://bender.kr.ua/5-extensions-for-default-magento2/">5 розширень, які ти зобов&#39;язаний поставити на Magento 2</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-certbot-nginx-debian/">Отримання SSL-сертифікату для Nginx на Debian 9</a></li>            
+                      
         
-          <li><a href="https://bender.kr.ua/howto-asterisk-part-3/">IP-телефонія на базі Asterisk. Частина 3: Логіка обробки дзвінків (Dialplan)</a></li>            
+          <li><a href="https://bender.kr.ua/nginx-geoip/">Блокування трафіку з окремих країн за допомогою Nginx та GeoIP</a></li>            
         
-          <li><a href="https://bender.kr.ua/installing-python-3-6-on-debian-8/">Встановлення Python 3.6 на Debian 8</a></li>            
+          <li><a href="https://bender.kr.ua/howto-hide-default-store-code-from-url-magento-2/">Як прибрати Store Code з URL для основного магазину в Magento 2</a></li>            
+        
+          <li><a href="https://bender.kr.ua/letsencrypt-and-ipv6/">Помилка при оновлені сертифікатів від Let&#39;s Encrypt</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">

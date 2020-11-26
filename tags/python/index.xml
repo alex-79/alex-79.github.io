@@ -1,24 +1,28 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>python on </title>
+    <title>Python on </title>
     <link>https://bender.kr.ua/tags/python/</link>
-    <description>Recent content in python on </description>
+    <description>Recent content in Python on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>uk</language>
-    <lastBuildDate>Mon, 17 Feb 2020 02:00:00 +0000</lastBuildDate><atom:link href="https://bender.kr.ua/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 17 Feb 2020 02:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://bender.kr.ua/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Встановлення зв&#39;язки Django та MySQL на Debian 9</title>
       <link>https://bender.kr.ua/howto-install-django-mysql-debian-9/</link>
       <pubDate>Mon, 17 Feb 2020 02:00:00 +0000</pubDate>
       
       <guid>https://bender.kr.ua/howto-install-django-mysql-debian-9/</guid>
-      <description>Встановлення Django   Встановлюємо Python та додатковий інструментарій
-apt install python3 python3-pip python3-venv   Створюємо папку для проекту та віртуальне середовище
-mkdir myproject cd myproject python3 -m venv venv source venv/bin/activate   Встановлюємо Django та перевыряємо встановлену версію
-python3 -m pip install Django python -m django --version   Створюємо новий проект
-django-admin startproject myproject   З&amp;rsquo;єднання з MySQL   Встановлюємо Percona Server
-wget https://repo.percona.com/apt/percona-release_latest.$(lsb_release -sc)_all.</description>
+      <description>Встановлення Django  Встановлюємо Python та додатковий інструментарій
+apt install python3 python3-pip python3-venv  Створюємо папку для проекту та віртуальне середовище
+mkdir myproject cd myproject python3 -m venv venv source venv/bin/activate  Встановлюємо Django та перевыряємо встановлену версію
+python3 -m pip install Django python -m django --version  Створюємо новий проект
+django-admin startproject myproject   З&amp;rsquo;єднання з MySQL  Встановлюємо Percona Server
+wget https://repo.percona.com/apt/percona-release_latest.$(lsb_release -sc)_all.deb dpkg -i percona-release_latest.$(lsb_release -sc)_all.</description>
     </item>
     
     <item>
@@ -27,8 +31,8 @@ wget https://repo.percona.com/apt/percona-release_latest.$(lsb_release -sc)_all.
       <pubDate>Wed, 15 Aug 2018 11:42:00 +0000</pubDate>
       
       <guid>https://bender.kr.ua/installing-python-3-6-on-debian-8/</guid>
-      <description>#!/bin/sh  # python_install.sh PYTHON_VER=$1 cd /opt wget -c https://www.python.org/ftp/python/$PYTHON_VER/Python-$PYTHON_VER.tgz tar -xvf Python-$PYTHON_VER.tgz rm Python-$PYTHON_VER.tgz cd Python-$PYTHON_VER ./configure --enable-optimizations make -j `nproc` make test make altinstall Приклад встановлення:
-./python_install.sh 3.6.6 python3 -V Python 3.4.2 python3.6 -V Python 3.6.6 Джерело тут і тут</description>
+      <description>#!/bin/sh # python_install.sh PYTHON_VER=$1 cd /opt wget -c https://www.python.org/ftp/python/$PYTHON_VER/Python-$PYTHON_VER.tgz tar -xvf Python-$PYTHON_VER.tgz rm Python-$PYTHON_VER.tgz cd Python-$PYTHON_VER ./configure --enable-optimizations make -j `nproc` make test make altinstall  Приклад встановлення:
+./python_install.sh 3.6.6  python3 -V Python 3.4.2 python3.6 -V Python 3.6.6  Джерело тут і тут</description>
     </item>
     
   </channel>

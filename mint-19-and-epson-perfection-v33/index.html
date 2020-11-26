@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1503789146722-cf137a3c0fea?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.76.2" />
+    <meta name="generator" content="Hugo 0.54.0" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -145,12 +145,21 @@
 
     <section class="post-full-content">
         <div class="kg-card-markdown">
-        <p>На замовчування програма <em><strong>iscan</strong></em> в Linux Mint не працює зі сканером <em><strong>Epson Perfection V33</strong></em>. Щоб вирішити цю проблему, винонуємо наступні дії:</p>
+        
+
+<p>На замовчування програма <strong><em>iscan</em></strong> в Linux Mint не працює зі сканером <strong><em>Epson Perfection V33</em></strong>. Щоб вирішити цю проблему, винонуємо наступні дії:</p>
+
 <pre><code>sudo ln -sfr /usr/lib/sane/libsane-epkowa* /usr/lib/x86_64-linux-gnu/sane
-</code></pre><p>та сворюємо правило для підключення сканера <em>/etc/udev/rules.d/79-udev-epson.rules</em>:</p>
+</code></pre>
+
+<p>та сворюємо правило для підключення сканера <em>/etc/udev/rules.d/79-udev-epson.rules</em>:</p>
+
 <pre><code># chmod device EPSON group
 ATTRS{manufacturer}==&quot;EPSON&quot;, DRIVERS==&quot;usb&quot;, SUBSYSTEMS==&quot;usb&quot;, ATTRS{idVendor}==&quot;04b8&quot;, ATTRS{idProduct}==&quot;*&quot;, MODE=&quot;0777&quot;
-</code></pre><h2 id="посилання">Посилання</h2>
+</code></pre>
+
+<h2 id="посилання">Посилання</h2>
+
 <ul>
 <li><a href="https://forums.linuxmint.com/viewtopic.php?t=275853">https://forums.linuxmint.com/viewtopic.php?t=275853</a></li>
 </ul>
@@ -214,15 +223,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-                      
+          <li><a href="https://bender.kr.ua/howto-asterisk-part-4/">IP-телефонія на базі Asterisk. Частина 4: Голосове меню</a></li>            
         
-          <li><a href="https://bender.kr.ua/why-magento/">Чому ми обираємо Magento, а не інші системи</a></li>            
+          <li><a href="https://bender.kr.ua/letsencrypt-and-ipv6/">Помилка при оновлені сертифікатів від Let&#39;s Encrypt</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-remove-parent-category-from-url-magento-2/">Вилучення ієрархії категорій з URL в Magento 2</a></li>            
+          <li><a href="https://bender.kr.ua/upgrade-magento-232/">Оновлення Magento до версії 2.3.2</a></li>            
         
-          <li><a href="https://bender.kr.ua/mining-karbowanec/">Як я місяць майнив криптовалюту за допомогою ноутбуку, навіщо мені це та що з того вийшло</a></li>            
-        
-          <li><a href="https://bender.kr.ua/nginx-pagespeed-openssl/">Як я готую NGINX з модулем PAGESPEED</a></li>            
+          <li><a href="https://bender.kr.ua/netbeans-and-fonts/">NetBeans і проблема зі шрифтами</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">

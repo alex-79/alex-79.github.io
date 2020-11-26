@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1508455858334-95337ba25607?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.76.2" />
+    <meta name="generator" content="Hugo 0.54.0" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -145,20 +145,41 @@
 
     <section class="post-full-content">
         <div class="kg-card-markdown">
-        <p>Якщо ви користуєтесь Debian 8, то могли помітити проблему з репозиторієм <strong>jessie-backports</strong> при оновлені.</p>
+        
+
+<p>Якщо ви користуєтесь Debian 8, то могли помітити проблему з репозиторієм <strong>jessie-backports</strong> при оновлені.</p>
+
 <pre><code>W: Failed to fetch http://ftp.debian.org/debian/dists/jessie-backports/main/binary-amd64/Packages 404 Not Found [IP: 130.89.148.12 80]
-</code></pre><p>Причина в тому, що 8-ма версія офіційно більше не підтримується і репозиторій переїхав в архів.</p>
+</code></pre>
+
+<p>Причина в тому, що 8-ма версія офіційно більше не підтримується і репозиторій переїхав в архів.</p>
+
 <p>Змінимо адресу в <em>/etc/apt/source.list</em> на:</p>
+
 <pre><code>deb http://archive.debian.org/debian jessie-backports main
-</code></pre><p>При оновлені отримуємо натяк, що ми все одно слоупоки і треба таки оновити систему:</p>
+</code></pre>
+
+<p>При оновлені отримуємо натяк, що ми все одно слоупоки і треба таки оновити систему:</p>
+
 <pre><code>E: Release file for http://archive.debian.org/debian/dists/jessie-backports/InRelease is expired (invalid since 34d 12h 43min 16s). Updates for this repository will not be applied.
-</code></pre><p>Натяк зрозумілий, але &hellip; Забиваємо на валідацію:</p>
+</code></pre>
+
+<p>Натяк зрозумілий, але &hellip; Забиваємо на валідацію:</p>
+
 <pre><code>echo 'Acquire::Check-Valid-Until no;' &gt; /etc/apt/apt.conf.d/99no-check-valid-until
-</code></pre><p>Тепер можна оновлюватись</p>
+</code></pre>
+
+<p>Тепер можна оновлюватись</p>
+
 <pre><code>apt-get update
-</code></pre><p>Ю-х-у-у-у-у-у, все працює!!!</p>
+</code></pre>
+
+<p>Ю-х-у-у-у-у-у, все працює!!!</p>
+
 <p>Ну а насправді, треба оновлювати систему до Debian 10 ;)</p>
+
 <h3 id="посилання">Посилання</h3>
+
 <ul>
 <li><a href="https://www.lucas-nussbaum.net/blog/?p=947">https://www.lucas-nussbaum.net/blog/?p=947</a></li>
 </ul>
@@ -222,15 +243,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-                      
+          <li><a href="https://bender.kr.ua/howto-install-telegram-debian-9/">Встановлення Telegram на Debian 9</a></li>            
         
-          <li><a href="https://bender.kr.ua/magento-2-cron-indexer-repair/">Magento 2: не працює індексація за розкладом</a></li>            
+          <li><a href="https://bender.kr.ua/custom-logging-module-magento2/">Magento2: Як писати логи модуля в окремий файл?</a></li>            
         
-          <li><a href="https://bender.kr.ua/upgrade-magento-232/">Оновлення Magento до версії 2.3.2</a></li>            
+          <li><a href="https://bender.kr.ua/howto-add-header-links-in-magento2/">Magento 2: як додати посилання в header.links</a></li>            
         
-          <li><a href="https://bender.kr.ua/magento-2-reindex-parallel/">Паралельна індексація в Magento 2</a></li>            
-        
-          <li><a href="https://bender.kr.ua/iptables-ipset/">Блокування трафіку за допомогою iptables та ipset</a></li>            
+          <li><a href="https://bender.kr.ua/review-neal-stephenson-in-the-beginning-was-the-command-line/">Ніл Стівенсон. Спочатку був командний рядок</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">

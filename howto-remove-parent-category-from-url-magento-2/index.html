@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.76.2" />
+    <meta name="generator" content="Hugo 0.54.0" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -145,10 +145,15 @@
 
     <section class="post-full-content">
         <div class="kg-card-markdown">
-        <p>В Magento 2 є налаштування, яке дозволяє не показувати категорії для адрес товарів: <strong>Stores &gt; Configuration &gt; General &gt; Catalog &gt; Catalog &gt; Search Engine Optimization &gt; Use Categories Path for Product URLs</strong>
-<img src="/img/howto-remove-parent-category-from-url-magento-2-1-1.png" alt="howto-remove-parent-category-from-url-magento-2-1-1"></p>
+        
+
+<p>В Magento 2 є налаштування, яке дозволяє не показувати категорії для адрес товарів: <strong>Stores &gt; Configuration &gt; General &gt; Catalog &gt; Catalog &gt; Search Engine Optimization &gt; Use Categories Path for Product URLs</strong>
+<img src="/img/howto-remove-parent-category-from-url-magento-2-1-1.png" alt="howto-remove-parent-category-from-url-magento-2-1-1" /></p>
+
 <p>Результатом буде отримання URL виду <em><a href="https://mysite.com/product1.html">https://mysite.com/product1.html</a></em> замість <em><a href="https://mysite.com/category1/category2/product1.html">https://mysite.com/category1/category2/product1.html</a></em>. На жаль для категорій такої можливості не передбачено і не можна отримати <em><a href="https://mysite.com/category2">https://mysite.com/category2</a></em>.</p>
+
 <p>За генерацію URL категорій відповідає клас <strong>Magento\CatalogUrlRewrite\Model\CategoryUrlPathGenerator</strong>.</p>
+
 <pre><code>public function getUrlPath($category, $parentCategory = null)
 {
 ...
@@ -160,27 +165,36 @@
     }
 ...
 }
-</code></pre><p>Створимо around-плагін для вимкнення та увімкнення ціїє умови в залежності від налаштувань в адмінці Magento.</p>
+</code></pre>
+
+<p>Створимо around-плагін для вимкнення та увімкнення ціїє умови в залежності від налаштувань в адмінці Magento.</p>
+
 <ol>
-<li>
-<p>Створюємо заготовку для модуля в директорії <em>Noon/CategoryUrlPathGenerator</em></p>
+<li><p>Створюємо заготовку для модуля в директорії <em>Noon/CategoryUrlPathGenerator</em></p>
+
 <p><em>registration.php</em></p>
+
 <pre><code>&lt;?php
 \Magento\Framework\Component\ComponentRegistrar::register(
 \Magento\Framework\Component\ComponentRegistrar::MODULE,
     'Noon_CategoryUrlPathGenerator',
     __DIR__
 );
-</code></pre><p><em>etc/module.xml</em></p>
+</code></pre>
+
+<p><em>etc/module.xml</em></p>
+
 <pre><code>&lt;?xml version=&quot;1.0&quot;?&gt;
 &lt;config xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
 xsi:noNamespaceSchemaLocation=&quot;urn:magento:framework:Module/etc/module.xsd&quot;&gt;
     &lt;module name=&quot;Noon_CategoryUrlPathGenerator&quot; setup_version=&quot;0.1.0&quot; /&gt;
 &lt;/config&gt;
 </code></pre></li>
-<li>
-<p>Додаємо до адмінки опцію для додавання/вилучення списку батьківських категорій в URL</p>
+
+<li><p>Додаємо до адмінки опцію для додавання/вилучення списку батьківських категорій в URL</p>
+
 <p><em>etc/adminhtml/system.xml</em></p>
+
 <pre><code>&lt;?xml version=&quot;1.0&quot;?&gt;
 &lt;config xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;urn:magento:module:Magento_Config:etc/system_file.xsd&quot;&gt;
     &lt;system&gt;
@@ -194,10 +208,15 @@ xsi:noNamespaceSchemaLocation=&quot;urn:magento:framework:Module/etc/module.xsd&
         &lt;/section&gt;
     &lt;/system&gt;
 &lt;/config&gt;
-</code></pre><p>Результатом буде такий вигляд адмінки
-<img src="/img/howto-remove-parent-category-from-url-magento-2-2.png" alt="howto-remove-parent-category-from-url-magento-2-2"></p>
+</code></pre>
+
+<p>Результатом буде такий вигляд адмінки
+<img src="/img/howto-remove-parent-category-from-url-magento-2-2.png" alt="howto-remove-parent-category-from-url-magento-2-2" /></p>
+
 <p>Задаємо значення <em>No</em> на замовчання</p>
+
 <p><em>etc/config.xml</em></p>
+
 <pre><code>&lt;?xml version=&quot;1.0&quot;?&gt;
 &lt;config xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;urn:magento:module:Magento_Store:etc/config.xsd&quot;&gt;
     &lt;default&gt;
@@ -209,9 +228,11 @@ xsi:noNamespaceSchemaLocation=&quot;urn:magento:framework:Module/etc/module.xsd&
     &lt;/default&gt;
 &lt;/config&gt;
 </code></pre></li>
-<li>
-<p>Робимо хелпер для можливості отримати значення налаштування з адмін-панелі</p>
+
+<li><p>Робимо хелпер для можливості отримати значення налаштування з адмін-панелі</p>
+
 <p><em>Helper/Data.php</em></p>
+
 <pre><code>&lt;?php
 namespace Noon\CategoryUrlPathGenerator\Helper;
 
@@ -251,16 +272,21 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     }
 }
 </code></pre></li>
-<li>
-<p>Створюємо around-плагін</p>
+
+<li><p>Створюємо around-плагін</p>
+
 <p><em>etc/di.xml</em></p>
+
 <pre><code>&lt;?xml version=&quot;1.0&quot;?&gt;
 &lt;config xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;&gt;
     &lt;type name=&quot;Magento\CatalogUrlRewrite\Model\CategoryUrlPathGenerator&quot;&gt;
         &lt;plugin name=&quot;noon_category_url_path_generator&quot; type=&quot;\Noon\CategoryUrlPathGenerator\Plugin\Model\CategoryUrlPathGenerator&quot; sortOrder=&quot;0&quot; /&gt;
     &lt;/type&gt;
 &lt;/config&gt;
-</code></pre><p><em>Plugin/Model/CategoryUrlPathGenerator.php</em></p>
+</code></pre>
+
+<p><em>Plugin/Model/CategoryUrlPathGenerator.php</em></p>
+
 <pre><code>&lt;?php
 
 namespace Noon\CategoryUrlPathGenerator\Plugin\Model;
@@ -312,12 +338,19 @@ class CategoryUrlPathGenerator
 }
 </code></pre></li>
 </ol>
+
 <p>Даний плагін дозволить генерувати потрібні URL для всіх новостворених категорій.</p>
+
 <p>Репозиторій плагіна - <a href="https://github.com/alex-79/magento2-category-url-path-generator">https://github.com/alex-79/magento2-category-url-path-generator</a>.</p>
+
 <p>Що робити якщо дерево категорій вже створено? Тут я рекомендую скористатись модулем <a href="https://github.com/elgentos/regenerate-catalog-urls">https://github.com/elgentos/regenerate-catalog-urls</a> і перегенерувати path та url.</p>
+
 <pre><code>php bin/magento regenerate:category:path
 php bin/magento regenerate:category:url
-</code></pre><h2 id="посилання">Посилання</h2>
+</code></pre>
+
+<h2 id="посилання">Посилання</h2>
+
 <ul>
 <li><a href="https://github.com/alex-79/magento2-category-url-path-generator">https://github.com/alex-79/magento2-category-url-path-generator</a></li>
 <li><a href="https://magento.stackexchange.com/questions/126732/magento-2-how-to-remove-parent-categories-slug-from-subcategory-urls-to-make-i">https://magento.stackexchange.com/questions/126732/magento-2-how-to-remove-parent-categories-slug-from-subcategory-urls-to-make-i</a></li>
@@ -384,13 +417,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/backup-with-tartarus/">Резервне копіювання і трохи грецької міфології</a></li>            
+          <li><a href="https://bender.kr.ua/howto-asterisk-part-3/">IP-телефонія на базі Asterisk. Частина 3: Логіка обробки дзвінків (Dialplan)</a></li>            
         
-          <li><a href="https://bender.kr.ua/magento-2-cron-indexer-repair/">Magento 2: не працює індексація за розкладом</a></li>            
+          <li><a href="https://bender.kr.ua/how-to-fix-elasticsearch-forbidden-12-index-read-only-allow-delete-api/">Проблема з переіндексацією catalogsearch_fulltext на Magento 2</a></li>            
         
-          <li><a href="https://bender.kr.ua/mysql-tmp-table-in-tmpfs/">Тимчасові таблиці MySQL в tmpfs</a></li>            
+          <li><a href="https://bender.kr.ua/howto-install-munin/">Простий моніторинг роботи сервера за допомогою Munin</a></li>            
         
-          <li><a href="https://bender.kr.ua/nginx-pagespeed-openssl/">Як я готую NGINX з модулем PAGESPEED</a></li>            
+          <li><a href="https://bender.kr.ua/upgrade-magento-232/">Оновлення Magento до версії 2.3.2</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">

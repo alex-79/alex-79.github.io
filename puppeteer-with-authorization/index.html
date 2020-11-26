@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1432639020363-5632f7f04e0b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.76.2" />
+    <meta name="generator" content="Hugo 0.54.0" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -145,13 +145,21 @@
 
     <section class="post-full-content">
         <div class="kg-card-markdown">
-        <p>Найпростіший спосіб &ldquo;прогріти&rdquo; кеш - пройтись за допомогою <em>wget</em> по карті сайту. У випадку, коли сайт чи окремі його розділи доступні лише зареєстрованим користувачам, цей спосіб не підійде.</p>
+        
+
+<p>Найпростіший спосіб &ldquo;прогріти&rdquo; кеш - пройтись за допомогою <em>wget</em> по карті сайту. У випадку, коли сайт чи окремі його розділи доступні лише зареєстрованим користувачам, цей спосіб не підійде.</p>
+
 <p>У пригоді може стати <em>Headless Chrome</em> - хром, якому не потрібно рендерити сторінку в окреме вікно (хоча він це може). Найлегший спосіб почати працювати з ним - використати <strong>puppeteer</strong>.</p>
+
 <p>Встановлюємо <em>Node.js</em> та <em>puppeteer</em></p>
+
 <pre><code>curl -sL https://deb.nodesource.com/setup_10.x | bash -
 apt-get install nodejs libxss1
 npm i puppeteer
-</code></pre><p>Наш краулер з авторизацією <em>crawler.js</em></p>
+</code></pre>
+
+<p>Наш краулер з авторизацією <em>crawler.js</em></p>
+
 <pre><code>const puppeteer = require('puppeteer');
 
 const C = require('./credentials');
@@ -204,20 +212,33 @@ async function crawler() {
   await crawler();
   process.exit(1);
 })();
-</code></pre><p><strong>Увага!!!</strong> Перевірте <em>executablePath</em></p>
+</code></pre>
+
+<p><strong>Увага!!!</strong> Перевірте <em>executablePath</em></p>
+
 <p>Файл з даними для авторизації <em>credentials.js</em></p>
+
 <pre><code>module.exports = {
                     url: 'https://examlpe.com.ua/customer/account/login',
                     username: 'mylogin',
                     password: 'mypassword'
                  }
-</code></pre><p>Зписок закритих адрес <em>urls.txt</em></p>
+</code></pre>
+
+<p>Зписок закритих адрес <em>urls.txt</em></p>
+
 <pre><code>https://examlpe.com.ua/test
 https://examlpe.com.ua/test2
 https://examlpe.com.ua/test2/test.html
-</code></pre><p>Запуск краулера</p>
+</code></pre>
+
+<p>Запуск краулера</p>
+
 <pre><code>node crawler.js
-</code></pre><h2 id="посилання">Посилання</h2>
+</code></pre>
+
+<h2 id="посилання">Посилання</h2>
+
 <ul>
 <li><a href="https://browsee.io/blog/top-tools-for-error-reporting-for-websites/">https://browsee.io/blog/top-tools-for-error-reporting-for-websites/</a></li>
 <li><a href="https://antoinevastel.com/crawler/2018/09/17/simple-crawler-puppeteer.html">https://antoinevastel.com/crawler/2018/09/17/simple-crawler-puppeteer.html</a></li>
@@ -283,13 +304,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/failed-to-fetch-jessie-backports-repository/">Проблема з backports репозиторієм в Debian 8</a></li>            
+          <li><a href="https://bender.kr.ua/howto-add-header-links-in-magento2/">Magento 2: як додати посилання в header.links</a></li>            
         
-          <li><a href="https://bender.kr.ua/fail2ban-unban-ip/">Як розблокувати себе в fail2ban</a></li>            
+          <li><a href="https://bender.kr.ua/iptables-ipset/">Блокування трафіку за допомогою iptables та ipset</a></li>            
         
-          <li><a href="https://bender.kr.ua/letsencrypt-and-ipv6/">Помилка при оновлені сертифікатів від Let&#39;s Encrypt</a></li>            
+          <li><a href="https://bender.kr.ua/magento-2-cron-indexer-repair/">Magento 2: не працює індексація за розкладом</a></li>            
         
-          <li><a href="https://bender.kr.ua/backup-with-borg/">Про користь borg-ів</a></li>            
+          <li><a href="https://bender.kr.ua/git-branch/">Як забрати гілку з git</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">

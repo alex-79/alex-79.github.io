@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1434123342969-25a249e8d144?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1995&q=80"/>
 
 
-    <meta name="generator" content="Hugo 0.76.2" />
+    <meta name="generator" content="Hugo 0.54.0" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -145,7 +145,10 @@
 
     <section class="post-full-content">
         <div class="kg-card-markdown">
-        <p>Цикл статей по розгортанню IP-телефонії на базі <em><strong>Asterisk</strong></em>. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Робота була захищена, сертифікат отриманий, все написане тестувалось і є повтінстю робочою реалізацією. Інформація в статті і версії програмного забезбечення актуальні на 2017 рік.</p>
+        
+
+<p>Цикл статей по розгортанню IP-телефонії на базі <strong><em>Asterisk</em></strong>. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Робота була захищена, сертифікат отриманий, все написане тестувалось і є повтінстю робочою реалізацією. Інформація в статті і версії програмного забезбечення актуальні на 2017 рік.</p>
+
 <ul>
 <li>частина 1 - <a href="https://bender.kr.ua/howto-asterisk-part-1/">Встановлення сервера Asterisk</a></li>
 <li>частина 2 - <a href="https://bender.kr.ua/howto-asterisk-part-2/">Налаштування SIP</a></li>
@@ -153,10 +156,15 @@
 <li>частина 4 - <a href="https://bender.kr.ua/howto-asterisk-part-4/">Голосове меню</a></li>
 <li>частина 5 - <a href="https://bender.kr.ua/howto-asterisk-part-5/">Деталізований звіт про виклики (Call Detail Records, CDR)</a></li>
 </ul>
+
 <h1 id="6-додаткові-функції-asterisk">6. Додаткові функції Asterisk.</h1>
-<h2 id="61-паркування-дзвінка">6.1 Паркування дзвінка.</h2>
+
+<h2 id="6-1-паркування-дзвінка">6.1 Паркування дзвінка.</h2>
+
 <p>Паркування виклику - це перенаправлення дзвінка абонента в спеціальний слот. Кожен слот має свій номер. Якщо перейти на інший телефон та набрати відповідний номер слота, то можна продовжити розмову з абонентом. В процесі очікування абонент ставитися на утримання і прослуховує музику.</p>
-<p>Додаємо можливість паркувати дзвінки. Використаємо номер за замовчуванням - <em><strong>700</strong></em>, тобто, якщо в процесі розмови набрати <em><strong># 700</strong></em>, то почуємо номер слоту, який потім треба буде набрати з іншого телефоного апарату для з&rsquo;єднання з <em><strong>&ldquo;запаркованим&rdquo;</strong></em> абонентом.</p>
+
+<p>Додаємо можливість паркувати дзвінки. Використаємо номер за замовчуванням - <strong><em>700</em></strong>, тобто, якщо в процесі розмови набрати <strong><em># 700</em></strong>, то почуємо номер слоту, який потім треба буде набрати з іншого телефоного апарату для з&rsquo;єднання з <strong><em>&ldquo;запаркованим&rdquo;</em></strong> абонентом.</p>
+
 <pre><code>[manager]
 include =&gt; call-local-manager
 include =&gt; call-local
@@ -189,14 +197,20 @@ include =&gt; call-local-manager
 include =&gt; call-local
 include =&gt; call-out-ua
 include =&gt; parkedcalls
-</code></pre><p>Для користувачів слід дозволити функцію переводу виклику, щоб вони могли скористатись функцією паркування, відповідно необхідно додати у виклики Dial() параметр t:</p>
+</code></pre>
+
+<p>Для користувачів слід дозволити функцію переводу виклику, щоб вони могли скористатись функцією паркування, відповідно необхідно додати у виклики Dial() параметр t:</p>
+
 <pre><code>;внутрішні лінії за виключенням manager
 [call-local]
 exten =&gt; _[2-6],1,Set(RECORDING=0)
 exten =&gt; _[2-6],n,Macro(recording,${CALLERID(num)},${EXTEN})
 exten =&gt; _[2-6]XX,n,Dial(SIP/${EXTEN},20,t)
 exten =&gt; _[2-6],n,Hangup()
-</code></pre><p>Перевіряємо паркування викликів:</p>
+</code></pre>
+
+<p>Перевіряємо паркування викликів:</p>
+
 <pre><code>asterisk-centos*CLI&gt; 
   == Using SIP RTP CoS mark 5
     -- Executing [740648@call-in:1] Set(&quot;SIP/zadarma-0000001c&quot;, &quot;RECORDING=1&quot;) in new stack
@@ -250,7 +264,10 @@ exten =&gt; _[2-6],n,Hangup()
   == Spawn extension (manager, 701, 1) exited non-zero on 'SIP/102-0000001e'
     -- Channel SIP/zadarma-0000001c left 'native_rtp' basic-bridge &lt;8787ac45-0b13-4760-b15f-7ad2d5f57f19&gt;
   == Spawn extension (ivr-buying-2, 301, 1) exited non-zero on 'SIP/zadarma-0000001c'
-</code></pre><p><a href="https://bender.kr.ua/howto-asterisk-part-6.2/">В наступній статті поговоримо про <strong>переадресацію дзвінків в Asterisk</strong>.</a></p>
+</code></pre>
+
+<p><a href="https://bender.kr.ua/howto-asterisk-part-6.2/">В наступній статті поговоримо про <strong>переадресацію дзвінків в Asterisk</strong>.</a></p>
+
 <ul>
 <li>частина 1 - <a href="https://bender.kr.ua/howto-asterisk-part-1/">Встановлення сервера Asterisk</a></li>
 <li>частина 2 - <a href="https://bender.kr.ua/howto-asterisk-part-2/">Налаштування SIP</a></li>
@@ -318,13 +335,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/connie-willis-doomsday-book/">Конні Вілліс. Книга судного дня</a></li>            
+          <li><a href="https://bender.kr.ua/backup-with-borg/">Про користь borg-ів</a></li>            
         
-          <li><a href="https://bender.kr.ua/magento-2-reindex-parallel/">Паралельна індексація в Magento 2</a></li>            
+          <li><a href="https://bender.kr.ua/cli-upgrade-magento2/">Оновлення Magento 2</a></li>            
         
-          <li><a href="https://bender.kr.ua/magick-248/">Магічне число 248 або Чому я не можу додати значення атрибута в Magento 2?</a></li>            
+          <li><a href="https://bender.kr.ua/howto-install-munin/">Простий моніторинг роботи сервера за допомогою Munin</a></li>            
         
-          <li><a href="https://bender.kr.ua/mint-19-and-epson-perfection-v33/">Mint 19 і сканер Epson Perfection V33</a></li>            
+          <li><a href="https://bender.kr.ua/5-extensions-for-default-magento2/">5 розширень, які ти зобов&#39;язаний поставити на Magento 2</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">

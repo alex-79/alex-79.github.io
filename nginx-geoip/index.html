@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1566847936715-5e147ef9caec?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.76.2" />
+    <meta name="generator" content="Hugo 0.54.0" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -145,24 +145,28 @@
 
     <section class="post-full-content">
         <div class="kg-card-markdown">
-        <p>Блокуємо паразитний трафік до сайту з певних країн безкоштовно, без реєстрацій та sms ;)</p>
+        
+
+<p>Блокуємо паразитний трафік до сайту з певних країн безкоштовно, без реєстрацій та sms ;)</p>
+
 <ol>
-<li>
-<p>Зібрати <strong>nginx</strong> з опцією <em>&ndash;with-http_geoip_module</em>. Як це зробити написано <a href="https://bender.kr.ua/howto-lemp-install/">тут</a></p>
-</li>
-<li>
-<p>Встановити бази GeoIP</p>
+<li><p>Зібрати <strong>nginx</strong> з опцією <em>&ndash;with-http_geoip_module</em>. Як це зробити написано <a href="https://bender.kr.ua/howto-lemp-install/">тут</a></p></li>
+
+<li><p>Встановити бази GeoIP</p>
+
 <pre><code>apt-get install geoip-database libgeoip1
 </code></pre></li>
-<li>
-<p>Оновити бази до останньої версії</p>
+
+<li><p>Оновити бази до останньої версії</p>
+
 <pre><code>mv /usr/share/GeoIP/GeoIP.dat /usr/share/GeoIP/GeoIP.bak
 wget https://dl.miyuru.lk/geoip/maxmind/country/maxmind.dat.gz
 gunzip maxmind.dat.gz
 mv maxmind.dat /usr/share/GeoIP/GeoIP.dat
 </code></pre></li>
-<li>
-<p>В <em>/etc/nginx/nginx.conf</em> в секції <em>http</em> блокуємо наприклад роісію та Пакистан</p>
+
+<li><p>В <em>/etc/nginx/nginx.conf</em> в секції <em>http</em> блокуємо наприклад роісію та Пакистан</p>
+
 <pre><code>http {
     ...
     geoip_country /usr/share/GeoIP/GeoIP.dat;
@@ -173,7 +177,10 @@ mv maxmind.dat /usr/share/GeoIP/GeoIP.dat
     }
     ...
 }
-</code></pre><p>Можно навпаки заблокувати всіх, залишити тільки Неньку</p>
+</code></pre>
+
+<p>Можно навпаки заблокувати всіх, залишити тільки Неньку</p>
+
 <pre><code>http {
     ...
     geoip_country /usr/share/GeoIP/GeoIP.dat;
@@ -183,10 +190,12 @@ mv maxmind.dat /usr/share/GeoIP/GeoIP.dat
     }
     ...
 }
-</code></pre><p>Коди країн <a href="https://dev.maxmind.com/geoip/legacy/codes/iso3166/">тут</a>.</p>
-</li>
-<li>
-<p>Для потрібного сайту блокуємо доступ із заборонених країн</p>
+</code></pre>
+
+<p>Коди країн <a href="https://dev.maxmind.com/geoip/legacy/codes/iso3166/">тут</a>.</p></li>
+
+<li><p>Для потрібного сайту блокуємо доступ із заборонених країн</p>
+
 <pre><code>server {
     ...
     location / {
@@ -197,13 +206,16 @@ mv maxmind.dat /usr/share/GeoIP/GeoIP.dat
     ...
 }
 </code></pre></li>
-<li>
-<p>Перевіряємо конфіги та перезавантажуємо конфігурацію</p>
+
+<li><p>Перевіряємо конфіги та перезавантажуємо конфігурацію</p>
+
 <pre><code>nginx -t
 nginx -s reload
 </code></pre></li>
 </ol>
+
 <h2 id="посилання">Посилання</h2>
+
 <ul>
 <li><a href="https://guides.wp-bullet.com/blocking-country-and-continent-with-nginx-geoip-on-ubuntu-18-04/">https://guides.wp-bullet.com/blocking-country-and-continent-with-nginx-geoip-on-ubuntu-18-04/</a></li>
 <li><a href="https://blog.programs74.ru/nginx-block-users-from-countries/">https://blog.programs74.ru/nginx-block-users-from-countries/</a></li>
@@ -270,13 +282,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
+          <li><a href="https://bender.kr.ua/year-in-books-2019/">Мій книжковий 2019 рік</a></li>            
+        
           <li><a href="https://bender.kr.ua/mining-karbowanec/">Як я місяць майнив криптовалюту за допомогою ноутбуку, навіщо мені це та що з того вийшло</a></li>            
         
-          <li><a href="https://bender.kr.ua/df-and-du-show-different-values/">df і du показують різні значення</a></li>            
+          <li><a href="https://bender.kr.ua/letsencrypt-and-ipv6/">Помилка при оновлені сертифікатів від Let&#39;s Encrypt</a></li>            
         
-          <li><a href="https://bender.kr.ua/cli-upgrade-magento2/">Оновлення Magento 2</a></li>            
-        
-          <li><a href="https://bender.kr.ua/howto-asterisk-part-6.1/">IP-телефонія на базі Asterisk. Частина 6.1: Додаткові функції Asterisk. Паркування дзвінка.</a></li>            
+          <li><a href="https://bender.kr.ua/failed-to-fetch-jessie-backports-repository/">Проблема з backports репозиторієм в Debian 8</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
