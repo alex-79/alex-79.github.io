@@ -6,10 +6,24 @@
     <description>Recent content in Web on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>uk</language>
-    <lastBuildDate>Mon, 07 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 29 Aug 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://bender.kr.ua/categories/web/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Інструкція зі встановлення Flask</title>
+      <link>https://bender.kr.ua/howto-install-flask/</link>
+      <pubDate>Sun, 29 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://bender.kr.ua/howto-install-flask/</guid>
+      <description>Flask — мікрофреймворк для веб-додатків, створений з використанням Python.
+Встановлення Django  Встановлюємо Python та додатковий інструментарій
+apt install python3 python3-pip python3-venv  Створюємо папку для проекту та віртуальне середовище
+mkdir myproject cd myproject python3 -m venv venv source venv/bin/activate  Встановлюємо Flask та перевіряємо встановлену версію
+python3 -m pip install Flask python -m flask --version  Нарешті &amp;ldquo;hello-world&amp;rdquo; app.py:
+from flask import Flask app = Flask(__name__) @app.route(&#39;/&#39;) def hello_world(): return &#39;Hello, World!</description>
+    </item>
     
     <item>
       <title>Встановлення відкритого месенджера Rocket.Chat на Debian 9</title>
