@@ -6,10 +6,21 @@
     <description>Recent content in Magento on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>uk</language>
-    <lastBuildDate>Tue, 10 Mar 2020 08:56:19 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 Sep 2021 15:45:55 +0300</lastBuildDate>
     
 	<atom:link href="https://bender.kr.ua/categories/magento/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Пошук невалідних XML в Magento 2</title>
+      <link>https://bender.kr.ua/exception-the-value-is-not-accepted-by-the-pattern/</link>
+      <pubDate>Wed, 01 Sep 2021 15:45:55 +0300</pubDate>
+      
+      <guid>https://bender.kr.ua/exception-the-value-is-not-accepted-by-the-pattern/</guid>
+      <description>Під час роботи в режимі developer можуть з&amp;rsquo;являтись повідомлення типу
+1 exception(s): Exception #0 (Magento\Framework\Config\Dom\ValidationException): Element &#39;block&#39;, attribute &#39;before&#39;: [facet &#39;pattern&#39;] The value &#39;.&#39; is not accepted by the pattern &#39;[a-zA-Z][a-zA-Z\d\-_\.]*|-&#39;. Line: 34  Це означає, що деякі ваші файли не пройшли XML-валідацію. Знайти проблемний xml можна так
+grep -r app -e &#39;before=&amp;quot;\.&#39;  Тут пошук відбувається в директорії app. Назву атрибута та його значення треба взяти з повідомлення про помилку.</description>
+    </item>
     
     <item>
       <title>Magento 2: не працює індексація за розкладом</title>
