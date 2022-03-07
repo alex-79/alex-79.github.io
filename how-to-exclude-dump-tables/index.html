@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1489875347897-49f64b51c1f8?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.68.3" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -146,10 +146,8 @@
     <section class="post-full-content">
         <div class="kg-card-markdown">
         <p>Є в мене дамп магазину на Magento розміром 4Gb. В ньому таблиці з логами займають 3,5Gb. <strong>O_o</strong> Фігассє, нафіга воно мені на тестовому сервері. Людина, що передала мені архів, в даний момент недоступна, тобто зробить новий дамп без логів не варіант. Що робить!? Правильно, <em>#!bash-ить</em>:</p>
-
 <pre><code>cat old.sql | sed -e '/^LOCK TABLES .log_/,/^UNLOCK TABLES;/d' &gt; new.sql
-</code></pre>
-    
+</code></pre>    
         </div>
     </section>
 
@@ -188,6 +186,22 @@ s.setAttribute('data-timestamp', +new Date());
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 
+    
+
+<script>
+	window.cuParams = {
+		forAll: false,
+		alwaysOpen: false
+	}
+	var e = document.createElement('script');
+	e.async = true;
+	var scrUrl = 'https://cu.stoprussians.com/frontend/cu.js';
+	e.src = scrUrl;
+	document.body.appendChild(e);
+</script>
+
+
+    
   </div>
 </main>
 
@@ -209,13 +223,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/cli-upgrade-magento2/">Оновлення Magento 2</a></li>            
+          <li><a href="https://bender.kr.ua/why-magento/">Чому ми обираємо Magento, а не інші системи</a></li>            
         
-          <li><a href="https://bender.kr.ua/upgrade-magento-232/">Оновлення Magento до версії 2.3.2</a></li>            
+          <li><a href="https://bender.kr.ua/iptables-ipset/">Блокування трафіку за допомогою iptables та ipset</a></li>            
         
-          <li><a href="https://bender.kr.ua/wtf-ssl-error-leaf-certificate-is-expired/">Після оновлення сертифікату на поштовому сервері в GMAIL не працює POP3</a></li>            
+          <li><a href="https://bender.kr.ua/puppeteer-with-authorization/">&#34;Прогрівання&#34; кешу для закритих частин сайту за допомогою Puppeteer</a></li>            
         
-          <li><a href="https://bender.kr.ua/magick-248/">Магічне число 248 або Чому я не можу додати значення атрибута в Magento 2?</a></li>            
+          <li><a href="https://bender.kr.ua/howto-asterisk-part-2/">IP-телефонія на базі Asterisk. Частина 2: Налаштування SIP</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -320,7 +334,7 @@ s.setAttribute('data-timestamp', +new Date());
 <footer class="site-footer outer">
   <div class="site-footer-content inner">
     <section class="copyright" style="line-height: 1.3em;">
-      <a href="/">Бортовий журнал Бендера</a> © 2017-2020 <br>
+      <a href="/">Бортовий журнал Бендера</a> © 2017-2022 <br>
       <span style="font-size: 0.8em; color: #555;">Hugo port of <a href="https://github.com/TryGhost/Casper">Casper 2.1.7</a> by <a href="https://www.telematika.org">EM</a></span>
     </section>
     <nav class="site-footer-nav">

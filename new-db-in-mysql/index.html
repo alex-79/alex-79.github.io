@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1489875347897-49f64b51c1f8?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.68.3" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -145,12 +145,11 @@
 
     <section class="post-full-content">
         <div class="kg-card-markdown">
-        <pre><code class="language-sql">CREATE DATABASE new_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-GRANT ALL PRIVILEGES ON new_db.* TO 'new_user'@'localhost' IDENTIFIED BY 'password';
-FLUSH PRIVILEGES;
+        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">DATABASE</span> new_db CHARACTER <span style="color:#66d9ef">SET</span> utf8mb4 <span style="color:#66d9ef">COLLATE</span> utf8mb4_unicode_ci;
+<span style="color:#66d9ef">GRANT</span> <span style="color:#66d9ef">ALL</span> <span style="color:#66d9ef">PRIVILEGES</span> <span style="color:#66d9ef">ON</span> new_db.<span style="color:#f92672">*</span> <span style="color:#66d9ef">TO</span> <span style="color:#e6db74">&#39;new_user&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;localhost&#39;</span> IDENTIFIED <span style="color:#66d9ef">BY</span> <span style="color:#e6db74">&#39;password&#39;</span>;
+FLUSH <span style="color:#66d9ef">PRIVILEGES</span>;
 
-</code></pre>
-    
+</code></pre></div>    
         </div>
     </section>
 
@@ -189,6 +188,22 @@ s.setAttribute('data-timestamp', +new Date());
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 
+    
+
+<script>
+	window.cuParams = {
+		forAll: false,
+		alwaysOpen: false
+	}
+	var e = document.createElement('script');
+	e.async = true;
+	var scrUrl = 'https://cu.stoprussians.com/frontend/cu.js';
+	e.src = scrUrl;
+	document.body.appendChild(e);
+</script>
+
+
+    
   </div>
 </main>
 
@@ -210,11 +225,11 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/magento-2-cron-indexer-repair/">Magento 2: не працює індексація за розкладом</a></li>            
+          <li><a href="https://bender.kr.ua/how-to-exclude-dump-tables/">Вибіркове завантаження таблиць дампа в MySQL</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-asterisk-part-2/">IP-телефонія на базі Asterisk. Частина 2: Налаштування SIP</a></li>            
+          <li><a href="https://bender.kr.ua/installing-python-3-6-on-debian-8/">Встановлення Python 3.6 на Debian 8</a></li>            
         
-          <li><a href="https://bender.kr.ua/backup-with-borg/">Про користь borg-ів</a></li>            
+          <li><a href="https://bender.kr.ua/nginx-redirection-get-arg/">NGINX - 301-й редирект адрес з get-аргументами</a></li>            
         
           <li><a href="https://bender.kr.ua/puppeteer-with-authorization/">&#34;Прогрівання&#34; кешу для закритих частин сайту за допомогою Puppeteer</a></li>            
         </ul>
@@ -321,7 +336,7 @@ s.setAttribute('data-timestamp', +new Date());
 <footer class="site-footer outer">
   <div class="site-footer-content inner">
     <section class="copyright" style="line-height: 1.3em;">
-      <a href="/">Бортовий журнал Бендера</a> © 2017-2020 <br>
+      <a href="/">Бортовий журнал Бендера</a> © 2017-2022 <br>
       <span style="font-size: 0.8em; color: #555;">Hugo port of <a href="https://github.com/TryGhost/Casper">Casper 2.1.7</a> by <a href="https://www.telematika.org">EM</a></span>
     </section>
     <nav class="site-footer-nav">

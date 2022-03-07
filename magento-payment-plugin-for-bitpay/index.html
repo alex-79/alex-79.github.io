@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://bender.kr.ua/img/bender-bitpay.png"/>
 
 
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.68.3" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -146,11 +146,10 @@
     <section class="post-full-content">
         <div class="kg-card-markdown">
         <p>Як отримати bitcoin-и без того, щоб скуповувати відеокарти? Правильно, щось за них продати. Для цього трема мати магазин на Magento та виконати невеличку інструкцію:</p>
-
 <ol>
 <li>Зробити гаманець на <a href="https://bitpay.com/">https://bitpay.com/</a>.</li>
 <li>Встановити модуль <a href="https://github.com/bitpay/magento-plugin">https://github.com/bitpay/magento-plugin</a>. Тут увага, не намагайтесь ставити через <em>modman</em> - все одно не запрацює. Краще зробити це з архіву <a href="https://github.com/bitpay/magento-plugin/releases">https://github.com/bitpay/magento-plugin/releases</a>.</li>
-<li>Далі налаштовуємо через <em>System &gt; Configuration &gt; Sales &gt; Payment Methods</em>. Щоб прив&rsquo;язати гаманець до Magento, треба отримати токен <a href="https://bitpay.com/api-tokens">https://bitpay.com/api-tokens</a> і ввести його у відповідне поле. Токен діє 24 години, вводити його необхідно тільки при встановленні модуля. В якості мережі - <em>Livenet</em>. Також рекомендую активувати <em>debug</em>. Інші налаштування, як то кажуть, за смаком.</li>
+<li>Далі налаштовуємо через <em>System &gt; Configuration &gt; Sales &gt; Payment Methods</em>. Щоб прив'язати гаманець до Magento, треба отримати токен <a href="https://bitpay.com/api-tokens">https://bitpay.com/api-tokens</a> і ввести його у відповідне поле. Токен діє 24 години, вводити його необхідно тільки при встановленні модуля. В якості мережі - <em>Livenet</em>. Також рекомендую активувати <em>debug</em>. Інші налаштування, як то кажуть, за смаком.</li>
 <li>І, нарешті, найцікавіше - <strong>починаємо рубити бабло!!!</strong></li>
 </ol>
     
@@ -192,6 +191,22 @@ s.setAttribute('data-timestamp', +new Date());
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 
+    
+
+<script>
+	window.cuParams = {
+		forAll: false,
+		alwaysOpen: false
+	}
+	var e = document.createElement('script');
+	e.async = true;
+	var scrUrl = 'https://cu.stoprussians.com/frontend/cu.js';
+	e.src = scrUrl;
+	document.body.appendChild(e);
+</script>
+
+
+    
   </div>
 </main>
 
@@ -213,13 +228,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/regexp-replace-in-mariadb/">Заміна даних в MariaDB</a></li>            
+          <li><a href="https://bender.kr.ua/magick-248/">Магічне число 248 або Чому я не можу додати значення атрибута в Magento 2?</a></li>            
         
-          <li><a href="https://bender.kr.ua/year-in-books-2019/">Мій книжковий 2019 рік</a></li>            
+          <li><a href="https://bender.kr.ua/howto-install-rocketchat-debian-9/">Встановлення відкритого месенджера Rocket.Chat на Debian 9</a></li>            
         
-          <li><a href="https://bender.kr.ua/how-to-exclude-dump-tables/">Вибіркове завантаження таблиць дампа в MySQL</a></li>            
+          <li><a href="https://bender.kr.ua/howto-install-flask/">Інструкція зі встановлення Flask</a></li>            
         
-          <li><a href="https://bender.kr.ua/iptables-ipset/">Блокування трафіку за допомогою iptables та ipset</a></li>            
+          <li><a href="https://bender.kr.ua/howto-remove-parent-category-from-url-magento-2/">Вилучення ієрархії категорій з URL в Magento 2</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -323,7 +338,7 @@ s.setAttribute('data-timestamp', +new Date());
 <footer class="site-footer outer">
   <div class="site-footer-content inner">
     <section class="copyright" style="line-height: 1.3em;">
-      <a href="/">Бортовий журнал Бендера</a> © 2017-2020 <br>
+      <a href="/">Бортовий журнал Бендера</a> © 2017-2022 <br>
       <span style="font-size: 0.8em; color: #555;">Hugo port of <a href="https://github.com/TryGhost/Casper">Casper 2.1.7</a> by <a href="https://www.telematika.org">EM</a></span>
     </section>
     <nav class="site-footer-nav">

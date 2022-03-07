@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1508780709619-79562169bc64?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.68.3" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -146,16 +146,11 @@
     <section class="post-full-content">
         <div class="kg-card-markdown">
         <p>В роботі часто користуюсь комбінаціями Ctrl-Shift-Up/Down в LibreOffice Calc, а мову змінюю через Ctrl-Shift. В Ubuntu 14.04 все було гаразд, але при оновлені версій щось зламалось і комбінація в LibreOffice припинила працювати: замість виділяти стовпці, перемикалась розкладка. Варіант поставити зміну мов на іншу клавішу не розглядався в силу того що я раб своїх звичок, а змінювати звички для мене дуже не легко. Якийсь час розрулював цей конфлікт через xNeur, який використовував виключно для зміни розкладок, але воно час від часу падало. Сьогодні знайшов інший шлях:</p>
-
-<pre><code class="language-bash">add-apt-repository ppa:nrbrtx/xorg-hotkeys
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">add-apt-repository ppa:nrbrtx/xorg-hotkeys
 apt update
 apt dist-upgrade
-</code></pre>
-
-<p>Джерело <a href="https://askubuntu.com/questions/1009352/os-keyboard-shortcuts-conflict-with-apps-keyboard-shortcuts/1009356#1009356">тут</a></p>
-
+</code></pre></div><p>Джерело <a href="https://askubuntu.com/questions/1009352/os-keyboard-shortcuts-conflict-with-apps-keyboard-shortcuts/1009356#1009356">тут</a></p>
 <p>Є ще <a href="https://bugs.launchpad.net/ubuntu/+source/xorg-server/+bug/1683383/comments/40">такий варіант</a>, але я його не перевіряв.</p>
-
 <p>Обидва посилання з обговорення <a href="http://mobile.opennet.ru/opennews/art.shtml?num=49030">цієї теми</a> на OpenNet.</p>
     
         </div>
@@ -196,6 +191,22 @@ s.setAttribute('data-timestamp', +new Date());
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 
+    
+
+<script>
+	window.cuParams = {
+		forAll: false,
+		alwaysOpen: false
+	}
+	var e = document.createElement('script');
+	e.async = true;
+	var scrUrl = 'https://cu.stoprussians.com/frontend/cu.js';
+	e.src = scrUrl;
+	document.body.appendChild(e);
+</script>
+
+
+    
   </div>
 </main>
 
@@ -217,13 +228,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/magento-payment-plugin-for-bitpay/">Рубимо електронні гроші в Magento</a></li>            
+          <li><a href="https://bender.kr.ua/howto-certbot-nginx-debian/">Отримання SSL-сертифікату для Nginx на Debian 9</a></li>            
         
-          <li><a href="https://bender.kr.ua/backup-with-borg/">Про користь borg-ів</a></li>            
+          <li><a href="https://bender.kr.ua/howto-asterisk-part-5/">IP-телефонія на базі Asterisk. Частина 5: Деталізований звіт про виклики (Call Detail Records, CDR)</a></li>            
         
-          <li><a href="https://bender.kr.ua/connie-willis-doomsday-book/">Конні Вілліс. Книга судного дня</a></li>            
+          <li><a href="https://bender.kr.ua/new-db-in-mysql/">Створення бази даних в MySQL</a></li>            
         
-          <li><a href="https://bender.kr.ua/installing-python-3-6-on-debian-8/">Встановлення Python 3.6 на Debian 8</a></li>            
+          <li><a href="https://bender.kr.ua/howto-install-rocketchat-debian-9/">Встановлення відкритого месенджера Rocket.Chat на Debian 9</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -328,7 +339,7 @@ s.setAttribute('data-timestamp', +new Date());
 <footer class="site-footer outer">
   <div class="site-footer-content inner">
     <section class="copyright" style="line-height: 1.3em;">
-      <a href="/">Бортовий журнал Бендера</a> © 2017-2020 <br>
+      <a href="/">Бортовий журнал Бендера</a> © 2017-2022 <br>
       <span style="font-size: 0.8em; color: #555;">Hugo port of <a href="https://github.com/TryGhost/Casper">Casper 2.1.7</a> by <a href="https://www.telematika.org">EM</a></span>
     </section>
     <nav class="site-footer-nav">

@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1485761954900-f9a29f318567?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.68.3" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -145,18 +145,11 @@
 
     <section class="post-full-content">
         <div class="kg-card-markdown">
-        
-
-<p>Після оновлення сертифікату Let&rsquo;s Encrypt на поштовому сервері iRedMail в GMAIL перестав збирати пошту по протоколу POP3, помилка <strong><em>SSL error: Leaf certificate is expired</em></strong>.</p>
-
+        <p>Після оновлення сертифікату Let&rsquo;s Encrypt на поштовому сервері iRedMail в GMAIL перестав збирати пошту по протоколу POP3, помилка <em><strong>SSL error: Leaf certificate is expired</strong></em>.</p>
 <p>Перевірка на 995 порту <a href="https://www.digicert.com/help/">тут</a> показувала, що сертифікат не дійсний, а <a href="https://www.ssllabs.com/ssltest/index.html">тут</a> - що все ОК.</p>
-
 <p>Вирішення проблеми постфактум очевидне, але на пошуки був витрачений час.</p>
-
 <p>Отже, після оновлення сертифікатів треба перезавантажити не лише <em>nginx</em>, а й <em>dovecot</em>, що зроблено не було :(</p>
-
 <h2 id="посилання">Посилання</h2>
-
 <ul>
 <li><a href="https://docs.iredmail.org/letsencrypt.html">https://docs.iredmail.org/letsencrypt.html</a> - отримання на налаштування сертифікатів у iRedMail</li>
 <li><a href="https://www.digicert.com/help/">https://www.digicert.com/help/</a> - перевірка сертифікатів на довільних портах</li>
@@ -202,6 +195,22 @@ s.setAttribute('data-timestamp', +new Date());
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 
+    
+
+<script>
+	window.cuParams = {
+		forAll: false,
+		alwaysOpen: false
+	}
+	var e = document.createElement('script');
+	e.async = true;
+	var scrUrl = 'https://cu.stoprussians.com/frontend/cu.js';
+	e.src = scrUrl;
+	document.body.appendChild(e);
+</script>
+
+
+    
   </div>
 </main>
 
@@ -223,13 +232,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/quick-start-with-jenkins-in-docker/">Швидкий старт Jenkins в Debian 10 за допомогою Docker</a></li>            
+          <li><a href="https://bender.kr.ua/howto-asterisk-part-1/">IP-телефонія на базі Asterisk. Частина 1: Встановлення сервера Asterisk</a></li>            
         
-          <li><a href="https://bender.kr.ua/backup-with-tartarus/">Резервне копіювання і трохи грецької міфології</a></li>            
+          <li><a href="https://bender.kr.ua/fail2ban-unban-ip/">Як розблокувати себе в fail2ban</a></li>            
         
-          <li><a href="https://bender.kr.ua/regexp-replace-in-mariadb/">Заміна даних в MariaDB</a></li>            
+          <li><a href="https://bender.kr.ua/howto-install-munin/">Простий моніторинг роботи сервера за допомогою Munin</a></li>            
         
-          <li><a href="https://bender.kr.ua/connie-willis-doomsday-book/">Конні Вілліс. Книга судного дня</a></li>            
+          <li><a href="https://bender.kr.ua/magento2-reindexer-for-large-catalog/">Проблема переіндексації великого каталогу в Magento 2</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -334,7 +343,7 @@ s.setAttribute('data-timestamp', +new Date());
 <footer class="site-footer outer">
   <div class="site-footer-content inner">
     <section class="copyright" style="line-height: 1.3em;">
-      <a href="/">Бортовий журнал Бендера</a> © 2017-2020 <br>
+      <a href="/">Бортовий журнал Бендера</a> © 2017-2022 <br>
       <span style="font-size: 0.8em; color: #555;">Hugo port of <a href="https://github.com/TryGhost/Casper">Casper 2.1.7</a> by <a href="https://www.telematika.org">EM</a></span>
     </section>
     <nav class="site-footer-nav">

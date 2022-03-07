@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1477650614459-1c25033a8953?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.68.3" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -146,36 +146,28 @@
     <section class="post-full-content">
         <div class="kg-card-markdown">
         <p><strong>Вихідні дані:</strong> є магазин з двома мовними версіями, наприклад, <em>ua</em> та <em>en</em>, версія українською мовою - основна.
-<strong>Задача:</strong> прибрати store code з адреси основного магазину, тобто замість <a href="https://mysite.com/ua/">https://mysite.com/ua/</a> зробити просто <a href="https://mysite.com/">https://mysite.com/</a>, міжнародну версію залишити без змін - <a href="https://mysite.com/en/">https://mysite.com/en/</a>.</p>
-
+<strong>Задача:</strong> прибрати store code з адреси основного магазину, тобто замість <a href="https://mysite.com/ua/">https://mysite.com/ua/</a> зробити просто <a href="https://mysite.com/,">https://mysite.com/,</a> міжнародну версію залишити без змін - <a href="https://mysite.com/en/">https://mysite.com/en/</a>.</p>
 <p>Для цього нам треба навісити плагін на метод <em>getBaseUrl</em> класу <em>Magento\Store\Model\Store</em>.</p>
-
 <ol>
-<li><p>Створюємо заготовку для модуля в директорії <em>Noon/HideDefaultStoreCode</em></p>
-
+<li>
+<p>Створюємо заготовку для модуля в директорії <em>Noon/HideDefaultStoreCode</em></p>
 <p><em>registration.php</em></p>
-
 <pre><code>&lt;?php
 \Magento\Framework\Component\ComponentRegistrar::register(
 \Magento\Framework\Component\ComponentRegistrar::MODULE,
     'Noon_HideDefaultStoreCode',
     __DIR__
 );
-</code></pre>
-
-<p><em>etc/module.xml</em></p>
-
+</code></pre><p><em>etc/module.xml</em></p>
 <pre><code>&lt;?xml version=&quot;1.0&quot;?&gt;
 &lt;config xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
 xsi:noNamespaceSchemaLocation=&quot;urn:magento:framework:Module/etc/module.xsd&quot;&gt;
     &lt;module name=&quot;Noon_HideDefaultStoreCode&quot; setup_version=&quot;0.1.0&quot; /&gt;
 &lt;/config&gt;
 </code></pre></li>
-
-<li><p>Додаємо до адмінки опцію для включення/відключення Store Code в URL</p>
-
+<li>
+<p>Додаємо до адмінки опцію для включення/відключення Store Code в URL</p>
 <p><em>etc/adminhtml/system.xml</em></p>
-
 <pre><code>&lt;?xml version=&quot;1.0&quot;?&gt;
 &lt;config xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;urn:magento:module:Magento_Config:etc/system_file.xsd&quot;&gt;
     &lt;system&gt;
@@ -189,15 +181,10 @@ xsi:noNamespaceSchemaLocation=&quot;urn:magento:framework:Module/etc/module.xsd&
         &lt;/section&gt;
     &lt;/system&gt;
 &lt;/config&gt;
-</code></pre>
-
-<p>Результатом буде такий вигляд адмінки
-<img src="/img/howto-hide-default-store-code-from-url-magento-2-1-1.png" alt="howto-hide-default-store-code-from-url-magento-2-1-1" /></p>
-
+</code></pre><p>Результатом буде такий вигляд адмінки
+<img src="/img/howto-hide-default-store-code-from-url-magento-2-1-1.png" alt="howto-hide-default-store-code-from-url-magento-2-1-1"></p>
 <p>Задаємо значення <em>No</em> на замовчання</p>
-
 <p><em>etc/config.xml</em></p>
-
 <pre><code>&lt;?xml version=&quot;1.0&quot;?&gt;
 &lt;config xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;urn:magento:module:Magento_Store:etc/config.xsd&quot;&gt;
     &lt;default&gt;
@@ -209,11 +196,9 @@ xsi:noNamespaceSchemaLocation=&quot;urn:magento:framework:Module/etc/module.xsd&
     &lt;/default&gt;
 &lt;/config&gt;
 </code></pre></li>
-
-<li><p>Робимо хелпер для можливості отримати значення налаштування з адмін-панелі</p>
-
+<li>
+<p>Робимо хелпер для можливості отримати значення налаштування з адмін-панелі</p>
 <p><em>Helper/Data.php</em></p>
-
 <pre><code>&lt;?php
 namespace Noon\HideDefaultStoreCode\Helper;
 
@@ -253,21 +238,16 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     }
 }
 </code></pre></li>
-
-<li><p>Створюємо after-плагін</p>
-
+<li>
+<p>Створюємо after-плагін</p>
 <p><em>etc/di.xml</em></p>
-
 <pre><code>&lt;?xml version=&quot;1.0&quot;?&gt;
 &lt;config xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;&gt;
     &lt;type name=&quot;Magento\Store\Model\Store&quot;&gt;
         &lt;plugin name=&quot;Noon_hide_default_store_code&quot; type=&quot;\Noon\HideDefaultStoreCode\Plugin\Model\HideDefaultStoreCode&quot; sortOrder=&quot;0&quot; /&gt;
     &lt;/type&gt;
 &lt;/config&gt;
-</code></pre>
-
-<p><em>Plugin/Model/HideDefaultStoreCode.php</em></p>
-
+</code></pre><p><em>Plugin/Model/HideDefaultStoreCode.php</em></p>
 <pre><code>&lt;?php
 
 namespace Noon\HideDefaultStoreCode\Plugin\Model;
@@ -279,13 +259,13 @@ class HideDefaultStoreCode
     * @var \Noon\HideDefaultStoreCode\Helper\Data 
     */
     protected $helper;
-        
+       
     /**
     *
     * @var \Magento\Store\Model\StoreManagerInterface
     */
     protected $storeManager;
-        
+       
     /**
     * 
     * @param \Noon\HideDefaultStoreCode\Helper\Data $helper
@@ -315,7 +295,6 @@ class HideDefaultStoreCode
 }
 </code></pre></li>
 </ol>
-
 <p>Репозиторій плагіна - <a href="https://github.com/alex-79/magento2-hide-default-store-code-from-url">https://github.com/alex-79/magento2-hide-default-store-code-from-url</a>.</p>
     
         </div>
@@ -356,6 +335,22 @@ s.setAttribute('data-timestamp', +new Date());
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 
+    
+
+<script>
+	window.cuParams = {
+		forAll: false,
+		alwaysOpen: false
+	}
+	var e = document.createElement('script');
+	e.async = true;
+	var scrUrl = 'https://cu.stoprussians.com/frontend/cu.js';
+	e.src = scrUrl;
+	document.body.appendChild(e);
+</script>
+
+
+    
   </div>
 </main>
 
@@ -377,13 +372,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/howto-install-flask/">Інструкція зі встановлення Flask</a></li>            
+          <li><a href="https://bender.kr.ua/wtf-ssl-error-leaf-certificate-is-expired/">Після оновлення сертифікату на поштовому сервері в GMAIL не працює POP3</a></li>            
         
-          <li><a href="https://bender.kr.ua/nginx-redirection-get-arg/">NGINX - 301-й редирект адрес з get-аргументами</a></li>            
+          <li><a href="https://bender.kr.ua/how-to-fix-elasticsearch-forbidden-12-index-read-only-allow-delete-api/">Проблема з переіндексацією catalogsearch_fulltext на Magento 2</a></li>            
         
-          <li><a href="https://bender.kr.ua/exception-the-value-is-not-accepted-by-the-pattern/">Пошук невалідних XML в Magento 2</a></li>            
+          <li><a href="https://bender.kr.ua/magento-2-reindex-parallel/">Паралельна індексація в Magento 2</a></li>            
         
-          <li><a href="https://bender.kr.ua/magento2-reindexer-for-large-catalog/">Проблема переіндексації великого каталогу в Magento 2</a></li>            
+          <li><a href="https://bender.kr.ua/quick-start-with-jenkins-in-docker/">Швидкий старт Jenkins в Debian 10 за допомогою Docker</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -411,7 +406,7 @@ s.setAttribute('data-timestamp', +new Date());
           </header>
           <section class="post-card-excerpt">
                
-                <p>Перша книга з &lsquo;Оксфордського циклу&rsquo; Конні Вілліс. Роман виграв премію Г&rsquo;юго в 1993 і премію Неб&rsquo;юла в 1992 році.</p>
+                <p>Перша книга з &lsquo;Оксфордського циклу&rsquo; Конні Вілліс. Роман виграв премію Г'юго в 1993 і премію Неб'юла в 1992 році.</p>
               
           </section>
       </a>
@@ -441,7 +436,7 @@ s.setAttribute('data-timestamp', +new Date());
           </header>
           <section class="post-card-excerpt">
                
-                <p>Список корисних модулів і рішень для Magento 2. Список, ясна річ, дуже суб&rsquo;єктивний і використовується для зберігання цікавих для мене посилань.</p>
+                <p>Список корисних модулів і рішень для Magento 2. Список, ясна річ, дуже суб'єктивний і використовується для зберігання цікавих для мене посилань.</p>
               
           </section>
       </a>
@@ -487,7 +482,7 @@ s.setAttribute('data-timestamp', +new Date());
 <footer class="site-footer outer">
   <div class="site-footer-content inner">
     <section class="copyright" style="line-height: 1.3em;">
-      <a href="/">Бортовий журнал Бендера</a> © 2017-2020 <br>
+      <a href="/">Бортовий журнал Бендера</a> © 2017-2022 <br>
       <span style="font-size: 0.8em; color: #555;">Hugo port of <a href="https://github.com/TryGhost/Casper">Casper 2.1.7</a> by <a href="https://www.telematika.org">EM</a></span>
     </section>
     <nav class="site-footer-nav">

@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1493946740644-2d8a1f1a6aff?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.68.3" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -145,110 +145,84 @@
 
     <section class="post-full-content">
         <div class="kg-card-markdown">
-        
-
-<p>Для швидкого старту системи CI/CD Jenkins скористаємось docker-ом. Працюємо в Debian 10, але рецепт певно спрацює для будь-якого deb-похідного дистрибутиву.</p>
-
+        <p>Для швидкого старту системи CI/CD Jenkins скористаємось docker-ом. Працюємо в Debian 10, але рецепт певно спрацює для будь-якого deb-похідного дистрибутиву.</p>
 <ol>
-<li><p>Встановлюємо Docker</p>
-
+<li>Встановлюємо Docker</li>
+</ol>
 <pre><code>apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common
 curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
 apt-get update
 apt-get install docker-ce
-</code></pre>
-
-<pre><code>systemctl status docker
+</code></pre><pre><code>systemctl status docker
 ● docker.service - Docker Application Container Engine
-Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled)
-Active: active (running) since Wed 2019-07-31 12:48:03 EEST; 5min ago
-  Docs: https://docs.docker.com
+  Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled)
+  Active: active (running) since Wed 2019-07-31 12:48:03 EEST; 5min ago
+    Docs: https://docs.docker.com
 Main PID: 3518 (dockerd)
-  Tasks: 10
-Memory: 49.1M
-CGroup: /system.slice/docker.service
-        └─3518 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
-</code></pre>
-
-<p>Додаємо користувача <em>developer</em> в групу <em>docker</em></p>
-
+    Tasks: 10
+  Memory: 49.1M
+  CGroup: /system.slice/docker.service
+          └─3518 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+</code></pre><p>Додаємо користувача <em>developer</em> в групу <em>docker</em></p>
 <pre><code>usermod -aG docker developer
-</code></pre></li>
-
-<li><p>Встановлюємо docker-compose</p>
-
+</code></pre><ol start="2">
+<li>Встановлюємо docker-compose</li>
+</ol>
 <pre><code>curl -L &quot;https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
-</code></pre>
-
-<pre><code>which docker-compose
+</code></pre><pre><code>which docker-compose
 /usr/local/bin/docker-compose
-</code></pre></li>
-
-<li><p>Створюємо docker-compose.yml для Jenkins</p>
-
+</code></pre><ol start="3">
+<li>Створюємо docker-compose.yml для Jenkins</li>
+</ol>
 <pre><code>cd /home/developer
 mkdir docker-jenkins
 cd docker-jenkins
 mcedit docker-compose.yml
-</code></pre>
-
-<pre><code class="language-docker">version: '3.6'
-services:
-jenkins:
-  image: jenkinsci/blueocean
-  container_name: jenkins
-  ports:
-    - &quot;8080:8080&quot;
-    - &quot;8443:8443&quot;
-    - &quot;50000:50000&quot;
-  volumes:
-    - ./jenkins_home:/var/jenkins_home
-    - /var/run/docker.sock:/var/run/docker.sock
-  restart: always
-</code></pre>
-
-<ol>
-<li>Запускаємо Docker
-```</li>
-</ol></li>
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-docker" data-lang="docker">version: <span style="color:#e6db74">&#39;3.6&#39;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>services:<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  jenkins:<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    image: jenkinsci/blueocean<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    container_name: jenkins<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    ports:<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>      - <span style="color:#e6db74">&#34;8080:8080&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>      - <span style="color:#e6db74">&#34;8443:8443&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>      - <span style="color:#e6db74">&#34;50000:50000&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    volumes:<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>      - ./jenkins_home:/var/jenkins_home<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>      - /var/run/docker.sock:/var/run/docker.sock<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    restart: always<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><ol start="4">
+<li>Запускаємо Docker</li>
 </ol>
-
-<p>docker-compose up</p>
-
-<pre><code>  Якщо отримаємо помилку ***ERROR: Couldn't connect to Docker daemon at http+docker://localhost - is it running? If it's at a non-standard location, specify the URL with the DOCKER_HOST environment variable.***, то змінюємо власника *docker.sock*
-</code></pre>
-
-<p>chown developer /var/run/docker.sock</p>
-
-<pre><code>  Під час запуску звертаємо увагу на наступний запис
-</code></pre>
-
-<p>jenkins    | *************************************************************
-  jenkins    | *************************************************************
-  jenkins    | *************************************************************
-  jenkins    |
-  jenkins    | Jenkins initial setup is required. An admin user has been created and a password generated.
-  jenkins    | Please use the following password to proceed to installation:
-  jenkins    |
-  jenkins    | 86ad907b0db745cb8047762aef1baa4a
-  jenkins    |
-  jenkins    | This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
-  jenkins    |
-  jenkins    | *************************************************************
-  jenkins    | *************************************************************
-  jenkins    | *************************************************************
-  ```</p>
-
-<ol>
-<li><p>В браузері запускаємо <a href="http://XXX.XXX.XXX.XXX:8080">http://XXX.XXX.XXX.XXX:8080</a>, вводимо пароль з попереднього пункту, обираємо встановлення рекомендованих плагінів та переходимо на <a href="http://XXX.XXX.XXX.XXX:8080/blue">http://XXX.XXX.XXX.XXX:8080/blue</a>
-<img src="/img/howto-ci-cd-for-magento-2-1.png" alt="howto-ci-cd-for-magento-2-1" /></p></li>
-
-<li><p>Jenkins працює</p></li>
+<pre><code>docker-compose up
+</code></pre><p>Якщо отримаємо помилку <em><strong>ERROR: Couldn&rsquo;t connect to Docker daemon at http+docker://localhost - is it running? If it&rsquo;s at a non-standard location, specify the URL with the DOCKER_HOST environment variable.</strong></em>, то змінюємо власника <em>docker.sock</em></p>
+<pre><code>chown developer /var/run/docker.sock
+</code></pre><p>Під час запуску звертаємо увагу на наступний запис</p>
+<pre><code>jenkins    | *************************************************************
+jenkins    | *************************************************************
+jenkins    | *************************************************************
+jenkins    | 
+jenkins    | Jenkins initial setup is required. An admin user has been created and a password generated.
+jenkins    | Please use the following password to proceed to installation:
+jenkins    | 
+jenkins    | 86ad907b0db745cb8047762aef1baa4a
+jenkins    | 
+jenkins    | This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
+jenkins    | 
+jenkins    | *************************************************************
+jenkins    | *************************************************************
+jenkins    | *************************************************************
+</code></pre><ol start="5">
+<li>
+<p>В браузері запускаємо http://XXX.XXX.XXX.XXX:8080, вводимо пароль з попереднього пункту, обираємо встановлення рекомендованих плагінів та переходимо на http://XXX.XXX.XXX.XXX:8080/blue
+<img src="/img/howto-ci-cd-for-magento-2-1.png" alt="howto-ci-cd-for-magento-2-1"></p>
+</li>
+<li>
+<p>Jenkins працює</p>
+</li>
 </ol>
-
 <h2 id="посилання">Посилання</h2>
-
 <ul>
 <li><a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-debian-10">https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-debian-10</a></li>
 </ul>
@@ -291,6 +265,22 @@ s.setAttribute('data-timestamp', +new Date());
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 
+    
+
+<script>
+	window.cuParams = {
+		forAll: false,
+		alwaysOpen: false
+	}
+	var e = document.createElement('script');
+	e.async = true;
+	var scrUrl = 'https://cu.stoprussians.com/frontend/cu.js';
+	e.src = scrUrl;
+	document.body.appendChild(e);
+</script>
+
+
+    
   </div>
 </main>
 
@@ -312,13 +302,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/howto-asterisk-part-1/">IP-телефонія на базі Asterisk. Частина 1: Встановлення сервера Asterisk</a></li>            
+          <li><a href="https://bender.kr.ua/mysql-tmp-table-in-tmpfs/">Тимчасові таблиці MySQL в tmpfs</a></li>            
         
-          <li><a href="https://bender.kr.ua/df-and-du-show-different-values/">df і du показують різні значення</a></li>            
+          <li><a href="https://bender.kr.ua/connie-willis-doomsday-book/">Конні Вілліс. Книга судного дня</a></li>            
         
-          <li><a href="https://bender.kr.ua/custom-logging-module-magento2/">Magento2: Як писати логи модуля в окремий файл?</a></li>            
+          <li><a href="https://bender.kr.ua/magento-2-cron-indexer-repair/">Magento 2: не працює індексація за розкладом</a></li>            
         
-          <li><a href="https://bender.kr.ua/failed-to-fetch-jessie-backports-repository/">Проблема з backports репозиторієм в Debian 8</a></li>            
+          <li><a href="https://bender.kr.ua/nginx-pagespeed-openssl/">Як я готую NGINX з модулем PAGESPEED</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -346,7 +336,7 @@ s.setAttribute('data-timestamp', +new Date());
           </header>
           <section class="post-card-excerpt">
                
-                <p>Список корисних модулів і рішень для Magento 2. Список, ясна річ, дуже суб&rsquo;єктивний і використовується для зберігання цікавих для мене посилань.</p>
+                <p>Список корисних модулів і рішень для Magento 2. Список, ясна річ, дуже суб'єктивний і використовується для зберігання цікавих для мене посилань.</p>
               
           </section>
       </a>
@@ -422,7 +412,7 @@ s.setAttribute('data-timestamp', +new Date());
 <footer class="site-footer outer">
   <div class="site-footer-content inner">
     <section class="copyright" style="line-height: 1.3em;">
-      <a href="/">Бортовий журнал Бендера</a> © 2017-2020 <br>
+      <a href="/">Бортовий журнал Бендера</a> © 2017-2022 <br>
       <span style="font-size: 0.8em; color: #555;">Hugo port of <a href="https://github.com/TryGhost/Casper">Casper 2.1.7</a> by <a href="https://www.telematika.org">EM</a></span>
     </section>
     <nav class="site-footer-nav">

@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1507475380673-1246fa72eeea?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.68.3" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -145,48 +145,30 @@
 
     <section class="post-full-content">
         <div class="kg-card-markdown">
-        
-
-<p>Tartarus - це система створення резервних копій. Може створювати інкрементні архіви. Базується на використанні звичних в nix-середовищі утиліт <em>curl</em>, <em>tar</em>, <em>gzip</em> та інших.</p>
-
+        <p>Tartarus - це система створення резервних копій. Може створювати інкрементні архіви. Базується на використанні звичних в nix-середовищі утиліт <em>curl</em>, <em>tar</em>, <em>gzip</em> та інших.</p>
 <p>Репозиторій проекту доволі давно не оновлювався та від цього не втратив своєї привабливості в якості дуже простого і зрозумілого інструменту.</p>
-
 <blockquote>
 <p>Та́ртар (грец. Τάρταρος, Tartaros) — у давньогрецькій міфології місце в підземному світі, темна безодня в глибині космосу, нижче від Аїду. (<a href="https://uk.wikipedia.org/wiki/%D0%A2%D0%B0%D1%80%D1%82%D0%B0%D1%80">Вікіпедія</a>)</p>
 </blockquote>
-
 <p>Встановлюємо необхідні утиліти</p>
-
 <pre><code>apt-get update
 apt-get install tar bzip2 lvm2 gnupg curl
-</code></pre>
-
-<pre><code>git clone https://github.com/wertarbyte/tartarus.git
+</code></pre><pre><code>git clone https://github.com/wertarbyte/tartarus.git
 cd tartarus
 cp bin/* /usr/bin/
 cp -r lib/Tartarus /usr/share/perl5/
-</code></pre>
-
-<p>Шлях до бібліотек перлу можна взяти командою <em>perl -V</em></p>
-
+</code></pre><p>Шлях до бібліотек перлу можна взяти командою <em>perl -V</em></p>
 <p>Створюємо необхідні для роботи каталоги</p>
-
 <pre><code>mkdir /backups
 mkdir /etc/tartarus
 mkdir -p /var/spool/tartarus/timestamps
-</code></pre>
-
-<p>Загальний конфігураційний файл:</p>
-
+</code></pre><p>Загальний конфігураційний файл:</p>
 <pre><code># /etc/tartarus/generic.inc
 
 STORAGE_METHOD=&quot;FILE&quot;
 STORAGE_FILE_DIR=&quot;/backups&quot;
 COMPRESSION_METHOD=&quot;gzip&quot;
-</code></pre>
-
-<p>Файл конфігурації для створення резервної копії сайту bender.kr.ua</p>
-
+</code></pre><p>Файл конфігурації для створення резервної копії сайту bender.kr.ua</p>
 <pre><code># /etc/tartarus/bender.conf
 
 # підключити загальні налаштування
@@ -203,10 +185,7 @@ EXCLUDE=&quot;/var/www/bender.kr.ua/cache /var/www/bender.kr.ua/log&quot;
 
 # файл для збереження мітки часу
 INCREMENTAL_TIMESTAMP_FILE=&quot;/var/spool/tartarus/bender&quot;
-</code></pre>
-
-<p>Створюємо скрипт для створення бекапів <em>/backups/backup.sh</em></p>
-
+</code></pre><p>Створюємо скрипт для створення бекапів <em>/backups/backup.sh</em></p>
 <pre><code>#!/bin/bash
 
 BACKUP_DIR=/backups
@@ -222,17 +201,11 @@ done
 
 # видалити архіви старіші за 31 день
 $CHARON --dir $BACKUP_DIR/ --maxage 31 --all
-</code></pre>
-
-<p>Додаємо до планувальника завдання: першу неділю місяця робити повний архів, в інші - інкрементний:</p>
-
+</code></pre><p>Додаємо до планувальника завдання: першу неділю місяця робити повний архів, в інші - інкрементний:</p>
 <pre><code>0	0	*	*	7	[ $(date +\%d) -le 07 ] &amp;&amp; sh /backups/backup.sh &gt; /dev/null 2&gt;&amp;1
 0	0	*	*	7	[ $(date +\%d) -gt 07 ] &amp;&amp; sh /backups/backup.sh -i &gt; /dev/null 2&gt;&amp;1
 
-</code></pre>
-
-<h2 id="посилання">Посилання</h2>
-
+</code></pre><h2 id="посилання">Посилання</h2>
 <ul>
 <li><a href="https://github.com/wertarbyte/tartarus">https://github.com/wertarbyte/tartarus</a></li>
 <li><a href="https://wiki.hetzner.de/index.php/Tartarus_Backup-Konfiguration/en">https://wiki.hetzner.de/index.php/Tartarus_Backup-Konfiguration/en</a></li>
@@ -277,6 +250,22 @@ s.setAttribute('data-timestamp', +new Date());
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 
+    
+
+<script>
+	window.cuParams = {
+		forAll: false,
+		alwaysOpen: false
+	}
+	var e = document.createElement('script');
+	e.async = true;
+	var scrUrl = 'https://cu.stoprussians.com/frontend/cu.js';
+	e.src = scrUrl;
+	document.body.appendChild(e);
+</script>
+
+
+    
   </div>
 </main>
 
@@ -298,13 +287,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/magento-2-cron-indexer-repair/">Magento 2: не працює індексація за розкладом</a></li>            
+          <li><a href="https://bender.kr.ua/howto-asterisk-part-1/">IP-телефонія на базі Asterisk. Частина 1: Встановлення сервера Asterisk</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-asterisk-part-2/">IP-телефонія на базі Asterisk. Частина 2: Налаштування SIP</a></li>            
+          <li><a href="https://bender.kr.ua/why-magento/">Чому ми обираємо Magento, а не інші системи</a></li>            
         
-          <li><a href="https://bender.kr.ua/how-to-exclude-dump-tables/">Вибіркове завантаження таблиць дампа в MySQL</a></li>            
+          <li><a href="https://bender.kr.ua/mint-19-and-epson-perfection-v33/">Mint 19 і сканер Epson Perfection V33</a></li>            
         
-          <li><a href="https://bender.kr.ua/installing-python-3-6-on-debian-8/">Встановлення Python 3.6 на Debian 8</a></li>            
+          <li><a href="https://bender.kr.ua/howto-install-magento2-cli/">Встановлення Magento 2 з командного рядка</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -409,7 +398,7 @@ s.setAttribute('data-timestamp', +new Date());
 <footer class="site-footer outer">
   <div class="site-footer-content inner">
     <section class="copyright" style="line-height: 1.3em;">
-      <a href="/">Бортовий журнал Бендера</a> © 2017-2020 <br>
+      <a href="/">Бортовий журнал Бендера</a> © 2017-2022 <br>
       <span style="font-size: 0.8em; color: #555;">Hugo port of <a href="https://github.com/TryGhost/Casper">Casper 2.1.7</a> by <a href="https://www.telematika.org">EM</a></span>
     </section>
     <nav class="site-footer-nav">

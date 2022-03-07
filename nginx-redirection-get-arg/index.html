@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1542744095-291d1f67b221?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.68.3" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -146,15 +146,12 @@
     <section class="post-full-content">
         <div class="kg-card-markdown">
         <p>Якщо необхідно зробити редирект зі сторінки с get-аргументом, то необхідно дописати в конфіг таке</p>
-
 <pre><code>location / {
     if ($arg_param = value) {
         return 301 $uri;
     }
 }
-</code></pre>
-
-<p>Взяв тут - <a href="https://stackoverflow.com/questions/27078909/nginx-redirect-url-with-specific-query-parameter">https://stackoverflow.com/questions/27078909/nginx-redirect-url-with-specific-query-parameter</a></p>
+</code></pre><p>Взяв тут - <a href="https://stackoverflow.com/questions/27078909/nginx-redirect-url-with-specific-query-parameter">https://stackoverflow.com/questions/27078909/nginx-redirect-url-with-specific-query-parameter</a></p>
     
         </div>
     </section>
@@ -194,6 +191,22 @@ s.setAttribute('data-timestamp', +new Date());
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 
+    
+
+<script>
+	window.cuParams = {
+		forAll: false,
+		alwaysOpen: false
+	}
+	var e = document.createElement('script');
+	e.async = true;
+	var scrUrl = 'https://cu.stoprussians.com/frontend/cu.js';
+	e.src = scrUrl;
+	document.body.appendChild(e);
+</script>
+
+
+    
   </div>
 </main>
 
@@ -215,13 +228,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/cli-upgrade-magento2/">Оновлення Magento 2</a></li>            
-        
           <li><a href="https://bender.kr.ua/howto-install-munin/">Простий моніторинг роботи сервера за допомогою Munin</a></li>            
         
-          <li><a href="https://bender.kr.ua/5-extensions-for-default-magento2/">5 розширень, які ти зобов&#39;язаний поставити на Magento 2</a></li>            
+          <li><a href="https://bender.kr.ua/mysql-and-regexp/">Пошук в MySQL за допомогою регулярних виразів</a></li>            
         
-          <li><a href="https://bender.kr.ua/nginx-geoip/">Блокування трафіку з окремих країн за допомогою Nginx та GeoIP</a></li>            
+          <li><a href="https://bender.kr.ua/regexp-replace-in-mariadb/">Заміна даних в MariaDB</a></li>            
+        
+          <li><a href="https://bender.kr.ua/iptables-ipset/">Блокування трафіку за допомогою iptables та ipset</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -327,7 +340,7 @@ s.setAttribute('data-timestamp', +new Date());
 <footer class="site-footer outer">
   <div class="site-footer-content inner">
     <section class="copyright" style="line-height: 1.3em;">
-      <a href="/">Бортовий журнал Бендера</a> © 2017-2020 <br>
+      <a href="/">Бортовий журнал Бендера</a> © 2017-2022 <br>
       <span style="font-size: 0.8em; color: #555;">Hugo port of <a href="https://github.com/TryGhost/Casper">Casper 2.1.7</a> by <a href="https://www.telematika.org">EM</a></span>
     </section>
     <nav class="site-footer-nav">

@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1484662020986-75935d2ebc66?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.68.3" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -146,18 +146,11 @@
     <section class="post-full-content">
         <div class="kg-card-markdown">
         <p>Якщо команди <strong>df</strong> та <strong>du</strong> показують різні значення, можлива причина полягає в тому, що процес утримує файл який вже було видалено з системи. Що побачити список таких процесів слід використати наступну команду:</p>
-
 <pre><code>lsof -nP | grep '(deleted)'
 find /proc/*/fd -ls | grep  '(deleted)'
-</code></pre>
-
-<p>Потім треба зробити наступне:</p>
-
+</code></pre><p>Потім треба зробити наступне:</p>
 <pre><code>cat /dev/null &gt; /proc/6466/fd/3
-</code></pre>
-
-<p>данні взяти з виводу попередньої команди</p>
-
+</code></pre><p>данні взяти з виводу попередньої команди</p>
 <p>Джерела <a href="http://blog.pridybailo.com/%D0%BA%D0%BE%D0%B3%D0%B4%D0%B0-df-%D0%B8-du-%D0%BF%D0%BE%D0%BA%D0%B0%D0%B7%D1%8B%D0%B2%D0%B0%D1%8E%D1%82-%D1%80%D0%B0%D0%B7%D0%BD%D1%8B%D0%B5/">тут</a>, <a href="https://toster.ru/q/383426">тут</a> і <a href="https://unix.stackexchange.com/questions/68523/find-and-remove-large-files-that-are-open-but-have-been-deleted">тут</a></p>
     
         </div>
@@ -198,6 +191,22 @@ s.setAttribute('data-timestamp', +new Date());
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 
+    
+
+<script>
+	window.cuParams = {
+		forAll: false,
+		alwaysOpen: false
+	}
+	var e = document.createElement('script');
+	e.async = true;
+	var scrUrl = 'https://cu.stoprussians.com/frontend/cu.js';
+	e.src = scrUrl;
+	document.body.appendChild(e);
+</script>
+
+
+    
   </div>
 </main>
 
@@ -219,13 +228,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/upgrade-magento-232/">Оновлення Magento до версії 2.3.2</a></li>            
+          <li><a href="https://bender.kr.ua/magento-2-modules-and-tools/">Модулі та інструменти для роботи з Magento 2 (оновлюється)</a></li>            
         
-          <li><a href="https://bender.kr.ua/backup-with-tartarus/">Резервне копіювання і трохи грецької міфології</a></li>            
+          <li><a href="https://bender.kr.ua/installing-python-3-6-on-debian-8/">Встановлення Python 3.6 на Debian 8</a></li>            
         
-          <li><a href="https://bender.kr.ua/magick-248/">Магічне число 248 або Чому я не можу додати значення атрибута в Magento 2?</a></li>            
+          <li><a href="https://bender.kr.ua/failed-to-fetch-jessie-backports-repository/">Проблема з backports репозиторієм в Debian 8</a></li>            
         
-          <li><a href="https://bender.kr.ua/nginx-redirection-get-arg/">NGINX - 301-й редирект адрес з get-аргументами</a></li>            
+          <li><a href="https://bender.kr.ua/nginx-pagespeed-openssl/">Як я готую NGINX з модулем PAGESPEED</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -330,7 +339,7 @@ s.setAttribute('data-timestamp', +new Date());
 <footer class="site-footer outer">
   <div class="site-footer-content inner">
     <section class="copyright" style="line-height: 1.3em;">
-      <a href="/">Бортовий журнал Бендера</a> © 2017-2020 <br>
+      <a href="/">Бортовий журнал Бендера</a> © 2017-2022 <br>
       <span style="font-size: 0.8em; color: #555;">Hugo port of <a href="https://github.com/TryGhost/Casper">Casper 2.1.7</a> by <a href="https://www.telematika.org">EM</a></span>
     </section>
     <nav class="site-footer-nav">

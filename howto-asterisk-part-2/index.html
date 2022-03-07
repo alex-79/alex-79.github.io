@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1465515779535-63e31c612e53?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.68.3" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -145,38 +145,27 @@
 
     <section class="post-full-content">
         <div class="kg-card-markdown">
-        
-
-<p>Цикл статей по розгортанню IP-телефонії на базі <strong><em>Asterisk</em></strong>. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Робота була захищена, сертифікат отриманий, все написане тестувалось і є повтінстю робочою реалізацією. Інформація в статті і версії програмного забезбечення актуальні на 2017 рік.</p>
-
+        <p>Цикл статей по розгортанню IP-телефонії на базі <em><strong>Asterisk</strong></em>. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Робота була захищена, сертифікат отриманий, все написане тестувалось і є повтінстю робочою реалізацією. Інформація в статті і версії програмного забезбечення актуальні на 2017 рік.</p>
 <ul>
-<li><p>частина 1 - <a href="https://bender.kr.ua/howto-asterisk-part-1/">Встановлення сервера Asterisk</a></p>
-
-<h1 id="2-налаштування-sip">2. Налаштування SIP</h1>
-
-<h2 id="2-1-схема-нумерації">2.1 Схема нумерації</h2></li>
+<li>частина 1 - <a href="https://bender.kr.ua/howto-asterisk-part-1/">Встановлення сервера Asterisk</a></li>
 </ul>
-
-<p>За проектним завданням, наша умовна компанія складається з 5-ти підрозділів: управлінський персонал, відділ продажів, відділ закупівель, склад, відділ техпідтримки. Номер 601 закріплений за секретарем. Нумерація телефонів буде тризначною, в якості першої цифри будуть використані номери структурних підрозділів:
-* 1ХХ - управлінський персонал
-* 2ХХ - відділ продажів
-* 3ХХ - відділ закупівель
-* 4ХХ - склад
-* 5ХХ - технічний відділ
-* 601 - секретар</p>
-
+<h1 id="2-налаштування-sip">2. Налаштування SIP</h1>
+<h2 id="21-схема-нумерації">2.1 Схема нумерації</h2>
+<p>За проектним завданням, наша умовна компанія складається з 5-ти підрозділів: управлінський персонал, відділ продажів, відділ закупівель, склад, відділ техпідтримки. Номер 601 закріплений за секретарем. Нумерація телефонів буде тризначною, в якості першої цифри будуть використані номери структурних підрозділів:</p>
+<ul>
+<li>1ХХ - управлінський персонал</li>
+<li>2ХХ - відділ продажів</li>
+<li>3ХХ - відділ закупівель</li>
+<li>4ХХ - склад</li>
+<li>5ХХ - технічний відділ</li>
+<li>601 - секретар</li>
+</ul>
 <p>Для виходу на зовнішні лінії використовується підключення до SIP провайдера</p>
-
-<h2 id="2-2-налаштування-внутрішніх-номерів">2.2 Налаштування внутрішніх номерів</h2>
-
+<h2 id="22-налаштування-внутрішніх-номерів">2.2 Налаштування внутрішніх номерів</h2>
 <p>Створюємо новий файл <em>users.conf</em> для налаштування внутрішніх номерів:</p>
-
 <pre><code>mkdir /etc/asterisk/sip
 touch /etc/asterisk/sip/users.conf
-</code></pre>
-
-<p>Створюємо шаблон і вносимо користувачів:</p>
-
+</code></pre><p>Створюємо шаблон і вносимо користувачів:</p>
 <pre><code>[users](!)
 type=friend
 nat=no
@@ -261,15 +250,9 @@ defaultuser=601
 secret=601
 context=reception
 host=dynamic
-</code></pre>
-
-<p>Підключаємо файл з налаштуваннями користувачів в <em>sip.conf</em>:</p>
-
+</code></pre><p>Підключаємо файл з налаштуваннями користувачів в <em>sip.conf</em>:</p>
 <pre><code>#include sip/users.conf
-</code></pre>
-
-<p>Перечитуємо налаштування</p>
-
+</code></pre><p>Перечитуємо налаштування</p>
 <pre><code>asterisk-centos*CLI&gt; sip reload
  Reloading SIP
   == Parsing '/etc/asterisk/sip.conf': Found
@@ -277,10 +260,7 @@ host=dynamic
   == Parsing '/etc/asterisk/users.conf': Found
   == Using SIP CoS mark 4
   == Parsing '/etc/asterisk/sip_notify.conf': Found
-</code></pre>
-
-<p>і перевіряємо список користувачів</p>
-
+</code></pre><p>і перевіряємо список користувачів</p>
 <pre><code>asterisk-centos*CLI&gt; sip show users
 Username                   Secret           Accountcode      Def.Context      ACL  Forcerport
 101                        101                               manager          Yes  No        
@@ -294,20 +274,12 @@ Username                   Secret           Accountcode      Def.Context      AC
 402                        402                               warehouse        Yes  No        
 302                        302                               buyings          Yes  No        
 301                        301                               buyings          Yes  No      
-</code></pre>
-
-<h2 id="2-3-підключення-провайдера-телефонії">2.3 Підключення провайдера телефонії</h2>
-
+</code></pre><h2 id="23-підключення-провайдера-телефонії">2.3 Підключення провайдера телефонії</h2>
 <p>В якості провайдера телефонії обрано <a href="https://zadarma.com/ua/">zadarma.com</a>.</p>
-
 <p>Створюємо новий файл <em>trunk.conf</em> для налаштування <em>sip trunk</em>:</p>
-
 <pre><code>mkdir /etc/asterisk/trunk
 touch /etc/asterisk/trunk/trunk.conf
-</code></pre>
-
-<p>Вносимо налаштування для підключення згідно з інструкцією на сайті <a href="https://zadarma.com/ua/support/instructions/asterisk/:">https://zadarma.com/ua/support/instructions/asterisk/:</a></p>
-
+</code></pre><p>Вносимо налаштування для підключення згідно з інструкцією на сайті <a href="https://zadarma.com/ua/support/instructions/asterisk/:">https://zadarma.com/ua/support/instructions/asterisk/:</a></p>
 <pre><code>[zadarma]
 host=sip.zadarma.com
 insecure=invite,port
@@ -326,22 +298,13 @@ context=zadarma-in
 qualify=400
 directmedia=no
 nat=force_rport,comedia
-</code></pre>
-
-<p>Підключаємо файл з налаштуваннями sip trunk в <em>sip.conf</em>:</p>
-
+</code></pre><p>Підключаємо файл з налаштуваннями sip trunk в <em>sip.conf</em>:</p>
 <pre><code>#include trunk/trunk.conf
-</code></pre>
-
-<p>Перечитуємо налаштування</p>
-
+</code></pre><p>Перечитуємо налаштування</p>
 <pre><code>asterisk-centos*CLI&gt; sip reload
  Reloading SIP
 [2017-04-24 22:03:06] NOTICE[3129]: chan_sip.c:24558 handle_response_peerpoke: Peer 'zadarma' is now Reachable. (51ms / 400ms)
-</code></pre>
-
-<p>і перевіряємо список пірів</p>
-
+</code></pre><p>і перевіряємо список пірів</p>
 <pre><code>asterisk-centos*CLI&gt; sip show peers
 Name/username             Host                                    Dyn Forcerport Comedia    ACL Port     Status      Description                      
 101/101                   (Unspecified)                            D  No         No          A  0        UNKNOWN                                      
@@ -357,14 +320,9 @@ Name/username             Host                                    Dyn Forcerport
 501/501                   192.168.1.101                            D  No         No          A  5060     OK (2 ms)                                    
 zadarma/74XXXX            185.45.152.161                              Yes        Yes            5060     OK (52 ms)                                   
 12 sip peers [Monitored: 2 online, 10 offline Unmonitored: 0 online, 0 offline]
-</code></pre>
-
-<p>Оскільки дзвінки всередині оператора Zadarma не тарифікуються, то для емуляції дзвінків на &ldquo;зовнішні&rdquo; лінії реєструємо ще один акаунт. У нашому випадку дзвінки на/з номер 74YYYY будуть вважатися &ldquo;зовнішніми&rdquo;.</p>
-
-<hr />
-
-<p><a href="https://bender.kr.ua/howto-asterisk-part-3/">В наступній статті будемо налаштовувати <strong><em>Dialplan</em></strong>.</a></p>
-
+</code></pre><p>Оскільки дзвінки всередині оператора Zadarma не тарифікуються, то для емуляції дзвінків на &ldquo;зовнішні&rdquo; лінії реєструємо ще один акаунт. У нашому випадку дзвінки на/з номер 74YYYY будуть вважатися &ldquo;зовнішніми&rdquo;.</p>
+<hr>
+<p><a href="https://bender.kr.ua/howto-asterisk-part-3/">В наступній статті будемо налаштовувати <em><strong>Dialplan</strong></em>.</a></p>
 <ul>
 <li>частина 1 - <a href="https://bender.kr.ua/howto-asterisk-part-1/">Встановлення сервера Asterisk</a></li>
 </ul>
@@ -407,6 +365,22 @@ s.setAttribute('data-timestamp', +new Date());
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 
+    
+
+<script>
+	window.cuParams = {
+		forAll: false,
+		alwaysOpen: false
+	}
+	var e = document.createElement('script');
+	e.async = true;
+	var scrUrl = 'https://cu.stoprussians.com/frontend/cu.js';
+	e.src = scrUrl;
+	document.body.appendChild(e);
+</script>
+
+
+    
   </div>
 </main>
 
@@ -430,11 +404,11 @@ s.setAttribute('data-timestamp', +new Date());
         <ul>
           <li><a href="https://bender.kr.ua/howto-asterisk-part-1/">IP-телефонія на базі Asterisk. Частина 1: Встановлення сервера Asterisk</a></li>            
         
-          <li><a href="https://bender.kr.ua/magento-payment-plugin-for-bitpay/">Рубимо електронні гроші в Magento</a></li>            
+          <li><a href="https://bender.kr.ua/howto-install-telegram-debian-9/">Встановлення Telegram на Debian 9</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-asterisk-part-6.1/">IP-телефонія на базі Asterisk. Частина 6.1: Додаткові функції Asterisk. Паркування дзвінка.</a></li>            
+          <li><a href="https://bender.kr.ua/howto-lemp-install/">Встановлення Nginx &#43; PHP &#43; MySQL на Debian 9</a></li>            
         
-          <li><a href="https://bender.kr.ua/nginx-pagespeed-openssl/">Як я готую NGINX з модулем PAGESPEED</a></li>            
+          <li><a href="https://bender.kr.ua/configurable-crontab-magento2/">Magento2: налаштування періодичних завдань власного модуля через адмін-панель</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -540,7 +514,7 @@ s.setAttribute('data-timestamp', +new Date());
 <footer class="site-footer outer">
   <div class="site-footer-content inner">
     <section class="copyright" style="line-height: 1.3em;">
-      <a href="/">Бортовий журнал Бендера</a> © 2017-2020 <br>
+      <a href="/">Бортовий журнал Бендера</a> © 2017-2022 <br>
       <span style="font-size: 0.8em; color: #555;">Hugo port of <a href="https://github.com/TryGhost/Casper">Casper 2.1.7</a> by <a href="https://www.telematika.org">EM</a></span>
     </section>
     <nav class="site-footer-nav">

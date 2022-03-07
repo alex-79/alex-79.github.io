@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1432639020363-5632f7f04e0b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.68.3" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -145,21 +145,13 @@
 
     <section class="post-full-content">
         <div class="kg-card-markdown">
-        
-
-<p>Найпростіший спосіб &ldquo;прогріти&rdquo; кеш - пройтись за допомогою <em>wget</em> по карті сайту. У випадку, коли сайт чи окремі його розділи доступні лише зареєстрованим користувачам, цей спосіб не підійде.</p>
-
+        <p>Найпростіший спосіб &ldquo;прогріти&rdquo; кеш - пройтись за допомогою <em>wget</em> по карті сайту. У випадку, коли сайт чи окремі його розділи доступні лише зареєстрованим користувачам, цей спосіб не підійде.</p>
 <p>У пригоді може стати <em>Headless Chrome</em> - хром, якому не потрібно рендерити сторінку в окреме вікно (хоча він це може). Найлегший спосіб почати працювати з ним - використати <strong>puppeteer</strong>.</p>
-
 <p>Встановлюємо <em>Node.js</em> та <em>puppeteer</em></p>
-
 <pre><code>curl -sL https://deb.nodesource.com/setup_10.x | bash -
 apt-get install nodejs libxss1
 npm i puppeteer
-</code></pre>
-
-<p>Наш краулер з авторизацією <em>crawler.js</em></p>
-
+</code></pre><p>Наш краулер з авторизацією <em>crawler.js</em></p>
 <pre><code>const puppeteer = require('puppeteer');
 
 const C = require('./credentials');
@@ -212,33 +204,20 @@ async function crawler() {
   await crawler();
   process.exit(1);
 })();
-</code></pre>
-
-<p><strong>Увага!!!</strong> Перевірте <em>executablePath</em></p>
-
+</code></pre><p><strong>Увага!!!</strong> Перевірте <em>executablePath</em></p>
 <p>Файл з даними для авторизації <em>credentials.js</em></p>
-
 <pre><code>module.exports = {
                     url: 'https://examlpe.com.ua/customer/account/login',
                     username: 'mylogin',
                     password: 'mypassword'
                  }
-</code></pre>
-
-<p>Зписок закритих адрес <em>urls.txt</em></p>
-
+</code></pre><p>Зписок закритих адрес <em>urls.txt</em></p>
 <pre><code>https://examlpe.com.ua/test
 https://examlpe.com.ua/test2
 https://examlpe.com.ua/test2/test.html
-</code></pre>
-
-<p>Запуск краулера</p>
-
+</code></pre><p>Запуск краулера</p>
 <pre><code>node crawler.js
-</code></pre>
-
-<h2 id="посилання">Посилання</h2>
-
+</code></pre><h2 id="посилання">Посилання</h2>
 <ul>
 <li><a href="https://browsee.io/blog/top-tools-for-error-reporting-for-websites/">https://browsee.io/blog/top-tools-for-error-reporting-for-websites/</a></li>
 <li><a href="https://antoinevastel.com/crawler/2018/09/17/simple-crawler-puppeteer.html">https://antoinevastel.com/crawler/2018/09/17/simple-crawler-puppeteer.html</a></li>
@@ -283,6 +262,22 @@ s.setAttribute('data-timestamp', +new Date());
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 
+    
+
+<script>
+	window.cuParams = {
+		forAll: false,
+		alwaysOpen: false
+	}
+	var e = document.createElement('script');
+	e.async = true;
+	var scrUrl = 'https://cu.stoprussians.com/frontend/cu.js';
+	e.src = scrUrl;
+	document.body.appendChild(e);
+</script>
+
+
+    
   </div>
 </main>
 
@@ -304,13 +299,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/backup-with-tartarus/">Резервне копіювання і трохи грецької міфології</a></li>            
+          <li><a href="https://bender.kr.ua/5-extensions-for-default-magento2/">5 розширень, які ти зобов&#39;язаний поставити на Magento 2</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-install-munin/">Простий моніторинг роботи сервера за допомогою Munin</a></li>            
+          <li><a href="https://bender.kr.ua/review-neal-stephenson-in-the-beginning-was-the-command-line/">Ніл Стівенсон. Спочатку був командний рядок</a></li>            
         
-          <li><a href="https://bender.kr.ua/magick-248/">Магічне число 248 або Чому я не можу додати значення атрибута в Magento 2?</a></li>            
+          <li><a href="https://bender.kr.ua/howto-asterisk-part-6.1/">IP-телефонія на базі Asterisk. Частина 6.1: Додаткові функції Asterisk. Паркування дзвінка.</a></li>            
         
-          <li><a href="https://bender.kr.ua/failed-to-fetch-jessie-backports-repository/">Проблема з backports репозиторієм в Debian 8</a></li>            
+          <li><a href="https://bender.kr.ua/upgrade-magento-232/">Оновлення Magento до версії 2.3.2</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -416,7 +411,7 @@ s.setAttribute('data-timestamp', +new Date());
 <footer class="site-footer outer">
   <div class="site-footer-content inner">
     <section class="copyright" style="line-height: 1.3em;">
-      <a href="/">Бортовий журнал Бендера</a> © 2017-2020 <br>
+      <a href="/">Бортовий журнал Бендера</a> © 2017-2022 <br>
       <span style="font-size: 0.8em; color: #555;">Hugo port of <a href="https://github.com/TryGhost/Casper">Casper 2.1.7</a> by <a href="https://www.telematika.org">EM</a></span>
     </section>
     <nav class="site-footer-nav">

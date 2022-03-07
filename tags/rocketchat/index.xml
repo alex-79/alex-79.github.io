@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Rocketchat on </title>
+    <title>rocketchat on </title>
     <link>https://bender.kr.ua/tags/rocketchat/</link>
-    <description>Recent content in Rocketchat on </description>
+    <description>Recent content in rocketchat on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>uk</language>
     <lastBuildDate>Mon, 07 Sep 2020 00:00:00 +0000</lastBuildDate>
@@ -19,7 +19,8 @@
       <guid>https://bender.kr.ua/howto-install-rocketchat-debian-9/</guid>
       <description>Rocket.Chat - відкритий месенджер, який підтримує групові чати, відеовиклики, конференції, обмін файлами, ботів та багато іншого. Має як десктопні, так і мобільні клієнти під всі популярні системи (https://rocket.chat/install). Може бути розгорнутий на власних серверах та використовуватись в якості корпоративного чату. В якості приємного бонусу - може виконувати роль чату-помічника в інтернет-магазинах.
 Підготовчий етап - встановлення залежностей Оновлюємо список пакетів:
-sudo apt-get -y update  Встановлюємо MongoDB, Node.js та graphicsmagick:</description>
+sudo apt-get -y update Встановлюємо MongoDB, Node.js та graphicsmagick:
+sudo apt-get install -y dirmngr gnupg &amp;amp;&amp;amp; sudo apt-key adv --keyserver hkp://keyserver.</description>
     </item>
     
   </channel>

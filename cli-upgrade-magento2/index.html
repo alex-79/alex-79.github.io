@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1524741978410-350ba91a70d7?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.68.3" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -146,7 +146,6 @@
     <section class="post-full-content">
         <div class="kg-card-markdown">
         <p>Скрипт для оновлення Magento 2:</p>
-
 <pre><code>#!/bin/bash
 # upgrade.sh
 
@@ -158,14 +157,9 @@ find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
 find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
 chown -R :www-data .
 chmod u+x bin/magento
-</code></pre>
-
-<p>Приклад запуску:</p>
-
+</code></pre><p>Приклад запуску:</p>
 <pre><code>upgrade.sh 2.2.2
-</code></pre>
-
-<p>Джерело <a href="http://devdocs.magento.com/guides/v2.2/comp-mgr/cli/cli-rc1-samp.html">тут</a></p>
+</code></pre><p>Джерело <a href="http://devdocs.magento.com/guides/v2.2/comp-mgr/cli/cli-rc1-samp.html">тут</a></p>
     
         </div>
     </section>
@@ -205,6 +199,22 @@ s.setAttribute('data-timestamp', +new Date());
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 
+    
+
+<script>
+	window.cuParams = {
+		forAll: false,
+		alwaysOpen: false
+	}
+	var e = document.createElement('script');
+	e.async = true;
+	var scrUrl = 'https://cu.stoprussians.com/frontend/cu.js';
+	e.src = scrUrl;
+	document.body.appendChild(e);
+</script>
+
+
+    
   </div>
 </main>
 
@@ -226,13 +236,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/backup-with-borg/">Про користь borg-ів</a></li>            
+          <li><a href="https://bender.kr.ua/df-and-du-show-different-values/">df і du показують різні значення</a></li>            
         
-          <li><a href="https://bender.kr.ua/git-branch/">Як забрати гілку з git</a></li>            
+          <li><a href="https://bender.kr.ua/howto-install-munin/">Простий моніторинг роботи сервера за допомогою Munin</a></li>            
         
-          <li><a href="https://bender.kr.ua/mysql-and-regexp/">Пошук в MySQL за допомогою регулярних виразів</a></li>            
+          <li><a href="https://bender.kr.ua/howto-lemp-install/">Встановлення Nginx &#43; PHP &#43; MySQL на Debian 9</a></li>            
         
-          <li><a href="https://bender.kr.ua/magento-2-cron-indexer-repair/">Magento 2: не працює індексація за розкладом</a></li>            
+          <li><a href="https://bender.kr.ua/backup-with-tartarus/">Резервне копіювання і трохи грецької міфології</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -336,7 +346,7 @@ s.setAttribute('data-timestamp', +new Date());
 <footer class="site-footer outer">
   <div class="site-footer-content inner">
     <section class="copyright" style="line-height: 1.3em;">
-      <a href="/">Бортовий журнал Бендера</a> © 2017-2020 <br>
+      <a href="/">Бортовий журнал Бендера</a> © 2017-2022 <br>
       <span style="font-size: 0.8em; color: #555;">Hugo port of <a href="https://github.com/TryGhost/Casper">Casper 2.1.7</a> by <a href="https://www.telematika.org">EM</a></span>
     </section>
     <nav class="site-footer-nav">

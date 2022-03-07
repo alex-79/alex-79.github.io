@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1562259929-b4e1fd3aef09?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.68.3" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -145,24 +145,20 @@
 
     <section class="post-full-content">
         <div class="kg-card-markdown">
-        <p>Іноді, за нез&rsquo;ясованих поки обставин, в Magento 2 ламаєть виконання переіндексації за розкладом. В логах це виглядає як <em>main.WARNING: Could not acquire lock for cron group: index, skipping run</em>.</p>
-
+        <p>Іноді, за нез'ясованих поки обставин, в Magento 2 ламаєть виконання переіндексації за розкладом. В логах це виглядає як <em>main.WARNING: Could not acquire lock for cron group: index, skipping run</em>.</p>
 <p>Щоб &ldquo;поремонтувати&rdquo; крон необхідно:</p>
-
 <ol>
-<li><p>Знайти та вбити процес який відповідає за запуск завдань в Magento 2: <em>php bin/magento cron:run &ndash;group=index &ndash;bootstrap=standaloneProcessStarted=1</em></p>
-
+<li>
+<p>Знайти та вбити процес який відповідає за запуск завдань в Magento 2: <em>php bin/magento cron:run &ndash;group=index &ndash;bootstrap=standaloneProcessStarted=1</em></p>
 <pre><code>ps ufx | grep cron
 kill XXXX
 </code></pre></li>
-
-<li><p>Очистити таблицю <em>cron_schedule</em></p>
-
+<li>
+<p>Очистити таблицю <em>cron_schedule</em></p>
 <pre><code>DELETE FROM `cron_schedule`;
 </code></pre></li>
-
-<li><p>Очистити кеш Magento</p>
-
+<li>
+<p>Очистити кеш Magento</p>
 <pre><code>php bin/magento cache:flush
 </code></pre></li>
 </ol>
@@ -205,6 +201,22 @@ s.setAttribute('data-timestamp', +new Date());
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 
+    
+
+<script>
+	window.cuParams = {
+		forAll: false,
+		alwaysOpen: false
+	}
+	var e = document.createElement('script');
+	e.async = true;
+	var scrUrl = 'https://cu.stoprussians.com/frontend/cu.js';
+	e.src = scrUrl;
+	document.body.appendChild(e);
+</script>
+
+
+    
   </div>
 </main>
 
@@ -226,13 +238,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/exception-the-value-is-not-accepted-by-the-pattern/">Пошук невалідних XML в Magento 2</a></li>            
-        
-          <li><a href="https://bender.kr.ua/magick-248/">Магічне число 248 або Чому я не можу додати значення атрибута в Magento 2?</a></li>            
-        
-          <li><a href="https://bender.kr.ua/howto-add-header-links-in-magento2/">Magento 2: як додати посилання в header.links</a></li>            
-        
           <li><a href="https://bender.kr.ua/howto-install-django-mysql-debian-9/">Встановлення зв&#39;язки Django та MySQL на Debian 9</a></li>            
+        
+          <li><a href="https://bender.kr.ua/howto-install-munin/">Простий моніторинг роботи сервера за допомогою Munin</a></li>            
+        
+          <li><a href="https://bender.kr.ua/custom-logging-module-magento2/">Magento2: Як писати логи модуля в окремий файл?</a></li>            
+        
+          <li><a href="https://bender.kr.ua/year-in-books-2019/">Мій книжковий 2019 рік</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -338,7 +350,7 @@ s.setAttribute('data-timestamp', +new Date());
 <footer class="site-footer outer">
   <div class="site-footer-content inner">
     <section class="copyright" style="line-height: 1.3em;">
-      <a href="/">Бортовий журнал Бендера</a> © 2017-2020 <br>
+      <a href="/">Бортовий журнал Бендера</a> © 2017-2022 <br>
       <span style="font-size: 0.8em; color: #555;">Hugo port of <a href="https://github.com/TryGhost/Casper">Casper 2.1.7</a> by <a href="https://www.telematika.org">EM</a></span>
     </section>
     <nav class="site-footer-nav">

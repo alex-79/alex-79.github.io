@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Powder_Flask_MET_DP236512.jpg/799px-Powder_Flask_MET_DP236512.jpg"/>
 
 
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.68.3" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -145,43 +145,34 @@
 
     <section class="post-full-content">
         <div class="kg-card-markdown">
-        
-
-<p><strong>Flask</strong> — мікрофреймворк для веб-додатків, створений з використанням Python.</p>
-
+        <p><strong>Flask</strong> — мікрофреймворк для веб-додатків, створений з використанням Python.</p>
 <h1 id="встановлення-django">Встановлення Django</h1>
-
 <ol>
-<li><p>Встановлюємо <em>Python</em> та додатковий інструментарій</p>
-
+<li>
+<p>Встановлюємо <em>Python</em> та додатковий інструментарій</p>
 <pre><code>apt install python3 python3-pip python3-venv
 </code></pre></li>
-
-<li><p>Створюємо папку для проекту та віртуальне середовище</p>
-
+<li>
+<p>Створюємо папку для проекту та віртуальне середовище</p>
 <pre><code>mkdir myproject
 cd myproject
 python3 -m venv venv
 source venv/bin/activate
 </code></pre></li>
-
-<li><p>Встановлюємо <em>Flask</em> та перевіряємо встановлену версію</p>
-
+<li>
+<p>Встановлюємо <em>Flask</em> та перевіряємо встановлену версію</p>
 <pre><code>python3 -m pip install Flask
 python -m flask --version
 </code></pre></li>
+<li>
+<p>Нарешті &ldquo;hello-world&rdquo; app.py:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> flask <span style="color:#f92672">import</span> Flask
+app <span style="color:#f92672">=</span> Flask(__name__)
 
-<li><p>Нарешті &ldquo;hello-world&rdquo; app.py:</p>
-
-<pre><code class="language-python">from flask import Flask
-app = Flask(__name__)
-
-@app.route('/')
-def hello_world():
-    return 'Hello, World!'
-</code></pre>
-
-<pre><code>export FLASK_APP=app.py
+<span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#39;/&#39;</span>)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">hello_world</span>():
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;Hello, World!&#39;</span>
+</code></pre></div><pre><code>export FLASK_APP=app.py
 export FLASK_ENV=development
 flask run
 </code></pre></li>
@@ -225,6 +216,22 @@ s.setAttribute('data-timestamp', +new Date());
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 
+    
+
+<script>
+	window.cuParams = {
+		forAll: false,
+		alwaysOpen: false
+	}
+	var e = document.createElement('script');
+	e.async = true;
+	var scrUrl = 'https://cu.stoprussians.com/frontend/cu.js';
+	e.src = scrUrl;
+	document.body.appendChild(e);
+</script>
+
+
+    
   </div>
 </main>
 
@@ -246,13 +253,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/magick-248/">Магічне число 248 або Чому я не можу додати значення атрибута в Magento 2?</a></li>            
+          <li><a href="https://bender.kr.ua/mint-19-and-epson-perfection-v33/">Mint 19 і сканер Epson Perfection V33</a></li>            
         
-          <li><a href="https://bender.kr.ua/df-and-du-show-different-values/">df і du показують різні значення</a></li>            
+          <li><a href="https://bender.kr.ua/howto-install-telegram-debian-9/">Встановлення Telegram на Debian 9</a></li>            
         
-          <li><a href="https://bender.kr.ua/custom-logging-module-magento2/">Magento2: Як писати логи модуля в окремий файл?</a></li>            
+          <li><a href="https://bender.kr.ua/howto-remove-parent-category-from-url-magento-2/">Вилучення ієрархії категорій з URL в Magento 2</a></li>            
         
-          <li><a href="https://bender.kr.ua/fix-conflict-keyboard-shortcuts/">Не працюють комбінації клавіш CTRL-SHIFT в Ubuntu</a></li>            
+          <li><a href="https://bender.kr.ua/new-db-in-mysql/">Створення бази даних в MySQL</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -360,7 +367,7 @@ s.setAttribute('data-timestamp', +new Date());
 <footer class="site-footer outer">
   <div class="site-footer-content inner">
     <section class="copyright" style="line-height: 1.3em;">
-      <a href="/">Бортовий журнал Бендера</a> © 2017-2020 <br>
+      <a href="/">Бортовий журнал Бендера</a> © 2017-2022 <br>
       <span style="font-size: 0.8em; color: #555;">Hugo port of <a href="https://github.com/TryGhost/Casper">Casper 2.1.7</a> by <a href="https://www.telematika.org">EM</a></span>
     </section>
     <nav class="site-footer-nav">

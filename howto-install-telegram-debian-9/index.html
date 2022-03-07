@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.68.3" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -145,40 +145,27 @@
 
     <section class="post-full-content">
         <div class="kg-card-markdown">
-        
-
-<p>Для встановлення <strong>Telegram</strong> на Debian 9 можна скористатись <em>Ubuntu PPA</em>. Для цього виконаємо наступну послідовність:</p>
-
+        <p>Для встановлення <strong>Telegram</strong> на Debian 9 можна скористатись <em>Ubuntu PPA</em>. Для цього виконаємо наступну послідовність:</p>
 <ol>
-<li><p>Додаємо репозиторій в <em>/etc/apt/source.list.d/telegram.list</em></p>
-
+<li>Додаємо репозиторій в <em>/etc/apt/source.list.d/telegram.list</em></li>
+</ol>
 <pre><code>deb http://ppa.launchpad.net/atareao/telegram/ubuntu xenial main
 deb-src http://ppa.launchpad.net/atareao/telegram/ubuntu xenial main
-</code></pre></li>
-
-<li><p>Додаємо в систему відкритий ключ PGP до цього PPA</p>
-
-<pre><code>apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 36FD5529
-</code></pre>
-
-<p>За необхідності встановлюємо <em>dirmngr</em></p>
-
-<pre><code>apt install dirmngr
-</code></pre></li>
-
-<li><p>Оновлюємо список пакетів</p>
-
-<pre><code>apt update
-</code></pre></li>
-
-<li><p>Встановлюємо Telegram</p>
-
-<pre><code>apt install telegram
-</code></pre></li>
+</code></pre><ol start="2">
+<li>Додаємо в систему відкритий ключ PGP до цього PPA</li>
 </ol>
-
-<h2 id="посилання">Посилання</h2>
-
+<pre><code>apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 36FD5529
+</code></pre><p>За необхідності встановлюємо <em>dirmngr</em></p>
+<pre><code>apt install dirmngr
+</code></pre><ol start="3">
+<li>Оновлюємо список пакетів</li>
+</ol>
+<pre><code>apt update
+</code></pre><ol start="4">
+<li>Встановлюємо Telegram</li>
+</ol>
+<pre><code>apt install telegram
+</code></pre><h2 id="посилання">Посилання</h2>
 <ul>
 <li><a href="https://www.linuxbabe.com/debian/3-ways-install-telegram-messenger-debian-9-stretch">https://www.linuxbabe.com/debian/3-ways-install-telegram-messenger-debian-9-stretch</a></li>
 </ul>
@@ -221,6 +208,22 @@ s.setAttribute('data-timestamp', +new Date());
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 
+    
+
+<script>
+	window.cuParams = {
+		forAll: false,
+		alwaysOpen: false
+	}
+	var e = document.createElement('script');
+	e.async = true;
+	var scrUrl = 'https://cu.stoprussians.com/frontend/cu.js';
+	e.src = scrUrl;
+	document.body.appendChild(e);
+</script>
+
+
+    
   </div>
 </main>
 
@@ -242,13 +245,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/howto-asterisk-part-5/">IP-телефонія на базі Asterisk. Частина 5: Деталізований звіт про виклики (Call Detail Records, CDR)</a></li>            
-        
-          <li><a href="https://bender.kr.ua/how-to-exclude-dump-tables/">Вибіркове завантаження таблиць дампа в MySQL</a></li>            
-        
-          <li><a href="https://bender.kr.ua/howto-install-flask/">Інструкція зі встановлення Flask</a></li>            
-        
           <li><a href="https://bender.kr.ua/howto-install-munin/">Простий моніторинг роботи сервера за допомогою Munin</a></li>            
+        
+          <li><a href="https://bender.kr.ua/iptables-ipset/">Блокування трафіку за допомогою iptables та ipset</a></li>            
+        
+          <li><a href="https://bender.kr.ua/year-in-books-2019/">Мій книжковий 2019 рік</a></li>            
+        
+          <li><a href="https://bender.kr.ua/upgrade-magento-232/">Оновлення Magento до версії 2.3.2</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -354,7 +357,7 @@ s.setAttribute('data-timestamp', +new Date());
 <footer class="site-footer outer">
   <div class="site-footer-content inner">
     <section class="copyright" style="line-height: 1.3em;">
-      <a href="/">Бортовий журнал Бендера</a> © 2017-2020 <br>
+      <a href="/">Бортовий журнал Бендера</a> © 2017-2022 <br>
       <span style="font-size: 0.8em; color: #555;">Hugo port of <a href="https://github.com/TryGhost/Casper">Casper 2.1.7</a> by <a href="https://www.telematika.org">EM</a></span>
     </section>
     <nav class="site-footer-nav">

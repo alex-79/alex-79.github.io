@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on </title>
@@ -17,9 +17,10 @@
       <pubDate>Wed, 01 Sep 2021 15:45:55 +0300</pubDate>
       
       <guid>https://bender.kr.ua/exception-the-value-is-not-accepted-by-the-pattern/</guid>
-      <description>Під час роботи в режимі developer можуть з&amp;rsquo;являтись повідомлення типу
-1 exception(s): Exception #0 (Magento\Framework\Config\Dom\ValidationException): Element &#39;block&#39;, attribute &#39;before&#39;: [facet &#39;pattern&#39;] The value &#39;.&#39; is not accepted by the pattern &#39;[a-zA-Z][a-zA-Z\d\-_\.]*|-&#39;. Line: 34  Це означає, що деякі ваші файли не пройшли XML-валідацію. Знайти проблемний xml можна так
-grep -r app -e &#39;before=&amp;quot;\.&#39;  Тут пошук відбувається в директорії app. Назву атрибута та його значення треба взяти з повідомлення про помилку.</description>
+      <description>Під час роботи в режимі developer можуть з&#39;являтись повідомлення типу
+1 exception(s): Exception #0 (Magento\Framework\Config\Dom\ValidationException): Element &#39;block&#39;, attribute &#39;before&#39;: [facet &#39;pattern&#39;] The value &#39;.&#39; is not accepted by the pattern &#39;[a-zA-Z][a-zA-Z\d\-_\.]*|-&#39;. Line: 34 Це означає, що деякі ваші файли не пройшли XML-валідацію. Знайти проблемний xml можна так
+grep -r app -e &#39;before=&amp;quot;\.&#39; Тут пошук відбувається в директорії app. Назву атрибута та його значення треба взяти з повідомлення про помилку.
+Будьте уважні - в режимах default та production повідомлення не відображається, що зовсім не означає відсутності проблеми :)</description>
     </item>
     
     <item>
@@ -29,11 +30,11 @@ grep -r app -e &#39;before=&amp;quot;\.&#39;  Тут пошук відбуває
       
       <guid>https://bender.kr.ua/howto-install-flask/</guid>
       <description>Flask — мікрофреймворк для веб-додатків, створений з використанням Python.
-Встановлення Django  Встановлюємо Python та додатковий інструментарій
-apt install python3 python3-pip python3-venv  Створюємо папку для проекту та віртуальне середовище
-mkdir myproject cd myproject python3 -m venv venv source venv/bin/activate  Встановлюємо Flask та перевіряємо встановлену версію
-python3 -m pip install Flask python -m flask --version  Нарешті &amp;ldquo;hello-world&amp;rdquo; app.py:
-from flask import Flask app = Flask(__name__) @app.route(&#39;/&#39;) def hello_world(): return &#39;Hello, World!</description>
+Встановлення Django   Встановлюємо Python та додатковий інструментарій
+apt install python3 python3-pip python3-venv   Створюємо папку для проекту та віртуальне середовище
+mkdir myproject cd myproject python3 -m venv venv source venv/bin/activate   Встановлюємо Flask та перевіряємо встановлену версію
+python3 -m pip install Flask python -m flask --version   Нарешті &amp;ldquo;hello-world&amp;rdquo; app.py:
+from flask import Flask app = Flask(__name__) @app.</description>
     </item>
     
     <item>
@@ -44,7 +45,8 @@ from flask import Flask app = Flask(__name__) @app.route(&#39;/&#39;) def hello_
       <guid>https://bender.kr.ua/howto-install-rocketchat-debian-9/</guid>
       <description>Rocket.Chat - відкритий месенджер, який підтримує групові чати, відеовиклики, конференції, обмін файлами, ботів та багато іншого. Має як десктопні, так і мобільні клієнти під всі популярні системи (https://rocket.chat/install). Може бути розгорнутий на власних серверах та використовуватись в якості корпоративного чату. В якості приємного бонусу - може виконувати роль чату-помічника в інтернет-магазинах.
 Підготовчий етап - встановлення залежностей Оновлюємо список пакетів:
-sudo apt-get -y update  Встановлюємо MongoDB, Node.js та graphicsmagick:</description>
+sudo apt-get -y update Встановлюємо MongoDB, Node.js та graphicsmagick:
+sudo apt-get install -y dirmngr gnupg &amp;amp;&amp;amp; sudo apt-key adv --keyserver hkp://keyserver.</description>
     </item>
     
     <item>
@@ -63,12 +65,11 @@ sudo apt-get -y update  Встановлюємо MongoDB, Node.js та graphicsm
       <pubDate>Tue, 10 Mar 2020 08:56:19 +0000</pubDate>
       
       <guid>https://bender.kr.ua/magento-2-cron-indexer-repair/</guid>
-      <description>Іноді, за нез&amp;rsquo;ясованих поки обставин, в Magento 2 ламаєть виконання переіндексації за розкладом. В логах це виглядає як main.WARNING: Could not acquire lock for cron group: index, skipping run.
+      <description>Іноді, за нез&#39;ясованих поки обставин, в Magento 2 ламаєть виконання переіндексації за розкладом. В логах це виглядає як main.WARNING: Could not acquire lock for cron group: index, skipping run.
 Щоб &amp;ldquo;поремонтувати&amp;rdquo; крон необхідно:
- Знайти та вбити процес який відповідає за запуск завдань в Magento 2: php bin/magento cron:run &amp;ndash;group=index &amp;ndash;bootstrap=standaloneProcessStarted=1
-ps ufx | grep cron kill XXXX  Очистити таблицю cron_schedule
-DELETE FROM `cron_schedule`;  Очистити кеш Magento
-php bin/magento cache:flush   </description>
+  Знайти та вбити процес який відповідає за запуск завдань в Magento 2: php bin/magento cron:run &amp;ndash;group=index &amp;ndash;bootstrap=standaloneProcessStarted=1
+ps ufx | grep cron kill XXXX   Очистити таблицю cron_schedule
+DELETE FROM `cron_schedule`;   Очистити кеш Magento</description>
     </item>
     
     <item>
@@ -77,12 +78,12 @@ php bin/magento cache:flush   </description>
       <pubDate>Mon, 17 Feb 2020 02:00:00 +0000</pubDate>
       
       <guid>https://bender.kr.ua/howto-install-django-mysql-debian-9/</guid>
-      <description>Встановлення Django  Встановлюємо Python та додатковий інструментарій
-apt install python3 python3-pip python3-venv  Створюємо папку для проекту та віртуальне середовище
-mkdir myproject cd myproject python3 -m venv venv source venv/bin/activate  Встановлюємо Django та перевыряємо встановлену версію
-python3 -m pip install Django python -m django --version  Створюємо новий проект
-django-admin startproject myproject   З&amp;rsquo;єднання з MySQL  Встановлюємо Percona Server
-wget https://repo.percona.com/apt/percona-release_latest.$(lsb_release -sc)_all.deb dpkg -i percona-release_latest.$(lsb_release -sc)_all.</description>
+      <description>Встановлення Django   Встановлюємо Python та додатковий інструментарій
+apt install python3 python3-pip python3-venv   Створюємо папку для проекту та віртуальне середовище
+mkdir myproject cd myproject python3 -m venv venv source venv/bin/activate   Встановлюємо Django та перевыряємо встановлену версію
+python3 -m pip install Django python -m django --version   Створюємо новий проект
+django-admin startproject myproject   З&#39;єднання з MySQL   Встановлюємо Percona Server
+wget https://repo.percona.com/apt/percona-release_latest.$(lsb_release -sc)_all.</description>
     </item>
     
     <item>
@@ -91,13 +92,9 @@ wget https://repo.percona.com/apt/percona-release_latest.$(lsb_release -sc)_all.
       <pubDate>Mon, 03 Feb 2020 05:39:14 +0000</pubDate>
       
       <guid>https://bender.kr.ua/howto-install-telegram-debian-9/</guid>
-      <description> Для встановлення Telegram на Debian 9 можна скористатись Ubuntu PPA. Для цього виконаємо наступну послідовність:
- Додаємо репозиторій в /etc/apt/source.list.d/telegram.list
-deb http://ppa.launchpad.net/atareao/telegram/ubuntu xenial main deb-src http://ppa.launchpad.net/atareao/telegram/ubuntu xenial main  Додаємо в систему відкритий ключ PGP до цього PPA
-apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 36FD5529  За необхідності встановлюємо dirmngr
-apt install dirmngr  Оновлюємо список пакетів
-apt update  Встановлюємо Telegram
-apt install telegram   Посилання  https://www.linuxbabe.com/debian/3-ways-install-telegram-messenger-debian-9-stretch  </description>
+      <description>Для встановлення Telegram на Debian 9 можна скористатись Ubuntu PPA. Для цього виконаємо наступну послідовність:
+ Додаємо репозиторій в /etc/apt/source.list.d/telegram.list  deb http://ppa.launchpad.net/atareao/telegram/ubuntu xenial main deb-src http://ppa.launchpad.net/atareao/telegram/ubuntu xenial main Додаємо в систему відкритий ключ PGP до цього PPA  apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 36FD5529 За необхідності встановлюємо dirmngr
+apt install dirmngr Оновлюємо список пакетів  apt update Встановлюємо Telegram  apt install telegram Посилання  https://www.linuxbabe.com/debian/3-ways-install-telegram-messenger-debian-9-stretch  </description>
     </item>
     
     <item>
@@ -116,7 +113,7 @@ apt install telegram   Посилання  https://www.linuxbabe.com/debian/3-wa
       <pubDate>Mon, 06 Jan 2020 02:00:00 +0000</pubDate>
       
       <guid>https://bender.kr.ua/year-in-books-2019/</guid>
-      <description>За минулий рік я прочитав 13 книжок. Усі вони були художніми, бо до історій &amp;ldquo;успішного успіху&amp;rdquo; я останніми роками відношусь з великою долею скептицизму, а по роботі за минулий рік читав статті виключно з інтернету. Якщо коротко по підсумкам, то &amp;ldquo;передозування&amp;rdquo; Пратчеттом у 2018, не дало насолодитись ним у 2019, не все зі Стівена Кінга виявляється золотом, а магія книжок з дитинства не розвіюється навіть коли в тебе вже з&amp;rsquo;являються власні діти.</description>
+      <description>За минулий рік я прочитав 13 книжок. Усі вони були художніми, бо до історій &amp;ldquo;успішного успіху&amp;rdquo; я останніми роками відношусь з великою долею скептицизму, а по роботі за минулий рік читав статті виключно з інтернету. Якщо коротко по підсумкам, то &amp;ldquo;передозування&amp;rdquo; Пратчеттом у 2018, не дало насолодитись ним у 2019, не все зі Стівена Кінга виявляється золотом, а магія книжок з дитинства не розвіюється навіть коли в тебе вже з&#39;являються власні діти.</description>
     </item>
     
     <item>
@@ -135,9 +132,9 @@ apt install telegram   Посилання  https://www.linuxbabe.com/debian/3-wa
       <pubDate>Tue, 24 Dec 2019 09:58:19 +0000</pubDate>
       
       <guid>https://bender.kr.ua/iptables-ipset/</guid>
-      <description>Для захисту від DDOS-атак або паразитного трафіку, блокування на рівні сервера, а не nginx (як наприклад тут - https://bender.kr.ua/nginx-geoip/) , є більш ефективним. Тому, якщо у вас виникла потреба блокувати IP з певних країн і не існує інших застережень, варто скористатись зв&amp;rsquo;язкою iptables + ipset.
+      <description>Для захисту від DDOS-атак або паразитного трафіку, блокування на рівні сервера, а не nginx (як наприклад тут - https://bender.kr.ua/nginx-geoip/) , є більш ефективним. Тому, якщо у вас виникла потреба блокувати IP з певних країн і не існує інших застережень, варто скористатись зв&#39;язкою iptables + ipset.
 Для початку встановлюємо ipset:
-apt-get install ipset  Створюємо скрипт, який буде оновлювати таблюцю адрес для блокування. Списки IP за приналежністю до країни, можна взяти на сайті ipdeny.</description>
+apt-get install ipset Створюємо скрипт, який буде оновлювати таблюцю адрес для блокування. Списки IP за приналежністю до країни, можна взяти на сайті ipdeny.</description>
     </item>
     
     <item>
@@ -147,10 +144,10 @@ apt-get install ipset  Створюємо скрипт, який буде оно
       
       <guid>https://bender.kr.ua/nginx-geoip/</guid>
       <description>Блокуємо паразитний трафік до сайту з певних країн безкоштовно, без реєстрацій та sms ;)
- Зібрати nginx з опцією &amp;ndash;with-http_geoip_module. Як це зробити написано тут
- Встановити бази GeoIP
-apt-get install geoip-database libgeoip1  Оновити бази до останньої версії
-mv /usr/share/GeoIP/GeoIP.dat /usr/share/GeoIP/GeoIP.bak wget https://dl.miyuru.lk/geoip/maxmind/country/maxmind.dat.gz gunzip maxmind.dat.gz mv maxmind.dat /usr/share/GeoIP/GeoIP.dat  В /etc/nginx/nginx.conf в секції http блокуємо наприклад роісію та Пакистан
+  Зібрати nginx з опцією &amp;ndash;with-http_geoip_module. Як це зробити написано тут
+  Встановити бази GeoIP
+apt-get install geoip-database libgeoip1   Оновити бази до останньої версії
+mv /usr/share/GeoIP/GeoIP.dat /usr/share/GeoIP/GeoIP.bak wget https://dl.miyuru.lk/geoip/maxmind/country/maxmind.dat.gz gunzip maxmind.dat.gz mv maxmind.dat /usr/share/GeoIP/GeoIP.dat   В /etc/nginx/nginx.conf в секції http блокуємо наприклад роісію та Пакистан
 http { ... geoip_country /usr/share/GeoIP/GeoIP.dat; map $geoip_country_code $allowed_country_mysite { default yes; RU no; PK no; } .</description>
     </item>
     
@@ -161,8 +158,7 @@ http { ... geoip_country /usr/share/GeoIP/GeoIP.dat; map $geoip_country_code $al
       
       <guid>https://bender.kr.ua/howto-asterisk-part-3/</guid>
       <description>Цикл статей по розгортанню IP-телефонії на базі Asterisk. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Робота була захищена, сертифікат отриманий, все написане тестувалось і є повтінстю робочою реалізацією. Інформація в статті і версії програмного забезбечення актуальні на 2017 рік.
- частина 1 - Встановлення сервера Asterisk частина 2 - Налаштування SIP
-3. Логіка обробки дзвінків (Dialplan) 3.1 План дозвона на разні напрямки Створимо кілька контекстів для обробки дзвінків:</description>
+ частина 1 - Встановлення сервера Asterisk частина 2 - Налаштування SIP  3. Логіка обробки дзвінків (Dialplan) 3.1 План дозвона на разні напрямки Створимо кілька контекстів для обробки дзвінків:</description>
     </item>
     
     <item>
@@ -172,7 +168,7 @@ http { ... geoip_country /usr/share/GeoIP/GeoIP.dat; map $geoip_country_code $al
       
       <guid>https://bender.kr.ua/howto-install-magento2-cli/</guid>
       <description>Простий скрипт на bash для створення локальної інсталяції Magento 2.
-#!/bin/bash # install_magento.sh create_db=&amp;quot;CREATE DATABASE $1 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;&amp;quot; create_user=&amp;quot;GRANT ALL PRIVILEGES ON $1.* TO &#39;$1&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;$1&#39;;&amp;quot; flush=&amp;quot;FLUSH PRIVILEGES;&amp;quot; mysql -u root -p -e &amp;quot;${create_db}${create_user}${flush}&amp;quot; mkdir $1.local composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition $1.local cd $1.local php bin/magento setup:install --base-url=http://$1.local/ \ --db-host=localhost --db-name=$1 \ --db-user=$1 --db-password=$1 \ --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \ --admin-user=admin --admin-password=admin123 --language=en_US \ --currency=UAH --timezone=Europe/Kiev --use-rewrites=1  Застосування:</description>
+#!/bin/bash # install_magento.sh create_db=&amp;quot;CREATE DATABASE $1 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;&amp;quot; create_user=&amp;quot;GRANT ALL PRIVILEGES ON $1.* TO &#39;$1&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;$1&#39;;&amp;quot; flush=&amp;quot;FLUSH PRIVILEGES;&amp;quot; mysql -u root -p -e &amp;quot;${create_db}${create_user}${flush}&amp;quot; mkdir $1.local composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition $1.local cd $1.local php bin/magento setup:install --base-url=http://$1.local/ \ --db-host=localhost --db-name=$1 \ --db-user=$1 --db-password=$1 \ --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \ --admin-user=admin --admin-password=admin123 --language=en_US \ --currency=UAH --timezone=Europe/Kiev --use-rewrites=1 Застосування:</description>
     </item>
     
     <item>
@@ -183,7 +179,7 @@ http { ... geoip_country /usr/share/GeoIP/GeoIP.dat; map $geoip_country_code $al
       <guid>https://bender.kr.ua/netbeans-and-fonts/</guid>
       <description>Традиційно після встановлення NetBeans на Linux постає питання відображення шрифтів в IDE. В конфігурації за замовчування вони виглядають дуже погано.
 Найпопулярнішою порадою в інтернетах є додавання до файлу конфігурації etc/netbeans.conf такого рядка
-netbeans_default_options=&amp;quot; ... -J-Dswing.aatext=true -J-Dawt.useSystemAAFontSettings=lcd&amp;quot;  Після цього шрифти не набагато, але стають краще, особливо, якщо використати темну тему, бо на світлій все ще помітно &amp;ldquo;мило&amp;rdquo;.
+netbeans_default_options=&amp;quot; ... -J-Dswing.aatext=true -J-Dawt.useSystemAAFontSettings=lcd&amp;quot; Після цього шрифти не набагато, але стають краще, особливо, якщо використати темну тему, бо на світлій все ще помітно &amp;ldquo;мило&amp;rdquo;.
 Ось тут на допомогу може прийти JetBrains :)))
 Є два варіанти: 1) користуватись PHPStorm, в якому зі шрифтами все добре (в силу різних причин для мене це взагалі не варіант) або 2) використати пропатчену JetBrains версію JDK.</description>
     </item>
@@ -195,8 +191,7 @@ netbeans_default_options=&amp;quot; ... -J-Dswing.aatext=true -J-Dawt.useSystemA
       
       <guid>https://bender.kr.ua/howto-asterisk-part-2/</guid>
       <description>Цикл статей по розгортанню IP-телефонії на базі Asterisk. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Робота була захищена, сертифікат отриманий, все написане тестувалось і є повтінстю робочою реалізацією. Інформація в статті і версії програмного забезбечення актуальні на 2017 рік.
- частина 1 - Встановлення сервера Asterisk
-2. Налаштування SIP 2.1 Схема нумерації  За проектним завданням, наша умовна компанія складається з 5-ти підрозділів: управлінський персонал, відділ продажів, відділ закупівель, склад, відділ техпідтримки.</description>
+ частина 1 - Встановлення сервера Asterisk  2. Налаштування SIP 2.1 Схема нумерації За проектним завданням, наша умовна компанія складається з 5-ти підрозділів: управлінський персонал, відділ продажів, відділ закупівель, склад, відділ техпідтримки.</description>
     </item>
     
     <item>
@@ -205,9 +200,9 @@ netbeans_default_options=&amp;quot; ... -J-Dswing.aatext=true -J-Dawt.useSystemA
       <pubDate>Wed, 23 Oct 2019 06:46:44 +0000</pubDate>
       
       <guid>https://bender.kr.ua/mint-19-and-epson-perfection-v33/</guid>
-      <description> На замовчування програма iscan в Linux Mint не працює зі сканером Epson Perfection V33. Щоб вирішити цю проблему, винонуємо наступні дії:
-sudo ln -sfr /usr/lib/sane/libsane-epkowa* /usr/lib/x86_64-linux-gnu/sane  та сворюємо правило для підключення сканера /etc/udev/rules.d/79-udev-epson.rules:
-# chmod device EPSON group ATTRS{manufacturer}==&amp;quot;EPSON&amp;quot;, DRIVERS==&amp;quot;usb&amp;quot;, SUBSYSTEMS==&amp;quot;usb&amp;quot;, ATTRS{idVendor}==&amp;quot;04b8&amp;quot;, ATTRS{idProduct}==&amp;quot;*&amp;quot;, MODE=&amp;quot;0777&amp;quot;  Посилання  https://forums.linuxmint.com/viewtopic.php?t=275853  </description>
+      <description>На замовчування програма iscan в Linux Mint не працює зі сканером Epson Perfection V33. Щоб вирішити цю проблему, винонуємо наступні дії:
+sudo ln -sfr /usr/lib/sane/libsane-epkowa* /usr/lib/x86_64-linux-gnu/sane та сворюємо правило для підключення сканера /etc/udev/rules.d/79-udev-epson.rules:
+# chmod device EPSON group ATTRS{manufacturer}==&amp;quot;EPSON&amp;quot;, DRIVERS==&amp;quot;usb&amp;quot;, SUBSYSTEMS==&amp;quot;usb&amp;quot;, ATTRS{idVendor}==&amp;quot;04b8&amp;quot;, ATTRS{idProduct}==&amp;quot;*&amp;quot;, MODE=&amp;quot;0777&amp;quot; Посилання  https://forums.linuxmint.com/viewtopic.php?t=275853  </description>
     </item>
     
     <item>
@@ -217,7 +212,7 @@ sudo ln -sfr /usr/lib/sane/libsane-epkowa* /usr/lib/x86_64-linux-gnu/sane  та 
       
       <guid>https://bender.kr.ua/howto-asterisk-part-1/</guid>
       <description>Цикл статей по розгортанню IP-телефонії на базі Asterisk. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Робота була захищена, сертифікат отриманий, все написане тестувалось і є повтінстю робочою реалізацією. Інформація в статті і версії програмного забезбечення актуальні на 2017 рік.
-Середовище Операційна система встановлена з образу CentOS-7-i386-Minimal-1611.iso. Им&amp;rsquo;я сервера asterisk-centos.localhost.local. Адреса сервера в локальній мережі 192.168.1.201.
+Середовище Операційна система встановлена з образу CentOS-7-i386-Minimal-1611.iso. Им&#39;я сервера asterisk-centos.localhost.local. Адреса сервера в локальній мережі 192.168.1.201.
 Встановлення сервера Asterisk 1.1 Підготовка середовища Розширюємо bash, встановлюємо vim и пакет wget для скачування архівів з сирцевим кодом:</description>
     </item>
     
@@ -227,9 +222,9 @@ sudo ln -sfr /usr/lib/sane/libsane-epkowa* /usr/lib/x86_64-linux-gnu/sane  та 
       <pubDate>Mon, 07 Oct 2019 05:52:41 +0000</pubDate>
       
       <guid>https://bender.kr.ua/mysql-and-regexp/</guid>
-      <description> Завдання: знайти в каталозі sku із знаком &amp;ldquo;-&amp;rdquo; в кінці.
+      <description>Завдання: знайти в каталозі sku із знаком &amp;ldquo;-&amp;rdquo; в кінці.
 Для знаходження відповідних sku виконуємо запит в базу
-SELECT sku FROM `catalog_product_entity` WHERE sku REGEXP &amp;quot;-$&amp;quot; = 1;  REGEXP віддає 1 якщо значення відповідає регулярному виразу, інакше - 0.
+SELECT sku FROM `catalog_product_entity` WHERE sku REGEXP &amp;#34;-$&amp;#34; = 1; REGEXP віддає 1 якщо значення відповідає регулярному виразу, інакше - 0.
 Посилання  http://www.mysql.ru/docs/man/Regexp.html  </description>
     </item>
     
@@ -243,7 +238,7 @@ SELECT sku FROM `catalog_product_entity` WHERE sku REGEXP &amp;quot;-$&amp;quot;
 Перевірка на 995 порту тут показувала, що сертифікат не дійсний, а тут - що все ОК.
 Вирішення проблеми постфактум очевидне, але на пошуки був витрачений час.
 Отже, після оновлення сертифікатів треба перезавантажити не лише nginx, а й dovecot, що зроблено не було :(
-Посилання  https://docs.</description>
+Посилання  https://docs.iredmail.org/letsencrypt.html - отримання на налаштування сертифікатів у iRedMail https://www.</description>
     </item>
     
     <item>
@@ -261,10 +256,10 @@ SELECT sku FROM `catalog_product_entity` WHERE sku REGEXP &amp;quot;-$&amp;quot;
       <pubDate>Thu, 12 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>https://bender.kr.ua/connie-willis-doomsday-book/</guid>
-      <description>Перша книга з &amp;ldquo;Оксфордського циклу&amp;rdquo; Конні Вілліс. Роман виграв премію Г&amp;rsquo;юго в 1993 і премію Неб&amp;rsquo;юла в 1992 році.
+      <description>Перша книга з &amp;ldquo;Оксфордського циклу&amp;rdquo; Конні Вілліс. Роман виграв премію Г&#39;юго в 1993 і премію Неб&#39;юла в 1992 році.
 Назва мовою оригіналу: Connie Willis. Doomsday Book
 Якщо плануєш потрапити в минуле, то що ти зробиш у першу чергу?
-Певно спочатку визначиш час і місце, щоб не потрапити, наприклад, на мальовничі поля поблизу Ватерлоо 18 червня 1815 року. Нехай це буде дорога в лісі біля невеличкого англійського села поблизу Оксфорда, так щоб і випадково не побачили як ти з&amp;rsquo;явився нізвідки, і не блукать довго в пошуках людей.</description>
+Певно спочатку визначиш час і місце, щоб не потрапити, наприклад, на мальовничі поля поблизу Ватерлоо 18 червня 1815 року. Нехай це буде дорога в лісі біля невеличкого англійського села поблизу Оксфорда, так щоб і випадково не побачили як ти з&#39;явився нізвідки, і не блукать довго в пошуках людей.</description>
     </item>
     
     <item>
@@ -275,9 +270,9 @@ SELECT sku FROM `catalog_product_entity` WHERE sku REGEXP &amp;quot;-$&amp;quot;
       <guid>https://bender.kr.ua/howto-hide-default-store-code-from-url-magento-2/</guid>
       <description>Вихідні дані: є магазин з двома мовними версіями, наприклад, ua та en, версія українською мовою - основна. Задача: прибрати store code з адреси основного магазину, тобто замість https://mysite.com/ua/ зробити просто https://mysite.com/, міжнародну версію залишити без змін - https://mysite.com/en/.
 Для цього нам треба навісити плагін на метод getBaseUrl класу Magento\Store\Model\Store.
- Створюємо заготовку для модуля в директорії Noon/HideDefaultStoreCode
+  Створюємо заготовку для модуля в директорії Noon/HideDefaultStoreCode
 registration.php
-&amp;lt;?php \Magento\Framework\Component\ComponentRegistrar::register( \Magento\Framework\Component\ComponentRegistrar::MODULE, &#39;Noon_HideDefaultStoreCode&#39;, __DIR__ );  etc/module.xml
+&amp;lt;?php \Magento\Framework\Component\ComponentRegistrar::register( \Magento\Framework\Component\ComponentRegistrar::MODULE, &#39;Noon_HideDefaultStoreCode&#39;, __DIR__ ); etc/module.xml
 &amp;lt;?xml version=&amp;quot;1.0&amp;quot;?&amp;gt; &amp;lt;config xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot; xsi:noNamespaceSchemaLocation=&amp;quot;urn:magento:framework:Module/etc/module.</description>
     </item>
     
@@ -287,7 +282,7 @@ registration.php
       <pubDate>Fri, 23 Aug 2019 08:32:18 +0000</pubDate>
       
       <guid>https://bender.kr.ua/magento-2-modules-and-tools/</guid>
-      <description> Список корисних модулів і рішень для Magento 2. Список, ясна річ, дуже суб&amp;rsquo;єктивний і використовується для зберігання цікавих для мене посилань.
+      <description>Список корисних модулів і рішень для Magento 2. Список, ясна річ, дуже суб&#39;єктивний і використовується для зберігання цікавих для мене посилань.
 Розгортання  Magento 2 Zero Downtime Deployment  Оптимізація  Відключення непотрібних модулів - один та два Відключення непотрібних модулів The “ultimate guide” to Magento 2 JavaScript Bundling How to improve Magento 2 Page Speed Insights Score?  Пошук  Модуль для Elastic App Search Smile ElasticSuite - комплексне рішення для пошуку, фільтрації та створення віртуальних категорій  Зовнішній вигляд та теми  Open Source alternative to Magento PageBuilder  Youtube  Max Pronko UA / Max Pronko  </description>
     </item>
     
@@ -298,8 +293,7 @@ registration.php
       
       <guid>https://bender.kr.ua/quick-start-with-jenkins-in-docker/</guid>
       <description>Для швидкого старту системи CI/CD Jenkins скористаємось docker-ом. Працюємо в Debian 10, але рецепт певно спрацює для будь-якого deb-похідного дистрибутиву.
- Встановлюємо Docker
-apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - apt-get update apt-get install docker-ce  systemctl status docker ● docker.service - Docker Application Container Engine Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled) Active: active (running) since Wed 2019-07-31 12:48:03 EEST; 5min ago Docs: https://docs.</description>
+ Встановлюємо Docker  apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - apt-get update apt-get install docker-ce systemctl status docker ● docker.service - Docker Application Container Engine Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled) Active: active (running) since Wed 2019-07-31 12:48:03 EEST; 5min ago Docs: https://docs.</description>
     </item>
     
     <item>
@@ -320,8 +314,9 @@ public function getUrlPath($category, $parentCategory = null) { ... if ($this-&a
       
       <guid>https://bender.kr.ua/magento-2-reindex-parallel/</guid>
       <description>З версії Magento 2.2.6 є можливість розпаралелити процес індексації. Зробити це доволі просто.
-В паралельному режимі можна індексувати: * Пошуковий індекс (Catalog Search Fulltext) на рівні магазину * Категорії (Category Product) на рівні магазину * Ціни (Product Price) на рівні веб-сайту (website), групи покупців (customer_group), веб-сайту та групи (website_and_customer_group). За замовчуванням індексування ціни каталогу не використовує багатопоточність і знаходиться в режимі none.
-Щоб встановити один з режимів, треба виконати команду</description>
+В паралельному режимі можна індексувати:
+ Пошуковий індекс (Catalog Search Fulltext) на рівні магазину Категорії (Category Product) на рівні магазину Ціни (Product Price) на рівні веб-сайту (website), групи покупців (customer_group), веб-сайту та групи (website_and_customer_group). За замовчуванням індексування ціни каталогу не використовує багатопоточність і знаходиться в режимі none.  Щоб встановити один з режимів, треба виконати команду
+php bin/magento indexer:set-dimensions-mode [&amp;lt;indexer&amp;gt;] [&amp;lt;mode&amp;gt;] наприклад</description>
     </item>
     
     <item>
@@ -330,9 +325,9 @@ public function getUrlPath($category, $parentCategory = null) { ... if ($this-&a
       <pubDate>Mon, 22 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>https://bender.kr.ua/fail2ban-unban-ip/</guid>
-      <description> Щоб розблокувати себе в fail2ban, треба виконати наступну команду
-fail2ban-client set yourjailname unbanip youripaddress  Приклад:
-fail2ban-client set sshd unbanip 123.123.123.123  Посилання  https://bobcares.com/blog/fail2ban-unban-ip/  </description>
+      <description>Щоб розблокувати себе в fail2ban, треба виконати наступну команду
+fail2ban-client set yourjailname unbanip youripaddress Приклад:
+fail2ban-client set sshd unbanip 123.123.123.123 Посилання  https://bobcares.com/blog/fail2ban-unban-ip/  </description>
     </item>
     
     <item>
@@ -342,10 +337,10 @@ fail2ban-client set sshd unbanip 123.123.123.123  Посилання  https://bo
       
       <guid>https://bender.kr.ua/failed-to-fetch-jessie-backports-repository/</guid>
       <description>Якщо ви користуєтесь Debian 8, то могли помітити проблему з репозиторієм jessie-backports при оновлені.
-W: Failed to fetch http://ftp.debian.org/debian/dists/jessie-backports/main/binary-amd64/Packages 404 Not Found [IP: 130.89.148.12 80]  Причина в тому, що 8-ма версія офіційно більше не підтримується і репозиторій переїхав в архів.
+W: Failed to fetch http://ftp.debian.org/debian/dists/jessie-backports/main/binary-amd64/Packages 404 Not Found [IP: 130.89.148.12 80] Причина в тому, що 8-ма версія офіційно більше не підтримується і репозиторій переїхав в архів.
 Змінимо адресу в /etc/apt/source.list на:
-deb http://archive.debian.org/debian jessie-backports main  При оновлені отримуємо натяк, що ми все одно слоупоки і треба таки оновити систему:
-E: Release file for http://archive.</description>
+deb http://archive.debian.org/debian jessie-backports main При оновлені отримуємо натяк, що ми все одно слоупоки і треба таки оновити систему:
+E: Release file for http://archive.debian.org/debian/dists/jessie-backports/InRelease is expired (invalid since 34d 12h 43min 16s).</description>
     </item>
     
     <item>
@@ -356,9 +351,11 @@ E: Release file for http://archive.</description>
       <guid>https://bender.kr.ua/magento2-reindexer-for-large-catalog/</guid>
       <description>Вихідні данні: Magento 2.3.1, каталог - 300K Проблема: переіндексація каталогу може відбуватись більше 24 годин (може й більше, ніхто не перевіряв)
 Пошуки рішення привели до такого твіту:
-had similar problems (price and eav indexers in 2.2.1) with 50k products and 2 storeviews. increasing batch size helped immensly - still slower than 2.1.7 tho. pic.twitter.com/vomnyykeSz
-&amp;mdash; Thomas ツ (@heldchen) November 23, 2017 
-а також до такого issue https://github.com/magento/magento2/issues/10531 .</description>
+а також до такого issue https://github.com/magento/magento2/issues/10531 .
+Хоча обговоренню більше 2 років, здається воно актуальне і для 2.3.1.
+Мені допомогли ці дві штуки:
+  задати великий batchRowsCount в di.xml
+&amp;lt;type name=&amp;quot;Magento\Catalog\Model\ResourceModel\Product\Indexer\Price\BatchSizeCalculator&amp;quot;&amp;gt; &amp;lt;arguments&amp;gt; &amp;lt;argument name=&amp;quot;batchRowsCount&amp;quot; xsi:type=&amp;quot;array&amp;quot;&amp;gt; &amp;lt;item name=&amp;quot;default&amp;quot; xsi:type=&amp;quot;number&amp;quot;&amp;gt;500000&amp;lt;/item&amp;gt; &amp;lt;/argument&amp;gt; &amp;lt;/arguments&amp;gt; &amp;lt;/type&amp;gt;   збільшити $batchSize в /vendor/magento/module-catalog-inventory/Model/Indexer/ProductPriceIndexFilter.</description>
     </item>
     
     <item>
@@ -367,8 +364,8 @@ had similar problems (price and eav indexers in 2.2.1) with 50k products and 2 s
       <pubDate>Tue, 02 Jul 2019 04:41:28 +0000</pubDate>
       
       <guid>https://bender.kr.ua/howto-add-header-links-in-magento2/</guid>
-      <description> Щоб додати власнe посилання у верхню панель, необхідно дописати в app/design/frontend/Vendor/theme/child/Magento_Theme/layout/default.xml наступне:
-&amp;lt;referenceBlock name=&amp;quot;header.links&amp;quot;&amp;gt; &amp;lt;block class=&amp;quot;Magento\Framework\View\Element\Html\Link&amp;quot; name=&amp;quot;my-link&amp;quot;&amp;gt; &amp;lt;arguments&amp;gt; &amp;lt;argument name=&amp;quot;label&amp;quot; xsi:type=&amp;quot;string&amp;quot; translate=&amp;quot;true&amp;quot;&amp;gt;My Link&amp;lt;/argument&amp;gt; &amp;lt;argument name=&amp;quot;path&amp;quot; xsi:type=&amp;quot;string&amp;quot; translate=&amp;quot;true&amp;quot;&amp;gt;my-link&amp;lt;/argument&amp;gt; &amp;lt;argument name=&amp;quot;class&amp;quot; xsi:type=&amp;quot;string&amp;quot;&amp;gt;my-link&amp;lt;/argument&amp;gt; &amp;lt;/arguments&amp;gt; &amp;lt;/block&amp;gt; &amp;lt;/referenceBlock&amp;gt;  Посилання  https://magento.stackexchange.com/a/138359/37969 https://magento.stackexchange.com/a/134666/37969  </description>
+      <description>Щоб додати власнe посилання у верхню панель, необхідно дописати в app/design/frontend/Vendor/theme/child/Magento_Theme/layout/default.xml наступне:
+&amp;lt;referenceBlock name=&amp;quot;header.links&amp;quot;&amp;gt; &amp;lt;block class=&amp;quot;Magento\Framework\View\Element\Html\Link&amp;quot; name=&amp;quot;my-link&amp;quot;&amp;gt; &amp;lt;arguments&amp;gt; &amp;lt;argument name=&amp;quot;label&amp;quot; xsi:type=&amp;quot;string&amp;quot; translate=&amp;quot;true&amp;quot;&amp;gt;My Link&amp;lt;/argument&amp;gt; &amp;lt;argument name=&amp;quot;path&amp;quot; xsi:type=&amp;quot;string&amp;quot; translate=&amp;quot;true&amp;quot;&amp;gt;my-link&amp;lt;/argument&amp;gt; &amp;lt;argument name=&amp;quot;class&amp;quot; xsi:type=&amp;quot;string&amp;quot;&amp;gt;my-link&amp;lt;/argument&amp;gt; &amp;lt;/arguments&amp;gt; &amp;lt;/block&amp;gt; &amp;lt;/referenceBlock&amp;gt; Посилання  https://magento.stackexchange.com/a/138359/37969 https://magento.stackexchange.com/a/134666/37969  </description>
     </item>
     
     <item>
@@ -378,9 +375,8 @@ had similar problems (price and eav indexers in 2.2.1) with 50k products and 2 s
       
       <guid>https://bender.kr.ua/upgrade-magento-232/</guid>
       <description>25 червня 2019 року вийшла версія Magento 2.3.2. Покращення безпеки, що входять до складу Magento 2.3.2, вимагають встановлення криптографічної бібліотеки libsodium версії 1.0.13 або вище. Без цього ви отримаєте помилку в модулі MSP_TwoFactorAuth.
-Missing required argument $encoder of MSP\TwoFactorAuth\Model\UserConfigManager.  Отже для успішного оновлення, виконуємо наступні дії:
- Встановлюємо libsodium
-cd /opt/ wget -c https://download.libsodium.org/libsodium/releases/libsodium-1.0.18.tar.gz tar -xzvf libsodium-1.0.18.tar.gz rm libsodium-1.0.18.tar.gz cd libsodium-1.0.18 ./configure make &amp;amp;&amp;amp; make check make install  Оновлюємо Magento</description>
+Missing required argument $encoder of MSP\TwoFactorAuth\Model\UserConfigManager. Отже для успішного оновлення, виконуємо наступні дії:
+ Встановлюємо libsodium  cd /opt/ wget -c https://download.libsodium.org/libsodium/releases/libsodium-1.0.18.tar.gz tar -xzvf libsodium-1.0.18.tar.gz rm libsodium-1.0.18.tar.gz cd libsodium-1.0.18 ./configure make &amp;amp;&amp;amp; make check make install Оновлюємо Magento  composer require magento/product-community-edition 2.</description>
     </item>
     
     <item>
@@ -389,14 +385,15 @@ cd /opt/ wget -c https://download.libsodium.org/libsodium/releases/libsodium-1.0
       <pubDate>Mon, 17 Jun 2019 00:00:00 +0000</pubDate>
       
       <guid>https://bender.kr.ua/mysql-tmp-table-in-tmpfs/</guid>
-      <description>Для прискорення роботи бази даних можна винести тимчасові таблиці в оперативну пам&amp;rsquo;ять. Зробити це дуже просто.
+      <description>Для прискорення роботи бази даних можна винести тимчасові таблиці в оперативну пам&#39;ять. Зробити це дуже просто.
 Створюємо папку для зберігання тимчасових таблиць
-mkdir /var/lib/mysql/tmp  Змінюємо власника папки на mysql
-chown mysql:mysql /var/lib/mysql/tmp  Знаходимо uid та gid для mysql
-id mysql  В файл fstab додаємо
-tmpfs /var/lib/mysql/tmp tmpfs rw,gid=1001,uid=1001,size=1G,nr_inodes=10k,mode=0700 0 0  та монтуємо новий tmpfs-разділ
-mount /var/lib/mysql/tmp  Змінюємо конфігурацию MySQL в /etc/mysql/my.cnf
-tmpdir=/var/lib/mysql/tmp  Перезапускаємо MySQL</description>
+mkdir /var/lib/mysql/tmp Змінюємо власника папки на mysql
+chown mysql:mysql /var/lib/mysql/tmp Знаходимо uid та gid для mysql
+id mysql В файл fstab додаємо
+tmpfs /var/lib/mysql/tmp tmpfs rw,gid=1001,uid=1001,size=1G,nr_inodes=10k,mode=0700 0 0 та монтуємо новий tmpfs-разділ
+mount /var/lib/mysql/tmp Змінюємо конфігурацию MySQL в /etc/mysql/my.cnf
+tmpdir=/var/lib/mysql/tmp Перезапускаємо MySQL
+service mysql restart </description>
     </item>
     
     <item>
@@ -406,8 +403,7 @@ tmpdir=/var/lib/mysql/tmp  Перезапускаємо MySQL</description>
       
       <guid>https://bender.kr.ua/regexp-replace-in-mariadb/</guid>
       <description>Швидкий спосіб виправити текстові дані в БД:
- Прибрати перехід на новий рядок (\n)
-UPDATE catalog_product_entity_varchar SET value = REPLACE(value, &amp;quot;\n&amp;quot;, &amp;quot;&amp;quot;) WHERE attribute_id = 73;   Прибрати зайві пробіли sql UPDATE catalog_product_entity_varchar SET value = REGEXP_REPLACE(value, &#39;[[:space:]]+&#39;, &#39; &#39;) WHERE attribute_id = 73;    Увага!!! [[:space:]] працює тільки в MariaDB</description>
+ Прибрати перехід на новий рядок (\n)  UPDATE catalog_product_entity_varchar SET value = REPLACE(value, &amp;#34;\n&amp;#34;, &amp;#34;&amp;#34;) WHERE attribute_id = 73;  Прибрати зайві пробіли  UPDATE catalog_product_entity_varchar SET value = REGEXP_REPLACE(value, &amp;#39;[[:space:]]+&amp;#39;, &amp;#39; &amp;#39;) WHERE attribute_id = 73; Увага!!! [[:space:]] працює тільки в MariaDB</description>
     </item>
     
     <item>
@@ -419,7 +415,7 @@ UPDATE catalog_product_entity_varchar SET value = REPLACE(value, &amp;quot;\n&am
       <description>Найпростіший спосіб &amp;ldquo;прогріти&amp;rdquo; кеш - пройтись за допомогою wget по карті сайту. У випадку, коли сайт чи окремі його розділи доступні лише зареєстрованим користувачам, цей спосіб не підійде.
 У пригоді може стати Headless Chrome - хром, якому не потрібно рендерити сторінку в окреме вікно (хоча він це може). Найлегший спосіб почати працювати з ним - використати puppeteer.
 Встановлюємо Node.js та puppeteer
-curl -sL https://deb.nodesource.com/setup_10.x | bash - apt-get install nodejs libxss1 npm i puppeteer  Наш краулер з авторизацією crawler.</description>
+curl -sL https://deb.nodesource.com/setup_10.x | bash - apt-get install nodejs libxss1 npm i puppeteer Наш краулер з авторизацією crawler.</description>
     </item>
     
     <item>
@@ -430,7 +426,8 @@ curl -sL https://deb.nodesource.com/setup_10.x | bash - apt-get install nodejs l
       <guid>https://bender.kr.ua/review-neal-stephenson-in-the-beginning-was-the-command-line/</guid>
       <description>Книга відомого письменника-фантаста Ніла Стівенсона датована 1999 роком про еволюцію операційних систем.
 Назва мовою оригіналу: Neal Stephenson. In the Beginning&amp;hellip; Was the Command Line
-Книга стала цікава мені з кількох причин: * Стівенсон є одним з моїх улюблених авторів * загальні оцінки на книжкових форумах у цієї книжки не дуже високі (принаймі в порівнянні з іншим його творами) і дуже кортіло дізнатись чому * я сам багато часу проводжу в командному рядку</description>
+Книга стала цікава мені з кількох причин:
+ Стівенсон є одним з моїх улюблених авторів загальні оцінки на книжкових форумах у цієї книжки не дуже високі (принаймі в порівнянні з іншим його творами) і дуже кортіло дізнатись чому я сам багато часу проводжу в командному рядку  Скажу одразу, книжка мене не вразила від слова &amp;ldquo;зовсім&amp;rdquo;.</description>
     </item>
     
     <item>
@@ -441,8 +438,8 @@ curl -sL https://deb.nodesource.com/setup_10.x | bash - apt-get install nodejs l
       <guid>https://bender.kr.ua/howto-install-munin/</guid>
       <description>Munin — це дуже простий в налаштуванні засіб моніторинга серверів. Для Munin існує величезна кількість плагінів для спостереження за load average, дисковими операціями, CPU, RAM, mysql тощо. Вся інформація зберігається в кільцевій базі даних RRDtool.
 Встановлюємо систему моніторингу:
-apt-get install munin munin-node service munin-node start  Налаштовуємо nginx
-	location / { root /var/cache/munin/www; autoindex on; auth_basic &amp;quot;Munin Statistics&amp;quot;; auth_basic_user_file /etc/munin/.passwd; }  Додаткові плагіни знаходяться в директорії /usr/share/munin/plugins .</description>
+apt-get install munin munin-node service munin-node start Налаштовуємо nginx
+	location / { root /var/cache/munin/www; autoindex on; auth_basic &amp;quot;Munin Statistics&amp;quot;; auth_basic_user_file /etc/munin/.passwd; } Додаткові плагіни знаходяться в директорії /usr/share/munin/plugins . Встановимо, для прикладу, набір плагінів для відстеження роботи MySQL.</description>
     </item>
     
     <item>
@@ -452,8 +449,8 @@ apt-get install munin munin-node service munin-node start  Налаштовує�
       
       <guid>https://bender.kr.ua/how-to-fix-elasticsearch-forbidden-12-index-read-only-allow-delete-api/</guid>
       <description>Під час переіндексації отримую
-php bin/magento indexer:reindex catalogsearch_fulltext Catalog Search indexer process unknown error: {&amp;quot;error&amp;quot;:{&amp;quot;root_cause&amp;quot;:[{&amp;quot;type&amp;quot;:&amp;quot;cluster_block_exception&amp;quot;,&amp;quot;reason&amp;quot;:&amp;quot;blocked by: [FORBIDDEN/12/index read-only / allow delete (api)];&amp;quot;}],&amp;quot;type&amp;quot;:&amp;quot;cluster_block_exception&amp;quot;,&amp;quot;reason&amp;quot;:&amp;quot;blocked by: [FORBIDDEN/12/index read-only / allow delete (api)];&amp;quot;},&amp;quot;status&amp;quot;:403}  Проблема пов&amp;rsquo;язана з ElasticSearch, а саме тим, що на диску залишилось менше 5% вільного місця. Щоб усе запрацювало, крім вивільнення необхідної кількості байт, необхідно ще виконати наступну команду:
-curl -XPUT -H &amp;quot;Content-Type: application/json&amp;quot; http://localhost:9200/_all/_settings -d &#39;{&amp;quot;index.blocks.read_only_allow_delete&amp;quot;: null}&#39;  Посилання  https://techoverflow.</description>
+php bin/magento indexer:reindex catalogsearch_fulltext Catalog Search indexer process unknown error: {&amp;quot;error&amp;quot;:{&amp;quot;root_cause&amp;quot;:[{&amp;quot;type&amp;quot;:&amp;quot;cluster_block_exception&amp;quot;,&amp;quot;reason&amp;quot;:&amp;quot;blocked by: [FORBIDDEN/12/index read-only / allow delete (api)];&amp;quot;}],&amp;quot;type&amp;quot;:&amp;quot;cluster_block_exception&amp;quot;,&amp;quot;reason&amp;quot;:&amp;quot;blocked by: [FORBIDDEN/12/index read-only / allow delete (api)];&amp;quot;},&amp;quot;status&amp;quot;:403} Проблема пов&#39;язана з ElasticSearch, а саме тим, що на диску залишилось менше 5% вільного місця. Щоб усе запрацювало, крім вивільнення необхідної кількості байт, необхідно ще виконати наступну команду:
+curl -XPUT -H &amp;quot;Content-Type: application/json&amp;quot; http://localhost:9200/_all/_settings -d &#39;{&amp;quot;index.blocks.read_only_allow_delete&amp;quot;: null}&#39; Посилання  https://techoverflow.net/2019/04/17/how-to-fix-elasticsearch-forbidden-12-index-read-only-allow-delete-api/  </description>
     </item>
     
     <item>
@@ -465,7 +462,8 @@ curl -XPUT -H &amp;quot;Content-Type: application/json&amp;quot; http://localhos
       <description>Tartarus - це система створення резервних копій. Може створювати інкрементні архіви. Базується на використанні звичних в nix-середовищі утиліт curl, tar, gzip та інших.
 Репозиторій проекту доволі давно не оновлювався та від цього не втратив своєї привабливості в якості дуже простого і зрозумілого інструменту.
  Та́ртар (грец. Τάρταρος, Tartaros) — у давньогрецькій міфології місце в підземному світі, темна безодня в глибині космосу, нижче від Аїду. (Вікіпедія)
- Встановлюємо необхідні утиліти</description>
+ Встановлюємо необхідні утиліти
+apt-get update apt-get install tar bzip2 lvm2 gnupg curl git clone https://github.</description>
     </item>
     
     <item>
@@ -476,9 +474,10 @@ curl -XPUT -H &amp;quot;Content-Type: application/json&amp;quot; http://localhos
       <guid>https://bender.kr.ua/howto-certbot-nginx-debian/</guid>
       <description>Простий спосіб отримати безкоштовний SSL-сертифікат з оцінкою A+ для Nginx на Debian 9
 Спочатку додаємо репозиторій stretch-backports
-add-apt-repository &#39;deb http://deb.debian.org/debian stretch-backports main&#39; apt-get update  Встановлюємо утиліту для автоматичного отримання та оновлення сертифікатів certbot
-apt-get install certbot python-certbot-nginx -t stretch-backports  В конфігураційному файлі для нашого сайту надаємо certbot-у доступ до необхідної йому директорії
-# Let’s Encrypt location ~ /.well-known { allow all; }  та перечитуємо конфігурацію nginx</description>
+add-apt-repository &#39;deb http://deb.debian.org/debian stretch-backports main&#39; apt-get update Встановлюємо утиліту для автоматичного отримання та оновлення сертифікатів certbot
+apt-get install certbot python-certbot-nginx -t stretch-backports В конфігураційному файлі для нашого сайту надаємо certbot-у доступ до необхідної йому директорії
+# Let’s Encrypt location ~ /.well-known { allow all; } та перечитуємо конфігурацію nginx
+nginx -t nginx -s reload Отримуємо сертифікати</description>
     </item>
     
     <item>
@@ -487,10 +486,10 @@ apt-get install certbot python-certbot-nginx -t stretch-backports  В конфі
       <pubDate>Thu, 16 May 2019 07:09:58 +0000</pubDate>
       
       <guid>https://bender.kr.ua/howto-lemp-install/</guid>
-      <description>Покрокова інструкція по встановленню і запуску зв&amp;rsquo;язки LEMP (Linux + Nginx + MySQL + PHP).
+      <description>Покрокова інструкція по встановленню і запуску зв&#39;язки LEMP (Linux + Nginx + MySQL + PHP).
 1. Оновлення системи Оновлюємо версії ПЗ до актуального стану
-apt-get update apt-get upgrade  2. Налаштування захисту 2.1 iptables Спочатку встановлюю mc. Для тих у кого в цей момент засвербіло &amp;ldquo;mc - для лохів, vim - наше всьо, nano рулить&amp;rdquo; - поцілуйте мій блискучий металевий зад (С).
-apt-get install mc update-alternatives --config editor  Створюємо правила файервола</description>
+apt-get update apt-get upgrade 2. Налаштування захисту 2.1 iptables Спочатку встановлюю mc. Для тих у кого в цей момент засвербіло &amp;ldquo;mc - для лохів, vim - наше всьо, nano рулить&amp;rdquo; - поцілуйте мій блискучий металевий зад (С).
+apt-get install mc update-alternatives --config editor Створюємо правила файервола</description>
     </item>
     
     <item>
@@ -500,8 +499,9 @@ apt-get install mc update-alternatives --config editor  Створюємо пр�
       
       <guid>https://bender.kr.ua/configurable-crontab-magento2/</guid>
       <description>Для створення періодичного завдання у власному модулі треба виконати наступні кроки:
- Сворюємо crontab.xml в app/VendorName/ModuleName/etc
-&amp;lt;?xml version=&amp;quot;1.0&amp;quot;?&amp;gt; &amp;lt;config xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot; xsi:noNamespaceSchemaLocation=&amp;quot;urn:magento:module:Magento_Cron:etc/crontab.xsd&amp;quot;&amp;gt; &amp;lt;group id=&amp;quot;default&amp;quot;&amp;gt; &amp;lt;job name=&amp;quot;vendorname_modulename_job&amp;quot; instance=&amp;quot;VendorName\ModuleName\Cron\CronJob&amp;quot; method=&amp;quot;execute&amp;quot;&amp;gt; &amp;lt;config_path&amp;gt;crontab/default/jobs/vendorname_modulename_job/schedule/cron_expr&amp;lt;/config_path&amp;gt; &amp;lt;/job&amp;gt; &amp;lt;/group&amp;gt; &amp;lt;/config&amp;gt;   Створюємо поле для налаштування періодичного завдання у файлі app/VendorName/ModuleName/etc/adminhtml/system.xml xml ... &amp;lt;group id=&amp;quot;configurable_cron&amp;quot; translate=&amp;quot;label&amp;quot; type=&amp;quot;text&amp;quot; sortOrder=&amp;quot;150&amp;quot; showInDefault=&amp;quot;1&amp;quot; showInWebsite=&amp;quot;1&amp;quot; showInStore=&amp;quot;0&amp;quot;&amp;gt; &amp;lt;label&amp;gt;Cron&amp;lt;/label&amp;gt; &amp;lt;field id=&amp;quot;crontab&amp;quot; translate=&amp;quot;label&amp;quot; type=&amp;quot;text&amp;quot; sortOrder=&amp;quot;10&amp;quot; showInDefault=&amp;quot;1&amp;quot; showInWebsite=&amp;quot;1&amp;quot; showInStore=&amp;quot;1&amp;quot;&amp;gt; &amp;lt;label&amp;gt;Crontab&amp;lt;/label&amp;gt; &amp;lt;validate&amp;gt;required-entry&amp;lt;/validate&amp;gt; &amp;lt;backend_model&amp;gt;VendorName\ModuleName\Model\Config\CronConfig&amp;lt;/backend_model&amp;gt; &amp;lt;/field&amp;gt; &amp;lt;/group&amp;gt; ...   Створюємо бекенд-модель app/VendorName/ModuleName/Model/Config/CronConfig.</description>
+  Сворюємо crontab.xml в app/VendorName/ModuleName/etc
+&amp;lt;?xml version=&amp;#34;1.0&amp;#34;?&amp;gt; &amp;lt;config xmlns:xsi=&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34; xsi:noNamespaceSchemaLocation=&amp;#34;urn:magento:module:Magento_Cron:etc/crontab.xsd&amp;#34;&amp;gt; &amp;lt;group id=&amp;#34;default&amp;#34;&amp;gt; &amp;lt;job name=&amp;#34;vendorname_modulename_job&amp;#34; instance=&amp;#34;VendorName\ModuleName\Cron\CronJob&amp;#34; method=&amp;#34;execute&amp;#34;&amp;gt; &amp;lt;config_path&amp;gt;crontab/default/jobs/vendorname_modulename_job/schedule/cron_expr&amp;lt;/config_path&amp;gt; &amp;lt;/job&amp;gt; &amp;lt;/group&amp;gt; &amp;lt;/config&amp;gt;   Створюємо поле для налаштування періодичного завдання у файлі app/VendorName/ModuleName/etc/adminhtml/system.xml
+... &amp;lt;group id=&amp;#34;configurable_cron&amp;#34; translate=&amp;#34;label&amp;#34; type=&amp;#34;text&amp;#34; sortOrder=&amp;#34;150&amp;#34; showInDefault=&amp;#34;1&amp;#34; showInWebsite=&amp;#34;1&amp;#34; showInStore=&amp;#34;0&amp;#34;&amp;gt; &amp;lt;label&amp;gt;Cron&amp;lt;/label&amp;gt; &amp;lt;field id=&amp;#34;crontab&amp;#34; translate=&amp;#34;label&amp;#34; type=&amp;#34;text&amp;#34; sortOrder=&amp;#34;10&amp;#34; showInDefault=&amp;#34;1&amp;#34; showInWebsite=&amp;#34;1&amp;#34; showInStore=&amp;#34;1&amp;#34;&amp;gt; &amp;lt;label&amp;gt;Crontab&amp;lt;/label&amp;gt; &amp;lt;validate&amp;gt;required-entry&amp;lt;/validate&amp;gt; &amp;lt;backend_model&amp;gt;VendorName\ModuleName\Model\Config\CronConfig&amp;lt;/backend_model&amp;gt; &amp;lt;/field&amp;gt; &amp;lt;/group&amp;gt; ...   Створюємо бекенд-модель app/VendorName/ModuleName/Model/Config/CronConfig.</description>
     </item>
     
     <item>
@@ -510,8 +510,8 @@ apt-get install mc update-alternatives --config editor  Створюємо пр�
       <pubDate>Wed, 15 Aug 2018 11:42:00 +0000</pubDate>
       
       <guid>https://bender.kr.ua/installing-python-3-6-on-debian-8/</guid>
-      <description>#!/bin/sh # python_install.sh PYTHON_VER=$1 cd /opt wget -c https://www.python.org/ftp/python/$PYTHON_VER/Python-$PYTHON_VER.tgz tar -xvf Python-$PYTHON_VER.tgz rm Python-$PYTHON_VER.tgz cd Python-$PYTHON_VER ./configure --enable-optimizations make -j `nproc` make test make altinstall  Приклад встановлення:
-./python_install.sh 3.6.6  python3 -V Python 3.4.2 python3.6 -V Python 3.6.6  Джерело тут і тут</description>
+      <description>#!/bin/sh  # python_install.sh PYTHON_VER=$1 cd /opt wget -c https://www.python.org/ftp/python/$PYTHON_VER/Python-$PYTHON_VER.tgz tar -xvf Python-$PYTHON_VER.tgz rm Python-$PYTHON_VER.tgz cd Python-$PYTHON_VER ./configure --enable-optimizations make -j `nproc` make test make altinstall Приклад встановлення:
+./python_install.sh 3.6.6 python3 -V Python 3.4.2 python3.6 -V Python 3.6.6 Джерело тут і тут</description>
     </item>
     
     <item>
@@ -521,9 +521,9 @@ apt-get install mc update-alternatives --config editor  Створюємо пр�
       
       <guid>https://bender.kr.ua/custom-logging-module-magento2/</guid>
       <description>Щоб писати логи модуля в окремий файл треба виконати наступні кроки:
- Сворюємо класи Logger.php та Hadler.php
-&amp;lt;?php namespace VendorName\ModuleName\Model\Logger; class Logger extends \Monolog\Logger { }  &amp;lt;?php namespace VendorName\ModuleName\Model\Logger; use Monolog\Logger; class Handler extends \Magento\Framework\Logger\Handler\Base { protected $loggerType = Logger::INFO; protected $fileName = &#39;/var/log/mymodule.log&#39;; }  Додаємо власний логер до конфігурації в di.xml
-&amp;lt;?xml version=&amp;quot;1.0&amp;quot;?&amp;gt; &amp;lt;config xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot; xsi:noNamespaceSchemaLocation=&amp;quot;urn:magento:framework:ObjectManager/etc/config.xsd&amp;quot;&amp;gt; &amp;lt;type name=&amp;quot;VendorName\ModuleName\Model\Logger\Handler&amp;quot;&amp;gt; &amp;lt;arguments&amp;gt; &amp;lt;argument name=&amp;quot;filesystem&amp;quot; xsi:type=&amp;quot;object&amp;quot;&amp;gt;Magento\Framework\Filesystem\Driver\File&amp;lt;/argument&amp;gt; &amp;lt;/arguments&amp;gt; &amp;lt;/type&amp;gt; &amp;lt;type name=&amp;quot;VendorName\ModuleName\Model\Logger\Logger&amp;quot;&amp;gt; &amp;lt;arguments&amp;gt; &amp;lt;argument name=&amp;quot;name&amp;quot; xsi:type=&amp;quot;string&amp;quot;&amp;gt;MyLogger&amp;lt;/argument&amp;gt; &amp;lt;argument name=&amp;quot;handlers&amp;quot; xsi:type=&amp;quot;array&amp;quot;&amp;gt; &amp;lt;item name=&amp;quot;system&amp;quot; xsi:type=&amp;quot;object&amp;quot;&amp;gt;VendorName\ModuleName\Model\Logger\Handler&amp;lt;/item&amp;gt; &amp;lt;/argument&amp;gt; &amp;lt;/arguments&amp;gt; &amp;lt;/type&amp;gt; &amp;lt;/config&amp;gt;   Тепер можемо використати логер, наприклад так ```php &amp;lt;?</description>
+  Сворюємо класи Logger.php та Hadler.php
+&amp;lt;?php namespace VendorName\ModuleName\Model\Logger; class Logger extends \Monolog\Logger { } &amp;lt;?php namespace VendorName\ModuleName\Model\Logger; use Monolog\Logger; class Handler extends \Magento\Framework\Logger\Handler\Base { protected $loggerType = Logger::INFO; protected $fileName = &amp;#39;/var/log/mymodule.log&amp;#39;; }   Додаємо власний логер до конфігурації в di.xml
+&amp;lt;?xml version=&amp;#34;1.0&amp;#34;?&amp;gt; &amp;lt;config xmlns:xsi=&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34; xsi:noNamespaceSchemaLocation=&amp;#34;urn:magento:framework:ObjectManager/etc/config.xsd&amp;#34;&amp;gt; &amp;lt;type name=&amp;#34;VendorName\ModuleName\Model\Logger\Handler&amp;#34;&amp;gt; &amp;lt;arguments&amp;gt; &amp;lt;argument name=&amp;#34;filesystem&amp;#34; xsi:type=&amp;#34;object&amp;#34;&amp;gt;Magento\Framework\Filesystem\Driver\File&amp;lt;/argument&amp;gt; &amp;lt;/arguments&amp;gt; &amp;lt;/type&amp;gt; &amp;lt;type name=&amp;#34;VendorName\ModuleName\Model\Logger\Logger&amp;#34;&amp;gt; &amp;lt;arguments&amp;gt; &amp;lt;argument name=&amp;#34;name&amp;#34; xsi:type=&amp;#34;string&amp;#34;&amp;gt;MyLogger&amp;lt;/argument&amp;gt; &amp;lt;argument name=&amp;#34;handlers&amp;#34; xsi:type=&amp;#34;array&amp;#34;&amp;gt; &amp;lt;item name=&amp;#34;system&amp;#34; xsi:type=&amp;#34;object&amp;#34;&amp;gt;VendorName\ModuleName\Model\Logger\Handler&amp;lt;/item&amp;gt; &amp;lt;/argument&amp;gt; &amp;lt;/arguments&amp;gt; &amp;lt;/type&amp;gt; &amp;lt;/config&amp;gt;   Тепер можемо використати логер, наприклад так</description>
     </item>
     
     <item>
@@ -552,7 +552,7 @@ apt-get install mc update-alternatives --config editor  Створюємо пр�
       
       <guid>https://bender.kr.ua/letsencrypt-and-ipv6/</guid>
       <description>При оновлені сертифікату Let&amp;rsquo;s Encrypt виникла помилка
-Attempting to renew cert (example.com.ua) from /etc/letsencrypt/renewal/example.com.ua.conf produced an unexpected error: Failed authorization procedure. www.example.com.ua (http-01): urn:acme:error:unauthorized :: The client lacks sufficient authorization :: Invalid response from http://www.example.com.ua/.well-known/acme-challenge/BKPbQzerSwVSz9PrVcVqOoSX5MxDvF2lh5eOHVamgQ4  Перевірка доступності http://www.example.com.ua/.well-known/acme-challenge/BKPbQzerSwVSz9PrVcVqOoSX5MxDvF2lh5eOHVamgQ4 не виявила проблем. Let&amp;rsquo;s Encrypt мав би верифікувати домен, але в нього була інша думка.
+Attempting to renew cert (example.com.ua) from /etc/letsencrypt/renewal/example.com.ua.conf produced an unexpected error: Failed authorization procedure. www.example.com.ua (http-01): urn:acme:error:unauthorized :: The client lacks sufficient authorization :: Invalid response from http://www.example.com.ua/.well-known/acme-challenge/BKPbQzerSwVSz9PrVcVqOoSX5MxDvF2lh5eOHVamgQ4 Перевірка доступності http://www.example.com.ua/.well-known/acme-challenge/BKPbQzerSwVSz9PrVcVqOoSX5MxDvF2lh5eOHVamgQ4 не виявила проблем. Let&amp;rsquo;s Encrypt мав би верифікувати домен, але в нього була інша думка.
 Око зачепилося за AAAA у відповіді:
 To fix these errors, please make sure that your domain name was entered correctly and the DNS A/AAAA record(s) for that domain contain(s) the right IP address.</description>
     </item>
@@ -564,8 +564,8 @@ To fix these errors, please make sure that your domain name was entered correctl
       
       <guid>https://bender.kr.ua/df-and-du-show-different-values/</guid>
       <description>Якщо команди df та du показують різні значення, можлива причина полягає в тому, що процес утримує файл який вже було видалено з системи. Що побачити список таких процесів слід використати наступну команду:
-lsof -nP | grep &#39;(deleted)&#39; find /proc/*/fd -ls | grep &#39;(deleted)&#39;  Потім треба зробити наступне:
-cat /dev/null &amp;gt; /proc/6466/fd/3  данні взяти з виводу попередньої команди
+lsof -nP | grep &#39;(deleted)&#39; find /proc/*/fd -ls | grep &#39;(deleted)&#39; Потім треба зробити наступне:
+cat /dev/null &amp;gt; /proc/6466/fd/3 данні взяти з виводу попередньої команди
 Джерела тут, тут і тут</description>
     </item>
     
@@ -575,7 +575,7 @@ cat /dev/null &amp;gt; /proc/6466/fd/3  данні взяти з виводу п
       <pubDate>Sun, 25 Feb 2018 09:19:00 +0000</pubDate>
       
       <guid>https://bender.kr.ua/new-db-in-mysql/</guid>
-      <description>CREATE DATABASE new_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci; GRANT ALL PRIVILEGES ON new_db.* TO &#39;new_user&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;password&#39;; FLUSH PRIVILEGES;  </description>
+      <description>CREATE DATABASE new_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci; GRANT ALL PRIVILEGES ON new_db.* TO &amp;#39;new_user&amp;#39;@&amp;#39;localhost&amp;#39; IDENTIFIED BY &amp;#39;password&amp;#39;; FLUSH PRIVILEGES; </description>
     </item>
     
     <item>
@@ -585,8 +585,8 @@ cat /dev/null &amp;gt; /proc/6466/fd/3  данні взяти з виводу п
       
       <guid>https://bender.kr.ua/cli-upgrade-magento2/</guid>
       <description>Скрипт для оновлення Magento 2:
-#!/bin/bash # upgrade.sh composer require magento/product-community-edition $1 --no-update composer update rm -rf var/cache/* var/page_cache/* var/generation/* php bin/magento setup:upgrade find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; chown -R :www-data . chmod u+x bin/magento  Приклад запуску:
-upgrade.sh 2.2.2  Джерело тут</description>
+#!/bin/bash # upgrade.sh composer require magento/product-community-edition $1 --no-update composer update rm -rf var/cache/* var/page_cache/* var/generation/* php bin/magento setup:upgrade find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; chown -R :www-data . chmod u+x bin/magento Приклад запуску:
+upgrade.sh 2.2.2 Джерело тут</description>
     </item>
     
     <item>
@@ -596,7 +596,7 @@ upgrade.sh 2.2.2  Джерело тут</description>
       
       <guid>https://bender.kr.ua/how-to-exclude-dump-tables/</guid>
       <description>Є в мене дамп магазину на Magento розміром 4Gb. В ньому таблиці з логами займають 3,5Gb. O_o Фігассє, нафіга воно мені на тестовому сервері. Людина, що передала мені архів, в даний момент недоступна, тобто зробить новий дамп без логів не варіант. Що робить!? Правильно, #!bash-ить:
-cat old.sql | sed -e &#39;/^LOCK TABLES .log_/,/^UNLOCK TABLES;/d&#39; &amp;gt; new.sql  </description>
+cat old.sql | sed -e &#39;/^LOCK TABLES .log_/,/^UNLOCK TABLES;/d&#39; &amp;gt; new.sql </description>
     </item>
     
     <item>
@@ -606,7 +606,7 @@ cat old.sql | sed -e &#39;/^LOCK TABLES .log_/,/^UNLOCK TABLES;/d&#39; &amp;gt; 
       
       <guid>https://bender.kr.ua/magento-payment-plugin-for-bitpay/</guid>
       <description>Як отримати bitcoin-и без того, щоб скуповувати відеокарти? Правильно, щось за них продати. Для цього трема мати магазин на Magento та виконати невеличку інструкцію:
- Зробити гаманець на https://bitpay.com/. Встановити модуль https://github.com/bitpay/magento-plugin. Тут увага, не намагайтесь ставити через modman - все одно не запрацює. Краще зробити це з архіву https://github.com/bitpay/magento-plugin/releases. Далі налаштовуємо через System &amp;gt; Configuration &amp;gt; Sales &amp;gt; Payment Methods. Щоб прив&amp;rsquo;язати гаманець до Magento, треба отримати токен https://bitpay.com/api-tokens і ввести його у відповідне поле.</description>
+ Зробити гаманець на https://bitpay.com/. Встановити модуль https://github.com/bitpay/magento-plugin. Тут увага, не намагайтесь ставити через modman - все одно не запрацює. Краще зробити це з архіву https://github.com/bitpay/magento-plugin/releases. Далі налаштовуємо через System &amp;gt; Configuration &amp;gt; Sales &amp;gt; Payment Methods. Щоб прив&#39;язати гаманець до Magento, треба отримати токен https://bitpay.com/api-tokens і ввести його у відповідне поле.</description>
     </item>
     
     <item>
@@ -615,7 +615,7 @@ cat old.sql | sed -e &#39;/^LOCK TABLES .log_/,/^UNLOCK TABLES;/d&#39; &amp;gt; 
       <pubDate>Fri, 20 Oct 2017 11:04:00 +0000</pubDate>
       
       <guid>https://bender.kr.ua/git-branch/</guid>
-      <description>git init git remote add origin remote_git.git git fetch git checkout -b new_branch git pull origin new_branch  </description>
+      <description>git init git remote add origin remote_git.git git fetch git checkout -b new_branch git pull origin new_branch </description>
     </item>
     
     <item>
@@ -624,7 +624,7 @@ cat old.sql | sed -e &#39;/^LOCK TABLES .log_/,/^UNLOCK TABLES;/d&#39; &amp;gt; 
       <pubDate>Wed, 18 Oct 2017 10:59:00 +0000</pubDate>
       
       <guid>https://bender.kr.ua/magick-248/</guid>
-      <description>Не можу додати ще одне значення атрибута в Magento 2. Підрахував кількість вже існуючих значень - 248. Виявилося, що у всьому винен PHP, а саме значення за замовчуванням _max_inputvars = 1000. Змінив на 100000.
+      <description>Не можу додати ще одне значення атрибута в Magento 2. Підрахував кількість вже існуючих значень - 248. Виявилося, що у всьому винен PHP, а саме значення за замовчуванням max_input_vars = 1000. Змінив на 100000.
 Згадав, що знаю про цю штуку ще з Magento 1, але поки не записав рецепт, змушений був в черговий раз гуглити.
 Подробиці тут</description>
     </item>
@@ -636,7 +636,7 @@ cat old.sql | sed -e &#39;/^LOCK TABLES .log_/,/^UNLOCK TABLES;/d&#39; &amp;gt; 
       
       <guid>https://bender.kr.ua/nginx-redirection-get-arg/</guid>
       <description>Якщо необхідно зробити редирект зі сторінки с get-аргументом, то необхідно дописати в конфіг таке
-location / { if ($arg_param = value) { return 301 $uri; } }  Взяв тут - https://stackoverflow.com/questions/27078909/nginx-redirect-url-with-specific-query-parameter</description>
+location / { if ($arg_param = value) { return 301 $uri; } } Взяв тут - https://stackoverflow.com/questions/27078909/nginx-redirect-url-with-specific-query-parameter</description>
     </item>
     
     <item>
@@ -657,11 +657,11 @@ location / { if ($arg_param = value) { return 301 $uri; } }  Взяв тут - h
       
       <guid>https://bender.kr.ua/5-extensions-for-default-magento2/</guid>
       <description>Magento 2 - дійсно крута система, але деякі штуки, як на мене, настільки очевидно мають бути всередині, що коли їх не знаходиш, то лишається лише сказати &amp;ldquo;ну як, так!?&amp;rdquo;
-Виконавши кілька проектів на Magento 2, зібрав список модулів, які обов&amp;rsquo;язково ставлю після інсталяції системи.
+Виконавши кілька проектів на Magento 2, зібрав список модулів, які обов&#39;язково ставлю після інсталяції системи.
 1. Google Tag Manager Дивно, що не &amp;ldquo;з коробки&amp;rdquo;, бо Google Analytics та Google AdWords в системі присутні.
 сайт: magepal/magento2-googletagmanager
 встановлення:
-composer require magepal/magento2-googletagmanager php -f bin/magento module:enable --clear-static-content MagePal_GoogleTagManager php -f bin/magento setup:upgrade  Далі в адмінку і там Stores -&amp;gt; Configuration -&amp;gt; MagePal -&amp;gt; Google Tag Manager</description>
+composer require magepal/magento2-googletagmanager php -f bin/magento module:enable --clear-static-content MagePal_GoogleTagManager php -f bin/magento setup:upgrade Далі в адмінку і там Stores -&amp;gt; Configuration -&amp;gt; MagePal -&amp;gt; Google Tag Manager</description>
     </item>
     
     <item>
@@ -671,7 +671,7 @@ composer require magepal/magento2-googletagmanager php -f bin/magento module:ena
       
       <guid>https://bender.kr.ua/why-magento/</guid>
       <description>Від початку стаття призначалася для інтернет-агенції Studio370, тому в тексті багато &amp;ldquo;ми&amp;rdquo; і &amp;ldquo;нас&amp;rdquo;. З появою власного блогу, прийшов час перетягти її сюди. Планую дописувати та переписувати цей допис, тому, скоріш за все, скоро ця стаття буде дуже не схожа на оригінал.
- Отже у вас є товар, ви точно знаєте де ваш покупець, лишилося зовсім мало - запустити інтернет-магазин і ось воно щастя. Тут і починається головний біль.</description>
+ Отже у вас є товар, ви точно знаєте де ваш покупець, лишилося зовсім мало - запустити інтернет-магазин і ось воно щастя. Тут і починається головний біль. Ні, не так - ГОЛОВНИЙ БІЛЬ!</description>
     </item>
     
   </channel>

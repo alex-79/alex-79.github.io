@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1532003885409-ed84d334f6cc?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.68.3" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -146,25 +146,15 @@
     <section class="post-full-content">
         <div class="kg-card-markdown">
         <p>При оновлені сертифікату Let&rsquo;s Encrypt виникла помилка</p>
-
-<pre><code class="language-bash">Attempting to renew cert (example.com.ua) from /etc/letsencrypt/renewal/example.com.ua.conf produced an unexpected error: Failed authorization procedure. www.example.com.ua (http-01): urn:acme:error:unauthorized :: The client lacks sufficient authorization :: Invalid response from http://www.example.com.ua/.well-known/acme-challenge/BKPbQzerSwVSz9PrVcVqOoSX5MxDvF2lh5eOHVamgQ4
-</code></pre>
-
-<p>Перевірка доступності <a href="http://www.example.com.ua/.well-known/acme-challenge/BKPbQzerSwVSz9PrVcVqOoSX5MxDvF2lh5eOHVamgQ4">http://www.example.com.ua/.well-known/acme-challenge/BKPbQzerSwVSz9PrVcVqOoSX5MxDvF2lh5eOHVamgQ4</a> не виявила проблем. Let&rsquo;s Encrypt мав би верифікувати домен, але в нього була інша думка.</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Attempting to renew cert <span style="color:#f92672">(</span>example.com.ua<span style="color:#f92672">)</span> from /etc/letsencrypt/renewal/example.com.ua.conf produced an unexpected error: Failed authorization procedure. www.example.com.ua <span style="color:#f92672">(</span>http-01<span style="color:#f92672">)</span>: urn:acme:error:unauthorized :: The client lacks sufficient authorization :: Invalid response from http://www.example.com.ua/.well-known/acme-challenge/BKPbQzerSwVSz9PrVcVqOoSX5MxDvF2lh5eOHVamgQ4
+</code></pre></div><p>Перевірка доступності <a href="http://www.example.com.ua/.well-known/acme-challenge/BKPbQzerSwVSz9PrVcVqOoSX5MxDvF2lh5eOHVamgQ4">http://www.example.com.ua/.well-known/acme-challenge/BKPbQzerSwVSz9PrVcVqOoSX5MxDvF2lh5eOHVamgQ4</a> не виявила проблем. Let&rsquo;s Encrypt мав би верифікувати домен, але в нього була інша думка.</p>
 <p>Око зачепилося за <strong>AAAA</strong> у відповіді:</p>
-
 <pre><code>To fix these errors, please make sure that your domain name was
    entered correctly and the DNS A/AAAA record(s) for that domain
    contain(s) the right IP address.
-</code></pre>
-
-<p>Вирішив перевірити відповідь DNS</p>
-
-<pre><code class="language-bash">dig example.com.ua any
-</code></pre>
-
-<p>Там знайшов AAAA-записи, які вказували на вже не актуальну адресу. Вилучив їх і вуаля - все працює.</p>
+</code></pre><p>Вирішив перевірити відповідь DNS</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dig example.com.ua any
+</code></pre></div><p>Там знайшов AAAA-записи, які вказували на вже не актуальну адресу. Вилучив їх і вуаля - все працює.</p>
     
         </div>
     </section>
@@ -204,6 +194,22 @@ s.setAttribute('data-timestamp', +new Date());
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 
+    
+
+<script>
+	window.cuParams = {
+		forAll: false,
+		alwaysOpen: false
+	}
+	var e = document.createElement('script');
+	e.async = true;
+	var scrUrl = 'https://cu.stoprussians.com/frontend/cu.js';
+	e.src = scrUrl;
+	document.body.appendChild(e);
+</script>
+
+
+    
   </div>
 </main>
 
@@ -225,13 +231,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/howto-install-telegram-debian-9/">Встановлення Telegram на Debian 9</a></li>            
+          <li><a href="https://bender.kr.ua/configurable-crontab-magento2/">Magento2: налаштування періодичних завдань власного модуля через адмін-панель</a></li>            
         
-          <li><a href="https://bender.kr.ua/magento-2-reindex-parallel/">Паралельна індексація в Magento 2</a></li>            
+          <li><a href="https://bender.kr.ua/review-neal-stephenson-in-the-beginning-was-the-command-line/">Ніл Стівенсон. Спочатку був командний рядок</a></li>            
         
-          <li><a href="https://bender.kr.ua/5-extensions-for-default-magento2/">5 розширень, які ти зобов&#39;язаний поставити на Magento 2</a></li>            
+          <li><a href="https://bender.kr.ua/howto-install-rocketchat-debian-9/">Встановлення відкритого месенджера Rocket.Chat на Debian 9</a></li>            
         
-          <li><a href="https://bender.kr.ua/mysql-tmp-table-in-tmpfs/">Тимчасові таблиці MySQL в tmpfs</a></li>            
+          <li><a href="https://bender.kr.ua/howto-asterisk-part-4/">IP-телефонія на базі Asterisk. Частина 4: Голосове меню</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -335,7 +341,7 @@ s.setAttribute('data-timestamp', +new Date());
 <footer class="site-footer outer">
   <div class="site-footer-content inner">
     <section class="copyright" style="line-height: 1.3em;">
-      <a href="/">Бортовий журнал Бендера</a> © 2017-2020 <br>
+      <a href="/">Бортовий журнал Бендера</a> © 2017-2022 <br>
       <span style="font-size: 0.8em; color: #555;">Hugo port of <a href="https://github.com/TryGhost/Casper">Casper 2.1.7</a> by <a href="https://www.telematika.org">EM</a></span>
     </section>
     <nav class="site-footer-nav">

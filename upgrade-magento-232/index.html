@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1501290301209-7a0323622985?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.68.3" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -145,18 +145,12 @@
 
     <section class="post-full-content">
         <div class="kg-card-markdown">
-        
-
-<p>25 червня 2019 року вийшла версія Magento 2.3.2. Покращення безпеки, що входять до складу Magento 2.3.2, вимагають встановлення криптографічної бібліотеки libsodium версії 1.0.13 або вище. Без цього ви отримаєте помилку в модулі MSP_TwoFactorAuth.</p>
-
+        <p>25 червня 2019 року вийшла версія Magento 2.3.2. Покращення безпеки, що входять до складу Magento 2.3.2, вимагають встановлення криптографічної бібліотеки libsodium версії 1.0.13 або вище. Без цього ви отримаєте помилку в модулі MSP_TwoFactorAuth.</p>
 <pre><code>Missing required argument $encoder of MSP\TwoFactorAuth\Model\UserConfigManager.
-</code></pre>
-
-<p>Отже для успішного оновлення, виконуємо наступні дії:</p>
-
+</code></pre><p>Отже для успішного оновлення, виконуємо наступні дії:</p>
 <ol>
-<li><p>Встановлюємо libsodium</p>
-
+<li>Встановлюємо libsodium</li>
+</ol>
 <pre><code>cd /opt/
 wget -c https://download.libsodium.org/libsodium/releases/libsodium-1.0.18.tar.gz
 tar -xzvf libsodium-1.0.18.tar.gz
@@ -165,10 +159,9 @@ cd libsodium-1.0.18
 ./configure
 make &amp;&amp; make check
 make install
-</code></pre></li>
-
-<li><p>Оновлюємо Magento</p>
-
+</code></pre><ol start="2">
+<li>Оновлюємо Magento</li>
+</ol>
 <pre><code>composer require magento/product-community-edition 2.3.2 --no-update
 composer update
 rm -rf var/cache/* var/page_cache/* var/generation/* generated/code/*
@@ -177,11 +170,7 @@ find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
 find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
 chown -R :www-data .
 chmod u+x bin/magento
-</code></pre></li>
-</ol>
-
-<h3 id="посилання">Посилання:</h3>
-
+</code></pre><h3 id="посилання">Посилання:</h3>
 <ul>
 <li><a href="https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.2OpenSource.html">https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.2OpenSource.html</a></li>
 <li><a href="https://download.libsodium.org/doc/installation">https://download.libsodium.org/doc/installation</a></li>
@@ -226,6 +215,22 @@ s.setAttribute('data-timestamp', +new Date());
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 
+    
+
+<script>
+	window.cuParams = {
+		forAll: false,
+		alwaysOpen: false
+	}
+	var e = document.createElement('script');
+	e.async = true;
+	var scrUrl = 'https://cu.stoprussians.com/frontend/cu.js';
+	e.src = scrUrl;
+	document.body.appendChild(e);
+</script>
+
+
+    
   </div>
 </main>
 
@@ -247,13 +252,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/5-extensions-for-default-magento2/">5 розширень, які ти зобов&#39;язаний поставити на Magento 2</a></li>            
+          <li><a href="https://bender.kr.ua/howto-install-django-mysql-debian-9/">Встановлення зв&#39;язки Django та MySQL на Debian 9</a></li>            
         
-          <li><a href="https://bender.kr.ua/magento-payment-plugin-for-bitpay/">Рубимо електронні гроші в Magento</a></li>            
+          <li><a href="https://bender.kr.ua/exception-the-value-is-not-accepted-by-the-pattern/">Пошук невалідних XML в Magento 2</a></li>            
         
-          <li><a href="https://bender.kr.ua/nginx-redirection-get-arg/">NGINX - 301-й редирект адрес з get-аргументами</a></li>            
+          <li><a href="https://bender.kr.ua/magento2-reindexer-for-large-catalog/">Проблема переіндексації великого каталогу в Magento 2</a></li>            
         
-          <li><a href="https://bender.kr.ua/netbeans-and-fonts/">NetBeans і проблема зі шрифтами</a></li>            
+          <li><a href="https://bender.kr.ua/review-neal-stephenson-in-the-beginning-was-the-command-line/">Ніл Стівенсон. Спочатку був командний рядок</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -311,7 +316,7 @@ s.setAttribute('data-timestamp', +new Date());
           </header>
           <section class="post-card-excerpt">
                
-                <p>Для прискорення роботи бази даних можна винести тимчасові таблиці в оперативну пам&rsquo;ять. Зробити це дуже просто.</p>
+                <p>Для прискорення роботи бази даних можна винести тимчасові таблиці в оперативну пам'ять. Зробити це дуже просто.</p>
               
           </section>
       </a>
@@ -357,7 +362,7 @@ s.setAttribute('data-timestamp', +new Date());
 <footer class="site-footer outer">
   <div class="site-footer-content inner">
     <section class="copyright" style="line-height: 1.3em;">
-      <a href="/">Бортовий журнал Бендера</a> © 2017-2020 <br>
+      <a href="/">Бортовий журнал Бендера</a> © 2017-2022 <br>
       <span style="font-size: 0.8em; color: #555;">Hugo port of <a href="https://github.com/TryGhost/Casper">Casper 2.1.7</a> by <a href="https://www.telematika.org">EM</a></span>
     </section>
     <nav class="site-footer-nav">
