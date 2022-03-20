@@ -12,6 +12,16 @@
     
     
     <item>
+      <title>bash: умовний оператор if..else</title>
+      <link>https://bender.kr.ua/bash-if-else/</link>
+      <pubDate>Sun, 20 Mar 2022 12:12:32 +0200</pubDate>
+      
+      <guid>https://bender.kr.ua/bash-if-else/</guid>
+      <description>if if TEST-COMMAND then STATEMENTS fi if..else if TEST-COMMAND then STATEMENTS1 else STATEMENTS2 fi if..elif..else if TEST-COMMAND1 then STATEMENTS1 elif TEST-COMMAND2 then STATEMENTS2 else STATEMENTS3 fi Оператори test test EXPRESSION [ EXPRESSION ] [[ EXPRESSION ]] Щоб зробити скрипт переносимим, слід надати перевагу команді test або її скороченому запису [ ] (одинарні дужки), оскільки вона доступна у всіх оболонках POSIX.
+Оновлена ​​версія команди [[ ]] (подвійні дужки) підтримується на більшості сучасних систем, які використовують bash, zsh і ksh.</description>
+    </item>
+    
+    <item>
       <title>Пошук невалідних XML в Magento 2</title>
       <link>https://bender.kr.ua/exception-the-value-is-not-accepted-by-the-pattern/</link>
       <pubDate>Wed, 01 Sep 2021 15:45:55 +0300</pubDate>
