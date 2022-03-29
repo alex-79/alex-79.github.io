@@ -6,10 +6,19 @@
     <description>Recent content in Categories on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>uk</language>
-    <lastBuildDate>Sun, 20 Mar 2022 12:12:32 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 29 Mar 2022 15:53:57 +0300</lastBuildDate>
     
 	<atom:link href="https://bender.kr.ua/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Magento</title>
+      <link>https://bender.kr.ua/categories/magento/</link>
+      <pubDate>Tue, 29 Mar 2022 15:53:57 +0300</pubDate>
+      
+      <guid>https://bender.kr.ua/categories/magento/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>bash</title>
@@ -26,15 +35,6 @@
       <pubDate>Sun, 20 Mar 2022 12:12:32 +0200</pubDate>
       
       <guid>https://bender.kr.ua/categories/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Magento</title>
-      <link>https://bender.kr.ua/categories/magento/</link>
-      <pubDate>Wed, 01 Sep 2021 15:45:55 +0300</pubDate>
-      
-      <guid>https://bender.kr.ua/categories/magento/</guid>
       <description></description>
     </item>
     
