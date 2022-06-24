@@ -106,3 +106,12 @@ div#___gcse_0 {
 input.gsc-input {
     color: #000 !important;
 }
+
+p {
+    overflow-wrap: break-word;
+    width: 100%;
+}
+
+.highlight {
+    width: 100%;
+}
