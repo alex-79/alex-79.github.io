@@ -66,6 +66,15 @@
     </item>
     
     <item>
+      <title>books</title>
+      <link>https://bender.kr.ua/tags/books/</link>
+      <pubDate>Fri, 01 Jan 2021 10:30:16 +0300</pubDate>
+      
+      <guid>https://bender.kr.ua/tags/books/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>debian</title>
       <link>https://bender.kr.ua/tags/debian/</link>
       <pubDate>Mon, 07 Sep 2020 00:00:00 +0000</pubDate>
@@ -98,15 +107,6 @@
       <pubDate>Mon, 17 Feb 2020 02:00:00 +0000</pubDate>
       
       <guid>https://bender.kr.ua/tags/mysql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>books</title>
-      <link>https://bender.kr.ua/tags/books/</link>
-      <pubDate>Mon, 06 Jan 2020 02:00:00 +0000</pubDate>
-      
-      <guid>https://bender.kr.ua/tags/books/</guid>
       <description></description>
     </item>
     
