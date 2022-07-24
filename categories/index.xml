@@ -6,10 +6,28 @@
     <description>Recent content in Categories on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>uk</language>
-    <lastBuildDate>Tue, 21 Jun 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 24 Jul 2022 00:00:00 +0300</lastBuildDate>
     
 	<atom:link href="https://bender.kr.ua/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>elasticsearch</title>
+      <link>https://bender.kr.ua/categories/elasticsearch/</link>
+      <pubDate>Sun, 24 Jul 2022 00:00:00 +0300</pubDate>
+      
+      <guid>https://bender.kr.ua/categories/elasticsearch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Magento</title>
+      <link>https://bender.kr.ua/categories/magento/</link>
+      <pubDate>Sun, 24 Jul 2022 00:00:00 +0300</pubDate>
+      
+      <guid>https://bender.kr.ua/categories/magento/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>linux</title>
@@ -26,15 +44,6 @@
       <pubDate>Tue, 21 Jun 2022 00:00:00 +0000</pubDate>
       
       <guid>https://bender.kr.ua/categories/rabbitmq/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Magento</title>
-      <link>https://bender.kr.ua/categories/magento/</link>
-      <pubDate>Tue, 29 Mar 2022 15:53:57 +0300</pubDate>
-      
-      <guid>https://bender.kr.ua/categories/magento/</guid>
       <description></description>
     </item>
     

@@ -4,7 +4,42 @@
   
   <url>
     <loc>https://bender.kr.ua/categories/</loc>
-    <lastmod>2022-06-21T00:00:00+00:00</lastmod>
+    <lastmod>2022-07-24T00:00:00+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bender.kr.ua/tags/elasticsearch/</loc>
+    <lastmod>2022-07-24T00:00:00+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bender.kr.ua/categories/elasticsearch/</loc>
+    <lastmod>2022-07-24T00:00:00+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bender.kr.ua/categories/magento/</loc>
+    <lastmod>2022-07-24T00:00:00+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bender.kr.ua/tags/magento/</loc>
+    <lastmod>2022-07-24T00:00:00+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bender.kr.ua/post/</loc>
+    <lastmod>2022-07-24T00:00:00+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bender.kr.ua/tags/</loc>
+    <lastmod>2022-07-24T00:00:00+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bender.kr.ua/magento-2-searchsuite-ukrainian/</loc>
+    <lastmod>2022-07-24T00:00:00+03:00</lastmod>
   </url>
   
   <url>
@@ -14,11 +49,6 @@
   
   <url>
     <loc>https://bender.kr.ua/categories/linux/</loc>
-    <lastmod>2022-06-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bender.kr.ua/post/</loc>
     <lastmod>2022-06-21T00:00:00+00:00</lastmod>
   </url>
   
@@ -33,23 +63,8 @@
   </url>
   
   <url>
-    <loc>https://bender.kr.ua/tags/</loc>
-    <lastmod>2022-06-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://bender.kr.ua/multiple-rabbitmq-instances/</loc>
     <lastmod>2022-06-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bender.kr.ua/categories/magento/</loc>
-    <lastmod>2022-03-29T15:53:57+03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bender.kr.ua/tags/magento/</loc>
-    <lastmod>2022-03-29T15:53:57+03:00</lastmod>
   </url>
   
   <url>

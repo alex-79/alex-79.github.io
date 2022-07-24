@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>elasticsearch on </title>
+    <link>https://bender.kr.ua/categories/elasticsearch/</link>
+    <description>Recent content in elasticsearch on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>uk</language>
+    <lastBuildDate>Sun, 24 Jul 2022 00:00:00 +0300</lastBuildDate>
+    
+	<atom:link href="https://bender.kr.ua/categories/elasticsearch/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Пошук українською мовою в Magento 2</title>
+      <link>https://bender.kr.ua/magento-2-searchsuite-ukrainian/</link>
+      <pubDate>Sun, 24 Jul 2022 00:00:00 +0300</pubDate>
+      
+      <guid>https://bender.kr.ua/magento-2-searchsuite-ukrainian/</guid>
+      <description>Elasticsearch з коробки працює з великою кількістю мов: arabic, armenian, basque, bengali, brazilian, bulgarian, catalan, cjk, czech, danish, dutch, english, estonian, finnish, french, galician, german, greek, hindi, hungarian, indonesian, irish, italian, latvian, lithuanian, norwegian, persian, portuguese, romanian, russian, sorani, spanish, swedish, turkish, thai. Але солов&#39;їної на жаль немає.
+Якщо в Magento 2 ти, як і я, користуєшься пошуком від Smile, то є спосіб навчити цей модуль української. В цьому нам допоможе плагін LemmaGen.</description>
+    </item>
+    
+  </channel>
+</rss>
