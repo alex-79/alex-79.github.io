@@ -6,10 +6,19 @@
     <description>Recent content in Tags on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>uk</language>
-    <lastBuildDate>Sun, 24 Jul 2022 00:00:00 +0300</lastBuildDate>
+    <lastBuildDate>Mon, 06 Mar 2023 17:22:09 +0200</lastBuildDate>
     
 	<atom:link href="https://bender.kr.ua/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>linux</title>
+      <link>https://bender.kr.ua/tags/linux/</link>
+      <pubDate>Mon, 06 Mar 2023 17:22:09 +0200</pubDate>
+      
+      <guid>https://bender.kr.ua/tags/linux/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>elasticsearch</title>
@@ -26,15 +35,6 @@
       <pubDate>Sun, 24 Jul 2022 00:00:00 +0300</pubDate>
       
       <guid>https://bender.kr.ua/tags/magento/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>linux</title>
-      <link>https://bender.kr.ua/tags/linux/</link>
-      <pubDate>Tue, 21 Jun 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://bender.kr.ua/tags/linux/</guid>
       <description></description>
     </item>
     

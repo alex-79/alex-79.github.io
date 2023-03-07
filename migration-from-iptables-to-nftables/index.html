@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    <title>Не працюють комбінації клавіш CTRL-SHIFT в Ubuntu &middot; Бортовий журнал Бендера</title>
+    <title>Міграція з iptables на nftables &middot; Бортовий журнал Бендера</title>
 
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,33 +12,33 @@
     <meta name="google-site-verification" content="dM95CyQVQ1fi4BVDMVQe6_7xc0cxvxR8EKEZX9cT9pE" />
 
     <link rel="shortcut icon" href="https://bender.kr.ua/favicon.png" />
-    <link rel="canonical" href="https://bender.kr.ua/fix-conflict-keyboard-shortcuts/" />
+    <link rel="canonical" href="https://bender.kr.ua/migration-from-iptables-to-nftables/" />
 
-     <meta name="description" content="Як полагодити комбінацію клавіш CTRL-SHIFT в Ubuntu/Mint" /> 
+     <meta name="description" content="Міграція правил iptables на nftables" /> 
 
      
     
     <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:image" content="https://images.unsplash.com/photo-1508780709619-79562169bc64?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1548200482-b77f76c9dbef?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
     
  
-    <meta name="twitter:title" content="Не працюють комбінації клавіш CTRL-SHIFT в Ubuntu"/>
-    <meta name="twitter:description" content="Як полагодити комбінацію клавіш CTRL-SHIFT в Ubuntu/Mint"/>
-    <meta name="twitter:url" content="https://bender.kr.ua/fix-conflict-keyboard-shortcuts/" />
+    <meta name="twitter:title" content="Міграція з iptables на nftables"/>
+    <meta name="twitter:description" content="Міграція правил iptables на nftables"/>
+    <meta name="twitter:url" content="https://bender.kr.ua/migration-from-iptables-to-nftables/" />
     <meta name="twitter:site" content="@kr_ingulets"/>
 
     <meta property="og:site_name" content="" />
-    <meta property="og:title" content="Не працюють комбінації клавіш CTRL-SHIFT в Ubuntu &middot; Бортовий журнал Бендера" />
-    <meta property="og:url" content="https://bender.kr.ua/fix-conflict-keyboard-shortcuts/" />
+    <meta property="og:title" content="Міграція з iptables на nftables &middot; Бортовий журнал Бендера" />
+    <meta property="og:url" content="https://bender.kr.ua/migration-from-iptables-to-nftables/" />
     
 
     <meta property="og:type" content="article" />
-    <meta property="og:description" content="Як полагодити комбінацію клавіш CTRL-SHIFT в Ubuntu/Mint" />
+    <meta property="og:description" content="Міграція правил iptables на nftables" />
 
-    <meta property="article:published_time" content="2018-07-27T11:36:00Z" />
+    <meta property="article:published_time" content="2023-03-06T17:22:09&#43;02:00" />
     <meta property="article:tag" content="linux" />
 
-    <meta property="og:image" content="https://images.unsplash.com/photo-1508780709619-79562169bc64?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
+    <meta property="og:image" content="https://images.unsplash.com/photo-1548200482-b77f76c9dbef?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
     <meta name="generator" content="Hugo 0.68.3" />
@@ -134,24 +134,102 @@
       <article class="post-full post"> 
     <header class="post-full-header">
         <section class="post-full-meta">
-            <time class="post-full-meta-date" datetime="2018-07-27">27 July 2018</time>
+            <time class="post-full-meta-date" datetime="2023-03-06">6 March 2023</time>
                 <span class="date-divider">/</span> <a href="https://bender.kr.ua/tags/linux/">#linux</a>&nbsp;
         </section>
-        <h1 class="post-full-title">Не працюють комбінації клавіш CTRL-SHIFT в Ubuntu</h1>
+        <h1 class="post-full-title">Міграція з iptables на nftables</h1>
     </header>
     
-    <figure class="post-full-image" style="background-image: url(https://images.unsplash.com/photo-1508780709619-79562169bc64?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)">
+    <figure class="post-full-image" style="background-image: url(https://images.unsplash.com/photo-1548200482-b77f76c9dbef?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)">
     </figure>
 
     <section class="post-full-content">
         <div class="kg-card-markdown">
-        <p>В роботі часто користуюсь комбінаціями Ctrl-Shift-Up/Down в LibreOffice Calc, а мову змінюю через Ctrl-Shift. В Ubuntu 14.04 все було гаразд, але при оновлені версій щось зламалось і комбінація в LibreOffice припинила працювати: замість виділяти стовпці, перемикалась розкладка. Варіант поставити зміну мов на іншу клавішу не розглядався в силу того що я раб своїх звичок, а змінювати звички для мене дуже не легко. Якийсь час розрулював цей конфлікт через xNeur, який використовував виключно для зміни розкладок, але воно час від часу падало. Сьогодні знайшов інший шлях:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">add-apt-repository ppa:nrbrtx/xorg-hotkeys
-apt update
-apt dist-upgrade
-</code></pre></div><p>Джерело <a href="https://askubuntu.com/questions/1009352/os-keyboard-shortcuts-conflict-with-apps-keyboard-shortcuts/1009356#1009356">тут</a></p>
-<p>Є ще <a href="https://bugs.launchpad.net/ubuntu/+source/xorg-server/+bug/1683383/comments/40">такий варіант</a>, але я його не перевіряв.</p>
-<p>Обидва посилання з обговорення <a href="http://mobile.opennet.ru/opennews/art.shtml?num=49030">цієї теми</a> на OpenNet.</p>
+        <p><strong>nftables</strong> - типовий і рекомендований фреймворк брандмауера в Debian (починаючи з Debian 10 Buster), який замінює старі інструменти <em>iptables</em> (і пов’язані з ними).</p>
+<p>Спробуємо мігрувати старі правила для iptables (<a href="https://bender.kr.ua/howto-lemp-install/">https://bender.kr.ua/howto-lemp-install/</a> - див. 2.1) на nftables.</p>
+<p>Спочатку активуємо сервіс <em>nftables</em>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl enable nftables
+</code></pre></div><p>Зберігаємо існуючі правила з iptables:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">iptables-save &gt; iptables.rules
+</code></pre></div><p>і транслюємо їх у правила nftables:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">iptables-restore-translate -f iptables.rules &gt; nftables.rules
+</code></pre></div><p>Результатом буде список правил в файлі nftables.rules:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">add table ip filter
+add chain ip filter INPUT <span style="color:#f92672">{</span> type filter hook input priority 0; policy accept; <span style="color:#f92672">}</span>
+add chain ip filter FORWARD <span style="color:#f92672">{</span> type filter hook forward priority 0; policy accept; <span style="color:#f92672">}</span>
+add chain ip filter OUTPUT <span style="color:#f92672">{</span> type filter hook output priority 0; policy accept; <span style="color:#f92672">}</span>
+add rule ip filter INPUT iifname <span style="color:#e6db74">&#34;lo&#34;</span> counter accept
+add rule ip filter INPUT iifname !<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;lo&#34;</span> ip daddr 127.0.0.0/8 counter reject
+add rule ip filter INPUT ct state related,established  counter accept
+add rule ip filter OUTPUT counter accept
+add rule ip filter INPUT tcp dport <span style="color:#ae81ff">80</span> counter accept
+add rule ip filter INPUT tcp dport <span style="color:#ae81ff">443</span> counter accept
+add rule ip filter INPUT ct state new  tcp dport <span style="color:#ae81ff">22</span> counter accept
+add rule ip filter INPUT icmp type echo-request counter accept
+add rule ip filter INPUT limit rate 5/minute burst <span style="color:#ae81ff">5</span> packets counter log prefix <span style="color:#e6db74">&#34;iptables denied: &#34;</span> level debug
+add rule ip filter INPUT counter reject
+add rule ip filter FORWARD counter reject
+</code></pre></div><p>Завантажуємо правила в nftables і перевіряємо результат:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nft -f nftables.rules
+nft list ruleset
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">table inet filter <span style="color:#f92672">{</span>
+	chain INPUT <span style="color:#f92672">{</span>
+		type filter hook input priority filter; policy accept;
+		iifname <span style="color:#e6db74">&#34;lo&#34;</span> counter packets <span style="color:#ae81ff">0</span> bytes <span style="color:#ae81ff">0</span> accept
+		iifname !<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;lo&#34;</span> ip daddr 127.0.0.0/8 counter packets <span style="color:#ae81ff">0</span> bytes <span style="color:#ae81ff">0</span> reject
+		ct state established,related counter packets <span style="color:#ae81ff">0</span> bytes <span style="color:#ae81ff">0</span> accept
+		tcp dport <span style="color:#ae81ff">80</span> counter packets <span style="color:#ae81ff">0</span> bytes <span style="color:#ae81ff">0</span> accept
+		tcp dport <span style="color:#ae81ff">443</span> counter packets <span style="color:#ae81ff">0</span> bytes <span style="color:#ae81ff">0</span> accept
+		ct state new tcp dport <span style="color:#ae81ff">22</span> counter packets <span style="color:#ae81ff">0</span> bytes <span style="color:#ae81ff">0</span> accept
+		icmp type echo-request counter packets <span style="color:#ae81ff">0</span> bytes <span style="color:#ae81ff">0</span> accept
+		limit rate 5/minute counter packets <span style="color:#ae81ff">0</span> bytes <span style="color:#ae81ff">0</span> log prefix <span style="color:#e6db74">&#34;iptables denied: &#34;</span> level debug
+		counter packets <span style="color:#ae81ff">0</span> bytes <span style="color:#ae81ff">0</span> reject
+	<span style="color:#f92672">}</span>
+
+	chain FORWARD <span style="color:#f92672">{</span>
+		type filter hook forward priority filter; policy accept;
+		counter packets <span style="color:#ae81ff">0</span> bytes <span style="color:#ae81ff">0</span> reject
+	<span style="color:#f92672">}</span>
+
+	chain OUTPUT <span style="color:#f92672">{</span>
+		type filter hook output priority filter; policy accept;
+		counter packets <span style="color:#ae81ff">0</span> bytes <span style="color:#ae81ff">0</span> accept
+	<span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>Цей результат треба додати до конфігурації <em>/etc/nftables.conf</em>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/usr/sbin/nft -f
+</span><span style="color:#75715e"></span>
+flush ruleset
+
+table inet filter <span style="color:#f92672">{</span>
+    chain input <span style="color:#f92672">{</span>
+        type filter hook input priority 0; policy accept;
+        iifname <span style="color:#e6db74">&#34;lo&#34;</span> counter packets <span style="color:#ae81ff">0</span> bytes <span style="color:#ae81ff">0</span> accept
+        iifname !<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;lo&#34;</span> ip daddr 127.0.0.0/8 counter packets <span style="color:#ae81ff">0</span> bytes <span style="color:#ae81ff">0</span> reject
+        ct state established,related counter packets <span style="color:#ae81ff">0</span> bytes <span style="color:#ae81ff">0</span> accept
+        tcp dport <span style="color:#ae81ff">80</span> counter packets <span style="color:#ae81ff">0</span> bytes <span style="color:#ae81ff">0</span> accept
+        tcp dport <span style="color:#ae81ff">443</span> counter packets <span style="color:#ae81ff">0</span> bytes <span style="color:#ae81ff">0</span> accept
+        ct state new tcp dport <span style="color:#ae81ff">22</span> counter packets <span style="color:#ae81ff">0</span> bytes <span style="color:#ae81ff">0</span> accept
+        icmp type echo-request counter packets <span style="color:#ae81ff">0</span> bytes <span style="color:#ae81ff">0</span> accept
+        limit rate 5/minute counter packets <span style="color:#ae81ff">0</span> bytes <span style="color:#ae81ff">0</span> log prefix <span style="color:#e6db74">&#34;iptables denied: &#34;</span> level debug
+        counter packets <span style="color:#ae81ff">0</span> bytes <span style="color:#ae81ff">0</span> reject
+    <span style="color:#f92672">}</span>
+
+    chain forward <span style="color:#f92672">{</span>
+        type filter hook forward priority 0; policy accept;
+        counter packets <span style="color:#ae81ff">0</span> bytes <span style="color:#ae81ff">0</span> reject
+    <span style="color:#f92672">}</span>
+
+    chain output <span style="color:#f92672">{</span>
+        type filter hook output priority 0; policy accept;
+        counter packets <span style="color:#ae81ff">0</span> bytes <span style="color:#ae81ff">0</span> accept
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>Після рестарту служби nftables (або після ребуту сервера) існуючий набір правил буде очищено, а нові правила брандмауера - завантажені.</p>
+<h2 id="посилання">Посилання</h2>
+<ul>
+<li><a href="https://wiki.debian.org/nftables">https://wiki.debian.org/nftables</a></li>
+</ul>
     
         </div>
     </section>
@@ -177,8 +255,8 @@ apt dist-upgrade
 
 
 var disqus_config = function () {
-this.page.url = "https:\/\/bender.kr.ua\/fix-conflict-keyboard-shortcuts\/";  
-this.page.identifier = "https:\/\/bender.kr.ua\/fix-conflict-keyboard-shortcuts\/"; 
+this.page.url = "https:\/\/bender.kr.ua\/migration-from-iptables-to-nftables\/";  
+this.page.identifier = "https:\/\/bender.kr.ua\/migration-from-iptables-to-nftables\/"; 
 };
 
 (function() { 
@@ -214,13 +292,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/regexp-replace-in-mariadb/">Заміна даних в MariaDB</a></li>            
-        
           <li><a href="https://bender.kr.ua/magento-payment-plugin-for-bitpay/">Рубимо електронні гроші в Magento</a></li>            
         
-          <li><a href="https://bender.kr.ua/magento-2-phpamqplib-timed-out-after-3-sec/">Magento 2: розривається з&#39;єднання з RabbitMQ</a></li>            
+          <li><a href="https://bender.kr.ua/howto-install-rocketchat-debian-9/">Встановлення відкритого месенджера Rocket.Chat на Debian 9</a></li>            
         
-          <li><a href="https://bender.kr.ua/df-and-du-show-different-values/">df і du показують різні значення</a></li>            
+          <li><a href="https://bender.kr.ua/howto-asterisk-part-6.1/">IP-телефонія на базі Asterisk. Частина 6.1: Додаткові функції Asterisk. Паркування дзвінка.</a></li>            
+        
+          <li><a href="https://bender.kr.ua/iptables-ipset/">Блокування трафіку за допомогою iptables та ipset</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -231,62 +309,33 @@ s.setAttribute('data-timestamp', +new Date());
 
 
       
+      
       <article class="post-card post"> 
     
-    <a class="post-card-image-link" href="https://bender.kr.ua/mining-karbowanec/">
-      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1543699539-33a389c5dcfe?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
+    <a class="post-card-image-link" href="https://bender.kr.ua/magento-2-searchsuite-ukrainian/">
+      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1529511582893-2d7e684dd128?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1933&amp;q=80)"></div>
     </a>
     
 
     <div class="post-card-content">
-      <a class="post-card-content-link" href="https://bender.kr.ua/mining-karbowanec/">
+      <a class="post-card-content-link" href="https://bender.kr.ua/magento-2-searchsuite-ukrainian/">
           <header class="post-card-header">
               <span class="post-card-tags">
-              #linux  </span>
+              #magento 
+              #elasticsearch  </span>
               
-              <h2 class="post-card-title">Як я місяць майнив криптовалюту за допомогою ноутбуку, навіщо мені це та що з того вийшло</h2>
+              <h2 class="post-card-title">Пошук українською мовою в Magento 2</h2>
           </header>
           <section class="post-card-excerpt">
                
-                <p>Трохи сумна, але повчальна історія про намагання на@@@бати долю і стати багатим не доклавши зусиль. Хроніки халявщика.</p>
+                <p>Magento 2: налаштування модуля Smile_Searchsuite для пошуку українською мовою</p>
               
           </section>
       </a>
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">6 хв</span>
-      </footer>
-    </div>
-</article>
-      
-      
-      <article class="post-card post"> 
-    
-    <a class="post-card-image-link" href="https://bender.kr.ua/letsencrypt-and-ipv6/">
-      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1532003885409-ed84d334f6cc?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
-    </a>
-    
-
-    <div class="post-card-content">
-      <a class="post-card-content-link" href="https://bender.kr.ua/letsencrypt-and-ipv6/">
-          <header class="post-card-header">
-              <span class="post-card-tags">
-              #linux 
-              #web  </span>
-              
-              <h2 class="post-card-title">Помилка при оновлені сертифікатів від Let&#39;s Encrypt</h2>
-          </header>
-          <section class="post-card-excerpt">
-               
-                <p>Помилка при оновлені сертифікатів від Let&rsquo;s Encrypt: To fix these errors, please make sure that your domain name was entered correctly and the DNS A/AAAA record(s) for that domain contain(s) the right IP address</p>
-              
-          </section>
-      </a>
-
-      <footer class="post-card-meta">
-        <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">1 хв</span>
+        <span class="reading-time">2 хв</span>
       </footer>
     </div>
 </article>
@@ -301,13 +350,13 @@ s.setAttribute('data-timestamp', +new Date());
       <img src="https://bender.kr.ua/logo.png" alt="Бортовий журнал Бендера" />
     </a>
   </div>
-  <div class="floating-header-title">Не працюють комбінації клавіш CTRL-SHIFT в Ubuntu</div>
+  <div class="floating-header-title">Міграція з iptables на nftables</div>
   <div class="floating-header-share">  
-    <a class="floating-header-share-tw" href="https://twitter.com/share?text=%d0%9d%d0%b5%20%d0%bf%d1%80%d0%b0%d1%86%d1%8e%d1%8e%d1%82%d1%8c%20%d0%ba%d0%be%d0%bc%d0%b1%d1%96%d0%bd%d0%b0%d1%86%d1%96%d1%97%20%d0%ba%d0%bb%d0%b0%d0%b2%d1%96%d1%88%20CTRL-SHIFT%20%d0%b2%20Ubuntu&amp;url=https%3a%2f%2fbender.kr.ua%2ffix-conflict-keyboard-shortcuts%2f"
+    <a class="floating-header-share-tw" href="https://twitter.com/share?text=%d0%9c%d1%96%d0%b3%d1%80%d0%b0%d1%86%d1%96%d1%8f%20%d0%b7%20iptables%20%d0%bd%d0%b0%20nftables&amp;url=https%3a%2f%2fbender.kr.ua%2fmigration-from-iptables-to-nftables%2f"
           onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
       </a>
-      <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbender.kr.ua%2ffix-conflict-keyboard-shortcuts%2f"
+      <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbender.kr.ua%2fmigration-from-iptables-to-nftables%2f"
           onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
       </a>

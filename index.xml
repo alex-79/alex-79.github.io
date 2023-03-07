@@ -12,6 +12,21 @@
     
     
     <item>
+      <title>Міграція з iptables на nftables</title>
+      <link>https://bender.kr.ua/migration-from-iptables-to-nftables/</link>
+      <pubDate>Mon, 06 Mar 2023 17:22:09 +0200</pubDate>
+      
+      <guid>https://bender.kr.ua/migration-from-iptables-to-nftables/</guid>
+      <description>nftables - типовий і рекомендований фреймворк брандмауера в Debian (починаючи з Debian 10 Buster), який замінює старі інструменти iptables (і пов’язані з ними).
+Спробуємо мігрувати старі правила для iptables (https://bender.kr.ua/howto-lemp-install/ - див. 2.1) на nftables.
+Спочатку активуємо сервіс nftables:
+systemctl enable nftables Зберігаємо існуючі правила з iptables:
+iptables-save &amp;gt; iptables.rules і транслюємо їх у правила nftables:
+iptables-restore-translate -f iptables.rules &amp;gt; nftables.rules Результатом буде список правил в файлі nftables.rules:
+add table ip filter add chain ip filter INPUT { type filter hook input priority 0; policy accept; } add chain ip filter FORWARD { type filter hook forward priority 0; policy accept; } add chain ip filter OUTPUT { type filter hook output priority 0; policy accept; } add rule ip filter INPUT iifname &amp;#34;lo&amp;#34; counter accept add rule ip filter INPUT iifname !</description>
+    </item>
+    
+    <item>
       <title>Пошук українською мовою в Magento 2</title>
       <link>https://bender.kr.ua/magento-2-searchsuite-ukrainian/</link>
       <pubDate>Sun, 24 Jul 2022 00:00:00 +0300</pubDate>
