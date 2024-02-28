@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1465515779535-63e31c612e53?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -163,10 +163,10 @@
 <p>Для виходу на зовнішні лінії використовується підключення до SIP провайдера</p>
 <h2 id="22-налаштування-внутрішніх-номерів">2.2 Налаштування внутрішніх номерів</h2>
 <p>Створюємо новий файл <em>users.conf</em> для налаштування внутрішніх номерів:</p>
-<pre><code>mkdir /etc/asterisk/sip
+<pre tabindex="0"><code>mkdir /etc/asterisk/sip
 touch /etc/asterisk/sip/users.conf
 </code></pre><p>Створюємо шаблон і вносимо користувачів:</p>
-<pre><code>[users](!)
+<pre tabindex="0"><code>[users](!)
 type=friend
 nat=no
 dtmfmode=rfc2833
@@ -251,9 +251,9 @@ secret=601
 context=reception
 host=dynamic
 </code></pre><p>Підключаємо файл з налаштуваннями користувачів в <em>sip.conf</em>:</p>
-<pre><code>#include sip/users.conf
+<pre tabindex="0"><code>#include sip/users.conf
 </code></pre><p>Перечитуємо налаштування</p>
-<pre><code>asterisk-centos*CLI&gt; sip reload
+<pre tabindex="0"><code>asterisk-centos*CLI&gt; sip reload
  Reloading SIP
   == Parsing '/etc/asterisk/sip.conf': Found
   == Parsing '/etc/asterisk/sip/users.conf': Found
@@ -261,7 +261,7 @@ host=dynamic
   == Using SIP CoS mark 4
   == Parsing '/etc/asterisk/sip_notify.conf': Found
 </code></pre><p>і перевіряємо список користувачів</p>
-<pre><code>asterisk-centos*CLI&gt; sip show users
+<pre tabindex="0"><code>asterisk-centos*CLI&gt; sip show users
 Username                   Secret           Accountcode      Def.Context      ACL  Forcerport
 101                        101                               manager          Yes  No        
 102                        102                               manager          Yes  No        
@@ -277,10 +277,10 @@ Username                   Secret           Accountcode      Def.Context      AC
 </code></pre><h2 id="23-підключення-провайдера-телефонії">2.3 Підключення провайдера телефонії</h2>
 <p>В якості провайдера телефонії обрано <a href="https://zadarma.com/ua/">zadarma.com</a>.</p>
 <p>Створюємо новий файл <em>trunk.conf</em> для налаштування <em>sip trunk</em>:</p>
-<pre><code>mkdir /etc/asterisk/trunk
+<pre tabindex="0"><code>mkdir /etc/asterisk/trunk
 touch /etc/asterisk/trunk/trunk.conf
-</code></pre><p>Вносимо налаштування для підключення згідно з інструкцією на сайті <a href="https://zadarma.com/ua/support/instructions/asterisk/:">https://zadarma.com/ua/support/instructions/asterisk/:</a></p>
-<pre><code>[zadarma]
+</code></pre><p>Вносимо налаштування для підключення згідно з інструкцією на сайті <a href="https://zadarma.com/ua/support/instructions/asterisk/">https://zadarma.com/ua/support/instructions/asterisk/</a>:</p>
+<pre tabindex="0"><code>[zadarma]
 host=sip.zadarma.com
 insecure=invite,port
 type=friend
@@ -299,13 +299,13 @@ qualify=400
 directmedia=no
 nat=force_rport,comedia
 </code></pre><p>Підключаємо файл з налаштуваннями sip trunk в <em>sip.conf</em>:</p>
-<pre><code>#include trunk/trunk.conf
+<pre tabindex="0"><code>#include trunk/trunk.conf
 </code></pre><p>Перечитуємо налаштування</p>
-<pre><code>asterisk-centos*CLI&gt; sip reload
+<pre tabindex="0"><code>asterisk-centos*CLI&gt; sip reload
  Reloading SIP
 [2017-04-24 22:03:06] NOTICE[3129]: chan_sip.c:24558 handle_response_peerpoke: Peer 'zadarma' is now Reachable. (51ms / 400ms)
 </code></pre><p>і перевіряємо список пірів</p>
-<pre><code>asterisk-centos*CLI&gt; sip show peers
+<pre tabindex="0"><code>asterisk-centos*CLI&gt; sip show peers
 Name/username             Host                                    Dyn Forcerport Comedia    ACL Port     Status      Description                      
 101/101                   (Unspecified)                            D  No         No          A  0        UNKNOWN                                      
 102/102                   (Unspecified)                            D  No         No          A  0        UNKNOWN                                      
@@ -388,13 +388,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/how-to-fix-elasticsearch-forbidden-12-index-read-only-allow-delete-api/">Проблема з переіндексацією catalogsearch_fulltext на Magento 2</a></li>            
+          <li><a href="https://bender.kr.ua/howto-asterisk-part-5/">IP-телефонія на базі Asterisk. Частина 5: Деталізований звіт про виклики (Call Detail Records, CDR)</a></li>            
         
-          <li><a href="https://bender.kr.ua/magento-2-reindex-parallel/">Паралельна індексація в Magento 2</a></li>            
+          <li><a href="https://bender.kr.ua/configurable-crontab-magento2/">Magento2: налаштування періодичних завдань власного модуля через адмін-панель</a></li>            
         
-          <li><a href="https://bender.kr.ua/5-extensions-for-default-magento2/">5 розширень, які ти зобов&#39;язаний поставити на Magento 2</a></li>            
+          <li><a href="https://bender.kr.ua/howto-install-django-mysql-debian-9/">Встановлення зв&#39;язки Django та MySQL на Debian 9</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-remove-parent-category-from-url-magento-2/">Вилучення ієрархії категорій з URL в Magento 2</a></li>            
+          <li><a href="https://bender.kr.ua/howto-lemp-install/">Встановлення Nginx &#43; PHP &#43; MySQL на Debian 9</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -431,7 +431,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">2 хв</span>
+        <span class="reading-time">0 хв</span>
       </footer>
     </div>
 </article>

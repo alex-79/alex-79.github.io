@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1538439907460-1596cafd4eff?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -149,45 +149,45 @@
 <ol>
 <li>
 <p>Встановлюємо <em>Python</em> та додатковий інструментарій</p>
-<pre><code>apt install python3 python3-pip python3-venv
+<pre tabindex="0"><code>apt install python3 python3-pip python3-venv
 </code></pre></li>
 <li>
 <p>Створюємо папку для проекту та віртуальне середовище</p>
-<pre><code>mkdir myproject
+<pre tabindex="0"><code>mkdir myproject
 cd myproject
 python3 -m venv venv
 source venv/bin/activate
 </code></pre></li>
 <li>
 <p>Встановлюємо <em>Django</em> та перевыряємо встановлену версію</p>
-<pre><code>python3 -m pip install Django
+<pre tabindex="0"><code>python3 -m pip install Django
 python -m django --version
 </code></pre></li>
 <li>
 <p>Створюємо новий проект</p>
-<pre><code>django-admin startproject myproject
+<pre tabindex="0"><code>django-admin startproject myproject
 </code></pre></li>
 </ol>
-<h1 id="зєднання-з-mysql">З'єднання з MySQL</h1>
+<h1 id="зєднання-з-mysql">З&rsquo;єднання з MySQL</h1>
 <ol>
 <li>
 <p>Встановлюємо <em>Percona Server</em></p>
-<pre><code>wget https://repo.percona.com/apt/percona-release_latest.$(lsb_release -sc)_all.deb
+<pre tabindex="0"><code>wget https://repo.percona.com/apt/percona-release_latest.$(lsb_release -sc)_all.deb
 dpkg -i percona-release_latest.$(lsb_release -sc)_all.deb
 apt update
 apt install percona-server-server-5.7
 </code></pre></li>
 <li>
 <p>Створюємо базу данних</p>
-<pre><code>CREATE DATABASE test CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+<pre tabindex="0"><code>CREATE DATABASE test CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 GRANT ALL PRIVILEGES ON test.* TO 'test'@'localhost' IDENTIFIED BY 'password';
 FLUSH PRIVILEGES;
 </code></pre></li>
 <li>
 <p>Встановлюємо mysqlclient</p>
-<pre><code>apt install libmysqlclient-dev
+<pre tabindex="0"><code>apt install libmysqlclient-dev
 </code></pre><p>Для <em>percona-server</em> отримаємо наступне попередження</p>
-<pre><code>    Чтение списков пакетов… Готово
+<pre tabindex="0"><code>    Чтение списков пакетов… Готово
     Построение дерева зависимостей       
     Чтение информации о состоянии… Готово
     Пакет libmysqlclient-dev — виртуальный, его функции предоставляются пакетами:
@@ -198,12 +198,12 @@ FLUSH PRIVILEGES;
 
     E: Для пакета «libmysqlclient-dev» не найден кандидат на установку
 </code></pre><p>Уважно читаємо та робимо вибір у відповідності до встановленої версії MySQL (в нашому випадку версія 5.7)</p>
-<pre><code>apt install libperconaserverclient20-dev
-</code></pre><pre><code>python3 -m pip install mysqlclient
+<pre tabindex="0"><code>apt install libperconaserverclient20-dev
+</code></pre><pre tabindex="0"><code>python3 -m pip install mysqlclient
 </code></pre></li>
 <li>
 <p>Редагуэмо файл <em>~/myproject/myproject/settings.py</em>:</p>
-<pre><code>    DATABASES = {
+<pre tabindex="0"><code>    DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
             'NAME': 'test',
@@ -216,10 +216,10 @@ FLUSH PRIVILEGES;
 </code></pre></li>
 <li>
 <p>Створюємо і застосовуємо міграції</p>
-<pre><code>python manage.py makemigrations
+<pre tabindex="0"><code>python manage.py makemigrations
 cd myproject
 python3 manage.py migrate
-</code></pre><pre><code>    Operations to perform:
+</code></pre><pre tabindex="0"><code>    Operations to perform:
         Apply all migrations: admin, auth, contenttypes, sessions
     Running migrations:
         Applying contenttypes.0001_initial... OK
@@ -242,11 +242,11 @@ python3 manage.py migrate
 </code></pre></li>
 <li>
 <p>Створюємо адміністратора</p>
-<pre><code>python3 manage.py createsuperuser
+<pre tabindex="0"><code>python3 manage.py createsuperuser
 </code></pre></li>
 <li>
 <p>Запускаємо сервер</p>
-<pre><code>python3 manage.py runserver
+<pre tabindex="0"><code>python3 manage.py runserver
 </code></pre></li>
 </ol>
     
@@ -311,13 +311,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/fix-conflict-keyboard-shortcuts/">Не працюють комбінації клавіш CTRL-SHIFT в Ubuntu</a></li>            
-        
-          <li><a href="https://bender.kr.ua/howto-lemp-install/">Встановлення Nginx &#43; PHP &#43; MySQL на Debian 9</a></li>            
-        
-          <li><a href="https://bender.kr.ua/migration-from-iptables-to-nftables/">Міграція з iptables на nftables</a></li>            
-        
           <li><a href="https://bender.kr.ua/howto-asterisk-part-3/">IP-телефонія на базі Asterisk. Частина 3: Логіка обробки дзвінків (Dialplan)</a></li>            
+        
+          <li><a href="https://bender.kr.ua/how-to-exclude-dump-tables/">Вибіркове завантаження таблиць дампа в MySQL</a></li>            
+        
+          <li><a href="https://bender.kr.ua/review-neal-stephenson-in-the-beginning-was-the-command-line/">Ніл Стівенсон. Спочатку був командний рядок</a></li>            
+        
+          <li><a href="https://bender.kr.ua/fail2ban-unban-ip/">Як розблокувати себе в fail2ban</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -352,7 +352,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">1 хв</span>
+        <span class="reading-time">0 хв</span>
       </footer>
     </div>
 </article>
@@ -382,7 +382,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">1 хв</span>
+        <span class="reading-time">0 хв</span>
       </footer>
     </div>
 </article>

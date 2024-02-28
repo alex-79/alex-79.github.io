@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1434123342969-25a249e8d144?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1995&q=80"/>
 
 
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -156,8 +156,8 @@
 <h1 id="6-додаткові-функції-asterisk">6. Додаткові функції Asterisk.</h1>
 <h2 id="61-паркування-дзвінка">6.1 Паркування дзвінка.</h2>
 <p>Паркування виклику - це перенаправлення дзвінка абонента в спеціальний слот. Кожен слот має свій номер. Якщо перейти на інший телефон та набрати відповідний номер слота, то можна продовжити розмову з абонентом. В процесі очікування абонент ставитися на утримання і прослуховує музику.</p>
-<p>Додаємо можливість паркувати дзвінки. Використаємо номер за замовчуванням - <em><strong>700</strong></em>, тобто, якщо в процесі розмови набрати <em><strong># 700</strong></em>, то почуємо номер слоту, який потім треба буде набрати з іншого телефоного апарату для з'єднання з <em><strong>&ldquo;запаркованим&rdquo;</strong></em> абонентом.</p>
-<pre><code>[manager]
+<p>Додаємо можливість паркувати дзвінки. Використаємо номер за замовчуванням - <em><strong>700</strong></em>, тобто, якщо в процесі розмови набрати <em><strong># 700</strong></em>, то почуємо номер слоту, який потім треба буде набрати з іншого телефоного апарату для з&rsquo;єднання з <em><strong>&ldquo;запаркованим&rdquo;</strong></em> абонентом.</p>
+<pre tabindex="0"><code>[manager]
 include =&gt; call-local-manager
 include =&gt; call-local
 include =&gt; call-out-world
@@ -190,14 +190,14 @@ include =&gt; call-local
 include =&gt; call-out-ua
 include =&gt; parkedcalls
 </code></pre><p>Для користувачів слід дозволити функцію переводу виклику, щоб вони могли скористатись функцією паркування, відповідно необхідно додати у виклики Dial() параметр t:</p>
-<pre><code>;внутрішні лінії за виключенням manager
+<pre tabindex="0"><code>;внутрішні лінії за виключенням manager
 [call-local]
 exten =&gt; _[2-6],1,Set(RECORDING=0)
 exten =&gt; _[2-6],n,Macro(recording,${CALLERID(num)},${EXTEN})
 exten =&gt; _[2-6]XX,n,Dial(SIP/${EXTEN},20,t)
 exten =&gt; _[2-6],n,Hangup()
 </code></pre><p>Перевіряємо паркування викликів:</p>
-<pre><code>asterisk-centos*CLI&gt; 
+<pre tabindex="0"><code>asterisk-centos*CLI&gt; 
   == Using SIP RTP CoS mark 5
     -- Executing [740648@call-in:1] Set(&quot;SIP/zadarma-0000001c&quot;, &quot;RECORDING=1&quot;) in new stack
     -- Executing [740648@call-in:2] Goto(&quot;SIP/zadarma-0000001c&quot;, &quot;ivr-mainmenu,s,1&quot;) in new stack
@@ -320,13 +320,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
+          <li><a href="https://bender.kr.ua/mining-karbowanec/">Як я місяць майнив криптовалюту за допомогою ноутбуку, навіщо мені це та що з того вийшло</a></li>            
+        
+          <li><a href="https://bender.kr.ua/iptables-ipset/">Блокування трафіку за допомогою iptables та ipset</a></li>            
+        
           <li><a href="https://bender.kr.ua/new-db-in-mysql/">Створення бази даних в MySQL</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-remove-parent-category-from-url-magento-2/">Вилучення ієрархії категорій з URL в Magento 2</a></li>            
-        
-          <li><a href="https://bender.kr.ua/how-to-exclude-dump-tables/">Вибіркове завантаження таблиць дампа в MySQL</a></li>            
-        
-          <li><a href="https://bender.kr.ua/mysql-and-regexp/">Пошук в MySQL за допомогою регулярних виразів</a></li>            
+          <li><a href="https://bender.kr.ua/local-ssl-certificate/">Встановлення локального SSL-сертифікату</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -365,7 +365,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">2 хв</span>
+        <span class="reading-time">1 хв</span>
       </footer>
     </div>
 </article>
@@ -395,7 +395,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">1 хв</span>
+        <span class="reading-time">0 хв</span>
       </footer>
     </div>
 </article>

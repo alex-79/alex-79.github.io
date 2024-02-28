@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1503789146722-cf137a3c0fea?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -146,9 +146,9 @@
     <section class="post-full-content">
         <div class="kg-card-markdown">
         <p>На замовчування програма <em><strong>iscan</strong></em> в Linux Mint не працює зі сканером <em><strong>Epson Perfection V33</strong></em>. Щоб вирішити цю проблему, винонуємо наступні дії:</p>
-<pre><code>sudo ln -sfr /usr/lib/sane/libsane-epkowa* /usr/lib/x86_64-linux-gnu/sane
+<pre tabindex="0"><code>sudo ln -sfr /usr/lib/sane/libsane-epkowa* /usr/lib/x86_64-linux-gnu/sane
 </code></pre><p>та сворюємо правило для підключення сканера <em>/etc/udev/rules.d/79-udev-epson.rules</em>:</p>
-<pre><code># chmod device EPSON group
+<pre tabindex="0"><code># chmod device EPSON group
 ATTRS{manufacturer}==&quot;EPSON&quot;, DRIVERS==&quot;usb&quot;, SUBSYSTEMS==&quot;usb&quot;, ATTRS{idVendor}==&quot;04b8&quot;, ATTRS{idProduct}==&quot;*&quot;, MODE=&quot;0777&quot;
 </code></pre><h2 id="посилання">Посилання</h2>
 <ul>
@@ -216,13 +216,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/mysql-tmp-table-in-tmpfs/">Тимчасові таблиці MySQL в tmpfs</a></li>            
+          <li><a href="https://bender.kr.ua/multiple-rabbitmq-instances/">Запуск кількох інстансів RabbitMQ на одному сервері</a></li>            
         
-          <li><a href="https://bender.kr.ua/fail2ban-unban-ip/">Як розблокувати себе в fail2ban</a></li>            
+          <li><a href="https://bender.kr.ua/magento-2-cron-indexer-repair/">Magento 2: не працює індексація за розкладом</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-install-telegram-debian-9/">Встановлення Telegram на Debian 9</a></li>            
+          <li><a href="https://bender.kr.ua/how-to-fix-elasticsearch-forbidden-12-index-read-only-allow-delete-api/">Проблема з переіндексацією catalogsearch_fulltext на Magento 2</a></li>            
         
-          <li><a href="https://bender.kr.ua/backup-with-borg/">Про користь borg-ів</a></li>            
+          <li><a href="https://bender.kr.ua/git-branch/">Як забрати гілку з git</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -257,7 +257,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">4 хв</span>
+        <span class="reading-time">1 хв</span>
       </footer>
     </div>
 </article>
@@ -287,7 +287,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">5 хв</span>
+        <span class="reading-time">2 хв</span>
       </footer>
     </div>
 </article>

@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1506645292803-579c17d4ba6a?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -146,12 +146,12 @@
     <section class="post-full-content">
         <div class="kg-card-markdown">
         <p>Magento 2 - дійсно крута система, але деякі штуки, як на мене, настільки очевидно мають бути всередині, що коли їх не знаходиш, то лишається лише сказати &ldquo;ну як, так!?&rdquo;</p>
-<p>Виконавши кілька проектів на Magento 2, зібрав список модулів, які обов'язково ставлю після інсталяції системи.</p>
+<p>Виконавши кілька проектів на Magento 2, зібрав список модулів, які обов&rsquo;язково ставлю після інсталяції системи.</p>
 <h3 id="1-google-tag-manager">1. Google Tag Manager</h3>
 <p>Дивно, що не &ldquo;з коробки&rdquo;, бо <em>Google Analytics</em> та <em>Google AdWords</em> в системі присутні.</p>
 <p>сайт: <a href="https://github.com/magepal/magento2-googletagmanager">magepal/magento2-googletagmanager</a></p>
 <p>встановлення:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">composer require magepal/magento2-googletagmanager
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">composer require magepal/magento2-googletagmanager
 php -f bin/magento module:enable --clear-static-content MagePal_GoogleTagManager
 php -f bin/magento setup:upgrade
 </code></pre></div><p>Далі в адмінку і там <em>Stores -&gt; Configuration -&gt; MagePal -&gt; Google Tag Manager</em></p>
@@ -159,7 +159,7 @@ php -f bin/magento setup:upgrade
 <p>Якщо ваша пошта на Gmail, Google App, Amazon Simple Email Service (SES), Microsoft Office365, Outlook, SparkPost, Mandrill, MailGun, SendGrid, Elastic Email, Hotmail, AOL Mail, Yahoo Mail, AT&amp;T, Verizon, Postmark, O2 Mail, Zoho, Mailjet, Mail.com (половина щоправда для нашого користувача відверта екзотика, але може комусь стане в нагоді), то налаштування не викличе ускладнень. Якщо щось не зі списку або  в вас свій сервер, то перед налаштуванням дізнайтесь номер порту та згадайте пароль до облікового запису.</p>
 <p>сайт: <a href="https://github.com/magepal/magento2-gmailsmtpapp">magepal/magento2-gmailsmtpapp</a></p>
 <p>встановлення:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">composer require magepal/magento2-gmailsmtpapp
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">composer require magepal/magento2-gmailsmtpapp
 php -f bin/magento module:enable --clear-static-content MagePal_GmailSmtpApp
 php -f bin/magento setup:upgrade
 php -f bin/magento setup:static-content:deploy
@@ -169,14 +169,14 @@ php -f bin/magento cache:flush
 <p>Модуль, що дозволяє обирати в фільтрах 2 і більше значень одного атрибута (наприклад, одночасно показати сині і червоні светри).</p>
 <p>сайт: <a href="https://www.manadev.com/magento-extensions/layered-navigation-filters-multiple-select-magento-2">Multiple Select Layered Navigation (Filters) for Magento 2</a></p>
 <p>встановлення:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">розпаковуємо архів
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">розпаковуємо архів
 php -f bin/mana
 php bin/magento setup:static-content:deploy
 </code></pre></div><h3 id="4-price-decimal-precision">4. Price Decimal Precision</h3>
 <p>Якщо не плануєте використовувати копійки в цінах, то ось вам модуль.</p>
 <p>сайт: <a href="https://github.com/lillik/magento2-price-decimal">Magento 2 Extension: Price Decimal Precision</a></p>
 <p>встановлення:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">php composer.phar require lillik/magento2-price-decimal
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">php composer.phar require lillik/magento2-price-decimal
 </code></pre></div><p>Далі відключаємо копійки через адмінку <em>Stores -&gt; Configuration -&gt; Catalog -&gt; Simple Price Decimal (Precision)</em>.</p>
 <h3 id="5-one-page-checkout-m2-by-elitech-systems-pvt-ltd">5. One Page Checkout M2 by Elitech Systems Pvt Ltd</h3>
 <p>Розробники Magento 2 нарешті припинили писати сагу під назвою &ldquo;6 кроків до здійснення покупки. Спогади щасливого покупця&rdquo; та змінили процес оформлення замовлень на &hellip; (тут має бути барабанний дріб) <strong>двоетапний</strong>. Двоетапний, Карле, двоетапний!!! Чому? Ну фіг знає, може в Magento 3 буде односторінкове замовлення. Але якщо у вас немає часу чекати, то скористайтесь модулем One Page Checkout M2 by Elitech Systems Pvt Ltd.</p>
@@ -245,13 +245,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/nginx-geoip/">Блокування трафіку з окремих країн за допомогою Nginx та GeoIP</a></li>            
+          <li><a href="https://bender.kr.ua/local-ssl-certificate/">Встановлення локального SSL-сертифікату</a></li>            
         
           <li><a href="https://bender.kr.ua/howto-asterisk-part-6.1/">IP-телефонія на базі Asterisk. Частина 6.1: Додаткові функції Asterisk. Паркування дзвінка.</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-install-django-mysql-debian-9/">Встановлення зв&#39;язки Django та MySQL на Debian 9</a></li>            
+          <li><a href="https://bender.kr.ua/howto-install-munin/">Простий моніторинг роботи сервера за допомогою Munin</a></li>            
         
-          <li><a href="https://bender.kr.ua/magick-248/">Магічне число 248 або Чому я не можу додати значення атрибута в Magento 2?</a></li>            
+          <li><a href="https://bender.kr.ua/magento-2-reindex-parallel/">Паралельна індексація в Magento 2</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -317,7 +317,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">11 хв</span>
+        <span class="reading-time">2 хв</span>
       </footer>
     </div>
 </article>

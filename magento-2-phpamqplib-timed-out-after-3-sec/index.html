@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1480554840075-72cbdabbf689?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"/>
 
 
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -145,19 +145,19 @@
 
     <section class="post-full-content">
         <div class="kg-card-markdown">
-        <p>При переносі сайту на інший сервер стикнувся з досить неприємною проблемою. При роботі з чергами постійно обривалося з'єднання. В логах таке повідомлення <em>The connection timed out after 3 sec while awaiting incoming data at /magento/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/AMQPReader.php:142</em>.</p>
-<p>Гуглення натякало, що проблеми у інших користувачів Magento якщо і з'являються, то пов'язані з невірно вказаним портом для підключення. І це був не мій випадок, отже проблема поза межами Magento 2.</p>
+        <p>При переносі сайту на інший сервер стикнувся з досить неприємною проблемою. При роботі з чергами постійно обривалося з&rsquo;єднання. В логах таке повідомлення <em>The connection timed out after 3 sec while awaiting incoming data at /magento/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/AMQPReader.php:142</em>.</p>
+<p>Гуглення натякало, що проблеми у інших користувачів Magento якщо і з&rsquo;являються, то пов&rsquo;язані з невірно вказаним портом для підключення. І це був не мій випадок, отже проблема поза межами Magento 2.</p>
 <p>Оновлення до останньої версії rabbitmq-server нічого не змінило.</p>
-<p>На правильну відповідь наштовхнула стаття <a href="https://www.getpagespeed.com/server-setup/how-to-fix-consumer-async-operations-all-skipped-as-required-connection-amqp-is-not-configured-unknown-connection-name-amqp-in-magento-2,">https://www.getpagespeed.com/server-setup/how-to-fix-consumer-async-operations-all-skipped-as-required-connection-amqp-is-not-configured-unknown-connection-name-amqp-in-magento-2,</a> а саме розділ про встановлення rabbitmq на сервер. Щоб все працювало як належить, треба щоб rabbitmq міг визначити FQDN хоста та/або знайти відповідний запис в /etc/hosts. Ось тут і була засада.</p>
-<pre><code># rabbitmq-diagnostics server_version
+<p>На правильну відповідь наштовхнула стаття <a href="https://www.getpagespeed.com/server-setup/how-to-fix-consumer-async-operations-all-skipped-as-required-connection-amqp-is-not-configured-unknown-connection-name-amqp-in-magento-2">https://www.getpagespeed.com/server-setup/how-to-fix-consumer-async-operations-all-skipped-as-required-connection-amqp-is-not-configured-unknown-connection-name-amqp-in-magento-2</a>, а саме розділ про встановлення rabbitmq на сервер. Щоб все працювало як належить, треба щоб rabbitmq міг визначити FQDN хоста та/або знайти відповідний запис в /etc/hosts. Ось тут і була засада.</p>
+<pre tabindex="0"><code># rabbitmq-diagnostics server_version
 
 Asking node rabbit@myserver for its RabbitMQ version...
 3.9.14
 </code></pre><p>RabbitMQ намагався визначити адресу <em>myserver</em> і нічого з того не було ))). Додав відповідний запис в /etc/hosts</p>
-<pre><code># cat /etc/hosts
+<pre tabindex="0"><code># cat /etc/hosts
 
 127.0.0.1 myserver
-</code></pre><p>Після цього черги в Magento 2 запрацювали. Помилка звичайно тупа: на уважність і слідування інструкціям, але кілька днів у мене з'їла.</p>
+</code></pre><p>Після цього черги в Magento 2 запрацювали. Помилка звичайно тупа: на уважність і слідування інструкціям, але кілька днів у мене з&rsquo;їла.</p>
     
         </div>
     </section>
@@ -220,13 +220,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/fix-conflict-keyboard-shortcuts/">Не працюють комбінації клавіш CTRL-SHIFT в Ubuntu</a></li>            
+          <li><a href="https://bender.kr.ua/magento-2-cron-indexer-repair/">Magento 2: не працює індексація за розкладом</a></li>            
         
-          <li><a href="https://bender.kr.ua/year-in-books-2020/">Мій книжковий 2020 рік</a></li>            
+          <li><a href="https://bender.kr.ua/mining-karbowanec/">Як я місяць майнив криптовалюту за допомогою ноутбуку, навіщо мені це та що з того вийшло</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-asterisk-part-6.1/">IP-телефонія на базі Asterisk. Частина 6.1: Додаткові функції Asterisk. Паркування дзвінка.</a></li>            
+          <li><a href="https://bender.kr.ua/df-and-du-show-different-values/">df і du показують різні значення</a></li>            
         
-          <li><a href="https://bender.kr.ua/installing-python-3-6-on-debian-8/">Встановлення Python 3.6 на Debian 8</a></li>            
+          <li><a href="https://bender.kr.ua/magento2-reindexer-for-large-catalog/">Проблема переіндексації великого каталогу в Magento 2</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -262,7 +262,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">1 хв</span>
+        <span class="reading-time">0 хв</span>
       </footer>
     </div>
 </article>
@@ -293,7 +293,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">2 хв</span>
+        <span class="reading-time">1 хв</span>
       </footer>
     </div>
 </article>

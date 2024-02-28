@@ -6,24 +6,17 @@
     <description>Recent content in linux on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>uk</language>
-    <lastBuildDate>Mon, 06 Mar 2023 17:22:09 +0200</lastBuildDate>
-    
-	<atom:link href="https://bender.kr.ua/tags/linux/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 04 Jan 2024 11:43:11 +0200</lastBuildDate><atom:link href="https://bender.kr.ua/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Міграція з iptables на nftables</title>
-      <link>https://bender.kr.ua/migration-from-iptables-to-nftables/</link>
-      <pubDate>Mon, 06 Mar 2023 17:22:09 +0200</pubDate>
+      <title>Встановлення локального SSL-сертифікату</title>
+      <link>https://bender.kr.ua/local-ssl-certificate/</link>
+      <pubDate>Thu, 04 Jan 2024 11:43:11 +0200</pubDate>
       
-      <guid>https://bender.kr.ua/migration-from-iptables-to-nftables/</guid>
-      <description>nftables - типовий і рекомендований фреймворк брандмауера в Debian (починаючи з Debian 10 Buster), який замінює старі інструменти iptables (і пов’язані з ними).
-Спробуємо мігрувати старі правила для iptables (https://bender.kr.ua/howto-lemp-install/ - див. 2.1) на nftables.
-Спочатку активуємо сервіс nftables:
-systemctl enable nftables Зберігаємо існуючі правила з iptables:
-iptables-save &amp;gt; iptables.rules і транслюємо їх у правила nftables:
-iptables-restore-translate -f iptables.rules &amp;gt; nftables.rules Результатом буде список правил в файлі nftables.rules:
-add table ip filter add chain ip filter INPUT { type filter hook input priority 0; policy accept; } add chain ip filter FORWARD { type filter hook forward priority 0; policy accept; } add chain ip filter OUTPUT { type filter hook output priority 0; policy accept; } add rule ip filter INPUT iifname &amp;#34;lo&amp;#34; counter accept add rule ip filter INPUT iifname !</description>
+      <guid>https://bender.kr.ua/local-ssl-certificate/</guid>
+      <description>Для тестування локально сайтів і web-застосунків, які потребують для роботи ssl-сертифікатів, я використовую mkcert.
+Встановлення sudo apt install mkcert libnss3-tools Використання Додаємо mkcert в свої локальні кореневі центри сертифікації:
+mkcert -install The local CA is already installed in the system trust store! 👍 The local CA is already installed in the Firefox and/or Chrome/Chromium trust store! 👍 Створюємо сертифікат для локального сайту:
+cd /var/www/site-name/ mkcert site-name.local Created a new certificate valid for the following names 📜 - &amp;quot;site-name.</description>
     </item>
     
     <item>
@@ -34,7 +27,7 @@ add table ip filter add chain ip filter INPUT { type filter hook input priority 
       <guid>https://bender.kr.ua/multiple-rabbitmq-instances/</guid>
       <description>Для запуску кількох інстансів RabbitMQ на різних портах достатньо відредагувати/створити systemd-юніт.
 # /lib/systemd/system/rabbitmq-server.service [Unit] Description=RabbitMQ broker After=network.target epmd@0.0.0.0.socket Wants=network.target epmd@0.0.0.0.socket [Service] Type=notify User=rabbitmq Group=rabbitmq UMask=0027 NotifyAccess=all TimeoutStartSec=600 LimitNOFILE=32768 Restart=on-failure RestartSec=10 WorkingDirectory=/var/lib/rabbitmq Environment=&amp;#34;RABBITMQ_NODE_PORT=5672&amp;#34; Environment=&amp;#34;RABBITMQ_NODENAME=rabbit1@localhost&amp;#34; ExecStart=/usr/lib/rabbitmq/bin/rabbitmq-server ExecStop=/usr/lib/rabbitmq/bin/rabbitmqctl -n rabbit1@localhost shutdown SuccessExitStatus=69 [Install] WantedBy=multi-user.target Від юніту з коробки цей відрізняється рядками
-Environment=&amp;#34;RABBITMQ_NODE_PORT=5672&amp;#34; Environment=&amp;#34;RABBITMQ_NODENAME=rabbit1@localhost&amp;#34; ... ExecStop=/usr/lib/rabbitmq/bin/rabbitmqctl -n rabbit1@localhost shutdown Створивши юніт /lib/systemd/system/rabbitmq-server-5673.service з RABBITMQ_NODE_PORT=5673 та RABBITMQ_NODENAME=rabbit2@localhost, можна запустити другу копію RabbitMQ на порту 5673. А потім третю, четверту, п&#39;яту &amp;hellip;</description>
+Environment=&amp;#34;RABBITMQ_NODE_PORT=5672&amp;#34; Environment=&amp;#34;RABBITMQ_NODENAME=rabbit1@localhost&amp;#34; ... ExecStop=/usr/lib/rabbitmq/bin/rabbitmqctl -n rabbit1@localhost shutdown Створивши юніт /lib/systemd/system/rabbitmq-server-5673.service з RABBITMQ_NODE_PORT=5673 та RABBITMQ_NODENAME=rabbit2@localhost, можна запустити другу копію RabbitMQ на порту 5673. А потім третю, четверту, п&amp;rsquo;яту &amp;hellip;</description>
     </item>
     
     <item>
@@ -43,8 +36,8 @@ Environment=&amp;#34;RABBITMQ_NODE_PORT=5672&amp;#34; Environment=&amp;#34;RABBI
       <pubDate>Tue, 29 Mar 2022 15:53:57 +0300</pubDate>
       
       <guid>https://bender.kr.ua/magento-2-phpamqplib-timed-out-after-3-sec/</guid>
-      <description>При переносі сайту на інший сервер стикнувся з досить неприємною проблемою. При роботі з чергами постійно обривалося з&#39;єднання. В логах таке повідомлення The connection timed out after 3 sec while awaiting incoming data at /magento/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/AMQPReader.php:142.
-Гуглення натякало, що проблеми у інших користувачів Magento якщо і з&#39;являються, то пов&#39;язані з невірно вказаним портом для підключення. І це був не мій випадок, отже проблема поза межами Magento 2.
+      <description>При переносі сайту на інший сервер стикнувся з досить неприємною проблемою. При роботі з чергами постійно обривалося з&amp;rsquo;єднання. В логах таке повідомлення The connection timed out after 3 sec while awaiting incoming data at /magento/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/AMQPReader.php:142.
+Гуглення натякало, що проблеми у інших користувачів Magento якщо і з&amp;rsquo;являються, то пов&amp;rsquo;язані з невірно вказаним портом для підключення. І це був не мій випадок, отже проблема поза межами Magento 2.
 Оновлення до останньої версії rabbitmq-server нічого не змінило.</description>
     </item>
     
@@ -117,7 +110,7 @@ apt install dirmngr Оновлюємо список пакетів  apt update �
       <pubDate>Tue, 24 Dec 2019 09:58:19 +0000</pubDate>
       
       <guid>https://bender.kr.ua/iptables-ipset/</guid>
-      <description>Для захисту від DDOS-атак або паразитного трафіку, блокування на рівні сервера, а не nginx (як наприклад тут - https://bender.kr.ua/nginx-geoip/) , є більш ефективним. Тому, якщо у вас виникла потреба блокувати IP з певних країн і не існує інших застережень, варто скористатись зв&#39;язкою iptables + ipset.
+      <description>Для захисту від DDOS-атак або паразитного трафіку, блокування на рівні сервера, а не nginx (як наприклад тут - https://bender.kr.ua/nginx-geoip/) , є більш ефективним. Тому, якщо у вас виникла потреба блокувати IP з певних країн і не існує інших застережень, варто скористатись зв&amp;rsquo;язкою iptables + ipset.
 Для початку встановлюємо ipset:
 apt-get install ipset Створюємо скрипт, який буде оновлювати таблюцю адрес для блокування. Списки IP за приналежністю до країни, можна взяти на сайті ipdeny.</description>
     </item>
@@ -187,7 +180,7 @@ sudo ln -sfr /usr/lib/sane/libsane-epkowa* /usr/lib/x86_64-linux-gnu/sane та �
       
       <guid>https://bender.kr.ua/howto-asterisk-part-1/</guid>
       <description>Цикл статей по розгортанню IP-телефонії на базі Asterisk. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Робота була захищена, сертифікат отриманий, все написане тестувалось і є повтінстю робочою реалізацією. Інформація в статті і версії програмного забезбечення актуальні на 2017 рік.
-Середовище Операційна система встановлена з образу CentOS-7-i386-Minimal-1611.iso. Им&#39;я сервера asterisk-centos.localhost.local. Адреса сервера в локальній мережі 192.168.1.201.
+Середовище Операційна система встановлена з образу CentOS-7-i386-Minimal-1611.iso. Им&amp;rsquo;я сервера asterisk-centos.localhost.local. Адреса сервера в локальній мережі 192.168.1.201.
 Встановлення сервера Asterisk 1.1 Підготовка середовища Розширюємо bash, встановлюємо vim и пакет wget для скачування архівів з сирцевим кодом:</description>
     </item>
     
@@ -316,7 +309,7 @@ nginx -t nginx -s reload Отримуємо сертифікати</description>
       <pubDate>Thu, 16 May 2019 07:09:58 +0000</pubDate>
       
       <guid>https://bender.kr.ua/howto-lemp-install/</guid>
-      <description>Покрокова інструкція по встановленню і запуску зв&#39;язки LEMP (Linux + Nginx + MySQL + PHP).
+      <description>Покрокова інструкція по встановленню і запуску зв&amp;rsquo;язки LEMP (Linux + Nginx + MySQL + PHP).
 1. Оновлення системи Оновлюємо версії ПЗ до актуального стану
 apt-get update apt-get upgrade 2. Налаштування захисту 2.1 iptables Спочатку встановлюю mc. Для тих у кого в цей момент засвербіло &amp;ldquo;mc - для лохів, vim - наше всьо, nano рулить&amp;rdquo; - поцілуйте мій блискучий металевий зад (С).
 apt-get install mc update-alternatives --config editor Створюємо правила файервола</description>

@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1629654291663-b91ad427698f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80"/>
 
 
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -146,19 +146,19 @@
     <section class="post-full-content">
         <div class="kg-card-markdown">
         <h1 id="if">if</h1>
-<pre><code>if TEST-COMMAND
+<pre tabindex="0"><code>if TEST-COMMAND
 then
   STATEMENTS
 fi
 </code></pre><h1 id="ifelse">if..else</h1>
-<pre><code>if TEST-COMMAND
+<pre tabindex="0"><code>if TEST-COMMAND
 then
   STATEMENTS1
 else
   STATEMENTS2
 fi
 </code></pre><h1 id="ifelifelse">if..elif..else</h1>
-<pre><code>if TEST-COMMAND1
+<pre tabindex="0"><code>if TEST-COMMAND1
 then
   STATEMENTS1
 elif TEST-COMMAND2
@@ -168,7 +168,7 @@ else
   STATEMENTS3
 fi
 </code></pre><h1 id="оператори-test">Оператори test</h1>
-<pre><code>test EXPRESSION
+<pre tabindex="0"><code>test EXPRESSION
 [ EXPRESSION ]
 [[ EXPRESSION ]]
 </code></pre><p>Щоб зробити скрипт переносимим, слід надати перевагу команді <strong>test</strong> або її скороченому запису <strong>[ ]</strong> (одинарні дужки), оскільки вона доступна у всіх оболонках POSIX.</p>
@@ -177,73 +177,73 @@ fi
 <table>
 <thead>
 <tr>
-<th align="center">Оператор</th>
+<th style="text-align:center">Оператор</th>
 <th>Коментар</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">-n VAR</td>
+<td style="text-align:center">-n VAR</td>
 <td><em>true</em>, якщо довжина VAR більша за нуль</td>
 </tr>
 <tr>
-<td align="center">-z VAR</td>
+<td style="text-align:center">-z VAR</td>
 <td><em>true</em>, якщо VAR порожній</td>
 </tr>
 <tr>
-<td align="center">STRING1 = STRING2</td>
+<td style="text-align:center">STRING1 = STRING2</td>
 <td><em>true</em>, якщо STRING1 і STRING2 рівні</td>
 </tr>
 <tr>
-<td align="center">STRING1 != STRING2</td>
+<td style="text-align:center">STRING1 != STRING2</td>
 <td><em>true</em>, якщо STRING1 і STRING2 не рівні</td>
 </tr>
 <tr>
-<td align="center">INTEGER1 -eq INTEGER2</td>
+<td style="text-align:center">INTEGER1 -eq INTEGER2</td>
 <td><em>true</em>, якщо INTEGER1 і INTEGER2 рівні</td>
 </tr>
 <tr>
-<td align="center">INTEGER1 -gt INTEGER2</td>
+<td style="text-align:center">INTEGER1 -gt INTEGER2</td>
 <td><em>true</em>, якщо INTEGER1 більше ніж INTEGER2</td>
 </tr>
 <tr>
-<td align="center">INTEGER1 -lt INTEGER2</td>
+<td style="text-align:center">INTEGER1 -lt INTEGER2</td>
 <td><em>true</em>, якщо INTEGER1 менше ніж INTEGER2</td>
 </tr>
 <tr>
-<td align="center">INTEGER1 -ge INTEGER2</td>
+<td style="text-align:center">INTEGER1 -ge INTEGER2</td>
 <td><em>true</em>, якщо INTEGER1 дорівнює або більше INTEGER2</td>
 </tr>
 <tr>
-<td align="center">INTEGER1 -le INTEGER2</td>
+<td style="text-align:center">INTEGER1 -le INTEGER2</td>
 <td><em>true</em>, якщо INTEGER1 дорівнює або менше INTEGER2</td>
 </tr>
 <tr>
-<td align="center">-h FILE</td>
+<td style="text-align:center">-h FILE</td>
 <td><em>true</em>, якщо FILE і снує і є символічним посиланням</td>
 </tr>
 <tr>
-<td align="center">-r FILE</td>
+<td style="text-align:center">-r FILE</td>
 <td><em>true</em>, якщо FILE існує і доступний для читання</td>
 </tr>
 <tr>
-<td align="center">-w FILE</td>
+<td style="text-align:center">-w FILE</td>
 <td><em>true</em>, якщо FILE існує і доступний для запису</td>
 </tr>
 <tr>
-<td align="center">-x FILE</td>
+<td style="text-align:center">-x FILE</td>
 <td><em>true</em>, якщо FILE існує і є виконуваним</td>
 </tr>
 <tr>
-<td align="center">-d FILE</td>
+<td style="text-align:center">-d FILE</td>
 <td><em>true</em>, якщо FILE існує і є каталогом</td>
 </tr>
 <tr>
-<td align="center">-e FILE</td>
+<td style="text-align:center">-e FILE</td>
 <td><em>true</em>, якщо FILE існує і є файлом, незалежно від типу (вузол, каталог, сокет тощо)</td>
 </tr>
 <tr>
-<td align="center">-f FILE</td>
+<td style="text-align:center">-f FILE</td>
 <td><em>true</em> , якщо файл FILE існує і є звичайним файлом (не каталогом чи пристроєм)</td>
 </tr>
 </tbody>
@@ -310,13 +310,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/howto-asterisk-part-5/">IP-телефонія на базі Asterisk. Частина 5: Деталізований звіт про виклики (Call Detail Records, CDR)</a></li>            
+          <li><a href="https://bender.kr.ua/letsencrypt-and-ipv6/">Помилка при оновлені сертифікатів від Let&#39;s Encrypt</a></li>            
         
-          <li><a href="https://bender.kr.ua/configurable-crontab-magento2/">Magento2: налаштування періодичних завдань власного модуля через адмін-панель</a></li>            
+          <li><a href="https://bender.kr.ua/fail2ban-unban-ip/">Як розблокувати себе в fail2ban</a></li>            
         
-          <li><a href="https://bender.kr.ua/nginx-pagespeed-openssl/">Як я готую NGINX з модулем PAGESPEED</a></li>            
+          <li><a href="https://bender.kr.ua/netbeans-and-fonts/">NetBeans і проблема зі шрифтами</a></li>            
         
-          <li><a href="https://bender.kr.ua/puppeteer-with-authorization/">&#34;Прогрівання&#34; кешу для закритих частин сайту за допомогою Puppeteer</a></li>            
+          <li><a href="https://bender.kr.ua/review-neal-stephenson-in-the-beginning-was-the-command-line/">Ніл Стівенсон. Спочатку був командний рядок</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -353,7 +353,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">2 хв</span>
+        <span class="reading-time">0 хв</span>
       </footer>
     </div>
 </article>
@@ -383,7 +383,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">1 хв</span>
+        <span class="reading-time">0 хв</span>
       </footer>
     </div>
 </article>

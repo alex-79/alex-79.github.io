@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1560579499-ab30d29dfd9a?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -155,20 +155,20 @@
 <h2 id="41-створення-багаторівневого-голосового-меню">4.1 Створення багаторівневого голосового меню</h2>
 <p>Створюємо голосове меню з 3 рівнями:</p>
 <ol>
-<li><em>Головне меню</em> - вітання, пропозиція набрати додатковий номер для дозвону в конкретний відділ компанії (1 - відділ продажів, 2 - відділ закупівель, 3 - питання доставки, 4 - з'єднання з секретарем, 5 - залишити голосове повідомлення, 0 - повторити меню).
+<li><em>Головне меню</em> - вітання, пропозиція набрати додатковий номер для дозвону в конкретний відділ компанії (1 - відділ продажів, 2 - відділ закупівель, 3 - питання доставки, 4 - з&rsquo;єднання з секретарем, 5 - залишити голосове повідомлення, 0 - повторити меню).
 <ol>
-<li><em>Меню відділу продажів</em> - пропозиція набрати додатковий номер для з'єднання з фахівцем з конкретної товарної групи (1 - питання і консультації по товарній групі 1, 2 - питання і консультації по товарній групі 2, 3 - з'єднання з оператором, 0 - повторити меню, 9 - повернутися до попереднього меню).</li>
-<li><em>Меню відділу закупівель</em> - пропозиція набрати додатковий номер для з'єднання з фахівцем із закупівель (1 - з'єднання з персональним менеджером, 2 - пропозиції щодо співпраці, 0 - повторити меню, 9 - повернутися до попереднього меню).
+<li><em>Меню відділу продажів</em> - пропозиція набрати додатковий номер для з&rsquo;єднання з фахівцем з конкретної товарної групи (1 - питання і консультації по товарній групі 1, 2 - питання і консультації по товарній групі 2, 3 - з&rsquo;єднання з оператором, 0 - повторити меню, 9 - повернутися до попереднього меню).</li>
+<li><em>Меню відділу закупівель</em> - пропозиція набрати додатковий номер для з&rsquo;єднання з фахівцем із закупівель (1 - з&rsquo;єднання з персональним менеджером, 2 - пропозиції щодо співпраці, 0 - повторити меню, 9 - повернутися до попереднього меню).
 <ol>
-<li><em>Меню вибору додаткового номера менеджера із закупівель</em> (1 - з'єднання з менеджером 1, 2 - з'єднання з менеджером 2, 0 - повторити меню, 9 - повернутися до попереднього меню, 8 - перейти в головне меню).</li>
+<li><em>Меню вибору додаткового номера менеджера із закупівель</em> (1 - з&rsquo;єднання з менеджером 1, 2 - з&rsquo;єднання з менеджером 2, 0 - повторити меню, 9 - повернутися до попереднього меню, 8 - перейти в головне меню).</li>
 </ol>
 </li>
-<li><em>Меню для питань пов'язаних з доставкою</em> - пропозиція набрати додатковий номер для уточнення питань комплектації і доставки замовлень (1 - дізнатися статус замовлення за номером, 2 - з'єднання з оператором, 0 - повторити меню, 9 - повернутися до попереднього меню).</li>
+<li><em>Меню для питань пов&rsquo;язаних з доставкою</em> - пропозиція набрати додатковий номер для уточнення питань комплектації і доставки замовлень (1 - дізнатися статус замовлення за номером, 2 - з&rsquo;єднання з оператором, 0 - повторити меню, 9 - повернутися до попереднього меню).</li>
 </ol>
 </li>
 </ol>
 <p>Описуємо вищевказане меню:</p>
-<pre><code>; головне меню
+<pre tabindex="0"><code>; головне меню
 [ivr-mainmenu] 
 exten =&gt; s,1,Answer() 
 exten =&gt; s,2,Background(ivr/welcome) ; вітання
@@ -287,13 +287,13 @@ exten =&gt; i,1,Goto(s,1)
 ; по таймауту пропонуємо ще раз зробити вибір
 exten =&gt; t,1,Goto(s,2)
 </code></pre><p>Змінюємо контекст вхідних дзвінків із зовнішніх ліній (умовно на номер <em>YYYYYY</em>):</p>
-<pre><code>;вхідні звінки із зовнішніх ліній
+<pre tabindex="0"><code>;вхідні звінки із зовнішніх ліній
 [call-in]
 exten =&gt; YYYYYY,1,Set(RECORDING=1)
 exten =&gt; YYYYYY,1,Macro(recording,${CALLERID(num)},${EXTEN})
 exten =&gt; YYYYYY,n,Goto(ivr-mainmenu,s,1) ; всі вхідні дзвінки адресуються на голосове меню
 </code></pre><p>Файли для голосового меню зберігаємо в директорію <em>/var/lib/asterisk/sounds/en/ivr</em></p>
-<pre><code>[root@asterisk-centos en]# ls -l /var/lib/asterisk/sounds/en/ivr
+<pre tabindex="0"><code>[root@asterisk-centos en]# ls -l /var/lib/asterisk/sounds/en/ivr
 итого 1156
 -rw-r--r-- 1 asterisk asterisk 171404 Май  7 10:56 buyingmenu-1.wav
 -rw-r--r-- 1 asterisk asterisk 158924 Май  7 10:57 buyingmenu-2.wav
@@ -305,7 +305,7 @@ exten =&gt; YYYYYY,n,Goto(ivr-mainmenu,s,1) ; всі вхідні дзвінки
 -rw-r--r-- 1 asterisk asterisk 175244 Май  7 10:58 warehousemenu.wav
 -rw-r--r-- 1 asterisk asterisk  30284 Май  7 10:51 welcome.wav
 </code></pre><p>Перевіряємо работу голосового меню:</p>
-<pre><code>asterisk-centos*CLI&gt; 
+<pre tabindex="0"><code>asterisk-centos*CLI&gt; 
   == Using SIP RTP CoS mark 5
     -- Executing [YYYYYY@call-in:1] Set(&quot;SIP/zadarma-00000000&quot;, &quot;RECORDING=1&quot;) in new stack
     -- Executing [YYYYYY@call-in:2] Goto(&quot;SIP/zadarma-00000000&quot;, &quot;ivr-mainmenu,s,1&quot;) in new stack
@@ -345,9 +345,9 @@ exten =&gt; YYYYYY,n,Goto(ivr-mainmenu,s,1) ; всі вхідні дзвінки
   == Spawn extension (ivr-mainmenu, s, 6) exited non-zero on 'SIP/zadarma-00000000'
 </code></pre><h2 id="42-налаштування-голосовї-пошти">4.2 Налаштування голосовї пошти</h2>
 <p>Встановимо пакет <em>ssmtp</em> для відправлення повідомлень на електронну пошту:</p>
-<pre><code>yum install http://dl.fedoraproject.org/pub/fedora/linux/releases/25/Everything/i386/os/Packages/s/ssmtp-2.64-16.fc24.i686.rpm
+<pre tabindex="0"><code>yum install http://dl.fedoraproject.org/pub/fedora/linux/releases/25/Everything/i386/os/Packages/s/ssmtp-2.64-16.fc24.i686.rpm
 </code></pre><p>Налаштовуємо відправлення через обліковий запис на <em>pdd.yandex.ru</em>. (<strong>!!! Ніякої &ldquo;зради&rdquo;, на момент виконання проекту яндекс ще не був заблокований, тому пишу все як було, принципово налаштування для інших поштових сервісів будуть мало чим відрізнятись !!!</strong>) Змінюємо файл <em>/etc/ssmtp/ssmtp.conf:</em></p>
-<pre><code>mailhub=smtp.yandex.ru:465
+<pre tabindex="0"><code>mailhub=smtp.yandex.ru:465
 UseTLS=YES
 AuthUser=login@my-company.com.ua
 AuthPass=password 
@@ -357,9 +357,9 @@ FromLineOverride=NO
 Root=login@my-company.com.ua
 TLS_CA_File=/etc/pki/tls/certs/ca-bundle.crt
 </code></pre><p>В файл <em>/etc/ssmtp/revaliases</em> додаємо рядок:</p>
-<pre><code>root:login@my-company.com.ua:smtp.yandex.ru:465
+<pre tabindex="0"><code>root:login@my-company.com.ua:smtp.yandex.ru:465
 </code></pre><p>В файлі <em>/etc/asterisk/voicemail.conf</em> налаштовуємо голосову пошту в Asterisk:</p>
-<pre><code>[general] 
+<pre tabindex="0"><code>[general] 
 format = wav 
 attach = yes 
 delete = yes 
@@ -376,10 +376,10 @@ fromstring=VoiceMail
 [default] 
 601 =&gt; 123456,office,login@my-company.com.ua,attach=yes
 </code></pre><p>Для доступу до голосової пошти додаємо в контекст внутрішніх ліній наступний рядок:</p>
-<pre><code>exten =&gt; 999,1,VoiceMailMain()
+<pre tabindex="0"><code>exten =&gt; 999,1,VoiceMailMain()
 </code></pre><h2 id="43-налаштування-виводу-голосових-повідомлень-festival">4.3 Налаштування виводу голосових повідомлень (Festival)</h2>
 <p>Для програвання тексту встановимо пакет <em>Festival</em>:</p>
-<pre><code>cd /usr/src 
+<pre tabindex="0"><code>cd /usr/src 
 wget http://www.cstr.ed.ac.uk/downloads/festival/2.4/speech_tools-2.4-release.tar.gz
 wget http://www.cstr.ed.ac.uk/downloads/festival/2.4/festival-2.4-release.tar.gz
 tar zxvf festival-2.4-release.tar.gz
@@ -392,16 +392,16 @@ cd festival
 ./configure  
 make &amp;&amp; make install
 </code></pre><p>Додаємо в PATH шлях до бінарного файла festival:</p>
-<pre><code>export PATH=$PATH:/usr/src/festival/bin/
+<pre tabindex="0"><code>export PATH=$PATH:/usr/src/festival/bin/
 </code></pre><p>Встановлюємо мовні файли:</p>
-<pre><code>mkdir /usr/src/festival/lib/voices/ 
+<pre tabindex="0"><code>mkdir /usr/src/festival/lib/voices/ 
 mkdir /usr/src/festival/lib/voices/russian/
 cd /usr/src/ 
 wget http://sourceforge.net/projects/festlang.berlios/files/msu_ru_nsh_clunits-0.5.tar.bz2 
 tar xjfv msu_ru_nsh_clunits-0.5.tar.bz2 
 mv /usr/src/msu_ru_nsh_clunits/ /usr/src/festival/lib/voices/russian
 </code></pre><p>Далі додаємо на початок файлу <em>/usr/src/festival/lib/languages.scm</em></p>
-<pre><code>(define (language_russian)  
+<pre tabindex="0"><code>(define (language_russian)  
 &quot;(language_russian)   
 Set up language parameters for Russian.&quot;   
 (set! male1 voice_msu_ru_nsh_clunits)   
@@ -409,27 +409,27 @@ Set up language parameters for Russian.&quot;
 (Parameter.set 'Language 'russian) 
 )
 </code></pre><p>додаємо перед</p>
-<pre><code>((equal? language 'americanenglish)
+<pre tabindex="0"><code>((equal? language 'americanenglish)
     (language_american_english))
 </code></pre><p>наступний код</p>
-<pre><code>((equal? language 'russian)
+<pre tabindex="0"><code>((equal? language 'russian)
     (language_russian))      
 </code></pre><p>Встановлюємо мову на замовчування в файлі <em>/usr/src/festival/lib/siteinit.scm</em></p>
-<pre><code>(set! voice_default 'voice_msu_ru_nsh_clunits)
+<pre tabindex="0"><code>(set! voice_default 'voice_msu_ru_nsh_clunits)
 </code></pre><p>Конфігураційний файл <em>/etc/asterisk/festival.conf</em>:</p>
-<pre><code>[general] 
+<pre tabindex="0"><code>[general] 
 host=localhost 
 port=1314 
 usecache=yes 
 cachedir=/var/lib/asterisk/festivalcache/ 
 festivalcommand=(tts_textasterisk &quot;%s&quot; 'file)(quit)\n
 </code></pre><p>Для зберігання кешу створюємо відповідну папку</p>
-<pre><code>mkdir /var/lib/asterisk/festivalcache/
+<pre tabindex="0"><code>mkdir /var/lib/asterisk/festivalcache/
 chown asterisk. /var/lib/asterisk/festivalcache/
 </code></pre><p>Запускаємо сервер Festival</p>
-<pre><code>/usr/src/festival/bin/festival --server
+<pre tabindex="0"><code>/usr/src/festival/bin/festival --server
 </code></pre><p>Скрипт <em>checkstatus.php</em> для перевірки статуса заказу може виглядатити так:</p>
-<pre><code>&lt;?php
+<pre tabindex="0"><code>&lt;?php
 $conn = mysql_connect(&quot;localhost&quot;, &quot;mysql_user&quot;, &quot;mysql_password&quot;);
 mysql_select_db(&quot;myshop&quot;);
 //пошук статуса за номером телефону клієнта і номером замовлення
@@ -507,13 +507,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
+          <li><a href="https://bender.kr.ua/magick-248/">Магічне число 248 або Чому я не можу додати значення атрибута в Magento 2?</a></li>            
+        
           <li><a href="https://bender.kr.ua/howto-install-django-mysql-debian-9/">Встановлення зв&#39;язки Django та MySQL на Debian 9</a></li>            
         
-          <li><a href="https://bender.kr.ua/backup-with-tartarus/">Резервне копіювання і трохи грецької міфології</a></li>            
+          <li><a href="https://bender.kr.ua/howto-asterisk-part-1/">IP-телефонія на базі Asterisk. Частина 1: Встановлення сервера Asterisk</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-asterisk-part-6.1/">IP-телефонія на базі Asterisk. Частина 6.1: Додаткові функції Asterisk. Паркування дзвінка.</a></li>            
-        
-          <li><a href="https://bender.kr.ua/multiple-rabbitmq-instances/">Запуск кількох інстансів RabbitMQ на одному сервері</a></li>            
+          <li><a href="https://bender.kr.ua/new-db-in-mysql/">Створення бази даних в MySQL</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -541,14 +541,14 @@ s.setAttribute('data-timestamp', +new Date());
           </header>
           <section class="post-card-excerpt">
                
-                <p>За минулий рік я прочитав 13 книжок. Усі вони були художніми, бо до історій &lsquo;успішного успіху&rsquo; я останніми роками відношусь з великою долею скептицизму, а по роботі за минулий рік читав статті виключно з інтернету. Якщо коротко по підсумкам, то &lsquo;передозування&rsquo; Пратчеттом у 2018, не дало насолодитись ним у 2019, не все зі Стівена Кінга виявляється золотом, а магія книжок з дитинства не розвіюється навіть коли в тебе вже з'являються власні діти.</p>
+                <p>За минулий рік я прочитав 13 книжок. Усі вони були художніми, бо до історій &lsquo;успішного успіху&rsquo; я останніми роками відношусь з великою долею скептицизму, а по роботі за минулий рік читав статті виключно з інтернету. Якщо коротко по підсумкам, то &lsquo;передозування&rsquo; Пратчеттом у 2018, не дало насолодитись ним у 2019, не все зі Стівена Кінга виявляється золотом, а магія книжок з дитинства не розвіюється навіть коли в тебе вже з&rsquo;являються власні діти.</p>
               
           </section>
       </a>
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">15 хв</span>
+        <span class="reading-time">3 хв</span>
       </footer>
     </div>
 </article>
@@ -579,7 +579,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">2 хв</span>
+        <span class="reading-time">1 хв</span>
       </footer>
     </div>
 </article>

@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1566847936715-5e147ef9caec?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -152,18 +152,18 @@
 </li>
 <li>
 <p>Встановити бази GeoIP</p>
-<pre><code>apt-get install geoip-database libgeoip1
+<pre tabindex="0"><code>apt-get install geoip-database libgeoip1
 </code></pre></li>
 <li>
 <p>Оновити бази до останньої версії</p>
-<pre><code>mv /usr/share/GeoIP/GeoIP.dat /usr/share/GeoIP/GeoIP.bak
+<pre tabindex="0"><code>mv /usr/share/GeoIP/GeoIP.dat /usr/share/GeoIP/GeoIP.bak
 wget https://dl.miyuru.lk/geoip/maxmind/country/maxmind.dat.gz
 gunzip maxmind.dat.gz
 mv maxmind.dat /usr/share/GeoIP/GeoIP.dat
 </code></pre></li>
 <li>
 <p>В <em>/etc/nginx/nginx.conf</em> в секції <em>http</em> блокуємо наприклад роісію та Пакистан</p>
-<pre><code>http {
+<pre tabindex="0"><code>http {
     ...
     geoip_country /usr/share/GeoIP/GeoIP.dat;
     map $geoip_country_code $allowed_country_mysite {
@@ -174,7 +174,7 @@ mv maxmind.dat /usr/share/GeoIP/GeoIP.dat
     ...
 }
 </code></pre><p>Можно навпаки заблокувати всіх, залишити тільки Неньку</p>
-<pre><code>http {
+<pre tabindex="0"><code>http {
     ...
     geoip_country /usr/share/GeoIP/GeoIP.dat;
     map $geoip_country_code $allowed_country_mysite {
@@ -187,7 +187,7 @@ mv maxmind.dat /usr/share/GeoIP/GeoIP.dat
 </li>
 <li>
 <p>Для потрібного сайту блокуємо доступ із заборонених країн</p>
-<pre><code>server {
+<pre tabindex="0"><code>server {
     ...
     location / {
         if ($allowed_country_mysite = no) {
@@ -199,7 +199,7 @@ mv maxmind.dat /usr/share/GeoIP/GeoIP.dat
 </code></pre></li>
 <li>
 <p>Перевіряємо конфіги та перезавантажуємо конфігурацію</p>
-<pre><code>nginx -t
+<pre tabindex="0"><code>nginx -t
 nginx -s reload
 </code></pre></li>
 </ol>
@@ -272,15 +272,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-                      
+          <li><a href="https://bender.kr.ua/bash-if-else/">bash: умовний оператор if..else</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-lemp-install/">Встановлення Nginx &#43; PHP &#43; MySQL на Debian 9</a></li>            
+          <li><a href="https://bender.kr.ua/howto-asterisk-part-1/">IP-телефонія на базі Asterisk. Частина 1: Встановлення сервера Asterisk</a></li>            
         
-          <li><a href="https://bender.kr.ua/failed-to-fetch-jessie-backports-repository/">Проблема з backports репозиторієм в Debian 8</a></li>            
+          <li><a href="https://bender.kr.ua/howto-asterisk-part-3/">IP-телефонія на базі Asterisk. Частина 3: Логіка обробки дзвінків (Dialplan)</a></li>            
         
-          <li><a href="https://bender.kr.ua/configurable-crontab-magento2/">Magento2: налаштування періодичних завдань власного модуля через адмін-панель</a></li>            
-        
-          <li><a href="https://bender.kr.ua/howto-add-header-links-in-magento2/">Magento 2: як додати посилання в header.links</a></li>            
+          <li><a href="https://bender.kr.ua/howto-asterisk-part-6.1/">IP-телефонія на базі Asterisk. Частина 6.1: Додаткові функції Asterisk. Паркування дзвінка.</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -316,7 +314,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">2 хв</span>
+        <span class="reading-time">1 хв</span>
       </footer>
     </div>
 </article>
@@ -346,7 +344,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">8 хв</span>
+        <span class="reading-time">3 хв</span>
       </footer>
     </div>
 </article>

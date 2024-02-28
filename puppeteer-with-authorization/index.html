@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1432639020363-5632f7f04e0b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -148,11 +148,11 @@
         <p>Найпростіший спосіб &ldquo;прогріти&rdquo; кеш - пройтись за допомогою <em>wget</em> по карті сайту. У випадку, коли сайт чи окремі його розділи доступні лише зареєстрованим користувачам, цей спосіб не підійде.</p>
 <p>У пригоді може стати <em>Headless Chrome</em> - хром, якому не потрібно рендерити сторінку в окреме вікно (хоча він це може). Найлегший спосіб почати працювати з ним - використати <strong>puppeteer</strong>.</p>
 <p>Встановлюємо <em>Node.js</em> та <em>puppeteer</em></p>
-<pre><code>curl -sL https://deb.nodesource.com/setup_10.x | bash -
+<pre tabindex="0"><code>curl -sL https://deb.nodesource.com/setup_10.x | bash -
 apt-get install nodejs libxss1
 npm i puppeteer
 </code></pre><p>Наш краулер з авторизацією <em>crawler.js</em></p>
-<pre><code>const puppeteer = require('puppeteer');
+<pre tabindex="0"><code>const puppeteer = require('puppeteer');
 
 const C = require('./credentials');
 const USERNAME_SELECTOR = '#email';
@@ -206,17 +206,17 @@ async function crawler() {
 })();
 </code></pre><p><strong>Увага!!!</strong> Перевірте <em>executablePath</em></p>
 <p>Файл з даними для авторизації <em>credentials.js</em></p>
-<pre><code>module.exports = {
+<pre tabindex="0"><code>module.exports = {
                     url: 'https://examlpe.com.ua/customer/account/login',
                     username: 'mylogin',
                     password: 'mypassword'
                  }
 </code></pre><p>Зписок закритих адрес <em>urls.txt</em></p>
-<pre><code>https://examlpe.com.ua/test
+<pre tabindex="0"><code>https://examlpe.com.ua/test
 https://examlpe.com.ua/test2
 https://examlpe.com.ua/test2/test.html
 </code></pre><p>Запуск краулера</p>
-<pre><code>node crawler.js
+<pre tabindex="0"><code>node crawler.js
 </code></pre><h2 id="посилання">Посилання</h2>
 <ul>
 <li><a href="https://browsee.io/blog/top-tools-for-error-reporting-for-websites/">https://browsee.io/blog/top-tools-for-error-reporting-for-websites/</a></li>
@@ -285,13 +285,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/howto-asterisk-part-4/">IP-телефонія на базі Asterisk. Частина 4: Голосове меню</a></li>            
+          <li><a href="https://bender.kr.ua/upgrade-magento-232/">Оновлення Magento до версії 2.3.2</a></li>            
         
-          <li><a href="https://bender.kr.ua/why-magento/">Чому ми обираємо Magento, а не інші системи</a></li>            
+          <li><a href="https://bender.kr.ua/5-extensions-for-default-magento2/">5 розширень, які ти зобов&#39;язаний поставити на Magento 2</a></li>            
         
-          <li><a href="https://bender.kr.ua/iptables-ipset/">Блокування трафіку за допомогою iptables та ipset</a></li>            
+          <li><a href="https://bender.kr.ua/configurable-crontab-magento2/">Magento2: налаштування періодичних завдань власного модуля через адмін-панель</a></li>            
         
-          <li><a href="https://bender.kr.ua/bash-if-else/">bash: умовний оператор if..else</a></li>            
+          <li><a href="https://bender.kr.ua/how-to-exclude-dump-tables/">Вибіркове завантаження таблиць дампа в MySQL</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -358,7 +358,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">4 хв</span>
+        <span class="reading-time">1 хв</span>
       </footer>
     </div>
 </article>

@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1578164252392-83ddb77de36c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80"/>
 
 
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -146,7 +146,7 @@
     <section class="post-full-content">
         <div class="kg-card-markdown">
         <p>Для запуску кількох інстансів RabbitMQ на різних портах достатньо відредагувати/створити systemd-юніт.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># /lib/systemd/system/rabbitmq-server.service</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># /lib/systemd/system/rabbitmq-server.service</span>
 <span style="color:#f92672">[</span>Unit<span style="color:#f92672">]</span>
 Description<span style="color:#f92672">=</span>RabbitMQ broker
 After<span style="color:#f92672">=</span>network.target epmd@0.0.0.0.socket
@@ -174,12 +174,12 @@ SuccessExitStatus<span style="color:#f92672">=</span><span style="color:#ae81ff"
 <span style="color:#f92672">[</span>Install<span style="color:#f92672">]</span>
 WantedBy<span style="color:#f92672">=</span>multi-user.target
 </code></pre></div><p>Від юніту з коробки цей відрізняється рядками</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Environment<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;RABBITMQ_NODE_PORT=5672&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Environment<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;RABBITMQ_NODE_PORT=5672&#34;</span>
 Environment<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;RABBITMQ_NODENAME=rabbit1@localhost&#34;</span>
 ...
 ExecStop<span style="color:#f92672">=</span>/usr/lib/rabbitmq/bin/rabbitmqctl -n rabbit1@localhost shutdown
-</code></pre></div><p>Створивши юніт /lib/systemd/system/rabbitmq-server-5673.service з RABBITMQ_NODE_PORT=5673 та RABBITMQ_NODENAME=rabbit2@localhost, можна запустити другу копію RabbitMQ на порту 5673. А потім третю, четверту, п'яту &hellip;</p>
-<p>Отримані інстанси можна використовувати як окремі інсталяції або ж об'єднати в кластер.</p>
+</code></pre></div><p>Створивши юніт /lib/systemd/system/rabbitmq-server-5673.service з RABBITMQ_NODE_PORT=5673 та RABBITMQ_NODENAME=rabbit2@localhost, можна запустити другу копію RabbitMQ на порту 5673. А потім третю, четверту, п&rsquo;яту &hellip;</p>
+<p>Отримані інстанси можна використовувати як окремі інсталяції або ж об&rsquo;єднати в кластер.</p>
 <h2 id="посилання">Посилання</h2>
 <ul>
 <li><a href="https://www.rabbitmq.com/clustering.html#single-machine">https://www.rabbitmq.com/clustering.html#single-machine</a></li>
@@ -246,13 +246,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/magento-2-modules-and-tools/">Модулі та інструменти для роботи з Magento 2 (оновлюється)</a></li>            
-        
-          <li><a href="https://bender.kr.ua/howto-asterisk-part-4/">IP-телефонія на базі Asterisk. Частина 4: Голосове меню</a></li>            
-        
           <li><a href="https://bender.kr.ua/howto-remove-parent-category-from-url-magento-2/">Вилучення ієрархії категорій з URL в Magento 2</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-lemp-install/">Встановлення Nginx &#43; PHP &#43; MySQL на Debian 9</a></li>            
+          <li><a href="https://bender.kr.ua/df-and-du-show-different-values/">df і du показують різні значення</a></li>            
+        
+          <li><a href="https://bender.kr.ua/howto-asterisk-part-1/">IP-телефонія на базі Asterisk. Частина 1: Встановлення сервера Asterisk</a></li>            
+        
+          <li><a href="https://bender.kr.ua/git-branch/">Як забрати гілку з git</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -288,7 +288,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">2 хв</span>
+        <span class="reading-time">1 хв</span>
       </footer>
     </div>
 </article>
@@ -320,7 +320,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">2 хв</span>
+        <span class="reading-time">0 хв</span>
       </footer>
     </div>
 </article>

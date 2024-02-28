@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1466071110707-a017f96ef5c9?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -150,19 +150,19 @@
 <h1 id="підготовка-до-роботи">Підготовка до роботи</h1>
 <p>На обох серверах треба встановити borg. Для багатьох дистрибутивів встановлюється штатними засобами системи, інакше можна взяти готовий бінарник (подробиці <a href="https://borgbackup.readthedocs.io/en/stable/installation.html#distribution-package">тут</a>)</p>
 <p>Для Debian:</p>
-<pre><code>apt install borgbackup fuse
-</code></pre><p>Слід пам'ятати, що сервер і клієнт повинні мати однакові версії borg. Використання різних версій може призвести до помилок та непрацюючої резервної копії.</p>
+<pre tabindex="0"><code>apt install borgbackup fuse
+</code></pre><p>Слід пам&rsquo;ятати, що сервер і клієнт повинні мати однакові версії borg. Використання різних версій може призвести до помилок та непрацюючої резервної копії.</p>
 <p>На сервері PROD генеруємо ключ для користувача <em>myuser</em></p>
-<pre><code>ssh-keygen
+<pre tabindex="0"><code>ssh-keygen
 </code></pre><p>Потім вміст <em>.ssh/idrsa.pub</em> з PROD треба перенести до <em>.ssh/authorizedkeys</em> на BACKUP. В подальшому це дозволить автоматизувати процес створення резервної копії.</p>
 <h1 id="створення-резервної-копії">Створення резервної копії</h1>
 <p>Робота з borg подібна до роботи з git. Спочатку треба створити сховище (для прикладу сховище <em>FirstRepository</em> в домашній папці користувача <em>myuser</em> на сервері <em>backup.example.com</em>):</p>
-<pre><code>borg init -e none ssh://myuser@backup.example.com/~/FirstRepository
+<pre tabindex="0"><code>borg init -e none ssh://myuser@backup.example.com/~/FirstRepository
 </code></pre><p><em>-e none</em> показує що ми не використувуємо шифрування.</p>
 <p>Тепер створюємо резервну копію директорії <em>/var/www/mysite</em>, за виключенням папки <em>/var/www/mysite/cache</em>:</p>
-<pre><code>borg create -v --stats FirstRepository::'{now:%Y-%m-%d_%H:%M}' /var/www/mysite --exclude /var/www/mysite/cache
+<pre tabindex="0"><code>borg create -v --stats FirstRepository::'{now:%Y-%m-%d_%H:%M}' /var/www/mysite --exclude /var/www/mysite/cache
 </code></pre><p>Результатом буде:</p>
-<pre><code>------------------------------------------------------------------------------
+<pre tabindex="0"><code>------------------------------------------------------------------------------
 Archive name: 2019-09-12_10:26
 Archive fingerprint: fd84bfec85dc2aee7469112d8d0beeff06ac911a73ded047515e7b323fb04524
 Time (start): Thu, 2019-09-12 10:26:04
@@ -179,17 +179,17 @@ Chunk index:                   96581               111141
 ------------------------------------------------------------------------------
 </code></pre><p>Як видно, за рахунок дедуплікації вдалось зекономити майже 2G. Перший бекап створюється довго, наступні швидше.</p>
 <p>Щоб переглянути список бекапів:</p>
-<pre><code>borg list ssh://myuser@backup.example.com/~/FirstRepository
-</code></pre><pre><code>2019-09-12_10:26                     Thu, 2019-09-12 10:26:04
+<pre tabindex="0"><code>borg list ssh://myuser@backup.example.com/~/FirstRepository
+</code></pre><pre tabindex="0"><code>2019-09-12_10:26                     Thu, 2019-09-12 10:26:04
 2019-09-12_11:44                     Thu, 2019-09-12 11:44:01
 </code></pre><p>Щоб переглянути вміст конкретного бекапу:</p>
-<pre><code>borg list FirstRepository::2019-09-12_10:26
+<pre tabindex="0"><code>borg list FirstRepository::2019-09-12_10:26
 </code></pre><h1 id="відновлення-з-резервної-копії">Відновлення з резервної копії</h1>
 <p>Щоб відновити інформаціє з резервної копії, треба змонтувати віддалене сховище на локальну машину (в нашому випадку на PROD):</p>
-<pre><code>mkdir -p backup-restore
+<pre tabindex="0"><code>mkdir -p backup-restore
 borg mount ssh://myuser@backup.example.com/~/FirstRepository::2019-09-12_10:26 backup-restore/
 </code></pre><p>Після закінчення роботи відмонтуємо сховище</p>
-<pre><code>borg umount backup-restore
+<pre tabindex="0"><code>borg umount backup-restore
 </code></pre><h2 id="посилання">Посилання</h2>
 <ul>
 <li><a href="https://borgbackup.readthedocs.io/en/stable/">https://borgbackup.readthedocs.io/en/stable/</a></li>
@@ -259,13 +259,15 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/how-to-exclude-dump-tables/">Вибіркове завантаження таблиць дампа в MySQL</a></li>            
+          <li><a href="https://bender.kr.ua/howto-install-munin/">Простий моніторинг роботи сервера за допомогою Munin</a></li>            
         
-          <li><a href="https://bender.kr.ua/year-in-books-2019/">Мій книжковий 2019 рік</a></li>            
+          <li><a href="https://bender.kr.ua/nginx-pagespeed-openssl/">Як я готую NGINX з модулем PAGESPEED</a></li>            
         
-          <li><a href="https://bender.kr.ua/quick-start-with-jenkins-in-docker/">Швидкий старт Jenkins в Debian 10 за допомогою Docker</a></li>            
+          <li><a href="https://bender.kr.ua/howto-asterisk-part-2/">IP-телефонія на базі Asterisk. Частина 2: Налаштування SIP</a></li>            
         
-          <li><a href="https://bender.kr.ua/magento-2-searchsuite-ukrainian/">Пошук українською мовою в Magento 2</a></li>            
+                      
+        
+          <li><a href="https://bender.kr.ua/fail2ban-unban-ip/">Як розблокувати себе в fail2ban</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -300,7 +302,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">1 хв</span>
+        <span class="reading-time">0 хв</span>
       </footer>
     </div>
 </article>
@@ -323,14 +325,14 @@ s.setAttribute('data-timestamp', +new Date());
           </header>
           <section class="post-card-excerpt">
                
-                <p>Перша книга з &lsquo;Оксфордського циклу&rsquo; Конні Вілліс. Роман виграв премію Г'юго в 1993 і премію Неб'юла в 1992 році.</p>
+                <p>Перша книга з &lsquo;Оксфордського циклу&rsquo; Конні Вілліс. Роман виграв премію Г&rsquo;юго в 1993 і премію Неб&rsquo;юла в 1992 році.</p>
               
           </section>
       </a>
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">5 хв</span>
+        <span class="reading-time">1 хв</span>
       </footer>
     </div>
 </article>

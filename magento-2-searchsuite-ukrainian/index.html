@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1529511582893-2d7e684dd128?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1933&q=80"/>
 
 
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -145,26 +145,26 @@
 
     <section class="post-full-content">
         <div class="kg-card-markdown">
-        <p>Elasticsearch з коробки працює з великою кількістю мов: <em>arabic, armenian, basque, bengali, brazilian, bulgarian, catalan, cjk, czech, danish, dutch, english, estonian, finnish, french, galician, german, greek, hindi, hungarian, indonesian, irish, italian, latvian, lithuanian, norwegian, persian, portuguese, romanian, russian, sorani, spanish, swedish, turkish, thai</em>. Але солов'їної на жаль немає.</p>
+        <p>Elasticsearch з коробки працює з великою кількістю мов: <em>arabic, armenian, basque, bengali, brazilian, bulgarian, catalan, cjk, czech, danish, dutch, english, estonian, finnish, french, galician, german, greek, hindi, hungarian, indonesian, irish, italian, latvian, lithuanian, norwegian, persian, portuguese, romanian, russian, sorani, spanish, swedish, turkish, thai</em>. Але солов&rsquo;їної на жаль немає.</p>
 <p>Якщо в Magento 2 ти, як і я, користуєшься <a href="https://github.com/Smile-SA/elasticsuite">пошуком від Smile</a>, то є спосіб навчити цей модуль української. В цьому нам допоможе плагін <a href="https://github.com/vhyza/elasticsearch-analysis-lemmagen">LemmaGen</a>. Він підтримує 15 мов, серед яких є і українська.</p>
 <p>Спочатку треба дізнатись версію Elasticsearch:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -XGET <span style="color:#e6db74">&#39;http://localhost:9200&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -XGET <span style="color:#e6db74">&#39;http://localhost:9200&#39;</span>
 </code></pre></div><p>У моєму випадку це <em>7.17.1</em>.</p>
 <p>Після цього встановлюємо плагін LemmaGen для потрібної версії:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export VERSION<span style="color:#f92672">=</span>7.17.1
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export VERSION<span style="color:#f92672">=</span>7.17.1
 cd /usr/share/elasticsearch
 bin/elasticsearch-plugin install https://github.com/vhyza/elasticsearch-analysis-lemmagen/releases/download/v$VERSION/elasticsearch-analysis-lemmagen-$VERSION-plugin.zip
 </code></pre></div><p>Тепер додаємо підтримку української мови:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd /etc/elasticsearch
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd /etc/elasticsearch
 mkdir -p lemmagen
 cd lemmagen
 wget https://github.com/vhyza/lemmagen-lexicons/raw/master/free/lexicons/uk.lem
 </code></pre></div><p><em><strong>Увага!</strong></em> При роботі локально з <em>docker</em> спрацював інший шлях - <em>/usr/share/elasticsearch/config/lemmagen</em>, але на сервері зафуричило лише якщо покласти файл в <em>/etc/elasticsearch/lemmagen</em>.</p>
 <p>Далі перезапускаємо службу elasticsearch:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">service elasticsearch restart
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">service elasticsearch restart
 </code></pre></div><p>Нарешті розширюємо можливості Smile_Searchsuite.</p>
 <p><em>etc/elasticsuite_analysis.xml</em></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34;?&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34;?&gt;</span>
 <span style="color:#f92672">&lt;analysis</span> <span style="color:#a6e22e">xmlns:xsi=</span><span style="color:#e6db74">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span> <span style="color:#a6e22e">xsi:noNamespaceSchemaLocation=</span><span style="color:#e6db74">&#34;urn:magento:module:Smile_ElasticsuiteCore:etc/elasticsuite_analysis.xsd&#34;</span><span style="color:#f92672">&gt;</span>
 
     <span style="color:#f92672">&lt;filters&gt;</span>
@@ -271,13 +271,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/mint-19-and-epson-perfection-v33/">Mint 19 і сканер Epson Perfection V33</a></li>            
+          <li><a href="https://bender.kr.ua/bash-if-else/">bash: умовний оператор if..else</a></li>            
         
-          <li><a href="https://bender.kr.ua/upgrade-magento-232/">Оновлення Magento до версії 2.3.2</a></li>            
+          <li><a href="https://bender.kr.ua/how-to-fix-elasticsearch-forbidden-12-index-read-only-allow-delete-api/">Проблема з переіндексацією catalogsearch_fulltext на Magento 2</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-asterisk-part-3/">IP-телефонія на базі Asterisk. Частина 3: Логіка обробки дзвінків (Dialplan)</a></li>            
+          <li><a href="https://bender.kr.ua/howto-install-rocketchat-debian-9/">Встановлення відкритого месенджера Rocket.Chat на Debian 9</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-asterisk-part-4/">IP-телефонія на базі Asterisk. Частина 4: Голосове меню</a></li>            
+          <li><a href="https://bender.kr.ua/howto-asterisk-part-6.1/">IP-телефонія на базі Asterisk. Частина 6.1: Додаткові функції Asterisk. Паркування дзвінка.</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -290,29 +290,30 @@ s.setAttribute('data-timestamp', +new Date());
       
       <article class="post-card post"> 
     
-    <a class="post-card-image-link" href="https://bender.kr.ua/migration-from-iptables-to-nftables/">
-      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1548200482-b77f76c9dbef?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
+    <a class="post-card-image-link" href="https://bender.kr.ua/local-ssl-certificate/">
+      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1633265486064-086b219458ec?q=80&amp;w=2070&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)"></div>
     </a>
     
 
     <div class="post-card-content">
-      <a class="post-card-content-link" href="https://bender.kr.ua/migration-from-iptables-to-nftables/">
+      <a class="post-card-content-link" href="https://bender.kr.ua/local-ssl-certificate/">
           <header class="post-card-header">
               <span class="post-card-tags">
-              #linux  </span>
+              #linux 
+              #web  </span>
               
-              <h2 class="post-card-title">Міграція з iptables на nftables</h2>
+              <h2 class="post-card-title">Встановлення локального SSL-сертифікату</h2>
           </header>
           <section class="post-card-excerpt">
                
-                <p>Міграція правил iptables на nftables</p>
+                <p>Встановлення SSL-сертифікату для тестування локальних web-застосунків</p>
               
           </section>
       </a>
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">2 хв</span>
+        <span class="reading-time">0 хв</span>
       </footer>
     </div>
 </article>
@@ -343,7 +344,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">1 хв</span>
+        <span class="reading-time">0 хв</span>
       </footer>
     </div>
 </article>

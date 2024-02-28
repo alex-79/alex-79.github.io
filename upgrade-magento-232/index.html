@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1501290301209-7a0323622985?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -146,12 +146,12 @@
     <section class="post-full-content">
         <div class="kg-card-markdown">
         <p>25 червня 2019 року вийшла версія Magento 2.3.2. Покращення безпеки, що входять до складу Magento 2.3.2, вимагають встановлення криптографічної бібліотеки libsodium версії 1.0.13 або вище. Без цього ви отримаєте помилку в модулі MSP_TwoFactorAuth.</p>
-<pre><code>Missing required argument $encoder of MSP\TwoFactorAuth\Model\UserConfigManager.
+<pre tabindex="0"><code>Missing required argument $encoder of MSP\TwoFactorAuth\Model\UserConfigManager.
 </code></pre><p>Отже для успішного оновлення, виконуємо наступні дії:</p>
 <ol>
 <li>Встановлюємо libsodium</li>
 </ol>
-<pre><code>cd /opt/
+<pre tabindex="0"><code>cd /opt/
 wget -c https://download.libsodium.org/libsodium/releases/libsodium-1.0.18.tar.gz
 tar -xzvf libsodium-1.0.18.tar.gz
 rm libsodium-1.0.18.tar.gz
@@ -162,7 +162,7 @@ make install
 </code></pre><ol start="2">
 <li>Оновлюємо Magento</li>
 </ol>
-<pre><code>composer require magento/product-community-edition 2.3.2 --no-update
+<pre tabindex="0"><code>composer require magento/product-community-edition 2.3.2 --no-update
 composer update
 rm -rf var/cache/* var/page_cache/* var/generation/* generated/code/*
 php bin/magento setup:upgrade
@@ -238,13 +238,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/howto-asterisk-part-4/">IP-телефонія на базі Asterisk. Частина 4: Голосове меню</a></li>            
+          <li><a href="https://bender.kr.ua/howto-install-django-mysql-debian-9/">Встановлення зв&#39;язки Django та MySQL на Debian 9</a></li>            
         
-          <li><a href="https://bender.kr.ua/backup-with-borg/">Про користь borg-ів</a></li>            
+          <li><a href="https://bender.kr.ua/howto-asterisk-part-2/">IP-телефонія на базі Asterisk. Частина 2: Налаштування SIP</a></li>            
         
-          <li><a href="https://bender.kr.ua/exception-the-value-is-not-accepted-by-the-pattern/">Пошук невалідних XML в Magento 2</a></li>            
+          <li><a href="https://bender.kr.ua/bash-if-else/">bash: умовний оператор if..else</a></li>            
         
-          <li><a href="https://bender.kr.ua/how-to-exclude-dump-tables/">Вибіркове завантаження таблиць дампа в MySQL</a></li>            
+          <li><a href="https://bender.kr.ua/howto-install-magento2-cli/">Встановлення Magento 2 з командного рядка</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -302,14 +302,14 @@ s.setAttribute('data-timestamp', +new Date());
           </header>
           <section class="post-card-excerpt">
                
-                <p>Для прискорення роботи бази даних можна винести тимчасові таблиці в оперативну пам'ять. Зробити це дуже просто.</p>
+                <p>Для прискорення роботи бази даних можна винести тимчасові таблиці в оперативну пам&rsquo;ять. Зробити це дуже просто.</p>
               
           </section>
       </a>
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">1 хв</span>
+        <span class="reading-time">0 хв</span>
       </footer>
     </div>
 </article>

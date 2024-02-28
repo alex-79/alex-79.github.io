@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -149,7 +149,7 @@
 <img src="/img/howto-remove-parent-category-from-url-magento-2-1-1.png" alt="howto-remove-parent-category-from-url-magento-2-1-1"></p>
 <p>Результатом буде отримання URL виду <em><a href="https://mysite.com/product1.html">https://mysite.com/product1.html</a></em> замість <em><a href="https://mysite.com/category1/category2/product1.html">https://mysite.com/category1/category2/product1.html</a></em>. На жаль для категорій такої можливості не передбачено і не можна отримати <em><a href="https://mysite.com/category2">https://mysite.com/category2</a></em>.</p>
 <p>За генерацію URL категорій відповідає клас <strong>Magento\CatalogUrlRewrite\Model\CategoryUrlPathGenerator</strong>.</p>
-<pre><code>public function getUrlPath($category, $parentCategory = null)
+<pre tabindex="0"><code>public function getUrlPath($category, $parentCategory = null)
 {
 ...
     if ($this-&gt;isNeedToGenerateUrlPathForParent($category)) {
@@ -165,14 +165,14 @@
 <li>
 <p>Створюємо заготовку для модуля в директорії <em>Noon/CategoryUrlPathGenerator</em></p>
 <p><em>registration.php</em></p>
-<pre><code>&lt;?php
+<pre tabindex="0"><code>&lt;?php
 \Magento\Framework\Component\ComponentRegistrar::register(
 \Magento\Framework\Component\ComponentRegistrar::MODULE,
     'Noon_CategoryUrlPathGenerator',
     __DIR__
 );
 </code></pre><p><em>etc/module.xml</em></p>
-<pre><code>&lt;?xml version=&quot;1.0&quot;?&gt;
+<pre tabindex="0"><code>&lt;?xml version=&quot;1.0&quot;?&gt;
 &lt;config xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
 xsi:noNamespaceSchemaLocation=&quot;urn:magento:framework:Module/etc/module.xsd&quot;&gt;
     &lt;module name=&quot;Noon_CategoryUrlPathGenerator&quot; setup_version=&quot;0.1.0&quot; /&gt;
@@ -181,7 +181,7 @@ xsi:noNamespaceSchemaLocation=&quot;urn:magento:framework:Module/etc/module.xsd&
 <li>
 <p>Додаємо до адмінки опцію для додавання/вилучення списку батьківських категорій в URL</p>
 <p><em>etc/adminhtml/system.xml</em></p>
-<pre><code>&lt;?xml version=&quot;1.0&quot;?&gt;
+<pre tabindex="0"><code>&lt;?xml version=&quot;1.0&quot;?&gt;
 &lt;config xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;urn:magento:module:Magento_Config:etc/system_file.xsd&quot;&gt;
     &lt;system&gt;
         &lt;section id=&quot;catalog&quot;&gt;
@@ -198,7 +198,7 @@ xsi:noNamespaceSchemaLocation=&quot;urn:magento:framework:Module/etc/module.xsd&
 <img src="/img/howto-remove-parent-category-from-url-magento-2-2.png" alt="howto-remove-parent-category-from-url-magento-2-2"></p>
 <p>Задаємо значення <em>No</em> на замовчання</p>
 <p><em>etc/config.xml</em></p>
-<pre><code>&lt;?xml version=&quot;1.0&quot;?&gt;
+<pre tabindex="0"><code>&lt;?xml version=&quot;1.0&quot;?&gt;
 &lt;config xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;urn:magento:module:Magento_Store:etc/config.xsd&quot;&gt;
     &lt;default&gt;
         &lt;catalog&gt;
@@ -212,7 +212,7 @@ xsi:noNamespaceSchemaLocation=&quot;urn:magento:framework:Module/etc/module.xsd&
 <li>
 <p>Робимо хелпер для можливості отримати значення налаштування з адмін-панелі</p>
 <p><em>Helper/Data.php</em></p>
-<pre><code>&lt;?php
+<pre tabindex="0"><code>&lt;?php
 namespace Noon\CategoryUrlPathGenerator\Helper;
 
 class Data extends \Magento\Framework\App\Helper\AbstractHelper
@@ -254,14 +254,14 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
 <li>
 <p>Створюємо around-плагін</p>
 <p><em>etc/di.xml</em></p>
-<pre><code>&lt;?xml version=&quot;1.0&quot;?&gt;
+<pre tabindex="0"><code>&lt;?xml version=&quot;1.0&quot;?&gt;
 &lt;config xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;&gt;
     &lt;type name=&quot;Magento\CatalogUrlRewrite\Model\CategoryUrlPathGenerator&quot;&gt;
         &lt;plugin name=&quot;noon_category_url_path_generator&quot; type=&quot;\Noon\CategoryUrlPathGenerator\Plugin\Model\CategoryUrlPathGenerator&quot; sortOrder=&quot;0&quot; /&gt;
     &lt;/type&gt;
 &lt;/config&gt;
 </code></pre><p><em>Plugin/Model/CategoryUrlPathGenerator.php</em></p>
-<pre><code>&lt;?php
+<pre tabindex="0"><code>&lt;?php
 
 namespace Noon\CategoryUrlPathGenerator\Plugin\Model;
 
@@ -315,7 +315,7 @@ class CategoryUrlPathGenerator
 <p>Даний плагін дозволить генерувати потрібні URL для всіх новостворених категорій.</p>
 <p>Репозиторій плагіна - <a href="https://github.com/alex-79/magento2-category-url-path-generator">https://github.com/alex-79/magento2-category-url-path-generator</a>.</p>
 <p>Що робити якщо дерево категорій вже створено? Тут я рекомендую скористатись модулем <a href="https://github.com/elgentos/regenerate-catalog-urls">https://github.com/elgentos/regenerate-catalog-urls</a> і перегенерувати path та url.</p>
-<pre><code>php bin/magento regenerate:category:path
+<pre tabindex="0"><code>php bin/magento regenerate:category:path
 php bin/magento regenerate:category:url
 </code></pre><h2 id="посилання">Посилання</h2>
 <ul>
@@ -386,13 +386,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/why-magento/">Чому ми обираємо Magento, а не інші системи</a></li>            
+          <li><a href="https://bender.kr.ua/cli-upgrade-magento2/">Оновлення Magento 2</a></li>            
         
-          <li><a href="https://bender.kr.ua/year-in-books-2020/">Мій книжковий 2020 рік</a></li>            
+          <li><a href="https://bender.kr.ua/fail2ban-unban-ip/">Як розблокувати себе в fail2ban</a></li>            
         
-          <li><a href="https://bender.kr.ua/configurable-crontab-magento2/">Magento2: налаштування періодичних завдань власного модуля через адмін-панель</a></li>            
+          <li><a href="https://bender.kr.ua/installing-python-3-6-on-debian-8/">Встановлення Python 3.6 на Debian 8</a></li>            
         
-          <li><a href="https://bender.kr.ua/wtf-ssl-error-leaf-certificate-is-expired/">Після оновлення сертифікату на поштовому сервері в GMAIL не працює POP3</a></li>            
+          <li><a href="https://bender.kr.ua/mining-karbowanec/">Як я місяць майнив криптовалюту за допомогою ноутбуку, навіщо мені це та що з того вийшло</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -458,7 +458,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">1 хв</span>
+        <span class="reading-time">0 хв</span>
       </footer>
     </div>
 </article>

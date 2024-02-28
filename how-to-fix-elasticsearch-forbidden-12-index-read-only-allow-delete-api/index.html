@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1494059980473-813e73ee784b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -146,11 +146,11 @@
     <section class="post-full-content">
         <div class="kg-card-markdown">
         <p>Під час переіндексації отримую</p>
-<pre><code>php bin/magento indexer:reindex catalogsearch_fulltext
+<pre tabindex="0"><code>php bin/magento indexer:reindex catalogsearch_fulltext
 Catalog Search indexer process unknown error:
 {&quot;error&quot;:{&quot;root_cause&quot;:[{&quot;type&quot;:&quot;cluster_block_exception&quot;,&quot;reason&quot;:&quot;blocked by: [FORBIDDEN/12/index read-only / allow delete (api)];&quot;}],&quot;type&quot;:&quot;cluster_block_exception&quot;,&quot;reason&quot;:&quot;blocked by: [FORBIDDEN/12/index read-only / allow delete (api)];&quot;},&quot;status&quot;:403}
-</code></pre><p>Проблема пов'язана з <strong>ElasticSearch</strong>, а саме тим, що на диску залишилось менше 5% вільного місця. Щоб усе запрацювало, крім вивільнення необхідної кількості байт, необхідно ще виконати наступну команду:</p>
-<pre><code>curl -XPUT -H &quot;Content-Type: application/json&quot; http://localhost:9200/_all/_settings -d '{&quot;index.blocks.read_only_allow_delete&quot;: null}'
+</code></pre><p>Проблема пов&rsquo;язана з <strong>ElasticSearch</strong>, а саме тим, що на диску залишилось менше 5% вільного місця. Щоб усе запрацювало, крім вивільнення необхідної кількості байт, необхідно ще виконати наступну команду:</p>
+<pre tabindex="0"><code>curl -XPUT -H &quot;Content-Type: application/json&quot; http://localhost:9200/_all/_settings -d '{&quot;index.blocks.read_only_allow_delete&quot;: null}'
 </code></pre><h2 id="посилання">Посилання</h2>
 <ul>
 <li><a href="https://techoverflow.net/2019/04/17/how-to-fix-elasticsearch-forbidden-12-index-read-only-allow-delete-api/">https://techoverflow.net/2019/04/17/how-to-fix-elasticsearch-forbidden-12-index-read-only-allow-delete-api/</a></li>
@@ -217,13 +217,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/migration-from-iptables-to-nftables/">Міграція з iptables на nftables</a></li>            
+          <li><a href="https://bender.kr.ua/howto-install-magento2-cli/">Встановлення Magento 2 з командного рядка</a></li>            
         
-          <li><a href="https://bender.kr.ua/configurable-crontab-magento2/">Magento2: налаштування періодичних завдань власного модуля через адмін-панель</a></li>            
+          <li><a href="https://bender.kr.ua/mint-19-and-epson-perfection-v33/">Mint 19 і сканер Epson Perfection V33</a></li>            
         
-          <li><a href="https://bender.kr.ua/fix-conflict-keyboard-shortcuts/">Не працюють комбінації клавіш CTRL-SHIFT в Ubuntu</a></li>            
+          <li><a href="https://bender.kr.ua/nginx-pagespeed-openssl/">Як я готую NGINX з модулем PAGESPEED</a></li>            
         
-          <li><a href="https://bender.kr.ua/git-branch/">Як забрати гілку з git</a></li>            
+          <li><a href="https://bender.kr.ua/puppeteer-with-authorization/">&#34;Прогрівання&#34; кешу для закритих частин сайту за допомогою Puppeteer</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -260,7 +260,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">2 хв</span>
+        <span class="reading-time">1 хв</span>
       </footer>
     </div>
 </article>
@@ -290,7 +290,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">2 хв</span>
+        <span class="reading-time">1 хв</span>
       </footer>
     </div>
 </article>

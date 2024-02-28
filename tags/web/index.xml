@@ -6,10 +6,18 @@
     <description>Recent content in web on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>uk</language>
-    <lastBuildDate>Sun, 29 Aug 2021 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://bender.kr.ua/tags/web/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Thu, 04 Jan 2024 11:43:11 +0200</lastBuildDate><atom:link href="https://bender.kr.ua/tags/web/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Встановлення локального SSL-сертифікату</title>
+      <link>https://bender.kr.ua/local-ssl-certificate/</link>
+      <pubDate>Thu, 04 Jan 2024 11:43:11 +0200</pubDate>
+      
+      <guid>https://bender.kr.ua/local-ssl-certificate/</guid>
+      <description>Для тестування локально сайтів і web-застосунків, які потребують для роботи ssl-сертифікатів, я використовую mkcert.
+Встановлення sudo apt install mkcert libnss3-tools Використання Додаємо mkcert в свої локальні кореневі центри сертифікації:
+mkcert -install The local CA is already installed in the system trust store! 👍 The local CA is already installed in the Firefox and/or Chrome/Chromium trust store! 👍 Створюємо сертифікат для локального сайту:
+cd /var/www/site-name/ mkcert site-name.local Created a new certificate valid for the following names 📜 - &amp;quot;site-name.</description>
+    </item>
     
     <item>
       <title>Інструкція зі встановлення Flask</title>
@@ -47,7 +55,7 @@ sudo apt-get install -y dirmngr gnupg &amp;amp;&amp;amp; sudo apt-key adv --keys
 apt install python3 python3-pip python3-venv   Створюємо папку для проекту та віртуальне середовище
 mkdir myproject cd myproject python3 -m venv venv source venv/bin/activate   Встановлюємо Django та перевыряємо встановлену версію
 python3 -m pip install Django python -m django --version   Створюємо новий проект
-django-admin startproject myproject   З&#39;єднання з MySQL   Встановлюємо Percona Server
+django-admin startproject myproject   З&amp;rsquo;єднання з MySQL   Встановлюємо Percona Server
 wget https://repo.percona.com/apt/percona-release_latest.$(lsb_release -sc)_all.</description>
     </item>
     
@@ -57,7 +65,7 @@ wget https://repo.percona.com/apt/percona-release_latest.$(lsb_release -sc)_all.
       <pubDate>Tue, 24 Dec 2019 09:58:19 +0000</pubDate>
       
       <guid>https://bender.kr.ua/iptables-ipset/</guid>
-      <description>Для захисту від DDOS-атак або паразитного трафіку, блокування на рівні сервера, а не nginx (як наприклад тут - https://bender.kr.ua/nginx-geoip/) , є більш ефективним. Тому, якщо у вас виникла потреба блокувати IP з певних країн і не існує інших застережень, варто скористатись зв&#39;язкою iptables + ipset.
+      <description>Для захисту від DDOS-атак або паразитного трафіку, блокування на рівні сервера, а не nginx (як наприклад тут - https://bender.kr.ua/nginx-geoip/) , є більш ефективним. Тому, якщо у вас виникла потреба блокувати IP з певних країн і не існує інших застережень, варто скористатись зв&amp;rsquo;язкою iptables + ipset.
 Для початку встановлюємо ipset:
 apt-get install ipset Створюємо скрипт, який буде оновлювати таблюцю адрес для блокування. Списки IP за приналежністю до країни, можна взяти на сайті ipdeny.</description>
     </item>
@@ -153,7 +161,7 @@ nginx -t nginx -s reload Отримуємо сертифікати</description>
       <pubDate>Thu, 16 May 2019 07:09:58 +0000</pubDate>
       
       <guid>https://bender.kr.ua/howto-lemp-install/</guid>
-      <description>Покрокова інструкція по встановленню і запуску зв&#39;язки LEMP (Linux + Nginx + MySQL + PHP).
+      <description>Покрокова інструкція по встановленню і запуску зв&amp;rsquo;язки LEMP (Linux + Nginx + MySQL + PHP).
 1. Оновлення системи Оновлюємо версії ПЗ до актуального стану
 apt-get update apt-get upgrade 2. Налаштування захисту 2.1 iptables Спочатку встановлюю mc. Для тих у кого в цей момент засвербіло &amp;ldquo;mc - для лохів, vim - наше всьо, nano рулить&amp;rdquo; - поцілуйте мій блискучий металевий зад (С).
 apt-get install mc update-alternatives --config editor Створюємо правила файервола</description>

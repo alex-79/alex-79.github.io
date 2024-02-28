@@ -6,11 +6,7 @@
     <description>Recent content in php on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>uk</language>
-    <lastBuildDate>Wed, 06 Nov 2019 02:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://bender.kr.ua/categories/php/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 06 Nov 2019 02:00:00 +0000</lastBuildDate><atom:link href="https://bender.kr.ua/categories/php/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>NetBeans і проблема зі шрифтами</title>
       <link>https://bender.kr.ua/netbeans-and-fonts/</link>

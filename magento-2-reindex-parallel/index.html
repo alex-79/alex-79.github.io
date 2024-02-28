@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1474546652694-a33dd8161d66?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -153,13 +153,13 @@
 <li>Ціни (Product Price) на рівні веб-сайту (<em>website</em>), групи покупців (<em>customer_group</em>), веб-сайту та групи (<em>website_and_customer_group</em>). За замовчуванням індексування ціни каталогу не використовує багатопоточність і знаходиться в режимі <em>none</em>.</li>
 </ul>
 <p>Щоб встановити один з режимів, треба виконати команду</p>
-<pre><code>php bin/magento indexer:set-dimensions-mode [&lt;indexer&gt;] [&lt;mode&gt;] 
+<pre tabindex="0"><code>php bin/magento indexer:set-dimensions-mode [&lt;indexer&gt;] [&lt;mode&gt;] 
 </code></pre><p>наприклад</p>
-<pre><code>php bin/magento indexer:set-dimensions-mode catalog_product_price customer_group
+<pre tabindex="0"><code>php bin/magento indexer:set-dimensions-mode catalog_product_price customer_group
 </code></pre><p>Перевірити поточний режим</p>
-<pre><code>php bin/magento indexer:show-dimensions-mode
+<pre tabindex="0"><code>php bin/magento indexer:show-dimensions-mode
 </code></pre><p>Кількість потоків задається змінною MAGE_INDEXER_THREADS_COUNT у файлі env.php</p>
-<pre><code>'MAGE_INDEXER_THREADS_COUNT' =&gt; 3
+<pre tabindex="0"><code>'MAGE_INDEXER_THREADS_COUNT' =&gt; 3
 </code></pre><h2 id="посилання">Посилання</h2>
 <ul>
 <li><a href="https://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex-parallel">https://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex-parallel</a></li>
@@ -227,13 +227,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/letsencrypt-and-ipv6/">Помилка при оновлені сертифікатів від Let&#39;s Encrypt</a></li>            
+          <li><a href="https://bender.kr.ua/backup-with-tartarus/">Резервне копіювання і трохи грецької міфології</a></li>            
         
-          <li><a href="https://bender.kr.ua/exception-the-value-is-not-accepted-by-the-pattern/">Пошук невалідних XML в Magento 2</a></li>            
+          <li><a href="https://bender.kr.ua/configurable-crontab-magento2/">Magento2: налаштування періодичних завдань власного модуля через адмін-панель</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-install-flask/">Інструкція зі встановлення Flask</a></li>            
+          <li><a href="https://bender.kr.ua/installing-python-3-6-on-debian-8/">Встановлення Python 3.6 на Debian 8</a></li>            
         
-          <li><a href="https://bender.kr.ua/year-in-books-2020/">Мій книжковий 2020 рік</a></li>            
+          <li><a href="https://bender.kr.ua/mint-19-and-epson-perfection-v33/">Mint 19 і сканер Epson Perfection V33</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -268,7 +268,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">2 хв</span>
+        <span class="reading-time">1 хв</span>
       </footer>
     </div>
 </article>

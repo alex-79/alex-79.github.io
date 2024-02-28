@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1484191914255-a429e6f819b4?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -155,11 +155,11 @@
 <h1 id="5-деталізований-звіт-про-виклики-call-detail-records-cdr">5. Деталізований звіт про виклики (Call Detail Records, CDR)</h1>
 <p>Налаштуємо зберігання статистики в БД MySQL.</p>
 <p>Встановимо MySQL:</p>
-<pre><code>wget https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm
+<pre tabindex="0"><code>wget https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm
 rpm -ivh mysql57-community-release-el7-11.noarch.rpm
 yum install mysql-server
 </code></pre><p>Оскільки будемо використовувати для перегляду статистики дзвінків веб-застосунок <em>CDR Viewer</em>, то встановлюємо і налаштовуємо веб-сервер:</p>
-<pre><code>cd /usr/src/
+<pre tabindex="0"><code>cd /usr/src/
 wget https://nginx.org/download/nginx-1.13.0.tar.gz
 tar vxfz nginx-1.13.0.tar.gz 
 cd nginx-1.13.0/
@@ -171,7 +171,7 @@ ln -s /usr/local/nginx/sbin/nginx /usr/sbin/nginx
 wget -O /etc/init.d/nginx https://gist.github.com/sairam/5892520/raw/b8195a71e944d46271c8a49f2717f70bcd04bf1a/etc-init.d-nginx
 chmod +x /etc/init.d/nginx
 </code></pre><p>Створюємо файл <em>/lib/systemd/system/nginx.service</em>:</p>
-<pre><code>[Unit]
+<pre tabindex="0"><code>[Unit]
 Description=The NGINX HTTP and reverse proxy server
 After=syslog.target network.target remote-fs.target nss-lookup.target
 
@@ -189,14 +189,14 @@ WantedBy=multi-user.target
 Запускаем сервер:
 systemctl enable nginx
 systemctl start nginx
-</code></pre><pre><code>[root@asterisk-centos conf]# nginx -V
+</code></pre><pre tabindex="0"><code>[root@asterisk-centos conf]# nginx -V
 nginx version: nginx/1.13.0
 built by gcc 4.8.5 20150623 (Red Hat 4.8.5-11) (GCC) 
 </code></pre><p>Встановлюємо php:</p>
-<pre><code>yum install php-fpm
+<pre tabindex="0"><code>yum install php-fpm
 systemctl start php-fpm
 </code></pre><p>Налаштовуємо веб-сервер:</p>
-<pre><code>user  nginx;
+<pre tabindex="0"><code>user  nginx;
 worker_processes  1;
 error_log  logs/error.log;
 pid        /run/nginx.pid;
@@ -228,14 +228,14 @@ http {
     }
 }
 </code></pre><p>Для роботи з CDR забезпечуємо коректну синхронізацію часу на сервері</p>
-<pre><code>yum install ntp
+<pre tabindex="0"><code>yum install ntp
 systemctl enable ntpd
 service ntpd restart
 </code></pre><p>Встановлюємо програму для керування БД:</p>
-<pre><code>cd /var/www/
+<pre tabindex="0"><code>cd /var/www/
 wget https://github.com/vrana/adminer/releases/download/v4.3.1/adminer-4.3.1-mysql.php -O adminer.php
 </code></pre><p>Входимо в <em>adminer</em> за адресою http://192.168.1.201/adminer.php, створюємо базу <em>asteriskcdr</em> і користувача з правами запису в цю базу - <em>asteriskuser</em>, а також таблицю для зберігання даних:</p>
-<pre><code>CREATE TABLE `cdr` (
+<pre tabindex="0"><code>CREATE TABLE `cdr` (
   `id` int(11) unsigned NOT NULL auto_increment,
   `calldate` datetime NOT NULL default '0000-00-00 00:00:00',
   `clid` varchar(80) NOT NULL default '',
@@ -264,7 +264,7 @@ wget https://github.com/vrana/adminer/releases/download/v4.3.1/adminer-4.3.1-mys
   KEY `src` (`src`)
 );
 </code></pre><p>Відкриваємо файл <em>/etc/asterisk/cdrmysql.conf</em> і налаштовуємо підключення до MySQL:</p>
-<pre><code>[global]
+<pre tabindex="0"><code>[global]
 hostname=localhost
 dbname=asteriskcdr
 table=cdr
@@ -272,19 +272,19 @@ password=asterisk_password
 user=asterisk_user
 port=3306
 </code></pre><p>В файлі <em>/etc/asterisk/cdr.conf</em> відключаємо стандартне логування дзвінків в csv-файл:</p>
-<pre><code>;[csv]
+<pre tabindex="0"><code>;[csv]
 ;usegmtime=yes    ; log date/time in GMT.  Default is &quot;no&quot;
 ;loguniqueid=yes  ; log uniqueid.  Default is &quot;no&quot;
 ;loguserfield=yes ; log user field.  Default is &quot;no&quot;
 ;accountlogs=yes  ; create separate log file for each account code. Default is &quot;yes&quot;
 </code></pre><p>Перезапустимо Asterisk:</p>
-<pre><code>service asterisk restart
+<pre tabindex="0"><code>service asterisk restart
 </code></pre><p>Встановлюємо <em>CDR Viewer</em>:</p>
-<pre><code>cd /var/www/html
+<pre tabindex="0"><code>cd /var/www/html
 wget https://github.com/g613/asterisk-cdr-viewer/raw/master/asterisk-cdr-viewer-latest.tgz
 tar xzfv asterisk-cdr-viewer-latest.tgz
 </code></pre><p>В файлі <em>include/config.inc.php</em> налаштовуємо підключення до БД:</p>
-<pre><code>$db_type = 'mysql';
+<pre tabindex="0"><code>$db_type = 'mysql';
 $db_host = 'localhost';
 $db_port = '3306';
 $db_user = 'asterisk_user';
@@ -293,7 +293,7 @@ $db_name = 'asteriskcdr';
 $db_table_name = 'cdr';
 $db_options = array();
 </code></pre><p>В файлі <em>/etc/extension.conf</em> расширюємо макрос запису дзвінків для можливості роботи з БД:</p>
-<pre><code>;MixMonitor
+<pre tabindex="0"><code>;MixMonitor
 [macro-recording]
 exten =&gt; s,1,GoToIf($[&quot;${RECORDING}&quot; = &quot;1&quot;]?yes:no);
 exten =&gt; s,n(yes),Set(fname=${STRFTIME(${EPOCH},,%Y)}/${STRFTIME(${EPOCH},,%Y-%m)}/${STRFTIME(${EPOCH},,%Y-%m-%d)}/${UNIQUEID}-${STRFTIME(${EPOCH},,%Y-%m-%d-%H_%M)}-${ARG1}-${ARG2})
@@ -375,13 +375,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/mining-karbowanec/">Як я місяць майнив криптовалюту за допомогою ноутбуку, навіщо мені це та що з того вийшло</a></li>            
+          <li><a href="https://bender.kr.ua/fix-conflict-keyboard-shortcuts/">Не працюють комбінації клавіш CTRL-SHIFT в Ubuntu</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-install-django-mysql-debian-9/">Встановлення зв&#39;язки Django та MySQL на Debian 9</a></li>            
+          <li><a href="https://bender.kr.ua/netbeans-and-fonts/">NetBeans і проблема зі шрифтами</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-asterisk-part-6.1/">IP-телефонія на базі Asterisk. Частина 6.1: Додаткові функції Asterisk. Паркування дзвінка.</a></li>            
+          <li><a href="https://bender.kr.ua/year-in-books-2019/">Мій книжковий 2019 рік</a></li>            
         
-          <li><a href="https://bender.kr.ua/magick-248/">Магічне число 248 або Чому я не можу додати значення атрибута в Magento 2?</a></li>            
+          <li><a href="https://bender.kr.ua/howto-install-rocketchat-debian-9/">Встановлення відкритого месенджера Rocket.Chat на Debian 9</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -416,7 +416,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">1 хв</span>
+        <span class="reading-time">0 хв</span>
       </footer>
     </div>
 </article>
@@ -439,14 +439,14 @@ s.setAttribute('data-timestamp', +new Date());
           </header>
           <section class="post-card-excerpt">
                
-                <p>За минулий рік я прочитав 13 книжок. Усі вони були художніми, бо до історій &lsquo;успішного успіху&rsquo; я останніми роками відношусь з великою долею скептицизму, а по роботі за минулий рік читав статті виключно з інтернету. Якщо коротко по підсумкам, то &lsquo;передозування&rsquo; Пратчеттом у 2018, не дало насолодитись ним у 2019, не все зі Стівена Кінга виявляється золотом, а магія книжок з дитинства не розвіюється навіть коли в тебе вже з'являються власні діти.</p>
+                <p>За минулий рік я прочитав 13 книжок. Усі вони були художніми, бо до історій &lsquo;успішного успіху&rsquo; я останніми роками відношусь з великою долею скептицизму, а по роботі за минулий рік читав статті виключно з інтернету. Якщо коротко по підсумкам, то &lsquo;передозування&rsquo; Пратчеттом у 2018, не дало насолодитись ним у 2019, не все зі Стівена Кінга виявляється золотом, а магія книжок з дитинства не розвіюється навіть коли в тебе вже з&rsquo;являються власні діти.</p>
               
           </section>
       </a>
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">15 хв</span>
+        <span class="reading-time">3 хв</span>
       </footer>
     </div>
 </article>

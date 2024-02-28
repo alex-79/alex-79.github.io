@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1517026575980-3e1e2dedeab4?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -145,21 +145,21 @@
 
     <section class="post-full-content">
         <div class="kg-card-markdown">
-        <p>Для прискорення роботи бази даних можна винести тимчасові таблиці в оперативну пам'ять. Зробити це дуже просто.</p>
+        <p>Для прискорення роботи бази даних можна винести тимчасові таблиці в оперативну пам&rsquo;ять. Зробити це дуже просто.</p>
 <p>Створюємо папку для зберігання тимчасових таблиць</p>
-<pre><code>mkdir /var/lib/mysql/tmp
+<pre tabindex="0"><code>mkdir /var/lib/mysql/tmp
 </code></pre><p>Змінюємо власника папки на mysql</p>
-<pre><code>chown mysql:mysql /var/lib/mysql/tmp
+<pre tabindex="0"><code>chown mysql:mysql /var/lib/mysql/tmp
 </code></pre><p>Знаходимо uid та gid для mysql</p>
-<pre><code>id mysql
+<pre tabindex="0"><code>id mysql
 </code></pre><p>В файл fstab додаємо</p>
-<pre><code>tmpfs /var/lib/mysql/tmp tmpfs rw,gid=1001,uid=1001,size=1G,nr_inodes=10k,mode=0700 0 0
+<pre tabindex="0"><code>tmpfs /var/lib/mysql/tmp tmpfs rw,gid=1001,uid=1001,size=1G,nr_inodes=10k,mode=0700 0 0
 </code></pre><p>та монтуємо новий tmpfs-разділ</p>
-<pre><code>mount /var/lib/mysql/tmp
+<pre tabindex="0"><code>mount /var/lib/mysql/tmp
 </code></pre><p>Змінюємо конфігурацию MySQL в /etc/mysql/my.cnf</p>
-<pre><code>tmpdir=/var/lib/mysql/tmp
+<pre tabindex="0"><code>tmpdir=/var/lib/mysql/tmp
 </code></pre><p>Перезапускаємо MySQL</p>
-<pre><code>service mysql restart
+<pre tabindex="0"><code>service mysql restart
 </code></pre>    
         </div>
     </section>
@@ -222,13 +222,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/magento-2-modules-and-tools/">Модулі та інструменти для роботи з Magento 2 (оновлюється)</a></li>            
+          <li><a href="https://bender.kr.ua/fix-conflict-keyboard-shortcuts/">Не працюють комбінації клавіш CTRL-SHIFT в Ubuntu</a></li>            
         
           <li><a href="https://bender.kr.ua/howto-certbot-nginx-debian/">Отримання SSL-сертифікату для Nginx на Debian 9</a></li>            
         
-          <li><a href="https://bender.kr.ua/exception-the-value-is-not-accepted-by-the-pattern/">Пошук невалідних XML в Magento 2</a></li>            
+          <li><a href="https://bender.kr.ua/howto-install-telegram-debian-9/">Встановлення Telegram на Debian 9</a></li>            
         
-          <li><a href="https://bender.kr.ua/iptables-ipset/">Блокування трафіку за допомогою iptables та ipset</a></li>            
+          <li><a href="https://bender.kr.ua/how-to-fix-elasticsearch-forbidden-12-index-read-only-allow-delete-api/">Проблема з переіндексацією catalogsearch_fulltext на Magento 2</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -263,7 +263,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">1 хв</span>
+        <span class="reading-time">0 хв</span>
       </footer>
     </div>
 </article>

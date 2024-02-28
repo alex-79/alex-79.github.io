@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1484662020986-75935d2ebc66?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -146,10 +146,10 @@
     <section class="post-full-content">
         <div class="kg-card-markdown">
         <p>Якщо команди <strong>df</strong> та <strong>du</strong> показують різні значення, можлива причина полягає в тому, що процес утримує файл який вже було видалено з системи. Що побачити список таких процесів слід використати наступну команду:</p>
-<pre><code>lsof -nP | grep '(deleted)'
+<pre tabindex="0"><code>lsof -nP | grep '(deleted)'
 find /proc/*/fd -ls | grep  '(deleted)'
 </code></pre><p>Потім треба зробити наступне:</p>
-<pre><code>cat /dev/null &gt; /proc/6466/fd/3
+<pre tabindex="0"><code>cat /dev/null &gt; /proc/6466/fd/3
 </code></pre><p>данні взяти з виводу попередньої команди</p>
 <p>Джерела <a href="http://blog.pridybailo.com/%D0%BA%D0%BE%D0%B3%D0%B4%D0%B0-df-%D0%B8-du-%D0%BF%D0%BE%D0%BA%D0%B0%D0%B7%D1%8B%D0%B2%D0%B0%D1%8E%D1%82-%D1%80%D0%B0%D0%B7%D0%BD%D1%8B%D0%B5/">тут</a>, <a href="https://toster.ru/q/383426">тут</a> і <a href="https://unix.stackexchange.com/questions/68523/find-and-remove-large-files-that-are-open-but-have-been-deleted">тут</a></p>
     
@@ -214,13 +214,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/mint-19-and-epson-perfection-v33/">Mint 19 і сканер Epson Perfection V33</a></li>            
+          <li><a href="https://bender.kr.ua/howto-install-munin/">Простий моніторинг роботи сервера за допомогою Munin</a></li>            
         
-          <li><a href="https://bender.kr.ua/how-to-exclude-dump-tables/">Вибіркове завантаження таблиць дампа в MySQL</a></li>            
+          <li><a href="https://bender.kr.ua/regexp-replace-in-mariadb/">Заміна даних в MariaDB</a></li>            
         
-          <li><a href="https://bender.kr.ua/custom-logging-module-magento2/">Magento2: Як писати логи модуля в окремий файл?</a></li>            
+          <li><a href="https://bender.kr.ua/howto-install-flask/">Інструкція зі встановлення Flask</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-lemp-install/">Встановлення Nginx &#43; PHP &#43; MySQL на Debian 9</a></li>            
+          <li><a href="https://bender.kr.ua/failed-to-fetch-jessie-backports-repository/">Проблема з backports репозиторієм в Debian 8</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -256,7 +256,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">1 хв</span>
+        <span class="reading-time">0 хв</span>
       </footer>
     </div>
 </article>

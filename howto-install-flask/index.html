@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Powder_Flask_MET_DP236512.jpg/799px-Powder_Flask_MET_DP236512.jpg"/>
 
 
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -150,29 +150,29 @@
 <ol>
 <li>
 <p>Встановлюємо <em>Python</em> та додатковий інструментарій</p>
-<pre><code>apt install python3 python3-pip python3-venv
+<pre tabindex="0"><code>apt install python3 python3-pip python3-venv
 </code></pre></li>
 <li>
 <p>Створюємо папку для проекту та віртуальне середовище</p>
-<pre><code>mkdir myproject
+<pre tabindex="0"><code>mkdir myproject
 cd myproject
 python3 -m venv venv
 source venv/bin/activate
 </code></pre></li>
 <li>
 <p>Встановлюємо <em>Flask</em> та перевіряємо встановлену версію</p>
-<pre><code>python3 -m pip install Flask
+<pre tabindex="0"><code>python3 -m pip install Flask
 python -m flask --version
 </code></pre></li>
 <li>
 <p>Нарешті &ldquo;hello-world&rdquo; app.py:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> flask <span style="color:#f92672">import</span> Flask
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> flask <span style="color:#f92672">import</span> Flask
 app <span style="color:#f92672">=</span> Flask(__name__)
 
-<span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#39;/&#39;</span>)
+<span style="color:#a6e22e">@app</span><span style="color:#f92672">.</span>route(<span style="color:#e6db74">&#39;/&#39;</span>)
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">hello_world</span>():
     <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;Hello, World!&#39;</span>
-</code></pre></div><pre><code>export FLASK_APP=app.py
+</code></pre></div><pre tabindex="0"><code>export FLASK_APP=app.py
 export FLASK_ENV=development
 flask run
 </code></pre></li>
@@ -239,13 +239,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/howto-asterisk-part-3/">IP-телефонія на базі Asterisk. Частина 3: Логіка обробки дзвінків (Dialplan)</a></li>            
+          <li><a href="https://bender.kr.ua/configurable-crontab-magento2/">Magento2: налаштування періодичних завдань власного модуля через адмін-панель</a></li>            
         
-          <li><a href="https://bender.kr.ua/year-in-books-2020/">Мій книжковий 2020 рік</a></li>            
+          <li><a href="https://bender.kr.ua/mysql-tmp-table-in-tmpfs/">Тимчасові таблиці MySQL в tmpfs</a></li>            
         
-          <li><a href="https://bender.kr.ua/bash-if-else/">bash: умовний оператор if..else</a></li>            
+          <li><a href="https://bender.kr.ua/custom-logging-module-magento2/">Magento2: Як писати логи модуля в окремий файл?</a></li>            
         
-          <li><a href="https://bender.kr.ua/nginx-redirection-get-arg/">NGINX - 301-й редирект адрес з get-аргументами</a></li>            
+          <li><a href="https://bender.kr.ua/magento2-reindexer-for-large-catalog/">Проблема переіндексації великого каталогу в Magento 2</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -280,7 +280,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">1 хв</span>
+        <span class="reading-time">0 хв</span>
       </footer>
     </div>
 </article>
@@ -310,7 +310,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">13 хв</span>
+        <span class="reading-time">2 хв</span>
       </footer>
     </div>
 </article>

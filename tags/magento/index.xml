@@ -6,18 +6,14 @@
     <description>Recent content in magento on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>uk</language>
-    <lastBuildDate>Sun, 24 Jul 2022 00:00:00 +0300</lastBuildDate>
-    
-	<atom:link href="https://bender.kr.ua/tags/magento/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 24 Jul 2022 00:00:00 +0300</lastBuildDate><atom:link href="https://bender.kr.ua/tags/magento/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Пошук українською мовою в Magento 2</title>
       <link>https://bender.kr.ua/magento-2-searchsuite-ukrainian/</link>
       <pubDate>Sun, 24 Jul 2022 00:00:00 +0300</pubDate>
       
       <guid>https://bender.kr.ua/magento-2-searchsuite-ukrainian/</guid>
-      <description>Elasticsearch з коробки працює з великою кількістю мов: arabic, armenian, basque, bengali, brazilian, bulgarian, catalan, cjk, czech, danish, dutch, english, estonian, finnish, french, galician, german, greek, hindi, hungarian, indonesian, irish, italian, latvian, lithuanian, norwegian, persian, portuguese, romanian, russian, sorani, spanish, swedish, turkish, thai. Але солов&#39;їної на жаль немає.
+      <description>Elasticsearch з коробки працює з великою кількістю мов: arabic, armenian, basque, bengali, brazilian, bulgarian, catalan, cjk, czech, danish, dutch, english, estonian, finnish, french, galician, german, greek, hindi, hungarian, indonesian, irish, italian, latvian, lithuanian, norwegian, persian, portuguese, romanian, russian, sorani, spanish, swedish, turkish, thai. Але солов&amp;rsquo;їної на жаль немає.
 Якщо в Magento 2 ти, як і я, користуєшься пошуком від Smile, то є спосіб навчити цей модуль української. В цьому нам допоможе плагін LemmaGen.</description>
     </item>
     
@@ -27,8 +23,8 @@
       <pubDate>Tue, 29 Mar 2022 15:53:57 +0300</pubDate>
       
       <guid>https://bender.kr.ua/magento-2-phpamqplib-timed-out-after-3-sec/</guid>
-      <description>При переносі сайту на інший сервер стикнувся з досить неприємною проблемою. При роботі з чергами постійно обривалося з&#39;єднання. В логах таке повідомлення The connection timed out after 3 sec while awaiting incoming data at /magento/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/AMQPReader.php:142.
-Гуглення натякало, що проблеми у інших користувачів Magento якщо і з&#39;являються, то пов&#39;язані з невірно вказаним портом для підключення. І це був не мій випадок, отже проблема поза межами Magento 2.
+      <description>При переносі сайту на інший сервер стикнувся з досить неприємною проблемою. При роботі з чергами постійно обривалося з&amp;rsquo;єднання. В логах таке повідомлення The connection timed out after 3 sec while awaiting incoming data at /magento/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/AMQPReader.php:142.
+Гуглення натякало, що проблеми у інших користувачів Magento якщо і з&amp;rsquo;являються, то пов&amp;rsquo;язані з невірно вказаним портом для підключення. І це був не мій випадок, отже проблема поза межами Magento 2.
 Оновлення до останньої версії rabbitmq-server нічого не змінило.</description>
     </item>
     
@@ -38,7 +34,7 @@
       <pubDate>Wed, 01 Sep 2021 15:45:55 +0300</pubDate>
       
       <guid>https://bender.kr.ua/exception-the-value-is-not-accepted-by-the-pattern/</guid>
-      <description>Під час роботи в режимі developer можуть з&#39;являтись повідомлення типу
+      <description>Під час роботи в режимі developer можуть з&amp;rsquo;являтись повідомлення типу
 1 exception(s): Exception #0 (Magento\Framework\Config\Dom\ValidationException): Element &#39;block&#39;, attribute &#39;before&#39;: [facet &#39;pattern&#39;] The value &#39;.&#39; is not accepted by the pattern &#39;[a-zA-Z][a-zA-Z\d\-_\.]*|-&#39;. Line: 34 Це означає, що деякі ваші файли не пройшли XML-валідацію. Знайти проблемний xml можна так
 grep -r app -e &#39;before=&amp;quot;\.&#39; Тут пошук відбувається в директорії app. Назву атрибута та його значення треба взяти з повідомлення про помилку.
 Будьте уважні - в режимах default та production повідомлення не відображається, що зовсім не означає відсутності проблеми :)</description>
@@ -50,7 +46,7 @@ grep -r app -e &#39;before=&amp;quot;\.&#39; Тут пошук відбуває�
       <pubDate>Tue, 10 Mar 2020 08:56:19 +0000</pubDate>
       
       <guid>https://bender.kr.ua/magento-2-cron-indexer-repair/</guid>
-      <description>Іноді, за нез&#39;ясованих поки обставин, в Magento 2 ламаєть виконання переіндексації за розкладом. В логах це виглядає як main.WARNING: Could not acquire lock for cron group: index, skipping run.
+      <description>Іноді, за нез&amp;rsquo;ясованих поки обставин, в Magento 2 ламаєть виконання переіндексації за розкладом. В логах це виглядає як main.WARNING: Could not acquire lock for cron group: index, skipping run.
 Щоб &amp;ldquo;поремонтувати&amp;rdquo; крон необхідно:
   Знайти та вбити процес який відповідає за запуск завдань в Magento 2: php bin/magento cron:run &amp;ndash;group=index &amp;ndash;bootstrap=standaloneProcessStarted=1
 ps ufx | grep cron kill XXXX   Очистити таблицю cron_schedule
@@ -99,7 +95,7 @@ registration.php
       <pubDate>Fri, 23 Aug 2019 08:32:18 +0000</pubDate>
       
       <guid>https://bender.kr.ua/magento-2-modules-and-tools/</guid>
-      <description>Список корисних модулів і рішень для Magento 2. Список, ясна річ, дуже суб&#39;єктивний і використовується для зберігання цікавих для мене посилань.
+      <description>Список корисних модулів і рішень для Magento 2. Список, ясна річ, дуже суб&amp;rsquo;єктивний і використовується для зберігання цікавих для мене посилань.
 Розгортання  Magento 2 Zero Downtime Deployment  Оптимізація  Відключення непотрібних модулів - один та два Відключення непотрібних модулів The “ultimate guide” to Magento 2 JavaScript Bundling How to improve Magento 2 Page Speed Insights Score?  Пошук  Модуль для Elastic App Search Smile ElasticSuite - комплексне рішення для пошуку, фільтрації та створення віртуальних категорій  Зовнішній вигляд та теми  Open Source alternative to Magento PageBuilder  Youtube  Max Pronko UA / Max Pronko  </description>
     </item>
     
@@ -179,7 +175,7 @@ Missing required argument $encoder of MSP\TwoFactorAuth\Model\UserConfigManager.
       
       <guid>https://bender.kr.ua/how-to-fix-elasticsearch-forbidden-12-index-read-only-allow-delete-api/</guid>
       <description>Під час переіндексації отримую
-php bin/magento indexer:reindex catalogsearch_fulltext Catalog Search indexer process unknown error: {&amp;quot;error&amp;quot;:{&amp;quot;root_cause&amp;quot;:[{&amp;quot;type&amp;quot;:&amp;quot;cluster_block_exception&amp;quot;,&amp;quot;reason&amp;quot;:&amp;quot;blocked by: [FORBIDDEN/12/index read-only / allow delete (api)];&amp;quot;}],&amp;quot;type&amp;quot;:&amp;quot;cluster_block_exception&amp;quot;,&amp;quot;reason&amp;quot;:&amp;quot;blocked by: [FORBIDDEN/12/index read-only / allow delete (api)];&amp;quot;},&amp;quot;status&amp;quot;:403} Проблема пов&#39;язана з ElasticSearch, а саме тим, що на диску залишилось менше 5% вільного місця. Щоб усе запрацювало, крім вивільнення необхідної кількості байт, необхідно ще виконати наступну команду:
+php bin/magento indexer:reindex catalogsearch_fulltext Catalog Search indexer process unknown error: {&amp;quot;error&amp;quot;:{&amp;quot;root_cause&amp;quot;:[{&amp;quot;type&amp;quot;:&amp;quot;cluster_block_exception&amp;quot;,&amp;quot;reason&amp;quot;:&amp;quot;blocked by: [FORBIDDEN/12/index read-only / allow delete (api)];&amp;quot;}],&amp;quot;type&amp;quot;:&amp;quot;cluster_block_exception&amp;quot;,&amp;quot;reason&amp;quot;:&amp;quot;blocked by: [FORBIDDEN/12/index read-only / allow delete (api)];&amp;quot;},&amp;quot;status&amp;quot;:403} Проблема пов&amp;rsquo;язана з ElasticSearch, а саме тим, що на диску залишилось менше 5% вільного місця. Щоб усе запрацювало, крім вивільнення необхідної кількості байт, необхідно ще виконати наступну команду:
 curl -XPUT -H &amp;quot;Content-Type: application/json&amp;quot; http://localhost:9200/_all/_settings -d &#39;{&amp;quot;index.blocks.read_only_allow_delete&amp;quot;: null}&#39; Посилання  https://techoverflow.net/2019/04/17/how-to-fix-elasticsearch-forbidden-12-index-read-only-allow-delete-api/  </description>
     </item>
     
@@ -225,7 +221,7 @@ upgrade.sh 2.2.2 Джерело тут</description>
       
       <guid>https://bender.kr.ua/magento-payment-plugin-for-bitpay/</guid>
       <description>Як отримати bitcoin-и без того, щоб скуповувати відеокарти? Правильно, щось за них продати. Для цього трема мати магазин на Magento та виконати невеличку інструкцію:
- Зробити гаманець на https://bitpay.com/. Встановити модуль https://github.com/bitpay/magento-plugin. Тут увага, не намагайтесь ставити через modman - все одно не запрацює. Краще зробити це з архіву https://github.com/bitpay/magento-plugin/releases. Далі налаштовуємо через System &amp;gt; Configuration &amp;gt; Sales &amp;gt; Payment Methods. Щоб прив&#39;язати гаманець до Magento, треба отримати токен https://bitpay.com/api-tokens і ввести його у відповідне поле.</description>
+ Зробити гаманець на https://bitpay.com/. Встановити модуль https://github.com/bitpay/magento-plugin. Тут увага, не намагайтесь ставити через modman - все одно не запрацює. Краще зробити це з архіву https://github.com/bitpay/magento-plugin/releases. Далі налаштовуємо через System &amp;gt; Configuration &amp;gt; Sales &amp;gt; Payment Methods. Щоб прив&amp;rsquo;язати гаманець до Magento, треба отримати токен https://bitpay.com/api-tokens і ввести його у відповідне поле.</description>
     </item>
     
     <item>
@@ -246,7 +242,7 @@ upgrade.sh 2.2.2 Джерело тут</description>
       
       <guid>https://bender.kr.ua/5-extensions-for-default-magento2/</guid>
       <description>Magento 2 - дійсно крута система, але деякі штуки, як на мене, настільки очевидно мають бути всередині, що коли їх не знаходиш, то лишається лише сказати &amp;ldquo;ну як, так!?&amp;rdquo;
-Виконавши кілька проектів на Magento 2, зібрав список модулів, які обов&#39;язково ставлю після інсталяції системи.
+Виконавши кілька проектів на Magento 2, зібрав список модулів, які обов&amp;rsquo;язково ставлю після інсталяції системи.
 1. Google Tag Manager Дивно, що не &amp;ldquo;з коробки&amp;rdquo;, бо Google Analytics та Google AdWords в системі присутні.
 сайт: magepal/magento2-googletagmanager
 встановлення:

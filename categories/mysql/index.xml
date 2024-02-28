@@ -6,11 +6,7 @@
     <description>Recent content in mysql on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>uk</language>
-    <lastBuildDate>Mon, 17 Feb 2020 02:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://bender.kr.ua/categories/mysql/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 17 Feb 2020 02:00:00 +0000</lastBuildDate><atom:link href="https://bender.kr.ua/categories/mysql/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Встановлення зв&#39;язки Django та MySQL на Debian 9</title>
       <link>https://bender.kr.ua/howto-install-django-mysql-debian-9/</link>
@@ -21,7 +17,7 @@
 apt install python3 python3-pip python3-venv   Створюємо папку для проекту та віртуальне середовище
 mkdir myproject cd myproject python3 -m venv venv source venv/bin/activate   Встановлюємо Django та перевыряємо встановлену версію
 python3 -m pip install Django python -m django --version   Створюємо новий проект
-django-admin startproject myproject   З&#39;єднання з MySQL   Встановлюємо Percona Server
+django-admin startproject myproject   З&amp;rsquo;єднання з MySQL   Встановлюємо Percona Server
 wget https://repo.percona.com/apt/percona-release_latest.$(lsb_release -sc)_all.</description>
     </item>
     
@@ -53,7 +49,7 @@ SELECT sku FROM `catalog_product_entity` WHERE sku REGEXP &amp;#34;-$&amp;#34; =
       <pubDate>Mon, 17 Jun 2019 00:00:00 +0000</pubDate>
       
       <guid>https://bender.kr.ua/mysql-tmp-table-in-tmpfs/</guid>
-      <description>Для прискорення роботи бази даних можна винести тимчасові таблиці в оперативну пам&#39;ять. Зробити це дуже просто.
+      <description>Для прискорення роботи бази даних можна винести тимчасові таблиці в оперативну пам&amp;rsquo;ять. Зробити це дуже просто.
 Створюємо папку для зберігання тимчасових таблиць
 mkdir /var/lib/mysql/tmp Змінюємо власника папки на mysql
 chown mysql:mysql /var/lib/mysql/tmp Знаходимо uid та gid для mysql

@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/reserve/uZYSV4nuQeyq64azfVIn_15130980706_64134efc6e_o.jpg?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -148,14 +148,14 @@
         <p>Традиційно після встановлення <em><strong>NetBeans</strong></em> на Linux постає питання відображення шрифтів в IDE. В конфігурації за замовчування вони виглядають дуже погано.</p>
 <p><img src="/img/netbeans-default.png" alt="Вигляд шрифтів у щойно встановленій IDE NetBeans"></p>
 <p>Найпопулярнішою порадою в інтернетах є додавання до файлу конфігурації <em>etc/netbeans.conf</em> такого рядка</p>
-<pre><code>netbeans_default_options=&quot; ... -J-Dswing.aatext=true -J-Dawt.useSystemAAFontSettings=lcd&quot;
+<pre tabindex="0"><code>netbeans_default_options=&quot; ... -J-Dswing.aatext=true -J-Dawt.useSystemAAFontSettings=lcd&quot;
 </code></pre><p>Після цього шрифти не набагато, але стають краще, особливо, якщо використати темну тему, бо на світлій все ще помітно &ldquo;мило&rdquo;.</p>
 <p><img src="/img/netbeans-default-fonts.png" alt="Вигляд шрифтів у IDE NetBeans після редагування опцій"></p>
 <p>Ось тут на допомогу може прийти JetBrains :)))</p>
 <p>Є два варіанти: 1) користуватись PHPStorm, в якому зі шрифтами все добре (в силу різних причин для мене це взагалі не варіант) або 2) використати пропатчену JetBrains версію JDK.</p>
 <p>На сторінці <a href="https://confluence.jetbrains.com/display/JBR/JetBrains+Runtime">JetBrains Runtime</a> зазначено що модифікації OpenJDK включають: Subpixel Anti-Aliasing, розширену візуалізацію шрифту в Linux, підтримку HiDPI та лігатури. Звучить не погано.</p>
 <p>Щоб використати JetBrains Runtime для NetBeans, необхідно взяти версію на базі Java 8 <a href="https://bintray.com/jetbrains/intellij-jbr/jbrsdk8-linux-x64/1638.3">https://bintray.com/jetbrains/intellij-jbr/jbrsdk8-linux-x64/1638.3</a> та розпакувати її наприклад у <em>/home/user/jre</em>. Тепер у файлі конфігурації <em>etc/netbeans.conf</em> вказуємо новий шлях до JDK:</p>
-<pre><code>netbeans_jdkhome=&quot;/home/user/jre&quot;
+<pre tabindex="0"><code>netbeans_jdkhome=&quot;/home/user/jre&quot;
 </code></pre><p>Після цього шрифти у NetBeans виглядають так</p>
 <p><img src="/img/netbeans-jb.png" alt="Вигляд шрифтів у IDE NetBeans після використання JetBrains Runtime"></p>
 <p>Якщо погратись зі шрифтами, то результат може бути ще краще. Наприклад так NetBeans виглядає зі шрифтом <em>Source Code Pro</em></p>
@@ -230,13 +230,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/nginx-redirection-get-arg/">NGINX - 301-й редирект адрес з get-аргументами</a></li>            
+          <li><a href="https://bender.kr.ua/howto-hide-default-store-code-from-url-magento-2/">Як прибрати Store Code з URL для основного магазину в Magento 2</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-asterisk-part-5/">IP-телефонія на базі Asterisk. Частина 5: Деталізований звіт про виклики (Call Detail Records, CDR)</a></li>            
+          <li><a href="https://bender.kr.ua/how-to-exclude-dump-tables/">Вибіркове завантаження таблиць дампа в MySQL</a></li>            
         
-          <li><a href="https://bender.kr.ua/magick-248/">Магічне число 248 або Чому я не можу додати значення атрибута в Magento 2?</a></li>            
+          <li><a href="https://bender.kr.ua/howto-install-flask/">Інструкція зі встановлення Flask</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-add-header-links-in-magento2/">Magento 2: як додати посилання в header.links</a></li>            
+          <li><a href="https://bender.kr.ua/bash-if-else/">bash: умовний оператор if..else</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -303,7 +303,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">4 хв</span>
+        <span class="reading-time">1 хв</span>
       </footer>
     </div>
 </article>

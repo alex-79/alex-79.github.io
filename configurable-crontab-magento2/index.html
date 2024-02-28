@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1495364141860-b0d03eccd065?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -149,7 +149,7 @@
 <ol>
 <li>
 <p>Сворюємо <strong>crontab.xml</strong> в <em>app/VendorName/ModuleName/etc</em></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34;?&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34;?&gt;</span>
 <span style="color:#f92672">&lt;config</span> <span style="color:#a6e22e">xmlns:xsi=</span><span style="color:#e6db74">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span> <span style="color:#a6e22e">xsi:noNamespaceSchemaLocation=</span><span style="color:#e6db74">&#34;urn:magento:module:Magento_Cron:etc/crontab.xsd&#34;</span><span style="color:#f92672">&gt;</span>
     <span style="color:#f92672">&lt;group</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;default&#34;</span><span style="color:#f92672">&gt;</span>
         <span style="color:#f92672">&lt;job</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;vendorname_modulename_job&#34;</span> <span style="color:#a6e22e">instance=</span><span style="color:#e6db74">&#34;VendorName\ModuleName\Cron\CronJob&#34;</span> <span style="color:#a6e22e">method=</span><span style="color:#e6db74">&#34;execute&#34;</span><span style="color:#f92672">&gt;</span>
@@ -160,7 +160,7 @@
 </code></pre></div></li>
 <li>
 <p>Створюємо поле для налаштування періодичного завдання у файлі <em>app/VendorName/ModuleName/etc/adminhtml/system.xml</em></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">            ...
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">            ...
             <span style="color:#f92672">&lt;group</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;configurable_cron&#34;</span> <span style="color:#a6e22e">translate=</span><span style="color:#e6db74">&#34;label&#34;</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">sortOrder=</span><span style="color:#e6db74">&#34;150&#34;</span> <span style="color:#a6e22e">showInDefault=</span><span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#a6e22e">showInWebsite=</span><span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#a6e22e">showInStore=</span><span style="color:#e6db74">&#34;0&#34;</span><span style="color:#f92672">&gt;</span>
                 <span style="color:#f92672">&lt;label&gt;</span>Cron<span style="color:#f92672">&lt;/label&gt;</span>
                 <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;crontab&#34;</span> <span style="color:#a6e22e">translate=</span><span style="color:#e6db74">&#34;label&#34;</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">sortOrder=</span><span style="color:#e6db74">&#34;10&#34;</span> <span style="color:#a6e22e">showInDefault=</span><span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#a6e22e">showInWebsite=</span><span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#a6e22e">showInStore=</span><span style="color:#e6db74">&#34;1&#34;</span><span style="color:#f92672">&gt;</span>
@@ -173,38 +173,38 @@
 </code></pre></div></li>
 <li>
 <p>Створюємо бекенд-модель <em>app/VendorName/ModuleName/Model/Config/CronConfig.php</em></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
 
 <span style="color:#66d9ef">namespace</span> <span style="color:#a6e22e">VendorName\ModuleName\Model\Config</span>;
-   
+
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CronConfig</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">\Magento\Framework\App\Config\Value</span>
 {
-   
+
     <span style="color:#e6db74">/**
 </span><span style="color:#e6db74">    * @var \Magento\Framework\App\Config\ValueFactory
 </span><span style="color:#e6db74">    */</span>
     <span style="color:#66d9ef">protected</span> $configValueFactory;
-   
+
     <span style="color:#e6db74">/**
 </span><span style="color:#e6db74">    * @var string
 </span><span style="color:#e6db74">    */</span>
     <span style="color:#66d9ef">protected</span> $runModelPath <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
-       
+
     <span style="color:#e6db74">/**
 </span><span style="color:#e6db74">    * Cron string path
 </span><span style="color:#e6db74">    */</span>
     <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">CRON_STRING_PATH</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;crontab/default/jobs/vendorname_modulename_job/schedule/cron_expr&#39;</span>;
-   
+
     <span style="color:#e6db74">/**
 </span><span style="color:#e6db74">    * Cron model path
 </span><span style="color:#e6db74">    */</span>
     <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">CRON_MODEL_PATH</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;crontab/default/jobs/vendorname_modulename_job/run/model&#39;</span>;
-       
+
     <span style="color:#e6db74">/**
 </span><span style="color:#e6db74">    * Cron config data
 </span><span style="color:#e6db74">    */</span>      
     <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">CONFIG_DATA</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;groups/configurable_cron/fields/crontab/value&#39;</span>;
-   
+
     <span style="color:#e6db74">/**
 </span><span style="color:#e6db74">    * @param \Magento\Framework\Model\Context $context
 </span><span style="color:#e6db74">    * @param \Magento\Framework\Registry $registry
@@ -231,8 +231,8 @@
         $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">configValueFactory</span> <span style="color:#f92672">=</span> $configValueFactory;
         <span style="color:#66d9ef">parent</span><span style="color:#f92672">::</span><span style="color:#a6e22e">__construct</span>($context, $registry, $config, $cacheTypeList, $resource, $resourceCollection, $data);
     }
-                   
-       
+
+
     <span style="color:#e6db74">/**
 </span><span style="color:#e6db74">    * {@inheritdoc}
 </span><span style="color:#e6db74">    *
@@ -263,7 +263,7 @@
         } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">\Exception</span> $e) {
             <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">\Exception</span>(<span style="color:#a6e22e">__</span>(<span style="color:#e6db74">&#39;We can\&#39;t save the cron expression.&#39;</span>));
         }
-   
+
         <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">parent</span><span style="color:#f92672">::</span><span style="color:#a6e22e">afterSave</span>();
     }
 
@@ -271,7 +271,7 @@
 </code></pre></div></li>
 <li>
 <p>І нарешті створюємо <em>app/VendorName/ModuleName/Cron/CronJob.php</em></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
 
 <span style="color:#66d9ef">namespace</span> <span style="color:#a6e22e">VendorName\ModuleName\Cron</span>;
 
@@ -348,13 +348,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/magick-248/">Магічне число 248 або Чому я не можу додати значення атрибута в Magento 2?</a></li>            
-        
-          <li><a href="https://bender.kr.ua/howto-install-rocketchat-debian-9/">Встановлення відкритого месенджера Rocket.Chat на Debian 9</a></li>            
+          <li><a href="https://bender.kr.ua/nginx-geoip/">Блокування трафіку з окремих країн за допомогою Nginx та GeoIP</a></li>            
         
           <li><a href="https://bender.kr.ua/multiple-rabbitmq-instances/">Запуск кількох інстансів RabbitMQ на одному сервері</a></li>            
         
-          <li><a href="https://bender.kr.ua/review-neal-stephenson-in-the-beginning-was-the-command-line/">Ніл Стівенсон. Спочатку був командний рядок</a></li>            
+          <li><a href="https://bender.kr.ua/howto-install-telegram-debian-9/">Встановлення Telegram на Debian 9</a></li>            
+        
+          <li><a href="https://bender.kr.ua/howto-install-magento2-cli/">Встановлення Magento 2 з командного рядка</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -383,14 +383,14 @@ s.setAttribute('data-timestamp', +new Date());
           </header>
           <section class="post-card-excerpt">
                
-                <p>Покрокова інструкція по встановленню і запуску зв'язки LEMP (Linux + Nginx + MySQL + PHP)</p>
+                <p>Покрокова інструкція по встановленню і запуску зв&rsquo;язки LEMP (Linux + Nginx + MySQL + PHP)</p>
               
           </section>
       </a>
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">2 хв</span>
+        <span class="reading-time">1 хв</span>
       </footer>
     </div>
 </article>

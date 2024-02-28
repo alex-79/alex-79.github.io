@@ -6,11 +6,7 @@
     <description>Recent content in rabbitmq on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>uk</language>
-    <lastBuildDate>Tue, 21 Jun 2022 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://bender.kr.ua/tags/rabbitmq/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 21 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://bender.kr.ua/tags/rabbitmq/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Запуск кількох інстансів RabbitMQ на одному сервері</title>
       <link>https://bender.kr.ua/multiple-rabbitmq-instances/</link>
@@ -19,7 +15,7 @@
       <guid>https://bender.kr.ua/multiple-rabbitmq-instances/</guid>
       <description>Для запуску кількох інстансів RabbitMQ на різних портах достатньо відредагувати/створити systemd-юніт.
 # /lib/systemd/system/rabbitmq-server.service [Unit] Description=RabbitMQ broker After=network.target epmd@0.0.0.0.socket Wants=network.target epmd@0.0.0.0.socket [Service] Type=notify User=rabbitmq Group=rabbitmq UMask=0027 NotifyAccess=all TimeoutStartSec=600 LimitNOFILE=32768 Restart=on-failure RestartSec=10 WorkingDirectory=/var/lib/rabbitmq Environment=&amp;#34;RABBITMQ_NODE_PORT=5672&amp;#34; Environment=&amp;#34;RABBITMQ_NODENAME=rabbit1@localhost&amp;#34; ExecStart=/usr/lib/rabbitmq/bin/rabbitmq-server ExecStop=/usr/lib/rabbitmq/bin/rabbitmqctl -n rabbit1@localhost shutdown SuccessExitStatus=69 [Install] WantedBy=multi-user.target Від юніту з коробки цей відрізняється рядками
-Environment=&amp;#34;RABBITMQ_NODE_PORT=5672&amp;#34; Environment=&amp;#34;RABBITMQ_NODENAME=rabbit1@localhost&amp;#34; ... ExecStop=/usr/lib/rabbitmq/bin/rabbitmqctl -n rabbit1@localhost shutdown Створивши юніт /lib/systemd/system/rabbitmq-server-5673.service з RABBITMQ_NODE_PORT=5673 та RABBITMQ_NODENAME=rabbit2@localhost, можна запустити другу копію RabbitMQ на порту 5673. А потім третю, четверту, п&#39;яту &amp;hellip;</description>
+Environment=&amp;#34;RABBITMQ_NODE_PORT=5672&amp;#34; Environment=&amp;#34;RABBITMQ_NODENAME=rabbit1@localhost&amp;#34; ... ExecStop=/usr/lib/rabbitmq/bin/rabbitmqctl -n rabbit1@localhost shutdown Створивши юніт /lib/systemd/system/rabbitmq-server-5673.service з RABBITMQ_NODE_PORT=5673 та RABBITMQ_NODENAME=rabbit2@localhost, можна запустити другу копію RabbitMQ на порту 5673. А потім третю, четверту, п&amp;rsquo;яту &amp;hellip;</description>
     </item>
     
     <item>
@@ -28,8 +24,8 @@ Environment=&amp;#34;RABBITMQ_NODE_PORT=5672&amp;#34; Environment=&amp;#34;RABBI
       <pubDate>Tue, 29 Mar 2022 15:53:57 +0300</pubDate>
       
       <guid>https://bender.kr.ua/magento-2-phpamqplib-timed-out-after-3-sec/</guid>
-      <description>При переносі сайту на інший сервер стикнувся з досить неприємною проблемою. При роботі з чергами постійно обривалося з&#39;єднання. В логах таке повідомлення The connection timed out after 3 sec while awaiting incoming data at /magento/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/AMQPReader.php:142.
-Гуглення натякало, що проблеми у інших користувачів Magento якщо і з&#39;являються, то пов&#39;язані з невірно вказаним портом для підключення. І це був не мій випадок, отже проблема поза межами Magento 2.
+      <description>При переносі сайту на інший сервер стикнувся з досить неприємною проблемою. При роботі з чергами постійно обривалося з&amp;rsquo;єднання. В логах таке повідомлення The connection timed out after 3 sec while awaiting incoming data at /magento/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/AMQPReader.php:142.
+Гуглення натякало, що проблеми у інших користувачів Magento якщо і з&amp;rsquo;являються, то пов&amp;rsquo;язані з невірно вказаним портом для підключення. І це був не мій випадок, отже проблема поза межами Magento 2.
 Оновлення до останньої версії rabbitmq-server нічого не змінило.</description>
     </item>
     

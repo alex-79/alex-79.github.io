@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1559619608-21ed24d8035b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -159,10 +159,10 @@
 <li><em>call-out</em> - контекст для вихідних дзвінків на &ldquo;зовнішні&rdquo; номери
 Робимо резервну копію файлу <em>extensions.conf</em> і створюємо новий файл для налаштування плану дозвону:</li>
 </ul>
-<pre><code>mv extensions.conf extensions.conf.default
+<pre tabindex="0"><code>mv extensions.conf extensions.conf.default
 touch extensions.conf
 </code></pre><p>Вносимо в створений файл такі контексти:</p>
-<pre><code>[general]
+<pre tabindex="0"><code>[general]
 static=yes
 writeprotect=no
 
@@ -188,7 +188,7 @@ exten =&gt; YYYYYY,1,Dial(SIP/101)
 include =&gt; call-local
 include =&gt; call-out
 </code></pre><p>Перевіряємо дзвінки між внутрішніми лініями:</p>
-<pre><code>asterisk-centos*CLI&gt; 
+<pre tabindex="0"><code>asterisk-centos*CLI&gt; 
   == Using SIP RTP CoS mark 5
     -- Executing [102@manager:1] Dial(&quot;SIP/101-0000002a&quot;, &quot;SIP/102&quot;) in new stack
   == Using SIP RTP CoS mark 5
@@ -218,7 +218,7 @@ include =&gt; call-out
     -- Channel SIP/102-0000002c left 'native_rtp' basic-bridge &lt;10e80012-fb40-47ab-be85-7d76cb584588&gt;
   == Spawn extension (manager, 101, 1) exited non-zero on 'SIP/102-0000002c'
 </code></pre><p>Перевіряємо дзвінки на зовнішні лінії, а саме на номер <em>XXXXXX</em> провайдера Zadarma.</p>
-<pre><code>asterisk-centos*CLI&gt; 
+<pre tabindex="0"><code>asterisk-centos*CLI&gt; 
   == Using SIP RTP CoS mark 5
     -- Executing [XXXXXX@manager:1] Dial(&quot;SIP/101-00000035&quot;, &quot;SIP/XXXXXX@zadarma&quot;) in new stack
   == Using SIP RTP CoS mark 5
@@ -234,7 +234,7 @@ include =&gt; call-out
   == Spawn extension (manager, XXXXXX, 1) exited non-zero on 'SIP/101-00000035'
     -- Channel SIP/zadarma-00000036 left 'native_rtp' basic-bridge &lt;d19036d2-735c-4c43-b2b5-9ac8d3b040f6&gt;
 </code></pre><p>Перевіряємо можливість додзвонитися на наш Asterisk з зовнішнього номера, для цього дзвонимо на номер <em>YYYYYY</em> провайдера Zadarma, який вважаємо &ldquo;зовнішнім&rdquo; номером нашої компанії:</p>
-<pre><code>asterisk-centos*CLI&gt; 
+<pre tabindex="0"><code>asterisk-centos*CLI&gt; 
   == Using SIP RTP CoS mark 5
     -- Executing [YYYYYY@call-in:1] Dial(&quot;SIP/zadarma-00000004&quot;, &quot;SIP/101&quot;) in new stack
   == Using SIP RTP CoS mark 5
@@ -257,7 +257,7 @@ include =&gt; call-out
 <li>склад - заборонені дзвінки на зовнішні лінії;</li>
 <li>технічний відділ - заборонені дзвінки до керуючого персоналу і на зовнішні лінії.</li>
 </ul>
-<pre><code>[general]
+<pre tabindex="0"><code>[general]
 static=yes
 writeprotect=no
 
@@ -316,7 +316,7 @@ include =&gt; call-local-manager
 include =&gt; call-local
 include =&gt; call-out-ua
 </code></pre><p>Перевіряємо заборону дзвінків на групу manager:</p>
-<pre><code>asterisk-centos*CLI&gt; 
+<pre tabindex="0"><code>asterisk-centos*CLI&gt; 
   == Using SIP RTP CoS mark 5
 [2017-05-01 19:35:30] NOTICE[2173][C-00000028]: chan_sip.c:26374 handle_request_invite: Call from '501' (192.168.1.101:5060) to extension '380938694966' rejected because extension not found in context 'it'.
 Провереяем звонки на внешние линии: 
@@ -333,7 +333,7 @@ asterisk-centos*CLI&gt;
 </code></pre><h2 id="33-запис-дзвінків">3.3 Запис дзвінків</h2>
 <p>Додамо функцію запису дзвінків в форматі mp3 &ldquo;на льоту&rdquo;. За замовчуванням запис дзвінків буде включена, але з можливістю відключити її під час розмови.
 Для підтримки формату mp3 встановимо в системі пакет <em>lame</em>:</p>
-<pre><code>cd /usr/src/
+<pre tabindex="0"><code>cd /usr/src/
 wget https://downloads.sourceforge.net/project/lame/lame/3.99/lame-3.99.5.tar.gz
 tar vxfz lame-3.99.5.tar.gz 
 rm -f lame-3.99.5.tar.gz
@@ -341,7 +341,7 @@ cd lame-3.99.5
 ./configure 
 make &amp;&amp; make install
 </code></pre><p>Додаємо можливість запису дзвінків в діалплан:</p>
-<pre><code>[general]
+<pre tabindex="0"><code>[general]
 static=yes
 writeprotect=no
 
@@ -422,7 +422,7 @@ include =&gt; call-local-manager
 include =&gt; call-local
 include =&gt; call-out-ua
 </code></pre><p>Запис дзвінків в контексті call-in:</p>
-<pre><code class="language-asterisk-centos*CLI>" data-lang="asterisk-centos*CLI>">  == Using SIP RTP CoS mark 5
+<pre tabindex="0"><code class="language-asterisk-centos*CLI>" data-lang="asterisk-centos*CLI>">  == Using SIP RTP CoS mark 5
     -- Executing [YYYYYY@call-in:1] Macro(&quot;SIP/zadarma-00000000&quot;, &quot;recording,XXXXXX,YYYYYY&quot;) in new stack
     -- Executing [s@macro-recording:1] GotoIf(&quot;SIP/zadarma-00000000&quot;, &quot;1?yes:no&quot;) in new stack
     -- Goto (macro-recording,s,2)
@@ -538,13 +538,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/5-extensions-for-default-magento2/">5 розширень, які ти зобов&#39;язаний поставити на Magento 2</a></li>            
+          <li><a href="https://bender.kr.ua/magento-2-reindex-parallel/">Паралельна індексація в Magento 2</a></li>            
         
           <li><a href="https://bender.kr.ua/upgrade-magento-232/">Оновлення Magento до версії 2.3.2</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-asterisk-part-4/">IP-телефонія на базі Asterisk. Частина 4: Голосове меню</a></li>            
+          <li><a href="https://bender.kr.ua/connie-willis-doomsday-book/">Конні Вілліс. Книга судного дня</a></li>            
         
-          <li><a href="https://bender.kr.ua/magick-248/">Магічне число 248 або Чому я не можу додати значення атрибута в Magento 2?</a></li>            
+          <li><a href="https://bender.kr.ua/howto-asterisk-part-4/">IP-телефонія на базі Asterisk. Частина 4: Голосове меню</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -580,7 +580,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">1 хв</span>
+        <span class="reading-time">0 хв</span>
       </footer>
     </div>
 </article>

@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1470173274384-c4e8e2f9ea4c?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -155,7 +155,7 @@
 <ol>
 <li>
 <p>задати великий <strong>batchRowsCount</strong> в <em>di.xml</em></p>
-<pre><code>&lt;type name=&quot;Magento\Catalog\Model\ResourceModel\Product\Indexer\Price\BatchSizeCalculator&quot;&gt;
+<pre tabindex="0"><code>&lt;type name=&quot;Magento\Catalog\Model\ResourceModel\Product\Indexer\Price\BatchSizeCalculator&quot;&gt;
     &lt;arguments&gt;
         &lt;argument name=&quot;batchRowsCount&quot; xsi:type=&quot;array&quot;&gt;
             &lt;item name=&quot;default&quot; xsi:type=&quot;number&quot;&gt;500000&lt;/item&gt;
@@ -165,7 +165,7 @@
 </code></pre></li>
 <li>
 <p>збільшити <strong>$batchSize</strong> в <em>/vendor/magento/module-catalog-inventory/Model/Indexer/ProductPriceIndexFilter.php</em> (67)</p>
-<pre><code>    public function __construct(
+<pre tabindex="0"><code>    public function __construct(
         StockConfigurationInterface $stockConfiguration,
         Item $stockItem,
         ResourceConnection $resourceConnection = null,
@@ -183,23 +183,23 @@
 
 </code></pre></li>
 </ol>
-<p><strong>P.S.</strong> Ейфорія тривала не довго, аж до наступної переіндексації. Розслідування продовжилось і виплив ось такий issue - <a href="https://github.com/magento/magento2/issues/23077,">https://github.com/magento/magento2/issues/23077,</a> який пов'язаний з неправильною роботою тригерів і створенням дублів товарів для індексації. Ну і власне виправлення - <a href="https://github.com/sebastien-kathmandu/magento2/pull/1/commits/444bc8d2805ab0c57a66e656332394f0123c63df">https://github.com/sebastien-kathmandu/magento2/pull/1/commits/444bc8d2805ab0c57a66e656332394f0123c63df</a>.</p>
+<p><strong>P.S.</strong> Ейфорія тривала не довго, аж до наступної переіндексації. Розслідування продовжилось і виплив ось такий issue - <a href="https://github.com/magento/magento2/issues/23077">https://github.com/magento/magento2/issues/23077</a>, який пов&rsquo;язаний з неправильною роботою тригерів і створенням дублів товарів для індексації. Ну і власне виправлення - <a href="https://github.com/sebastien-kathmandu/magento2/pull/1/commits/444bc8d2805ab0c57a66e656332394f0123c63df">https://github.com/sebastien-kathmandu/magento2/pull/1/commits/444bc8d2805ab0c57a66e656332394f0123c63df</a>.</p>
 <p>Раніше у <em>vendor/magento/framework/Mview/View/Subscription.php</em> (принаймі у версії 2.2.5) було так:</p>
-<pre><code>foreach ($columnNames as $columnName) {
+<pre tabindex="0"><code>foreach ($columnNames as $columnName) {
     $columns[] = sprintf(
         'NEW.%1$s != OLD.%1$s',
         $this-&gt;connection-&gt;quoteIdentifier($columnName)
     );
 }  
 </code></pre><p>потім стало так:</p>
-<pre><code>foreach ($columnNames as $columnName) {
+<pre tabindex="0"><code>foreach ($columnNames as $columnName) {
     $columns[] = sprintf(
         'NEW.%1$s &lt;=&gt; OLD.%1$s',
         $this-&gt;connection-&gt;quoteIdentifier($columnName)
     );
 } 
 </code></pre><p>Фактично, від перевірки на нерівність двох змінних, перейшли до перевірки на рівність, що очевидно є помилкою, бо спричиняє лавиноподібне заповнення таблиць з префіксом <em>cl</em>. В якості виправлення запропоновано такий варіант:</p>
-<pre><code>foreach ($columnNames as $columnName) {
+<pre tabindex="0"><code>foreach ($columnNames as $columnName) {
     $columns[] = sprintf(
         'NOT NEW.%1$s &lt;=&gt; OLD.%1$s',
         $this-&gt;connection-&gt;quoteIdentifier($columnName)
@@ -271,13 +271,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/howto-asterisk-part-6.1/">IP-телефонія на базі Asterisk. Частина 6.1: Додаткові функції Asterisk. Паркування дзвінка.</a></li>            
+          <li><a href="https://bender.kr.ua/howto-asterisk-part-2/">IP-телефонія на базі Asterisk. Частина 2: Налаштування SIP</a></li>            
         
-          <li><a href="https://bender.kr.ua/review-neal-stephenson-in-the-beginning-was-the-command-line/">Ніл Стівенсон. Спочатку був командний рядок</a></li>            
+          <li><a href="https://bender.kr.ua/mysql-tmp-table-in-tmpfs/">Тимчасові таблиці MySQL в tmpfs</a></li>            
         
-          <li><a href="https://bender.kr.ua/backup-with-borg/">Про користь borg-ів</a></li>            
+          <li><a href="https://bender.kr.ua/upgrade-magento-232/">Оновлення Magento до версії 2.3.2</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-asterisk-part-1/">IP-телефонія на базі Asterisk. Частина 1: Встановлення сервера Asterisk</a></li>            
+          <li><a href="https://bender.kr.ua/cli-upgrade-magento2/">Оновлення Magento 2</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -312,7 +312,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">1 хв</span>
+        <span class="reading-time">0 хв</span>
       </footer>
     </div>
 </article>

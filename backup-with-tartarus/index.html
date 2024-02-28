@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1507475380673-1246fa72eeea?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -151,25 +151,25 @@
 <p>Та́ртар (грец. Τάρταρος, Tartaros) — у давньогрецькій міфології місце в підземному світі, темна безодня в глибині космосу, нижче від Аїду. (<a href="https://uk.wikipedia.org/wiki/%D0%A2%D0%B0%D1%80%D1%82%D0%B0%D1%80">Вікіпедія</a>)</p>
 </blockquote>
 <p>Встановлюємо необхідні утиліти</p>
-<pre><code>apt-get update
+<pre tabindex="0"><code>apt-get update
 apt-get install tar bzip2 lvm2 gnupg curl
-</code></pre><pre><code>git clone https://github.com/wertarbyte/tartarus.git
+</code></pre><pre tabindex="0"><code>git clone https://github.com/wertarbyte/tartarus.git
 cd tartarus
 cp bin/* /usr/bin/
 cp -r lib/Tartarus /usr/share/perl5/
 </code></pre><p>Шлях до бібліотек перлу можна взяти командою <em>perl -V</em></p>
 <p>Створюємо необхідні для роботи каталоги</p>
-<pre><code>mkdir /backups
+<pre tabindex="0"><code>mkdir /backups
 mkdir /etc/tartarus
 mkdir -p /var/spool/tartarus/timestamps
 </code></pre><p>Загальний конфігураційний файл:</p>
-<pre><code># /etc/tartarus/generic.inc
+<pre tabindex="0"><code># /etc/tartarus/generic.inc
 
 STORAGE_METHOD=&quot;FILE&quot;
 STORAGE_FILE_DIR=&quot;/backups&quot;
 COMPRESSION_METHOD=&quot;gzip&quot;
 </code></pre><p>Файл конфігурації для створення резервної копії сайту bender.kr.ua</p>
-<pre><code># /etc/tartarus/bender.conf
+<pre tabindex="0"><code># /etc/tartarus/bender.conf
 
 # підключити загальні налаштування
 source /etc/tartarus/generic.inc
@@ -186,7 +186,7 @@ EXCLUDE=&quot;/var/www/bender.kr.ua/cache /var/www/bender.kr.ua/log&quot;
 # файл для збереження мітки часу
 INCREMENTAL_TIMESTAMP_FILE=&quot;/var/spool/tartarus/bender&quot;
 </code></pre><p>Створюємо скрипт для створення бекапів <em>/backups/backup.sh</em></p>
-<pre><code>#!/bin/bash
+<pre tabindex="0"><code>#!/bin/bash
 
 BACKUP_DIR=/backups
 
@@ -202,7 +202,7 @@ done
 # видалити архіви старіші за 31 день
 $CHARON --dir $BACKUP_DIR/ --maxage 31 --all
 </code></pre><p>Додаємо до планувальника завдання: першу неділю місяця робити повний архів, в інші - інкрементний:</p>
-<pre><code>0	0	*	*	7	[ $(date +\%d) -le 07 ] &amp;&amp; sh /backups/backup.sh &gt; /dev/null 2&gt;&amp;1
+<pre tabindex="0"><code>0	0	*	*	7	[ $(date +\%d) -le 07 ] &amp;&amp; sh /backups/backup.sh &gt; /dev/null 2&gt;&amp;1
 0	0	*	*	7	[ $(date +\%d) -gt 07 ] &amp;&amp; sh /backups/backup.sh -i &gt; /dev/null 2&gt;&amp;1
 
 </code></pre><h2 id="посилання">Посилання</h2>
@@ -273,13 +273,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/magento-2-modules-and-tools/">Модулі та інструменти для роботи з Magento 2 (оновлюється)</a></li>            
+          <li><a href="https://bender.kr.ua/year-in-books-2019/">Мій книжковий 2019 рік</a></li>            
         
-          <li><a href="https://bender.kr.ua/magento2-reindexer-for-large-catalog/">Проблема переіндексації великого каталогу в Magento 2</a></li>            
+          <li><a href="https://bender.kr.ua/magento-2-reindex-parallel/">Паралельна індексація в Magento 2</a></li>            
         
-          <li><a href="https://bender.kr.ua/magento-2-cron-indexer-repair/">Magento 2: не працює індексація за розкладом</a></li>            
+          <li><a href="https://bender.kr.ua/howto-install-flask/">Інструкція зі встановлення Flask</a></li>            
         
-          <li><a href="https://bender.kr.ua/nginx-pagespeed-openssl/">Як я готую NGINX з модулем PAGESPEED</a></li>            
+          <li><a href="https://bender.kr.ua/iptables-ipset/">Блокування трафіку за допомогою iptables та ipset</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -314,7 +314,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">1 хв</span>
+        <span class="reading-time">0 хв</span>
       </footer>
     </div>
 </article>
@@ -345,7 +345,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">2 хв</span>
+        <span class="reading-time">0 хв</span>
       </footer>
     </div>
 </article>

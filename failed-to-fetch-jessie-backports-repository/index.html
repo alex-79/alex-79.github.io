@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1508455858334-95337ba25607?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -146,16 +146,16 @@
     <section class="post-full-content">
         <div class="kg-card-markdown">
         <p>Якщо ви користуєтесь Debian 8, то могли помітити проблему з репозиторієм <strong>jessie-backports</strong> при оновлені.</p>
-<pre><code>W: Failed to fetch http://ftp.debian.org/debian/dists/jessie-backports/main/binary-amd64/Packages 404 Not Found [IP: 130.89.148.12 80]
+<pre tabindex="0"><code>W: Failed to fetch http://ftp.debian.org/debian/dists/jessie-backports/main/binary-amd64/Packages 404 Not Found [IP: 130.89.148.12 80]
 </code></pre><p>Причина в тому, що 8-ма версія офіційно більше не підтримується і репозиторій переїхав в архів.</p>
 <p>Змінимо адресу в <em>/etc/apt/source.list</em> на:</p>
-<pre><code>deb http://archive.debian.org/debian jessie-backports main
+<pre tabindex="0"><code>deb http://archive.debian.org/debian jessie-backports main
 </code></pre><p>При оновлені отримуємо натяк, що ми все одно слоупоки і треба таки оновити систему:</p>
-<pre><code>E: Release file for http://archive.debian.org/debian/dists/jessie-backports/InRelease is expired (invalid since 34d 12h 43min 16s). Updates for this repository will not be applied.
+<pre tabindex="0"><code>E: Release file for http://archive.debian.org/debian/dists/jessie-backports/InRelease is expired (invalid since 34d 12h 43min 16s). Updates for this repository will not be applied.
 </code></pre><p>Натяк зрозумілий, але &hellip; Забиваємо на валідацію:</p>
-<pre><code>echo 'Acquire::Check-Valid-Until no;' &gt; /etc/apt/apt.conf.d/99no-check-valid-until
+<pre tabindex="0"><code>echo 'Acquire::Check-Valid-Until no;' &gt; /etc/apt/apt.conf.d/99no-check-valid-until
 </code></pre><p>Тепер можна оновлюватись</p>
-<pre><code>apt-get update
+<pre tabindex="0"><code>apt-get update
 </code></pre><p>Ю-х-у-у-у-у-у, все працює!!!</p>
 <p>Ну а насправді, треба оновлювати систему до Debian 10 ;)</p>
 <h3 id="посилання">Посилання</h3>
@@ -224,13 +224,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/configurable-crontab-magento2/">Magento2: налаштування періодичних завдань власного модуля через адмін-панель</a></li>            
+          <li><a href="https://bender.kr.ua/howto-asterisk-part-5/">IP-телефонія на базі Asterisk. Частина 5: Деталізований звіт про виклики (Call Detail Records, CDR)</a></li>            
         
-          <li><a href="https://bender.kr.ua/mysql-tmp-table-in-tmpfs/">Тимчасові таблиці MySQL в tmpfs</a></li>            
+          <li><a href="https://bender.kr.ua/backup-with-borg/">Про користь borg-ів</a></li>            
         
-          <li><a href="https://bender.kr.ua/5-extensions-for-default-magento2/">5 розширень, які ти зобов&#39;язаний поставити на Magento 2</a></li>            
+          <li><a href="https://bender.kr.ua/howto-asterisk-part-2/">IP-телефонія на базі Asterisk. Частина 2: Налаштування SIP</a></li>            
         
-          <li><a href="https://bender.kr.ua/magento-2-reindex-parallel/">Паралельна індексація в Magento 2</a></li>            
+          <li><a href="https://bender.kr.ua/upgrade-magento-232/">Оновлення Magento до версії 2.3.2</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -295,7 +295,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">2 хв</span>
+        <span class="reading-time">1 хв</span>
       </footer>
     </div>
 </article>

@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1459609336665-6ef3866c8930?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -147,10 +147,10 @@
         <div class="kg-card-markdown">
         <p><strong>Munin</strong> — це дуже простий в налаштуванні засіб моніторинга серверів. Для Munin існує величезна кількість плагінів для спостереження за load average, дисковими операціями, CPU, RAM, mysql тощо. Вся інформація зберігається в кільцевій базі даних <a href="https://uk.wikipedia.org/wiki/RRDtool">RRDtool</a>.</p>
 <p>Встановлюємо систему моніторингу:</p>
-<pre><code>apt-get install munin munin-node
+<pre tabindex="0"><code>apt-get install munin munin-node
 service munin-node start
 </code></pre><p>Налаштовуємо nginx</p>
-<pre><code>	location / {
+<pre tabindex="0"><code>	location / {
 	    root /var/cache/munin/www;
 	    autoindex on;
 	    auth_basic &quot;Munin Statistics&quot;;
@@ -158,19 +158,19 @@ service munin-node start
 	}
 </code></pre><p>Додаткові плагіни знаходяться в директорії <em>/usr/share/munin/plugins</em> . Встановимо, для прикладу, набір плагінів для відстеження роботи MySQL.</p>
 <p>Спочатку налаштовуємо доступ до БД в <em>/etc/munin/plugin-conf.d/munin-node</em>:</p>
-<pre><code>[mysql*]
+<pre tabindex="0"><code>[mysql*]
 user root
 env.mysqlopts --defaults-file=/etc/mysql/debian.cnf
 env.mysqluser munin
 env.mysqlpassword PASSWORD
 env.mysqlconnection DBI:mysql:mysql;host=127.0.0.1;port=3306
 </code></pre><p>Потім створюємо користувача <em>munin</em>:</p>
-<pre><code>CREATE USER munin@127.0.0.1 IDENTIFIED BY 'PASSWORD';
+<pre tabindex="0"><code>CREATE USER munin@127.0.0.1 IDENTIFIED BY 'PASSWORD';
 GRANT SUPER,PROCESS ON *.* TO munin@127.0.0.1;
 GRANT SELECT ON mysql.* TO munin@127.0.0.1;
 FLUSH PRIVILEGES;
 </code></pre><p>І встановлюємо плагіни:</p>
-<pre><code>cd /etc/munin/plugins/
+<pre tabindex="0"><code>cd /etc/munin/plugins/
 ln -s /usr/share/munin/plugins/mysql_bytes
 ln -s /usr/share/munin/plugins/mysql_queries
 ln -s /usr/share/munin/plugins/mysql_slowqueries
@@ -178,7 +178,7 @@ ln -s /usr/share/munin/plugins/mysql_threads
 ln -s /usr/share/munin/plugins/mysql_innodb 
 service munin-node restart
 </code></pre><p>Якщо хочеться більше графіків, то ось вам магія:</p>
-<pre><code>apt-get install libcache-{perl,cache-perl}
+<pre tabindex="0"><code>apt-get install libcache-{perl,cache-perl}
 cd /etc/munin/plugins/
 ln -sf /usr/share/munin/plugins/mysql_ mysql_
 for i in `./mysql_ suggest`; \
@@ -187,13 +187,13 @@ rm -rf /etc/munin/plugins/mysql_
 rm -rf /etc/munin/plugins/mysql_isam_space_*
 service munin-node restart
 </code></pre><p>Якщо в логах така помилка</p>
-<pre><code>Unknown section: INDIVIDUAL BUFFER POOL INFO at /etc/munin/plugins/mysql_innodb_rows line 1098.
-</code></pre><p>то в **/usr/share/munin/plugins/mysql_** знаходимо</p>
-<pre><code>my %section_map = (
+<pre tabindex="0"><code>Unknown section: INDIVIDUAL BUFFER POOL INFO at /etc/munin/plugins/mysql_innodb_rows line 1098.
+</code></pre><p>то в <strong>/usr/share/munin/plugins/mysql_</strong> знаходимо</p>
+<pre tabindex="0"><code>my %section_map = (
 </code></pre><p>і додаємо туди</p>
-<pre><code>    'INDIVIDUAL BUFFER POOL INFO' =&gt; \&amp;skip,
+<pre tabindex="0"><code>    'INDIVIDUAL BUFFER POOL INFO' =&gt; \&amp;skip,
 </code></pre><p>Перевірити відсутність помилок можна наступним чином</p>
-<pre><code>cd /etc/munin/plugins
+<pre tabindex="0"><code>cd /etc/munin/plugins
 munin-run mysql_innodb_rows
 </code></pre><h2 id="посилання">Посилання</h2>
 <ul>
@@ -264,13 +264,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/howto-install-telegram-debian-9/">Встановлення Telegram на Debian 9</a></li>            
+          <li><a href="https://bender.kr.ua/howto-lemp-install/">Встановлення Nginx &#43; PHP &#43; MySQL на Debian 9</a></li>            
         
-          <li><a href="https://bender.kr.ua/year-in-books-2020/">Мій книжковий 2020 рік</a></li>            
+          <li><a href="https://bender.kr.ua/fail2ban-unban-ip/">Як розблокувати себе в fail2ban</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-asterisk-part-5/">IP-телефонія на базі Asterisk. Частина 5: Деталізований звіт про виклики (Call Detail Records, CDR)</a></li>            
+          <li><a href="https://bender.kr.ua/magento-2-cron-indexer-repair/">Magento 2: не працює індексація за розкладом</a></li>            
         
-          <li><a href="https://bender.kr.ua/magento-2-phpamqplib-timed-out-after-3-sec/">Magento 2: розривається з&#39;єднання з RabbitMQ</a></li>            
+          <li><a href="https://bender.kr.ua/5-extensions-for-default-magento2/">5 розширень, які ти зобов&#39;язаний поставити на Magento 2</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -306,7 +306,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">4 хв</span>
+        <span class="reading-time">1 хв</span>
       </footer>
     </div>
 </article>
@@ -336,7 +336,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">1 хв</span>
+        <span class="reading-time">0 хв</span>
       </footer>
     </div>
 </article>

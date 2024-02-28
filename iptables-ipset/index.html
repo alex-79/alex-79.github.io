@@ -41,7 +41,7 @@
     <meta property="og:image" content="https://images.unsplash.com/photo-1546088018-16609adf2afa?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -145,11 +145,11 @@
 
     <section class="post-full-content">
         <div class="kg-card-markdown">
-        <p>Для захисту від DDOS-атак або паразитного трафіку, блокування на рівні сервера, а не nginx (як наприклад тут - <a href="https://bender.kr.ua/nginx-geoip/">https://bender.kr.ua/nginx-geoip/</a>) , є більш ефективним. Тому, якщо у вас виникла потреба блокувати IP з певних країн і не існує інших застережень, варто скористатись зв'язкою <strong>iptables</strong> + <strong>ipset</strong>.</p>
+        <p>Для захисту від DDOS-атак або паразитного трафіку, блокування на рівні сервера, а не nginx (як наприклад тут - <a href="https://bender.kr.ua/nginx-geoip/">https://bender.kr.ua/nginx-geoip/</a>) , є більш ефективним. Тому, якщо у вас виникла потреба блокувати IP з певних країн і не існує інших застережень, варто скористатись зв&rsquo;язкою <strong>iptables</strong> + <strong>ipset</strong>.</p>
 <p>Для початку встановлюємо ipset:</p>
-<pre><code>apt-get install ipset
+<pre tabindex="0"><code>apt-get install ipset
 </code></pre><p>Створюємо скрипт, який буде оновлювати таблюцю адрес для блокування. Списки IP за приналежністю до країни, можна взяти на сайті <em>ipdeny.com</em> - <a href="https://www.ipdeny.com/ipblocks/">https://www.ipdeny.com/ipblocks/</a>. В нашому випадку ми блокуємо російський сегмент мережі.</p>
-<pre><code>#!/bin/bash
+<pre tabindex="0"><code>#!/bin/bash
 
 # створюємо список 'russia'
 ipset -N russia hash:net
@@ -167,14 +167,14 @@ for i in $(cat /etc/ru.zone ); do ipset -A russia $i; done
 iptables-restore &lt; /etc/iptables.up.rules
 </code></pre><p>Що написати в <em>/etc/iptables.up.rules</em> можна подивитись в статті <a href="https://bender.kr.ua/howto-lemp-install/">https://bender.kr.ua/howto-lemp-install/</a>. Единою зміною буде додавання правила для блокування списку &lsquo;russia&rsquo;:</p>
 <p><em>було:</em></p>
-<pre><code># Accepts all established inbound connections
+<pre tabindex="0"><code># Accepts all established inbound connections
 -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 
 # Allows all outbound traffic
 # You could modify this to only allow certain traffic
 -A OUTPUT -j ACCEPT
 </code></pre><p><em>стало:</em></p>
-<pre><code># Accepts all established inbound connections
+<pre tabindex="0"><code># Accepts all established inbound connections
 -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 
 -A INPUT -p tcp -m set --match-set russia src -j DROP
@@ -183,10 +183,10 @@ iptables-restore &lt; /etc/iptables.up.rules
 # You could modify this to only allow certain traffic
 -A OUTPUT -j ACCEPT
 </code></pre><p>Після цього <em>block_ip.sh</em> треба зробити виконуваним</p>
-<pre><code>chmod +x /etc/block_ip.sh
+<pre tabindex="0"><code>chmod +x /etc/block_ip.sh
 </code></pre><p>та запхнути його в крон</p>
-<pre><code>crontab -e
-</code></pre><pre><code>0	0	*	*	*	/etc/block_ip.sh
+<pre tabindex="0"><code>crontab -e
+</code></pre><pre tabindex="0"><code>0	0	*	*	*	/etc/block_ip.sh
 </code></pre><h2 id="посилання">Посилання</h2>
 <ul>
 <li><a href="https://mattwilcox.net/web-development/unexpected-ddos-blocking-china-with-ipset-and-iptables">https://mattwilcox.net/web-development/unexpected-ddos-blocking-china-with-ipset-and-iptables</a></li>
@@ -254,13 +254,13 @@ s.setAttribute('data-timestamp', +new Date());
     <div class="read-next-card-content">
       
         <ul>
-          <li><a href="https://bender.kr.ua/5-extensions-for-default-magento2/">5 розширень, які ти зобов&#39;язаний поставити на Magento 2</a></li>            
+          <li><a href="https://bender.kr.ua/nginx-geoip/">Блокування трафіку з окремих країн за допомогою Nginx та GeoIP</a></li>            
         
-          <li><a href="https://bender.kr.ua/regexp-replace-in-mariadb/">Заміна даних в MariaDB</a></li>            
+          <li><a href="https://bender.kr.ua/fix-conflict-keyboard-shortcuts/">Не працюють комбінації клавіш CTRL-SHIFT в Ubuntu</a></li>            
         
-          <li><a href="https://bender.kr.ua/new-db-in-mysql/">Створення бази даних в MySQL</a></li>            
+          <li><a href="https://bender.kr.ua/magento-2-cron-indexer-repair/">Magento 2: не працює індексація за розкладом</a></li>            
         
-          <li><a href="https://bender.kr.ua/exception-the-value-is-not-accepted-by-the-pattern/">Пошук невалідних XML в Magento 2</a></li>            
+          <li><a href="https://bender.kr.ua/backup-with-borg/">Про користь borg-ів</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -295,7 +295,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">14 хв</span>
+        <span class="reading-time">4 хв</span>
       </footer>
     </div>
 </article>
@@ -326,7 +326,7 @@ s.setAttribute('data-timestamp', +new Date());
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">1 хв</span>
+        <span class="reading-time">0 хв</span>
       </footer>
     </div>
 </article>
