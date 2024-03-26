@@ -6,7 +6,22 @@
     <description>Recent content in Posts on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>uk</language>
-    <lastBuildDate>Thu, 04 Jan 2024 11:43:11 +0200</lastBuildDate><atom:link href="https://bender.kr.ua/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 26 Mar 2024 00:00:00 +0200</lastBuildDate><atom:link href="https://bender.kr.ua/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Міграція з iptables на nftables</title>
+      <link>https://bender.kr.ua/migration-from-iptables-to-nftables/</link>
+      <pubDate>Tue, 26 Mar 2024 00:00:00 +0200</pubDate>
+      
+      <guid>https://bender.kr.ua/migration-from-iptables-to-nftables/</guid>
+      <description>nftables - типовий і рекомендований фреймворк брандмауера в Debian (починаючи з Debian 10 Buster), який замінює старі інструменти iptables (і пов’язані з ними).
+Спробуємо мігрувати старі правила для iptables (https://bender.kr.ua/howto-lemp-install/ - див. 2.1) на nftables.
+Спочатку активуємо сервіс nftables:
+systemctl enable nftables Зберігаємо існуючі правила з iptables:
+iptables-save &amp;gt; iptables.rules і транслюємо їх у правила nftables:
+iptables-restore-translate -f iptables.rules &amp;gt; nftables.rules Результатом буде список правил в файлі nftables.rules:
+add table ip filter add chain ip filter INPUT { type filter hook input priority 0; policy accept; } add chain ip filter FORWARD { type filter hook forward priority 0; policy accept; } add chain ip filter OUTPUT { type filter hook output priority 0; policy accept; } add rule ip filter INPUT iifname &amp;#34;lo&amp;#34; counter accept add rule ip filter INPUT iifname !</description>
+    </item>
+    
     <item>
       <title>Встановлення локального SSL-сертифікату</title>
       <link>https://bender.kr.ua/local-ssl-certificate/</link>

@@ -35,13 +35,13 @@
     <meta property="og:type" content="article" />
     <meta property="og:description" content="Міграція правил iptables на nftables" />
 
-    <meta property="article:published_time" content="2023-03-06T17:22:09&#43;02:00" />
+    <meta property="article:published_time" content="2024-03-26T00:00:00&#43;02:00" />
     <meta property="article:tag" content="linux" />
 
     <meta property="og:image" content="https://images.unsplash.com/photo-1548200482-b77f76c9dbef?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
 
 
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.92.2" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="https://bender.kr.ua/built/screen.css" /> 
@@ -134,7 +134,7 @@
       <article class="post-full post"> 
     <header class="post-full-header">
         <section class="post-full-meta">
-            <time class="post-full-meta-date" datetime="2023-03-06">6 March 2023</time>
+            <time class="post-full-meta-date" datetime="2024-03-26">26 March 2024</time>
                 <span class="date-divider">/</span> <a href="https://bender.kr.ua/tags/linux/">#linux</a>&nbsp;
         </section>
         <h1 class="post-full-title">Міграція з iptables на nftables</h1>
@@ -148,13 +148,13 @@
         <p><strong>nftables</strong> - типовий і рекомендований фреймворк брандмауера в Debian (починаючи з Debian 10 Buster), який замінює старі інструменти <em>iptables</em> (і пов’язані з ними).</p>
 <p>Спробуємо мігрувати старі правила для iptables (<a href="https://bender.kr.ua/howto-lemp-install/">https://bender.kr.ua/howto-lemp-install/</a> - див. 2.1) на nftables.</p>
 <p>Спочатку активуємо сервіс <em>nftables</em>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl enable nftables
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl enable nftables
 </code></pre></div><p>Зберігаємо існуючі правила з iptables:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">iptables-save &gt; iptables.rules
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">iptables-save &gt; iptables.rules
 </code></pre></div><p>і транслюємо їх у правила nftables:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">iptables-restore-translate -f iptables.rules &gt; nftables.rules
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">iptables-restore-translate -f iptables.rules &gt; nftables.rules
 </code></pre></div><p>Результатом буде список правил в файлі nftables.rules:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">add table ip filter
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">add table ip filter
 add chain ip filter INPUT <span style="color:#f92672">{</span> type filter hook input priority 0; policy accept; <span style="color:#f92672">}</span>
 add chain ip filter FORWARD <span style="color:#f92672">{</span> type filter hook forward priority 0; policy accept; <span style="color:#f92672">}</span>
 add chain ip filter OUTPUT <span style="color:#f92672">{</span> type filter hook output priority 0; policy accept; <span style="color:#f92672">}</span>
@@ -170,9 +170,9 @@ add rule ip filter INPUT limit rate 5/minute burst <span style="color:#ae81ff">5
 add rule ip filter INPUT counter reject
 add rule ip filter FORWARD counter reject
 </code></pre></div><p>Завантажуємо правила в nftables і перевіряємо результат:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nft -f nftables.rules
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nft -f nftables.rules
 nft list ruleset
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">table inet filter <span style="color:#f92672">{</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">table inet filter <span style="color:#f92672">{</span>
 	chain INPUT <span style="color:#f92672">{</span>
 		type filter hook input priority filter; policy accept;
 		iifname <span style="color:#e6db74">&#34;lo&#34;</span> counter packets <span style="color:#ae81ff">0</span> bytes <span style="color:#ae81ff">0</span> accept
@@ -197,7 +197,7 @@ nft list ruleset
 	<span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
 </code></pre></div><p>Цей результат треба додати до конфігурації <em>/etc/nftables.conf</em>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/usr/sbin/nft -f
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/usr/sbin/nft -f
 </span><span style="color:#75715e"></span>
 flush ruleset
 
@@ -294,11 +294,11 @@ s.setAttribute('data-timestamp', +new Date());
         <ul>
           <li><a href="https://bender.kr.ua/magento-payment-plugin-for-bitpay/">Рубимо електронні гроші в Magento</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-install-rocketchat-debian-9/">Встановлення відкритого месенджера Rocket.Chat на Debian 9</a></li>            
+          <li><a href="https://bender.kr.ua/multiple-rabbitmq-instances/">Запуск кількох інстансів RabbitMQ на одному сервері</a></li>            
         
-          <li><a href="https://bender.kr.ua/howto-asterisk-part-6.1/">IP-телефонія на базі Asterisk. Частина 6.1: Додаткові функції Asterisk. Паркування дзвінка.</a></li>            
+          <li><a href="https://bender.kr.ua/fail2ban-unban-ip/">Як розблокувати себе в fail2ban</a></li>            
         
-          <li><a href="https://bender.kr.ua/iptables-ipset/">Блокування трафіку за допомогою iptables та ipset</a></li>            
+          <li><a href="https://bender.kr.ua/quick-start-with-jenkins-in-docker/">Швидкий старт Jenkins в Debian 10 за допомогою Docker</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
@@ -312,30 +312,30 @@ s.setAttribute('data-timestamp', +new Date());
       
       <article class="post-card post"> 
     
-    <a class="post-card-image-link" href="https://bender.kr.ua/magento-2-searchsuite-ukrainian/">
-      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1529511582893-2d7e684dd128?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1933&amp;q=80)"></div>
+    <a class="post-card-image-link" href="https://bender.kr.ua/local-ssl-certificate/">
+      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1633265486064-086b219458ec?q=80&amp;w=2070&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)"></div>
     </a>
     
 
     <div class="post-card-content">
-      <a class="post-card-content-link" href="https://bender.kr.ua/magento-2-searchsuite-ukrainian/">
+      <a class="post-card-content-link" href="https://bender.kr.ua/local-ssl-certificate/">
           <header class="post-card-header">
               <span class="post-card-tags">
-              #magento 
-              #elasticsearch  </span>
+              #linux 
+              #web  </span>
               
-              <h2 class="post-card-title">Пошук українською мовою в Magento 2</h2>
+              <h2 class="post-card-title">Встановлення локального SSL-сертифікату</h2>
           </header>
           <section class="post-card-excerpt">
                
-                <p>Magento 2: налаштування модуля Smile_Searchsuite для пошуку українською мовою</p>
+                <p>Встановлення SSL-сертифікату для тестування локальних web-застосунків</p>
               
           </section>
       </a>
 
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">2 хв</span>
+        <span class="reading-time">0 хв</span>
       </footer>
     </div>
 </article>
