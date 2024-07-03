@@ -3,28 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://bender.kr.ua/</loc>
-    <lastmod>2024-06-07T00:00:00+03:00</lastmod>
+    <lastmod>2024-07-03T00:00:00+03:00</lastmod>
+  </url><url>
+    <loc>https://bender.kr.ua/categories/</loc>
+    <lastmod>2024-07-03T00:00:00+03:00</lastmod>
+  </url><url>
+    <loc>https://bender.kr.ua/howto-asterisk-part-6.2/</loc>
+    <lastmod>2024-07-03T00:00:00+03:00</lastmod>
   </url><url>
     <loc>https://bender.kr.ua/tags/linux/</loc>
-    <lastmod>2024-06-07T00:00:00+03:00</lastmod>
+    <lastmod>2024-07-03T00:00:00+03:00</lastmod>
+  </url><url>
+    <loc>https://bender.kr.ua/categories/linux/</loc>
+    <lastmod>2024-07-03T00:00:00+03:00</lastmod>
   </url><url>
     <loc>https://bender.kr.ua/post/</loc>
-    <lastmod>2024-06-07T00:00:00+03:00</lastmod>
+    <lastmod>2024-07-03T00:00:00+03:00</lastmod>
   </url><url>
     <loc>https://bender.kr.ua/tags/</loc>
-    <lastmod>2024-06-07T00:00:00+03:00</lastmod>
+    <lastmod>2024-07-03T00:00:00+03:00</lastmod>
   </url><url>
     <loc>https://bender.kr.ua/tags/web/</loc>
     <lastmod>2024-06-07T00:00:00+03:00</lastmod>
   </url><url>
     <loc>https://bender.kr.ua/certbot-and-openresty/</loc>
     <lastmod>2024-06-07T00:00:00+03:00</lastmod>
-  </url><url>
-    <loc>https://bender.kr.ua/categories/</loc>
-    <lastmod>2024-03-26T00:00:00+02:00</lastmod>
-  </url><url>
-    <loc>https://bender.kr.ua/categories/linux/</loc>
-    <lastmod>2024-03-26T00:00:00+02:00</lastmod>
   </url><url>
     <loc>https://bender.kr.ua/migration-from-iptables-to-nftables/</loc>
     <lastmod>2024-03-26T00:00:00+02:00</lastmod>
