@@ -6,7 +6,17 @@
     <description>Recent content in linux on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>uk</language>
-    <lastBuildDate>Mon, 29 Jul 2024 00:00:00 +0300</lastBuildDate><atom:link href="https://bender.kr.ua/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 05 Aug 2024 00:00:00 +0300</lastBuildDate><atom:link href="https://bender.kr.ua/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IP-телефонія на базі Asterisk. Частина 6.7: Додаткові функції Asterisk. Черги дзвінків.</title>
+      <link>https://bender.kr.ua/howto-asterisk-part-6.7/</link>
+      <pubDate>Mon, 05 Aug 2024 00:00:00 +0300</pubDate>
+      
+      <guid>https://bender.kr.ua/howto-asterisk-part-6.7/</guid>
+      <description>Цикл статей по розгортанню IP-телефонії на базі Asterisk. Фактично це моя проектна робота на отримання відповідного сертифікату одного з навчальних центрів. Робота була захищена, сертифікат отриманий, все написане тестувалось і є повтінстю робочою реалізацією. Інформація в статті і версії програмного забезбечення актуальні на 2017 рік.
+ частина 1 - Встановлення сервера Asterisk частина 2 - Налаштування SIP частина 3 - Логіка обробки дзвінків (Dialplan) частина 4 - Голосове меню частина 5 - Деталізований звіт про виклики (Call Detail Records, CDR) частина 6.</description>
+    </item>
+    
     <item>
       <title>IP-телефонія на базі Asterisk. Частина 6.6: Додаткові функції Asterisk. Переведення абонента на зовнішню лінію (FollowMe).</title>
       <link>https://bender.kr.ua/howto-asterisk-part-6.6/</link>
