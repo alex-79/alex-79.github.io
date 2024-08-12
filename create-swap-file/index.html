@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    <title>Magento 2: не працює індексація за розкладом &middot; Бортовий журнал Бендера</title>
+    <title>Створення файлу підкачки (swap) в Linux &middot; Бортовий журнал Бендера</title>
 
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,33 +12,33 @@
     <meta name="google-site-verification" content="dM95CyQVQ1fi4BVDMVQe6_7xc0cxvxR8EKEZX9cT9pE" />
 
     <link rel="shortcut icon" href="https://bender.kr.ua/favicon.png" />
-    <link rel="canonical" href="https://bender.kr.ua/magento-2-cron-indexer-repair/" />
+    <link rel="canonical" href="https://bender.kr.ua/create-swap-file/" />
 
-     <meta name="description" content="Magento 2: не працює індексація за розкладом" /> 
+     <meta name="description" content="Як створити файл підкачки, якщо при інсталяції системи провтикав цей момент ;)" /> 
 
      
     
     <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:image" content="https://images.unsplash.com/photo-1562259929-b4e1fd3aef09?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1532634861-1e70d179e7bc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"/>
     
  
-    <meta name="twitter:title" content="Magento 2: не працює індексація за розкладом"/>
-    <meta name="twitter:description" content="Magento 2: не працює індексація за розкладом"/>
-    <meta name="twitter:url" content="https://bender.kr.ua/magento-2-cron-indexer-repair/" />
+    <meta name="twitter:title" content="Створення файлу підкачки (swap) в Linux"/>
+    <meta name="twitter:description" content="Як створити файл підкачки, якщо при інсталяції системи провтикав цей момент ;)"/>
+    <meta name="twitter:url" content="https://bender.kr.ua/create-swap-file/" />
     <meta name="twitter:site" content="@kr_ingulets"/>
 
     <meta property="og:site_name" content="" />
-    <meta property="og:title" content="Magento 2: не працює індексація за розкладом &middot; Бортовий журнал Бендера" />
-    <meta property="og:url" content="https://bender.kr.ua/magento-2-cron-indexer-repair/" />
+    <meta property="og:title" content="Створення файлу підкачки (swap) в Linux &middot; Бортовий журнал Бендера" />
+    <meta property="og:url" content="https://bender.kr.ua/create-swap-file/" />
     
 
     <meta property="og:type" content="article" />
-    <meta property="og:description" content="Magento 2: не працює індексація за розкладом" />
+    <meta property="og:description" content="Як створити файл підкачки, якщо при інсталяції системи провтикав цей момент ;)" />
 
-    <meta property="article:published_time" content="2020-03-10T08:56:19Z" />
-    <meta property="article:tag" content="magento" />
+    <meta property="article:published_time" content="2024-08-12T00:00:00&#43;03:00" />
+    <meta property="article:tag" content="linux" />
 
-    <meta property="og:image" content="https://images.unsplash.com/photo-1562259929-b4e1fd3aef09?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"/>
+    <meta property="og:image" content="https://images.unsplash.com/photo-1532634861-1e70d179e7bc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"/>
 
 
     <meta name="generator" content="Hugo 0.92.2" />
@@ -134,34 +134,39 @@
       <article class="post-full post"> 
     <header class="post-full-header">
         <section class="post-full-meta">
-            <time class="post-full-meta-date" datetime="2020-03-10">10 March 2020</time>
-                <span class="date-divider">/</span> <a href="https://bender.kr.ua/tags/magento/">#magento</a>&nbsp;
+            <time class="post-full-meta-date" datetime="2024-08-12">12 August 2024</time>
+                <span class="date-divider">/</span> <a href="https://bender.kr.ua/tags/linux/">#linux</a>&nbsp;
         </section>
-        <h1 class="post-full-title">Magento 2: не працює індексація за розкладом</h1>
+        <h1 class="post-full-title">Створення файлу підкачки (swap) в Linux</h1>
     </header>
     
-    <figure class="post-full-image" style="background-image: url(https://images.unsplash.com/photo-1562259929-b4e1fd3aef09?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)">
+    <figure class="post-full-image" style="background-image: url(https://images.unsplash.com/photo-1532634861-1e70d179e7bc?q=80&amp;w=2070&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)">
     </figure>
 
     <section class="post-full-content">
         <div class="kg-card-markdown">
-        <p>Іноді, за нез&rsquo;ясованих поки обставин, в Magento 2 ламаєть виконання переіндексації за розкладом. В логах це виглядає як <em>main.WARNING: Could not acquire lock for cron group: index, skipping run</em>.</p>
-<p>Щоб &ldquo;поремонтувати&rdquo; крон необхідно:</p>
-<ol>
-<li>
-<p>Знайти та вбити процес який відповідає за запуск завдань в Magento 2: <em>php bin/magento cron:run &ndash;group=index &ndash;bootstrap=standaloneProcessStarted=1</em></p>
-<pre tabindex="0"><code>ps ufx | grep cron
-kill XXXX
-</code></pre></li>
-<li>
-<p>Очистити таблицю <em>cron_schedule</em></p>
-<pre tabindex="0"><code>DELETE FROM `cron_schedule`;
-</code></pre></li>
-<li>
-<p>Очистити кеш Magento</p>
-<pre tabindex="0"><code>php bin/magento cache:flush
-</code></pre></li>
-</ol>
+        <p>Операційні системи (як Windows, так і *nix) використовують <em>розділ підкачки пам&rsquo;яті (swap)</em> - місце на диску, куди система копіює дані, коли обсяг оперативної пам&rsquo;яті вичерпано і необхідно звільнити певну її кількість для інших процесів.</p>
+<p>Загальні рекомендації по розміру розділу підкачки в Linux можна знайти у <a href="https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/7/html/storage_administration_guide/ch-swapspace#ch-swapspace">RedHat</a>. Особисто я створюю такий розділ підкачки, який дорівнює <em>x2</em> оперативної пам&rsquo;яті (RAM), якщо її менше 8 Gb. Якщо оперативки більше 8 Gb, то swap дорівнює розміру оперативної пам&rsquo;яті.</p>
+<p>Деякі хостери при підготовці серверів ігнорують створення розділу підкачки. Пояснення як правило двох типів: 1) обсягу оперативної пам&rsquo;яті більше 64 Gb цілком достатньо для роботи без swap, 2) використання swap шкодить роботі ssd. І перше, і друге - доволі дискусійні питання. Якщо не вдаватись до релігійних війн, а лише до власного досвіду експлуатації серверів для Magento-стеку, то мій висновок такий - файл підкачки потрібен в будь-якому разі.</p>
+<p>Якщо ж ви вже отримали сервер без swap, то виправимо цю ситуацію створенням swap-файлу. Це буде спеціальний файл у файловій системі, який буде виконувати ту ж функцію, що і розділ підкачки.</p>
+<p>Для прикладу створюємо файл розміром 8 Gb (за необхідності підставляйте своє значення).</p>
+<pre tabindex="0"><code>fallocate -l 8G /swapfile
+</code></pre><p>До цього файлу має бути доступ лише у root-а:</p>
+<pre tabindex="0"><code>chmod 600 /swapfile
+</code></pre><p>Налаштовуємо створений файл як файл підкачки:</p>
+<pre tabindex="0"><code>mkswap /swapfile
+</code></pre><p>І нарешті активуємо swap:</p>
+<pre tabindex="0"><code>swapon /swapfile
+</code></pre><p>Щоб файл підкачки був активний і після перезавантаження серверу, додаємо рядок до <em>/etc/fstab</em>:</p>
+<pre tabindex="0"><code>/swapfile none swap sw 0 0
+</code></pre><p>Користуйтесь ;)</p>
+<p>Якщо з деякий причин вам файл підкачки більше не треба, то деактивуйте його, а потім вилучить сам файл і посилання на нього з fstab:</p>
+<pre tabindex="0"><code>swapoff /swapfile
+rm /swapfile
+</code></pre><h2 id="посилання">Посилання</h2>
+<ul>
+<li>Photo by <a href="https://unsplash.com/@elevatebeer?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash">Elevate</a> on <a href="https://unsplash.com/photos/brown-wooden-barrel-FiL5R1_qYiw?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash">Unsplash</a></li>
+</ul>
     
         </div>
     </section>
@@ -187,8 +192,8 @@ kill XXXX
 
 
 var disqus_config = function () {
-this.page.url = "https:\/\/bender.kr.ua\/magento-2-cron-indexer-repair\/";  
-this.page.identifier = "https:\/\/bender.kr.ua\/magento-2-cron-indexer-repair\/"; 
+this.page.url = "https:\/\/bender.kr.ua\/create-swap-file\/";  
+this.page.identifier = "https:\/\/bender.kr.ua\/create-swap-file\/"; 
 };
 
 (function() { 
@@ -216,7 +221,7 @@ s.setAttribute('data-timestamp', +new Date());
     <header class="read-next-card-header">
         <small class="read-next-card-header-sitetitle">&mdash; Бортовий журнал Бендера &mdash;</small>
         
-        <h3 class="read-next-card-header-title"><a href="https://bender.kr.ua/tags/magento/">#magento</a></h3>
+        <h3 class="read-next-card-header-title"><a href="https://bender.kr.ua/tags/linux/">#linux</a></h3>
     </header>
     <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
     </div>
@@ -226,39 +231,40 @@ s.setAttribute('data-timestamp', +new Date());
         <ul>
           <li><a href="https://bender.kr.ua/howto-certbot-nginx-debian/">Отримання SSL-сертифікату для Nginx на Debian 9</a></li>            
         
-          <li><a href="https://bender.kr.ua/custom-logging-module-magento2/">Magento2: Як писати логи модуля в окремий файл?</a></li>            
+          <li><a href="https://bender.kr.ua/mining-karbowanec/">Як я місяць майнив криптовалюту за допомогою ноутбуку, навіщо мені це та що з того вийшло</a></li>            
         
-          <li><a href="https://bender.kr.ua/quick-start-with-jenkins-in-docker/">Швидкий старт Jenkins в Debian 10 за допомогою Docker</a></li>            
+          <li><a href="https://bender.kr.ua/howto-hide-default-store-code-from-url-magento-2/">Як прибрати Store Code з URL для основного магазину в Magento 2</a></li>            
         
-          <li><a href="https://bender.kr.ua/nginx-pagespeed-openssl/">Як я готую NGINX з модулем PAGESPEED</a></li>            
+          <li><a href="https://bender.kr.ua/netbeans-and-fonts/">NetBeans і проблема зі шрифтами</a></li>            
         </ul>
     </div>
     <footer class="read-next-card-footer">
       
-        <a href="https://bender.kr.ua/tags/magento/">See all related posts →</a>
+        <a href="https://bender.kr.ua/tags/linux/">See all related posts →</a>
     </footer>
 </article>
 
 
       
+      
       <article class="post-card post"> 
     
-    <a class="post-card-image-link" href="https://bender.kr.ua/howto-asterisk-part-6.1/">
-      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1434123342969-25a249e8d144?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1995&amp;q=80)"></div>
+    <a class="post-card-image-link" href="https://bender.kr.ua/howto-asterisk-part-6.7/">
+      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1519248200454-8f2590ed22b7?q=80&amp;w=2075&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)"></div>
     </a>
     
 
     <div class="post-card-content">
-      <a class="post-card-content-link" href="https://bender.kr.ua/howto-asterisk-part-6.1/">
+      <a class="post-card-content-link" href="https://bender.kr.ua/howto-asterisk-part-6.7/">
           <header class="post-card-header">
               <span class="post-card-tags">
               #linux  </span>
               
-              <h2 class="post-card-title">IP-телефонія на базі Asterisk. Частина 6.1: Додаткові функції Asterisk. Паркування дзвінка.</h2>
+              <h2 class="post-card-title">IP-телефонія на базі Asterisk. Частина 6.7: Додаткові функції Asterisk. Черги дзвінків.</h2>
           </header>
           <section class="post-card-excerpt">
                
-                <p>IP-телефонія на базі Asterisk. Частина 6.1: Додаткові функції Asterisk. Паркування дзвінка.</p>
+                <p>IP-телефонія на базі Asterisk. Частина 6.7: Додаткові функції Asterisk. Черги дзвінків.</p>
               
           </section>
       </a>
@@ -266,38 +272,6 @@ s.setAttribute('data-timestamp', +new Date());
       <footer class="post-card-meta">
         <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
         <span class="reading-time">2 хв</span>
-      </footer>
-    </div>
-</article>
-      
-      
-      <article class="post-card post"> 
-    
-    <a class="post-card-image-link" href="https://bender.kr.ua/howto-install-django-mysql-debian-9/">
-      <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1538439907460-1596cafd4eff?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ)"></div>
-    </a>
-    
-
-    <div class="post-card-content">
-      <a class="post-card-content-link" href="https://bender.kr.ua/howto-install-django-mysql-debian-9/">
-          <header class="post-card-header">
-              <span class="post-card-tags">
-              #python 
-              #web 
-              #mysql  </span>
-              
-              <h2 class="post-card-title">Встановлення зв&#39;язки Django та MySQL на Debian 9</h2>
-          </header>
-          <section class="post-card-excerpt">
-               
-                <p>Налаштування Django та MySQL на Debian 9</p>
-              
-          </section>
-      </a>
-
-      <footer class="post-card-meta">
-        <a href="/about"><img class="author-profile-image" src="https://bender.kr.ua/alexander.bobylev.png" alt="Author" title="Олександр Бобилєв" /></a>
-        <span class="reading-time">1 хв</span>
       </footer>
     </div>
 </article>
@@ -312,13 +286,13 @@ s.setAttribute('data-timestamp', +new Date());
       <img src="https://bender.kr.ua/logo.png" alt="Бортовий журнал Бендера" />
     </a>
   </div>
-  <div class="floating-header-title">Magento 2: не працює індексація за розкладом</div>
+  <div class="floating-header-title">Створення файлу підкачки (swap) в Linux</div>
   <div class="floating-header-share">  
-    <a class="floating-header-share-tw" href="https://twitter.com/share?text=Magento%202%3a%20%d0%bd%d0%b5%20%d0%bf%d1%80%d0%b0%d1%86%d1%8e%d1%94%20%d1%96%d0%bd%d0%b4%d0%b5%d0%ba%d1%81%d0%b0%d1%86%d1%96%d1%8f%20%d0%b7%d0%b0%20%d1%80%d0%be%d0%b7%d0%ba%d0%bb%d0%b0%d0%b4%d0%be%d0%bc&amp;url=https%3a%2f%2fbender.kr.ua%2fmagento-2-cron-indexer-repair%2f"
+    <a class="floating-header-share-tw" href="https://twitter.com/share?text=%d0%a1%d1%82%d0%b2%d0%be%d1%80%d0%b5%d0%bd%d0%bd%d1%8f%20%d1%84%d0%b0%d0%b9%d0%bb%d1%83%20%d0%bf%d1%96%d0%b4%d0%ba%d0%b0%d1%87%d0%ba%d0%b8%20%28swap%29%20%d0%b2%20Linux&amp;url=https%3a%2f%2fbender.kr.ua%2fcreate-swap-file%2f"
           onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
       </a>
-      <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbender.kr.ua%2fmagento-2-cron-indexer-repair%2f"
+      <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbender.kr.ua%2fcreate-swap-file%2f"
           onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
       </a>

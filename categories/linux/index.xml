@@ -6,7 +6,17 @@
     <description>Recent content in linux on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>uk</language>
-    <lastBuildDate>Mon, 05 Aug 2024 00:00:00 +0300</lastBuildDate><atom:link href="https://bender.kr.ua/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 12 Aug 2024 00:00:00 +0300</lastBuildDate><atom:link href="https://bender.kr.ua/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Створення файлу підкачки (swap) в Linux</title>
+      <link>https://bender.kr.ua/create-swap-file/</link>
+      <pubDate>Mon, 12 Aug 2024 00:00:00 +0300</pubDate>
+      
+      <guid>https://bender.kr.ua/create-swap-file/</guid>
+      <description>Операційні системи (як Windows, так і *nix) використовують розділ підкачки пам&amp;rsquo;яті (swap) - місце на диску, куди система копіює дані, коли обсяг оперативної пам&amp;rsquo;яті вичерпано і необхідно звільнити певну її кількість для інших процесів.
+Загальні рекомендації по розміру розділу підкачки в Linux можна знайти у RedHat. Особисто я створюю такий розділ підкачки, який дорівнює x2 оперативної пам&amp;rsquo;яті (RAM), якщо її менше 8 Gb. Якщо оперативки більше 8 Gb, то swap дорівнює розміру оперативної пам&amp;rsquo;яті.</description>
+    </item>
+    
     <item>
       <title>IP-телефонія на базі Asterisk. Частина 6.7: Додаткові функції Asterisk. Черги дзвінків.</title>
       <link>https://bender.kr.ua/howto-asterisk-part-6.7/</link>
